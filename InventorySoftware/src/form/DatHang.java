@@ -3355,7 +3355,7 @@ public class DatHang extends javax.swing.JPanel {
 
         textField3.setLabelText("Đơn giá");
 
-        textField4.setLabelText("Mã đặt hàng");
+        textField4.setLabelText("Tên sản phẩm");
 
         textField5.setLabelText("Số lượng");
 
@@ -3534,7 +3534,6 @@ public class DatHang extends javax.swing.JPanel {
     private swing.ImageAvatar imageAvatar17;
     private swing.ImageAvatar imageAvatar18;
     private swing.ImageAvatar imageAvatar19;
-    private swing.ImageAvatar imageAvatar20;
     private swing.ImageAvatar imageAvatar21;
     private swing.ImageAvatar imageAvatar22;
     private swing.ImageAvatar imageAvatar23;
@@ -3674,8 +3673,6 @@ public class DatHang extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -3744,7 +3741,6 @@ public class DatHang extends javax.swing.JPanel {
     private swing.PanelShadow panelShadow22;
     private swing.PanelShadow panelShadow23;
     private swing.PanelShadow panelShadow24;
-    private swing.PanelShadow panelShadow25;
     private swing.PanelShadow panelShadow26;
     private swing.PanelShadow panelShadow27;
     private swing.PanelShadow panelShadow28;

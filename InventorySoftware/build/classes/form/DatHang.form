@@ -5802,7 +5802,7 @@
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="textField4">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="M&#xe3; &#x111;&#x1eb7;t h&#xe0;ng"/>
+                <Property name="labelText" type="java.lang.String" value="T&#xea;n s&#x1ea3;n ph&#x1ea9;m"/>
               </Properties>
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="textField5">
