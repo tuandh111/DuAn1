@@ -17,7 +17,8 @@ import com.tuandhpc05076.ThoiGian.Time;
 import form.BanHang;
 import form.QuenMatKhau;
 import form.SanPham;
-import form.SanPham1;
+import form.DatHang;
+import form.HoaDon;
 import inventorysoftware.LogIn.NewSignin;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -65,10 +66,12 @@ public class Main extends javax.swing.JFrame {
                     }
                 } else if (menuIndex == 2) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new SanPham1());
+                        main.showForm(new SanPham());
                     }
                 }else if(menuIndex==3){
-                    if(subMenuIndex==0)main.showForm(new BanHang());
+                    if(subMenuIndex==0)main.showForm(new DatHang());
+                }else if(menuIndex==4){
+                    if(subMenuIndex==0)main.showForm(new HoaDon());
                 }
                 
                 else if (menuIndex==9){

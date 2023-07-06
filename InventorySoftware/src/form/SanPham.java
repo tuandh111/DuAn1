@@ -35,14 +35,24 @@ public class SanPham extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUser = new com.raven.swing.table.Table();
-        textField1 = new com.tuandhpc05076.Swing.TextField();
         textField2 = new com.tuandhpc05076.Swing.TextField();
         textField3 = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
         textField5 = new com.tuandhpc05076.Swing.TextField();
         textField6 = new com.tuandhpc05076.Swing.TextField();
+        textField7 = new com.tuandhpc05076.Swing.TextField();
+        textField8 = new com.tuandhpc05076.Swing.TextField();
+        combobox1 = new com.tuandhpc05076.Swing.Combobox();
+        combobox2 = new com.tuandhpc05076.Swing.Combobox();
+        jLabel1 = new javax.swing.JLabel();
+        switchButton1 = new com.tuandhpc05076.swing0.SwitchButton();
+        imageAvatar9 = new swing.ImageAvatar();
+        cardRegister1 = new com.raven.component.CardRegister();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1058, 741));
+        setPreferredSize(new java.awt.Dimension(1058, 741));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -57,72 +67,78 @@ public class SanPham extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblUser);
 
-        textField1.setText("textField1");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 1040, 198));
 
         textField2.setBackground(new java.awt.Color(255, 255, 255));
-        textField2.setText("textField1");
+        textField2.setLabelText("Mã sản phẩm");
+        textField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField2ActionPerformed(evt);
+            }
+        });
+        add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, 283, -1));
 
-        textField3.setText("textField1");
+        textField3.setLabelText("Ngày nhập");
+        add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 160, 270, -1));
 
-        textField4.setText("textField1");
+        textField4.setLabelText("Tên ");
+        add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 283, -1));
 
-        textField5.setText("textField1");
+        textField5.setLabelText("Giá");
+        add(textField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 84, 283, -1));
 
-        textField6.setText("textField1");
+        textField6.setLabelText("Nơi nhập");
+        add(textField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 283, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(73, 73, 73)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 413, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        textField7.setBackground(new java.awt.Color(255, 255, 255));
+        textField7.setLabelText("Mô tả");
+        add(textField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 283, -1));
+
+        textField8.setBackground(new java.awt.Color(255, 255, 255));
+        textField8.setLabelText("Số lượng");
+        add(textField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 283, -1));
+
+        combobox1.setLabeText("Màu sắc");
+        add(combobox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 86, 283, -1));
+
+        combobox2.setLabeText("Loại sản phẩm");
+        add(combobox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 283, -1));
+
+        jLabel1.setText("Trạng thái:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
+        add(switchButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 81, 35));
+
+        imageAvatar9.setBorderSize(5);
+        imageAvatar9.setBorderSpace(0);
+        imageAvatar9.setGradientColor1(new java.awt.Color(255, 255, 255));
+        imageAvatar9.setGradientColor2(new java.awt.Color(255, 255, 255));
+        imageAvatar9.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
+        add(imageAvatar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 167, 140));
+
+        cardRegister1.setPreferredSize(new java.awt.Dimension(200, 200));
+        add(cardRegister1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 199));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.raven.component.CardRegister cardRegister1;
+    private com.tuandhpc05076.Swing.Combobox combobox1;
+    private com.tuandhpc05076.Swing.Combobox combobox2;
+    private swing.ImageAvatar imageAvatar9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private com.tuandhpc05076.swing0.SwitchButton switchButton1;
     private com.raven.swing.table.Table tblUser;
-    private com.tuandhpc05076.Swing.TextField textField1;
     private com.tuandhpc05076.Swing.TextField textField2;
     private com.tuandhpc05076.Swing.TextField textField3;
     private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;
     private com.tuandhpc05076.Swing.TextField textField6;
+    private com.tuandhpc05076.Swing.TextField textField7;
+    private com.tuandhpc05076.Swing.TextField textField8;
     // End of variables declaration//GEN-END:variables
 }
