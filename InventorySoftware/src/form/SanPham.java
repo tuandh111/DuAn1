@@ -48,6 +48,7 @@ public class SanPham extends javax.swing.JPanel {
         switchButton1 = new com.tuandhpc05076.swing0.SwitchButton();
         imageAvatar9 = new swing.ImageAvatar();
         cardRegister1 = new com.raven.component.CardRegister();
+        combobox3 = new com.tuandhpc05076.Swing.Combobox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1058, 741));
@@ -101,8 +102,8 @@ public class SanPham extends javax.swing.JPanel {
         combobox1.setLabeText("Màu sắc");
         add(combobox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 86, 283, -1));
 
-        combobox2.setLabeText("Loại sản phẩm");
-        add(combobox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 283, -1));
+        combobox2.setLabeText("Chọn dòng máy");
+        add(combobox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 283, -1));
 
         jLabel1.setText("Trạng thái:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
@@ -117,6 +118,9 @@ public class SanPham extends javax.swing.JPanel {
 
         cardRegister1.setPreferredSize(new java.awt.Dimension(200, 200));
         add(cardRegister1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 199));
+
+        combobox3.setLabeText("Loại sản phẩm");
+        add(combobox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 283, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
@@ -128,6 +132,7 @@ public class SanPham extends javax.swing.JPanel {
     private com.raven.component.CardRegister cardRegister1;
     private com.tuandhpc05076.Swing.Combobox combobox1;
     private com.tuandhpc05076.Swing.Combobox combobox2;
+    private com.tuandhpc05076.Swing.Combobox combobox3;
     private swing.ImageAvatar imageAvatar9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
