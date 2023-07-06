@@ -11,7 +11,7 @@ public class Header extends javax.swing.JPanel {
         initComponents();
         Time time = new Time(txtThoiGian);
         time.start();
-        buttonBadges1.setBadges(2);
+//        buttonBadges1.setBadges(2);
     }
 
     public void addMenuEvent(ActionListener event) {
@@ -27,7 +27,6 @@ public class Header extends javax.swing.JPanel {
         lbUserName = new javax.swing.JLabel();
         lbRole = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        buttonBadges1 = new com.raven.swing.ButtonBadges();
         jButton10 = new javax.swing.JButton();
         txtThoiGian = new javax.swing.JLabel();
 
@@ -60,15 +59,6 @@ public class Header extends javax.swing.JPanel {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        buttonBadges1.setForeground(new java.awt.Color(250, 49, 49));
-        buttonBadges1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/notification.png"))); // NOI18N
-        buttonBadges1.setBadges(10);
-        buttonBadges1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBadges1ActionPerformed(evt);
-            }
-        });
-
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Cancel_32px.png"))); // NOI18N
         jButton10.setToolTipText("Close");
         jButton10.setBorder(null);
@@ -94,9 +84,7 @@ public class Header extends javax.swing.JPanel {
                 .addComponent(cmdMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
                 .addComponent(txtThoiGian)
-                .addGap(76, 76, 76)
-                .addComponent(buttonBadges1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(126, 126, 126)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,8 +110,7 @@ public class Header extends javax.swing.JPanel {
                         .addComponent(lbRole))
                     .addComponent(cmdMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pic, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonBadges1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -135,12 +122,6 @@ public class Header extends javax.swing.JPanel {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void buttonBadges1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges1ActionPerformed
-        // TODO add your handling code here:
-        NewSignin n = new NewSignin();
-        n.setVisible(true);
-    }//GEN-LAST:event_buttonBadges1ActionPerformed
 
     private void picAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_picAncestorAdded
         // TODO add your handling code here:
@@ -155,7 +136,6 @@ public class Header extends javax.swing.JPanel {
     }//GEN-LAST:event_picMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.swing.ButtonBadges buttonBadges1;
     private com.raven.swing.Button cmdMenu;
     private javax.swing.JButton jButton10;
     private javax.swing.JSeparator jSeparator1;

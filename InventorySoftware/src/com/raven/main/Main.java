@@ -18,7 +18,11 @@ import form.BanHang;
 import form.QuenMatKhau;
 import form.SanPham;
 import form.DatHang;
+import form.DoanhThu;
+import form.GiamGia;
 import form.HoaDon;
+import form.KhachHang;
+import form.NhanVien;
 import inventorysoftware.LogIn.NewSignin;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -38,7 +42,7 @@ public class Main extends javax.swing.JFrame {
 
     public Main() {
         initComponents();
-       
+
         init();
     }
 
@@ -68,18 +72,37 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new SanPham());
                     }
-                }else if(menuIndex==3){
-                    if(subMenuIndex==0)main.showForm(new DatHang());
-                }else if(menuIndex==4){
-                    if(subMenuIndex==0)main.showForm(new HoaDon());
+                } else if (menuIndex == 3) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new DatHang());
+                    }
+                } else if (menuIndex == 4) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new HoaDon());
+                    }
+                } else if (menuIndex == 5) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new GiamGia());
+                    }
+                } else if (menuIndex == 6) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new NhanVien());
+                    }
+                } else if (menuIndex == 7) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new KhachHang());
+                    }
                 }
-                
-                else if (menuIndex==9){
-                   if(subMenuIndex==0){
+                else if (menuIndex == 8) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new DoanhThu());
+                    }
+                }else if (menuIndex == 9) {
+                    if (subMenuIndex == 0) {
                         NewSignin quen = new NewSignin();
                         quen.setVisible(true);
                         dispose();
-                    }else if(subMenuIndex==1){
+                    } else if (subMenuIndex == 1) {
                         System.exit(0);
                     }
                 }
