@@ -15,6 +15,7 @@ import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import com.tuandhpc05076.BieuDo.FormHome;
 import com.tuandhpc05076.ThoiGian.Time;
 import form.BanHang;
+import form.BaoHanh;
 import form.QuenMatKhau;
 import form.SanPham;
 import form.DatHang;
@@ -57,9 +58,7 @@ public class Main extends javax.swing.JFrame {
             public void menuSelected(int menuIndex, int subMenuIndex) {
                 System.out.println("Menu Index : " + menuIndex + " SubMenu Index " + subMenuIndex);
                 if (menuIndex == 0) {
-
                     main.showForm(new Form_Home());
-
                 } else if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
                         main.showForm(new MainAn.MainAn());
@@ -79,11 +78,11 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 4) {
                     if (subMenuIndex == 0) {
                         main.showForm(new HoaDon());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new BaoHanh());
                     }
                 } else if (menuIndex == 5) {
-                    if (subMenuIndex == 0) {
-                        main.showForm(new GiamGia());
-                    }
+                    main.showForm(new GiamGia());
                 } else if (menuIndex == 6) {
                     if (subMenuIndex == 0) {
                         main.showForm(new NhanVien());
@@ -92,12 +91,11 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new KhachHang());
                     }
-                }
-                else if (menuIndex == 8) {
+                } else if (menuIndex == 8) {
                     if (subMenuIndex == 0) {
                         main.showForm(new ThanhToanLuong());
                     }
-                }else if (menuIndex == 9) {
+                } else if (menuIndex == 9) {
                     if (subMenuIndex == 0) {
                         NewSignin quen = new NewSignin();
                         quen.setVisible(true);

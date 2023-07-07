@@ -58,8 +58,8 @@ public class Menu extends javax.swing.JPanel {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Thống kê", "Morris", "Flot", "Line"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Sản phẩm", "Sản phẩm", "Dòng máy", "Đã xóa"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Đặt hàng", "Đặt hàng", "User", "Đã xóa"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Hóa đơn", "Hóa đơn", "Đã hủy"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/6.png")), "Giảm giá", "Giảm giá", "Đã xóa"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Hóa đơn", "Hóa đơn", "Bảo hành sản phẩm"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/6.png")), "Giảm giá"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/7.png")), "Nhân viên", "Nhân viên", "Vai trò", "Đã xóa"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/8.png")), "Khách hàng", "Khách hàng", "Menu 002", "Đã xóa"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/9.png")), "Thanh toán lương", "Thanh toán lương", "Nhân viên đã thanh toán", "Nhân viên chưa thanh toán"));
