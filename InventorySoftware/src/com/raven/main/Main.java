@@ -18,7 +18,7 @@ import form.BanHang;
 import form.QuenMatKhau;
 import form.SanPham;
 import form.DatHang;
-import form.DoanhThu;
+import form.ThanhToanLuong;
 import form.GiamGia;
 import form.HoaDon;
 import form.KhachHang;
@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
                 }
                 else if (menuIndex == 8) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new DoanhThu());
+                        main.showForm(new ThanhToanLuong());
                     }
                 }else if (menuIndex == 9) {
                     if (subMenuIndex == 0) {
