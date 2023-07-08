@@ -147,7 +147,7 @@ public class SanPham extends javax.swing.JPanel {
         jButton1.setText("Tải hình ảnh");
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, -1, -1));
 
-        combobox10.setLabeText("Loại sản phẩm");
+        combobox10.setLabeText("Loại dòng máy");
         add(combobox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 283, -1));
     }// </editor-fold>//GEN-END:initComponents
 

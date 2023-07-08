@@ -19,6 +19,7 @@ import form.BaoHanh;
 import form.QuenMatKhau;
 import form.SanPham;
 import form.DatHang;
+import form.DongMay;
 import form.ThanhToanLuong;
 import form.GiamGia;
 import form.HoaDon;
@@ -70,6 +71,8 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 2) {
                     if (subMenuIndex == 0) {
                         main.showForm(new SanPham());
+                    }else if(subMenuIndex==1){
+                        main.showForm(new DongMay());
                     }
                 } else if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
