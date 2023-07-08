@@ -43,12 +43,18 @@ public class SanPham extends javax.swing.JPanel {
         textField7 = new com.tuandhpc05076.Swing.TextField();
         textField8 = new com.tuandhpc05076.Swing.TextField();
         combobox1 = new com.tuandhpc05076.Swing.Combobox();
-        combobox2 = new com.tuandhpc05076.Swing.Combobox();
         jLabel1 = new javax.swing.JLabel();
         switchButton1 = new com.tuandhpc05076.swing0.SwitchButton();
         imageAvatar9 = new swing.ImageAvatar();
-        cardRegister1 = new com.raven.component.CardRegister();
         combobox3 = new com.tuandhpc05076.Swing.Combobox();
+        combobox4 = new com.tuandhpc05076.Swing.Combobox();
+        combobox5 = new com.tuandhpc05076.Swing.Combobox();
+        combobox6 = new com.tuandhpc05076.Swing.Combobox();
+        combobox7 = new com.tuandhpc05076.Swing.Combobox();
+        combobox8 = new com.tuandhpc05076.Swing.Combobox();
+        combobox9 = new com.tuandhpc05076.Swing.Combobox();
+        jButton1 = new javax.swing.JButton();
+        combobox10 = new com.tuandhpc05076.Swing.Combobox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1058, 741));
@@ -68,7 +74,7 @@ public class SanPham extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblUser);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 1040, 198));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 1060, 198));
 
         textField2.setBackground(new java.awt.Color(255, 255, 255));
         textField2.setLabelText("Mã sản phẩm");
@@ -79,48 +85,70 @@ public class SanPham extends javax.swing.JPanel {
         });
         add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, 283, -1));
 
+        textField3.setBackground(new java.awt.Color(255, 255, 255));
         textField3.setLabelText("Ngày nhập");
-        add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 160, 270, -1));
+        add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, -1));
 
+        textField4.setBackground(new java.awt.Color(255, 255, 255));
         textField4.setLabelText("Tên ");
-        add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 283, -1));
+        add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 283, -1));
 
+        textField5.setBackground(new java.awt.Color(255, 255, 255));
         textField5.setLabelText("Giá");
-        add(textField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 84, 283, -1));
+        add(textField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 283, -1));
 
+        textField6.setBackground(new java.awt.Color(255, 255, 255));
         textField6.setLabelText("Nơi nhập");
-        add(textField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 283, -1));
+        add(textField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 283, -1));
 
         textField7.setBackground(new java.awt.Color(255, 255, 255));
         textField7.setLabelText("Mô tả");
-        add(textField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 283, -1));
+        add(textField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 283, -1));
 
         textField8.setBackground(new java.awt.Color(255, 255, 255));
         textField8.setLabelText("Số lượng");
-        add(textField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 283, -1));
+        add(textField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 283, -1));
 
         combobox1.setLabeText("Màu sắc");
         add(combobox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 86, 283, -1));
 
-        combobox2.setLabeText("Chọn dòng máy");
-        add(combobox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 283, -1));
-
         jLabel1.setText("Trạng thái:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
-        add(switchButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 81, 35));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, -1));
+        add(switchButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 81, 35));
 
         imageAvatar9.setBorderSize(5);
         imageAvatar9.setBorderSpace(0);
         imageAvatar9.setGradientColor1(new java.awt.Color(255, 255, 255));
         imageAvatar9.setGradientColor2(new java.awt.Color(255, 255, 255));
         imageAvatar9.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
-        add(imageAvatar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 167, 140));
+        add(imageAvatar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 167, 140));
 
-        cardRegister1.setPreferredSize(new java.awt.Dimension(200, 200));
-        add(cardRegister1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 199));
+        combobox3.setLabeText("PIn");
+        add(combobox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 160, -1));
 
-        combobox3.setLabeText("Loại sản phẩm");
-        add(combobox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 283, -1));
+        combobox4.setLabeText("Chọn khuyến mại");
+        add(combobox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 283, -1));
+
+        combobox5.setLabeText("CPU");
+        add(combobox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 160, -1));
+
+        combobox6.setLabeText("Ram");
+        add(combobox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 160, -1));
+
+        combobox7.setLabeText("Bộ nhớ trong");
+        add(combobox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 160, -1));
+
+        combobox8.setLabeText("Màng hình");
+        add(combobox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 160, -1));
+
+        combobox9.setLabeText("Camera");
+        add(combobox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, 160, -1));
+
+        jButton1.setText("Tải hình ảnh");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, -1, -1));
+
+        combobox10.setLabeText("Loại sản phẩm");
+        add(combobox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 283, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
@@ -129,11 +157,17 @@ public class SanPham extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.component.CardRegister cardRegister1;
     private com.tuandhpc05076.Swing.Combobox combobox1;
-    private com.tuandhpc05076.Swing.Combobox combobox2;
+    private com.tuandhpc05076.Swing.Combobox combobox10;
     private com.tuandhpc05076.Swing.Combobox combobox3;
+    private com.tuandhpc05076.Swing.Combobox combobox4;
+    private com.tuandhpc05076.Swing.Combobox combobox5;
+    private com.tuandhpc05076.Swing.Combobox combobox6;
+    private com.tuandhpc05076.Swing.Combobox combobox7;
+    private com.tuandhpc05076.Swing.Combobox combobox8;
+    private com.tuandhpc05076.Swing.Combobox combobox9;
     private swing.ImageAvatar imageAvatar9;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.tuandhpc05076.swing0.SwitchButton switchButton1;
