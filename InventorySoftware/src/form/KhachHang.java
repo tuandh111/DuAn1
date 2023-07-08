@@ -4,6 +4,10 @@
  */
 package form;
 
+import com.raven.datechooser.EventDateChooser;
+import com.raven.datechooser.SelectedAction;
+import com.raven.datechooser.SelectedDate;
+
 /**
  *
  * @author DELL E5470
@@ -15,6 +19,7 @@ public class KhachHang extends javax.swing.JPanel {
      */
     public KhachHang() {
         initComponents();
+        txtNgaySinh.setText("1-1-1999");
     }
 
     /**
@@ -26,17 +31,20 @@ public class KhachHang extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateChooser = new com.raven.datechooser.DateChooser();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new com.raven.swing.table.Table();
         jLabel1 = new javax.swing.JLabel();
         combobox1 = new com.tuandhpc05076.Swing.Combobox();
         combobox2 = new com.tuandhpc05076.Swing.Combobox();
-        textField1 = new com.tuandhpc05076.Swing.TextField();
+        txtNgaySinh = new com.tuandhpc05076.Swing.TextField();
         textField2 = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
         textField5 = new com.tuandhpc05076.Swing.TextField();
         buttonBadges1 = new com.raven.swing.ButtonBadges();
+
+        dateChooser.setTextRefernce(txtNgaySinh);
 
         setMinimumSize(new java.awt.Dimension(1058, 741));
         setPreferredSize(new java.awt.Dimension(1058, 741));
@@ -68,7 +76,12 @@ public class KhachHang extends javax.swing.JPanel {
         combobox2.setSelectedIndex(-1);
         combobox2.setLabeText("Loại sản phẩm");
 
-        textField1.setLabelText("Ngày bắt đầu");
+        txtNgaySinh.setLabelText("Ngày sinh");
+        txtNgaySinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNgaySinhMouseClicked(evt);
+            }
+        });
 
         textField2.setLabelText("Ngày kết thúc");
 
@@ -102,7 +115,7 @@ public class KhachHang extends javax.swing.JPanel {
                                     .addComponent(jLabel1)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -131,7 +144,7 @@ public class KhachHang extends javax.swing.JPanel {
                     .addComponent(combobox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -159,18 +172,23 @@ public class KhachHang extends javax.swing.JPanel {
         
     }//GEN-LAST:event_buttonBadges1ActionPerformed
 
+    private void txtNgaySinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgaySinhMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgaySinhMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.swing.ButtonBadges buttonBadges1;
     private com.tuandhpc05076.Swing.Combobox combobox1;
     private com.tuandhpc05076.Swing.Combobox combobox2;
+    private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.raven.swing.table.Table table1;
-    private com.tuandhpc05076.Swing.TextField textField1;
     private com.tuandhpc05076.Swing.TextField textField2;
     private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;
+    private com.tuandhpc05076.Swing.TextField txtNgaySinh;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,9 @@
  */
 package form;
 
+import com.raven.datechooser.EventDateChooser;
+import com.raven.datechooser.SelectedAction;
+import com.raven.datechooser.SelectedDate;
 import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -23,6 +26,15 @@ public class HoaDon extends javax.swing.JPanel {
 //panelShadow6.setVisible(false); ẩn jpanel
 //panelShadow6.setBackground(Color.pink);
  setOpaque(false);
+   dateChooser.addEventDateChooser(new EventDateChooser() {
+            @Override
+            public void dateSelected(SelectedAction action, SelectedDate date) {
+                System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());
+                if (action.getAction() == SelectedAction.DAY_SELECTED) {
+                    dateChooser.hidePopup();
+                }
+            }
+        });
     }
 
     /**
@@ -34,6 +46,7 @@ public class HoaDon extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateChooser = new com.raven.datechooser.DateChooser();
         jPanel1 = new javax.swing.JPanel();
         materialTabbed1 = new swing.MaterialTabbed();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -293,7 +306,7 @@ public class HoaDon extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         textField1 = new com.tuandhpc05076.Swing.TextField();
-        textField2 = new com.tuandhpc05076.Swing.TextField();
+        txtNgayXuat = new com.tuandhpc05076.Swing.TextField();
         textField3 = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
         textField5 = new com.tuandhpc05076.Swing.TextField();
@@ -303,6 +316,8 @@ public class HoaDon extends javax.swing.JPanel {
         button3 = new com.tuandhpc05076.swing0.button0();
         button7 = new com.tuandhpc05076.swing0.button0();
         buttonBadges1 = new com.raven.swing.ButtonBadges();
+
+        dateChooser.setTextRefernce(txtNgayXuat);
 
         setPreferredSize(new java.awt.Dimension(1058, 1643));
 
@@ -3331,7 +3346,12 @@ public class HoaDon extends javax.swing.JPanel {
 
         textField1.setLabelText("Số điện thoại");
 
-        textField2.setLabelText("Tổng tiền");
+        txtNgayXuat.setLabelText("Ngày xuất");
+        txtNgayXuat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNgayXuatMouseClicked(evt);
+            }
+        });
 
         textField3.setLabelText("Đơn giá");
 
@@ -3391,7 +3411,7 @@ public class HoaDon extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNgayXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(textField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(12, 12, 12)
@@ -3430,7 +3450,7 @@ public class HoaDon extends javax.swing.JPanel {
                     .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNgayXuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -3486,6 +3506,10 @@ public class HoaDon extends javax.swing.JPanel {
      
     }//GEN-LAST:event_buttonBadges1ActionPerformed
 
+    private void txtNgayXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuatMouseClicked
+dateChooser.showPopup();        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgayXuatMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.tuandhpc05076.swing0.button0 button01;
@@ -3493,6 +3517,7 @@ public class HoaDon extends javax.swing.JPanel {
     private com.tuandhpc05076.swing0.button0 button3;
     private com.tuandhpc05076.swing0.button0 button7;
     private com.raven.swing.ButtonBadges buttonBadges1;
+    private com.raven.datechooser.DateChooser dateChooser;
     private swing.ImageAvatar imageAvatar10;
     private swing.ImageAvatar imageAvatar11;
     private swing.ImageAvatar imageAvatar12;
@@ -3752,10 +3777,10 @@ public class HoaDon extends javax.swing.JPanel {
     private swing.PanelShadow panelShadow68;
     private swing.PanelShadow panelShadow9;
     private com.tuandhpc05076.Swing.TextField textField1;
-    private com.tuandhpc05076.Swing.TextField textField2;
     private com.tuandhpc05076.Swing.TextField textField3;
     private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;
     private com.tuandhpc05076.Swing.TextField textField6;
+    private com.tuandhpc05076.Swing.TextField txtNgayXuat;
     // End of variables declaration//GEN-END:variables
 }

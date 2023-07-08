@@ -4,6 +4,9 @@
  */
 package form;
 
+import com.raven.datechooser.EventDateChooser;
+import com.raven.datechooser.SelectedAction;
+import com.raven.datechooser.SelectedDate;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -13,13 +16,24 @@ import javax.swing.table.DefaultTableModel;
 public class SanPham extends javax.swing.JPanel {
 
     DefaultTableModel tblModel;
+
     public SanPham() {
         initComponents();
+        dateChooser.addEventDateChooser(new EventDateChooser() {
+            @Override
+            public void dateSelected(SelectedAction action, SelectedDate date) {
+                System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());
+                if (action.getAction() == SelectedAction.DAY_SELECTED) {
+                    dateChooser.hidePopup();
+                }
+            }
+        });
         TieuDe();
     }
-    public void TieuDe(){
+
+    public void TieuDe() {
         tblModel = new DefaultTableModel();
-        String[] tbl = new String[]{"Mã sản phẩm","Tên sản phẩm","Giá","Ngày nhập","Ngày xuất","Số lượng"};
+        String[] tbl = new String[]{"Mã sản phẩm", "Tên sản phẩm", "Giá", "Ngày nhập", "Ngày xuất", "Số lượng"};
         tblModel.setColumnIdentifiers(tbl);
         tblUser.setModel(tblModel);
     }
@@ -33,10 +47,11 @@ public class SanPham extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateChooser = new com.raven.datechooser.DateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUser = new com.raven.swing.table.Table();
         textField2 = new com.tuandhpc05076.Swing.TextField();
-        textField3 = new com.tuandhpc05076.Swing.TextField();
+        txtNgayNhap = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
         textField5 = new com.tuandhpc05076.Swing.TextField();
         textField6 = new com.tuandhpc05076.Swing.TextField();
@@ -55,6 +70,8 @@ public class SanPham extends javax.swing.JPanel {
         combobox9 = new com.tuandhpc05076.Swing.Combobox();
         jButton1 = new javax.swing.JButton();
         combobox10 = new com.tuandhpc05076.Swing.Combobox();
+
+        dateChooser.setTextRefernce(txtNgayNhap);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1058, 741));
@@ -85,9 +102,19 @@ public class SanPham extends javax.swing.JPanel {
         });
         add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, 283, -1));
 
-        textField3.setBackground(new java.awt.Color(255, 255, 255));
-        textField3.setLabelText("Ngày nhập");
-        add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, -1));
+        txtNgayNhap.setBackground(new java.awt.Color(255, 255, 255));
+        txtNgayNhap.setLabelText("Ngày nhập");
+        txtNgayNhap.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNgayNhapMouseClicked(evt);
+            }
+        });
+        txtNgayNhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNgayNhapActionPerformed(evt);
+            }
+        });
+        add(txtNgayNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, -1));
 
         textField4.setBackground(new java.awt.Color(255, 255, 255));
         textField4.setLabelText("Tên ");
@@ -155,6 +182,15 @@ public class SanPham extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField2ActionPerformed
 
+    private void txtNgayNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayNhapActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtNgayNhapActionPerformed
+
+    private void txtNgayNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayNhapMouseClicked
+        dateChooser.showPopup();        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgayNhapMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.tuandhpc05076.Swing.Combobox combobox1;
@@ -166,6 +202,7 @@ public class SanPham extends javax.swing.JPanel {
     private com.tuandhpc05076.Swing.Combobox combobox7;
     private com.tuandhpc05076.Swing.Combobox combobox8;
     private com.tuandhpc05076.Swing.Combobox combobox9;
+    private com.raven.datechooser.DateChooser dateChooser;
     private swing.ImageAvatar imageAvatar9;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -173,11 +210,11 @@ public class SanPham extends javax.swing.JPanel {
     private com.tuandhpc05076.swing0.SwitchButton switchButton1;
     private com.raven.swing.table.Table tblUser;
     private com.tuandhpc05076.Swing.TextField textField2;
-    private com.tuandhpc05076.Swing.TextField textField3;
     private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;
     private com.tuandhpc05076.Swing.TextField textField6;
     private com.tuandhpc05076.Swing.TextField textField7;
     private com.tuandhpc05076.Swing.TextField textField8;
+    private com.tuandhpc05076.Swing.TextField txtNgayNhap;
     // End of variables declaration//GEN-END:variables
 }
