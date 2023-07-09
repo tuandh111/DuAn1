@@ -56,7 +56,6 @@ public class SanPham extends javax.swing.JPanel {
         textField5 = new com.tuandhpc05076.Swing.TextField();
         textField6 = new com.tuandhpc05076.Swing.TextField();
         textField7 = new com.tuandhpc05076.Swing.TextField();
-        textField8 = new com.tuandhpc05076.Swing.TextField();
         combobox1 = new com.tuandhpc05076.Swing.Combobox();
         jLabel1 = new javax.swing.JLabel();
         switchButton1 = new com.tuandhpc05076.swing0.SwitchButton();
@@ -70,6 +69,7 @@ public class SanPham extends javax.swing.JPanel {
         combobox9 = new com.tuandhpc05076.Swing.Combobox();
         jButton1 = new javax.swing.JButton();
         combobox10 = new com.tuandhpc05076.Swing.Combobox();
+        spinner1 = new com.tuandhpc05076.Swing.Spinner();
 
         dateChooser.setTextRefernce(txtNgayNhap);
 
@@ -132,10 +132,6 @@ public class SanPham extends javax.swing.JPanel {
         textField7.setLabelText("Mô tả");
         add(textField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 283, -1));
 
-        textField8.setBackground(new java.awt.Color(255, 255, 255));
-        textField8.setLabelText("Số lượng");
-        add(textField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 283, -1));
-
         combobox1.setLabeText("Màu sắc");
         add(combobox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 86, 283, -1));
 
@@ -176,6 +172,10 @@ public class SanPham extends javax.swing.JPanel {
 
         combobox10.setLabeText("Loại dòng máy");
         add(combobox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 283, -1));
+
+        spinner1.setBackground(new java.awt.Color(255, 255, 255));
+        spinner1.setLabelText("Số lượng");
+        add(spinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 290, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
@@ -207,6 +207,7 @@ public class SanPham extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private com.tuandhpc05076.Swing.Spinner spinner1;
     private com.tuandhpc05076.swing0.SwitchButton switchButton1;
     private com.raven.swing.table.Table tblUser;
     private com.tuandhpc05076.Swing.TextField textField2;
@@ -214,7 +215,6 @@ public class SanPham extends javax.swing.JPanel {
     private com.tuandhpc05076.Swing.TextField textField5;
     private com.tuandhpc05076.Swing.TextField textField6;
     private com.tuandhpc05076.Swing.TextField textField7;
-    private com.tuandhpc05076.Swing.TextField textField8;
     private com.tuandhpc05076.Swing.TextField txtNgayNhap;
     // End of variables declaration//GEN-END:variables
 }

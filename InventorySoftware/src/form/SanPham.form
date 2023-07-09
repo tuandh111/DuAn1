@@ -164,19 +164,6 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="com.tuandhpc05076.Swing.TextField" name="textField8">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="210" width="283" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="com.tuandhpc05076.Swing.Combobox" name="combobox1">
       <Properties>
         <Property name="labeText" type="java.lang.String" value="M&#xe0;u s&#x1eaf;c"/>
@@ -319,6 +306,19 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="30" y="280" width="283" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.Spinner" name="spinner1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="30" y="220" width="290" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
