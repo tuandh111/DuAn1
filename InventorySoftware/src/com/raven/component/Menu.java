@@ -113,7 +113,7 @@ public class Menu extends javax.swing.JPanel {
         sp = new javax.swing.JScrollPane();
         panel = new javax.swing.JPanel();
 
-        imageAvatar1.setBackground(new java.awt.Color(153, 255, 153));
+        imageAvatar1.setBackground(new java.awt.Color(153, 153, 153));
         imageAvatar1.setGradientColor1(new java.awt.Color(153, 0, 153));
         imageAvatar1.setGradientColor2(new java.awt.Color(255, 255, 255));
         imageAvatar1.setImage(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
