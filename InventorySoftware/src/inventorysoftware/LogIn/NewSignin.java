@@ -22,7 +22,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Yaseen Ameer
+ * @author Tran Van Vu Chi Thanh
  */
 public class NewSignin extends javax.swing.JFrame {
 
