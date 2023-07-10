@@ -5,6 +5,7 @@
  */
 package test;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class Slide1 extends javax.swing.JPanel {
      */
     public Slide1() {
         initComponents();
+        pictureBox1.setImage(new ImageIcon(getClass().getResource("")));
     }
 
     /**
