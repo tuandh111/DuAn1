@@ -48,18 +48,17 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="combobox1" min="-2" pref="284" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textField6" alignment="0" min="-2" pref="282" max="-2" attributes="0"/>
-                                      <Component id="textField7" alignment="1" min="-2" pref="282" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textField10" min="-2" pref="282" max="-2" attributes="0"/>
-                                      <Component id="textField8" min="-2" pref="282" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                  <Component id="textField6" alignment="0" min="-2" pref="282" max="-2" attributes="0"/>
+                                  <Component id="textField7" alignment="1" min="-2" pref="282" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="combobox1" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="textField11" min="-2" pref="282" max="-2" attributes="0"/>
+                              <Component id="textField10" min="-2" pref="282" max="-2" attributes="0"/>
+                              <Component id="textField8" min="-2" pref="282" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       </Group>
@@ -81,7 +80,10 @@
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="textField5" min="-2" max="-2" attributes="0"/>
-                      <Component id="combobox1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="combobox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -192,6 +194,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="com.tuandhpc05076.Swing.TextField" name="textField11">
+          <Properties>
+            <Property name="labelText" type="java.lang.String" value="Ram"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField11ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
