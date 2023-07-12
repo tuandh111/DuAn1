@@ -23,6 +23,7 @@ public class DatHang extends javax.swing.JPanel {
 //panelShadow6.setVisible(false); ẩn jpanel
 //panelShadow6.setBackground(Color.pink);
         setOpaque(false);
+        txtSoLuong90.setVisible(true);
     }
 
     /**
@@ -44,6 +45,7 @@ public class DatHang extends javax.swing.JPanel {
         txtSoLuong = new javax.swing.JLabel();
         txtadd = new com.tuandhpc05076.swing0.button0();
         jLabel57 = new javax.swing.JLabel();
+        txtSoLuong90 = new javax.swing.JLabel();
         panelShadow25 = new swing.PanelShadow();
         imageAvatar20 = new swing.ImageAvatar();
         txtSoLuong1 = new javax.swing.JLabel();
@@ -401,6 +403,11 @@ public class DatHang extends javax.swing.JPanel {
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("Mr. Dara");
 
+        txtSoLuong90.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
+        txtSoLuong90.setForeground(new java.awt.Color(235, 235, 235));
+        txtSoLuong90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSoLuong90.setText("10");
+
         javax.swing.GroupLayout panelShadow18Layout = new javax.swing.GroupLayout(panelShadow18);
         panelShadow18.setLayout(panelShadow18Layout);
         panelShadow18Layout.setHorizontalGroup(
@@ -412,6 +419,10 @@ public class DatHang extends javax.swing.JPanel {
                     .addComponent(imageAvatar13, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                     .addComponent(txtadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
+            .addGroup(panelShadow18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtSoLuong90, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(panelShadow18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelShadow18Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
@@ -423,8 +434,10 @@ public class DatHang extends javax.swing.JPanel {
             .addGroup(panelShadow18Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(imageAvatar13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(34, 34, 34)
                 .addComponent(txtSoLuong)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSoLuong90)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3903,7 +3916,7 @@ public class DatHang extends javax.swing.JPanel {
 
         textField3.setLabelText("Đơn giá");
 
-        textField4.setLabelText("Tên sản phẩm");
+        textField4.setLabelText("");
 
         textField5.setLabelText("Số lượng");
 
@@ -4442,6 +4455,7 @@ public class DatHang extends javax.swing.JPanel {
     private javax.swing.JLabel txtSoLuong7;
     private javax.swing.JLabel txtSoLuong8;
     private javax.swing.JLabel txtSoLuong9;
+    private javax.swing.JLabel txtSoLuong90;
     private com.tuandhpc05076.swing0.button0 txtadd;
     private com.tuandhpc05076.swing0.button0 txtadd1;
     private com.tuandhpc05076.swing0.button0 txtadd10;
