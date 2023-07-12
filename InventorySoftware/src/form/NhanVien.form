@@ -30,23 +30,116 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="jScrollPane1" pref="1037" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" pref="101" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="imageAvatar1" min="-2" pref="151" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="txtNgaySinh" min="-2" pref="252" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh5" min="-2" pref="252" max="-2" attributes="0"/>
+                          <Component id="combobox2" min="-2" pref="252" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh2" alignment="1" min="-2" pref="252" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="txtNgaySinh7" min="-2" pref="252" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="62" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="switchButton1" min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtNgaySinh1" min="-2" pref="252" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="txtNgaySinh6" min="-2" pref="252" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtNgaySinh8" min="-2" pref="252" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="txtNgaySinh4" min="-2" pref="252" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="combobox1" min="-2" pref="259" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtNgaySinh3" min="-2" pref="252" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="txtNgaySinh" min="-2" pref="252" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-              <Component id="txtNgaySinh" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="145" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtNgaySinh1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtNgaySinh4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="combobox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNgaySinh3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combobox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="imageAvatar1" min="-2" pref="191" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNgaySinh2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNgaySinh7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="switchButton1" min="-2" pref="35" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="194" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -101,7 +194,118 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinhMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgaySinhActionPerformed"/>
       </Events>
     </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh1">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh1MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh2">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n "/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh2MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh3">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="Email"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh3MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh4">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh4MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh5">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="T&#xe0;i kho&#x1ea3;n"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh5MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.Combobox" name="combobox1">
+      <Properties>
+        <Property name="labeText" type="java.lang.String" value="Vai tr&#xf2;"/>
+      </Properties>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.Combobox" name="combobox2">
+      <Properties>
+        <Property name="labeText" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combobox2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh6">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="H&#x1ecd; t&#xea;n"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh6MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh7">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="M&#xf4; t&#x1ea3;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh7MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh8">
+      <Properties>
+        <Property name="labelText" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaySinh8MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tr&#x1ea1;ng th&#xe1;i:"/>
+      </Properties>
+    </Component>
+    <Container class="com.tuandhpc05076.swing0.SwitchButton" name="switchButton1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="cc" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x110;ang ho&#x1ea1;t &#x111;&#x1ed9;ng"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="T&#x1ea3;i h&#xec;nh &#x1ea3;nh"/>
+      </Properties>
+    </Component>
+    <Container class="com.tuandhpc05076.swing0.ImageAvatar" name="imageAvatar1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
   </SubComponents>
 </Form>
