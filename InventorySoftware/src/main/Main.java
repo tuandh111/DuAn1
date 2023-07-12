@@ -158,7 +158,7 @@ public class Main extends javax.swing.JFrame {
         panelShadow1Layout.setVerticalGroup(
             panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelShadow1Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
+                .addGap(127, 127, 127)
                 .addComponent(jLabel1)
                 .addGap(3, 3, 3)
                 .addComponent(jLabel2)
