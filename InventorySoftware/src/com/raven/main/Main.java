@@ -229,7 +229,7 @@ public class Main extends javax.swing.JFrame {
         txtThoiGian1.setBackground(new java.awt.Color(255, 0, 51));
         txtThoiGian1.setForeground(new java.awt.Color(0, 0, 0));
         txtThoiGian1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/edit.png"))); // NOI18N
-        txtThoiGian1.setText("Trợ giúp");
+        txtThoiGian1.setText("Giới thiệu");
 
         txtThoiGian2.setBackground(new java.awt.Color(255, 0, 51));
         txtThoiGian2.setForeground(new java.awt.Color(0, 0, 0));
@@ -245,11 +245,11 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(titleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85)
                 .addComponent(txtThoiGian)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 518, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
                 .addComponent(txtThoiGian2)
-                .addGap(87, 87, 87)
+                .addGap(126, 126, 126)
                 .addComponent(txtThoiGian1)
-                .addGap(173, 173, 173)
+                .addGap(262, 262, 262)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbUserName)
                     .addComponent(lbRole))
