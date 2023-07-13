@@ -127,7 +127,7 @@
         <Component class="com.raven.swing.noticeboard.NoticeBoard" name="noticeBoard">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="6" y="303" width="411" height="260"/>
+              <AbsoluteConstraints x="6" y="273" width="411" height="160"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -186,7 +186,7 @@
         <Component class="slideshow.Slideshow" name="slideshow1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="70" width="420" height="220"/>
+              <AbsoluteConstraints x="0" y="70" width="420" height="200"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -221,7 +221,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="523" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="397" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>

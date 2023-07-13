@@ -137,7 +137,7 @@ public class Form_Home extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(noticeBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 303, 411, 260));
+        jPanel1.add(noticeBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 273, 411, 160));
 
         jLabel2.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(76, 76, 76));
@@ -153,7 +153,7 @@ public class Form_Home extends javax.swing.JPanel {
 
         jLabel4.setOpaque(true);
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 70, 411, 1));
-        jPanel1.add(slideshow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 420, 220));
+        jPanel1.add(slideshow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 420, 200));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -202,7 +202,7 @@ public class Form_Home extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
