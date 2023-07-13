@@ -25,6 +25,7 @@ import form.GiamGia;
 import form.HoaDon;
 import form.KhachHang;
 import form.NhanVien;
+import form.VaiTro;
 import inventorysoftware.LogIn.NewSignin;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -89,6 +90,9 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 6) {
                     if (subMenuIndex == 0) {
                         main.showForm(new NhanVien());
+                    }
+                    if(subMenuIndex == 1){
+                        main.showForm(new VaiTro());
                     }
                 } else if (menuIndex == 7) {
                     if (subMenuIndex == 0) {
