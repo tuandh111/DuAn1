@@ -4,15 +4,22 @@
  */
 package form;
 
+import com.raven.swing.table.Table;
 import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 /**
  *
  * @author DELL E5470
  */
 public class DatHang extends javax.swing.JPanel {
+
+    private JScrollPane jScrollPane6;
+    private Table table2;
+    private JLabel jLabel150;
 
     /**
      * Creates new form SanPham1
