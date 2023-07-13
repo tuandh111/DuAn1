@@ -25,6 +25,7 @@ import form.GiamGia;
 import form.HoaDon;
 import form.KhachHang;
 import form.NhanVien;
+import form.ThongTinNhanVien;
 import form.VaiTro;
 import inventorysoftware.LogIn.NewSignin;
 import java.awt.Component;
@@ -45,7 +46,9 @@ public class Main extends javax.swing.JFrame {
 
     public Main() {
         initComponents();
-
+        Time time = new Time(txtThoiGian);
+        time.start();
+        titleBar1.initJFram(this);
         init();
     }
 
@@ -72,7 +75,7 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 2) {
                     if (subMenuIndex == 0) {
                         main.showForm(new SanPham());
-                    }else if(subMenuIndex==1){
+                    } else if (subMenuIndex == 1) {
                         main.showForm(new DongMay());
                     }
                 } else if (menuIndex == 3) {
@@ -91,7 +94,7 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new NhanVien());
                     }
-                    if(subMenuIndex == 1){
+                    if (subMenuIndex == 1) {
                         main.showForm(new VaiTro());
                     }
                 } else if (menuIndex == 7) {
@@ -126,7 +129,7 @@ public class Main extends javax.swing.JFrame {
         });
         menu.initMenuItem();
         bg.add(menu, "w 230!, spany 2");    // Span Y 2cell
-        bg.add(header, "h 50!, wrap");
+        bg.add(header, "h 40!, wrap");
         bg.add(main, "w 100%, h 100%");
         TimingTarget target = new TimingTargetAdapter() {
             @Override
@@ -175,6 +178,14 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JLayeredPane();
+        jPanel1 = new javax.swing.JPanel();
+        titleBar1 = new javaswingdev.swing.titlebar.TitleBar();
+        pic = new com.raven.swing.ImageAvatar();
+        lbRole = new javax.swing.JLabel();
+        lbUserName = new javax.swing.JLabel();
+        txtThoiGian = new javax.swing.JLabel();
+        txtThoiGian1 = new javax.swing.JLabel();
+        txtThoiGian2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -182,34 +193,107 @@ public class Main extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(245, 245, 245));
         bg.setOpaque(true);
         bg.setPreferredSize(new java.awt.Dimension(1100, 700));
+        bg.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(bg, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1353, Short.MAX_VALUE)
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1315, 46));
+
+        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/profile.jpg"))); // NOI18N
+        pic.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                picAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                picMouseClicked(evt);
+            }
+        });
+
+        lbRole.setForeground(new java.awt.Color(127, 127, 127));
+        lbRole.setText("Admin");
+
+        lbUserName.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lbUserName.setForeground(new java.awt.Color(127, 127, 127));
+        lbUserName.setText("User Name");
+
+        txtThoiGian.setBackground(new java.awt.Color(255, 0, 51));
+        txtThoiGian.setForeground(new java.awt.Color(0, 0, 0));
+        txtThoiGian.setText("jLabel1");
+
+        txtThoiGian1.setBackground(new java.awt.Color(255, 0, 51));
+        txtThoiGian1.setForeground(new java.awt.Color(0, 0, 0));
+        txtThoiGian1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/edit.png"))); // NOI18N
+        txtThoiGian1.setText("Trợ giúp");
+
+        txtThoiGian2.setBackground(new java.awt.Color(255, 0, 51));
+        txtThoiGian2.setForeground(new java.awt.Color(0, 0, 0));
+        txtThoiGian2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconGmail-removebg-preview (1).png"))); // NOI18N
+        txtThoiGian2.setText("Hướng dẫn sử dụng");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(titleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addComponent(txtThoiGian)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
+                .addComponent(txtThoiGian2)
+                .addGap(148, 148, 148)
+                .addComponent(txtThoiGian1)
+                .addGap(173, 173, 173)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbUserName)
+                    .addComponent(lbRole))
+                .addGap(18, 18, 18)
+                .addComponent(pic, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 712, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbUserName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbRole)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtThoiGian)
+                        .addComponent(txtThoiGian1)
+                        .addComponent(txtThoiGian2)))
+                .addGap(14, 14, 14))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void picAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_picAncestorAdded
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_picAncestorAdded
+
+    private void picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_picMouseClicked
+        ThongTinNhanVien tt = new ThongTinNhanVien( false);
+        tt.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_picMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -246,5 +330,13 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane bg;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbRole;
+    private javax.swing.JLabel lbUserName;
+    private com.raven.swing.ImageAvatar pic;
+    private javaswingdev.swing.titlebar.TitleBar titleBar1;
+    private javax.swing.JLabel txtThoiGian;
+    private javax.swing.JLabel txtThoiGian1;
+    private javax.swing.JLabel txtThoiGian2;
     // End of variables declaration//GEN-END:variables
 }

@@ -366,12 +366,10 @@ public class DatHang extends javax.swing.JPanel {
         button6 = new com.tuandhpc05076.swing0.button0();
         button8 = new com.tuandhpc05076.swing0.button0();
         button7 = new com.tuandhpc05076.swing0.button0();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        table2 = new com.raven.swing.table.Table();
-        jLabel150 = new javax.swing.JLabel();
         jLabel151 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1058, 1643));
+        setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1058, 1643));
@@ -3980,8 +3978,8 @@ public class DatHang extends javax.swing.JPanel {
                                 .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
                                 .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 24, Short.MAX_VALUE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addGap(0, 30, Short.MAX_VALUE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4007,7 +4005,7 @@ public class DatHang extends javax.swing.JPanel {
                     .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
 
         jLabel151.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
@@ -4041,22 +4039,7 @@ public class DatHang extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1609, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
+        add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddActionPerformed
@@ -4160,9 +4143,6 @@ public class DatHang extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.tuandhpc05076.swing0.button0 button01;
-    private com.tuandhpc05076.swing0.button0 button2;
-    private com.tuandhpc05076.swing0.button0 button3;
     private com.tuandhpc05076.swing0.button0 button5;
     private com.tuandhpc05076.swing0.button0 button6;
     private com.tuandhpc05076.swing0.button0 button7;
