@@ -16,6 +16,7 @@ import com.tuandhpc05076.BieuDo.FormHome;
 import com.tuandhpc05076.ThoiGian.Time;
 import form.BanHang;
 import form.BaoHanh;
+import form.DaXoa;
 import form.QuenMatKhau;
 import form.SanPham;
 import form.DatHang;
@@ -78,9 +79,14 @@ public class Main extends javax.swing.JFrame {
                     } else if (subMenuIndex == 1) {
                         main.showForm(new DongMay());
                     }
+                    else if(subMenuIndex ==2){
+                        main.showForm(new DaXoa());
+                    }
                 } else if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
                         main.showForm(new DatHang());
+                    }else if(subMenuIndex == 2){
+                        main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 4) {
                     if (subMenuIndex == 0) {
@@ -94,12 +100,17 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new NhanVien());
                     }
-                    if (subMenuIndex == 1) {
+                    else if (subMenuIndex == 1) {
                         main.showForm(new VaiTro());
+                    }
+                    else if(subMenuIndex ==2){
+                        main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 7) {
                     if (subMenuIndex == 0) {
                         main.showForm(new KhachHang());
+                    }else if(subMenuIndex==2){
+                        main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 8) {
                     if (subMenuIndex == 0) {
