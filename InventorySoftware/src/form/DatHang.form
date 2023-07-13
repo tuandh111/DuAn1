@@ -6805,7 +6805,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="textField1" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
-                                  <Component id="textField5" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                                  <Component id="txtSoLuong" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
                                   <Component id="textField6" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -6848,7 +6848,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="textField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSoLuong" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -6897,7 +6897,7 @@
                 <Property name="labelText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="com.tuandhpc05076.Swing.TextField" name="textField5">
+            <Component class="com.tuandhpc05076.Swing.TextField" name="txtSoLuong">
               <Properties>
                 <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
               </Properties>

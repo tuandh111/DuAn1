@@ -339,7 +339,7 @@ public class DatHang extends javax.swing.JPanel {
         textField2 = new com.tuandhpc05076.Swing.TextField();
         textField3 = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
-        textField5 = new com.tuandhpc05076.Swing.TextField();
+        txtSoLuong = new com.tuandhpc05076.Swing.TextField();
         textField6 = new com.tuandhpc05076.Swing.TextField();
         button5 = new com.tuandhpc05076.swing0.button0();
         button6 = new com.tuandhpc05076.swing0.button0();
@@ -4315,7 +4315,7 @@ public class DatHang extends javax.swing.JPanel {
 
         textField4.setLabelText("");
 
-        textField5.setLabelText("Số lượng");
+        txtSoLuong.setLabelText("Số lượng");
 
         textField6.setLabelText("Thuế");
 
@@ -4362,7 +4362,7 @@ public class DatHang extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSoLuong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4394,7 +4394,7 @@ public class DatHang extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4785,7 +4785,6 @@ public class DatHang extends javax.swing.JPanel {
     private swing.ImageAvatar imageAvatar40;
     private swing.ImageAvatar imageAvatar41;
     private swing.ImageAvatar imageAvatar42;
-    private swing.ImageAvatar imageAvatar43;
     private swing.ImageAvatar imageAvatar44;
     private swing.ImageAvatar imageAvatar45;
     private swing.ImageAvatar imageAvatar46;
@@ -4888,7 +4887,6 @@ public class DatHang extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
@@ -4929,7 +4927,6 @@ public class DatHang extends javax.swing.JPanel {
     private swing.PanelShadow panelShadow46;
     private swing.PanelShadow panelShadow47;
     private swing.PanelShadow panelShadow48;
-    private swing.PanelShadow panelShadow49;
     private swing.PanelShadow panelShadow50;
     private swing.PanelShadow panelShadow51;
     private swing.PanelShadow panelShadow52;
@@ -4968,8 +4965,8 @@ public class DatHang extends javax.swing.JPanel {
     private com.tuandhpc05076.Swing.TextField textField2;
     private com.tuandhpc05076.Swing.TextField textField3;
     private com.tuandhpc05076.Swing.TextField textField4;
-    private com.tuandhpc05076.Swing.TextField textField5;
     private com.tuandhpc05076.Swing.TextField textField6;
+    private com.tuandhpc05076.Swing.TextField txtSoLuong;
     private javax.swing.JLabel txtSoLuong1;
     private javax.swing.JLabel txtSoLuong10;
     private javax.swing.JLabel txtSoLuong100;
@@ -5023,7 +5020,6 @@ public class DatHang extends javax.swing.JPanel {
     private javax.swing.JLabel txtSoLuong95;
     private javax.swing.JLabel txtSoLuong96;
     private javax.swing.JLabel txtSoLuong97;
-    private javax.swing.JLabel txtSoLuong98;
     private javax.swing.JLabel txtSoLuong99;
     private com.tuandhpc05076.swing0.button0 txtadd;
     private com.tuandhpc05076.swing0.button0 txtadd1;
@@ -5043,7 +5039,6 @@ public class DatHang extends javax.swing.JPanel {
     private com.tuandhpc05076.swing0.button0 txtadd22;
     private com.tuandhpc05076.swing0.button0 txtadd23;
     private com.tuandhpc05076.swing0.button0 txtadd24;
-    private com.tuandhpc05076.swing0.button0 txtadd25;
     private com.tuandhpc05076.swing0.button0 txtadd26;
     private com.tuandhpc05076.swing0.button0 txtadd27;
     private com.tuandhpc05076.swing0.button0 txtadd28;
