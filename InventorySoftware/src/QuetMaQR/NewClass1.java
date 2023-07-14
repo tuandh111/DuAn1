@@ -34,7 +34,7 @@ public class NewClass1 extends JDialog {
     private WebcamPanel panel; // the panel to display the webcam image
     private JLabel label; // the label to display the QR code text
     private static final String QR_CODE_PREFIX = "https://www.google.com/products/";
-    public static String tenSP = "ten";
+    public static String tenSP = "";
     public static int i = 0;
 
     public NewClass1() {

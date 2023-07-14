@@ -5,12 +5,25 @@
 package form;
 
 import QuetMaQR.NewClass1;
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.github.sarxos.webcam.WebcamResolution;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.LuminanceSource;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.NotFoundException;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
 import com.tuandhpc05076.Form.ChuyenDe;
 import com.tuandhpc05076.helper.ShareHelper;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -18,6 +31,8 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -28,7 +43,8 @@ import javax.swing.table.DefaultTableModel;
 public class SanPham extends javax.swing.JPanel {
 
     DefaultTableModel tblModel;
-
+     public static Webcam webcam; // the webcam object
+    private WebcamPanel panel; 
     public SanPham() {
         initComponents();
         dateChooser.addEventDateChooser(new EventDateChooser() {
@@ -41,7 +57,10 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
         TieuDe();
+               setLayout(new FlowLayout()); // set the layout of the frame
+        // set the default close operation of the frame
 
+    
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
     }
 
@@ -67,7 +86,7 @@ public class SanPham extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUser = new com.raven.swing.table.Table();
         txtNgayNhap = new com.tuandhpc05076.Swing.TextField();
-        textField4 = new com.tuandhpc05076.Swing.TextField();
+        txtTenSP = new com.tuandhpc05076.Swing.TextField();
         textField5 = new com.tuandhpc05076.Swing.TextField();
         textField6 = new com.tuandhpc05076.Swing.TextField();
         textField7 = new com.tuandhpc05076.Swing.TextField();
@@ -110,7 +129,14 @@ public class SanPham extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1058, 741));
         setPreferredSize(new java.awt.Dimension(1058, 741));
-        setLayout(null);
+        addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                formCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
+        setLayout(new java.awt.CardLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -139,10 +165,10 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
 
-        textField4.setLabelText("Tên ");
-        textField4.addActionListener(new java.awt.event.ActionListener() {
+        txtTenSP.setLabelText("Tên ");
+        txtTenSP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField4ActionPerformed(evt);
+                txtTenSPActionPerformed(evt);
             }
         });
 
@@ -378,13 +404,14 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
 
+        switchButton1.setSelectedAnimate(false);
         switchButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 switchButton1MouseClicked(evt);
             }
         });
 
-        jLabel3.setText("Quét mã");
+        jLabel3.setText("Quét bằng mã");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -403,16 +430,17 @@ public class SanPham extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(combobox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(switchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTenSP, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNgayNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNgayNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(224, 224, 224)
+                                .addComponent(jLabel3)
+                                .addGap(53, 53, 53)
+                                .addComponent(switchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(412, 412, 412))))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -432,16 +460,14 @@ public class SanPham extends javax.swing.JPanel {
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(cpoLoaiSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(textField7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(2, 2, 2)
+                            .addGap(26, 26, 26)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(28, 28, 28)
-                                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
+                                    .addGap(11, 11, 11)
+                                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(36, 36, 36)
                                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(24, 24, 24)
-                                    .addComponent(LoaiSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(LoaiSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
@@ -469,7 +495,7 @@ public class SanPham extends javax.swing.JPanel {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTenSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -521,8 +547,7 @@ public class SanPham extends javax.swing.JPanel {
                     .addGap(170, 170, 170)))
         );
 
-        add(jPanel3);
-        jPanel3.setBounds(0, 0, 1058, 741);
+        add(jPanel3, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNgayNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayNhapActionPerformed
@@ -586,19 +611,29 @@ public class SanPham extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField3ActionPerformed
 
+    private void txtTenSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenSPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTenSPActionPerformed
+
+    private void formCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_formCaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formCaretPositionChanged
+
     private void switchButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchButton1MouseClicked
-        if(switchButton1.isSelected()==true){
+ 
+    if(switchButton1.isSelected()){
             new NewClass1();
+
         }
         if (NewClass1.i == 1) {
             NewClass1.webcam.close();
         }
-// TODO add your handling code here:
-    }//GEN-LAST:event_switchButton1MouseClicked
+        NewClass1 q= new NewClass1();
+        if(!q.isVisible()){
 
-    private void textField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField4ActionPerformed
+        }
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField4ActionPerformed
+    }//GEN-LAST:event_switchButton1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -638,12 +673,12 @@ public class SanPham extends javax.swing.JPanel {
     private com.raven.swing.table.Table tblUser;
     private com.tuandhpc05076.Swing.TextField1 textField11;
     private com.tuandhpc05076.Swing.TextField textField3;
-    private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;
     private com.tuandhpc05076.Swing.TextField textField6;
     private com.tuandhpc05076.Swing.TextField textField7;
     private swing.PanelShadow txtHinh;
     private javax.swing.JLabel txtHinhAnh;
     private com.tuandhpc05076.Swing.TextField txtNgayNhap;
+    private com.tuandhpc05076.Swing.TextField txtTenSP;
     // End of variables declaration//GEN-END:variables
 }

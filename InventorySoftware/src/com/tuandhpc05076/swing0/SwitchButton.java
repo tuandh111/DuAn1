@@ -47,6 +47,7 @@ public class SwitchButton extends JComponent {
             startAnimation();
         }
     }
+    
 
     private Animator animator;
     private float location;
