@@ -16,6 +16,7 @@ import com.tuandhpc05076.BieuDo.FormHome;
 import com.tuandhpc05076.ThoiGian.Time;
 import form.BanHang;
 import form.BaoHanh;
+import form.BaoHanh1;
 import form.DaXoa;
 import form.QuenMatKhau;
 import form.SanPham;
@@ -24,6 +25,7 @@ import form.DongMay;
 import form.ThanhToanLuong;
 import form.GiamGia;
 import form.HoaDon;
+import form.HoaDon1;
 import form.KhachHang;
 import form.NhanVien;
 import form.ThongTinNhanVien;
@@ -90,9 +92,9 @@ public class Main extends javax.swing.JFrame {
                     }
                 } else if (menuIndex == 4) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new HoaDon());
+                        main.showForm(new HoaDon1());
                     } else if (subMenuIndex == 1) {
-                        main.showForm(new BaoHanh());
+                        main.showForm(new BaoHanh1());
                     }
                 } else if (menuIndex == 5) {
                     main.showForm(new GiamGia());
@@ -252,9 +254,9 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addComponent(titleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addGap(93, 93, 93)
                 .addComponent(txtThoiGian)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
                 .addComponent(txtThoiGian2)
