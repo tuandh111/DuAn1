@@ -3963,14 +3963,14 @@ public class HoaDon extends javax.swing.JPanel {
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(79, 79, 79)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                                .addGap(78, 78, 78)
                                 .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(73, 73, 73)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3981,11 +3981,11 @@ public class HoaDon extends javax.swing.JPanel {
                         .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 846, Short.MAX_VALUE))
         );
 
@@ -4023,83 +4023,83 @@ public class HoaDon extends javax.swing.JPanel {
 dateChooser.showPopup();        // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayXuatMouseClicked
 
-    private void txtaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddActionPerformed
+    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
         // TODO add your handling code here:
-        SoLuong sl = new SoLuong(true);
-        sl.setVisible(true);
-    }//GEN-LAST:event_txtaddActionPerformed
-
-    private void txtadd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd3ActionPerformed
-
-    private void txtadd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd4ActionPerformed
-
-    private void txtadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd1ActionPerformed
-
-    private void txtadd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd2ActionPerformed
-
-    private void txtadd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd5ActionPerformed
-
-    private void txtadd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd6ActionPerformed
-
-    private void txtadd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd7ActionPerformed
-
-    private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd8ActionPerformed
-
-    private void txtadd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd9ActionPerformed
-
-    private void txtadd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd10ActionPerformed
-
-    private void txtadd11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd11ActionPerformed
-
-    private void txtadd12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd12ActionPerformed
-
-    private void txtadd13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd13ActionPerformed
-
-    private void txtadd14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd14ActionPerformed
-
-    private void txtadd15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd15ActionPerformed
-
-    private void txtadd16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd16ActionPerformed
+    }//GEN-LAST:event_button8ActionPerformed
 
     private void txtadd17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtadd17ActionPerformed
 
-    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
+    private void txtadd16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd16ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_button8ActionPerformed
+    }//GEN-LAST:event_txtadd16ActionPerformed
+
+    private void txtadd15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd15ActionPerformed
+
+    private void txtadd14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd14ActionPerformed
+
+    private void txtadd13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd13ActionPerformed
+
+    private void txtadd12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd12ActionPerformed
+
+    private void txtadd11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd11ActionPerformed
+
+    private void txtadd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd10ActionPerformed
+
+    private void txtadd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd9ActionPerformed
+
+    private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd8ActionPerformed
+
+    private void txtadd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd7ActionPerformed
+
+    private void txtadd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd6ActionPerformed
+
+    private void txtadd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd5ActionPerformed
+
+    private void txtadd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd2ActionPerformed
+
+    private void txtadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd1ActionPerformed
+
+    private void txtadd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd4ActionPerformed
+
+    private void txtadd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd3ActionPerformed
+
+    private void txtaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(true);
+        sl.setVisible(true);
+    }//GEN-LAST:event_txtaddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

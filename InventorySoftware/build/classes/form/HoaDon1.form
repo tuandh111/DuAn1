@@ -62,9 +62,9 @@
                               <Component id="jLabel151" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="button9" min="-2" pref="108" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                   <Component id="button10" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                                   <Component id="button11" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -85,21 +85,16 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel151" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="materialTabbed1" min="-2" pref="305" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane4" min="-2" pref="228" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="materialTabbed1" min="-2" pref="305" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" min="-2" pref="228" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="button9" min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="button11" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="555" max="-2" attributes="0"/>
-                          <Component id="button10" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="button11" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="button9" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="button10" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -143,25 +138,25 @@
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="panelSony1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow42" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="panelSony2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow44" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="panelSony3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow43" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="panelSony4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow45" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="panelSony5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow46" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Component id="panelSony6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow48" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="panelSony7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow47" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="panelSony8" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow50" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Component id="panelSony9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="panelShadow51" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -173,21 +168,21 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelSony1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelSony2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelSony3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow42" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow43" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelSony4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelSony5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelSony6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow45" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow46" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow48" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelSony7" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelSony8" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelSony9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow47" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow50" min="-2" max="-2" attributes="0"/>
+                                  <Component id="panelShadow51" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="1030" max="-2" attributes="0"/>
                           </Group>
@@ -195,7 +190,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="swing.PanelShadow" name="panelSony1">
+                    <Container class="swing.PanelShadow" name="panelShadow42">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -340,7 +335,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony3">
+                    <Container class="swing.PanelShadow" name="panelShadow43">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -482,7 +477,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony2">
+                    <Container class="swing.PanelShadow" name="panelShadow44">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -624,7 +619,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony4">
+                    <Container class="swing.PanelShadow" name="panelShadow45">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -766,7 +761,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony5">
+                    <Container class="swing.PanelShadow" name="panelShadow46">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -908,7 +903,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony7">
+                    <Container class="swing.PanelShadow" name="panelShadow47">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1050,7 +1045,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony6">
+                    <Container class="swing.PanelShadow" name="panelShadow48">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1192,7 +1187,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony8">
+                    <Container class="swing.PanelShadow" name="panelShadow50">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1334,7 +1329,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelSony9">
+                    <Container class="swing.PanelShadow" name="panelShadow51">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1516,28 +1511,23 @@
                                       <Component id="panelShadow89" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                       <Component id="panelShadow103" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="342" pref="703" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="panelShadow62" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Component id="panelShadow66" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="panelShadow61" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="panelShadow67" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="panelShadow68" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="panelShadow87" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="panelShadow62" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <Component id="panelShadow66" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="panelShadow61" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="panelShadow67" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="panelShadow68" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="panelShadow87" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -4228,39 +4218,44 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="textField4" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
-                                  <Component id="textField2" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
-                                  <Component id="textField3" min="-2" pref="197" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textField1" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
-                                  <Component id="txtSoLuong" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
-                                  <Component id="textField6" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="button8" min="-2" pref="187" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="buttonBadges1" min="-2" pref="38" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                              <Component id="button7" min="-2" pref="108" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="button5" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="button6" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="button7" min="-2" pref="108" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                      <Component id="button5" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                      <Component id="button6" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="textField4" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                          <Component id="textField2" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                          <Component id="textField3" min="-2" pref="197" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="textField1" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                                          <Component id="txtSoLuong" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                                          <Component id="textField6" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -4270,8 +4265,11 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonBadges1" min="-2" pref="41" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="textField1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4306,7 +4304,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Chi ti&#x1ebf;t &#x111;&#x1a1;n h&#xe0;ng"/>
+                <Property name="text" type="java.lang.String" value="H&#xf3;a &#x111;&#x1a1;n"/>
               </Properties>
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="textField1">
@@ -4366,7 +4364,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch &#x111;&#x1a1;n &#x111;&#x1eb7;t h&#xe0;ng"/>
+                <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch h&#xf3;a &#x111;&#x1a1;n"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button8ActionPerformed"/>
@@ -4381,6 +4379,20 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button7ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="com.raven.swing.ButtonBadges" name="buttonBadges1">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="31" green="31" red="fa" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/raven/icon/notification.png"/>
+                </Property>
+                <Property name="badges" type="int" value="10"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBadges1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
