@@ -36,6 +36,8 @@ public class GiamGia extends javax.swing.JPanel {
         textField2 = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
         textField5 = new com.tuandhpc05076.Swing.TextField();
+        combobox3 = new com.tuandhpc05076.Swing.Combobox();
+        textField11 = new com.tuandhpc05076.Swing.TextField1();
 
         setMinimumSize(new java.awt.Dimension(1058, 741));
         setPreferredSize(new java.awt.Dimension(1058, 741));
@@ -74,6 +76,15 @@ public class GiamGia extends javax.swing.JPanel {
 
         textField5.setLabelText("Phần trăm giảm giá");
 
+        combobox3.setLabeText("Lọc ");
+        combobox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combobox3ActionPerformed(evt);
+            }
+        });
+
+        textField11.setHint("Tìm kiếm");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,7 +104,14 @@ public class GiamGia extends javax.swing.JPanel {
                         .addGap(0, 231, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(combobox3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(380, 380, 380)
@@ -121,6 +139,10 @@ public class GiamGia extends javax.swing.JPanel {
                     .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combobox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(118, 118, 118))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,15 +164,21 @@ public class GiamGia extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void combobox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combobox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combobox3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.tuandhpc05076.Swing.Combobox combobox1;
     private com.tuandhpc05076.Swing.Combobox combobox2;
+    private com.tuandhpc05076.Swing.Combobox combobox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.raven.swing.table.Table table1;
     private com.tuandhpc05076.Swing.TextField textField1;
+    private com.tuandhpc05076.Swing.TextField1 textField11;
     private com.tuandhpc05076.Swing.TextField textField2;
     private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;

@@ -70,6 +70,12 @@ public class SanPham extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         combobox10 = new com.tuandhpc05076.Swing.Combobox();
         spinner1 = new com.tuandhpc05076.Swing.Spinner();
+        jPanel1 = new javax.swing.JPanel();
+        button4 = new com.tuandhpc05076.Swing.Button();
+        button5 = new com.tuandhpc05076.Swing.Button();
+        button6 = new com.tuandhpc05076.Swing.Button();
+        button7 = new com.tuandhpc05076.Swing.Button();
+        textField11 = new com.tuandhpc05076.Swing.TextField1();
 
         dateChooser.setTextRefernce(txtNgayNhap);
 
@@ -93,7 +99,6 @@ public class SanPham extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 1060, 198));
 
-        textField2.setBackground(new java.awt.Color(255, 255, 255));
         textField2.setLabelText("Mã sản phẩm");
         textField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +107,6 @@ public class SanPham extends javax.swing.JPanel {
         });
         add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, 283, -1));
 
-        txtNgayNhap.setBackground(new java.awt.Color(255, 255, 255));
         txtNgayNhap.setLabelText("Ngày nhập");
         txtNgayNhap.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,19 +120,15 @@ public class SanPham extends javax.swing.JPanel {
         });
         add(txtNgayNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, -1));
 
-        textField4.setBackground(new java.awt.Color(255, 255, 255));
         textField4.setLabelText("Tên ");
         add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 283, -1));
 
-        textField5.setBackground(new java.awt.Color(255, 255, 255));
         textField5.setLabelText("Giá");
         add(textField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 283, -1));
 
-        textField6.setBackground(new java.awt.Color(255, 255, 255));
         textField6.setLabelText("Nơi nhập");
         add(textField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 283, -1));
 
-        textField7.setBackground(new java.awt.Color(255, 255, 255));
         textField7.setLabelText("Mô tả");
         add(textField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 283, -1));
 
@@ -173,9 +173,42 @@ public class SanPham extends javax.swing.JPanel {
         combobox10.setLabeText("Loại dòng máy");
         add(combobox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 283, -1));
 
-        spinner1.setBackground(new java.awt.Color(255, 255, 255));
         spinner1.setLabelText("Số lượng");
         add(spinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 290, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        button4.setBackground(new java.awt.Color(153, 153, 255));
+        button4.setText("Mới");
+        jPanel1.add(button4);
+
+        button5.setBackground(new java.awt.Color(153, 153, 255));
+        button5.setText("Thêm");
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(button5);
+
+        button6.setBackground(new java.awt.Color(153, 153, 255));
+        button6.setText("Sửa");
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(button6);
+
+        button7.setBackground(new java.awt.Color(255, 51, 51));
+        button7.setText("Xóa");
+        jPanel1.add(button7);
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 280, 210, 50));
+
+        textField11.setHint("Tìm kiếm");
+        add(textField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 250, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
@@ -191,8 +224,20 @@ public class SanPham extends javax.swing.JPanel {
         dateChooser.showPopup();        // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayNhapMouseClicked
 
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button5ActionPerformed
+
+    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.tuandhpc05076.Swing.Button button4;
+    private com.tuandhpc05076.Swing.Button button5;
+    private com.tuandhpc05076.Swing.Button button6;
+    private com.tuandhpc05076.Swing.Button button7;
     private com.tuandhpc05076.Swing.Combobox combobox1;
     private com.tuandhpc05076.Swing.Combobox combobox10;
     private com.tuandhpc05076.Swing.Combobox combobox3;
@@ -206,10 +251,12 @@ public class SanPham extends javax.swing.JPanel {
     private swing.ImageAvatar imageAvatar9;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.tuandhpc05076.Swing.Spinner spinner1;
     private com.tuandhpc05076.swing0.SwitchButton switchButton1;
     private com.raven.swing.table.Table tblUser;
+    private com.tuandhpc05076.Swing.TextField1 textField11;
     private com.tuandhpc05076.Swing.TextField textField2;
     private com.tuandhpc05076.Swing.TextField textField4;
     private com.tuandhpc05076.Swing.TextField textField5;
