@@ -41,8 +41,8 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
         TieuDe();
-        
-        LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm") );
+
+        LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
     }
 
     public void TieuDe() {
@@ -544,8 +544,8 @@ public class SanPham extends javax.swing.JPanel {
 
     private void cpoLoaiSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpoLoaiSanPhamActionPerformed
         // TODO add your handling code here:
-        String name=(String) cpoLoaiSanPham.getSelectedItem();
-       LoaiSanPham.setBorder(new TitledBorder(name));
+        String name = (String) cpoLoaiSanPham.getSelectedItem();
+        LoaiSanPham.setBorder(new TitledBorder(name));
     }//GEN-LAST:event_cpoLoaiSanPhamActionPerformed
 
     private void cpoLoaiSanPham1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpoLoaiSanPham1ActionPerformed
@@ -559,9 +559,9 @@ public class SanPham extends javax.swing.JPanel {
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button9ActionPerformed
-    String strHinh =null;
+    String strHinh = null;
     private void txtHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhMouseClicked
- if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser1.getSelectedFile();
             if (ShareHelper.saveLogo(file)) {
                 // Hiển thị hình lên form
@@ -587,7 +587,13 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_textField3ActionPerformed
 
     private void switchButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchButton1MouseClicked
-new NewClass1();        // TODO add your handling code here:
+        if(switchButton1.isSelected()==true){
+            new NewClass1();
+        }
+        if (NewClass1.i == 1) {
+            NewClass1.webcam.close();
+        }
+// TODO add your handling code here:
     }//GEN-LAST:event_switchButton1MouseClicked
 
     private void textField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField4ActionPerformed

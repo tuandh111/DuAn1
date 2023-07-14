@@ -30,7 +30,7 @@ import javax.swing.JOptionPane;
 
 public class NewClass1 extends JDialog {
 
-    private Webcam webcam; // the webcam object
+    public static Webcam webcam; // the webcam object
     private WebcamPanel panel; // the panel to display the webcam image
     private JLabel label; // the label to display the QR code text
     private static final String QR_CODE_PREFIX = "https://www.google.com/products/";
@@ -79,14 +79,17 @@ public class NewClass1 extends JDialog {
                         if (i == 0) {
                             setVisible(false);
                             webcam.close();
+                            i=1;
                         }
                     } catch (NotFoundException e) {
                         label.setText("No QR code found");
 // set the text of the label to indicate no QR code was found
-                    }
+                    } 
                 }
+              
             }
         }).start(); // start the thread
+         
     }
 
     public static void main(String[] args) {
