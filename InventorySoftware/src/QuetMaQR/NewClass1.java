@@ -75,12 +75,13 @@ public class NewClass1 extends JDialog {
 //                        System.out.println(sub);
                         tenSP = qrText;
                         System.out.println(tenSP);
-                        int i = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-                        if (i == 0) {
+                        int j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+                        if (j == 0) {
                             setVisible(false);
                             webcam.close();
-                            i=1;
+                            
                         }
+                       i=1;
                     } catch (NotFoundException e) {
                         label.setText("No QR code found");
 // set the text of the label to indicate no QR code was found
@@ -89,10 +90,6 @@ public class NewClass1 extends JDialog {
               
             }
         }).start(); // start the thread
-         
     }
 
-    public static void main(String[] args) {
-        new NewClass1(); // create a new instance of QRCodeScanner
-    }
 }

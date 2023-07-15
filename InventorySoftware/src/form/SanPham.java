@@ -43,8 +43,9 @@ import javax.swing.table.DefaultTableModel;
 public class SanPham extends javax.swing.JPanel {
 
     DefaultTableModel tblModel;
-     public static Webcam webcam; // the webcam object
-    private WebcamPanel panel; 
+    // the webcam object
+    private WebcamPanel panel;
+
     public SanPham() {
         initComponents();
         dateChooser.addEventDateChooser(new EventDateChooser() {
@@ -57,10 +58,9 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
         TieuDe();
-               setLayout(new FlowLayout()); // set the layout of the frame
+        setLayout(new FlowLayout()); // set the layout of the frame
         // set the default close operation of the frame
 
-    
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
     }
 
@@ -200,6 +200,11 @@ public class SanPham extends javax.swing.JPanel {
 
         button4.setBackground(new java.awt.Color(153, 153, 255));
         button4.setText("Mới");
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
 
         button6.setBackground(new java.awt.Color(153, 153, 255));
         button6.setText("Sửa");
@@ -463,9 +468,9 @@ public class SanPham extends javax.swing.JPanel {
                             .addGap(26, 26, 26)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(11, 11, 11)
-                                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(36, 36, 36)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(28, 28, 28)
                                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(LoaiSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -620,20 +625,30 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_formCaretPositionChanged
 
     private void switchButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchButton1MouseClicked
- 
-    if(switchButton1.isSelected()){
-            new NewClass1();
+        NewClass1 n = null;
+        if (switchButton1.isSelected()) {
+            // close the webcam if it is not null
+            if (NewClass1.webcam != null) {
+                NewClass1.webcam.close();
+            }
+            // close the form if it is not null
+            if (n != null) {
+                n.dispose();
+                n.setVisible(false);
+            }
+        } else {
+            // create and display a new form
+            n = new NewClass1();
 
         }
-        if (NewClass1.i == 1) {
-            NewClass1.webcam.close();
-        }
-        NewClass1 q= new NewClass1();
-        if(!q.isVisible()){
-
-        }
+        txtTenSP.setText(NewClass1.tenSP);
         // TODO add your handling code here:
     }//GEN-LAST:event_switchButton1MouseClicked
+
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_button4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
