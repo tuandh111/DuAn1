@@ -23,10 +23,14 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
+import form.SanPham;
+import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class NewClass1 extends JDialog {
 
@@ -36,8 +40,10 @@ public class NewClass1 extends JDialog {
     private static final String QR_CODE_PREFIX = "https://www.google.com/products/";
     public static String tenSP = "";
     public static int i = 0;
+    
 
-    public NewClass1() {
+public NewClass1() {
+    super();
         // set the title of the frame
         setLayout(new FlowLayout()); // set the layout of the frame
         // set the default close operation of the frame
@@ -91,5 +97,7 @@ public class NewClass1 extends JDialog {
             }
         }).start(); // start the thread
     }
-
+   public static String getData() {
+        return tenSP; // return the text from the text field
+    }
 }

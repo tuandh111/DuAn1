@@ -1,4 +1,4 @@
-package com.raven.main;
+
 
 import com.raven.component.Header;
 import com.raven.component.Menu;
@@ -27,6 +27,7 @@ import form.GiamGia;
 import form.HoaDon;
 import form.HoaDon1;
 import form.KhachHang;
+import form.LichSu;
 import form.NhanVien;
 import form.ThongTinNhanVien;
 import form.VaiTro;
@@ -74,6 +75,8 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new MainAn.MainAn1());
                     } else if (subMenuIndex == 2) {
                         main.showForm(new MainAn.MainAn2());
+                    } else if(subMenuIndex ==3){
+                        main.showForm(new LichSu());
                     }
                 } else if (menuIndex == 2) {
                     if (subMenuIndex == 0) {
@@ -108,6 +111,7 @@ public class Main extends javax.swing.JFrame {
                     else if(subMenuIndex ==2){
                         main.showForm(new DaXoa());
                     }
+                    
                 } else if (menuIndex == 7) {
                     if (subMenuIndex == 0) {
                         main.showForm(new KhachHang());

@@ -60,7 +60,7 @@ public class SanPham extends javax.swing.JPanel {
         TieuDe();
         setLayout(new FlowLayout()); // set the layout of the frame
         // set the default close operation of the frame
-
+        
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
     }
 
@@ -638,10 +638,15 @@ public class SanPham extends javax.swing.JPanel {
             }
         } else {
             // create and display a new form
-            n = new NewClass1();
-
+         
+              NewClass1 n1 = new NewClass1();
+        n1.setVisible(true);
+        String data = n1.getData();
+        txtTenSP.setText(data);
         }
-        txtTenSP.setText(NewClass1.tenSP);
+     
+                txtTenSP.setText(NewClass1.tenSP);
+     
         // TODO add your handling code here:
     }//GEN-LAST:event_switchButton1MouseClicked
 

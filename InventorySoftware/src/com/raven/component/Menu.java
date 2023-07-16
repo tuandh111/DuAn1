@@ -55,7 +55,7 @@ public class Menu extends javax.swing.JPanel {
 
     public void initMenuItem() {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Trang chủ"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Thống kê", "Morris", "Flot", "Line"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Thống kê", "Morris", "Flot", "Line","Xem lịch sử"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Sản phẩm", "Sản phẩm", "Dòng máy", "Đã xóa"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Đặt hàng", "Đặt hàng", "User", "Đã xóa"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Hóa đơn", "Hóa đơn", "Bảo hành sản phẩm"));
