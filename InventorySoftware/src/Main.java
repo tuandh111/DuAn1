@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
                     }
                 } else if (menuIndex == 4) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new HoaDon1());
+                        main.showForm(new HoaDon());
                     } else if (subMenuIndex == 1) {
                         main.showForm(new BaoHanh1());
                     }
