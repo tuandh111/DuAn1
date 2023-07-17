@@ -1,7 +1,8 @@
 package com.raven.form;
 
-import com.raven.dialog.Message;
 import com.raven.main.Main;
+import com.raven.dialog.Message;
+
 import com.raven.model.ModelCard;
 import com.raven.model.ModelStudent;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;

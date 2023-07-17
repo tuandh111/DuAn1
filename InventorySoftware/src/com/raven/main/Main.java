@@ -1,3 +1,5 @@
+package com.raven.main;
+
 
 
 import com.raven.component.Header;
@@ -46,8 +48,9 @@ public class Main extends javax.swing.JFrame {
     private Menu menu;
     private Header header;
     private MainForm main;
+ 
     private Animator animator;
-
+      private static Main main1;
     public Main() {
         initComponents();
         Time time = new Time(txtThoiGian);
@@ -189,6 +192,9 @@ public class Main extends javax.swing.JFrame {
         //  Start with this form
         main.showForm(new Form_Home());
     }
+        public static Main getMain() {
+        return main1;
+    } 
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

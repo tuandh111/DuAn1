@@ -11,14 +11,20 @@ import sun.security.jgss.spnego.SpNegoContext;
  * @author DELL E5470
  */
 public class SoLuong extends javax.swing.JDialog {
-public static int soLuong=-1;
+public static int soLuong=0;
+
+    public static int getSoLuong() {
+        return soLuong;
+    }
+
+    public static void setSoLuong(int soLuong) {
+        SoLuong.soLuong = soLuong;
+    }
 
 
-    /**
-     * Creates new form SoLuong
-     */
-    public SoLuong( boolean modal) {
   
+    public SoLuong(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
      
@@ -99,8 +105,10 @@ public static int soLuong=-1;
 
     private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
         // TODO add your handling code here:
-           soLuong=(int) SpnSoLuong.getValue();
+        SoLuong.setSoLuong((int) SpnSoLuong.getValue());
+        
            dispose();
+          
     }//GEN-LAST:event_button01ActionPerformed
 
     /**
@@ -133,7 +141,7 @@ public static int soLuong=-1;
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                SoLuong dialog = new SoLuong( true);
+                SoLuong dialog = new SoLuong(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -24,6 +24,7 @@ import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import form.SanPham;
+import form.SoLuong;
 import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -41,9 +42,17 @@ public class NewClass1 extends JDialog {
     public static String tenSP = "";
     public static int i = 0;
     
+public static String Ten="";
 
-public NewClass1() {
-    super();
+    public static String getSoLuong() {
+        return Ten;
+    }
+
+    public static void setSoLuong(String soLuong) {
+        NewClass1.Ten = soLuong;
+    }
+public NewClass1(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         // set the title of the frame
         setLayout(new FlowLayout()); // set the layout of the frame
         // set the default close operation of the frame
@@ -80,6 +89,7 @@ public NewClass1() {
 //                        String sub = parts[3]; // lấy phần tử thứ 4 của mảng parts
 //                        System.out.println(sub);
                         tenSP = qrText;
+                        NewClass1.setSoLuong(qrText);
                         System.out.println(tenSP);
                         int j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
                         if (j == 0) {
