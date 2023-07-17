@@ -7,6 +7,7 @@ package form;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
+import com.sun.jna.platform.win32.Winspool;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -17,6 +18,7 @@ import java.util.logging.Logger;
 import javaswingdev.main.Main;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,25 +66,25 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel102 = new javax.swing.JLabel();
         panelShadow39 = new swing.PanelShadow();
         imageAvatar33 = new swing.ImageAvatar();
-        txtadd = new com.tuandhpc05076.swing0.button0();
+        btnAdd1 = new com.tuandhpc05076.swing0.button0();
         jLabel81 = new javax.swing.JLabel();
         txtSoLuongCon1 = new javax.swing.JLabel();
         txtSoLuong146 = new javax.swing.JLabel();
-        txtSoLuongBan = new javax.swing.JLabel();
+        txtSoLuongBan1 = new javax.swing.JLabel();
         panelShadow40 = new swing.PanelShadow();
         imageAvatar34 = new swing.ImageAvatar();
         txtadd3 = new com.tuandhpc05076.swing0.button0();
         jLabel82 = new javax.swing.JLabel();
-        txtSoLuong148 = new javax.swing.JLabel();
+        txtSoLuongCon2 = new javax.swing.JLabel();
         txtSoLuong149 = new javax.swing.JLabel();
-        txtSoLuong150 = new javax.swing.JLabel();
+        txtSoLuongBan2 = new javax.swing.JLabel();
         panelShadow102 = new swing.PanelShadow();
         imageAvatar96 = new swing.ImageAvatar();
         txtadd4 = new com.tuandhpc05076.swing0.button0();
         jLabel217 = new javax.swing.JLabel();
-        txtSoLuong151 = new javax.swing.JLabel();
+        txtSoLuongCon3 = new javax.swing.JLabel();
         txtSoLuong152 = new javax.swing.JLabel();
-        txtSoLuong153 = new javax.swing.JLabel();
+        txtSoLuongBan3 = new javax.swing.JLabel();
         panelShadow41 = new swing.PanelShadow();
         imageAvatar35 = new swing.ImageAvatar();
         txtadd1 = new com.tuandhpc05076.swing0.button0();
@@ -264,7 +266,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtDonGia = new com.tuandhpc05076.Swing.TextField();
         textField4 = new com.tuandhpc05076.Swing.TextField();
         txtSoLuong = new com.tuandhpc05076.Swing.TextField();
-        textField6 = new com.tuandhpc05076.Swing.TextField();
+        txtThue = new com.tuandhpc05076.Swing.TextField();
         button01 = new com.tuandhpc05076.swing0.button0();
         button2 = new com.tuandhpc05076.swing0.button0();
         button3 = new com.tuandhpc05076.swing0.button0();
@@ -317,10 +319,10 @@ public class HoaDon extends javax.swing.JPanel {
         imageAvatar33.setGradientColor2(new java.awt.Color(255, 255, 255));
         imageAvatar33.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtadd.setText("Thêm ");
-        txtadd.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd1.setText("Thêm ");
+        btnAdd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtaddActionPerformed(evt);
+                btnAdd1ActionPerformed(evt);
             }
         });
 
@@ -339,10 +341,10 @@ public class HoaDon extends javax.swing.JPanel {
         txtSoLuong146.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuong146.setText("Đã bán:");
 
-        txtSoLuongBan.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
-        txtSoLuongBan.setForeground(new java.awt.Color(235, 235, 235));
-        txtSoLuongBan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtSoLuongBan.setText("0");
+        txtSoLuongBan1.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
+        txtSoLuongBan1.setForeground(new java.awt.Color(235, 235, 235));
+        txtSoLuongBan1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSoLuongBan1.setText("0");
 
         javax.swing.GroupLayout panelShadow39Layout = new javax.swing.GroupLayout(panelShadow39);
         panelShadow39.setLayout(panelShadow39Layout);
@@ -354,13 +356,13 @@ public class HoaDon extends javax.swing.JPanel {
                     .addComponent(imageAvatar33, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelShadow39Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(txtadd, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelShadow39Layout.createSequentialGroup()
                         .addComponent(txtSoLuongCon1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong146, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSoLuongBan)))
+                        .addComponent(txtSoLuongBan1)))
                 .addGap(12, 12, 12))
             .addGroup(panelShadow39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelShadow39Layout.createSequentialGroup()
@@ -377,9 +379,9 @@ public class HoaDon extends javax.swing.JPanel {
                 .addGroup(panelShadow39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongCon1)
                     .addComponent(txtSoLuong146)
-                    .addComponent(txtSoLuongBan))
+                    .addComponent(txtSoLuongBan1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelShadow39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelShadow39Layout.createSequentialGroup()
@@ -409,38 +411,38 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel82.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel82.setText("Mr. Dara");
 
-        txtSoLuong148.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
-        txtSoLuong148.setForeground(new java.awt.Color(235, 235, 235));
-        txtSoLuong148.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtSoLuong148.setText("10");
+        txtSoLuongCon2.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
+        txtSoLuongCon2.setForeground(new java.awt.Color(235, 235, 235));
+        txtSoLuongCon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSoLuongCon2.setText("10");
 
         txtSoLuong149.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         txtSoLuong149.setForeground(new java.awt.Color(235, 235, 235));
         txtSoLuong149.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuong149.setText("Đã bán:");
 
-        txtSoLuong150.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
-        txtSoLuong150.setForeground(new java.awt.Color(235, 235, 235));
-        txtSoLuong150.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtSoLuong150.setText("10");
+        txtSoLuongBan2.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
+        txtSoLuongBan2.setForeground(new java.awt.Color(235, 235, 235));
+        txtSoLuongBan2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSoLuongBan2.setText("0");
 
         javax.swing.GroupLayout panelShadow40Layout = new javax.swing.GroupLayout(panelShadow40);
         panelShadow40.setLayout(panelShadow40Layout);
         panelShadow40Layout.setHorizontalGroup(
             panelShadow40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow40Layout.createSequentialGroup()
-                .addGap(0, 13, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addGroup(panelShadow40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imageAvatar34, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelShadow40Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(txtadd3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelShadow40Layout.createSequentialGroup()
-                        .addComponent(txtSoLuong148, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSoLuongCon2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong149, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSoLuong150)))
+                        .addComponent(txtSoLuongBan2)))
                 .addGap(12, 12, 12))
             .addGroup(panelShadow40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelShadow40Layout.createSequentialGroup()
@@ -455,9 +457,9 @@ public class HoaDon extends javax.swing.JPanel {
                 .addComponent(imageAvatar34, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(panelShadow40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSoLuong148)
+                    .addComponent(txtSoLuongCon2)
                     .addComponent(txtSoLuong149)
-                    .addComponent(txtSoLuong150))
+                    .addComponent(txtSoLuongBan2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
@@ -489,20 +491,20 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel217.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel217.setText("Mr. Dara");
 
-        txtSoLuong151.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
-        txtSoLuong151.setForeground(new java.awt.Color(235, 235, 235));
-        txtSoLuong151.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtSoLuong151.setText("10");
+        txtSoLuongCon3.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
+        txtSoLuongCon3.setForeground(new java.awt.Color(235, 235, 235));
+        txtSoLuongCon3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSoLuongCon3.setText("10");
 
         txtSoLuong152.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         txtSoLuong152.setForeground(new java.awt.Color(235, 235, 235));
         txtSoLuong152.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuong152.setText("Đã bán:");
 
-        txtSoLuong153.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
-        txtSoLuong153.setForeground(new java.awt.Color(235, 235, 235));
-        txtSoLuong153.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtSoLuong153.setText("10");
+        txtSoLuongBan3.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
+        txtSoLuongBan3.setForeground(new java.awt.Color(235, 235, 235));
+        txtSoLuongBan3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtSoLuongBan3.setText("0");
 
         javax.swing.GroupLayout panelShadow102Layout = new javax.swing.GroupLayout(panelShadow102);
         panelShadow102.setLayout(panelShadow102Layout);
@@ -513,15 +515,15 @@ public class HoaDon extends javax.swing.JPanel {
                 .addComponent(imageAvatar96, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow102Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 8, Short.MAX_VALUE)
                 .addGroup(panelShadow102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtadd4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelShadow102Layout.createSequentialGroup()
-                        .addComponent(txtSoLuong151, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSoLuongCon3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong152, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSoLuong153)))
+                        .addComponent(txtSoLuongBan3)))
                 .addGap(19, 19, 19))
             .addGroup(panelShadow102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelShadow102Layout.createSequentialGroup()
@@ -536,9 +538,9 @@ public class HoaDon extends javax.swing.JPanel {
                 .addComponent(imageAvatar96, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(panelShadow102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSoLuong151)
+                    .addComponent(txtSoLuongCon3)
                     .addComponent(txtSoLuong152)
-                    .addComponent(txtSoLuong153))
+                    .addComponent(txtSoLuongBan3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2552,7 +2554,13 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        textField6.setLabelText("Thuế");
+        txtThue.setText("0");
+        txtThue.setLabelText("Thuế (%)");
+        txtThue.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtThueCaretUpdate(evt);
+            }
+        });
 
         button01.setBackground(new java.awt.Color(153, 153, 255));
         button01.setText("làm mới");
@@ -2649,7 +2657,7 @@ public class HoaDon extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtSoLuong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField6, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
+                            .addComponent(txtThue, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(combobox5, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2693,7 +2701,7 @@ public class HoaDon extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNgayXuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtThue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -2858,25 +2866,40 @@ public class HoaDon extends javax.swing.JPanel {
 
     private void txtadd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd4ActionPerformed
         // TODO add your handling code here:
+          SoLuong sl = new SoLuong(com.raven.main.Main.getMain(),true);
+        sl.setVisible(true);
+        int i = Integer.parseInt(txtSoLuongCon3.getText());
+        i = i - sl.getSoLuong();
+        txtSoLuongCon3.setText(String.valueOf(i));
+        int j = Integer.parseInt(txtSoLuongBan3.getText());
+        j = j + sl.getSoLuong();
+        txtSoLuongBan3.setText(String.valueOf(j));
     }//GEN-LAST:event_txtadd4ActionPerformed
 
     private void txtadd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd3ActionPerformed
         // TODO add your handling code here:
+          SoLuong sl = new SoLuong(com.raven.main.Main.getMain(),true);
+        sl.setVisible(true);
+        int i = Integer.parseInt(txtSoLuongCon2.getText());
+        i = i - sl.getSoLuong();
+        txtSoLuongCon2.setText(String.valueOf(i));
+        int j = Integer.parseInt(txtSoLuongBan2.getText());
+        j = j + sl.getSoLuong();
+        txtSoLuongBan2.setText(String.valueOf(j));
     }//GEN-LAST:event_txtadd3ActionPerformed
 
-    private void txtaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddActionPerformed
-        // TODO add your handling code here:
-        
+    private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
+        // TODO add your handling code here:     
         SoLuong sl = new SoLuong(com.raven.main.Main.getMain(),true);
         sl.setVisible(true);
         int i = Integer.parseInt(txtSoLuongCon1.getText());
         i = i - sl.getSoLuong();
         txtSoLuongCon1.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtSoLuongBan.getText());
+        int j = Integer.parseInt(txtSoLuongBan1.getText());
         j = j + sl.getSoLuong();
-        txtSoLuongBan.setText(String.valueOf(j));
+        txtSoLuongBan1.setText(String.valueOf(j));
 
-    }//GEN-LAST:event_txtaddActionPerformed
+    }//GEN-LAST:event_btnAdd1ActionPerformed
 
     private void txtNgayXuat1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuat1MouseClicked
         // TODO add your handling code here:
@@ -2896,7 +2919,7 @@ public class HoaDon extends javax.swing.JPanel {
         // TODO add your handling code here:
         float TongTien = 0;
         TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
-
+        TongTien=TongTien+TongTien*(Float.parseFloat(txtThue.getText())/100);
         txtTongTien.setText(String.format("%.2f", TongTien));
         float tong = 0;
         if (txtTienKhachDua.getText().equals("")) {
@@ -2909,6 +2932,7 @@ public class HoaDon extends javax.swing.JPanel {
     private void txtSoLuongCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoLuongCaretUpdate
         float TongTien = 0;
         TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
+         TongTien=TongTien+TongTien*(Float.parseFloat(txtThue.getText())/100);
         txtTongTien.setText(String.format("%.2f", TongTien));
         float tong = 0;
         if (txtTienKhachDua.getText().equals("")) {
@@ -2919,8 +2943,22 @@ public class HoaDon extends javax.swing.JPanel {
 // TODO add your handling code here:
     }//GEN-LAST:event_txtSoLuongCaretUpdate
 
+    private void txtThueCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtThueCaretUpdate
+    float TongTien = 0;
+        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
+        TongTien=TongTien+TongTien*(Float.parseFloat(txtThue.getText())/100);
+        txtTongTien.setText(String.format("%.2f", TongTien));
+        float tong = 0;
+        if (txtTienKhachDua.getText().equals("")) {
+            return;
+        }
+        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
+        txtTienConLai.setText(String.format("%.2f", tong));        // TODO add your handling code here:
+    }//GEN-LAST:event_txtThueCaretUpdate
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.tuandhpc05076.swing0.button0 btnAdd1;
     private com.tuandhpc05076.swing0.button0 button01;
     private com.tuandhpc05076.swing0.button0 button2;
     private com.tuandhpc05076.swing0.button0 button3;
@@ -3053,7 +3091,6 @@ public class HoaDon extends javax.swing.JPanel {
     private javaswingdev.swing.table.Table table1;
     private com.tuandhpc05076.Swing.TextField textField1;
     private com.tuandhpc05076.Swing.TextField textField4;
-    private com.tuandhpc05076.Swing.TextField textField6;
     private com.tuandhpc05076.Swing.TextField txtDonGia;
     private com.tuandhpc05076.Swing.TextField txtNgayXuat;
     private com.tuandhpc05076.Swing.TextField txtNgayXuat1;
@@ -3104,12 +3141,8 @@ public class HoaDon extends javax.swing.JPanel {
     private javax.swing.JLabel txtSoLuong144;
     private javax.swing.JLabel txtSoLuong145;
     private javax.swing.JLabel txtSoLuong146;
-    private javax.swing.JLabel txtSoLuong148;
     private javax.swing.JLabel txtSoLuong149;
-    private javax.swing.JLabel txtSoLuong150;
-    private javax.swing.JLabel txtSoLuong151;
     private javax.swing.JLabel txtSoLuong152;
-    private javax.swing.JLabel txtSoLuong153;
     private javax.swing.JLabel txtSoLuong154;
     private javax.swing.JLabel txtSoLuong155;
     private javax.swing.JLabel txtSoLuong156;
@@ -3137,12 +3170,16 @@ public class HoaDon extends javax.swing.JPanel {
     private javax.swing.JLabel txtSoLuong97;
     private javax.swing.JLabel txtSoLuong98;
     private javax.swing.JLabel txtSoLuong99;
-    private javax.swing.JLabel txtSoLuongBan;
+    private javax.swing.JLabel txtSoLuongBan1;
+    private javax.swing.JLabel txtSoLuongBan2;
+    private javax.swing.JLabel txtSoLuongBan3;
     private javax.swing.JLabel txtSoLuongCon1;
+    private javax.swing.JLabel txtSoLuongCon2;
+    private javax.swing.JLabel txtSoLuongCon3;
+    private com.tuandhpc05076.Swing.TextField txtThue;
     private javax.swing.JLabel txtTienConLai;
     private com.tuandhpc05076.Swing.TextField txtTienKhachDua;
     private javax.swing.JLabel txtTongTien;
-    private com.tuandhpc05076.swing0.button0 txtadd;
     private com.tuandhpc05076.swing0.button0 txtadd1;
     private com.tuandhpc05076.swing0.button0 txtadd2;
     private com.tuandhpc05076.swing0.button0 txtadd3;

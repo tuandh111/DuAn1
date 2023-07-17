@@ -245,14 +245,14 @@
                                       <Component id="imageAvatar33" min="-2" pref="118" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="txtadd" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <Component id="btnAdd1" min="-2" pref="118" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="txtSoLuongCon1" min="-2" pref="37" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="txtSoLuong146" min="-2" pref="62" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtSoLuongBan" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtSoLuongBan1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -275,10 +275,10 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtSoLuongCon1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtSoLuong146" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtSoLuongBan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuongBan1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtadd" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAdd1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -311,12 +311,12 @@
                             <Property name="useNullLayout" type="boolean" value="true"/>
                           </Layout>
                         </Container>
-                        <Component class="com.tuandhpc05076.swing0.button0" name="txtadd">
+                        <Component class="com.tuandhpc05076.swing0.button0" name="btnAdd1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Th&#xea;m "/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtaddActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdd1ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel81">
@@ -355,7 +355,7 @@
                             <Property name="text" type="java.lang.String" value="&#x110;&#xe3; b&#xe1;n:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="txtSoLuongBan">
+                        <Component class="javax.swing.JLabel" name="txtSoLuongBan1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="sansserif" size="15" style="1"/>
@@ -381,7 +381,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="imageAvatar34" min="-2" pref="118" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
@@ -389,11 +389,11 @@
                                           <Component id="txtadd3" min="-2" pref="118" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="txtSoLuong148" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="txtSoLuongCon2" min="-2" pref="37" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="txtSoLuong149" min="-2" pref="62" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtSoLuong150" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtSoLuongBan2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -414,9 +414,9 @@
                                   <Component id="imageAvatar34" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtSoLuong148" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuongCon2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtSoLuong149" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtSoLuong150" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuongBan2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtadd3" min="-2" max="-2" attributes="0"/>
@@ -472,7 +472,7 @@
                             <Property name="text" type="java.lang.String" value="Mr. Dara"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="txtSoLuong148">
+                        <Component class="javax.swing.JLabel" name="txtSoLuongCon2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="sansserif" size="15" style="1"/>
@@ -496,7 +496,7 @@
                             <Property name="text" type="java.lang.String" value="&#x110;&#xe3; b&#xe1;n:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="txtSoLuong150">
+                        <Component class="javax.swing.JLabel" name="txtSoLuongBan2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="sansserif" size="15" style="1"/>
@@ -505,7 +505,7 @@
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="10"/>
+                            <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -527,15 +527,15 @@
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="txtadd4" min="-2" pref="118" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="txtSoLuong151" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="txtSoLuongCon3" min="-2" pref="37" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="txtSoLuong152" min="-2" pref="62" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="txtSoLuong153" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtSoLuongBan3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
@@ -556,9 +556,9 @@
                                   <Component id="imageAvatar96" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtSoLuong151" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuongCon3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtSoLuong152" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtSoLuong153" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuongBan3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtadd4" min="-2" max="-2" attributes="0"/>
@@ -614,7 +614,7 @@
                             <Property name="text" type="java.lang.String" value="Mr. Dara"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="txtSoLuong151">
+                        <Component class="javax.swing.JLabel" name="txtSoLuongCon3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="sansserif" size="15" style="1"/>
@@ -638,7 +638,7 @@
                             <Property name="text" type="java.lang.String" value="&#x110;&#xe3; b&#xe1;n:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="txtSoLuong153">
+                        <Component class="javax.swing.JLabel" name="txtSoLuongBan3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="sansserif" size="15" style="1"/>
@@ -647,7 +647,7 @@
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="10"/>
+                            <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -4162,7 +4162,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="textField1" max="32767" attributes="0"/>
                                   <Component id="txtSoLuong" max="32767" attributes="0"/>
-                                  <Component id="textField6" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="txtThue" alignment="0" pref="196" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -4221,7 +4221,7 @@
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtNgayXuat" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtThue" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -4303,10 +4303,14 @@
                 <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtSoLuongCaretUpdate"/>
               </Events>
             </Component>
-            <Component class="com.tuandhpc05076.Swing.TextField" name="textField6">
+            <Component class="com.tuandhpc05076.Swing.TextField" name="txtThue">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="Thu&#x1ebf;"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="labelText" type="java.lang.String" value="Thu&#x1ebf; (%)"/>
               </Properties>
+              <Events>
+                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtThueCaretUpdate"/>
+              </Events>
             </Component>
             <Component class="com.tuandhpc05076.swing0.button0" name="button01">
               <Properties>

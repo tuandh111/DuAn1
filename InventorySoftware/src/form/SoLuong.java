@@ -4,6 +4,7 @@
  */
 package form;
 
+import javax.swing.JOptionPane;
 import sun.security.jgss.spnego.SpNegoContext;
 
 /**
@@ -105,8 +106,8 @@ public static int soLuong=0;
 
     private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
         // TODO add your handling code here:
-        SoLuong.setSoLuong((int) SpnSoLuong.getValue());
-        
+       SoLuong.setSoLuong((int) SpnSoLuong.getValue());
+
            dispose();
           
     }//GEN-LAST:event_button01ActionPerformed
