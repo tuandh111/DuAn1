@@ -366,7 +366,6 @@ public class NewSignin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jLabel_SoftZyd.setVisible(false);
-        jLabel_inven.setVisible(false);
         jPanel6.setVisible(true);
         //       jLabel7.setVisible(false);
         //       jLabel8.setVisible(false);
@@ -406,7 +405,6 @@ public class NewSignin extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         jPanel6.setVisible(false);
         jLabel_SoftZyd.setVisible(true);
-        jLabel_inven.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
