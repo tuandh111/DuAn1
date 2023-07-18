@@ -23,6 +23,7 @@ import form.DaXoa;
 import form.QuenMatKhau;
 import form.SanPham;
 import form.DatHang;
+import form.DatHang1;
 import form.DongMay;
 import form.ThanhToanLuong;
 import form.GiamGia;
@@ -92,7 +93,7 @@ public class Main extends javax.swing.JFrame {
                     }
                 } else if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new DatHang());
+                        main.showForm(new DatHang1());
                     }else if(subMenuIndex == 2){
                         main.showForm(new DaXoa());
                     }
@@ -100,7 +101,7 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new HoaDon());
                     } else if (subMenuIndex == 1) {
-                        main.showForm(new BaoHanh1());
+                        main.showForm(new BaoHanh());
                     }
                 } else if (menuIndex == 5) {
                     main.showForm(new GiamGia());

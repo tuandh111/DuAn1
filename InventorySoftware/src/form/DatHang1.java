@@ -24,12 +24,12 @@ import javax.swing.JOptionPane;
  *
  * @author DELL E5470
  */
-public class BaoHanh extends javax.swing.JPanel {
+public class DatHang1 extends javax.swing.JPanel {
 
     /**
      * Creates new form SanPham1
      */
-    public BaoHanh() {
+    public DatHang1() {
         initComponents();
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
 //panelShadow6.setVisible(false); ẩn jpanel
@@ -2595,7 +2595,7 @@ public class BaoHanh extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel28.setText("Bảo hành");
+        jLabel28.setText("Đặt hàng sản phẩm");
 
         textField1.setLabelText("Số điện thoại");
 
@@ -2638,7 +2638,7 @@ public class BaoHanh extends javax.swing.JPanel {
         button2.setText("Hủy bỏ");
 
         button3.setBackground(new java.awt.Color(153, 153, 255));
-        button3.setText("Xem danh sách bảo hành");
+        button3.setText("Xem danh sách đặt hàng");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button3ActionPerformed(evt);
@@ -2646,7 +2646,7 @@ public class BaoHanh extends javax.swing.JPanel {
         });
 
         button7.setBackground(new java.awt.Color(153, 153, 255));
-        button7.setText("Bảo hành");
+        button7.setText("Đặt hàng");
         button7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         button7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2741,7 +2741,7 @@ public class BaoHanh extends javax.swing.JPanel {
                                 .addComponent(txtTienConLai)
                                 .addGap(122, 122, 122)
                                 .addComponent(jLabel6)))
-                        .addGap(0, 4, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(txtNgayXuat1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtTienKhachDua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
@@ -2847,9 +2847,9 @@ public class BaoHanh extends javax.swing.JPanel {
                             .addGap(44, 44, 44)
                             .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2876,7 +2876,7 @@ public class BaoHanh extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1056, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
