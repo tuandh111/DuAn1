@@ -123,9 +123,9 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 8) {
-                    if (subMenuIndex == 0) {
+                  
                         main.showForm(new ThanhToanLuong());
-                    }
+                    
                 } else if (menuIndex == 9) {
                     if (subMenuIndex == 0) {
                         NewSignin quen = new NewSignin();

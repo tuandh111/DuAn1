@@ -94,7 +94,7 @@
                   </Group>
                   <EmptySpace pref="7" max="32767" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -3904,15 +3904,10 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="imageAvatar71" min="-2" pref="118" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel160" min="-2" pref="104" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="imageAvatar71" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="jLabel160" min="-2" pref="104" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4197,29 +4192,8 @@
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="button7" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="button3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="buttonBadges1" min="-2" pref="38" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="txtDonGia" max="32767" attributes="0"/>
-                                  <Component id="textField4" max="32767" attributes="0"/>
-                                  <Component id="txtNgayXuat" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="textField1" max="32767" attributes="0"/>
-                                  <Component id="txtSoLuong" max="32767" attributes="0"/>
-                                  <Component id="txtThue" alignment="0" pref="196" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="combobox5" alignment="0" min="-2" pref="417" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -4235,12 +4209,38 @@
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="165" max="32767" attributes="0"/>
                           </Group>
                           <Component id="txtNgayXuat1" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtTienKhachDua" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="button3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="buttonBadges1" min="-2" pref="38" max="-2" attributes="0"/>
+                              <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="txtDonGia" alignment="0" pref="194" max="32767" attributes="0"/>
+                                  <Component id="textField4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtNgayXuat" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="textField1" min="-2" pref="135" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="button9" min="-2" pref="62" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtSoLuong" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtThue" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="combobox5" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -4261,11 +4261,14 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="textField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="textField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="textField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="button9" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtDonGia" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSoLuong" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4323,7 +4326,7 @@
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="textField1">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
+                <Property name="labelText" type="java.lang.String" value="Kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgayXuat">
@@ -4486,6 +4489,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x1ed3;ng"/>
               </Properties>
+            </Component>
+            <Component class="com.tuandhpc05076.swing0.button0" name="button9">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="99" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="+"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button9ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

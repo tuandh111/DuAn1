@@ -94,7 +94,7 @@
                   </Group>
                   <EmptySpace pref="7" max="32767" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -4207,9 +4207,9 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="textField1" max="32767" attributes="0"/>
                                   <Component id="txtSoLuong" max="32767" attributes="0"/>
                                   <Component id="txtThue" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="combobox6" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -4246,7 +4246,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="buttonBadges1" min="-2" pref="41" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -4256,11 +4256,12 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="textField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="textField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="combobox6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtDonGia" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSoLuong" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4316,14 +4317,9 @@
                 <Property name="text" type="java.lang.String" value="B&#x1ea3;o h&#xe0;nh"/>
               </Properties>
             </Component>
-            <Component class="com.tuandhpc05076.Swing.TextField" name="textField1">
-              <Properties>
-                <Property name="labelText" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
-              </Properties>
-            </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgayXuat">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y xu&#x1ea5;t"/>
+                <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y b&#x1ea3;o h&#xe0;nh"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgayXuatMouseClicked"/>
@@ -4339,7 +4335,7 @@
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="textField4">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="M&#xe3; &#x111;&#x1eb7;t h&#xe0;ng"/>
+                <Property name="labelText" type="java.lang.String" value="M&#xe3; b&#xe0;o h&#xe0;nh"/>
               </Properties>
             </Component>
             <Component class="com.tuandhpc05076.Swing.TextField" name="txtSoLuong">
@@ -4480,6 +4476,18 @@
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x1ed3;ng"/>
+              </Properties>
+            </Component>
+            <Component class="com.tuandhpc05076.Swing.Combobox" name="combobox6">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="Ti&#x1ec1;n m&#x1eb7;t"/>
+                    <StringItem index="1" value="Chuy&#x1ec3;n kho&#x1ea3;n"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
+                <Property name="labeText" type="java.lang.String" value="Ch&#x1ecd;n m&#xe3; h&#xf3;a &#x111;&#x1a1;n"/>
               </Properties>
             </Component>
           </SubComponents>
