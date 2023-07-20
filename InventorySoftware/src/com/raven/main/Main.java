@@ -32,7 +32,7 @@ import form.LichSu;
 import form.NhanVien;
 import form.ThongTinNhanVien;
 import form.VaiTro;
-import inventorysoftware.LogIn.NewSignin;
+import com.tuandhpc05076.DangNhap.NewSignin;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

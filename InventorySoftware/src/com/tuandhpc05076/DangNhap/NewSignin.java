@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inventorysoftware.LogIn;
+package com.tuandhpc05076.DangNhap;
 
 import com.raven.model.ModelCard;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
