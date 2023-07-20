@@ -2,7 +2,7 @@ package com.raven.component;
 
 import com.tuandhpc05076.ThoiGian.Time;
 import form.ThongTinNhanVien;
-import inventorysoftware.LogIn.NewSignin;
+import com.tuandhpc05076.DangNhap.NewSignin;
 import java.awt.event.ActionListener;
 
 public class Header extends javax.swing.JPanel {

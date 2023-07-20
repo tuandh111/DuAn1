@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package inventorysoftware.LogIn;
+package com.tuandhpc05076.DangNhap;
 
 /**
  *

@@ -14,7 +14,7 @@ import java.sql.SQLException;
  *
  * @author Tuan
  */
-public class JdbcHelper {
+public class XJdbc {
 
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static String dburl = "jdbc:sqlserver://localhost:1433;" + "databaseName=EduSys;encrypt=false;trustServerCertificate=true;";
