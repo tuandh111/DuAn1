@@ -15,7 +15,6 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javaswingdev.main.Main;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
