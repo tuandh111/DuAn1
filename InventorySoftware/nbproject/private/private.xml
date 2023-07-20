@@ -5,24 +5,20 @@
         <group>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/component/Menu.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/form/Form_Home.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Helper/JdbcHelper.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/SanPham.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/javaswingdev/main/Main.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/SoLuong.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/MainAn/MainAn2.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/BaoHanh.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/DaXoa.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/inventorysoftware/LogIn/NewSignin.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/DanhSachHoaDon.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/main/Main.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/QuetMaQR/NewClass1.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/DatHang1.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/HoaDon.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Helper/XJdbc.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/KhachHang.java</file>
-            <file>file:/D:/ASMA/DuAn1/InventorySoftware/src/Chao/Chaone.java</file>
-            <file>file:/D:/ASMA/DuAn1/InventorySoftware/src/inventorysoftware/LogIn/NewSignin.java</file>
-            <file>file:/D:/ASMA/DuAn1/InventorySoftware/src/form/BaoHanh.java</file>
-            <file>file:/D:/ASMA/DuAn1/InventorySoftware/src/form/DatHang.java</file>
-            <file>file:/D:/ASMA/DuAn1/InventorySoftware/src/form/HoaDon.java</file>
         </group>
     </open-files>
 </project-private>
