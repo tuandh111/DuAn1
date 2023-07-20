@@ -69,10 +69,8 @@ public class NewSignin extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jLabel_SoftZyd = new javax.swing.JLabel();
-        jLabel_inven = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jTextField_Email = new com.tuandhpc05076.Swing.TextField();
@@ -84,7 +82,6 @@ public class NewSignin extends javax.swing.JFrame {
         cardRegister3 = new com.raven.component.CardRegister();
         jLabel21 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        jLabel_inven1 = new javax.swing.JLabel();
         txtMatKhau = new com.tuandhpc05076.Swing.TextField();
         txtPass = new com.tuandhpc05076.Swing.PasswordField();
 
@@ -212,11 +209,6 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel_SoftZyd.setText("TTA MOBILE");
         jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 314, 80));
 
-        jLabel_inven.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        jLabel_inven.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel_inven.setText("Phone Manager");
-        jPanel3.add(jLabel_inven, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 270, 40));
-
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -224,12 +216,7 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(0, 102, 204));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
         jLabel13.setText("TTA MOBILE");
-        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 310, 90));
-
-        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel12.setText("Phone Manager");
-        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 190, -1));
+        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 310, 100));
 
         jButton14.setBackground(new java.awt.Color(0, 102, 204));
         jButton14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -262,7 +249,6 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
 
-        jTextField_Email.setBackground(new java.awt.Color(255, 255, 255));
         jTextField_Email.setAutoscrolls(false);
         jTextField_Email.setCaretColor(new java.awt.Color(0, 102, 204));
         jTextField_Email.setDisabledTextColor(new java.awt.Color(0, 102, 204));
@@ -272,7 +258,6 @@ public class NewSignin extends javax.swing.JFrame {
         jTextField_Email.setSelectionColor(new java.awt.Color(169, 224, 49));
         jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 160, -1));
 
-        jTextField_Email2.setBackground(new java.awt.Color(255, 255, 255));
         jTextField_Email2.setAutoscrolls(false);
         jTextField_Email2.setCaretColor(new java.awt.Color(0, 102, 204));
         jTextField_Email2.setDisabledTextColor(new java.awt.Color(0, 102, 204));
@@ -282,7 +267,6 @@ public class NewSignin extends javax.swing.JFrame {
         jTextField_Email2.setSelectionColor(new java.awt.Color(169, 224, 49));
         jPanel6.add(jTextField_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 160, -1));
 
-        jTextField_Email1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField_Email1.setCaretColor(new java.awt.Color(0, 102, 204));
         jTextField_Email1.setDisabledTextColor(new java.awt.Color(0, 102, 204));
         jTextField_Email1.setLabelText("Tài khoản");
@@ -291,7 +275,6 @@ public class NewSignin extends javax.swing.JFrame {
         jTextField_Email1.setSelectionColor(new java.awt.Color(169, 224, 49));
         jPanel6.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 330, -1));
 
-        jPasswordField_Password.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField_Password.setCaretColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password.setDisabledTextColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password.setLabelText("Mật khẩu");
@@ -301,7 +284,6 @@ public class NewSignin extends javax.swing.JFrame {
         jPasswordField_Password.setShowAndHide(true);
         jPanel6.add(jPasswordField_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 330, -1));
 
-        jPasswordField_Password2.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField_Password2.setCaretColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password2.setDisabledTextColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password2.setLabelText("Mật khẩu");
@@ -327,7 +309,7 @@ public class NewSignin extends javax.swing.JFrame {
                 jLabel21MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 140, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 140, -1));
 
         jButton7.setBackground(new java.awt.Color(0, 102, 204));
         jButton7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -343,12 +325,6 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 260, 40));
 
-        jLabel_inven1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel_inven1.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel_inven1.setText("Kết nối với chúng tôi trên");
-        jPanel1.add(jLabel_inven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 150, 20));
-
-        txtMatKhau.setBackground(new java.awt.Color(255, 255, 255));
         txtMatKhau.setText("admin");
         txtMatKhau.setAutoscrolls(false);
         txtMatKhau.setCaretColor(new java.awt.Color(0, 102, 204));
@@ -364,7 +340,6 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel1.add(txtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 260, -1));
 
-        txtPass.setBackground(new java.awt.Color(255, 255, 255));
         txtPass.setText("123");
         txtPass.setCaretColor(new java.awt.Color(0, 102, 204));
         txtPass.setDisabledTextColor(new java.awt.Color(0, 102, 204));
@@ -391,7 +366,6 @@ public class NewSignin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jLabel_SoftZyd.setVisible(false);
-        jLabel_inven.setVisible(false);
         jPanel6.setVisible(true);
         //       jLabel7.setVisible(false);
         //       jLabel8.setVisible(false);
@@ -431,7 +405,6 @@ public class NewSignin extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         jPanel6.setVisible(false);
         jLabel_SoftZyd.setVisible(true);
-        jLabel_inven.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -496,15 +469,12 @@ public class NewSignin extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel_SoftZyd;
-    private javax.swing.JLabel jLabel_inven;
-    private javax.swing.JLabel jLabel_inven1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;

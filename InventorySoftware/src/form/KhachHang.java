@@ -7,6 +7,8 @@ package form;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
+import com.raven.main.Main;
+
 
 /**
  *
@@ -256,6 +258,8 @@ public class KhachHang extends javax.swing.JPanel {
 
     private void buttonBadges1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges1ActionPerformed
         // TODO add your handling code here:
+        KhachHangCho khc = new KhachHangCho(Main.getMain(), true);
+        khc.setVisible(true);
         
     }//GEN-LAST:event_buttonBadges1ActionPerformed
 

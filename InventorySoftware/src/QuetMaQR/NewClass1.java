@@ -85,22 +85,17 @@ public NewClass1(java.awt.Frame parent, boolean modal) {
                         String qrText = result.getText(); // get the text from the result
                         label.setText(qrText); // set the text of the label for QR code text to qrText
                         System.out.println("Hình ảnh là:" + result);
-//                        String[] parts = qrText.split("[:/]"); // cắt chuỗi s theo dấu hai chấm hoặc dấu gạch chéo
-//                        String sub = parts[3]; // lấy phần tử thứ 4 của mảng parts
-//                        System.out.println(sub);
                         tenSP = qrText;
                         NewClass1.setSoLuong(qrText);
                         System.out.println(tenSP);
                         int j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
                         if (j == 0) {
                             setVisible(false);
-                            webcam.close();
-                            
+                            webcam.close();                           
                         }
                        i=1;
                     } catch (NotFoundException e) {
                         label.setText("No QR code found");
-// set the text of the label to indicate no QR code was found
                     } 
                 }
               

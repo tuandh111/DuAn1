@@ -24,10 +24,10 @@ public class MainAn2 extends javax.swing.JPanel {
      */
      public MainAn2() {
         initComponents();
-        chart.setTitle("Chart Data");
-        chart.addLegend("Amount", Color.decode("#7b4397"), Color.decode("#dc2430"));
-        chart.addLegend("Cost", Color.decode("#e65c00"), Color.decode("#F9D423"));
-        chart.addLegend("Profit", Color.decode("#0099F7"), Color.decode("#F11712"));
+        chart.setTitle("Doanh thu");
+        chart.addLegend("Doanh thu tuần", Color.decode("#7b4397"), Color.decode("#dc2430"));
+        chart.addLegend("Doanh thu tháng", Color.decode("#e65c00"), Color.decode("#F9D423"));
+        chart.addLegend("Doanh thu năm", Color.decode("#0099F7"), Color.decode("#F11712"));
         test();
     }
 
