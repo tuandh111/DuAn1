@@ -1,4 +1,6 @@
 package com.tuandhpc05076.Helper;
+import com.tuandhpc05076.Dao.NhanVienDAO;
+import com.tuandhpc05076.Model.NhanVienModel;
 import com.tuandhpc05076.Object.O_NhanVien;
 import java.awt.Image;
 import java.io.File;
@@ -58,7 +60,7 @@ public class ShareHelper {
     /*
      * Đối tượng này chứa thông tin người sử dụng sau khi đăng nhập
      */
-    public static O_NhanVien USER = null;
+    public static NhanVienModel USER = null;
     /*
      * Xóa thông tin của người sử dụng khi có yêu cầu đăng xuất
      */
@@ -75,7 +77,11 @@ public class ShareHelper {
     /*
       Kiểm tra quyền người dùng có phải là trưởng phòng
     */
+    public static boolean isVaiTro(){
+        if(USER.getVaiTro().equalsIgnoreCase("QL"))return true;
+        return false;
+    }
     public static boolean isManager(){
-        return ShareHelper.authenticated() && USER.isVaiTro();
+        return ShareHelper.authenticated() && ShareHelper.isVaiTro();
     }
 }

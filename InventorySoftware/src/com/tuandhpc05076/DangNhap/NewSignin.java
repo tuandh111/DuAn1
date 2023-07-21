@@ -11,6 +11,7 @@ import com.raven.swing.icon.IconFontSwing;
 import static com.tuandhpc05076.DangNhap.Login.list1;
 import com.tuandhpc05076.Dao.NhanVienDAO1;
 import com.tuandhpc05076.Helper.DialogHelper;
+import com.tuandhpc05076.Helper.ShareHelper;
 import com.tuandhpc05076.MaHoa.MaHoa;
 import com.tuandhpc05076.Main.Main;
 import com.tuandhpc05076.Model.NhanVienModel;
@@ -46,22 +47,27 @@ public class NewSignin extends javax.swing.JFrame {
         }
 
     }
-     public void dangNhap() {
-      
-            String manv = txtusername.getText();
-            String matKhau = new String(txtmatkhau.getPassword());
-            NhanVienModel taikhoan = dao.findById(manv);
-            System.out.println(taikhoan.getMaNV());
-            if (taikhoan == null) {
-                JOptionPane.showMessageDialog(this, "Sai tên đăng nhập!");
-            } else if (!matKhau.equals(taikhoan.getMatKhau())) {
-                JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
-            } else {
-               
-                JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
-                this.dispose();
-            }
-        
+
+    public void dangNhap() {
+        if (checkText() == false) {
+            return;
+        }
+        String manv = txtusername.getText();
+        String matKhau = new String(txtmatkhau.getPassword());
+        NhanVienModel taikhoan=null;
+        taikhoan = dao.findById(manv);
+        if (taikhoan == null) {
+            JOptionPane.showMessageDialog(this, "Sai tên đăng nhập!");
+        } else if (!matKhau.equals(taikhoan.getMatKhau().trim())) {
+            JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
+        } else {
+            ShareHelper.USER = taikhoan;
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
+            com.raven.main.Main main = new com.raven.main.Main();
+            main.setVisible(true);
+            this.dispose();
+        }
+
     }
 
     public boolean checkText() {
@@ -359,7 +365,7 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 260, 40));
 
-        txtusername.setText("admin");
+        txtusername.setText("NV001");
         txtusername.setAutoscrolls(false);
         txtusername.setCaretColor(new java.awt.Color(0, 102, 204));
         txtusername.setDisabledTextColor(new java.awt.Color(0, 102, 204));
@@ -418,7 +424,7 @@ public class NewSignin extends javax.swing.JFrame {
 //
 //            JOptionPane.showMessageDialog(null, "Email or Password Invalid");
 //        }
-dangNhap();
+        dangNhap();
 
     }//GEN-LAST:event_jButton7ActionPerformed
 

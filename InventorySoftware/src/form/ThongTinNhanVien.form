@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JFileChooser" name="jFileChooser1">
+    </Component>
+    <Component class="com.raven.datechooser.DateChooser" name="dateChooser">
+      <Properties>
+        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtNgaySinh"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -21,7 +34,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-40,0,0,3,32"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,57,0,0,4,5"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -43,70 +56,51 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="passwordField2" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="txtMatKhau" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="txtHoTen" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="txtNgaySinh" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="txtMaNV" min="-2" pref="230" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="82" pref="82" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="rdoNam" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="rdoNu" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtEmail" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="txtVaiTro" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtDiaChi" min="-2" pref="231" max="-2" attributes="0"/>
+                              <Component id="txtSoDienThoai" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="126" max="32767" attributes="0"/>
+                          <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="textField6" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="passwordField2" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="passwordField1" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="textField3" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="textField5" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="textField1" min="-2" pref="230" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                                  <Component id="textField8" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="82" pref="94" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="textField4" min="-2" pref="230" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                                          <Component id="textField11" min="-2" pref="231" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="textField10" min="-2" pref="231" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="textField2" min="-2" pref="231" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="textField7" min="-2" pref="230" max="-2" attributes="0"/>
-                                          <Component id="textField9" min="-2" pref="230" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace pref="121" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textField13" alignment="1" min="-2" pref="231" max="-2" attributes="0"/>
-                                      <Component id="textField12" alignment="1" min="-2" pref="231" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
+                          <Component id="textImage1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="453" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="470" max="-2" attributes="0"/>
                           <Component id="button1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
-                  <Component id="textImage1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -117,150 +111,117 @@
                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="textImage1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtMaNV" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDiaChi" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtHoTen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSoDienThoai" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNgaySinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="passwordField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="textField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMatKhau" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rdoNam" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rdoNu" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="passwordField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="textField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtVaiTro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="textField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="textField9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="button1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="textField12" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtHinh" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="button1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField1">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtMaNV">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="labelText" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
           </Properties>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField5">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtNgaySinh">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y sinh"/>
           </Properties>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField3">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtHoTen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="labelText" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n"/>
           </Properties>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.PasswordField" name="passwordField1">
+        <Component class="com.tuandhpc05076.Swing.PasswordField" name="txtMatKhau">
           <Properties>
-            <Property name="text" type="java.lang.String" value="passwordField1"/>
+            <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u"/>
+            <Property name="showAndHide" type="boolean" value="true"/>
           </Properties>
         </Component>
         <Component class="com.tuandhpc05076.Swing.PasswordField" name="passwordField2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="passwordField1"/>
+            <Property name="labelText" type="java.lang.String" value="Nh&#x1ead;p l&#x1ea1;i m&#x1ead;t kh&#x1ea9;u"/>
+            <Property name="showAndHide" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField6">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtVaiTro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="labelText" type="java.lang.String" value="Vai tr&#xf2;"/>
           </Properties>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField7">
+        <Component class="javax.swing.JRadioButton" name="rdoNam">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField7ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField9">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nam"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+        <Component class="javax.swing.JRadioButton" name="rdoNu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jRadioButton1"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtEmail">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jRadioButton1"/>
-          </Properties>
-        </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="labelText" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
         <Component class="com.tuandhpc05076.Swing.Button" name="button1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="X&#xe1;c nh&#x1ead;n"/>
+            <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t th&#xf4;ng tin"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField4">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtSoDienThoai">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="labelText" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
           </Properties>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField10">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtDiaChi">
           <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
-          </Properties>
-        </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
-          </Properties>
-        </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField11">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
-          </Properties>
-        </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField12">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
-          </Properties>
-        </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="textField13">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField1"/>
+            <Property name="labelText" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
           </Properties>
         </Component>
         <Component class="com.tuandhpc05076.Swing.TextImage" name="textImage1">
@@ -271,6 +232,40 @@
             </Property>
           </Properties>
         </Component>
+        <Container class="swing.PanelShadow" name="txtHinh">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtHinhMouseClicked"/>
+          </Events>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="txtHinhAnh">
+              <Properties>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 200]"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 200]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtHinhAnhMouseClicked"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="20" width="160" height="140"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

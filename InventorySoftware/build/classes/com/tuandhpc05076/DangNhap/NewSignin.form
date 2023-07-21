@@ -630,7 +630,7 @@
         </Component>
         <Component class="com.tuandhpc05076.Swing.TextField" name="txtusername">
           <Properties>
-            <Property name="text" type="java.lang.String" value="admin"/>
+            <Property name="text" type="java.lang.String" value="NV001"/>
             <Property name="autoscrolls" type="boolean" value="false"/>
             <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>

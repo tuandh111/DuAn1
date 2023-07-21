@@ -17,7 +17,6 @@ import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import com.tuandhpc05076.BieuDo.FormHome;
 import com.tuandhpc05076.ThoiGian.Time;
 import form.BaoHanh;
-
 import form.DaXoa;
 import form.QuenMatKhau;
 import form.SanPham;
@@ -33,9 +32,11 @@ import form.NhanVien;
 import form.ThongTinNhanVien;
 import form.VaiTro;
 import com.tuandhpc05076.DangNhap.NewSignin;
+import com.tuandhpc05076.Helper.ShareHelper;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -56,6 +57,14 @@ public class Main extends javax.swing.JFrame {
         time.start();
         titleBar1.initJFram(this);
         init();
+        lbUserName.setText(ShareHelper.USER.getMaNV());
+        lbRole.setText(ShareHelper.USER.getVaiTro());
+          if (ShareHelper.USER.getHinh() != null) {
+            pic.setToolTipText(ShareHelper.USER.getHinh());
+            pic.setIcon(ShareHelper.readLogo(ShareHelper.USER.getHinh()));
+        } else {
+           
+        } 
     }
 
     private void init() {
@@ -311,8 +320,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_picAncestorAdded
 
     private void picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_picMouseClicked
-        ThongTinNhanVien tt = new ThongTinNhanVien( false);
+        ThongTinNhanVien tt = new ThongTinNhanVien(Main.getMain(), false);
         tt.setVisible(true);
+      
 
         // TODO add your handling code here:
     }//GEN-LAST:event_picMouseClicked
