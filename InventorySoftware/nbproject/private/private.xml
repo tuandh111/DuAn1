@@ -3,11 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/form/DongMay.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/form/ThanhToanLuong.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/form/SanPham.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/raven/main/Main.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/form/BaoHanh.java</file>
+
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/component/Menu.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Dao/NhanVienDAO1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/form/Form_Home.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Helper/JdbcHelper.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/SanPham.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/SoLuong.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/MainAn/MainAn2.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/BaoHanh.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/DanhSachHoaDon.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Helper/NewClass.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/main/Main.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/QuetMaQR/NewClass1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/DatHang1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/HoaDon.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/form/KhachHang.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/DangNhap/NewSignin.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Model/NhanVienModel.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/tuandhpc05076/Helper/ShareHelper.java</file>
+
         </group>
     </open-files>
 </project-private>

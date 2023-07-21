@@ -628,7 +628,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.TextField" name="txtMatKhau">
+        <Component class="com.tuandhpc05076.Swing.TextField" name="txtusername">
           <Properties>
             <Property name="text" type="java.lang.String" value="admin"/>
             <Property name="autoscrolls" type="boolean" value="false"/>
@@ -650,7 +650,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMatKhauActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtusernameActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -658,7 +658,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="com.tuandhpc05076.Swing.PasswordField" name="txtPass">
+        <Component class="com.tuandhpc05076.Swing.PasswordField" name="txtmatkhau">
           <Properties>
             <Property name="text" type="java.lang.String" value="123"/>
             <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

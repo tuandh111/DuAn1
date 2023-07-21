@@ -1,5 +1,5 @@
 
-package com.tuandhpc05076.helper;
+package com.tuandhpc05076.Helper;
 
 import java.awt.Component;
 import javax.swing.JOptionPane;
