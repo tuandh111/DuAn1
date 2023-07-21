@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author DELL E5470
  */
-public class NhanVienDAO {
+public class NhanVienDAO1 {
 
 //    public void insert(NhanVienModel model) throws SQLException {
 //        String sql = "Insert into NHANVIEN values (?,?,?,?,?,?,?,?,?,?)";

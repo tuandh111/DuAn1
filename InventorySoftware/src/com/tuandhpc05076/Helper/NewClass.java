@@ -4,7 +4,7 @@
  */
 package com.tuandhpc05076.Helper;
 
-import com.tuandhpc05076.Dao.NhanVienDAO;
+import com.tuandhpc05076.Dao.NhanVienDAO1;
 import com.tuandhpc05076.Model.NhanVienModel;
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class NewClass {
     public static void main(String[] args) {
-        NhanVienDAO dao = new NhanVienDAO();
+        NhanVienDAO1 dao = new NhanVienDAO1();
         ArrayList<NhanVienModel> nv = (ArrayList<NhanVienModel>) dao.select();
         System.out.println(nv.size());
       

@@ -9,7 +9,7 @@ import com.raven.model.ModelCard;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
 import static com.tuandhpc05076.DangNhap.Login.list1;
-import com.tuandhpc05076.Dao.NhanVienDAO;
+import com.tuandhpc05076.Dao.NhanVienDAO1;
 import com.tuandhpc05076.Helper.DialogHelper;
 import com.tuandhpc05076.MaHoa.MaHoa;
 import com.tuandhpc05076.Main.Main;
@@ -29,7 +29,7 @@ import javax.swing.UIManager;
  */
 public class NewSignin extends javax.swing.JFrame {
 
-    NhanVienDAO dao = new NhanVienDAO();
+    NhanVienDAO1 dao = new NhanVienDAO1();
 
     public NewSignin() {
         initComponents();
