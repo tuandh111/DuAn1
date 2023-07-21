@@ -1,6 +1,4 @@
-package com.tuandhpc05076.helper;
-
-import com.tuandhpc05076.Form.NhanVien;
+package com.tuandhpc05076.Helper;
 import com.tuandhpc05076.Object.O_NhanVien;
 import java.awt.Image;
 import java.io.File;

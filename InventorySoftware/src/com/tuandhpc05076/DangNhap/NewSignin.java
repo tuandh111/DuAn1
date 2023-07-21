@@ -9,10 +9,12 @@ import com.raven.model.ModelCard;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
 import static com.tuandhpc05076.DangNhap.Login.list1;
+import com.tuandhpc05076.Dao.NhanVienDAO;
+import com.tuandhpc05076.Helper.DialogHelper;
 import com.tuandhpc05076.MaHoa.MaHoa;
 import com.tuandhpc05076.Main.Main;
+import com.tuandhpc05076.Model.NhanVienModel;
 import com.tuandhpc05076.Object.O_DangNhap;
-import com.tuandhpc05076.helper.DialogHelper;
 import form.QuenMatKhau;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -27,15 +29,14 @@ import javax.swing.UIManager;
  */
 public class NewSignin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewSignin
-     */
+    NhanVienDAO dao = new NhanVienDAO();
+
     public NewSignin() {
         initComponents();
-        
+
         this.setLocationRelativeTo(null);
         jPanel6.setVisible(false);
-   
+
         try {
 
             UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
@@ -45,20 +46,36 @@ public class NewSignin extends javax.swing.JFrame {
         }
 
     }
-    
+     public void dangNhap() {
+      
+            String manv = txtusername.getText();
+            String matKhau = new String(txtmatkhau.getPassword());
+            NhanVienModel taikhoan = dao.findById(manv);
+            System.out.println(taikhoan.getMaNV());
+            if (taikhoan == null) {
+                JOptionPane.showMessageDialog(this, "Sai tên đăng nhập!");
+            } else if (!matKhau.equals(taikhoan.getMatKhau())) {
+                JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
+            } else {
+               
+                JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
+                this.dispose();
+            }
+        
+    }
 
-  public boolean checkText() {
+    public boolean checkText() {
         if (txtusername.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Không được bỏ trống tên đăng nhập");
             txtusername.requestFocus();
             return false;
         }
-        if (txtusername.getText().length() >20 ) {
+        if (txtusername.getText().length() > 20) {
             DialogHelper.alert(null, "Tên đăng nhập không được quá 20 kí tự");
             txtusername.requestFocus();
             return false;
         }
-        
+
         if (new String(txtmatkhau.getPassword()).equals("")) {
             JOptionPane.showMessageDialog(this, "Chưa nhập password");
             txtmatkhau.requestFocus();
@@ -66,6 +83,7 @@ public class NewSignin extends javax.swing.JFrame {
         }
         return true;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -389,17 +407,18 @@ public class NewSignin extends javax.swing.JFrame {
     public static ArrayList<O_DangNhap> list1 = new ArrayList<>();
     O_DangNhap dn = new O_DangNhap();
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        String user = txtusername.getText();
-        String pass = txtmatkhau.getText();
-
-        if (user.equals("admin") && pass.equals("123")) {
-            com.raven.main.Main main = new com.raven.main.Main();
-            main.setVisible(true);
-           this.dispose();
-        } else {
-
-            JOptionPane.showMessageDialog(null, "Email or Password Invalid");
-        }
+//        String user = txtusername.getText();
+//        String pass = txtmatkhau.getText();
+//
+//        if (user.equals("admin") && pass.equals("123")) {
+//            com.raven.main.Main main = new com.raven.main.Main();
+//            main.setVisible(true);
+//            this.dispose();
+//        } else {
+//
+//            JOptionPane.showMessageDialog(null, "Email or Password Invalid");
+//        }
+dangNhap();
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -434,7 +453,6 @@ public class NewSignin extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
-
 
     /**
      * @param args the command line arguments

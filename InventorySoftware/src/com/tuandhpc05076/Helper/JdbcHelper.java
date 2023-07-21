@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.tuandhpc05076.helper;
+package com.tuandhpc05076.Helper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,10 +14,10 @@ import java.sql.SQLException;
  *
  * @author Tuan
  */
-public class XJdbc {
+public class JdbcHelper {
 
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://localhost:1433;" + "databaseName=EduSys;encrypt=false;trustServerCertificate=true;";
+    private static String dburl = "jdbc:sqlserver://localhost:1433;" + "databaseName=CUAHANG_DT;encrypt=false;trustServerCertificate=true;";
     private static String username = "sa";
     private static String password = "123";
 

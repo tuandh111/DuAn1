@@ -8,7 +8,7 @@ package com.tuandhpc05076.Model;
  *
  * @author DELL E5470
  */
-public class TaiKhoanModel {
+public class NhanVienModel {
     private String MaNV;
     private String HoTen;
     private String NgaySinh;
@@ -20,10 +20,10 @@ public class TaiKhoanModel {
     private String VaiTro;
     private String Hinh;
 
-    public TaiKhoanModel() {
+    public NhanVienModel() {
     }
 
-    public TaiKhoanModel(String MaNV, String HoTen, String NgaySinh, boolean GioiTinh, String DiaChi, String SDT, String Email, String MatKhau, String VaiTro, String Hinh) {
+    public NhanVienModel(String MaNV, String HoTen, String NgaySinh, boolean GioiTinh, String DiaChi, String SDT, String Email, String MatKhau, String VaiTro, String Hinh) {
         this.MaNV = MaNV;
         this.HoTen = HoTen;
         this.NgaySinh = NgaySinh;
