@@ -4,6 +4,11 @@
  */
 package com.tuandhpc05076.Model;
 
+import com.raven.swing.table.EventAction;
+import com.raven.swing.table.ModelAction;
+import com.raven.swing.table.ModelProfile;
+import java.text.DecimalFormat;
+
 /**
  *
  * @author DELL E5470
@@ -115,5 +120,4 @@ public class NhanVienModel {
     public void setHinh(String Hinh) {
         this.Hinh = Hinh;
     }
-    
 }

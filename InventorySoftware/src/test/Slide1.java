@@ -19,7 +19,7 @@ public class Slide1 extends javax.swing.JPanel {
      */
     public Slide1() {
         initComponents();
-        pictureBox1.setImage(new ImageIcon(getClass().getResource("")));
+//        pictureBox1.setImage(new ImageIcon(getClass().getResource("")));
     }
 
     /**
@@ -46,19 +46,19 @@ public class Slide1 extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(7, 70, 100));
-        jLabel1.setText("Sample Slideshow 1");
+        jLabel1.setText("Iphone 14");
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(4, 55, 111));
-        jLabel2.setText("This is sample slideshow using java swing");
+        jLabel2.setText("Sản phẩm bán chạy nhất");
 
         jLabel3.setFont(new java.awt.Font("sansserif", 2, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(4, 55, 111));
-        jLabel3.setText(" - Timing Framework library");
+        jLabel3.setText("Cấu hình mạnh");
 
         jLabel4.setFont(new java.awt.Font("sansserif", 2, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(4, 55, 111));
-        jLabel4.setText(" - Miglayout library");
+        jLabel4.setText("Nhận nhiều ưu đãi khi mua hàng");
 
         javax.swing.GroupLayout panelTransparent1Layout = new javax.swing.GroupLayout(panelTransparent1);
         panelTransparent1.setLayout(panelTransparent1Layout);
@@ -110,7 +110,7 @@ public class Slide1 extends javax.swing.JPanel {
             pictureBox1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pictureBox1Layout.createSequentialGroup()
                 .addComponent(panelTransparent1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );

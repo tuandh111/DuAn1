@@ -9,10 +9,17 @@ import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
 import com.raven.swing.noticeboard.ModelNoticeBoard;
 import com.raven.swing.table.EventAction;
+import com.tuandhpc05076.Dao.NhanVienDAO;
+import com.tuandhpc05076.Dao.NhanVienDAO1;
+import com.tuandhpc05076.Helper.DialogHelper;
+import com.tuandhpc05076.Helper.ShareHelper;
+import com.tuandhpc05076.Model.NhanVienModel;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import tabledark.Test;
 import test.Slide1;
 import test.Slide2;
@@ -20,60 +27,91 @@ import test.Slide3;
 
 public class Form_Home extends javax.swing.JPanel {
 
+    NhanVienDAO1 dao = new NhanVienDAO1();
+
     public Form_Home() {
         initComponents();
-        
+
         slideshow1.initSlideshow(new Slide1(), new Slide2(), new Slide3());
-        table1.fixTable(jScrollPane1);
+        tblUser.fixTable(jScrollPane1);
         setOpaque(false);
+        tblUser.getColumnModel().getColumn(0).setPreferredWidth(10);
+        tblUser.getColumnModel().getColumn(1).setPreferredWidth(100);
         initData();
+        
     }
 
     private void initData() {
         initCardData();
         initNoticeBoard();
-        initTableData();
+        fillTable();
+//        initTableData();
     }
 
-    private void initTableData() {
-        EventAction eventAction = new EventAction() {
-            @Override
-            public void delete(ModelStudent student) {
-                if (showMessage("Delete Student : " + student.getName())) {
-                    System.out.println("Delete click OK");
-                    Test n = new Test();
-                    n.setVisible(true);
-                } else {
-                    System.out.println("Delete click Cancel");
-                }
-            }
+    void fillTable() {
+        DefaultTableModel model1 = (DefaultTableModel) tblUser.getModel();
+        model1.setRowCount(0);
+        try {
+            List<NhanVienModel> list = dao.select();
+            for (NhanVienModel model : list) {
+                Object[] row = {
+                    model.getMaNV(),
+                    model.getHoTen(),
+                    model.getNgaySinh(),
+                    model.isGioiTinh(),
+                    model.getDiaChi(),
+                    model.getSDT(),
+                    model.getEmail(),
+                    model.getMatKhau(),
+                    model.getVaiTro(),
+                    model.getHinh()};
 
-            @Override
-            public void update(ModelStudent student) {
-                if (showMessage("Update Student : " + student.getName())) {
-                    System.out.println("Update click OK");
-                } else {
-                    System.out.println("Update click Cancel");
-                }
+                model1.addRow(row);
             }
-        };
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile.jpg")), "Tuấn", "Nam", "Java", 200).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile1.jpg")), "Bình", "Nam", "C++", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "An", "Nữ", "C#", 400).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Thành", "Nam", "C#", 600).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Bảo", "Nam", "C#", 800).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Lê", "Nữ", "C#", 400).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Ngọc", "Nữ", "C#",100).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Anh", "Nữ", "C#", 600).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Vũ", "Nam", "C#", 400).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Đại", "Đại", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Hoa", "Nữ", "C#", 100).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Trân", "Nữ", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Yến", "Nữ", "C#", 700).toRowTable(eventAction));
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
     }
+
+//    private void initTableData() {
+//        EventAction eventAction = new EventAction() {
+//            @Override
+//            public void delete(ModelStudent student) {
+//                if (showMessage("Delete Student : " + student.getName())) {
+//                    System.out.println("Delete click OK");
+//                    Test n = new Test();
+//                    n.setVisible(true);
+//                } else {
+//                    System.out.println("Delete click Cancel");
+//                }
+//            }
+//
+//            @Override
+//            public void update(ModelStudent student) {
+//                if (showMessage("Update Student : " + student.getName())) {
+//                    System.out.println("Update click OK");
+//                } else {
+//                    System.out.println("Update click Cancel");
+//                }
+//            }
+//        };
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile.jpg")), "Tuấn", "Nam", "Java", 200).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile1.jpg")), "Bình", "Nam", "C++", 300).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "An", "Nữ", "C#", 400).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Thành", "Nam", "C#", 600).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Bảo", "Nam", "C#", 800).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Lê", "Nữ", "C#", 400).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Ngọc", "Nữ", "C#", 100).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Anh", "Nữ", "C#", 600).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Vũ", "Nam", "C#", 400).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Đại", "Đại", "C#", 300).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Hoa", "Nữ", "C#", 100).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Trân", "Nữ", "C#", 300).toRowTable(eventAction));
+//        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Yến", "Nữ", "C#", 700).toRowTable(eventAction));
+//    }
 
     private void initCardData() {
-        int i=1000;
+        int i = 1000;
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card1.setData(new ModelCard("Số lượng sản phẩm", i, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
@@ -120,7 +158,7 @@ public class Form_Home extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table1 = new com.raven.swing.table.Table();
+        tblUser = new com.raven.swing.table.Table();
 
         card1.setColorGradient(new java.awt.Color(211, 28, 215));
 
@@ -164,12 +202,12 @@ public class Form_Home extends javax.swing.JPanel {
         jLabel5.setText("Số lượng nhân viên đang làm việc");
         jLabel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
-        table1.setModel(new javax.swing.table.DefaultTableModel(
+        tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Name", "Gender", "Course", "Fees", "Action"
+                "Ma", "NgaySinh", "Hoten", "GioiTinh", "DiaChi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -180,9 +218,14 @@ public class Form_Home extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(table1);
-        if (table1.getColumnModel().getColumnCount() > 0) {
-            table1.getColumnModel().getColumn(0).setPreferredWidth(150);
+        tblUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUserMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblUser);
+        if (tblUser.getColumnModel().getColumnCount() > 0) {
+            tblUser.getColumnModel().getColumn(0).setPreferredWidth(150);
         }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -251,6 +294,12 @@ public class Form_Home extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
+        // TODO add your handling code here:
+        int i=tblUser.getSelectedRow();
+        JOptionPane.showMessageDialog(this, i);
+    }//GEN-LAST:event_tblUserMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.component.Card card1;
     private com.raven.component.Card card2;
@@ -266,6 +315,6 @@ public class Form_Home extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private com.raven.swing.noticeboard.NoticeBoard noticeBoard;
     private slideshow.Slideshow slideshow1;
-    private com.raven.swing.table.Table table1;
+    private com.raven.swing.table.Table tblUser;
     // End of variables declaration//GEN-END:variables
 }
