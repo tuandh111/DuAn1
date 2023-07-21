@@ -16,7 +16,7 @@ public class NewClass {
     public static void main(String[] args) {
         NhanVienDAO dao = new NhanVienDAO();
         ArrayList<NhanVienModel> nv = (ArrayList<NhanVienModel>) dao.select();
-        System.out.println(nv.get(0));
+        System.out.println(nv.size());
       
     }
     
