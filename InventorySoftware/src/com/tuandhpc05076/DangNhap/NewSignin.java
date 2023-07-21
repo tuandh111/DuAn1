@@ -10,15 +10,23 @@ import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
 import static com.tuandhpc05076.DangNhap.Login.list1;
 import com.tuandhpc05076.Dao.NhanVienDAO1;
+import com.tuandhpc05076.Dao.ThaoTacDAO;
 import com.tuandhpc05076.Helper.DialogHelper;
 import com.tuandhpc05076.Helper.ShareHelper;
 import com.tuandhpc05076.MaHoa.MaHoa;
 import com.tuandhpc05076.Main.Main;
 import com.tuandhpc05076.Model.NhanVienModel;
+import com.tuandhpc05076.Model.ThaoTacModel;
 import com.tuandhpc05076.Object.O_DangNhap;
 import form.QuenMatKhau;
 import java.awt.Color;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -31,7 +39,7 @@ import javax.swing.UIManager;
 public class NewSignin extends javax.swing.JFrame {
 
     NhanVienDAO1 dao = new NhanVienDAO1();
-
+    ThaoTacDAO ThaoTacDao= new ThaoTacDAO();
     public NewSignin() {
         initComponents();
 
@@ -48,7 +56,7 @@ public class NewSignin extends javax.swing.JFrame {
 
     }
 
-    public void dangNhap() {
+    public void dangNhap() throws SQLException {
         if (checkText() == false) {
             return;
         }
@@ -62,12 +70,27 @@ public class NewSignin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
         } else {
             ShareHelper.USER = taikhoan;
+            ThaoTacModel model=getForm();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
             com.raven.main.Main main = new com.raven.main.Main();
             main.setVisible(true);
             this.dispose();
         }
 
+    }
+    public  ThaoTacModel getForm(){
+         ThaoTacModel cd = new ThaoTacModel();
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+          LocalDateTime current = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+    String formatted = current.format(formatter);
+        cd.setThoIGianHoatDong(formatted);
+        cd.setBanThaoTac("Đăng Nhập");
+        cd.setMaNV(txtusername.getText());
+        return cd;
     }
 
     public boolean checkText() {
@@ -413,7 +436,8 @@ public class NewSignin extends javax.swing.JFrame {
     public static ArrayList<O_DangNhap> list1 = new ArrayList<>();
     O_DangNhap dn = new O_DangNhap();
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-//        String user = txtusername.getText();
+        try {
+            //        String user = txtusername.getText();
 //        String pass = txtmatkhau.getText();
 //
 //        if (user.equals("admin") && pass.equals("123")) {
@@ -424,7 +448,10 @@ public class NewSignin extends javax.swing.JFrame {
 //
 //            JOptionPane.showMessageDialog(null, "Email or Password Invalid");
 //        }
-        dangNhap();
+dangNhap();
+        } catch (SQLException ex) {
+            Logger.getLogger(NewSignin.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
