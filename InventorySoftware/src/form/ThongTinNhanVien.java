@@ -72,7 +72,7 @@ select();
         txtNgaySinh.setText(nv.getNgaySinh());
         txtEmail.setText(nv.getEmail());
         txtVaiTro.setText(nv.getVaiTro());
-        if (ShareHelper.USER.isGioiTinh()) {
+        if (nv.isGioiTinh()) {
             rdoNam.setSelected(true);
         } else {
             rdoNu.setSelected(false);

@@ -38,7 +38,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="panelTransparent1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="220" max="32767" attributes="0"/>
+                  <EmptySpace pref="263" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -107,7 +107,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="64" green="46" red="7" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Sample Slideshow 1"/>
+                <Property name="text" type="java.lang.String" value="Iphone 14"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
@@ -118,7 +118,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="6f" green="37" red="4" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="This is sample slideshow using java swing"/>
+                <Property name="text" type="java.lang.String" value="S&#x1ea3;n ph&#x1ea9;m b&#xe1;n ch&#x1ea1;y nh&#x1ea5;t"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
@@ -129,7 +129,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="6f" green="37" red="4" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" - Timing Framework library"/>
+                <Property name="text" type="java.lang.String" value="C&#x1ea5;u h&#xec;nh m&#x1ea1;nh"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -140,7 +140,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="6f" green="37" red="4" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" - Miglayout library"/>
+                <Property name="text" type="java.lang.String" value="Nh&#x1ead;n nhi&#x1ec1;u &#x1b0;u &#x111;&#xe3;i khi mua h&#xe0;ng"/>
               </Properties>
             </Component>
           </SubComponents>
