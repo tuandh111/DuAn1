@@ -4,6 +4,8 @@
  */
 package form;
 
+import java.awt.Color;
+
 /**
  *
  * @author DELL E5470
@@ -251,6 +253,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtSoNgayLamViec.setText("");
         lblTongTien.setText("0");
         lblTrangThai.setText("Chưa thanh toán ");
+        lblTrangThai.setForeground(Color.red);
         cboVaiTro.setSelectedIndex(-1);
     }//GEN-LAST:event_btnMoiActionPerformed
 
