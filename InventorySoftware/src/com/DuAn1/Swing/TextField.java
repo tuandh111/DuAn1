@@ -41,11 +41,11 @@ public class TextField extends JTextField {
     private boolean show;
     private boolean mouseOver = false;
     private String labelText = "Label";
-    private Color lineColor = new Color(169,224,49);
+    private Color lineColor = new Color(153,153,153);
 
     public TextField() {
         setBorder(new EmptyBorder(20, 3, 10, 3));
-        setSelectionColor(new Color(169,224,49));
+        setSelectionColor(new Color(153,153,153));
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent me) {
@@ -112,7 +112,7 @@ public class TextField extends JTextField {
         if (mouseOver) {
             g2.setColor(lineColor);
         } else {
-            g2.setColor(new Color(169,224,49));
+            g2.setColor(new Color(153,153,153));
         }
         g2.fillRect(2, height - 1, width - 4, 1);
         createHintText(g2);
@@ -122,7 +122,7 @@ public class TextField extends JTextField {
 
     private void createHintText(Graphics2D g2) {
         Insets in = getInsets();
-        g2.setColor(new Color(169,224,49));
+        g2.setColor(new Color(153,153,153));
         FontMetrics ft = g2.getFontMetrics();
         Rectangle2D r2 = ft.getStringBounds(labelText, g2);
         double height = getHeight() - in.top - in.bottom;
