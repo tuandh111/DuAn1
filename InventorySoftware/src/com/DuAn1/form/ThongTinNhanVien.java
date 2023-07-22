@@ -9,6 +9,7 @@ import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.NhanVienModel;
+import com.DuAn1.main.Main;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
@@ -75,7 +76,7 @@ select();
         if (nv.isGioiTinh()) {
             rdoNam.setSelected(true);
         } else {
-            rdoNu.setSelected(false);
+            rdoNu.setSelected(true);
         }
         if (nv.getHinh() != null) {
 
@@ -89,13 +90,25 @@ select();
     }
     public void updateNV() {
         NhanVienModel nv = getForm();
+        
         try {
             dao.update(nv);
             DialogHelper.alert(this, "Cập nhật thành công!");
+          ThongTinNhanVien.setSoLuong(nv.getHinh());
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Cập nhật thất bại!");
         }
+    }
+    public boolean CheckForm(){
+        if(txtMatKhau.getText().equals("")){
+            DialogHelper.alert(this, "Mật khẩu của bạn đã để trống");
+            return false;
+        }else if(!txtNhapLaiMatKhau.getText().equals(txtMatKhau.getText())){
+            DialogHelper.alert(this, "Nhập lại mật khẩu không hợp lệ");
+            return false;
+        }
+        return true;
     }
 
     NhanVienModel getForm() {
@@ -116,6 +129,8 @@ select();
         cd.setVaiTro(txtVaiTro.getText());
         cd.setHinh(txtHinhAnh.getToolTipText());
         cd.setMaNV(txtMaNV.getText());
+        cd.setTrangThai(true);
+        cd.setTrangThaiXoa(true);
         return cd;
     }
 
@@ -131,7 +146,7 @@ select();
         txtNgaySinh = new com.DuAn1.Swing.TextField();
         txtHoTen = new com.DuAn1.Swing.TextField();
         txtMatKhau = new com.DuAn1.Swing.PasswordField();
-        passwordField2 = new com.DuAn1.Swing.PasswordField();
+        txtNhapLaiMatKhau = new com.DuAn1.Swing.PasswordField();
         txtVaiTro = new com.DuAn1.Swing.TextField();
         rdoNam = new javax.swing.JRadioButton();
         rdoNu = new javax.swing.JRadioButton();
@@ -161,8 +176,8 @@ select();
         txtMatKhau.setLabelText("Mật khẩu");
         txtMatKhau.setShowAndHide(true);
 
-        passwordField2.setLabelText("Nhập lại mật khẩu");
-        passwordField2.setShowAndHide(true);
+        txtNhapLaiMatKhau.setLabelText("Nhập lại mật khẩu");
+        txtNhapLaiMatKhau.setShowAndHide(true);
 
         txtVaiTro.setLabelText("Vai trò");
 
@@ -212,7 +227,7 @@ select();
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(passwordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNhapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,7 +286,7 @@ select();
                             .addComponent(rdoNu))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(passwordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNhapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,8 +303,8 @@ select();
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
+        if(CheckForm()==false)return;
         updateNV();
-        ThongTinNhanVien.setSoLuong(txtHoTen.getText());
         dispose();
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -385,7 +400,6 @@ select();
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JPanel jPanel1;
-    private com.DuAn1.Swing.PasswordField passwordField2;
     private javax.swing.JRadioButton rdoNam;
     private javax.swing.JRadioButton rdoNu;
     private com.DuAn1.Swing.TextImage textImage1;
@@ -397,6 +411,7 @@ select();
     private com.DuAn1.Swing.TextField txtMaNV;
     private com.DuAn1.Swing.PasswordField txtMatKhau;
     private com.DuAn1.Swing.TextField txtNgaySinh;
+    private com.DuAn1.Swing.PasswordField txtNhapLaiMatKhau;
     private com.DuAn1.Swing.TextField txtSoDienThoai;
     private com.DuAn1.Swing.TextField txtVaiTro;
     // End of variables declaration//GEN-END:variables

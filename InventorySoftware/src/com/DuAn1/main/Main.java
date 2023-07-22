@@ -1,7 +1,5 @@
 package com.DuAn1.main;
 
-
-
 import com.DuAn1.component.Header;
 import com.DuAn1.component.Menu;
 import com.raven.event.EventMenuSelected;
@@ -32,7 +30,9 @@ import com.DuAn1.form.NhanVien;
 import com.DuAn1.form.ThongTinNhanVien;
 import com.DuAn1.form.VaiTro;
 import com.DuAn1.DangNhap.NewSignin;
+import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.NhanVienModel;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,9 +48,10 @@ public class Main extends javax.swing.JFrame {
     private Menu menu;
     private Header header;
     private MainForm main;
- 
+
     private Animator animator;
-      private static Main main1;
+    private static Main main1;
+
     public Main() {
         initComponents();
         Time time = new Time(txtThoiGian);
@@ -59,12 +60,12 @@ public class Main extends javax.swing.JFrame {
         init();
         lbUserName.setText(ShareHelper.USER.getMaNV());
         lbRole.setText(ShareHelper.USER.getVaiTro());
-          if (ShareHelper.USER.getHinh() != null) {
-            pic.setToolTipText(ShareHelper.USER.getHinh());
-            pic.setIcon(ShareHelper.readLogo(ShareHelper.USER.getHinh()));
-        } else {
-           
-        } 
+        NhanVienDAO1 dao= new NhanVienDAO1();
+        NhanVienModel nv =dao.findById(lbUserName.getText());
+        if (nv != null) {
+            pic.setToolTipText(nv.getHinh());
+            pic.setIcon(ShareHelper.readLogo(nv.getHinh()));
+        }main.repaint(); 
     }
 
     private void init() {
@@ -86,7 +87,7 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new com.DuAn1.MainAn.MainAn1());
                     } else if (subMenuIndex == 2) {
                         main.showForm(new com.DuAn1.MainAn.MainAn2());
-                    } else if(subMenuIndex ==3){
+                    } else if (subMenuIndex == 3) {
                         main.showForm(new LichSu());
                     }
                 } else if (menuIndex == 2) {
@@ -94,14 +95,13 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new SanPham());
                     } else if (subMenuIndex == 1) {
                         main.showForm(new DongMay());
-                    }
-                    else if(subMenuIndex ==2){
+                    } else if (subMenuIndex == 2) {
                         main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
                         main.showForm(new DatHang1());
-                    }else if(subMenuIndex == 2){
+                    } else if (subMenuIndex == 2) {
                         main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 4) {
@@ -115,24 +115,22 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 6) {
                     if (subMenuIndex == 0) {
                         main.showForm(new NhanVien());
-                    }
-                    else if (subMenuIndex == 1) {
+                    } else if (subMenuIndex == 1) {
                         main.showForm(new VaiTro());
-                    }
-                    else if(subMenuIndex ==2){
+                    } else if (subMenuIndex == 2) {
                         main.showForm(new DaXoa());
                     }
-                    
+
                 } else if (menuIndex == 7) {
                     if (subMenuIndex == 0) {
                         main.showForm(new KhachHang());
-                    }else if(subMenuIndex==2){
+                    } else if (subMenuIndex == 2) {
                         main.showForm(new DaXoa());
                     }
                 } else if (menuIndex == 8) {
-                  
-                        main.showForm(new ThanhToanLuong());
-                    
+
+                    main.showForm(new ThanhToanLuong());
+
                 } else if (menuIndex == 9) {
                     if (subMenuIndex == 0) {
                         NewSignin quen = new NewSignin();
@@ -200,9 +198,10 @@ public class Main extends javax.swing.JFrame {
         //  Start with this form
         main.showForm(new Form_Home());
     }
-        public static Main getMain() {
+
+    public static Main getMain() {
         return main1;
-    } 
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -220,6 +219,11 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         bg.setBackground(new java.awt.Color(245, 245, 245));
         bg.setOpaque(true);
@@ -243,6 +247,9 @@ public class Main extends javax.swing.JFrame {
         pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 picMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                picMousePressed(evt);
             }
         });
 
@@ -322,10 +329,23 @@ public class Main extends javax.swing.JFrame {
     private void picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_picMouseClicked
         ThongTinNhanVien tt = new ThongTinNhanVien(Main.getMain(), false);
         tt.setVisible(true);
-      
-
+         NhanVienDAO1 dao = new NhanVienDAO1();
+        NhanVienModel nv =dao.findById(lbUserName.getText());
+        if (nv != null) {
+            pic.setToolTipText(ThongTinNhanVien.getSoLuong());
+            pic.setIcon(ShareHelper.readLogo(ThongTinNhanVien.getSoLuong()));
+        }  
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_picMouseClicked
+
+    private void picMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_picMousePressed
+             // TODO add your handling code here:
+    }//GEN-LAST:event_picMousePressed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

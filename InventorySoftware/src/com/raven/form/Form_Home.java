@@ -36,7 +36,10 @@ public class Form_Home extends javax.swing.JPanel {
         tblUser.fixTable(jScrollPane1);
         setOpaque(false);
         tblUser.getColumnModel().getColumn(0).setPreferredWidth(10);
-        tblUser.getColumnModel().getColumn(1).setPreferredWidth(100);
+        tblUser.getColumnModel().getColumn(1).setPreferredWidth(150);
+         tblUser.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tblUser.getColumnModel().getColumn(3).setPreferredWidth(70);
+        tblUser.getColumnModel().getColumn(4).setPreferredWidth(0);
         initData();
         
     }
@@ -52,18 +55,31 @@ public class Form_Home extends javax.swing.JPanel {
         DefaultTableModel model1 = (DefaultTableModel) tblUser.getModel();
         model1.setRowCount(0);
         try {
-            List<NhanVienModel> list = dao.select();
+            List<NhanVienModel> list = dao.selectHoatDong();
             for (NhanVienModel model : list) {
+                String gt ="";
+                if(model.isGioiTinh()){
+                    gt="Nam";
+                }else{
+                    gt="Nữ";
+                }
+                String vaiTro ="";
+                if(model.getVaiTro().trim().equals("QL")){
+                    vaiTro="Quản lý";
+                }else{
+                    vaiTro="Nhân viên";
+                }
                 Object[] row = {
                     model.getMaNV(),
                     model.getHoTen(),
                     model.getNgaySinh(),
-                    model.isGioiTinh(),
+                    gt,
+                    vaiTro,
                     model.getDiaChi(),
                     model.getSDT(),
                     model.getEmail(),
                     model.getMatKhau(),
-                    model.getVaiTro(),
+                    
                     model.getHinh()};
 
                 model1.addRow(row);
@@ -199,7 +215,7 @@ public class Form_Home extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(76, 76, 76));
-        jLabel5.setText("Số lượng nhân viên đang làm việc");
+        jLabel5.setText("Nhân viên đang làm việc");
         jLabel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
@@ -207,11 +223,11 @@ public class Form_Home extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Ma", "NgaySinh", "Hoten", "GioiTinh", "DiaChi"
+                "Mã", "Họ và tên", "Ngày sinh", "Giới tính", "Vai trò"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
