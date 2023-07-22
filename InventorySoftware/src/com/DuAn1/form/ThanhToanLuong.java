@@ -21,9 +21,10 @@ import javax.swing.table.DefaultTableModel;
  * @author DELL E5470
  */
 public class ThanhToanLuong extends javax.swing.JPanel {
+
     ThanhToanLuongDAO dao = new ThanhToanLuongDAO();
-    int row =-1;
-    
+    int row = -1;
+
     /**
      * Creates new form GiamGia
      */
@@ -33,103 +34,114 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         tblThanhToanLuong.getColumnModel().getColumn(1).setPreferredWidth(40);
         fillTable();
     }
-void fillTable (){
-     DefaultTableModel tblModel = (DefaultTableModel) tblThanhToanLuong.getModel();
-     tblModel.setRowCount(0);
+
+    void fillTable() {
+        DefaultTableModel tblModel = (DefaultTableModel) tblThanhToanLuong.getModel();
+        tblModel.setRowCount(0);
 //     tblModel.setColumnIdentifiers(new String []{"Mã lương","Số ngày làm","Lương cơ bản","Số giờ tăng ca","Lương tăng ca",
 //     "Tổng tiền","Trạng thái"});
-     try {
-         List<ThanhToanLuongModel> list  = dao.select();
-         for (ThanhToanLuongModel ttl : list) {
-            Object[] rows = {ttl.getMaLuong(),ttl.getSoNgayLam(),ttl.getLuongCoBan(),ttl.getNgayVaoCTy(),ttl.getSoGioTangCa(), ttl.getLuongTangCa(),ttl.getKhoanTru(),
-                ttl.getTongTien(),ttl.isTrangThai()};
-            tblModel.addRow(rows);
-         }
-    } catch (Exception e) {
-         JOptionPane.showMessageDialog(this, "Error");
-         e.printStackTrace();
+        try {
+            List<ThanhToanLuongModel> list = dao.select();
+            for (ThanhToanLuongModel ttl : list) {
+                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), ttl.getNgayVaoCTy(), ttl.getSoGioTangCa(), ttl.getLuongTangCa(), ttl.getKhoanTru(),
+                    ttl.getTongTien(), ttl.isTrangThai()};
+                tblModel.addRow(rows);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error");
+            e.printStackTrace();
+        }
     }
-}
 
-void setForm(ThanhToanLuongModel ttl){
-    txtMaLuong.setText(ttl.getMaLuong());
-    txtLuongCoBan.setText(String.valueOf(ttl.getLuongCoBan()));
-    txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
-    txtNgayVaoCTY.setText(String.valueOf(ttl.getNgayVaoCTy()));
-    txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
-    txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
-    lblTongTien.setText(String.valueOf(ttl.getTongTien()));
-    if(ttl.isTrangThai()){
-        switchButton1.setSelectedAnimate(true);
-        lblTrangThai.setText("Đã thanh toán");
-    }else{
-        switchButton1.setSelectedAnimate(false);
-        lblTrangThai.setText("Chưa thanh toán");
+    void setForm(ThanhToanLuongModel ttl) {
+        txtMaLuong.setText(ttl.getMaLuong());
+        txtLuongCoBan.setText(String.valueOf(ttl.getLuongCoBan()));
+        txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
+        txtNgayVaoCTY.setText(String.valueOf(ttl.getNgayVaoCTy()));
+        txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
+        txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
+        lblTongTien.setText(String.valueOf(ttl.getTongTien()));
+        if (ttl.isTrangThai()) {
+            switchButton1.setSelectedAnimate(true);
+            lblTrangThai.setText("Đã thanh toán");
+        } else {
+            switchButton1.setSelectedAnimate(false);
+            lblTrangThai.setText("Chưa thanh toán");
+        }
     }
-}
-ThanhToanLuongModel getForm(){
-  ThanhToanLuongModel ttl = new ThanhToanLuongModel();
-  ttl.setMaLuong(txtMaLuong.getText());
-  ttl.setLuongCoBan(Double.parseDouble(txtLuongCoBan.getText()));
-  ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
-  ttl.setNgayVaoCTy(DateHelper.toDate("dd-MM-yyyy", txtNgayVaoCTY.getText()));
-  ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
-  ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
-  ttl.setKhoanTru(Double.parseDouble(txtKhoangTru1.getText()));
-  ttl.setTongTien(Double.parseDouble(lblTongTien.getText()));
-  ttl.setTrangThai(true);
-  if(switchButton1.isSelected()){
-      ttl.setTrangThai(true);
-  }else{
-      ttl.setTrangThai(false);
-  }
- 
-  return ttl;
-}
-void clearForm(){
-    ThanhToanLuongModel ttl = new ThanhToanLuongModel();
-    this.setForm(ttl);
-    this.row=-1;
-    this.UpdateStatus();
-}
-void UpdateStatus(){
-    boolean edit = (this.row >=0);
-        boolean first =(this.row == 0);
-        boolean last = (this.row == tblThanhToanLuong.getRowCount()-1);
-        
+
+    ThanhToanLuongModel getForm() {
+        ThanhToanLuongModel ttl = new ThanhToanLuongModel();
+        ttl.setMaLuong(txtMaLuong.getText());
+        ttl.setLuongCoBan(Double.parseDouble(txtLuongCoBan.getText()));
+        ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
+        ttl.setNgayVaoCTy(DateHelper.toDate("dd-MM-yyyy", txtNgayVaoCTY.getText()));
+        ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
+        ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
+        ttl.setKhoanTru(Double.parseDouble(txtKhoangTru1.getText()));
+        ttl.setTongTien(Double.parseDouble(lblTongTien.getText()));
+        ttl.setTrangThai(true);
+        if (switchButton1.isSelected()) {
+            ttl.setTrangThai(true);
+        } else {
+            ttl.setTrangThai(false);
+        }
+
+        return ttl;
+    }
+
+    void clearForm() {
+        txtMaLuong.setText("");
+        txtLuongCoBan.setText("");
+        txtLuongTangCa.setText("");
+        txtSoHTangCa.setText("");
+        txtSoNgayLamViec.setText("");
+        lblTongTien.setText("0");
+        lblTrangThai.setText("Chưa thanh toán ");
+        lblTrangThai.setForeground(Color.red);
+        txtKhoangTru1.setText("");
+        txtNgayVaoCTY.setText("");
+    }
+
+    void UpdateStatus() {
+        boolean edit = (this.row >= 0);
+        boolean first = (this.row == 0);
+        boolean last = (this.row == tblThanhToanLuong.getRowCount() - 1);
+
         txtMaLuong.setEditable(!edit);
         btnThem.setEnabled(!edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
-}
-void edit(){
+    }
+
+    void edit() {
         String maLuong = (String) tblThanhToanLuong.getValueAt(this.row, 0);
         ThanhToanLuongModel ttl = dao.findById(maLuong);
         this.setForm(ttl);
         this.UpdateStatus();
     }
-boolean check(){
-    if(txtMaLuong.getText().equals("")){
-        JOptionPane.showMessageDialog(this, "Hãy nhập mã lương!");
-        return false;
-    }
-    else if(txtLuongTangCa.getText().equals("")){
-        JOptionPane.showMessageDialog(this, "Hãy nhập lương cơ bản!");
-        return false;
-    }
-    else if(txtSoNgayLamViec.getText().equals("")){
-        JOptionPane.showMessageDialog(this, "Hãy nhập số ngày làm việc!");
-        return false;
-    }else if(txtSoHTangCa.getText().equals("")){
-        JOptionPane.showMessageDialog(this, "Hãy nhập số giờ tăng ca!");
-        return false;
-    }else if(txtLuongTangCa.getText().equals("")){
-        JOptionPane.showMessageDialog(this, "Hãy nhập lương tăng ca!");
-        return false;
-    }
+
+    boolean check() {
+        if (txtMaLuong.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Hãy nhập mã lương!");
+            return false;
+        } else if (txtLuongTangCa.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Hãy nhập lương cơ bản!");
+            return false;
+        } else if (txtSoNgayLamViec.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Hãy nhập số ngày làm việc!");
+            return false;
+        } else if (txtSoHTangCa.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Hãy nhập số giờ tăng ca!");
+            return false;
+        } else if (txtLuongTangCa.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Hãy nhập lương tăng ca!");
+            return false;
+        }
 //    else if()
-    return true;
-}
+        return true;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -424,23 +436,16 @@ boolean check(){
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         // TODO add your handling code here:
-        txtMaLuong.setText("");
-        txtLuongCoBan.setText("");
-        txtLuongTangCa.setText("");
-        txtSoHTangCa.setText("");
-        txtSoNgayLamViec.setText("");
-        lblTongTien.setText("0");
-        lblTrangThai.setText("Chưa thanh toán ");
-        lblTrangThai.setForeground(Color.red);
+        clearForm();
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void switchButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchButton1MouseClicked
         // TODO add your handling code here:
-        if(!switchButton1.isSelected()){
+        if (!switchButton1.isSelected()) {
             lblTrangThai.setText("Đã thanh toán");
             lblTrangThai.setForeground(Color.green);
-        }else{
-             lblTrangThai.setText("Chưa thanh toán");
+        } else {
+            lblTrangThai.setText("Chưa thanh toán");
             lblTrangThai.setForeground(Color.red);
         }
     }//GEN-LAST:event_switchButton1MouseClicked
@@ -451,33 +456,33 @@ boolean check(){
 
     private void txtLuongCoBanCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongCoBanCaretUpdate
         // TODO add your handling code here:
-     double tongTien=1;
-        if(txtSoNgayLamViec.getText().equals("")){
-            return ;
+        double tongTien = 1;
+        if (txtSoNgayLamViec.getText().equals("")) {
+            return;
         }
-        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText());
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtLuongCoBanCaretUpdate
 
     private void tblThanhToanLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMousePressed
         // TODO add your handling code here:
-        if(evt.getClickCount() == 2){
-           this.row = tblThanhToanLuong.getSelectedRow();
-           this.edit();
-       }
+        if (evt.getClickCount() == 1) {
+            this.row = tblThanhToanLuong.getSelectedRow();
+            this.edit();
+        }
     }//GEN-LAST:event_tblThanhToanLuongMousePressed
- void them(){
-    ThanhToanLuongModel ttl = getForm();
-    try {
-        dao.insert(ttl);
-        fillTable();
-        clearForm();
-        DialogHelper.alert(this, "Thêm mới thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm mới thất bại");
-        
+    void them() {
+        ThanhToanLuongModel ttl = getForm();
+        try {
+            dao.insert(ttl);
+            fillTable();
+            clearForm();
+            DialogHelper.alert(this, "Thêm mới thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm mới thất bại");
+
+        }
     }
-}
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
         them();
@@ -485,16 +490,17 @@ boolean check(){
 
     private void txtSoNgayLamViecCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoNgayLamViecCaretUpdate
         // TODO add your handling code here:
-        double tongTien=1;
-        if(txtSoNgayLamViec.getText().equals("")){
-            return ;
+        double tongTien = 1;
+        if (txtSoNgayLamViec.getText().equals("")) {
+            return;
         }
-        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26* Double.parseDouble(txtSoNgayLamViec.getText());
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
     private void txtKhoangTru1CaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTru1CaretUpdate
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtKhoangTru1CaretUpdate
 
     private void txtKhoangTru1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTru1ActionPerformed
@@ -511,30 +517,30 @@ boolean check(){
 
     private void txtLuongTangCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLuongTangCaActionPerformed
         // TODO add your handling code here:   
-        
+
     }//GEN-LAST:event_txtLuongTangCaActionPerformed
 
     private void txtLuongTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongTangCaCaretUpdate
         // TODO add your handling code here:
-        double tongTien=0;      
-        if(txtSoNgayLamViec.getText().equals("")){
-            return ;
+        double tongTien = 0;
+        if (txtSoNgayLamViec.getText().equals("")) {
+            return;
         }
-        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText())+
-                Double.parseDouble(txtLuongTangCa.getText())* Double.parseDouble(txtSoHTangCa.getText());
-              
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
+                + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtLuongTangCaCaretUpdate
 
     private void txtSoHTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoHTangCaCaretUpdate
         // TODO add your handling code here:
-        double tongTien=0;      
-        if(txtSoNgayLamViec.getText().equals("")){
-            return ;
+        double tongTien = 0;
+        if (txtSoNgayLamViec.getText().equals("")) {
+            return;
         }
-        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText())+
-                Double.parseDouble(txtLuongTangCa.getText())*Double.parseDouble(txtSoHTangCa.getText());
-              
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
+                + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
 
