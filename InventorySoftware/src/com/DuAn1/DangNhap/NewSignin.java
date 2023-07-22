@@ -45,7 +45,7 @@ public class NewSignin extends javax.swing.JFrame {
 
         this.setLocationRelativeTo(null);
         jPanel6.setVisible(false);
-
+        jLabel_SoftZyd.setVisible(true);
         try {
 
             UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
@@ -132,6 +132,7 @@ public class NewSignin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jLabel_SoftZyd = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
@@ -140,7 +141,6 @@ public class NewSignin extends javax.swing.JFrame {
         jPasswordField_Password = new com.DuAn1.Swing.PasswordField();
         jPasswordField_Password2 = new com.DuAn1.Swing.PasswordField();
         cardRegister2 = new com.DuAn1.component.CardRegister();
-        jLabel_SoftZyd = new javax.swing.JLabel();
         jTextField_Email = new com.DuAn1.Swing.TextField();
         jTextField_Email3 = new com.DuAn1.Swing.TextField();
         cardRegister3 = new com.DuAn1.component.CardRegister();
@@ -267,6 +267,12 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 40, 40));
 
+        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
+        jLabel_SoftZyd.setText("TTA MOBILE");
+        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 314, 80));
+
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -332,12 +338,6 @@ public class NewSignin extends javax.swing.JFrame {
         jPasswordField_Password2.setShowAndHide(true);
         jPanel6.add(jPasswordField_Password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
         jPanel6.add(cardRegister2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 30));
-
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
-        jLabel_SoftZyd.setText("TTA MOBILE");
-        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 314, 80));
 
         jTextField_Email.setLabelText("Tài khoản");
         jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, -1));
