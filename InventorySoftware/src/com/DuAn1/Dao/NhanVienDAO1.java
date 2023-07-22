@@ -139,10 +139,13 @@ public class NhanVienDAO1 {
     }
 
     public List<NhanVienModel> select() {
-        String sql = "SELECT * FROM NHANVIEN";
+        String sql = "SELECT * FROM NHANVIEN where TrangThaiXoa=1";
         return select(sql);
     }
-
+    public List<NhanVienModel> selectHoatDong() {
+        String sql = "SELECT * FROM NHANVIEN where TrangThai=1 and TrangThaiXoa=1";
+        return select(sql);
+    }
     public NhanVienModel findById(String makh) {
         String sql = "SELECT * FROM NHANVIEN WHERE MaNV=?";
         List<NhanVienModel> list = select(sql, makh);
