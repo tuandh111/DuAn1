@@ -59,8 +59,13 @@ void setForm(ThanhToanLuongModel ttl){
     txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
     txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
     lblTongTien.setText(String.valueOf(ttl.getTongTien()));
-    lblTrangThai.setText(String.valueOf(ttl.isTrangThai()));
-    switchButton1.setSelectedAnimate(true);
+    if(ttl.isTrangThai()){
+        switchButton1.setSelectedAnimate(true);
+        lblTrangThai.setText("Đã thanh toán");
+    }else{
+        switchButton1.setSelectedAnimate(false);
+        lblTrangThai.setText("Chưa thanh toán");
+    }
 }
 ThanhToanLuongModel getForm(){
   ThanhToanLuongModel ttl = new ThanhToanLuongModel();
@@ -72,7 +77,12 @@ ThanhToanLuongModel getForm(){
   ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
   ttl.setKhoanTru(Double.parseDouble(txtKhoangTru1.getText()));
   ttl.setTongTien(Double.parseDouble(lblTongTien.getText()));
-  ttl.setTrangThai(Boolean.parseBoolean(lblTrangThai.getText()));
+  ttl.setTrangThai(true);
+  if(switchButton1.isSelected()){
+      ttl.setTrangThai(true);
+  }else{
+      ttl.setTrangThai(false);
+  }
  
   return ttl;
 }
@@ -204,10 +214,25 @@ boolean check(){
         });
 
         txtSoHTangCa.setLabelText("Số giờ tăng ca ");
+        txtSoHTangCa.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtSoHTangCaCaretUpdate(evt);
+            }
+        });
 
         txtMaLuong.setLabelText("Mã số lương");
 
         txtLuongTangCa.setLabelText("Lương tăng ca");
+        txtLuongTangCa.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtLuongTangCaCaretUpdate(evt);
+            }
+        });
+        txtLuongTangCa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLuongTangCaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Trạng thái:");
 
@@ -426,7 +451,12 @@ boolean check(){
 
     private void txtLuongCoBanCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongCoBanCaretUpdate
         // TODO add your handling code here:
-//        if()
+     double tongTien=1;
+        if(txtSoNgayLamViec.getText().equals("")){
+            return ;
+        }
+        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText());
+        lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtLuongCoBanCaretUpdate
 
     private void tblThanhToanLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMousePressed
@@ -436,13 +466,13 @@ boolean check(){
            this.edit();
        }
     }//GEN-LAST:event_tblThanhToanLuongMousePressed
-public void them(){
+ void them(){
     ThanhToanLuongModel ttl = getForm();
     try {
         dao.insert(ttl);
         fillTable();
         clearForm();
-        
+        DialogHelper.alert(this, "Thêm mới thành công");
     } catch (Exception e) {
         DialogHelper.alert(this, "Thêm mới thất bại");
         
@@ -459,7 +489,7 @@ public void them(){
         if(txtSoNgayLamViec.getText().equals("")){
             return ;
         }
-        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText());
+        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26* Double.parseDouble(txtSoNgayLamViec.getText());
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
@@ -478,6 +508,35 @@ public void them(){
     private void txtNgayVaoCTYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayVaoCTYActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayVaoCTYActionPerformed
+
+    private void txtLuongTangCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLuongTangCaActionPerformed
+        // TODO add your handling code here:   
+        
+    }//GEN-LAST:event_txtLuongTangCaActionPerformed
+
+    private void txtLuongTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongTangCaCaretUpdate
+        // TODO add your handling code here:
+        double tongTien=0;      
+        if(txtSoNgayLamViec.getText().equals("")){
+            return ;
+        }
+        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText())+
+                Double.parseDouble(txtLuongTangCa.getText())* Double.parseDouble(txtSoHTangCa.getText());
+              
+        lblTongTien.setText(String.valueOf(tongTien));
+    }//GEN-LAST:event_txtLuongTangCaCaretUpdate
+
+    private void txtSoHTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoHTangCaCaretUpdate
+        // TODO add your handling code here:
+        double tongTien=0;      
+        if(txtSoNgayLamViec.getText().equals("")){
+            return ;
+        }
+        tongTien=Double.parseDouble(txtLuongCoBan.getText())/26*Double.parseDouble(txtSoNgayLamViec.getText())+
+                Double.parseDouble(txtLuongTangCa.getText())*Double.parseDouble(txtSoHTangCa.getText());
+              
+        lblTongTien.setText(String.valueOf(tongTien));
+    }//GEN-LAST:event_txtSoHTangCaCaretUpdate
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

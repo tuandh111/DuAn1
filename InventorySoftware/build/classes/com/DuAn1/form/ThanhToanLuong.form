@@ -246,6 +246,9 @@
           <Properties>
             <Property name="labelText" type="java.lang.String" value="S&#x1ed1; gi&#x1edd; t&#x103;ng ca "/>
           </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtSoHTangCaCaretUpdate"/>
+          </Events>
         </Component>
         <Component class="com.DuAn1.Swing.TextField" name="txtMaLuong">
           <Properties>
@@ -256,6 +259,10 @@
           <Properties>
             <Property name="labelText" type="java.lang.String" value="L&#x1b0;&#x1a1;ng t&#x103;ng ca"/>
           </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLuongTangCaCaretUpdate"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLuongTangCaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
