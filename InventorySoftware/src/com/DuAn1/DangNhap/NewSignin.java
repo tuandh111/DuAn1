@@ -337,11 +337,12 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
         jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
         jLabel_SoftZyd.setText("TTA MOBILE");
-        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 314, 80));
+        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 314, 80));
 
         jTextField_Email.setLabelText("Tài khoản");
         jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, -1));
 
+        jTextField_Email3.setToolTipText("200");
         jTextField_Email3.setLabelText("Tài khoản");
         jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
