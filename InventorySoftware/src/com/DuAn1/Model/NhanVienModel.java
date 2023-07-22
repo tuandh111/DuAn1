@@ -14,21 +14,24 @@ import java.text.DecimalFormat;
  * @author DELL E5470
  */
 public class NhanVienModel {
+
     private String MaNV;
     private String HoTen;
     private String NgaySinh;
-    private boolean  GioiTinh;
+    private boolean GioiTinh;
     private String DiaChi;
     private String SDT;
     private String Email;
     private String MatKhau;
     private String VaiTro;
     private String Hinh;
+    private boolean TrangThai;
+    private boolean TrangThaiXoa;
 
     public NhanVienModel() {
     }
 
-    public NhanVienModel(String MaNV, String HoTen, String NgaySinh, boolean GioiTinh, String DiaChi, String SDT, String Email, String MatKhau, String VaiTro, String Hinh) {
+    public NhanVienModel(String MaNV, String HoTen, String NgaySinh, boolean GioiTinh, String DiaChi, String SDT, String Email, String MatKhau, String VaiTro, String Hinh, boolean TrangThai, boolean TrangThaiXoa) {
         this.MaNV = MaNV;
         this.HoTen = HoTen;
         this.NgaySinh = NgaySinh;
@@ -39,6 +42,8 @@ public class NhanVienModel {
         this.MatKhau = MatKhau;
         this.VaiTro = VaiTro;
         this.Hinh = Hinh;
+        this.TrangThai = TrangThai;
+        this.TrangThaiXoa = TrangThaiXoa;
     }
 
     public String getMaNV() {
@@ -120,4 +125,21 @@ public class NhanVienModel {
     public void setHinh(String Hinh) {
         this.Hinh = Hinh;
     }
+
+    public boolean isTrangThai() {
+        return TrangThai;
+    }
+
+    public void setTrangThai(boolean TrangThai) {
+        this.TrangThai = TrangThai;
+    }
+
+    public boolean isTrangThaiXoa() {
+        return TrangThaiXoa;
+    }
+
+    public void setTrangThaiXoa(boolean TrangThaiXoa) {
+        this.TrangThaiXoa = TrangThaiXoa;
+    }
+
 }

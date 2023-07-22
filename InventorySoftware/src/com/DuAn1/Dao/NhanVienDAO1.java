@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author DELL E5470
@@ -100,7 +99,7 @@ public class NhanVienDAO1 {
 //        }
 //    }
     public void insert(NhanVienModel model) {
-        String sql = "Insert into NHANVIEN values (?,?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert into NHANVIEN values (?,?,?,?,?,?,?,?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaNV(),
                 model.getHoTen(),
@@ -111,11 +110,13 @@ public class NhanVienDAO1 {
                 model.getEmail(),
                 model.getMatKhau(),
                 model.getVaiTro(),
-                model.getHinh());
+                model.getHinh(),
+                model.isTrangThai(),
+                model.isTrangThaiXoa());
     }
 
     public void update(NhanVienModel model) {
-        String sql = "UPDATE NHANVIEN SET HoTen  = ?, NgaySinh=?, GioiTinh=?,DiaChi=? ,SDT=?, Email =?, MatKhau=?, MaVaiTro=?, Hinh=? WHERE MaNV=?";
+        String sql = "UPDATE NHANVIEN SET HoTen  = ?, NgaySinh=?, GioiTinh=?,DiaChi=? ,SDT=?, Email =?, MatKhau=?, MaVaiTro=?, Hinh=?, TrangThai=?, TRANGTHAIXOA=? WHERE MaNV=?";
         JdbcHelper.executeUpdate(sql,
                 model.getHoTen(),
                 model.getNgaySinh(),
@@ -126,6 +127,8 @@ public class NhanVienDAO1 {
                 model.getMatKhau(),
                 model.getVaiTro(),
                 model.getHinh(),
+                model.isTrangThai(),
+                model.isTrangThaiXoa(),
                 model.getMaNV()
         );
     }
@@ -151,7 +154,7 @@ public class NhanVienDAO1 {
         try {
             ResultSet rs = null;
             try {
-                rs =JdbcHelper.executeQuery(sql, args);
+                rs = JdbcHelper.executeQuery(sql, args);
                 while (rs.next()) {
                     NhanVienModel model = readFromResultSet(rs);
                     list.add(model);
@@ -178,6 +181,8 @@ public class NhanVienDAO1 {
         model.setMatKhau(rs.getString("MatKhau"));
         model.setVaiTro(rs.getString("MaVaiTro"));
         model.setHinh(rs.getString("Hinh"));
+        model.setTrangThai(rs.getBoolean("TrangThai"));
+        model.setTrangThaiXoa(rs.getBoolean("TRANGTHAIXOA"));
 
         return model;
     }

@@ -149,4 +149,8 @@ public class ImageAvatar extends JComponent {
     private Image toImage(Icon icon) {
         return ((ImageIcon) icon).getImage();
     }
+
+    public String setToolTipText() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
