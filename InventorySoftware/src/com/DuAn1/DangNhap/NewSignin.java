@@ -71,8 +71,8 @@ public class NewSignin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
         } else {
             ShareHelper.USER = taikhoan;
-            ThaoTacModel model=getForm();
-            ThaoTacDao.insert(model);
+//            ThaoTacModel model=getForm();
+//            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
             com.DuAn1.main.Main main = new com.DuAn1.main.Main();
             main.setVisible(true);
@@ -132,22 +132,22 @@ public class NewSignin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jLabel_SoftZyd = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jTextField_Email = new com.DuAn1.Swing.TextField();
-        jTextField_Email2 = new com.DuAn1.Swing.TextField();
         jTextField_Email1 = new com.DuAn1.Swing.TextField();
         jPasswordField_Password = new com.DuAn1.Swing.PasswordField();
         jPasswordField_Password2 = new com.DuAn1.Swing.PasswordField();
         cardRegister2 = new com.DuAn1.component.CardRegister();
+        jLabel_SoftZyd = new javax.swing.JLabel();
+        jTextField_Email = new com.DuAn1.Swing.TextField();
+        jTextField_Email3 = new com.DuAn1.Swing.TextField();
         cardRegister3 = new com.DuAn1.component.CardRegister();
         jLabel21 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        txtusername = new com.DuAn1.Swing.TextField();
         txtmatkhau = new com.DuAn1.Swing.PasswordField();
+        txtusername = new com.DuAn1.Swing.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -267,12 +267,6 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 40, 40));
 
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
-        jLabel_SoftZyd.setText("TTA MOBILE");
-        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 314, 80));
-
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -313,30 +307,11 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
 
-        jTextField_Email.setAutoscrolls(false);
-        jTextField_Email.setCaretColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email.setLabelText("Tài khoản");
-        jTextField_Email.setLineColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jTextField_Email.setSelectionColor(new java.awt.Color(169, 224, 49));
-        jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 160, -1));
-
-        jTextField_Email2.setAutoscrolls(false);
-        jTextField_Email2.setCaretColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email2.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email2.setLabelText("Tài khoản");
-        jTextField_Email2.setLineColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email2.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jTextField_Email2.setSelectionColor(new java.awt.Color(169, 224, 49));
-        jPanel6.add(jTextField_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 160, -1));
-
         jTextField_Email1.setCaretColor(new java.awt.Color(0, 102, 204));
         jTextField_Email1.setDisabledTextColor(new java.awt.Color(0, 102, 204));
         jTextField_Email1.setLabelText("Tài khoản");
         jTextField_Email1.setLineColor(new java.awt.Color(0, 102, 204));
         jTextField_Email1.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jTextField_Email1.setSelectionColor(new java.awt.Color(169, 224, 49));
         jPanel6.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 330, -1));
 
         jPasswordField_Password.setCaretColor(new java.awt.Color(0, 102, 204));
@@ -357,6 +332,18 @@ public class NewSignin extends javax.swing.JFrame {
         jPasswordField_Password2.setShowAndHide(true);
         jPanel6.add(jPasswordField_Password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
         jPanel6.add(cardRegister2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 30));
+
+        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
+        jLabel_SoftZyd.setText("TTA MOBILE");
+        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 314, 80));
+
+        jTextField_Email.setLabelText("Tài khoản");
+        jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, -1));
+
+        jTextField_Email3.setLabelText("Tài khoản");
+        jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 430, 550));
 
@@ -389,21 +376,6 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 260, 40));
 
-        txtusername.setText("NV001");
-        txtusername.setAutoscrolls(false);
-        txtusername.setCaretColor(new java.awt.Color(0, 102, 204));
-        txtusername.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        txtusername.setLabelText("Tài khoản");
-        txtusername.setLineColor(new java.awt.Color(0, 102, 204));
-        txtusername.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        txtusername.setSelectionColor(new java.awt.Color(169, 224, 49));
-        txtusername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtusernameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 260, -1));
-
         txtmatkhau.setText("123");
         txtmatkhau.setCaretColor(new java.awt.Color(0, 102, 204));
         txtmatkhau.setDisabledTextColor(new java.awt.Color(0, 102, 204));
@@ -413,6 +385,10 @@ public class NewSignin extends javax.swing.JFrame {
         txtmatkhau.setSelectionColor(new java.awt.Color(169, 224, 49));
         txtmatkhau.setShowAndHide(true);
         jPanel1.add(txtmatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 260, -1));
+
+        txtusername.setText("NV001");
+        txtusername.setLabelText("Tài khoản");
+        jPanel1.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 260, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -462,10 +438,6 @@ dangNhap();
         QuenMatKhau quen = new QuenMatKhau(false);
         quen.setVisible(true);
     }//GEN-LAST:event_jLabel21MouseClicked
-
-    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtusernameActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
@@ -551,7 +523,7 @@ dangNhap();
     private javax.swing.JSeparator jSeparator1;
     private com.DuAn1.Swing.TextField jTextField_Email;
     private com.DuAn1.Swing.TextField jTextField_Email1;
-    private com.DuAn1.Swing.TextField jTextField_Email2;
+    private com.DuAn1.Swing.TextField jTextField_Email3;
     private com.DuAn1.Swing.PasswordField txtmatkhau;
     private com.DuAn1.Swing.TextField txtusername;
     // End of variables declaration//GEN-END:variables
