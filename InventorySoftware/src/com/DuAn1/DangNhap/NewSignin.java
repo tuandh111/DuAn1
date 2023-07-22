@@ -137,13 +137,13 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jTextField_Email1 = new com.DuAn1.Swing.TextField();
         jPasswordField_Password = new com.DuAn1.Swing.PasswordField();
         jPasswordField_Password2 = new com.DuAn1.Swing.PasswordField();
         cardRegister2 = new com.DuAn1.component.CardRegister();
         jTextField_Email = new com.DuAn1.Swing.TextField();
         jTextField_Email3 = new com.DuAn1.Swing.TextField();
         cardRegister3 = new com.DuAn1.component.CardRegister();
+        jTextField_Email1 = new com.DuAn1.Swing.TextField();
         jLabel21 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         txtmatkhau = new com.DuAn1.Swing.PasswordField();
@@ -313,13 +313,6 @@ public class NewSignin extends javax.swing.JFrame {
         });
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
 
-        jTextField_Email1.setCaretColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setLabelText("Tài khoản");
-        jTextField_Email1.setLineColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jPanel6.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 330, -1));
-
         jPasswordField_Password.setCaretColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password.setDisabledTextColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password.setLabelText("Mật khẩu");
@@ -350,6 +343,13 @@ public class NewSignin extends javax.swing.JFrame {
 
         cardRegister3.setBackground(new java.awt.Color(102, 0, 102));
         jPanel3.add(cardRegister3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 620));
+
+        jTextField_Email1.setCaretColor(new java.awt.Color(0, 102, 204));
+        jTextField_Email1.setDisabledTextColor(new java.awt.Color(0, 102, 204));
+        jTextField_Email1.setLabelText("Tài khoản");
+        jTextField_Email1.setLineColor(new java.awt.Color(0, 102, 204));
+        jTextField_Email1.setSelectedTextColor(new java.awt.Color(169, 224, 49));
+        jPanel3.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 330, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 450, 620));
 
