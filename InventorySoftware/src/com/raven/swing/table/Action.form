@@ -39,14 +39,14 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.raven.swing.Button" name="cmdEdit">
+    <Component class="com.DuAn1.swing1.Button" name="cmdEdit">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/com/raven/icon/edit.png"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="com.raven.swing.Button" name="cmdDelete">
+    <Component class="com.DuAn1.swing1.Button" name="cmdDelete">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/com/raven/icon/delete.png"/>

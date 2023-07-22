@@ -1,6 +1,6 @@
 package com.raven.form;
 
-import com.raven.main.Main;
+import com.DuAn1.main.Main;
 import com.raven.dialog.Message;
 
 import com.raven.model.ModelCard;
@@ -10,20 +10,20 @@ import com.raven.swing.icon.IconFontSwing;
 import com.raven.swing.noticeboard.ModelNoticeBoard;
 import com.raven.swing.table.EventAction;
 import com.tuandhpc05076.Dao.NhanVienDAO;
-import com.tuandhpc05076.Dao.NhanVienDAO1;
-import com.tuandhpc05076.Helper.DialogHelper;
-import com.tuandhpc05076.Helper.ShareHelper;
-import com.tuandhpc05076.Model.NhanVienModel;
+import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Helper.DialogHelper;
+import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.NhanVienModel;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import tabledark.Test;
-import test.Slide1;
-import test.Slide2;
-import test.Slide3;
+import com.DuAn1.tabledark.Test;
+import com.DuAn1.test.Slide1;
+import com.DuAn1.test.Slide2;
+import com.DuAn1.test.Slide3;
 
 public class Form_Home extends javax.swing.JPanel {
 
@@ -144,11 +144,11 @@ public class Form_Home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        card1 = new com.raven.component.Card();
+        card1 = new com.DuAn1.component.Card();
         jLabel1 = new javax.swing.JLabel();
-        card2 = new com.raven.component.Card();
-        card3 = new com.raven.component.Card();
-        card4 = new com.raven.component.Card();
+        card2 = new com.DuAn1.component.Card();
+        card3 = new com.DuAn1.component.Card();
+        card4 = new com.DuAn1.component.Card();
         jPanel1 = new javax.swing.JPanel();
         noticeBoard = new com.raven.swing.noticeboard.NoticeBoard();
         jLabel2 = new javax.swing.JLabel();
@@ -301,10 +301,10 @@ public class Form_Home extends javax.swing.JPanel {
     }//GEN-LAST:event_tblUserMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.component.Card card1;
-    private com.raven.component.Card card2;
-    private com.raven.component.Card card3;
-    private com.raven.component.Card card4;
+    private com.DuAn1.component.Card card1;
+    private com.DuAn1.component.Card card2;
+    private com.DuAn1.component.Card card3;
+    private com.DuAn1.component.Card card4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

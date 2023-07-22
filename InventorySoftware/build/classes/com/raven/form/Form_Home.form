@@ -65,7 +65,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.raven.component.Card" name="card1">
+    <Component class="com.DuAn1.component.Card" name="card1">
       <Properties>
         <Property name="colorGradient" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="d7" green="1c" red="d3" type="rgb"/>
@@ -83,7 +83,7 @@
         <Property name="text" type="java.lang.String" value="Home"/>
       </Properties>
     </Component>
-    <Component class="com.raven.component.Card" name="card2">
+    <Component class="com.DuAn1.component.Card" name="card2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="d6" green="1e" red="a" type="rgb"/>
@@ -93,7 +93,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="com.raven.component.Card" name="card3">
+    <Component class="com.DuAn1.component.Card" name="card3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1" green="55" red="c2" type="rgb"/>
@@ -103,7 +103,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="com.raven.component.Card" name="card4">
+    <Component class="com.DuAn1.component.Card" name="card4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="c3" red="3c" type="rgb"/>
