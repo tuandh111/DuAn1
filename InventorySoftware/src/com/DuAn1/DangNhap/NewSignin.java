@@ -143,7 +143,6 @@ public class NewSignin extends javax.swing.JFrame {
         cardRegister2 = new com.DuAn1.component.CardRegister();
         jTextField_Email = new com.DuAn1.Swing.TextField();
         jTextField_Email3 = new com.DuAn1.Swing.TextField();
-        jLabel_SoftZyd = new javax.swing.JLabel();
         cardRegister3 = new com.DuAn1.component.CardRegister();
         jLabel21 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -272,7 +271,7 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
         jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
         jLabel_SoftZyd.setText("TTA MOBILE");
-        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 314, 80));
+        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 314, 80));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -346,13 +345,6 @@ public class NewSignin extends javax.swing.JFrame {
         jTextField_Email3.setToolTipText("200");
         jTextField_Email3.setLabelText("Tài khoản");
         jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
-
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
-        jLabel_SoftZyd.setText("TTA MOBILE");
-        jLabel_SoftZyd.setOpaque(true);
-        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 314, 80));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 430, 550));
 
