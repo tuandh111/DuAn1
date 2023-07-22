@@ -99,7 +99,7 @@
                                   <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="txtKhoangTru1" min="-2" pref="252" max="-2" attributes="0"/>
+                                          <Component id="txtKhoangTru" min="-2" pref="252" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                           <Component id="jLabel2" min="-2" pref="62" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -155,7 +155,7 @@
                               <Component id="jLabel2" min="-2" pref="16" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtSoHTangCa" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtKhoangTru1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtKhoangTru" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="switchButton1" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="lblTrangThai" min="-2" max="-2" attributes="0"/>
@@ -212,6 +212,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblThanhToanLuongMouseClicked"/>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblThanhToanLuongMousePressed"/>
               </Events>
             </Component>
@@ -337,6 +338,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="com.DuAn1.Swing.Button" name="btnXoa">
           <Properties>
@@ -345,6 +349,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="com.DuAn1.Swing.Combobox" name="cboLoc">
           <Properties>
@@ -364,13 +371,13 @@
             <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.TextField" name="txtKhoangTru1">
+        <Component class="com.DuAn1.Swing.TextField" name="txtKhoangTru">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="Kho&#x1ea3;ng tr&#x1eeb;"/>
           </Properties>
           <Events>
-            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtKhoangTru1CaretUpdate"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKhoangTru1ActionPerformed"/>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtKhoangTruCaretUpdate"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKhoangTruActionPerformed"/>
           </Events>
         </Component>
         <Component class="com.DuAn1.Swing.TextField" name="txtNgayVaoCTY">

@@ -38,8 +38,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     void fillTable() {
         DefaultTableModel tblModel = (DefaultTableModel) tblThanhToanLuong.getModel();
         tblModel.setRowCount(0);
-//     tblModel.setColumnIdentifiers(new String []{"Mã lương","Số ngày làm","Lương cơ bản","Số giờ tăng ca","Lương tăng ca",
-//     "Tổng tiền","Trạng thái"});
         try {
             List<ThanhToanLuongModel> list = dao.select();
             for (ThanhToanLuongModel ttl : list) {
@@ -60,6 +58,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtNgayVaoCTY.setText(String.valueOf(ttl.getNgayVaoCTy()));
         txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
         txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
+        txtKhoangTru.setText(String.valueOf(ttl.getKhoanTru()));
         lblTongTien.setText(String.valueOf(ttl.getTongTien()));
         if (ttl.isTrangThai()) {
             switchButton1.setSelectedAnimate(true);
@@ -78,7 +77,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setNgayVaoCTy(DateHelper.toDate("dd-MM-yyyy", txtNgayVaoCTY.getText()));
         ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
         ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
-        ttl.setKhoanTru(Double.parseDouble(txtKhoangTru1.getText()));
+        ttl.setKhoanTru(Double.parseDouble(txtKhoangTru.getText()));
         ttl.setTongTien(Double.parseDouble(lblTongTien.getText()));
         ttl.setTrangThai(true);
         if (switchButton1.isSelected()) {
@@ -96,11 +95,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtLuongTangCa.setText("");
         txtSoHTangCa.setText("");
         txtSoNgayLamViec.setText("");
+        txtKhoangTru.setText("");
+        txtNgayVaoCTY.setText("");
         lblTongTien.setText("0");
         lblTrangThai.setText("Chưa thanh toán ");
         lblTrangThai.setForeground(Color.red);
-        txtKhoangTru1.setText("");
-        txtNgayVaoCTY.setText("");
+
     }
 
     void UpdateStatus() {
@@ -173,7 +173,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         cboLoc = new com.DuAn1.Swing.Combobox();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
         btnSua1 = new com.DuAn1.Swing.Button();
-        txtKhoangTru1 = new com.DuAn1.Swing.TextField();
+        txtKhoangTru = new com.DuAn1.Swing.TextField();
         txtNgayVaoCTY = new com.DuAn1.Swing.TextField();
 
         dateChooser.setTextRefernce(txtNgayVaoCTY);
@@ -197,6 +197,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         ));
         tblThanhToanLuong.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblThanhToanLuongMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tblThanhToanLuongMousePressed(evt);
             }
@@ -283,9 +286,19 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         btnSua.setBackground(new java.awt.Color(153, 153, 255));
         btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnXoa.setBackground(new java.awt.Color(255, 51, 51));
         btnXoa.setText("Xóa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
         cboLoc.setLabeText("Lọc ");
 
@@ -294,15 +307,15 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         btnSua1.setBackground(new java.awt.Color(153, 153, 255));
         btnSua1.setText("Tìm kiếm");
 
-        txtKhoangTru1.setLabelText("Khoảng trừ");
-        txtKhoangTru1.addCaretListener(new javax.swing.event.CaretListener() {
+        txtKhoangTru.setLabelText("Khoảng trừ");
+        txtKhoangTru.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtKhoangTru1CaretUpdate(evt);
+                txtKhoangTruCaretUpdate(evt);
             }
         });
-        txtKhoangTru1.addActionListener(new java.awt.event.ActionListener() {
+        txtKhoangTru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKhoangTru1ActionPerformed(evt);
+                txtKhoangTruActionPerformed(evt);
             }
         });
 
@@ -357,7 +370,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                                 .addGap(112, 112, 112)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtKhoangTru1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtKhoangTru, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(66, 66, 66)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -399,7 +412,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtSoHTangCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtKhoangTru1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtKhoangTru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(switchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTrangThai))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -465,7 +478,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     }//GEN-LAST:event_txtLuongCoBanCaretUpdate
 
     private void tblThanhToanLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMousePressed
-        // TODO add your handling code here:
+//         TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblThanhToanLuong.getSelectedRow();
             this.edit();
@@ -498,14 +511,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
-    private void txtKhoangTru1CaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTru1CaretUpdate
+    private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_txtKhoangTru1CaretUpdate
 
-    private void txtKhoangTru1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTru1ActionPerformed
+    }//GEN-LAST:event_txtKhoangTruCaretUpdate
+
+    private void txtKhoangTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTruActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtKhoangTru1ActionPerformed
+    }//GEN-LAST:event_txtKhoangTruActionPerformed
 
     private void txtNgayVaoCTYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayVaoCTYMouseClicked
         dateChooser.showPopup();        // TODO add your handling code here:
@@ -543,6 +556,47 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
+    void sua() {
+        ThanhToanLuongModel ttl = getForm();
+        try {
+            dao.update(ttl);
+            this.fillTable();
+            this.clearForm();
+            DialogHelper.alert(this, " Cập nhật thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, " Cập nhật thất bại");
+        }
+    }
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        sua();
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void tblThanhToanLuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 1) {
+            this.row = tblThanhToanLuong.getSelectedRow();
+            this.edit();
+        }
+    }//GEN-LAST:event_tblThanhToanLuongMouseClicked
+void xoa(){
+    String maluong = txtMaLuong.getText();
+         if(DialogHelper.confirm(this, "Bạn muốn xóa chuyên đề này?")){
+            try {
+                dao.delete(maluong);
+                this.fillTable();
+                this.clearForm();
+                DialogHelper.alert(this, "Xóa  thành công!");
+            } catch (Exception e) {
+                e.printStackTrace();
+                DialogHelper.alert(this, "Xóa  thất bại!");
+            }
+            }
+}
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        xoa();
+    }//GEN-LAST:event_btnXoaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -562,12 +616,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private javax.swing.JLabel lblTrangThai;
     private com.DuAn1.swing0.SwitchButton switchButton1;
     private com.raven.swing.table.Table tblThanhToanLuong;
-    private com.DuAn1.Swing.TextField txtKhoangTru1;
+    private com.DuAn1.Swing.TextField txtKhoangTru;
     private com.DuAn1.Swing.TextField txtLuongCoBan;
     private com.DuAn1.Swing.TextField txtLuongTangCa;
     private com.DuAn1.Swing.TextField txtMaLuong;
-    private com.DuAn1.Swing.TextField txtNgayNhap;
-    private com.DuAn1.Swing.TextField txtNgayNhap1;
     private com.DuAn1.Swing.TextField txtNgayVaoCTY;
     private com.DuAn1.Swing.TextField txtSoHTangCa;
     private com.DuAn1.Swing.TextField txtSoNgayLamViec;
