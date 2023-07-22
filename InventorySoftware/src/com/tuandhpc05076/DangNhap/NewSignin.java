@@ -64,6 +64,7 @@ public class NewSignin extends javax.swing.JFrame {
         String matKhau = new String(txtmatkhau.getPassword());
         NhanVienModel taikhoan=null;
         taikhoan = dao.findById(manv);
+        System.out.println(taikhoan);
         if (taikhoan == null) {
             JOptionPane.showMessageDialog(this, "Sai tên đăng nhập!");
         } else if (!matKhau.equals(taikhoan.getMatKhau().trim())) {
