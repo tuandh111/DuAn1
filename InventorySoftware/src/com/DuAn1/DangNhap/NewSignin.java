@@ -45,7 +45,7 @@ public class NewSignin extends javax.swing.JFrame {
 
         this.setLocationRelativeTo(null);
         jPanel6.setVisible(false);
-
+        jLabel_SoftZyd.setVisible(true);
         try {
 
             UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
@@ -140,9 +140,9 @@ public class NewSignin extends javax.swing.JFrame {
         jPasswordField_Password = new com.DuAn1.Swing.PasswordField();
         jPasswordField_Password2 = new com.DuAn1.Swing.PasswordField();
         cardRegister2 = new com.DuAn1.component.CardRegister();
-        jLabel_SoftZyd = new javax.swing.JLabel();
         jTextField_Email = new com.DuAn1.Swing.TextField();
         jTextField_Email3 = new com.DuAn1.Swing.TextField();
+        jLabel_SoftZyd = new javax.swing.JLabel();
         cardRegister3 = new com.DuAn1.component.CardRegister();
         jLabel21 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -312,7 +312,7 @@ public class NewSignin extends javax.swing.JFrame {
         jTextField_Email1.setLabelText("Tài khoản");
         jTextField_Email1.setLineColor(new java.awt.Color(0, 102, 204));
         jTextField_Email1.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jPanel6.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 330, -1));
+        jPanel6.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 330, -1));
 
         jPasswordField_Password.setCaretColor(new java.awt.Color(0, 102, 204));
         jPasswordField_Password.setDisabledTextColor(new java.awt.Color(0, 102, 204));
@@ -333,18 +333,19 @@ public class NewSignin extends javax.swing.JFrame {
         jPanel6.add(jPasswordField_Password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
         jPanel6.add(cardRegister2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 30));
 
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
-        jLabel_SoftZyd.setText("TTA MOBILE");
-        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 314, 80));
-
         jTextField_Email.setLabelText("Tài khoản");
         jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, -1));
 
         jTextField_Email3.setToolTipText("200");
         jTextField_Email3.setLabelText("Tài khoản");
         jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
+
+        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
+        jLabel_SoftZyd.setText("TTA MOBILE");
+        jLabel_SoftZyd.setOpaque(true);
+        jPanel6.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 314, 80));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 430, 550));
 
