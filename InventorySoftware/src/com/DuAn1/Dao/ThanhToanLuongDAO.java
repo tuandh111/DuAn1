@@ -80,7 +80,7 @@ public class ThanhToanLuongDAO {
         model.setMaLuong(rs.getString("MaLuong"));
         model.setSoNgayLam(rs.getFloat("SoNgayLam"));
         model.setLuongCoBan(rs.getDouble("LuongCoBan"));
-        model.setNgayVaoCTy(rs.getDate("NgayVaoCTY"));
+        model.setNgayVaoCTy(rs.getString("NgayVaoCTY"));
         model.setSoGioTangCa(rs.getFloat("SoGioTangCa"));
         model.setLuongTangCa(rs.getDouble("LuongTangCa"));
         model.setKhoanTru(rs.getDouble("KhoangTru"));

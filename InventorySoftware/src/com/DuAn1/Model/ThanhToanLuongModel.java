@@ -14,7 +14,7 @@ public class ThanhToanLuongModel {
     private String maLuong;
     private float soNgayLam;
     private double luongCoBan;
-    private Date ngayVaoCTy;
+    private String ngayVaoCTy;
     private float soGioTangCa;
     private double luongTangCa;
     private double khoanTru;
@@ -24,7 +24,7 @@ public class ThanhToanLuongModel {
     public ThanhToanLuongModel() {
     }
 
-    public ThanhToanLuongModel(String maLuong, float soNgayLam, double luongCoBan, Date ngayVaoCTy, float soGioTangCa, double luongTangCa, double khoanTru, double tongTien, boolean trangThai) {
+    public ThanhToanLuongModel(String maLuong, float soNgayLam, double luongCoBan, String ngayVaoCTy, float soGioTangCa, double luongTangCa, double khoanTru, double tongTien, boolean trangThai) {
         this.maLuong = maLuong;
         this.soNgayLam = soNgayLam;
         this.luongCoBan = luongCoBan;
@@ -60,11 +60,11 @@ public class ThanhToanLuongModel {
         this.luongCoBan = luongCoBan;
     }
 
-    public Date getNgayVaoCTy() {
+    public String getNgayVaoCTy() {
         return ngayVaoCTy;
     }
 
-    public void setNgayVaoCTy(Date ngayVaoCTy) {
+    public void setNgayVaoCTy(String ngayVaoCTy) {
         this.ngayVaoCTy = ngayVaoCTy;
     }
 

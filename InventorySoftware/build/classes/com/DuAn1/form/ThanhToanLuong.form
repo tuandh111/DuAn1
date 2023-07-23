@@ -91,10 +91,10 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtMaLuong" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
-                                      <Component id="txtLuongCoBan" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
-                                      <Component id="txtSoHTangCa" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtMaLuong" alignment="0" pref="252" max="32767" attributes="0"/>
+                                      <Component id="txtSoHTangCa" alignment="0" pref="252" max="32767" attributes="0"/>
+                                      <Component id="txtLuongCoBan" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -108,9 +108,9 @@
                                           <Component id="lblTrangThai" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtLuongTangCa" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
-                                              <Component id="txtSoNgayLamViec" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtSoNgayLamViec" pref="252" max="32767" attributes="0"/>
+                                              <Component id="txtLuongTangCa" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -234,15 +234,6 @@
             <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtSoNgayLamViecCaretUpdate"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.Swing.TextField" name="txtLuongCoBan">
-          <Properties>
-            <Property name="labelText" type="java.lang.String" value="L&#x1b0;&#x1a1;ng c&#x1a1; b&#x1ea3;n "/>
-          </Properties>
-          <Events>
-            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLuongCoBanCaretUpdate"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLuongCoBanActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="com.DuAn1.Swing.TextField" name="txtSoHTangCa">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="S&#x1ed1; gi&#x1edd; t&#x103;ng ca "/>
@@ -255,15 +246,6 @@
           <Properties>
             <Property name="labelText" type="java.lang.String" value="M&#xe3; s&#x1ed1; l&#x1b0;&#x1a1;ng"/>
           </Properties>
-        </Component>
-        <Component class="com.DuAn1.Swing.TextField" name="txtLuongTangCa">
-          <Properties>
-            <Property name="labelText" type="java.lang.String" value="L&#x1b0;&#x1a1;ng t&#x103;ng ca"/>
-          </Properties>
-          <Events>
-            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLuongTangCaCaretUpdate"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLuongTangCaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -387,6 +369,22 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgayVaoCTYMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgayVaoCTYActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="com.DuAn1.Swing.TextField" name="txtLuongCoBan">
+          <Properties>
+            <Property name="labelText" type="java.lang.String" value="L&#x1b0;&#x1a1;ng c&#x1a1; b&#x1ea3;n"/>
+          </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLuongCoBanCaretUpdate"/>
+          </Events>
+        </Component>
+        <Component class="com.DuAn1.Swing.TextField" name="txtLuongTangCa">
+          <Properties>
+            <Property name="labelText" type="java.lang.String" value="L&#x1b0;&#x1a1;ng t&#x103;ng ca"/>
+          </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLuongTangCaCaretUpdate"/>
           </Events>
         </Component>
       </SubComponents>
