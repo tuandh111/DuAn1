@@ -21,18 +21,12 @@ public class SanPhamModel {
     private String Hinh;
     private String MaNV;
     private String MaGiamGia;
-    private String CPU;
-    private String MangHinh;
-    private String BoNho;
-    private String Camera;
-    private String Pin;
-    private String Ram;
-    private String MoTa;
+
 
     public SanPhamModel() {
     }
 
-    public SanPhamModel(String MaSP, String TenSP, String Mau, double Gia, String LoaiSP, String NgayNhap, String NoiNhap, int SoLuong, boolean TrangThai, String Hinh, String MaNV, String MaGiamGia, String CPU, String MangHinh, String BoNho, String Camera, String Pin, String Ram, String MoTa) {
+    public SanPhamModel(String MaSP, String TenSP, String Mau, double Gia, String LoaiSP, String NgayNhap, String NoiNhap, int SoLuong, boolean TrangThai, String Hinh, String MaNV, String MaGiamGia) {
         this.MaSP = MaSP;
         this.TenSP = TenSP;
         this.Mau = Mau;
@@ -45,13 +39,6 @@ public class SanPhamModel {
         this.Hinh = Hinh;
         this.MaNV = MaNV;
         this.MaGiamGia = MaGiamGia;
-        this.CPU = CPU;
-        this.MangHinh = MangHinh;
-        this.BoNho = BoNho;
-        this.Camera = Camera;
-        this.Pin = Pin;
-        this.Ram = Ram;
-        this.MoTa = MoTa;
     }
 
     public String getMaSP() {
@@ -150,60 +137,5 @@ public class SanPhamModel {
         this.MaGiamGia = MaGiamGia;
     }
 
-    public String getCPU() {
-        return CPU;
-    }
-
-    public void setCPU(String CPU) {
-        this.CPU = CPU;
-    }
-
-    public String getMangHinh() {
-        return MangHinh;
-    }
-
-    public void setMangHinh(String MangHinh) {
-        this.MangHinh = MangHinh;
-    }
-
-    public String getBoNho() {
-        return BoNho;
-    }
-
-    public void setBoNho(String BoNho) {
-        this.BoNho = BoNho;
-    }
-
-    public String getCamera() {
-        return Camera;
-    }
-
-    public void setCamera(String Camera) {
-        this.Camera = Camera;
-    }
-
-    public String getPin() {
-        return Pin;
-    }
-
-    public void setPin(String Pin) {
-        this.Pin = Pin;
-    }
-
-    public String getRam() {
-        return Ram;
-    }
-
-    public void setRam(String Ram) {
-        this.Ram = Ram;
-    }
-
-    public String getMoTa() {
-        return MoTa;
-    }
-
-    public void setMoTa(String MoTa) {
-        this.MoTa = MoTa;
-    }
     
 }

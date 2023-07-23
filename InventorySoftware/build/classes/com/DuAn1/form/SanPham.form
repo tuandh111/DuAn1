@@ -71,14 +71,14 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="combobox1" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="cboMau" min="-2" pref="200" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtTenSP" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
-                                      <Component id="textField5" min="-2" pref="184" max="-2" attributes="0"/>
+                                      <Component id="txtGia" min="-2" pref="184" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="textField3" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="txtMaSP" min="-2" pref="200" max="-2" attributes="0"/>
                               <Component id="txtNgayNhap" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
@@ -90,13 +90,13 @@
                           <EmptySpace min="-2" pref="412" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="button12" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnDau" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="button13" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnLui" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="button14" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnToi" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="button11" min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="btnCuoi" min="-2" pref="82" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -113,21 +113,21 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="spinner1" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <Component id="combobox4" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuong" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="cpoKhuyenMai" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="cpoLoaiSanPham" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="textField7" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="txtMoTa" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Component id="textField6" min="-2" pref="183" max="-2" attributes="0"/>
+                                      <Component id="txtNoiNhap" min="-2" pref="183" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Component id="jPanel1" max="32767" attributes="0"/>
                                   </Group>
@@ -135,9 +135,9 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField11" min="-2" pref="427" max="-2" attributes="0"/>
+                              <Component id="txtTimKiem" min="-2" pref="427" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="button10" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="btnTimKiem" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -162,23 +162,23 @@
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtTenSP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtMaSP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="combobox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtGia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cboMau" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtNgayNhap" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="176" max="32767" attributes="0"/>
+                  <EmptySpace pref="172" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="button11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="button14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="button13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="button12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCuoi" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnToi" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLui" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDau" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -201,7 +201,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                                      <Component id="textField6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtNoiNhap" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -215,20 +215,20 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="cpoLoaiSanPham" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                      <Component id="textField7" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="txtMoTa" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="spinner1" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="txtSoLuong" min="-2" pref="50" max="-2" attributes="0"/>
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                      <Component id="combobox4" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="cpoKhuyenMai" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="textField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="button10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTimKiem" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTimKiem" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="157" max="-2" attributes="0"/>
@@ -271,6 +271,7 @@
                     <Column editable="true" title="Title 4" type="java.lang.Object"/>
                   </Table>
                 </Property>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -292,27 +293,36 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTenSPActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.Swing.TextField" name="textField5">
+        <Component class="com.DuAn1.Swing.TextField" name="txtGia">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="Gi&#xe1;"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.TextField" name="textField6">
+        <Component class="com.DuAn1.Swing.TextField" name="txtNoiNhap">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="N&#x1a1;i nh&#x1ead;p"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.TextField" name="textField7">
+        <Component class="com.DuAn1.Swing.TextField" name="txtMoTa">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="M&#xf4; t&#x1ea3;"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Combobox" name="combobox1">
+        <Component class="com.DuAn1.Swing.Combobox" name="cboMau">
           <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="&#x110;en"/>
+                <StringItem index="1" value="Tr&#x1eaf;ng"/>
+                <StringItem index="2" value="Xanh"/>
+                <StringItem index="3" value="V&#xe0;ng"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
             <Property name="labeText" type="java.lang.String" value="M&#xe0;u s&#x1eaf;c"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Combobox" name="combobox4">
+        <Component class="com.DuAn1.Swing.Combobox" name="cpoKhuyenMai">
           <Properties>
             <Property name="labeText" type="java.lang.String" value="Ch&#x1ecd;n khuy&#x1ebf;n m&#x1ea1;i"/>
           </Properties>
@@ -333,12 +343,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpoLoaiSanPhamActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.Swing.Spinner" name="spinner1">
+        <Component class="com.DuAn1.Swing.Spinner" name="txtSoLuong">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.TextField1" name="textField11">
+        <Component class="com.DuAn1.Swing.TextField1" name="txtTimKiem">
           <Properties>
             <Property name="hint" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
           </Properties>
@@ -362,15 +372,15 @@
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="button4" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="btnMoi" min="-2" pref="102" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="cpoLoaiSanPham1" max="32767" attributes="0"/>
+                              <Component id="cboSapXep" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="button5" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <Component id="button6" min="-2" pref="102" max="-2" attributes="0"/>
-                                  <Component id="button7" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="btnThem" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="btnSua" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="btnXoa" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
                               <Component id="jPanel2" max="32767" attributes="0"/>
@@ -386,17 +396,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="button4" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnMoi" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="cpoLoaiSanPham1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboSapXep" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="button5" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnThem" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                              <Component id="button6" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSua" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                              <Component id="button7" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnXoa" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
@@ -408,7 +418,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="com.DuAn1.Swing.Button" name="button4">
+            <Component class="com.DuAn1.Swing.Button" name="btnMoi">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -416,10 +426,10 @@
                 <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiActionPerformed"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.Swing.Button" name="button6">
+            <Component class="com.DuAn1.Swing.Button" name="btnSua">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -427,10 +437,10 @@
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button6ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.Swing.Button" name="button7">
+            <Component class="com.DuAn1.Swing.Button" name="btnXoa">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -438,7 +448,7 @@
                 <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
               </Properties>
             </Component>
-            <Component class="com.DuAn1.Swing.Button" name="button5">
+            <Component class="com.DuAn1.Swing.Button" name="btnThem">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -446,10 +456,10 @@
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemActionPerformed"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="cpoLoaiSanPham1">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboSapXep">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -462,7 +472,7 @@
                 <Property name="labeText" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpoLoaiSanPham1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboSapXepActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel2">
@@ -483,8 +493,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="button9" min="-2" pref="110" max="-2" attributes="0"/>
-                              <Component id="button8" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="btnGiam" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="btnTang" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
@@ -494,16 +504,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="button8" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTang" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="button9" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGiam" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="17" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="com.DuAn1.Swing.Button" name="button8">
+                <Component class="com.DuAn1.Swing.Button" name="btnTang">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -511,10 +521,10 @@
                     <Property name="text" type="java.lang.String" value="T&#x103;ng"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTangActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="com.DuAn1.Swing.Button" name="button9">
+                <Component class="com.DuAn1.Swing.Button" name="btnGiam">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -522,7 +532,7 @@
                     <Property name="text" type="java.lang.String" value="Gi&#x1ea3;m"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button9ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGiamActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -547,18 +557,18 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="combobox3" pref="180" max="32767" attributes="0"/>
-                          <Component id="combobox5" max="32767" attributes="0"/>
+                          <Component id="cboPin" pref="180" max="32767" attributes="0"/>
+                          <Component id="cboCPU" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="combobox9" pref="186" max="32767" attributes="0"/>
-                          <Component id="combobox6" max="32767" attributes="0"/>
+                          <Component id="cboCamera" pref="186" max="32767" attributes="0"/>
+                          <Component id="cboRam" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="combobox7" pref="173" max="32767" attributes="0"/>
-                          <Component id="combobox8" max="32767" attributes="0"/>
+                          <Component id="cboBoNho" pref="173" max="32767" attributes="0"/>
+                          <Component id="cboMangHinh" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -569,15 +579,15 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="combobox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="combobox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="combobox7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboCPU" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboRam" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboBoNho" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="20" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="combobox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="combobox9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="combobox8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboPin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboCamera" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboMangHinh" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -585,39 +595,39 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="com.DuAn1.Swing.Combobox" name="combobox5">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboCPU">
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="CPU"/>
               </Properties>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="combobox6">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboRam">
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="Ram"/>
               </Properties>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="combobox7">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboBoNho">
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="B&#x1ed9; nh&#x1edb; trong"/>
               </Properties>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="combobox9">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboCamera">
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="Camera"/>
               </Properties>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="combobox8">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboMangHinh">
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="M&#xe0;ng h&#xec;nh"/>
               </Properties>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="combobox3">
+            <Component class="com.DuAn1.Swing.Combobox" name="cboPin">
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="Pin"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.DuAn1.Swing.Button" name="button10">
+        <Component class="com.DuAn1.Swing.Button" name="btnTimKiem">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -650,7 +660,7 @@
             <Property name="text" type="java.lang.String" value="1 tr&#xea;n 10"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="button11">
+        <Component class="com.DuAn1.Swing.Button" name="btnCuoi">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -658,7 +668,7 @@
             <Property name="text" type="java.lang.String" value="&gt;|"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="button12">
+        <Component class="com.DuAn1.Swing.Button" name="btnDau">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -666,7 +676,7 @@
             <Property name="text" type="java.lang.String" value="|&lt;"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="button13">
+        <Component class="com.DuAn1.Swing.Button" name="btnLui">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -674,7 +684,7 @@
             <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="button14">
+        <Component class="com.DuAn1.Swing.Button" name="btnToi">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -716,7 +726,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.DuAn1.Swing.TextField" name="textField3">
+        <Component class="com.DuAn1.Swing.TextField" name="txtMaSP">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="M&#xe3; s&#x1ea3;n ph&#x1ea9;m"/>
             <Property name="lineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -727,7 +737,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMaSPActionPerformed"/>
           </Events>
         </Component>
         <Container class="com.DuAn1.swing0.SwitchButton" name="switchButton1">
