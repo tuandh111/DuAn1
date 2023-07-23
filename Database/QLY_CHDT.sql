@@ -231,15 +231,15 @@ Update LICHSU set THOIGIANTHEM=null,THOIGIANSUA=null,THOIGIANXOA=null,THOIGIANHD
 delete from LICHSU where ID=1
 select * from LICHSU where ID=1
 
-Insert into SANPHAM values ('SP00001','IPNONE 14S',N'Trắng','14500000',N'Nhập US','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','GG001')
-Insert into SANPHAM values ('SP00002','IPNONE 13S',N'Vàng','11500000',N'Nhập CV','2022-01-01',N'Nước China',20,1,'null','NV001','GG002')
-Insert into SANPHAM values ('SP00003','IPNONE 12S',N'Đen','10500000',N'Nhập JV','2022-01-01',N'Nước Nhật',22,1,'null','NV001','GG003')
-Insert into SANPHAM values ('SP00004','IPNONE 14S',N'Trắng','11500000',N'Nhập US','2022-01-01',N'Nước Mỹ',17,1,'null','NV002','GG004')
-Insert into SANPHAM values ('SP00005','IPNONE 14S',N'Trắng','10500000',N'Nhập US','2022-01-01',N'Nước Mỹ',32,1,'null','NV002','GG005')
-Insert into SANPHAM values ('SP00006','IPNONE 14S',N'Trắng','9500000',N'Nhập JV','2022-01-01',N'Nước Nhật',18,1,'null','NV002','GG006')
-Insert into SANPHAM values ('SP00007','IPNONE 14S',N'Xanh','22500000',N'Nhập JV','2022-01-01',N'Nước Nhật',12,1,'null','NV002','GG007')
-Insert into SANPHAM values ('SP00008','IPNONE 14S',N'Trắng','15500000',N'Nhập JV','2022-01-01',N'Nước Nhật',35,1,'null','NV001','GG001')
-Insert into SANPHAM values ('SP00009','IPNONE 14S',N'Đen','14500000',N'Nhập US','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','GG002')
+Insert into SANPHAM values ('SP00001','IPNONE 14S',N'Trắng','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','GG001')
+Insert into SANPHAM values ('SP00002','IPNONE 13S',N'Vàng','11500000',N'Iphone','2022-01-01',N'Nước China',20,1,'null','NV001','GG002')
+Insert into SANPHAM values ('SP00003','IPNONE 12S',N'Đen','10500000',N'Iphone','2022-01-01',N'Nước Nhật',22,1,'null','NV001','GG003')
+Insert into SANPHAM values ('SP00004','IPNONE 14S',N'Trắng','11500000',N'Iphone','2022-01-01',N'Nước Mỹ',17,1,'null','NV002','GG004')
+Insert into SANPHAM values ('SP00005','IPNONE 14S',N'Trắng','10500000',N'Iphone','2022-01-01',N'Nước Mỹ',32,1,'null','NV002','GG005')
+Insert into SANPHAM values ('SP00006','IPNONE 14S',N'Trắng','9500000',N'Iphone','2022-01-01',N'Nước Nhật',18,1,'null','NV002','GG006')
+Insert into SANPHAM values ('SP00007','IPNONE 14S',N'Xanh','22500000',N'Iphone','2022-01-01',N'Nước Nhật',12,1,'null','NV002','GG007')
+Insert into SANPHAM values ('SP00008','IPNONE 14S',N'Trắng','15500000',N'Iphone','2022-01-01',N'Nước Nhật',35,1,'null','NV001','GG001')
+Insert into SANPHAM values ('SP00009','IPNONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','GG002')
 Update SANPHAM set TenSP='iPhone 14',MAU='Lam',Gia='1000',LoaiSP='US',NgayNhap='2022-01-01',NoiNhap=N'Mỹ',SoLuong=12,TrangThai=1,Hinh='1',MaNV='QL001',MaGiamGia='GG001',MaDT='DT001' where MaSP='IP001'
 delete from SANPHAM where MaSP='IP001' 
 select * from SANPHAM where MaSP='IP001'
@@ -310,3 +310,94 @@ Insert into DATSPCT values (6,'DH00006','SP00004')
 update DATSPCT set SoLuong=1,MaDH='DH001',MaSP='IP001' where MaDatCT=1
 delete from DATSPCT where MaDatCT=1
 select * from DATSPCT where MaDatCT=1 
+
+--doanh thu
+
+CREATE PROCEDURE sp_thongke_doanhthu_tuan
+AS
+BEGIN
+
+DECLARE @ngaybatdau DATETIME,
+    @ngayketthuc DATETIME;
+
+SET @ngaybatdau = DATEADD(DAY, -6, GETDATE());
+SET @ngayketthuc = GETDATE();
+
+SELECT
+    NgayXuat,
+    SUM(TongTien) AS DoanhThu
+FROM HOADON
+WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
+GROUP BY NgayXuat;
+
+END;
+EXEC sp_thongke_doanhthu_tuan;
+
+
+CREATE PROCEDURE sp_thongke_doanhthu_thang
+AS
+BEGIN
+
+DECLARE @ngaybatdau DATETIME,
+    @ngayketthuc DATETIME;
+
+SET @ngaybatdau = DATEADD(MONTH, -1, GETDATE());
+SET @ngayketthuc = GETDATE();
+
+SELECT
+    NgayXuat,
+    SUM(TongTien) AS DoanhThu
+FROM HOADON
+WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
+GROUP BY NgayXuat;
+
+END;
+EXEC sp_thongke_doanhthu_thang;
+
+CREATE PROCEDURE sp_thongke_doanhthu_nam
+AS
+BEGIN
+
+DECLARE @ngaybatdau DATETIME,
+    @ngayketthuc DATETIME;
+
+SET @ngaybatdau = DATEADD(YEAR, -1, GETDATE());
+SET @ngayketthuc = GETDATE();
+
+SELECT
+    NgayXuat,
+    SUM(TongTien) AS DoanhThu
+FROM HOADON
+WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
+GROUP BY NgayXuat;
+
+END;
+EXEC sp_thongke_doanhthu_nam;
+
+--thống kê loại sản phẩm
+CREATE PROCEDURE sp_thongke_sanpham
+@loaisp NVARCHAR(30)
+AS
+BEGIN
+
+SELECT
+    LoaiSP,
+    SUM(SoLuong) AS SoLuong
+FROM SANPHAM
+WHERE LoaiSP = @loaisp
+GROUP BY LoaiSP;
+
+END;
+
+
+--thống kê tổng tiền đặt hàng
+CREATE PROCEDURE sp_thongke_tongtien_dathang
+AS
+BEGIN
+
+SELECT
+    SUM(TongTien) AS TongTien
+FROM DATSP;
+
+END;
+EXEC sp_thongke_tongtien_dathang;
