@@ -269,24 +269,24 @@ update HOADON set TENSP='Samsung A73',SOLUONG=2,TRANGTHAI=1,DONGIA='100000',TONG
 delete from HOADON where MAHD='HD001'
 select * from HOADON where MAHD='HD001'
 
-Insert into HOADONCT values ('SP00002',3,'HD001')
-Insert into HOADONCT values ('SP00002',1,'HD002')
-Insert into HOADONCT values ('SP00001',7,'HD003')
-Insert into HOADONCT values ('SP00003',4,'HD004')
-Insert into HOADONCT values ('SP00001',6,'HD005')
-Insert into HOADONCT values ('SP00002',2,'HD006')
-Insert into HOADONCT values ('SP00008',6,'HD007')
-Insert into HOADONCT values ('SP00004',5,'HD008')
+Insert into HOADONCT values ('SP00002',3,'HD00001')
+Insert into HOADONCT values ('SP00002',1,'HD00002')
+Insert into HOADONCT values ('SP00001',7,'HD00003')
+Insert into HOADONCT values ('SP00003',4,'HD00004')
+Insert into HOADONCT values ('SP00001',6,'HD00005')
+Insert into HOADONCT values ('SP00002',2,'HD00006')
+Insert into HOADONCT values ('SP00008',6,'HD00007')
+Insert into HOADONCT values ('SP00004',5,'HD00008')
 update HOADONCT set MASP ='IP001',SOLUONG=1,MAHD='HD001' where MAHDCT =1
 delete from HOADONCT where MAHDCT=1
 select * from HOADONCT where MAHDCT=1
 
-Insert into BAOHANH values ('BH00001','HD001','123123','2023-01-20','2023-02-25',null,'KH00001')
-Insert into BAOHANH values ('BH00002','HD002','112121','2023-01-20','2023-02-25',null,'KH00002')
-Insert into BAOHANH values ('BH00003','HD003','234123','2023-01-20','2023-02-25',null,'KH00008')
-Insert into BAOHANH values ('BH00004','HD004','192572','2023-01-20','2023-02-25',null,'KH00006')
-Insert into BAOHANH values ('BH00005','HD005','987123','2023-01-20','2023-02-25',null,'KH00005')
-Insert into BAOHANH values ('BH00006','HD006','567232','2023-01-20','2023-02-25',null,'KH00003')
+Insert into BAOHANH values ('BH00001','HD00001','123123','2023-01-20','2023-02-25',null,'KH00001')
+Insert into BAOHANH values ('BH00002','HD00002','112121','2023-01-20','2023-02-25',null,'KH00002')
+Insert into BAOHANH values ('BH00003','HD00003','234123','2023-01-20','2023-02-25',null,'KH00008')
+Insert into BAOHANH values ('BH00004','HD00004','192572','2023-01-20','2023-02-25',null,'KH00006')
+Insert into BAOHANH values ('BH00005','HD00005','987123','2023-01-20','2023-02-25',null,'KH00005')
+Insert into BAOHANH values ('BH00006','HD00006','567232','2023-01-20','2023-02-25',null,'KH00003')
 update BAOHANH set MAHD ='HD001',SOIMEI='111222',NGAYBH='2023-01-20',NGAYHETHAN='2023-02-25',GHICHU=null,MAKH='KH001' where MABH='BH001'
 delete from BAOHANH where MABH='BH001'
 select * from BAOHANH where MABH='BH001'
