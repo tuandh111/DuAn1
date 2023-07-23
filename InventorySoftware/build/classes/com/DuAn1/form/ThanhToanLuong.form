@@ -103,7 +103,7 @@
                                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                           <Component id="jLabel2" min="-2" pref="62" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="switchButton1" min="-2" pref="81" max="-2" attributes="0"/>
+                                          <Component id="btnTrangThai" min="-2" pref="81" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lblTrangThai" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -157,7 +157,7 @@
                                   <Component id="txtSoHTangCa" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtKhoangTru" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="switchButton1" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="btnTrangThai" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="lblTrangThai" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -252,12 +252,12 @@
             <Property name="text" type="java.lang.String" value="Tr&#x1ea1;ng th&#xe1;i:"/>
           </Properties>
         </Component>
-        <Container class="com.DuAn1.swing0.SwitchButton" name="switchButton1">
+        <Container class="com.DuAn1.swing0.SwitchButton" name="btnTrangThai">
           <Properties>
             <Property name="selectedAnimate" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="switchButton1MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnTrangThaiMouseClicked"/>
           </Events>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">

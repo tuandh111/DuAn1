@@ -33,6 +33,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         
         tblThanhToanLuong.getColumnModel().getColumn(1).setPreferredWidth(40);
         fillTable();
+        updateStatus();
     }
 
     void fillTable() {
@@ -59,7 +60,13 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
         txtKhoangTru.setText(String.valueOf(ttl.getKhoanTru()));
         lblTongTien.setText(String.valueOf(ttl.getTongTien()));
-        switchButton1.setToolTipText(String.valueOf(ttl.isTrangThai()));
+        if(ttl.isTrangThai()){
+            btnTrangThai.setSelectedAnimate(true);
+            lblTrangThai.setText("Đã thanh toán");
+        }else{
+            btnTrangThai.setSelectedAnimate(false);
+            lblTrangThai.setText("Chưa thanh toán");
+        }
     }
 
     ThanhToanLuongModel getForm() {
@@ -73,7 +80,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setKhoanTru(Double.parseDouble(txtKhoangTru.getText()));
         ttl.setTongTien(Double.parseDouble(lblTongTien.getText()));
         ttl.setTrangThai(true);
-        if(switchButton1.isSelected()){
+        if(btnTrangThai.isSelected()){
             ttl.setTrangThai(true);
         }else{
             ttl.setTrangThai(false);
@@ -82,10 +89,17 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     }
 
     void clearForm() {
-        ThanhToanLuongModel ttl = new ThanhToanLuongModel();
-        this.setForm(ttl);
-        this.row = -1;
-        this.updateStatus();
+        txtMaLuong.setText("");
+        txtLuongCoBan.setText("");
+        txtSoNgayLamViec.setText("");
+        txtNgayVaoCTY.setText("");
+        txtSoHTangCa.setText("");
+        txtLuongTangCa.setText("");
+        txtKhoangTru.setText("");
+        lblTongTien.setText("0");
+        btnTrangThai.setSelectedAnimate(false);
+        lblTrangThai.setText("Chưa thanh toán");
+        lblTrangThai.setForeground(Color.red);
     }
 
     void updateStatus() {
@@ -126,7 +140,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtSoHTangCa = new com.DuAn1.Swing.TextField();
         txtMaLuong = new com.DuAn1.Swing.TextField();
         jLabel2 = new javax.swing.JLabel();
-        switchButton1 = new com.DuAn1.swing0.SwitchButton();
+        btnTrangThai = new com.DuAn1.swing0.SwitchButton();
         lblTrangThai = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblTongTien = new javax.swing.JLabel();
@@ -193,10 +207,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         jLabel2.setText("Trạng thái:");
 
-        switchButton1.setSelectedAnimate(false);
-        switchButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnTrangThai.setSelectedAnimate(false);
+        btnTrangThai.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                switchButton1MouseClicked(evt);
+                btnTrangThaiMouseClicked(evt);
             }
         });
 
@@ -330,7 +344,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                                         .addGap(66, 66, 66)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(switchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblTrangThai))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -369,7 +383,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtSoHTangCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtKhoangTru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(switchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTrangThai))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -408,16 +422,16 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         clearForm();
     }//GEN-LAST:event_btnMoiActionPerformed
 
-    private void switchButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchButton1MouseClicked
+    private void btnTrangThaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangThaiMouseClicked
         // TODO add your handling code here:
-        if (!switchButton1.isSelected()) {
+        if (!btnTrangThai.isSelected()) {
             lblTrangThai.setText("Đã thanh toán");
             lblTrangThai.setForeground(Color.green);
         } else {
             lblTrangThai.setText("Chưa thanh toán");
             lblTrangThai.setForeground(Color.red);
         }
-    }//GEN-LAST:event_switchButton1MouseClicked
+    }//GEN-LAST:event_btnTrangThaiMouseClicked
 
     private void tblThanhToanLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMousePressed
 //         TODO add your handling code here:
@@ -427,7 +441,15 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tblThanhToanLuongMousePressed
     void them() {
-        
+        ThanhToanLuongModel ttl = getForm();
+        try {
+            dao.insert(ttl);
+            this.fillTable();
+            this.clearForm();
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
+        }
     }
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
@@ -473,7 +495,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
     void sua() {
-        
+        ThanhToanLuongModel ttl = getForm();
+        try {
+            dao.update(ttl);
+            this.fillTable();
+            DialogHelper.alert(this, "Cập nhật thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Cập nhật thất bại");
+        }
     }
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
@@ -488,7 +517,17 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tblThanhToanLuongMouseClicked
 void xoa(){
-    
+    String maluong = txtMaLuong.getText();
+    if(DialogHelper.confirm(this, "Bạn muốn xoá nội dung này?")){
+        try {
+            dao.delete(maluong);
+            this.fillTable();
+            this.clearForm();
+            DialogHelper.alert(this, "Xóa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Xóa thất bại");
+        }
+    }
 }
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
@@ -523,6 +562,7 @@ void xoa(){
     private com.DuAn1.Swing.Button btnSua;
     private com.DuAn1.Swing.Button btnSua1;
     private com.DuAn1.Swing.Button btnThem;
+    private com.DuAn1.swing0.SwitchButton btnTrangThai;
     private com.DuAn1.Swing.Button btnXoa;
     private com.DuAn1.Swing.Combobox cboLoc;
     private com.raven.datechooser.DateChooser dateChooser;
@@ -533,7 +573,6 @@ void xoa(){
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTongTien;
     private javax.swing.JLabel lblTrangThai;
-    private com.DuAn1.swing0.SwitchButton switchButton1;
     private com.raven.swing.table.Table tblThanhToanLuong;
     private com.DuAn1.Swing.TextField txtKhoangTru;
     private com.DuAn1.Swing.TextField txtLuongCoBan;
