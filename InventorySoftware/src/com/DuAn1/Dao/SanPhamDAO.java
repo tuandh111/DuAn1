@@ -59,6 +59,11 @@ public class SanPhamDAO {
         return select(sql);
     }
 
+    public List<SanPhamModel> selectSoLuong() {
+        String sql = "SELECT * FROM SANPHAM";
+        return select(sql);
+    }
+
     private List<SanPhamModel> select(String sql, Object... args) {
         List<SanPhamModel> list = new ArrayList<>();
         try {
@@ -93,5 +98,30 @@ public class SanPhamDAO {
         model.setMaNV(rs.getString("MaNV"));
         model.setMaGiamGia(rs.getString("MaGiamGia"));
         return model;
+    }
+
+    public List<Object[]> getSoLuongSP() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call sp_thongKeTongSoLuongSanPhamXoa}";
+                rs = JdbcHelper.executeQuery(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getInt("TongSoLuong"),
+                    };
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
     }
 }
