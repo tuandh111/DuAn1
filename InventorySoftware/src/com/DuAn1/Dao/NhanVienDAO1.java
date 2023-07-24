@@ -133,9 +133,11 @@ public class NhanVienDAO1 {
         );
     }
 
-    public void delete(String MaKH) {
-        String sql = "DELETE FROM NHANVIEN WHERE MaNV=?";
-        JdbcHelper.executeUpdate(sql, MaKH);
+    public void delete(NhanVienModel model) {
+        String sql = "UPDATE NHANVIEN SET TRANGTHAIXOA = 0 WHERE MaNV = ?";
+        JdbcHelper.executeUpdate(sql,
+                model.getMaNV()
+                );
     }
 
     public List<NhanVienModel> select() {

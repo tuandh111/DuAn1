@@ -89,7 +89,14 @@ public class NhanVien extends javax.swing.JPanel {
     }
 
     void delete() {
-
+        NhanVienModel nv = getForm();
+        try {
+            Dao.delete(nv);
+            this.filltable();
+            JOptionPane.showMessageDialog(this, "Xóa thành công!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại!");
+        }
     }
 
     NhanVienModel getForm() {
@@ -197,7 +204,6 @@ public class NhanVien extends javax.swing.JPanel {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanvien.getRowCount() - 1);
-        txtTaikhoan.setEditable(!edit);
         btnThem.setEnabled(!edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);

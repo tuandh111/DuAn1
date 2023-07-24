@@ -80,4 +80,9 @@ public class GiamGiaDao {
         return model;
     }
 
+    public GiamGiaModel findById(String makh) {
+        String sql = "SELECT * FROM NHANVIEN WHERE MaNV=?";
+        List<GiamGiaModel> list = select(sql, makh);
+        return list.size() > 0 ? list.get(0) : null;
+    }
 }
