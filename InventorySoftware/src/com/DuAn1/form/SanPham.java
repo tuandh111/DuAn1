@@ -5,6 +5,7 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.DienThoaiDao;
+import com.DuAn1.Dao.GiamGiaDao;
 import com.DuAn1.Dao.SanPhamDAO;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.QuetMaQR.NewClass1;
@@ -25,6 +26,7 @@ import com.DuAn1.main.Main;
 import com.tuandhpc05076.Form.ChuyenDe;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.DienThoaiModel;
+import com.DuAn1.Model.GiamGiaModel;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.SanPhamModel;
 import static com.tuandhpc05076.Form.NguoiHoc.listNH;
@@ -38,6 +40,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,13 +62,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author DELL E5470
  */
 public class SanPham extends javax.swing.JPanel {
-
+    
     DefaultTableModel tblModel;
     SanPhamDAO Dao = new SanPhamDAO();
     DienThoaiDao DaoDT = new DienThoaiDao();
     // the webcam object
     private WebcamPanel panel;
-
+    
     public SanPham() {
         initComponents();
 //        dateChooser.addEventDateChooser(new EventDateChooser() {
@@ -87,14 +90,21 @@ public class SanPham extends javax.swing.JPanel {
         filltable();
         setLayout(new FlowLayout()); // set the layout of the frame
         // set the default close operation of the frame
-
+        LoadCombobox();
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
     }
-     void LoadCombobox(){
-         DefaultComboBoxModel comboboxmodel= new DefaultComboBoxModel();
-         
-     }
 
+    void LoadCombobox() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+        GiamGiaDao daoGiamGia = new GiamGiaDao();
+        ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
+        for (GiamGiaModel gg : listGiamGia) {
+            comboboxmodel.addElement(gg.getMaGG().trim() + "-" + gg.getPhanTram().trim());
+        }
+        cboKhuyenMai.setModel(comboboxmodel);
+        cboKhuyenMai.setSelectedIndex(-1);
+    }
+    
     void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
@@ -109,7 +119,7 @@ public class SanPham extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-
+    
     SanPhamModel getFormSP() {
         SanPhamModel cd = new SanPhamModel();
         cd.setMaSP(txtMaSP.getText());
@@ -126,7 +136,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setMaGiamGia((String) cboKhuyenMai.getSelectedItem());
         return cd;
     }
-
+    
     DienThoaiModel getFormDT() {
         DienThoaiModel dt = new DienThoaiModel();
         dt.setMaDT(txtMaSP.getText());
@@ -139,7 +149,7 @@ public class SanPham extends javax.swing.JPanel {
         dt.setRam((String) cboRam.getSelectedItem());
         return dt;
     }
-
+    
     void setFormSP(SanPhamModel sp) {
         txtMaSP.setText(sp.getMaSP());
         txtTenSP.setText(sp.getTenSP());
@@ -154,9 +164,9 @@ public class SanPham extends javax.swing.JPanel {
             txtHinhAnh.setIcon(ShareHelper.readLogo(sp.getHinh()));
         }
         cboKhuyenMai.setSelectedItem(sp.getMaGiamGia());
-
+        
     }
-
+    
     void setFormDT(DienThoaiModel dt) {
         cboCPU.setSelectedItem(dt.getCPU());
         cboMangHinh.setSelectedItem(dt.getCPU());
@@ -165,38 +175,38 @@ public class SanPham extends javax.swing.JPanel {
         cboPin.setSelectedItem(dt.getCPU());
         cboRam.setSelectedItem(dt.getCPU());
         txtMoTa.setText(dt.getMoTa());
-
+        
     }
-    void them(){
+
+    void them() {
         try {
-            SanPhamModel model= getFormSP();
-            DienThoaiModel modeldt =getFormDT();
+            SanPhamModel model = getFormSP();
+            DienThoaiModel modeldt = getFormDT();
             Dao.insert(model);
             DaoDT.insert(modeldt);
             DialogHelper.alert(this, "Thêm dữ liệu thành công");
         } catch (Exception e) {
-            DialogHelper.alert(this,"Lỗi thêm dữ liệu");
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
     }
     
-
     public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();
             jFileChooser.showSaveDialog(this);
             File saveFile = jFileChooser.getSelectedFile();
-
+            
             if (saveFile != null) {
                 saveFile = new File(saveFile.toString() + ".xlsx");
                 Workbook wb = new XSSFWorkbook();
                 Sheet sheet = wb.createSheet("Sản phẩm");
-
+                
                 Row rowCol = sheet.createRow(0);
                 for (int i = 0; i < tblUser.getColumnCount(); i++) {
                     org.apache.poi.ss.usermodel.Cell cell = rowCol.createCell(i);
                     cell.setCellValue(tblUser.getColumnName(i));
                 }
-
+                
                 for (int j = 0; j < tblUser.getRowCount(); j++) {
                     Row row = sheet.createRow(j + 1);
                     for (int k = 0; k < tblUser.getColumnCount(); k++) {
@@ -220,7 +230,7 @@ public class SanPham extends javax.swing.JPanel {
             System.out.println(io);
         }
     }
-
+    
     public void OpenFile(String file) {
         try {
             File path = new File(file);
@@ -228,7 +238,7 @@ public class SanPham extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -787,10 +797,10 @@ public class SanPham extends javax.swing.JPanel {
                 } catch (IOException ex) {
                     Logger.getLogger(ChuyenDe.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
+                
                 strHinh = file.getName();
                 txtHinhAnh.setText("");
-
+                
                 txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
                 txtHinhAnh.setToolTipText(file.getName());
                 txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
@@ -864,10 +874,10 @@ public class SanPham extends javax.swing.JPanel {
                 } catch (IOException ex) {
                     Logger.getLogger(ChuyenDe.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
+                
                 strHinh = file.getName();
                 txtHinhAnh.setText("");
-
+                
                 txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
                 txtHinhAnh.setToolTipText(file.getName());
                 txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
