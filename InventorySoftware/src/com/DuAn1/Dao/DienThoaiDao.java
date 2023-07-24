@@ -6,6 +6,7 @@ package com.DuAn1.Dao;
 
 import com.DuAn1.Helper.JdbcHelper;
 import com.DuAn1.Model.DienThoaiModel;
+import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.SanPhamModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,9 +32,10 @@ public class DienThoaiDao {
                 model.getRam()
         );
     }
-       public void update(DienThoaiModel model) {
+
+    public void update(DienThoaiModel model) {
         String sql = "update DIENTHOAI set CPU=?,MANHINH=?,BONHO=?,MOTA=?,MASP=?,RAM=?,PIN=?,CAMERA=? where MADT=?";
-        JdbcHelper.executeUpdate(sql,              
+        JdbcHelper.executeUpdate(sql,
                 model.getCPU(),
                 model.getMangHinh(),
                 model.getBoNho(),
@@ -44,9 +46,16 @@ public class DienThoaiDao {
                 model.getMaDT()
         );
     }
-        public List<DienThoaiModel> select() {
+
+    public List<DienThoaiModel> select() {
         String sql = "SELECT * FROM DIENTHOAI";
         return select(sql);
+    }
+
+    public DienThoaiModel findById(String makh) {
+        String sql = "SELECT * FROM DIENTHOAI WHERE MaDT=?";
+        List<DienThoaiModel> list = select(sql, makh);
+        return list.size() > 0 ? list.get(0) : null;
     }
 
     private List<DienThoaiModel> select(String sql, Object... args) {
