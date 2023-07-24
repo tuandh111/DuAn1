@@ -32,7 +32,7 @@ public class GiamGia extends javax.swing.JPanel {
 
     void tieude() {
         model = new DefaultTableModel();
-        String[] name = new String[]{"Loại Sản Phẩm", "Sản Phẩm", "Ngày Bắt Đầu", "Ngày Kết Thúc", "Phần Trăm", "Mô Tả"};
+        String[] name = new String[]{"Mã Giảm Giá", "Ngày Bắt Đầu", "Ngày Kết Thúc", "Phần Trăm", "Mô Tả", "Trạng Thái", "Mã Nhân Viên"};
         model.setColumnIdentifiers(name);
         tblGiamgia.setModel(model);
     }

@@ -114,13 +114,13 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                       <Component id="txtSoLuong" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <Component id="cpoKhuyenMai" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="cboKhuyenMai" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cpoLoaiSanPham" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="cboLoaiSanPham" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Component id="txtMoTa" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -213,14 +213,14 @@
                               <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="cpoLoaiSanPham" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cboLoaiSanPham" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                                       <Component id="txtMoTa" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="txtSoLuong" min="-2" pref="50" max="-2" attributes="0"/>
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                      <Component id="cpoKhuyenMai" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="cboKhuyenMai" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -249,26 +249,12 @@
             <Component class="com.raven.swing.table.Table" name="tblUser">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object">
-                      <Data value="PC0001"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Title 2" type="java.lang.Object">
-                      <Data value="&#x111;&#x1eb7;ng ho&#xe0;ng tu&#x1ea5;n"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Title 3" type="java.lang.Object">
-                      <Data value="sdfsdf"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                  <Table columnCount="5" rowCount="4">
+                    <Column editable="false" title="M&#xe3;" type="java.lang.Object"/>
+                    <Column editable="true" title="T&#xea;n s&#x1ea3;n ph&#x1ea9;m" type="java.lang.Object"/>
+                    <Column editable="true" title="Gi&#xe1;" type="java.lang.Object"/>
+                    <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
+                    <Column editable="true" title="Tr&#x1ea1;ng th&#xe1;i" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
@@ -322,12 +308,12 @@
             <Property name="labeText" type="java.lang.String" value="M&#xe0;u s&#x1eaf;c"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Combobox" name="cpoKhuyenMai">
+        <Component class="com.DuAn1.Swing.Combobox" name="cboKhuyenMai">
           <Properties>
             <Property name="labeText" type="java.lang.String" value="Ch&#x1ecd;n khuy&#x1ebf;n m&#x1ea1;i"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Combobox" name="cpoLoaiSanPham">
+        <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSanPham">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -340,7 +326,7 @@
             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i s&#x1ea3;n ph&#x1ea9;m"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpoLoaiSanPhamActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboLoaiSanPhamActionPerformed"/>
           </Events>
         </Component>
         <Component class="com.DuAn1.Swing.Spinner" name="txtSoLuong">

@@ -150,6 +150,8 @@ CREATE TABLE DATSPCT(
 	FOREIGN KEY (MaDH) REFERENCES DATSP(MaDH) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 )
+--Them dòng máy
+
 CREATE TABLE DONGMAY(
 	MaDong int IDENTITY(1,1) PRIMARY KEY,
 	LoaiSanPham char(50),
@@ -401,3 +403,13 @@ FROM DATSP;
 
 END;
 EXEC sp_thongke_tongtien_dathang;
+--thống kê sản phẩm
+CREATE PROCEDURE sp_thongKeTongSoLuongSanPhamXoa
+AS
+BEGIN
+    SELECT SUM(SoLuong) AS TongSoLuong
+    FROM SANPHAM
+    WHERE TrangThai = 1;
+END;
+EXEC sp_thongKeTongSoLuongSanPhamXoa;
+

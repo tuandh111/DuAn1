@@ -11,6 +11,7 @@ import com.raven.swing.noticeboard.ModelNoticeBoard;
 import com.raven.swing.table.EventAction;
 import com.tuandhpc05076.Dao.NhanVienDAO;
 import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Dao.SanPhamDAO;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.NhanVienModel;
@@ -24,6 +25,8 @@ import com.DuAn1.tabledark.Test;
 import com.DuAn1.test.Slide1;
 import com.DuAn1.test.Slide2;
 import com.DuAn1.test.Slide3;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Form_Home extends javax.swing.JPanel {
 
@@ -37,11 +40,11 @@ public class Form_Home extends javax.swing.JPanel {
         setOpaque(false);
         tblUser.getColumnModel().getColumn(0).setPreferredWidth(10);
         tblUser.getColumnModel().getColumn(1).setPreferredWidth(150);
-         tblUser.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tblUser.getColumnModel().getColumn(2).setPreferredWidth(100);
         tblUser.getColumnModel().getColumn(3).setPreferredWidth(70);
         tblUser.getColumnModel().getColumn(4).setPreferredWidth(0);
         initData();
-        
+
     }
 
     private void initData() {
@@ -57,17 +60,17 @@ public class Form_Home extends javax.swing.JPanel {
         try {
             List<NhanVienModel> list = dao.selectHoatDong();
             for (NhanVienModel model : list) {
-                String gt ="";
-                if(model.isGioiTinh()){
-                    gt="Nam";
-                }else{
-                    gt="Nữ";
+                String gt = "";
+                if (model.isGioiTinh()) {
+                    gt = "Nam";
+                } else {
+                    gt = "Nữ";
                 }
-                String vaiTro ="";
-                if(model.getVaiTro().trim().equals("QL")){
-                    vaiTro="Quản lý";
-                }else{
-                    vaiTro="Nhân viên";
+                String vaiTro = "";
+                if (model.getVaiTro().trim().equals("QL")) {
+                    vaiTro = "Quản lý";
+                } else {
+                    vaiTro = "Nhân viên";
                 }
                 Object[] row = {
                     model.getMaNV(),
@@ -79,7 +82,6 @@ public class Form_Home extends javax.swing.JPanel {
                     model.getSDT(),
                     model.getEmail(),
                     model.getMatKhau(),
-                    
                     model.getHinh()};
 
                 model1.addRow(row);
@@ -125,11 +127,16 @@ public class Form_Home extends javax.swing.JPanel {
 //        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Trân", "Nữ", "C#", 300).toRowTable(eventAction));
 //        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Yến", "Nữ", "C#", 700).toRowTable(eventAction));
 //    }
+    SanPhamDAO daoSoLuong = new SanPhamDAO();
 
     private void initCardData() {
-        int i = 1000;
+        List<Object[]> i = daoSoLuong.getSoLuongSP();
+        Object list = i.get(0);
+        int tongSoLuong = Arrays.stream(i.get(0))
+                .mapToInt(obj -> (int) obj)
+                .sum();
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card1.setData(new ModelCard("Số lượng sản phẩm", i, 20, icon1));
+        card1.setData(new ModelCard("Số lượng sản phẩm", tongSoLuong, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card2.setData(new ModelCard("Doanh thu tháng", 2000, 60, icon2));
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
@@ -312,7 +319,7 @@ public class Form_Home extends javax.swing.JPanel {
 
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         // TODO add your handling code here:
-        int i=tblUser.getSelectedRow();
+        int i = tblUser.getSelectedRow();
         JOptionPane.showMessageDialog(this, i);
     }//GEN-LAST:event_tblUserMouseClicked
 
