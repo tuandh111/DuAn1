@@ -61,6 +61,7 @@ public class ShareHelper {
      * Đối tượng này chứa thông tin người sử dụng sau khi đăng nhập
      */
     public static NhanVienModel USER = null;
+    public static String ThoiGianHoatDong=null;
     /*
      * Xóa thông tin của người sử dụng khi có yêu cầu đăng xuất
      */

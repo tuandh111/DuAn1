@@ -40,6 +40,8 @@ public class NewSignin extends javax.swing.JFrame {
 
     NhanVienDAO1 dao = new NhanVienDAO1();
     ThaoTacDAO ThaoTacDao= new ThaoTacDAO();
+    
+    
     public NewSignin() {
         initComponents();
 
@@ -71,7 +73,7 @@ public class NewSignin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
         } else {
             ShareHelper.USER = taikhoan;
-//            ThaoTacModel model=getForm();
+            ThaoTacModel model=getForm();
 //            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
             com.DuAn1.main.Main main = new com.DuAn1.main.Main();
@@ -88,6 +90,7 @@ public class NewSignin extends javax.swing.JFrame {
           LocalDateTime current = LocalDateTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
     String formatted = current.format(formatter);
+    ShareHelper.ThoiGianHoatDong= formatted;
         cd.setThoIGianHoatDong(formatted);
         cd.setBanThaoTac("Đăng Nhập");
         cd.setMaNV(txtusername.getText());
