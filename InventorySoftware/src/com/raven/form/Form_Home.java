@@ -130,13 +130,13 @@ public class Form_Home extends javax.swing.JPanel {
     SanPhamDAO daoSoLuong = new SanPhamDAO();
 
     private void initCardData() {
-        List<Object[]> i = daoSoLuong.getSoLuongSP();
-        Object list = i.get(0);
-        int tongSoLuong = Arrays.stream(i.get(0))
-                .mapToInt(obj -> (int) obj)
-                .sum();
+//        List<Object[]> i = daoSoLuong.getSoLuongSP();
+//        Object list = i.get(0);
+//        int tongSoLuong = Arrays.stream(i.get(0))
+//                .mapToInt(obj -> (int) obj)
+//                .sum();
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card1.setData(new ModelCard("Số lượng sản phẩm", tongSoLuong, 20, icon1));
+        card1.setData(new ModelCard("Số lượng sản phẩm", 11, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card2.setData(new ModelCard("Doanh thu tháng", 2000, 60, icon2));
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));

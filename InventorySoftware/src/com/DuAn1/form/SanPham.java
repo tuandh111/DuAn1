@@ -99,7 +99,7 @@ public class SanPham extends javax.swing.JPanel {
         GiamGiaDao daoGiamGia = new GiamGiaDao();
         ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
         for (GiamGiaModel gg : listGiamGia) {
-            comboboxmodel.addElement(gg.getMaGG().trim() + "-" + gg.getPhanTram().trim());
+            comboboxmodel.addElement(gg.getMaGG().trim() +"-"+gg.getPhanTram());
         }
         cboKhuyenMai.setModel(comboboxmodel);
         cboKhuyenMai.setSelectedIndex(-1);

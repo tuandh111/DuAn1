@@ -25,7 +25,7 @@ public class GiamGiaDao {
                 model.getNgayBD(),
                 model.getNgayKT(),
                 model.getPhanTram(),
-                model.getMoTa(),
+                model.getMota(),
                 model.isTrangThai(),
                 model.getMaNV()
         );
@@ -37,7 +37,7 @@ public class GiamGiaDao {
                 model.getNgayBD(),
                 model.getNgayKT(),
                 model.getPhanTram(),
-                model.getMoTa(),
+                model.getMota(),
                 model.isTrangThai(),
                 model.getMaNV(),
                 model.getMaGG()
@@ -73,8 +73,8 @@ public class GiamGiaDao {
         model.setMaGG(rs.getString("MaGiamGia"));
         model.setNgayBD(rs.getString("NgayBD"));
         model.setNgayKT(rs.getString("NgayKT"));
-        model.setPhanTram(rs.getString("PhanTram"));
-        model.setMoTa(rs.getString("MoTa"));
+        model.setPhanTram(rs.getFloat("PhanTram"));
+        model.setMota(rs.getString("MoTa"));
         model.setTrangThai(rs.getBoolean("TrangThai"));
         model.setMaNV(rs.getString("MaNV"));
         return model;

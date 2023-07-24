@@ -4,7 +4,7 @@
  */
 package com.DuAn1.form;
 
-import com.DuAn1.Dao.GiamGiaDAO;
+import com.DuAn1.Dao.GiamGiaDao;
 import com.DuAn1.Model.GiamGiaModel;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class GiamGia extends javax.swing.JPanel {
 
     DefaultTableModel model;
-    GiamGiaDAO Dao = new GiamGiaDAO();
+    GiamGiaDao Dao = new GiamGiaDao();
     int row = -1;
 
     /**
