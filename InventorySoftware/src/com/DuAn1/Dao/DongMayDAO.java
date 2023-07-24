@@ -36,7 +36,6 @@ public class DongMayDAO {
     public void update(DongMayModel model) {
         String sql = "update DONGMAY set LoaiSanPham=?,CPU=?,MangHinh=?,BoNho=?,MoTa=?,MaSP=?,CAMERA=?,Pin=?,RAM=? where MaDong=?";
         JdbcHelper.executeUpdate(sql,
-                model.getMaDong(),
                 model.getLoaiSP(),
                 model.getCPU(),
                 model.getManHinh(),
@@ -45,7 +44,8 @@ public class DongMayDAO {
                 model.getMaSP(),
                 model.getCamera(),
                 model.getPin(),
-                model.getRAM());
+                model.getRAM(),
+                model.getMaDong());
     }
     public void delete(String MaDong) {
         String sql = "DELETE FROM DONGMAY WHERE MaDong=?";
