@@ -480,3 +480,11 @@ BEGIN
 END;
 EXEC sp_thongKeTongSoLuongSanPhamXoa;
 
+--
+CREATE PROCEDURE MaxMaSP
+AS
+BEGIN
+    SELECT MAX(MaSP) AS MaxProductCode
+    FROM SANPHAM;
+END
+GO
