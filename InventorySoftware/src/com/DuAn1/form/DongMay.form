@@ -211,11 +211,7 @@
               <Color blue="ff" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="T&#xec;m"/>
-            <Property name="actionCommand" type="java.lang.String" value="T&#xec;m"/>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="T&#xec;m"/>
-          </AccessibilityProperties>
         </Component>
         <Component class="com.DuAn1.Swing.TextField1" name="txtTim">
           <Properties>

@@ -5,7 +5,10 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.DienThoaiDao;
+import com.DuAn1.Dao.DongMayDAO;
 import com.DuAn1.Model.DienThoaiModel;
+import com.DuAn1.Model.DongMayModel;
+import com.tuandhpc05076.helper.DialogHelper;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DongMay extends javax.swing.JPanel {
     DefaultTableModel model;
-    DienThoaiDao dao = new DienThoaiDao();
+    DongMayDAO dao = new DongMayDAO();
     int row=-1;
     /**
      * Creates new form DongMay
@@ -23,10 +26,11 @@ public class DongMay extends javax.swing.JPanel {
     public DongMay() {
         initComponents();
         this.tieude();
+        this.filltable();
     }
 void tieude(){
     model = new DefaultTableModel();
-    String [] name = new String []{"MaDT","CPU","MangHinh","BoNho","MoTa","MaSP","CAMERA","Pin","RAM"};
+    String [] name = new String []{"MaDong","LoaiSanPham","CPU","ManHinh","BoNho","MoTa","MaSP","Camera","Pin","RAM"};
     model.setColumnIdentifiers(name);
     tblDongMay.setModel(model);
 }
@@ -34,12 +38,14 @@ void filltable(){
     model = (DefaultTableModel) tblDongMay.getModel();
         model.setRowCount(0);
         try {
-            List<DienThoaiModel> list = dao.select();
-            for (DienThoaiModel dt : list) {
-                Object[] row = new Object[]{dt.getMaDT(),dt.getCPU(),dt.getMangHinh(),dt.getBoNho(),dt.getMoTa(),
-                };
+            List<DongMayModel> list = dao.select();
+            for (DongMayModel dm : list) {
+                Object[] row = new Object[]{dm.getMaDong(),dm.getLoaiSP(),dm.getCPU(),dm.getManHinh(),dm.getBoNho(),
+                    dm.getMoTa(),dm.getMaSP(),dm.getCamera(),dm.getPin(),dm.getRAM()};
+                model.addRow(row);
             }
     } catch (Exception e) {
+            DialogHelper.alert(this, "Lỗi truy vấn cơ sở dữ liệu");
     }
 }
     /**

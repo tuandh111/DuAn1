@@ -80,8 +80,13 @@ public class GiamGiaDao {
         return model;
     }
 
+    public void delete(String id) throws SQLException {
+        String sql = "DELETE FROM GIAMGIA WHERE MAGIAMGIA=?";
+        JdbcHelper.executeUpdate(sql, id);
+    }
+
     public GiamGiaModel findById(String makh) {
-        String sql = "SELECT * FROM NHANVIEN WHERE MaNV=?";
+        String sql = "SELECT * FROM GIAMGIA WHERE MaGiamGia=?";
         List<GiamGiaModel> list = select(sql, makh);
         return list.size() > 0 ? list.get(0) : null;
     }

@@ -85,6 +85,30 @@ CREATE TABLE SANPHAM(
 	FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV) ON DELETE NO ACTION ON UPDATE CASCADE
 	
 )
+create table CPU(
+maCPU char(20) primary key,
+loaiSP char(50) ,
+)
+create table ManHinh(
+maManHinh char(20) primary key,
+loaiSP char(50)
+)
+create table RAM(
+maRAM char(10) primary key,
+loaiSP char(50)
+)
+create table BoNho(
+maBoNho char(10) primary key,
+loaiSP char(50)
+)
+create table Camera(
+maCamera char(20) primary key,
+loaiSP char(50)
+)
+create table Pin(
+maPin char(10) primary key,
+loaiSP char(50)
+)
 CREATE TABLE DIENTHOAI(
 	MaDT CHAR(10) PRIMARY KEY,
 	CPU CHAR(20) NOT NULL,
@@ -94,7 +118,13 @@ CREATE TABLE DIENTHOAI(
 	CAMERA CHAR(20) NOT NULL,
 	Pin CHAR(10) NOT NULL,
 	RAM CHAR(10) NOT NULL,
-	FOREIGN KEY (MaDT) REFERENCES SANPHAM(MaSP) ON DELETE NO ACTION ON UPDATE CASCADE
+	FOREIGN KEY (MaDT) REFERENCES SANPHAM(MaSP) ON DELETE NO ACTION ON UPDATE CASCADE,
+	FOREIGN KEY (CPU) REFERENCES CPU(maCPU) ON DELETE NO ACTION ON UPDATE CASCADE,
+	FOREIGN KEY (MangHinh) REFERENCES ManHinh(maManHinh) ON DELETE NO ACTION ON UPDATE CASCADE,
+	FOREIGN KEY (RAM) REFERENCES RAM(maRAM) ON DELETE NO ACTION ON UPDATE CASCADE,
+	FOREIGN KEY (BoNho) REFERENCES BoNho(maBoNho) ON DELETE NO ACTION ON UPDATE CASCADE,
+	FOREIGN KEY (CAMERA) REFERENCES Camera(maCamera) ON DELETE NO ACTION ON UPDATE CASCADE,
+	FOREIGN KEY (Pin) REFERENCES Pin(maPin) ON DELETE NO ACTION ON UPDATE CASCADE
 )
 
 CREATE TABLE HOADON(
@@ -152,18 +182,11 @@ CREATE TABLE DATSPCT(
 )
 --Them dòng máy
 
-CREATE TABLE DONGMAY(
-	MaDong int IDENTITY(1,1) PRIMARY KEY,
-	LoaiSanPham char(50),
-	CPU CHAR(50) NULL,
-	MangHinh CHAR(50)  NULL,
-	BoNho CHAR(50) NULL,
-	MoTa TEXT,
-	MaSP CHAR(50) NULL,
-	CAMERA CHAR(50) NULL,
-	Pin CHAR(50)  NULL,
-	RAM CHAR(50)  NULL
-)
+
+
+
+
+
 
 Insert into VAITRO values ('QL',N'Quản lý',null)
 Insert into VAITRO values ('NV',N'Nhân Viên',null)
@@ -233,9 +256,9 @@ Update LICHSU set THOIGIANTHEM=null,THOIGIANSUA=null,THOIGIANXOA=null,THOIGIANHD
 delete from LICHSU where ID=1
 select * from LICHSU where ID=1
 
-Insert into SANPHAM values ('SP00001','IPNONE 14S',N'Trắng','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','GG001')
+Insert into SANPHAM values ('SP00001','Samsung A73',N'Trắng','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','GG001')
 Insert into SANPHAM values ('SP00002','IPNONE 13S',N'Vàng','11500000',N'Iphone','2022-01-01',N'Nước China',20,1,'null','NV001','GG002')
-Insert into SANPHAM values ('SP00003','IPNONE 12S',N'Đen','10500000',N'Iphone','2022-01-01',N'Nước Nhật',22,1,'null','NV001','GG003')
+Insert into SANPHAM values ('SP00003','Sony F20',N'Đen','10500000',N'Iphone','2022-01-01',N'Nước Nhật',22,1,'null','NV001','GG003')
 Insert into SANPHAM values ('SP00004','IPNONE 14S',N'Trắng','11500000',N'Iphone','2022-01-01',N'Nước Mỹ',17,1,'null','NV002','GG004')
 Insert into SANPHAM values ('SP00005','IPNONE 14S',N'Trắng','10500000',N'Iphone','2022-01-01',N'Nước Mỹ',32,1,'null','NV002','GG005')
 Insert into SANPHAM values ('SP00006','IPNONE 14S',N'Trắng','9500000',N'Iphone','2022-01-01',N'Nước Nhật',18,1,'null','NV002','GG006')
@@ -246,15 +269,55 @@ Update SANPHAM set TenSP='iPhone 14',MAU='Lam',Gia='1000',LoaiSP='US',NgayNhap='
 delete from SANPHAM where MaSP='IP001' 
 select * from SANPHAM where MaSP='IP001'
 
+insert into CPU values ('Bionic','iPhone')
+insert into CPU values ('NDragon','Samsung')
+insert into CPU values ('Helio','Sony')
+update CPU set loaiSP = 'Samsung' where maCPU='NDragon'
+delete from CPU where maCPU='NDragon'
+select * from CPU where maCPU='NDragon'
+
+insert into BoNho values('64GB','Sony')
+insert into BoNho values('128GB','Samsung')
+insert into BoNho values('256GB','iPhone')
+update BoNho set loaiSP='Sony' where maBoNho='64GB'
+delete from BoNho where maBoNho='64GB'
+select* from BoNho where  maBoNho='64GB'
+
+insert into RAM values('6GB','Sony')
+insert into RAM values('8GB','Sony')
+update RAM set loaiSP='Sony' where maRAM='6GB'
+delete from RAM where maRAM='6GB'
+select * from RAM where maRAM='6GB'
+
+insert into Camera values('32px','Sony')
+insert into Camera values('24Mb','Sony')
+update Camera set loaiSP='Sony' where maRAM='32px'
+delete from Camera where maCamera='32px'
+select * from Camera where maCamera='32px'
+
+insert into Pin values('5000mAh','Sony')
+insert into Pin values('4000Mh','Sony')
+update Pin set loaiSP='Sony' where maPin='5000mAh'
+delete from Pin where maPin='5000mAh'
+select * from Pin where maPin='5000mAh'
+
+insert into ManHinh values('HD','Samsung')
+insert into ManHinh values('OLED','Sony')
+insert into ManHinh values('HDPlus','iPhone')
+update ManHinh set loaiSP='Samsung' where maManHinh='HD'
+delete from ManHinh where maManHinh='HD'
+select * from ManHinh where maManHinh='HD'
+
+
 Insert into DIENTHOAI values('SP00001','NDragon','HD','128GB',null,'24Mb','4000Mh','8GB')
-Insert into DIENTHOAI values('SP00002','NDragon','HD','64GB',null,'64Mb','4200Mh','4GB')
-Insert into DIENTHOAI values('SP00003','NDragon','HD','128GB',null,'24Mb','4300Mh','8GB')
-Insert into DIENTHOAI values('SP00004','NDragon','HD','128GB',null,'24Mb','4500Mh','16GB')
-Insert into DIENTHOAI values('SP00005','NDragon','HD','128GB',null,'24Mb','3500Mh','8GB')
-Insert into DIENTHOAI values('SP00006','NDragon','HD','128GB',null,'24Mb','4200Mh','4GB')
-Insert into DIENTHOAI values('SP00007','NDragon','HD','128GB',null,'24Mb','4000Mh','24GB')
-Insert into DIENTHOAI values('SP00008','NDragon','HD','128GB',null,'24Mb','4500Mh','6GB')
-Insert into DIENTHOAI values('SP00009','NDragon','HD','128GB',null,'24Mb','3500Mh','8GB')
+Insert into DIENTHOAI values('SP00002','Bionic','HD','64GB',null,'32px','5000mAh','6GB')
+Insert into DIENTHOAI values('SP00003','Helio','HD','128GB',null,'32px','4000Mh','8GB')
+Insert into DIENTHOAI values('SP00004','NDragon','HD','128GB',null,'24Mb','4000Mh','8GB')
+Insert into DIENTHOAI values('SP00005','NDragon','HD','128GB',null,'24Mb','5000mAh','8GB')
+Insert into DIENTHOAI values('SP00006','NDragon','HD','128GB',null,'24Mb','4000Mh','6GB')
+Insert into DIENTHOAI values('SP00007','NDragon','HD','128GB',null,'24Mb','4000Mh','8GB')
+Insert into DIENTHOAI values('SP00008','NDragon','HD','128GB',null,'24Mb','4000Mh','6GB')
+Insert into DIENTHOAI values('SP00009','NDragon','HD','128GB',null,'24Mb','5000mAh','8GB')
 update DIENTHOAI set CPU='Snapdragon',MANHINH='OLED',BONHO='256GB',MOTA=null,MASP='SS001',RAM='16GB',PIN='5000Mh',CAMERA='32px' where MADT='DT001'
 delete from DIENTHOAI where MADT='DT001'
 select * from DIENTHOAI where MADT='DT001'
@@ -313,6 +376,10 @@ update DATSPCT set SoLuong=1,MaDH='DH001',MaSP='IP001' where MaDatCT=1
 delete from DATSPCT where MaDatCT=1
 select * from DATSPCT where MaDatCT=1 
 
+insert into DONGMAY values ('iPhone','Apple A13 Bionic','HD plus','256GB','sản phẩm iPhone','SP001','64px','5000mAh','16GB')
+update DONGMAY set LoaiSanPham='iPhone',CPU='Apple A13 Bionic',MangHinh='HD Pro',BoNho='256BG',MoTa='sản phẩm iPhone',MaSP='SP001',CAMERA='64px',Pin='5000mAh',RAM='16GB'
+delete from DONGMAY where MaDong=1
+select * from DONGMAY where MaDong=1
 --doanh thu
 
 CREATE PROCEDURE sp_thongke_doanhthu_tuan
