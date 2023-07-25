@@ -838,7 +838,7 @@ public class SanPham extends javax.swing.JPanel {
             // create and display a new form
 
             NewClass1 n1 = new NewClass1(Main.getMain(), true);
-            n1.setVisible(true);
+           // n1.setVisible(true);
             txtTenSP.setText(NewClass1.getSoLuong());
         }
 
