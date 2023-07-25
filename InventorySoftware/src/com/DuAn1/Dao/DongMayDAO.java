@@ -59,7 +59,7 @@ public class DongMayDAO {
     }
 
     public List<MangHinhModel> selectMangHinh(String loai) {
-        String sql = "SELECT * FROM MangHinh where loaiSP like ?";
+        String sql = "SELECT * FROM ManHinh where loaiSP like ?";
         return selectMangHinh(sql, "%" + loai + "%");
     }
 
@@ -206,7 +206,7 @@ public class DongMayDAO {
 
     private MangHinhModel readFromResultSetMangHinh(ResultSet rs) throws SQLException {
         MangHinhModel model = new MangHinhModel();
-        model.setMaMangHinh(rs.getString("maMangHinh"));
+        model.setMaMangHinh(rs.getString("maManHinh"));
         model.setLoaiSp(rs.getString("loaiSP"));
         return model;
     }
@@ -234,7 +234,7 @@ public class DongMayDAO {
 
     private PinModel readFromResultSetPin(ResultSet rs) throws SQLException {
         PinModel model = new PinModel();
-        model.setMaPin(rs.getString("maCPU"));
+        model.setMaPin(rs.getString("maPin"));
         model.setLoaiSP(rs.getString("loaiSP"));
         return model;
     }

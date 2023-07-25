@@ -131,7 +131,6 @@ public class Form_Home extends javax.swing.JPanel {
 
     private void initCardData() {
         List<Object[]> i = daoSoLuong.getSoLuongSP();
-        Object list = i.get(0);
         int tongSoLuong = Arrays.stream(i.get(0))
                 .mapToInt(obj -> (int) obj)
                 .sum();

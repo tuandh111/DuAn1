@@ -64,6 +64,12 @@ public class SanPhamDAO {
         return select(sql);
     }
 
+    public SanPhamModel findById(String makh) {
+        String sql = "SELECT * FROM SANPHAM WHERE MaSP=?";
+        List<SanPhamModel> list1 = select(sql, makh);
+        return list1.size() > 0 ? list1.get(0) : null;
+    }
+
     private List<SanPhamModel> select(String sql, Object... args) {
         List<SanPhamModel> list = new ArrayList<>();
         try {
@@ -109,8 +115,7 @@ public class SanPhamDAO {
                 rs = JdbcHelper.executeQuery(sql);
                 while (rs.next()) {
                     Object[] model = {
-                        rs.getInt("TongSoLuong"),
-                    };
+                        rs.getInt("TongSoLuong"),};
 
                     list.add(model);
 
@@ -124,4 +129,5 @@ public class SanPhamDAO {
         }
         return list;
     }
+
 }
