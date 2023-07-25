@@ -5,7 +5,6 @@
 package com.DuAn1.Dao;
 
 import com.DuAn1.Helper.JdbcHelper;
-import com.DuAn1.Model.DongMayModel;
 import com.DuAn1.Model.ThaoTacModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;

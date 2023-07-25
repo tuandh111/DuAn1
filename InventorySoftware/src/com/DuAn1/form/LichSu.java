@@ -94,7 +94,7 @@ public class LichSu extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblUser);
 
-        txtTimKiemTheoMa.setHint("Tìm kiếm");
+        txtTimKiemTheoMa.setHint("Tìm kiếm theo mã");
         txtTimKiemTheoMa.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtTimKiemTheoMaCaretUpdate(evt);
