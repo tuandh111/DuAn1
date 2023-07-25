@@ -55,11 +55,7 @@ public class DongMayDAO {
         String sql = "SELECT * FROM DONGMAY ";
         return select(sql);
     }
-     public List<DongMayModel> select(String maDong) {
-        String sql = "SELECT * FROM DONGMAY where LoaiSP=? ";
-         List<DongMayModel> list = select(sql, maDong);
-        return select(sql);
-    }
+     
     public DongMayModel findById(String maDong) {
         String sql = "SELECT * FROM DONGMAY WHERE MaDong=?";
         List<DongMayModel> list = select(sql, maDong);
