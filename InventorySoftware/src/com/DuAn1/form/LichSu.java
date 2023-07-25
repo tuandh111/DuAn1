@@ -181,7 +181,6 @@ public class LichSu extends javax.swing.JPanel {
         if (cboThoiGian.getSelectedItem().equals("Hôm nay")) {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKien(maNVTrim, BangThaoTac);
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
                     Object[] row = {
                         nv.getID(),
@@ -198,11 +197,9 @@ public class LichSu extends javax.swing.JPanel {
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
             }
-        }
-        else if (cboThoiGian.getSelectedItem().equals("Tuần này")) {
+        } else if (cboThoiGian.getSelectedItem().equals("Tuần này")) {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKienTuanNay(maNVTrim, BangThaoTac);
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
                     Object[] row = {
                         nv.getID(),
@@ -219,11 +216,9 @@ public class LichSu extends javax.swing.JPanel {
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
             }
-        }
-               else if (cboThoiGian.getSelectedItem().equals("Tháng này")) {
+        } else if (cboThoiGian.getSelectedItem().equals("Tháng này")) {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKienThangNay(maNVTrim, BangThaoTac);
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
                     Object[] row = {
                         nv.getID(),
@@ -240,11 +235,9 @@ public class LichSu extends javax.swing.JPanel {
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
             }
-        }
-               else  {
+        } else {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKienNamNay(maNVTrim, BangThaoTac);
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
                     Object[] row = {
                         nv.getID(),
@@ -270,117 +263,205 @@ public class LichSu extends javax.swing.JPanel {
         if (cboThoiGian.getSelectedItem() == null) {
             return;
         }
-        if (cboThoiGian.getSelectedItem().equals("Hôm nay")) {
-            if (cboNhanVien.getSelectedItem() == null) {
-                return;
-            }
-            String MaNV = (String) cboNhanVien.getSelectedItem();
-            String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
-            DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
-            model.setRowCount(0);
-            try {
-                List<ThaoTacModel> list = daoThaoTac.selectDieuKienMa(maNVTrim);
-                System.out.println(list.size());
-                for (ThaoTacModel nv : list) {
-                    Object[] row = {
-                        nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
-                        nv.getBanThaoTac(),
-                        nv.getMaNV()
-                    };
-                    model.addRow(row);
-
+        if (cboBangThaoTac.getSelectedItem() == null) {
+            if (cboThoiGian.getSelectedItem().equals("Hôm nay")) {
+                if (cboNhanVien.getSelectedItem() == null) {
+                    return;
                 }
-            } catch (Exception e) {
-                com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
-            }
-        } else if (cboThoiGian.getSelectedItem().equals("Tuần này")) {
-            if (cboNhanVien.getSelectedItem() == null) {
-                return;
-            }
-            String MaNV = (String) cboNhanVien.getSelectedItem();
-            String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
-            DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
-            model.setRowCount(0);
-            try {
-                List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaTuan(maNVTrim);
-                System.out.println(list.size());
-                for (ThaoTacModel nv : list) {
-                    Object[] row = {
-                        nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
-                        nv.getBanThaoTac(),
-                        nv.getMaNV()
-                    };
-                    model.addRow(row);
+                String MaNV = (String) cboNhanVien.getSelectedItem();
+                String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
+                DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+                model.setRowCount(0);
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienMa(maNVTrim);
+                    System.out.println(list.size());
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
 
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
                 }
-            } catch (Exception e) {
-                com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
-            }
-        } else if (cboThoiGian.getSelectedItem().equals("Tháng này")) {
-            if (cboNhanVien.getSelectedItem() == null) {
-                return;
-            }
-            String MaNV = (String) cboNhanVien.getSelectedItem();
-            String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
-            DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
-            model.setRowCount(0);
-            try {
-                List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaThang(maNVTrim);
-                System.out.println(list.size());
-                for (ThaoTacModel nv : list) {
-                    Object[] row = {
-                        nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
-                        nv.getBanThaoTac(),
-                        nv.getMaNV()
-                    };
-                    model.addRow(row);
+            } else if (cboThoiGian.getSelectedItem().equals("Tuần này")) {
+                if (cboNhanVien.getSelectedItem() == null) {
+                    return;
+                }
+                String MaNV = (String) cboNhanVien.getSelectedItem();
+                String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
+                DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+                model.setRowCount(0);
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaTuan(maNVTrim);
+                    System.out.println(list.size());
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
 
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
                 }
-            } catch (Exception e) {
-                com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            } else if (cboThoiGian.getSelectedItem().equals("Tháng này")) {
+                if (cboNhanVien.getSelectedItem() == null) {
+                    return;
+                }
+                String MaNV = (String) cboNhanVien.getSelectedItem();
+                System.out.println(MaNV);
+                String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
+                DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+                model.setRowCount(0);
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaThang(maNVTrim);
+                    System.out.println(list.size());
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
+
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                }
+            } else {
+                if (cboNhanVien.getSelectedItem() == null) {
+                    return;
+                }
+                String MaNV = (String) cboNhanVien.getSelectedItem();
+                String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
+                DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+                model.setRowCount(0);
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaNam(maNVTrim);
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
+
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                }
             }
         } else {
             if (cboNhanVien.getSelectedItem() == null) {
                 return;
             }
+            if (cboBangThaoTac.getSelectedItem() == null) {
+                return;
+            }
+            String BangThaoTac = (String) cboBangThaoTac.getSelectedItem();
             String MaNV = (String) cboNhanVien.getSelectedItem();
             String maNVTrim = MaNV.substring(0, MaNV.indexOf("-"));
             DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
             model.setRowCount(0);
-            try {
-                List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaNam(maNVTrim);
-                System.out.println(list.size());
-                for (ThaoTacModel nv : list) {
-                    Object[] row = {
-                        nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
-                        nv.getBanThaoTac(),
-                        nv.getMaNV()
-                    };
-                    model.addRow(row);
+            if (cboThoiGian.getSelectedItem().equals("Hôm nay")) {
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKien(maNVTrim, BangThaoTac);
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
 
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
                 }
-            } catch (Exception e) {
-                com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            } else if (cboThoiGian.getSelectedItem().equals("Tuần này")) {
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienTuanNay(maNVTrim, BangThaoTac);
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
+
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                }
+            } else if (cboThoiGian.getSelectedItem().equals("Tháng này")) {
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienThangNay(maNVTrim, BangThaoTac);
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
+
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                }
+            } else {
+                try {
+                    List<ThaoTacModel> list = daoThaoTac.selectDieuKienNamNay(maNVTrim, BangThaoTac);
+                    for (ThaoTacModel nv : list) {
+                        Object[] row = {
+                            nv.getID(),
+                            nv.getThoiGianThem(),
+                            nv.getThoiGianSua(),
+                            nv.getThoiGianXoa(),
+                            nv.getThoIGianHoatDong(),
+                            nv.getBanThaoTac(),
+                            nv.getMaNV()
+                        };
+                        model.addRow(row);
+
+                    }
+                } catch (Exception e) {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                }
             }
-        }
-        if(cboBangThaoTac.getSelectedItem()!=null){
-            cboBangThaoTac.setSelectedIndex(-1);
         }
     }//GEN-LAST:event_cboNhanVienActionPerformed
 
@@ -485,7 +566,6 @@ public class LichSu extends javax.swing.JPanel {
         if (cboBangThaoTac.getSelectedItem() != null) {
             cboBangThaoTac.setSelectedIndex(-1);
         }
-
     }//GEN-LAST:event_cboThoiGianActionPerformed
 
 
