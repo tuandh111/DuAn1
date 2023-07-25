@@ -761,7 +761,9 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNgayNhapMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        them();        // TODO add your handling code here:
+        them(); 
+        System.out.println(ShareHelper.ThoiGianHoatDong+"tuan");
+// TODO add your handling code here:
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed

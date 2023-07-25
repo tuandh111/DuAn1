@@ -544,7 +544,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="com.DuAn1.Swing.TextField" name="jTextField_Email1">
+            <Component class="com.DuAn1.Swing.TextField" name="jTextField_Email2">
               <Properties>
                 <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="66" red="0" type="rgb"/>
