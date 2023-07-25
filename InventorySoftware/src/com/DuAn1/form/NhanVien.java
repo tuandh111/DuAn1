@@ -125,7 +125,7 @@ public class NhanVien extends javax.swing.JPanel {
         } else {
             nv.setTrangThai(false);
         }
-
+        nv.isTrangThaiXoa();
         return nv;
     }
 
@@ -205,7 +205,7 @@ public class NhanVien extends javax.swing.JPanel {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanvien.getRowCount() - 1);
-        btnThem.setEnabled(!edit);
+        btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
     }
@@ -224,7 +224,6 @@ public class NhanVien extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNhanvien = new com.raven.swing.table.Table();
         txtNgaysinh = new com.DuAn1.Swing.TextField();
-        txtMatkhau = new com.DuAn1.Swing.TextField();
         txtEmail = new com.DuAn1.Swing.TextField();
         txtDiachi = new com.DuAn1.Swing.TextField();
         txtTaikhoan = new com.DuAn1.Swing.TextField();
@@ -244,6 +243,7 @@ public class NhanVien extends javax.swing.JPanel {
         txtTim = new com.DuAn1.Swing.TextField1();
         txtHinh1 = new swing.PanelShadow();
         txtHinhAnh1 = new javax.swing.JLabel();
+        txtMatkhau = new com.DuAn1.Swing.PasswordField();
 
         dateChooser.setTextRefernce(txtNgaysinh);
 
@@ -279,13 +279,6 @@ public class NhanVien extends javax.swing.JPanel {
         txtNgaysinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNgaysinhActionPerformed(evt);
-            }
-        });
-
-        txtMatkhau.setLabelText("Mật khẩu");
-        txtMatkhau.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtMatkhauMouseClicked(evt);
             }
         });
 
@@ -401,6 +394,15 @@ public class NhanVien extends javax.swing.JPanel {
         });
         txtHinh1.add(txtHinhAnh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 180));
 
+        txtMatkhau.setText("123");
+        txtMatkhau.setCaretColor(new java.awt.Color(0, 102, 204));
+        txtMatkhau.setDisabledTextColor(new java.awt.Color(0, 102, 204));
+        txtMatkhau.setLabelText("Mật khẩu");
+        txtMatkhau.setLineColor(new java.awt.Color(0, 102, 204));
+        txtMatkhau.setSelectedTextColor(new java.awt.Color(169, 224, 49));
+        txtMatkhau.setSelectionColor(new java.awt.Color(169, 224, 49));
+        txtMatkhau.setShowAndHide(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -446,15 +448,15 @@ public class NhanVien extends javax.swing.JPanel {
                                 .addGap(56, 56, 56)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(txtMatkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(txtSdt, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtDiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(txtDiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(txtMatkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(8, 8, 8))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(cboVaitro, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -472,9 +474,9 @@ public class NhanVien extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMatkhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTaikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTaikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMatkhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDiachi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -513,10 +515,6 @@ public class NhanVien extends javax.swing.JPanel {
     private void txtNgaysinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgaysinhMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNgaysinhMouseClicked
-
-    private void txtMatkhauMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMatkhauMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMatkhauMouseClicked
 
     private void txtNgaysinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgaysinhActionPerformed
         // TODO add your handling code here:
@@ -635,12 +633,10 @@ public class NhanVien extends javax.swing.JPanel {
     private com.raven.swing.table.Table tblNhanvien;
     private com.DuAn1.Swing.TextField txtDiachi;
     private com.DuAn1.Swing.TextField txtEmail;
-    private swing.PanelShadow txtHinh;
     private swing.PanelShadow txtHinh1;
-    private javax.swing.JLabel txtHinhAnh;
     private javax.swing.JLabel txtHinhAnh1;
     private com.DuAn1.Swing.TextField txtHoten;
-    private com.DuAn1.Swing.TextField txtMatkhau;
+    private com.DuAn1.Swing.PasswordField txtMatkhau;
     private com.DuAn1.Swing.TextField txtNgaysinh;
     private com.DuAn1.Swing.TextField txtSdt;
     private com.DuAn1.Swing.TextField txtTaikhoan;

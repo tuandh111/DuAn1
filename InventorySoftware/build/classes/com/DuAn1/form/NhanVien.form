@@ -80,16 +80,16 @@
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="txtMatkhau" min="-2" pref="252" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="txtHoten" min="-2" pref="252" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="txtSdt" min="-2" pref="252" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="txtDiachi" min="-2" pref="252" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="txtMatkhau" min="-2" pref="246" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="txtHoten" min="-2" pref="252" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
@@ -118,9 +118,9 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtMatkhau" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtHoten" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtTaikhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtMatkhau" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -220,14 +220,6 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgaysinhMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgaysinhActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="com.DuAn1.Swing.TextField" name="txtMatkhau">
-      <Properties>
-        <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtMatkhauMouseClicked"/>
       </Events>
     </Component>
     <Component class="com.DuAn1.Swing.TextField" name="txtEmail">
@@ -418,5 +410,27 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="com.DuAn1.Swing.PasswordField" name="txtMatkhau">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="123"/>
+        <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u"/>
+        <Property name="lineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="31" green="e0" red="a9" type="rgb"/>
+        </Property>
+        <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="31" green="e0" red="a9" type="rgb"/>
+        </Property>
+        <Property name="showAndHide" type="boolean" value="true"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

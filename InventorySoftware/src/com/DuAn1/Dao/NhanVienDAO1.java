@@ -99,7 +99,7 @@ public class NhanVienDAO1 {
 //        }
 //    }
     public void insert(NhanVienModel model) {
-        String sql = "Insert into NHANVIEN values (?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert into NHANVIEN values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaNV(),
                 model.getHoTen(),
@@ -112,7 +112,8 @@ public class NhanVienDAO1 {
                 model.getVaiTro(),
                 model.getHinh(),
                 model.isTrangThai(),
-                model.isTrangThaiXoa());
+                model.isTrangThaiXoa()
+                );
     }
 
     public void update(NhanVienModel model) {
