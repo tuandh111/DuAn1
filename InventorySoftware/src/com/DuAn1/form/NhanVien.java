@@ -104,27 +104,28 @@ public class NhanVien extends javax.swing.JPanel {
         nv.setMaNV(txtTaikhoan.getText());
         nv.setHoTen(txtHoten.getText());
         nv.setNgaySinh(txtNgaysinh.getText());
-        if(cboGioitinh.getSelectedItem().equals("Nam")){
+        if (cboGioitinh.getSelectedItem().equals("Nam")) {
             nv.setGioiTinh(true);
-        }else{
+        } else {
             nv.setGioiTinh(false);
         }
         nv.setDiaChi(txtDiachi.getText());
         nv.setSDT(txtSdt.getText());
         nv.setEmail(txtEmail.getText());
         nv.setMatKhau(txtMatkhau.getText());
-        if(cboVaitro.getSelectedItem().equals("Quản lý")){
+        if (cboVaitro.getSelectedItem().equals("Quản lý")) {
             nv.setVaiTro("QL");
-        }else{
+        } else {
             nv.setVaiTro("NV");
         }
         nv.setHinh(txtHinhAnh1.getToolTipText());
         nv.setTrangThai(true);
-        if(btnTrangthai.isSelected()){
+        if (btnTrangthai.isSelected()) {
             nv.setTrangThai(true);
-        }else{
+        } else {
             nv.setTrangThai(false);
         }
+
         return nv;
     }
 
@@ -146,11 +147,11 @@ public class NhanVien extends javax.swing.JPanel {
             txtHinhAnh1.setToolTipText(nv.getHinh());
             txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));
         }
-        
-        if(nv.isTrangThai()){
+
+        if (nv.isTrangThai()) {
             btnTrangthai.setSelectedAnimate(true);
             txtTrangthai.setText("Đang hoạt động");
-        }else{
+        } else {
             btnTrangthai.setSelectedAnimate(false);
             txtTrangthai.setText("Không hoạt động");
         }
