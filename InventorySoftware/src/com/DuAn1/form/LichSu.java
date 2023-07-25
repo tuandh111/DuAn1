@@ -73,7 +73,7 @@ public class LichSu extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
-        textField11 = new com.DuAn1.Swing.TextField1();
+        txtTimKiemTheoMa = new com.DuAn1.Swing.TextField1();
         button1 = new com.DuAn1.Swing.Button();
         cboNhanVien = new com.DuAn1.Swing.Combobox();
         cboBangThaoTac = new com.DuAn1.Swing.Combobox();
@@ -94,10 +94,20 @@ public class LichSu extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblUser);
 
-        textField11.setHint("Tìm kiếm");
+        txtTimKiemTheoMa.setHint("Tìm kiếm");
+        txtTimKiemTheoMa.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimKiemTheoMaCaretUpdate(evt);
+            }
+        });
 
         button1.setBackground(new java.awt.Color(51, 153, 255));
         button1.setText("Tìm kiếm");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         cboNhanVien.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền mặt", "Chuyển khoản" }));
         cboNhanVien.setSelectedIndex(-1);
@@ -140,7 +150,7 @@ public class LichSu extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, 914, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTimKiemTheoMa, javax.swing.GroupLayout.PREFERRED_SIZE, 914, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -163,7 +173,7 @@ public class LichSu extends javax.swing.JPanel {
                     .addComponent(cboBangThaoTac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTimKiemTheoMa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -568,6 +578,36 @@ public class LichSu extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cboThoiGianActionPerformed
 
+    private void txtTimKiemTheoMaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemTheoMaCaretUpdate
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_txtTimKiemTheoMaCaretUpdate
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+      DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+            model.setRowCount(0);
+            try {
+                List<ThaoTacModel> list = daoThaoTac.selectMa(txtTimKiemTheoMa.getText());
+                System.out.println(list.size());
+                for (ThaoTacModel nv : list) {
+                    Object[] row = {
+                        nv.getID(),
+                        nv.getThoiGianThem(),
+                        nv.getThoiGianSua(),
+                        nv.getThoiGianXoa(),
+                        nv.getThoIGianHoatDong(),
+                        nv.getBanThaoTac(),
+                        nv.getMaNV()
+                    };
+                    model.addRow(row);
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_button1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button button1;
@@ -576,6 +616,6 @@ public class LichSu extends javax.swing.JPanel {
     private com.DuAn1.Swing.Combobox cboThoiGian;
     private javax.swing.JScrollPane jScrollPane1;
     private javaswingdev.swing.table.Table tblUser;
-    private com.DuAn1.Swing.TextField1 textField11;
+    private com.DuAn1.Swing.TextField1 txtTimKiemTheoMa;
     // End of variables declaration//GEN-END:variables
 }

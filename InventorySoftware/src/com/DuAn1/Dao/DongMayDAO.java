@@ -52,7 +52,7 @@ public class DongMayDAO {
         JdbcHelper.executeUpdate(sql, MaDong);
     }
     public List<DongMayModel> select() {
-        String sql = "SELECT * FROM DONGMAY ";
+        String sql = "SELECT * FROM DONGMAY";
         return select(sql);
     }
      

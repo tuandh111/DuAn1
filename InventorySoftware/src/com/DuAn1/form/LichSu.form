@@ -26,7 +26,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="textField11" min="-2" pref="914" max="-2" attributes="0"/>
+                      <Component id="txtTimKiemTheoMa" min="-2" pref="914" max="-2" attributes="0"/>
                       <EmptySpace pref="46" max="32767" attributes="0"/>
                       <Component id="button1" min="-2" pref="80" max="-2" attributes="0"/>
                   </Group>
@@ -56,7 +56,7 @@
               </Group>
               <EmptySpace pref="31" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTimKiemTheoMa" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="button1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -91,10 +91,13 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="com.DuAn1.Swing.TextField1" name="textField11">
+    <Component class="com.DuAn1.Swing.TextField1" name="txtTimKiemTheoMa">
       <Properties>
         <Property name="hint" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
       </Properties>
+      <Events>
+        <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTimKiemTheoMaCaretUpdate"/>
+      </Events>
     </Component>
     <Component class="com.DuAn1.Swing.Button" name="button1">
       <Properties>
@@ -103,6 +106,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="com.DuAn1.Swing.Combobox" name="cboNhanVien">
       <Properties>

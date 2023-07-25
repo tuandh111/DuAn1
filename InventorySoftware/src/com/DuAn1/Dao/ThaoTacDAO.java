@@ -34,7 +34,10 @@ public class ThaoTacDAO {
         String sql = "SELECT * FROM LICHSU";
         return select(sql);
     }
-
+       public List<ThaoTacModel> selectMa(String MaNV) {
+        String sql = "SELECT * FROM LICHSU  where  MaNV like ?";
+        return select(sql, "%" + MaNV + "%");
+    }
     public List<ThaoTacModel> selectDieuKien(String MaNV, String BangThaoTac) {
         String sql = "SELECT * FROM LICHSU where DAY(ThoiGianHoatDong) = DAY(GETDATE()) and MaNV like ? and BangThaoTac like ?";
         return select(sql, "%" + MaNV + "%", "%" + BangThaoTac + "%");
