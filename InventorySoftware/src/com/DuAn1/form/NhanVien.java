@@ -6,20 +6,25 @@ package com.DuAn1.form;
 
 import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Dao.ThongKeDao;
+import com.DuAn1.Dao.VaiTroDao;
+import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
+import com.DuAn1.Model.VaiTroModel;
 import com.tuandhpc05076.Form.ChuyenDe;
 import com.tuandhpc05076.helper.DateHelper;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -47,6 +52,18 @@ public class NhanVien extends javax.swing.JPanel {
         this.tieude();
         this.filltable();
         TuDongTangMa();
+        LoadCombobox();
+    }
+
+    void LoadCombobox() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+        VaiTroDao vtDao = new VaiTroDao();
+        ArrayList<VaiTroModel> listVaitro = (ArrayList<VaiTroModel>) vtDao.select();
+        for (VaiTroModel gg : listVaitro) {
+            comboboxmodel.addElement(gg.getTenVT().trim());
+        }
+        cboVaitro.setModel(comboboxmodel);
+        cboVaitro.setSelectedIndex(-1);
     }
 
     void TuDongTangMa() {
@@ -106,7 +123,7 @@ public class NhanVien extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Cập nhật thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Cập nhật mới thất bại!");
-            
+
         }
     }
 
@@ -138,6 +155,8 @@ public class NhanVien extends javax.swing.JPanel {
         nv.setMatKhau(mk);
         if (cboVaitro.getSelectedItem().equals("Quản lý")) {
             nv.setVaiTro("QL");
+        } else if (cboVaitro.getSelectedItem().equals("Nhân Viên")) {
+            nv.setVaiTro("NV");
         } else {
             nv.setVaiTro("NV");
         }
@@ -162,17 +181,13 @@ public class NhanVien extends javax.swing.JPanel {
         txtEmail.setText(nv.getEmail());
         txtMatkhau.setText(nv.getMatKhau());
         if (nv.getVaiTro().trim().equalsIgnoreCase("QL")) {
-            cboVaitro.setSelectedIndex(0);
+            cboVaitro.setSelectedItem("Quản Lý");
         } else {
             cboVaitro.setSelectedItem("Nhân Viên");
         }
-        if (nv.getHinh() != "null") {
+        if (nv.getHinh() != null) {
             txtHinhAnh1.setToolTipText(nv.getHinh());
-            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
-            Image originalImage = originalIcon.getImage();
-            Image scaledImage = originalImage.getScaledInstance(txtHinhAnh1.getWidth(), txtHinhAnh1.getHeight(), Image.SCALE_SMOOTH);
-            txtHinhAnh1.setIcon(new ImageIcon(scaledImage));
-
+            txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));
         }
 
         if (nv.isTrangThai()) {
@@ -194,7 +209,8 @@ public class NhanVien extends javax.swing.JPanel {
         txtEmail.setText("");
         txtMatkhau.setText("");
         cboVaitro.setSelectedItem("Quản Lý");
-        txtHinhAnh1.setToolTipText("null");
+        txtHinhAnh1.setToolTipText("");
+        txtHinhAnh1.setIcon(ShareHelper.readLogo(""));
     }
 
     void edit() {
@@ -233,12 +249,17 @@ public class NhanVien extends javax.swing.JPanel {
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanvien.getRowCount() - 1);
         txtTaikhoan.setEditable(!edit);
+        txtMatkhau.setEditable(edit);
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
     }
 
     public boolean check() {
+        if (txtHinhAnh1.getToolTipText() == null) {
+            DialogHelper.alert(this, "Bạn chưa chọn hình ảnh");
+            return false;
+        }
         if (txtMatkhau.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Mật khẩu không được để trống");
             return false;
@@ -442,6 +463,11 @@ public class NhanVien extends javax.swing.JPanel {
                 txtTimActionPerformed(evt);
             }
         });
+        txtTim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTimKeyPressed(evt);
+            }
+        });
 
         txtHinh1.setBackground(new java.awt.Color(255, 255, 255));
         txtHinh1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -467,7 +493,11 @@ public class NhanVien extends javax.swing.JPanel {
         txtMatkhau.setLineColor(new java.awt.Color(0, 102, 204));
         txtMatkhau.setSelectedTextColor(new java.awt.Color(169, 224, 49));
         txtMatkhau.setSelectionColor(new java.awt.Color(169, 224, 49));
-        txtMatkhau.setShowAndHide(true);
+        txtMatkhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMatkhauActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -613,6 +643,7 @@ public class NhanVien extends javax.swing.JPanel {
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         ClearForm();
+        TuDongTangMa();
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
@@ -684,7 +715,7 @@ public class NhanVien extends javax.swing.JPanel {
                 }
 
                 strHinh = file.getName();
-                txtHinhAnh1.setText("null");
+                txtHinhAnh1.setText("");
 
                 txtHinhAnh1.setIcon(ShareHelper.readLogo(file.getName()));
                 txtHinhAnh1.setToolTipText(file.getName());
@@ -694,8 +725,16 @@ public class NhanVien extends javax.swing.JPanel {
     }//GEN-LAST:event_txtHinhAnh1MouseClicked
 
     private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtTimActionPerformed
+
+    private void txtTimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyPressed
+
+    }//GEN-LAST:event_txtTimKeyPressed
+
+    private void txtMatkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatkhauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMatkhauActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

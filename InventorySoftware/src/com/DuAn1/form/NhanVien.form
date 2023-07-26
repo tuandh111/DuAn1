@@ -378,6 +378,7 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTimActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKeyPressed"/>
       </Events>
     </Component>
     <Container class="swing.PanelShadow" name="txtHinh1">
@@ -433,8 +434,10 @@
         <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="31" green="e0" red="a9" type="rgb"/>
         </Property>
-        <Property name="showAndHide" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMatkhauActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
