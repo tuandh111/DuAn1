@@ -194,15 +194,15 @@ Update VAITRO set CHUCVU = N'Quản lý',GHICHU = null where MAVAITRO ='QL'
 delete from VAITRO where MAVAITRO='QL'
 select * from VAITRO where MAVAITRO = 'QL'
 
-Insert into NHANVIEN values ('NV001',N'Trần Văn An','2003-01-23',1,N'Cần Thơ','0987123456','antv@gmail.com','123','NV','null',1,1)
-Insert into NHANVIEN values ('NV002',N'Nguyễn Thanh Bình','1999-11-12',1,N'An Giang','0981234556','binhnt@gmail.com','123','QL','null',1,1)
-Insert into NHANVIEN values ('NV003',N'Trần Ngọc Thạch','2001-10-10',1,N'Trà Vinh','0987126543','thachnt@gmail.com','123','NV','null',0,1)
-Insert into NHANVIEN values ('NV004',N'Nguyễn Thị Ngân','2001-12-30',0,N'Cần Thơ','0127123456','ngannt@gmail.com','123','NV','null',1,1)
-Insert into NHANVIEN values ('NV005',N'Lê Thị Chúc','2002-01-10',0,N'Kiên Giang','0247123456','chuclt@gmail.com','123','NV','null',0,1)
-Insert into NHANVIEN values ('NV006',N'Trần Thành Ân','1998-01-10',1,N'Cà Mau','0912343456','antt@gmail.com','123','NV','null',1,0)
-Insert into NHANVIEN values ('NV007',N'Nguyễn Văn Minh','1999-01-10',1,N'Long An','0232323456','minhnv@gmail.com','123','NV','null',1,1)
-Insert into NHANVIEN values ('NV008',N'Nguyễn Thanh Tâm','1998-01-10',1,N'Cần Thơ','0987987987','tamnt@gmail.com','123','NV','null',1,1)
-Insert into NHANVIEN values ('NV009',N'Lê Ngọc Ánh','2000-01-10',0,N'An Giang','0987456456','anhln@gmail.com','123','QL','null',1,1)
+Insert into NHANVIEN values ('NV001',N'Trần Văn An','2003-01-23',1,N'Cần Thơ','0987123456','antv@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
+Insert into NHANVIEN values ('NV002',N'Nguyễn Thanh Bình','1999-11-12',1,N'An Giang','0981234556','binhnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
+Insert into NHANVIEN values ('NV003',N'Trần Ngọc Thạch','2001-10-10',1,N'Trà Vinh','0987126543','thachnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',0,1)
+Insert into NHANVIEN values ('NV004',N'Nguyễn Thị Ngân','2001-12-30',0,N'Cần Thơ','0127123456','ngannt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
+Insert into NHANVIEN values ('NV005',N'Lê Thị Chúc','2002-01-10',0,N'Kiên Giang','0247123456','chuclt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',0,1)
+Insert into NHANVIEN values ('NV006',N'Trần Thành Ân','1998-01-10',1,N'Cà Mau','0912343456','antt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,0)
+Insert into NHANVIEN values ('NV007',N'Nguyễn Văn Minh','1999-01-10',1,N'Long An','0232323456','minhnv@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
+Insert into NHANVIEN values ('NV008',N'Nguyễn Thanh Tâm','1998-01-10',1,N'Cần Thơ','0987987987','tamnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
+Insert into NHANVIEN values ('NV009',N'Lê Ngọc Ánh','2000-01-10',0,N'An Giang','0987456456','anhln@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
 Update NHANVIEN set HOTEN ='A',NGAYSINH='2003-01-23',GIOITINH=1,DIACHI=N'Cần Thơ',SDT='0987123456',EMAIL='antv@gmail.com',MATKHAU='123',HINH='null' where MANV='QL'
 delete from NHANVIEN where MANV='QL'
 select * from NHANVIEN where MAVAITRO = 'QL'
@@ -486,5 +486,14 @@ AS
 BEGIN
     SELECT MAX(MaSP) AS MaxProductCode
     FROM SANPHAM;
+END
+GO
+
+--
+CREATE PROCEDURE MaxMaNV
+AS
+BEGIN
+    SELECT MAX(MaNV) AS MaxProductCode
+    FROM NHANVIEN;
 END
 GO

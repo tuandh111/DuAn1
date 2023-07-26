@@ -437,6 +437,11 @@ public class NhanVien extends javax.swing.JPanel {
         });
 
         txtTim.setHint("Tìm kiếm");
+        txtTim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimActionPerformed(evt);
+            }
+        });
 
         txtHinh1.setBackground(new java.awt.Color(255, 255, 255));
         txtHinh1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -687,6 +692,10 @@ public class NhanVien extends javax.swing.JPanel {
             }
         }        // TODO add your handling code here:
     }//GEN-LAST:event_txtHinhAnh1MouseClicked
+
+    private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTimActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
