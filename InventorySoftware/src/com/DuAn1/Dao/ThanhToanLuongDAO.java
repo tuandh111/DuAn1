@@ -4,9 +4,9 @@
  */
 package com.DuAn1.Dao;
 
+import com.DuAn1.Helper.JdbcHelper;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.ThanhToanLuongModel;
-import com.tuandhpc05076.helper.JdbcHelper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class ThanhToanLuongDAO {
                 model.isTrangThai());
     }
     public void update(ThanhToanLuongModel model){
-        String sql = "Update LUONG set SONGAYLAM = ?,LUONCOBAN=?,NGAYVAOCTY=?,SOGIOTANGCA =?,LUONGTANGCA =?,KHOANTRU=?,TONGTIEN=?,TRANGTHAI=? where MALUONG=?";
+        String sql = "Update LUONG set SoNgayLam = ?,LuongCoBan=?,NGAYVAOCTY=?,SOGIOTANGCA =?,LUONGTANGCA =?,KHOANGTRU=?,TONGTIEN=?,TRANGTHAI=? where MALUONG=?";
          com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,  
                 model.getSoNgayLam(),
                 model.getLuongCoBan(),
@@ -52,7 +52,7 @@ public class ThanhToanLuongDAO {
         return select(sql);
     }
     public ThanhToanLuongModel findById(String maLuong) {
-        String sql = "SELECT * FROM LUONG WHERE MaLuong=?";
+        String sql = "SELECT * FROM LUONG WHERE MaLuong like ?";
         List<ThanhToanLuongModel> list = select(sql, maLuong);
         return list.size() > 0 ? list.get(0) : null;
     }
@@ -75,17 +75,21 @@ public class ThanhToanLuongDAO {
         System.out.println("tuan");
         return list;
     }
+    public List<ThanhToanLuongModel> TimTheoMaLuong(String maLuong){
+        String sql="select* from LUONG where MaLuong like ?";
+        return select(sql,"%" + maLuong + "%");
+    }
     private ThanhToanLuongModel readFromResultSet(ResultSet rs) throws SQLException {
         ThanhToanLuongModel model = new ThanhToanLuongModel();
-        model.setMaLuong(rs.getString("MaLuong"));
-        model.setSoNgayLam(rs.getFloat("SoNgayLam"));
-        model.setLuongCoBan(rs.getDouble("LuongCoBan"));
-        model.setNgayVaoCTy(rs.getString("NgayVaoCTY"));
-        model.setSoGioTangCa(rs.getFloat("SoGioTangCa"));
-        model.setLuongTangCa(rs.getDouble("LuongTangCa"));
-        model.setKhoanTru(rs.getDouble("KhoangTru"));
-        model.setTongTien(rs.getDouble("TongTien"));
-        model.setTrangThai(rs.getBoolean("TrangThai"));
+        model.setMaLuong(rs.getString(1));
+        model.setSoNgayLam(rs.getFloat(2));
+        model.setLuongCoBan(rs.getDouble(3));
+        model.setNgayVaoCTy(rs.getString(4));
+        model.setSoGioTangCa(rs.getFloat(5));
+        model.setLuongTangCa(rs.getDouble(6));
+        model.setKhoanTru(rs.getDouble(7));
+        model.setTongTien(rs.getDouble(8));
+        model.setTrangThai(rs.getBoolean(9));
         
 
         return model;
