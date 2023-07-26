@@ -597,6 +597,9 @@
               <Properties>
                 <Property name="labeText" type="java.lang.String" value="CPU"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPUActionPerformed"/>
+              </Events>
             </Component>
             <Component class="com.DuAn1.Swing.Combobox" name="cboRam">
               <Properties>

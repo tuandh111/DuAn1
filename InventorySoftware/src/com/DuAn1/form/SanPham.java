@@ -729,6 +729,11 @@ public class SanPham extends javax.swing.JPanel {
         LoaiSanPham.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Loại sản phẩm", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
         cboCPU.setLabeText("CPU");
+        cboCPU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboCPUActionPerformed(evt);
+            }
+        });
 
         cboRam.setLabeText("Ram");
 
@@ -1209,6 +1214,10 @@ clear();        // TODO add your handling code here:
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTimKiemActionPerformed
+
+    private void cboCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPUActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboCPUActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
