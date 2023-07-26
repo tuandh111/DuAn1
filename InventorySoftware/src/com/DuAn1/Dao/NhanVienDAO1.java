@@ -205,4 +205,8 @@ public class NhanVienDAO1 {
         return select(sql);
     }
 
+    public List<NhanVienModel> TimKiemTheoTen(String MaNV) {
+        String sql = "SELECT * FROM NHANVIEN WHERE MaNV LIKE ?";
+        return select(sql, "%" + MaNV + "%");
+    }
 }

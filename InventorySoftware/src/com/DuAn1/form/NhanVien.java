@@ -458,6 +458,11 @@ public class NhanVien extends javax.swing.JPanel {
         });
 
         txtTim.setHint("Tìm kiếm");
+        txtTim.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimCaretUpdate(evt);
+            }
+        });
         txtTim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimActionPerformed(evt);
@@ -735,6 +740,25 @@ public class NhanVien extends javax.swing.JPanel {
     private void txtMatkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatkhauActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMatkhauActionPerformed
+
+    private void txtTimCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimCaretUpdate
+       if(txtTim.getText().equals("")){
+           this.filltable();
+       }else{
+           model = (DefaultTableModel) tblNhanvien.getModel();
+        model.setRowCount(0);
+        try {
+            List<NhanVienModel> list = Dao.TimKiemTheoTen(txtTim.getText());
+            for (NhanVienModel nv : list) {
+                Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
+       }
+    }//GEN-LAST:event_txtTimCaretUpdate
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

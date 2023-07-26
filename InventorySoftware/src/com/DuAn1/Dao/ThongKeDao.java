@@ -15,7 +15,8 @@ import java.util.List;
  * @author DELL E5470
  */
 public class ThongKeDao {
-     public List<Object[]> getSoLuongSP() {
+
+    public List<Object[]> getSoLuongSP() {
         List<Object[]> list = new ArrayList<>();
         try {
             ResultSet rs = null;
@@ -24,8 +25,7 @@ public class ThongKeDao {
                 rs = JdbcHelper.executeQuery(sql);
                 while (rs.next()) {
                     Object[] model = {
-                        rs.getString("MaxProductCode").trim(),
-                    };
+                        rs.getString("MaxProductCode").trim(),};
 
                     list.add(model);
 
@@ -39,7 +39,8 @@ public class ThongKeDao {
         }
         return list;
     }
-             public List<Object[]> DoanhThuThang() {
+
+    public List<Object[]> DoanhThuThang() {
         List<Object[]> list = new ArrayList<>();
         try {
             ResultSet rs = null;
@@ -62,7 +63,8 @@ public class ThongKeDao {
         }
         return list;
     }
-             public List<Object[]> getSoLuongNV() {
+
+    public List<Object[]> getSoLuongNV() {
         List<Object[]> list = new ArrayList<>();
         try {
             ResultSet rs = null;
@@ -71,8 +73,31 @@ public class ThongKeDao {
                 rs = JdbcHelper.executeQuery(sql);
                 while (rs.next()) {
                     Object[] model = {
-                        rs.getString("MaxProductCode").trim(),
-                    };
+                        rs.getString("MaxProductCode").trim(),};
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
+
+    public List<Object[]> getSoLuongGG() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call MaxMaGG}";
+                rs = JdbcHelper.executeQuery(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("MaxProductCode").trim(),};
 
                     list.add(model);
 
