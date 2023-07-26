@@ -270,55 +270,70 @@ Update SANPHAM set TenSP='iPhone 14',MAU='Lam',Gia='1000',LoaiSP='US',NgayNhap='
 delete from SANPHAM where MaSP='IP001' 
 select * from SANPHAM where MaSP='IP001'
 
-insert into CPU values ('Bionic','iPhone')
-insert into CPU values ('NDragon','iPhone')
-insert into CPU values ('Helio','iPhone')
+insert into CPU values ('Bionics','iPhone')
+insert into CPU values ('NDragons','iPhone')
+insert into CPU values ('Helios','iPhone')
+insert into CPU values ('Bionits','SamSung')
+insert into CPU values ('NDragos','SamSung')
+insert into CPU values ('Helyos','Sony')
 update CPU set loaiSP = 'Samsung' where maCPU='NDragon'
 delete from CPU where maCPU='NDragon'
 select * from CPU where maCPU='NDragon'
 
-insert into BoNho values('64GB','iPhone')
-insert into BoNho values('128GB','iPhone')
-insert into BoNho values('256GB','iPhone')
+insert into BoNho values('12GB','iPhone')
+insert into BoNho values('111GB','iPhone')
+insert into BoNho values('198GB','iPhone')
+insert into BoNho values('11GB','SamSung')
+insert into BoNho values('151GB','SamSung')
+insert into BoNho values('178GB','Sony')
 update BoNho set loaiSP='Sony' where maBoNho='64GB'
 delete from BoNho where maBoNho='64GB'
 select* from BoNho where  maBoNho='64GB'
 
-insert into RAM values('6GB','iPhone')
-insert into RAM values('8GB','iPhone')
+insert into RAM values('1GB','iPhone')
+insert into RAM values('4GB','iPhone')
+insert into RAM values('94GB','SamSung')
+insert into RAM values('63GB','Sony')
 update RAM set loaiSP='Sony' where maRAM='6GB'
 delete from RAM where maRAM='6GB'
 select * from RAM where maRAM='6GB'
 
-insert into Camera values('32px','iPhone')
-insert into Camera values('24Mb','iPhone')
+insert into Camera values('26px','iPhone')
+insert into Camera values('22Mb','iPhone')
+insert into Camera values('26px','SamSung')
+insert into Camera values('21Mb','Sony')
 update Camera set loaiSP='Sony' where maRAM='32px'
 delete from Camera where maCamera='32px'
 select * from Camera where maCamera='32px'
 
-insert into Pin values('5000mAh','iPhone')
-insert into Pin values('4000Mh','iPhone')
+insert into Pin values('5453mAh','iPhone')
+insert into Pin values('4657Mh','iPhone')
+insert into Pin values('4757Mh','SamSung')
+insert into Pin values('4627Mh','Sony')
 update Pin set loaiSP='Sony' where maPin='5000mAh'
 delete from Pin where maPin='5000mAh'
 select * from Pin where maPin='5000mAh'
 
-insert into ManHinh values('HD','iPhone')
-insert into ManHinh values('OLED','iPhone')
-insert into ManHinh values('HDPlus','iPhone')
+insert into ManHinh values('HDe','iPhone')
+insert into ManHinh values('OLEDt','iPhone')
+insert into ManHinh values('HDPluys','iPhone')
+insert into ManHinh values('HDt','SamSung')
+insert into ManHinh values('OLEt','SamSung')
+insert into ManHinh values('HDluys','Sony')
 update ManHinh set loaiSP='Samsung' where maManHinh='HD'
 delete from ManHinh where maManHinh='HD'
 select * from ManHinh where maManHinh='HD'
 
 
-Insert into DIENTHOAI values('SP00001','NDragon','HD','128GB',null,'24Mb','4000Mh','8GB')
-Insert into DIENTHOAI values('SP00002','Bionic','HD','64GB',null,'32px','5000mAh','6GB')
-Insert into DIENTHOAI values('SP00003','Helio','HD','128GB',null,'32px','4000Mh','8GB')
-Insert into DIENTHOAI values('SP00004','NDragon','HD','128GB',null,'24Mb','4000Mh','8GB')
-Insert into DIENTHOAI values('SP00005','NDragon','HD','128GB',null,'24Mb','5000mAh','8GB')
-Insert into DIENTHOAI values('SP00006','NDragon','HD','128GB',null,'24Mb','4000Mh','6GB')
-Insert into DIENTHOAI values('SP00007','NDragon','HD','128GB',null,'24Mb','4000Mh','8GB')
-Insert into DIENTHOAI values('SP00008','NDragon','HD','128GB',null,'24Mb','4000Mh','6GB')
-Insert into DIENTHOAI values('SP00009','NDragon','HD','128GB',null,'24Mb','5000mAh','8GB')
+Insert into DIENTHOAI values('SP00001','Bionics','HDe','11GB',null,'26px','5453mAh','1GB')
+Insert into DIENTHOAI values('SP00002','Bionics','HDe','12GB',null,'26px','5453mAh','4GB')
+Insert into DIENTHOAI values('SP00003','Bionics','HDe','111GB',null,'26px','5453mAh','1GB')
+Insert into DIENTHOAI values('SP00004','Bionics','HDe','12GB',null,'22Mb','5453mAh','4GB')
+Insert into DIENTHOAI values('SP00005','Bionics','HDe','111GB',null,'26px','4657Mh','1GB')
+Insert into DIENTHOAI values('SP00006','Bionics','OLEDt','11GB',null,'22Mb','4657Mh','1GB')
+Insert into DIENTHOAI values('SP00007','Bionics','OLEDt','12GB',null,'22Mb','4657Mh','1GB')
+Insert into DIENTHOAI values('SP00008','Bionics','OLEDt','111GB',null,'22Mb','4657Mh','1GB')
+Insert into DIENTHOAI values('SP00009','Bionics','HDe','12GB',null,'22Mb','5453mAh','4GB')
 update DIENTHOAI set CPU='Snapdragon',MANHINH='OLED',BONHO='256GB',MOTA=null,MASP='SS001',RAM='16GB',PIN='5000Mh',CAMERA='32px' where MADT='DT001'
 delete from DIENTHOAI where MADT='DT001'
 select * from DIENTHOAI where MADT='DT001'
