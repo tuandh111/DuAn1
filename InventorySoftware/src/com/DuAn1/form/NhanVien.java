@@ -8,9 +8,12 @@ import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.NhanVienModel;
 import com.tuandhpc05076.Form.ChuyenDe;
+import com.tuandhpc05076.helper.DateHelper;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,8 +46,7 @@ public class NhanVien extends javax.swing.JPanel {
 
     void tieude() {
         model = new DefaultTableModel();
-        String[] name = new String[]{"Mã Nhân Viên", "Họ Tên", "Ngày Sinh", "Giới Tính", "Địa Chỉ", "Số Điện Thoại", "Email", "Mật Khẩu",
-            "Mã Vai Trò", "Hình", "Trạng Thái"};
+        String[] name = new String[]{"Mã Nhân Viên", "Họ Tên", "Ngày Sinh", "Giới Tính", "Địa Chỉ", "Số Điện Thoại", "Mã Vai Trò", "Hình", "Trạng Thái"};
         model.setColumnIdentifiers(name);
         tblNhanvien.setModel(model);
     }
@@ -57,7 +59,7 @@ public class NhanVien extends javax.swing.JPanel {
             System.out.println(list.size());
             for (NhanVienModel nv : list) {
                 Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
-                    nv.getDiaChi(), nv.getSDT(), nv.getEmail(), nv.getMatKhau(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
                 model.addRow(row);
             }
         } catch (Exception e) {
@@ -208,6 +210,66 @@ public class NhanVien extends javax.swing.JPanel {
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
+    }
+
+    public boolean check() {
+        if (!txtTaikhoan.getText().matches("^[a-zA-Z0-9]{7}$")) {
+            JOptionPane.showMessageDialog(this, "Mã người học chỉ chứa 5 ký tự và không có kí hiệu đặt biệt");
+            return false;
+        }
+        if (Dao.findById(txtTaikhoan.getText()) != null) {
+            JOptionPane.showMessageDialog(this, "Mã Nhân Viên đã tồn tại!");
+            return false;
+        }
+        if(txtMatkhau.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Mật khẩu không được để trống");
+            return false;
+        }
+        if(txtHoten.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Họ và tên không được để trống");
+            return false;
+        }
+        if (!txtHoten.getText().matches("^[\\p{L}\\s]{0,50}$")) {
+            JOptionPane.showMessageDialog(this, "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự");
+            return false;
+        }
+        if (txtNgaysinh.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ngày sinh không được để trống!");
+            return false;
+        }
+        Date bornDate = null;
+        try {
+            bornDate = DateHelper.toDate(txtNgaysinh.getText(), "dd-MM-yyyy");
+            Calendar minimumDate = Calendar.getInstance();
+            minimumDate.add(Calendar.YEAR, -16);
+
+            Calendar birthDateCalendar = Calendar.getInstance();
+            birthDateCalendar.setTime(bornDate);
+
+            if (!birthDateCalendar.before(minimumDate)) {
+                JOptionPane.showMessageDialog(this, "Chưa đủ 16 tuổi");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ngày sinh không đúng định dạng");
+        }
+        if(txtSdt.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Số điện thoại không được để trống");
+            return false;
+        }
+        if(txtDiachi.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Địa chỉ không được để trống");
+            return false;
+        }
+        if (txtEmail.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Email không được để trống!");
+            return false;
+        }
+        if (!txtEmail.getText().matches("\\w+@\\w+(\\.\\w+){1,2}")) {
+            JOptionPane.showMessageDialog(this, "Email không đúng định dạng!");
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -458,8 +520,9 @@ public class NhanVien extends javax.swing.JPanel {
                                                 .addGap(18, 18, 18)
                                                 .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(8, 8, 8))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cboVaitro, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(cboVaitro, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 9, Short.MAX_VALUE)))
@@ -549,10 +612,16 @@ public class NhanVien extends javax.swing.JPanel {
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        if (check() == false) {
+            return;
+        }
         insert();
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+       if (check() == false) {
+            return;
+        }
         update();
     }//GEN-LAST:event_btnSuaActionPerformed
 
