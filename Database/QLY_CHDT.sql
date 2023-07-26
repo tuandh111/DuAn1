@@ -270,39 +270,39 @@ delete from SANPHAM where MaSP='IP001'
 select * from SANPHAM where MaSP='IP001'
 
 insert into CPU values ('Bionic','iPhone')
-insert into CPU values ('NDragon','Samsung')
-insert into CPU values ('Helio','Sony')
+insert into CPU values ('NDragon','iPhone')
+insert into CPU values ('Helio','iPhone')
 update CPU set loaiSP = 'Samsung' where maCPU='NDragon'
 delete from CPU where maCPU='NDragon'
 select * from CPU where maCPU='NDragon'
 
-insert into BoNho values('64GB','Sony')
-insert into BoNho values('128GB','Samsung')
+insert into BoNho values('64GB','iPhone')
+insert into BoNho values('128GB','iPhone')
 insert into BoNho values('256GB','iPhone')
 update BoNho set loaiSP='Sony' where maBoNho='64GB'
 delete from BoNho where maBoNho='64GB'
 select* from BoNho where  maBoNho='64GB'
 
-insert into RAM values('6GB','Sony')
-insert into RAM values('8GB','Sony')
+insert into RAM values('6GB','iPhone')
+insert into RAM values('8GB','iPhone')
 update RAM set loaiSP='Sony' where maRAM='6GB'
 delete from RAM where maRAM='6GB'
 select * from RAM where maRAM='6GB'
 
-insert into Camera values('32px','Sony')
-insert into Camera values('24Mb','Sony')
+insert into Camera values('32px','iPhone')
+insert into Camera values('24Mb','iPhone')
 update Camera set loaiSP='Sony' where maRAM='32px'
 delete from Camera where maCamera='32px'
 select * from Camera where maCamera='32px'
 
-insert into Pin values('5000mAh','Sony')
-insert into Pin values('4000Mh','Sony')
+insert into Pin values('5000mAh','iPhone')
+insert into Pin values('4000Mh','iPhone')
 update Pin set loaiSP='Sony' where maPin='5000mAh'
 delete from Pin where maPin='5000mAh'
 select * from Pin where maPin='5000mAh'
 
-insert into ManHinh values('HD','Samsung')
-insert into ManHinh values('OLED','Sony')
+insert into ManHinh values('HD','iPhone')
+insert into ManHinh values('OLED','iPhone')
 insert into ManHinh values('HDPlus','iPhone')
 update ManHinh set loaiSP='Samsung' where maManHinh='HD'
 delete from ManHinh where maManHinh='HD'
