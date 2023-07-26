@@ -127,7 +127,7 @@ public class NhanVien extends javax.swing.JPanel {
         } else {
             nv.setTrangThai(false);
         }
-        nv.isTrangThaiXoa();
+        nv.setTrangThaiXoa(true);
         return nv;
     }
 
@@ -213,7 +213,7 @@ public class NhanVien extends javax.swing.JPanel {
     }
 
     public boolean check() {
-        if (!txtTaikhoan.getText().matches("^[a-zA-Z0-9]{7}$")) {
+        if (!txtTaikhoan.getText().matches("^[a-zA-Z0-9]{5}$")) {
             JOptionPane.showMessageDialog(this, "Mã người học chỉ chứa 5 ký tự và không có kí hiệu đặt biệt");
             return false;
         }
@@ -232,25 +232,6 @@ public class NhanVien extends javax.swing.JPanel {
         if (!txtHoten.getText().matches("^[\\p{L}\\s]{0,50}$")) {
             JOptionPane.showMessageDialog(this, "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự");
             return false;
-        }
-        if (txtNgaysinh.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Ngày sinh không được để trống!");
-            return false;
-        }
-        Date bornDate = null;
-        try {
-            bornDate = DateHelper.toDate(txtNgaysinh.getText(), "dd-MM-yyyy");
-            Calendar minimumDate = Calendar.getInstance();
-            minimumDate.add(Calendar.YEAR, -16);
-
-            Calendar birthDateCalendar = Calendar.getInstance();
-            birthDateCalendar.setTime(bornDate);
-
-            if (!birthDateCalendar.before(minimumDate)) {
-                JOptionPane.showMessageDialog(this, "Chưa đủ 16 tuổi");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ngày sinh không đúng định dạng");
         }
         if(txtSdt.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Số điện thoại không được để trống");
