@@ -92,13 +92,13 @@
                           <EmptySpace min="-2" pref="412" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnDau" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnFirst" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="btnLui" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnPrev" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnToi" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnLast" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnCuoi" min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="btnNext" min="-2" pref="82" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -177,10 +177,10 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnCuoi" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnToi" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnLui" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDau" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnNext" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLast" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnPrev" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnFirst" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -256,13 +256,14 @@
                     <Column editable="true" title="T&#xea;n s&#x1ea3;n ph&#x1ea9;m" type="java.lang.Object"/>
                     <Column editable="true" title="Gi&#xe1;" type="java.lang.Object"/>
                     <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
-                    <Column editable="true" title="Tr&#x1ea1;ng th&#xe1;i" type="java.lang.Object"/>
+                    <Column editable="true" title="Gi&#x1ea3;m gi&#xe1;" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblUserMouseClicked"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblUserMousePressed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -438,6 +439,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="com.DuAn1.Swing.Button" name="btnThem">
               <Properties>
@@ -625,6 +629,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTimKiemActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -651,7 +658,7 @@
             <Property name="text" type="java.lang.String" value="1 tr&#xea;n 10"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="btnCuoi">
+        <Component class="com.DuAn1.Swing.Button" name="btnNext">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -659,7 +666,7 @@
             <Property name="text" type="java.lang.String" value="&gt;|"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="btnDau">
+        <Component class="com.DuAn1.Swing.Button" name="btnFirst">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -667,7 +674,7 @@
             <Property name="text" type="java.lang.String" value="|&lt;"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="btnLui">
+        <Component class="com.DuAn1.Swing.Button" name="btnPrev">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -675,7 +682,7 @@
             <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.Swing.Button" name="btnToi">
+        <Component class="com.DuAn1.Swing.Button" name="btnLast">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>

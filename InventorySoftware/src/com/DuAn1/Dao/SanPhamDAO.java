@@ -54,9 +54,19 @@ public class SanPhamDAO {
         );
     }
 
+    public void delete(SanPhamModel model) {
+        String sql = "Update SANPHAM set TrangThai=0 where MaSP=?";
+        JdbcHelper.executeUpdate(sql, model.getMaSP());
+    }
+
     public List<SanPhamModel> select() {
-        String sql = "SELECT * FROM SANPHAM";
+        String sql = "SELECT * FROM SANPHAM where TrangThai=1";
         return select(sql);
+    }
+
+    public List<SanPhamModel> TimKiemTheoTen(String TenSP) {
+        String sql = "SELECT * FROM SANPHAM where TenSP like ? and TrangThai=1";
+        return select(sql, "%" + TenSP + "%");
     }
 
     public List<SanPhamModel> selectSoLuong() {
