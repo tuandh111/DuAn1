@@ -125,7 +125,7 @@ public class SanPham extends javax.swing.JPanel {
         GiamGiaDao daoGiamGia = new GiamGiaDao();
         ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
         for (GiamGiaModel gg : listGiamGia) {
-            comboboxmodel.addElement(gg.getMaGG().trim() );
+            comboboxmodel.addElement(gg.getMaGG().trim());
         }
         cboKhuyenMai.setModel(comboboxmodel);
         cboKhuyenMai.setSelectedIndex(-1);
@@ -246,7 +246,7 @@ public class SanPham extends javax.swing.JPanel {
         txtMaSP.setText(sp.getMaSP());
         txtTenSP.setText(sp.getTenSP());
         cboMau.setSelectedItem(sp.getMau());
-        txtGia.setText(String.format("%.1f",sp.getGia()));
+        txtGia.setText(String.format("%.1f", sp.getGia()));
         cboLoaiSanPham.setSelectedItem(sp.getLoaiSP());
         txtNgayNhap.setText(sp.getNgayNhap());
         txtNoiNhap.setText(sp.getNoiNhap());
@@ -266,7 +266,7 @@ public class SanPham extends javax.swing.JPanel {
         cboCamera.setSelectedItem(dt.getCamera().trim());
         cboPin.setSelectedItem(dt.getPin().trim());
         cboRam.setSelectedItem(dt.getRam().trim());
-        if(dt.getMoTa()!=null){
+        if (dt.getMoTa() != null) {
             txtMoTa.setText(dt.getMoTa());
         }
 
@@ -278,7 +278,6 @@ public class SanPham extends javax.swing.JPanel {
 //        this.setFormSP(nv);
 //        this.updateStatus();
 //    }
-
     void updateStatus(boolean insertable) {
         txtMaSP.setEditable(insertable);
         btnThem.setEnabled(insertable);
@@ -439,8 +438,9 @@ public class SanPham extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }
-      void clear() {
-         txtMaSP.setText("");
+
+    void clear() {
+        txtMaSP.setText("");
         txtTenSP.setText("");
         cboMau.setSelectedItem(null);
         txtGia.setText("");
@@ -449,9 +449,9 @@ public class SanPham extends javax.swing.JPanel {
         txtNoiNhap.setText("");
         txtSoLuong.setValue(0);
 
-            txtHinhAnh.setToolTipText("");
-            txtHinhAnh.setIcon(ShareHelper.readLogo(""));
- 
+        txtHinhAnh.setToolTipText("");
+        txtHinhAnh.setIcon(ShareHelper.readLogo(""));
+
         cboKhuyenMai.setSelectedItem(null);
     }
 
@@ -1010,6 +1010,7 @@ public class SanPham extends javax.swing.JPanel {
         them();
         filltable();
         clear();
+        TuDongTangMa();
 // TODO add your handling code here:
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -1100,7 +1101,7 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_switchButton1MouseClicked
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
-clear();        // TODO add your handling code here:
+        clear();        // TODO add your handling code here:
 
     }//GEN-LAST:event_btnMoiActionPerformed
 //   public void tuDongTangMa() {
@@ -1147,7 +1148,7 @@ clear();        // TODO add your handling code here:
 
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         // TODO add your handling code here:
-          if (evt.getClickCount() == 2) {
+        if (evt.getClickCount() == 2) {
             this.index = tblUser.rowAtPoint(evt.getPoint());
             if (this.index >= 0) {
                 this.edit();
@@ -1156,14 +1157,14 @@ clear();        // TODO add your handling code here:
         }
 
     }//GEN-LAST:event_tblUserMouseClicked
-   void edit() {
+    void edit() {
         try {
             String macd = (String) tblUser.getValueAt(this.index, 0);
             SanPhamModel model = Dao.findById(macd);
             DienThoaiModel modelDT = DaoDT.findById(macd);
             if (model != null) {
                 this.setFormSP(model);
-           
+
                 this.updateStatus(false);
             }
         } catch (Exception e) {
@@ -1171,13 +1172,14 @@ clear();        // TODO add your handling code here:
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
-      void editDT() {
+
+    void editDT() {
         try {
             String macd = (String) tblUser.getValueAt(this.index, 0);
             DienThoaiModel modelDT = DaoDT.findById(macd);
             if (modelDT != null) {
                 this.setFormDT(modelDT);
-           
+
                 this.updateStatus(false);
             }
         } catch (Exception e) {
@@ -1208,7 +1210,7 @@ clear();        // TODO add your handling code here:
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMousePressed
-                  // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMousePressed
 
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
