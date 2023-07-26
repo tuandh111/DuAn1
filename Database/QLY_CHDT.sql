@@ -203,6 +203,7 @@ Insert into NHANVIEN values ('NV006',N'Trần Thành Ân','1998-01-10',1,N'Cà M
 Insert into NHANVIEN values ('NV007',N'Nguyễn Văn Minh','1999-01-10',1,N'Long An','0232323456','minhnv@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
 Insert into NHANVIEN values ('NV008',N'Nguyễn Thanh Tâm','1998-01-10',1,N'Cần Thơ','0987987987','tamnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
 Insert into NHANVIEN values ('NV009',N'Lê Ngọc Ánh','2000-01-10',0,N'An Giang','0987456456','anhln@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
+Insert into NHANVIEN values ('NV010',N'Lê Ngọc Hà','2000-01-10',0,N'An Giang','0987456444','haln@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
 Update NHANVIEN set HOTEN ='A',NGAYSINH='2003-01-23',GIOITINH=1,DIACHI=N'Cần Thơ',SDT='0987123456',EMAIL='antv@gmail.com',MATKHAU='123',HINH='null' where MANV='QL'
 delete from NHANVIEN where MANV='QL'
 select * from NHANVIEN where MAVAITRO = 'QL'
