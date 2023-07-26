@@ -136,7 +136,7 @@ public class SanPham extends javax.swing.JPanel {
         String cboString = (String) cboLoaiSanPham.getSelectedItem();
         ArrayList<CPUModel> listCPU = (ArrayList<CPUModel>) daoDongMay.selectCPU(cboString);
         for (CPUModel cpu : listCPU) {
-            comboboxmodel.addElement(cpu.getMaCPU());
+            comboboxmodel.addElement(cpu.getMaCPU().trim());
         }
         cboCPU.setModel(comboboxmodel);
         cboCPU.setSelectedIndex(-1);
@@ -147,7 +147,7 @@ public class SanPham extends javax.swing.JPanel {
         String cboString = (String) cboLoaiSanPham.getSelectedItem();
         ArrayList<RamModel> listRam = (ArrayList<RamModel>) daoDongMay.selectRam(cboString);
         for (RamModel cpu : listRam) {
-            comboboxmodel1.addElement(cpu.getMaRam());
+            comboboxmodel1.addElement(cpu.getMaRam().trim());
         }
         cboRam.setModel(comboboxmodel1);
         cboRam.setSelectedIndex(-1);
@@ -158,7 +158,7 @@ public class SanPham extends javax.swing.JPanel {
         String cboString = (String) cboLoaiSanPham.getSelectedItem();
         ArrayList<BoNhoModel> listRam = (ArrayList<BoNhoModel>) daoDongMay.selectBoNho(cboString);
         for (BoNhoModel cpu : listRam) {
-            comboboxmodel1.addElement(cpu.getMaBoNho());
+            comboboxmodel1.addElement(cpu.getMaBoNho().trim());
         }
         cboBoNho.setModel(comboboxmodel1);
         cboBoNho.setSelectedIndex(-1);
@@ -169,7 +169,7 @@ public class SanPham extends javax.swing.JPanel {
         String cboString = (String) cboLoaiSanPham.getSelectedItem();
         ArrayList<CameraModel> listRam = (ArrayList<CameraModel>) daoDongMay.selectCamera(cboString);
         for (CameraModel cpu : listRam) {
-            comboboxmodel1.addElement(cpu.getMaCamera());
+            comboboxmodel1.addElement(cpu.getMaCamera().trim());
         }
         cboCamera.setModel(comboboxmodel1);
         cboCamera.setSelectedIndex(-1);
@@ -180,7 +180,7 @@ public class SanPham extends javax.swing.JPanel {
         String cboString = (String) cboLoaiSanPham.getSelectedItem();
         ArrayList<PinModel> listRam = (ArrayList<PinModel>) daoDongMay.selectPin(cboString);
         for (PinModel cpu : listRam) {
-            comboboxmodel1.addElement(cpu.getMaPin());
+            comboboxmodel1.addElement(cpu.getMaPin().trim());
         }
         cboPin.setModel(comboboxmodel1);
         cboPin.setSelectedIndex(-1);
@@ -191,7 +191,7 @@ public class SanPham extends javax.swing.JPanel {
         String cboString = (String) cboLoaiSanPham.getSelectedItem();
         ArrayList<MangHinhModel> listRam = (ArrayList<MangHinhModel>) daoDongMay.selectMangHinh(cboString);
         for (MangHinhModel cpu : listRam) {
-            comboboxmodel1.addElement(cpu.getMaMangHinh());
+            comboboxmodel1.addElement(cpu.getMaMangHinh().trim());
         }
         cboMangHinh.setModel(comboboxmodel1);
         cboMangHinh.setSelectedIndex(-1);
@@ -263,12 +263,14 @@ public class SanPham extends javax.swing.JPanel {
 
     void setFormDT(DienThoaiModel dt) {
         cboCPU.setSelectedItem(dt.getCPU().trim());
-        cboMangHinh.setSelectedItem(dt.getCPU().trim());
-        cboBoNho.setSelectedItem(dt.getCPU().trim());
-        cboCamera.setSelectedItem(dt.getCPU().trim());
-        cboPin.setSelectedItem(dt.getCPU().trim());
-        cboRam.setSelectedItem(dt.getCPU().trim());
-        txtMoTa.setText(dt.getMoTa());
+        cboMangHinh.setSelectedItem(dt.getMangHinh().trim());
+        cboBoNho.setSelectedItem(dt.getBoNho().trim());
+        cboCamera.setSelectedItem(dt.getCamera().trim());
+        cboPin.setSelectedItem(dt.getPin().trim());
+        cboRam.setSelectedItem(dt.getRam().trim());
+        if(dt.getMoTa()!=null){
+            txtMoTa.setText(dt.getMoTa());
+        }
 
     }
 
@@ -438,6 +440,21 @@ public class SanPham extends javax.swing.JPanel {
             Desktop.getDesktop().open(path);
         } catch (Exception e) {
         }
+    }
+      void clear() {
+         txtMaSP.setText("");
+        txtTenSP.setText("");
+        cboMau.setSelectedItem(null);
+        txtGia.setText("");
+        cboLoaiSanPham.setSelectedItem(null);
+        txtNgayNhap.setText("");
+        txtNoiNhap.setText("");
+        txtSoLuong.setValue(0);
+
+            txtHinhAnh.setToolTipText("");
+            txtHinhAnh.setIcon(ShareHelper.readLogo(""));
+ 
+        cboKhuyenMai.setSelectedItem("");
     }
 
     @SuppressWarnings("unchecked")
@@ -1075,7 +1092,7 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_switchButton1MouseClicked
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
-        // TODO add your handling code here:
+clear();        // TODO add your handling code here:
 
     }//GEN-LAST:event_btnMoiActionPerformed
 //   public void tuDongTangMa() {
@@ -1126,6 +1143,7 @@ public class SanPham extends javax.swing.JPanel {
             this.index = tblUser.rowAtPoint(evt.getPoint());
             if (this.index >= 0) {
                 this.edit();
+                this.editDT();
             }
         }
 
@@ -1135,10 +1153,23 @@ public class SanPham extends javax.swing.JPanel {
             String macd = (String) tblUser.getValueAt(this.index, 0);
             SanPhamModel model = Dao.findById(macd);
             DienThoaiModel modelDT = DaoDT.findById(macd);
-            System.out.println(modelDT);
             if (model != null) {
                 this.setFormSP(model);
+           
+                this.updateStatus(false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+      void editDT() {
+        try {
+            String macd = (String) tblUser.getValueAt(this.index, 0);
+            DienThoaiModel modelDT = DaoDT.findById(macd);
+            if (modelDT != null) {
                 this.setFormDT(modelDT);
+           
                 this.updateStatus(false);
             }
         } catch (Exception e) {
@@ -1169,7 +1200,7 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMousePressed
-           // TODO add your handling code here:
+                  // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMousePressed
 
 

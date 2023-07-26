@@ -127,7 +127,7 @@ public class NhanVien extends javax.swing.JPanel {
         } else {
             nv.setTrangThai(false);
         }
-        nv.isTrangThaiXoa();
+        nv.setTrangThaiXoa(true);
         return nv;
     }
 
