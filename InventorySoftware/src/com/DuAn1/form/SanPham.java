@@ -202,7 +202,6 @@ public class SanPham extends javax.swing.JPanel {
         tblModel.setRowCount(0);
         try {
             List<SanPhamModel> list = Dao.select();
-            System.out.println(list.size());
             for (SanPhamModel nv : list) {
                 Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                 tblModel.addRow(row);
