@@ -90,4 +90,8 @@ public class GiamGiaDao {
         List<GiamGiaModel> list = select(sql, makh);
         return list.size() > 0 ? list.get(0) : null;
     }
+    public List<GiamGiaModel> TimKiemTheoTen(String MaGG) {
+        String sql = "SELECT * FROM GIAMGIA WHERE MaGiamGia LIKE ?";
+        return select(sql, "%"+MaGG+"%");
+    }
 }

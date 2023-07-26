@@ -113,7 +113,7 @@ public class NhanVienDAO1 {
                 model.getHinh(),
                 model.isTrangThai(),
                 model.isTrangThaiXoa()
-                );
+        );
     }
 
     public void update(NhanVienModel model) {
@@ -138,17 +138,19 @@ public class NhanVienDAO1 {
         String sql = "UPDATE NHANVIEN SET TRANGTHAIXOA = 0 WHERE MaNV = ?";
         JdbcHelper.executeUpdate(sql,
                 model.getMaNV()
-                );
+        );
     }
 
     public List<NhanVienModel> select() {
         String sql = "SELECT * FROM NHANVIEN where TrangThaiXoa=1";
         return select(sql);
     }
+
     public List<NhanVienModel> selectHoatDong() {
         String sql = "SELECT * FROM NHANVIEN where TrangThai=1 and TrangThaiXoa=1";
         return select(sql);
     }
+
     public NhanVienModel findById(String makh) {
         String sql = "SELECT * FROM NHANVIEN WHERE MaNV=?";
         List<NhanVienModel> list = select(sql, makh);
@@ -201,5 +203,10 @@ public class NhanVienDAO1 {
     public List<NhanVienModel> orderById() {
         String sql = "SELECT * FROM NHANVIEN order by MaNV desc";
         return select(sql);
+    }
+
+    public List<NhanVienModel> TimKiemTheoTen(String MaNV) {
+        String sql = "SELECT * FROM NHANVIEN WHERE MaNV LIKE ?";
+        return select(sql, "%" + MaNV + "%");
     }
 }

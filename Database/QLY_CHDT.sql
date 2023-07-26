@@ -220,14 +220,14 @@ Update LUONG set SONGAYLAM = '2',LUONCOBAN='3000',NGAYVAOCTY='2023-01-30',SOGIOT
 delete from LUONG where MALUONG ='NV001'
 select* from LUONG where MALUONG = 'NV001'
 
-Insert into GIAMGIA values ('GG001','2022-12-12','2023-01-15','0.1',null,1,'NV001')
-Insert into GIAMGIA values ('GG002','2022-12-01','2022-12-15','0.15',null,1,'NV001')
-Insert into GIAMGIA values ('GG003','2023-02-12','2023-03-15','0.2',null,1,'NV002')
-Insert into GIAMGIA values ('GG004','2023-04-12','2023-05-15','0.05',null,1,'NV001')
-Insert into GIAMGIA values ('GG005','2022-10-12','2022-12-15','0.1',null,1,'NV002')
-Insert into GIAMGIA values ('GG006','2023-01-12','2023-01-27','0.15',null,1,'NV001')
-Insert into GIAMGIA values ('GG007','2022-10-12','2022-12-15','0.2',null,1,'NV002')
-Insert into GIAMGIA values ('GG008','2022-11-12','2023-01-05','0.18',null,1,'NV001')
+Insert into GIAMGIA values ('KM001','2022-12-12','2023-01-15','0.1',null,1,'NV001')
+Insert into GIAMGIA values ('KM002','2022-12-01','2022-12-15','0.15',null,1,'NV001')
+Insert into GIAMGIA values ('KM003','2023-02-12','2023-03-15','0.2',null,1,'NV002')
+Insert into GIAMGIA values ('KM004','2023-04-12','2023-05-15','0.05',null,1,'NV001')
+Insert into GIAMGIA values ('KM005','2022-10-12','2022-12-15','0.1',null,1,'NV002')
+Insert into GIAMGIA values ('KM006','2023-01-12','2023-01-27','0.15',null,1,'NV001')
+Insert into GIAMGIA values ('KM007','2022-10-12','2022-12-15','0.2',null,1,'NV002')
+Insert into GIAMGIA values ('KM008','2022-11-12','2023-01-05','0.18',null,1,'NV001')
 Update GIAMGIA set NGAYBD='2022-12-12',NGAYKT='2023-01-15',PHANTRAM ='0.1',MOTA=null,TRANGTHAI=1,MANV='QL001' where MAGIAMGIA ='GG001'
 delete from  GIAMGIA where MAGIAMGIA='GG001'
 select * from GIAMGIA where MAGIAMGIA='GG001'
@@ -256,15 +256,15 @@ Update LICHSU set THOIGIANTHEM=null,THOIGIANSUA=null,THOIGIANXOA=null,THOIGIANHD
 delete from LICHSU where ID=1
 select * from LICHSU where ID=1
 
-Insert into SANPHAM values ('SP00001','Samsung A73',N'Trắng','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','GG001')
-Insert into SANPHAM values ('SP00002','IPNONE 13S',N'Vàng','11500000',N'Iphone','2022-01-01',N'Nước China',20,1,'null','NV001','GG002')
-Insert into SANPHAM values ('SP00003','Sony F20',N'Đen','10500000',N'Iphone','2022-01-01',N'Nước Nhật',22,1,'null','NV001','GG003')
-Insert into SANPHAM values ('SP00004','IPNONE 14S',N'Trắng','11500000',N'Iphone','2022-01-01',N'Nước Mỹ',17,1,'null','NV002','GG004')
-Insert into SANPHAM values ('SP00005','IPNONE 14S',N'Trắng','10500000',N'Iphone','2022-01-01',N'Nước Mỹ',32,1,'null','NV002','GG005')
-Insert into SANPHAM values ('SP00006','IPNONE 14S',N'Trắng','9500000',N'Iphone','2022-01-01',N'Nước Nhật',18,1,'null','NV002','GG006')
-Insert into SANPHAM values ('SP00007','IPNONE 14S',N'Xanh','22500000',N'Iphone','2022-01-01',N'Nước Nhật',12,1,'null','NV002','GG007')
-Insert into SANPHAM values ('SP00008','IPNONE 14S',N'Trắng','15500000',N'Iphone','2022-01-01',N'Nước Nhật',35,1,'null','NV001','GG001')
-Insert into SANPHAM values ('SP00009','IPNONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','GG002')
+Insert into SANPHAM values ('SP00001','Samsung A73',N'Trắng','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','KM001')
+Insert into SANPHAM values ('SP00002','IPHONE 13S',N'Vàng','11500000',N'Iphone','2022-01-01',N'Nước China',20,1,'null','NV001','KM002')
+Insert into SANPHAM values ('SP00003','Sony F20',N'Đen','10500000',N'Iphone','2022-01-01',N'Nước Nhật',22,1,'null','NV001','KM003')
+Insert into SANPHAM values ('SP00004','IPHONE 14S',N'Trắng','11500000',N'Iphone','2022-01-01',N'Nước Mỹ',17,1,'null','NV002','KM004')
+Insert into SANPHAM values ('SP00005','IPHONE 14S',N'Trắng','10500000',N'Iphone','2022-01-01',N'Nước Mỹ',32,1,'null','NV002','KM005')
+Insert into SANPHAM values ('SP00006','IPHONE 14S',N'Trắng','9500000',N'Iphone','2022-01-01',N'Nước Nhật',18,1,'null','NV002','KM006')
+Insert into SANPHAM values ('SP00007','IPHONE 14S',N'Xanh','22500000',N'Iphone','2022-01-01',N'Nước Nhật',12,1,'null','NV002','KM007')
+Insert into SANPHAM values ('SP00008','IPHONE 14S',N'Trắng','15500000',N'Iphone','2022-01-01',N'Nước Nhật',35,1,'null','NV001','KM001')
+Insert into SANPHAM values ('SP00009','IPHONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','GG002')
 Update SANPHAM set TenSP='iPhone 14',MAU='Lam',Gia='1000',LoaiSP='US',NgayNhap='2022-01-01',NoiNhap=N'Mỹ',SoLuong=12,TrangThai=1,Hinh='1',MaNV='QL001',MaGiamGia='GG001',MaDT='DT001' where MaSP='IP001'
 delete from SANPHAM where MaSP='IP001' 
 select * from SANPHAM where MaSP='IP001'
@@ -495,5 +495,23 @@ AS
 BEGIN
     SELECT MAX(MaNV) AS MaxProductCode
     FROM NHANVIEN;
+END
+GO
+
+--
+CREATE PROCEDURE MaxMaGG
+AS
+BEGIN
+    SELECT MAX(MaGiamGia) AS MaxProductCode
+    FROM GIAMGIA;
+END
+GO
+
+--
+CREATE PROCEDURE MaxMaDH
+AS
+BEGIN
+    SELECT MAX(MaDH) AS MaxProductCode
+    FROM DATSP;
 END
 GO

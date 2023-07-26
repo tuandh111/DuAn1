@@ -595,6 +595,11 @@ public class SanPham extends javax.swing.JPanel {
         txtSoLuong.setLabelText("Số lượng");
 
         txtTimKiem.setHint("Tìm kiếm");
+        txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimKiemActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1202,6 +1207,10 @@ public class SanPham extends javax.swing.JPanel {
     private void tblUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMousePressed
+
+    private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTimKiemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
