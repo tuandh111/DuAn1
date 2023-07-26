@@ -300,7 +300,7 @@ select * from RAM where maRAM='6GB'
 
 insert into Camera values('26px','iPhone')
 insert into Camera values('22Mb','iPhone')
-insert into Camera values('26px','SamSung')
+insert into Camera values('27px','SamSung')
 insert into Camera values('21Mb','Sony')
 update Camera set loaiSP='Sony' where maRAM='32px'
 delete from Camera where maCamera='32px'
