@@ -10,6 +10,7 @@ import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.main.Main;
+import com.tuandhpc05076.MaHoa.MaHoa;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
@@ -25,7 +26,7 @@ import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
  * @author DELL E5470
  */
 public class ThongTinNhanVien extends javax.swing.JDialog {
-
+        MaHoa MH = new MaHoa();
     String strHinh = "";
     NhanVienDAO1 dao = new NhanVienDAO1();
     public static String soLuong = ShareHelper.USER.getHinh();
@@ -125,7 +126,8 @@ select();
         cd.setDiaChi(txtDiaChi.getText());
         cd.setSDT(txtSoDienThoai.getText());
         cd.setEmail(txtEmail.getText());
-        cd.setMatKhau(txtMatKhau.getText());
+           String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
+        cd.setMatKhau(mk);
         cd.setVaiTro(txtVaiTro.getText());
         cd.setHinh(txtHinhAnh.getToolTipText());
         cd.setMaNV(txtMaNV.getText());
@@ -309,25 +311,25 @@ select();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void txtHinhAnhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhAnhMouseClicked
-        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            File file = jFileChooser1.getSelectedFile();
-            if (ShareHelper.saveLogo(file)) {
-                // Hiển thị hình lên form
-                Image img = null;
-                try {
-                    img = ImageIO.read(file);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-
-                strHinh = file.getName();
-                txtHinhAnh.setText("");
-
-                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
-                txtHinhAnh.setToolTipText(file.getName());
-                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
-            }
-        }        // TODO add your handling code here:
+//        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+//            File file = jFileChooser1.getSelectedFile();
+//            if (ShareHelper.saveLogo(file)) {
+//                // Hiển thị hình lên form
+//                Image img = null;
+//                try {
+//                    img = ImageIO.read(file);
+//                } catch (IOException ex) {
+//                    ex.printStackTrace();
+//                }
+//
+//                strHinh = file.getName();
+//                txtHinhAnh.setText("");
+//
+//                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
+//                txtHinhAnh.setToolTipText(file.getName());
+//                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
+//            }
+//        }        // TODO add your handling code here:
     }//GEN-LAST:event_txtHinhAnhMouseClicked
 
     private void txtHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhMouseClicked
