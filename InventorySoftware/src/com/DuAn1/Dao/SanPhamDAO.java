@@ -115,7 +115,7 @@ public class SanPhamDAO {
                 rs = JdbcHelper.executeQuery(sql);
                 while (rs.next()) {
                     Object[] model = {
-                        rs.getInt("TongSoLuong"),};
+                        rs.getInt("TongSoLuong")};
 
                     list.add(model);
 

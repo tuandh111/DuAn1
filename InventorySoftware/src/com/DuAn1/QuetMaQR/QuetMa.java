@@ -33,7 +33,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public class NewClass1 extends JDialog {
+public class QuetMa extends JDialog {
 
     public static Webcam webcam; // the webcam object
     private WebcamPanel panel; // the panel to display the webcam image
@@ -49,9 +49,9 @@ public static String Ten="";
     }
 
     public static void setSoLuong(String soLuong) {
-        NewClass1.Ten = soLuong;
+        QuetMa.Ten = soLuong;
     }
-public NewClass1(java.awt.Frame parent, boolean modal) {
+public QuetMa(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         // set the title of the frame
         setLayout(new FlowLayout()); // set the layout of the frame
@@ -86,7 +86,7 @@ public NewClass1(java.awt.Frame parent, boolean modal) {
                         label.setText(qrText); // set the text of the label for QR code text to qrText
                         System.out.println("Hình ảnh là:" + result);
                         tenSP = qrText;
-                        NewClass1.setSoLuong(qrText);
+                        QuetMa.setSoLuong(qrText);
                         System.out.println(tenSP);
                         int j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
                         if (j == 0) {

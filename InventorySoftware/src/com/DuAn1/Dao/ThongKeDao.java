@@ -39,4 +39,27 @@ public class ThongKeDao {
         }
         return list;
     }
+             public List<Object[]> DoanhThuThang() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call sp_thongke_doanhthu_thang}";
+                rs = JdbcHelper.executeQuery(sql);
+                while (rs.next()) {
+                    Object[] model = {rs.getString("NgayXuat"),
+                        rs.getString("DoanhThu")};
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
 }

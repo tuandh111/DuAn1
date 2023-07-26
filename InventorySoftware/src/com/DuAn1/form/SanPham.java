@@ -10,7 +10,7 @@ import com.DuAn1.Dao.GiamGiaDao;
 import com.DuAn1.Dao.SanPhamDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
-import com.DuAn1.QuetMaQR.NewClass1;
+import com.DuAn1.QuetMaQR.QuetMa;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
@@ -931,11 +931,11 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_formCaretPositionChanged
 
     private void switchButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchButton1MouseClicked
-        NewClass1 n = null;
+        QuetMa n = null;
         if (switchButton1.isSelected()) {
             // close the webcam if it is not null
-            if (NewClass1.webcam != null) {
-                NewClass1.webcam.close();
+            if (QuetMa.webcam != null) {
+                QuetMa.webcam.close();
             }
             // close the form if it is not null
             if (n != null) {
@@ -945,9 +945,10 @@ public class SanPham extends javax.swing.JPanel {
         } else {
             // create and display a new form
 
-            NewClass1 n1 = new NewClass1(Main.getMain(), true);
-            // n1.setVisible(true);
-            txtTenSP.setText(NewClass1.getSoLuong());
+            QuetMa n1 = new QuetMa(Main.getMain(), true);
+             n1.setVisible(true);
+            txtTenSP.setText(QuetMa.getSoLuong());
+            switchButton1.setSelectedAnimate(false);
         }
 
         // TODO add your handling code here:

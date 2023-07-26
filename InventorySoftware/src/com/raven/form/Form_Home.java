@@ -12,6 +12,7 @@ import com.raven.swing.table.EventAction;
 import com.tuandhpc05076.Dao.NhanVienDAO;
 import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.NhanVienModel;
@@ -29,12 +30,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Form_Home extends javax.swing.JPanel {
-
+    
     NhanVienDAO1 dao = new NhanVienDAO1();
-
+    ThongKeDao DaoThongKe = new ThongKeDao();
     public Form_Home() {
         initComponents();
-
+        
         slideshow1.initSlideshow(new Slide1(), new Slide2(), new Slide3());
         tblUser.fixTable(jScrollPane1);
         setOpaque(false);
@@ -44,16 +45,16 @@ public class Form_Home extends javax.swing.JPanel {
         tblUser.getColumnModel().getColumn(3).setPreferredWidth(70);
         tblUser.getColumnModel().getColumn(4).setPreferredWidth(0);
         initData();
-
+        
     }
-
+    
     private void initData() {
         initCardData();
         initNoticeBoard();
         fillTable();
 //        initTableData();
     }
-
+    
     void fillTable() {
         DefaultTableModel model1 = (DefaultTableModel) tblUser.getModel();
         model1.setRowCount(0);
@@ -83,7 +84,7 @@ public class Form_Home extends javax.swing.JPanel {
                     model.getEmail(),
                     model.getMatKhau(),
                     model.getHinh()};
-
+                
                 model1.addRow(row);
             }
         } catch (Exception e) {
@@ -128,22 +129,26 @@ public class Form_Home extends javax.swing.JPanel {
 //        tblUser.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Yến", "Nữ", "C#", 700).toRowTable(eventAction));
 //    }
     SanPhamDAO daoSoLuong = new SanPhamDAO();
-
+    
     private void initCardData() {
         List<Object[]> i = daoSoLuong.getSoLuongSP();
         int tongSoLuong = Arrays.stream(i.get(0))
                 .mapToInt(obj -> (int) obj)
                 .sum();
+        List<Object[]> j = DaoThongKe.DoanhThuThang();
+        String name = (String) j.get(0)[1];
+        List<NhanVienModel> list = dao.select();
+     
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card1.setData(new ModelCard("Số lượng sản phẩm", tongSoLuong, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card2.setData(new ModelCard("Doanh thu tháng", 2000, 60, icon2));
+        card2.setData(new ModelCard("Doanh thu tháng", Float.parseFloat(name), 60, icon2));
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card3.setData(new ModelCard("Nhân viên", 3000, 80, icon3));
+        card3.setData(new ModelCard("Nhân viên", list.size(), 80, icon3));
         Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card4.setData(new ModelCard("Hóa đơn", 550, 95, icon4));
     }
-
+    
     private void initNoticeBoard() {
         noticeBoard.addDate("04/10/2021");
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "Hidemode", "Now", "Sets the hide mode for the component. If the hide mode has been specified in the This hide mode can be overridden by the component constraint."));
@@ -155,13 +160,13 @@ public class Form_Home extends javax.swing.JPanel {
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Push", "7:15 AM", "Makes the row and/or column that the component is residing in grow with \"weight\". This can be used instead of having a \"grow\" keyword in the column/row constraints."));
         noticeBoard.scrollToTop();
     }
-
+    
     private boolean showMessage(String message) {
         Message obj = new Message(Main.getFrames()[0], true);
         obj.showMessage(message);
         return obj.isOk();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
