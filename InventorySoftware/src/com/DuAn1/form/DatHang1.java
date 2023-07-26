@@ -53,143 +53,177 @@ public class DatHang1 extends javax.swing.JPanel {
     public void LoadSP() {
         List<SanPhamModel> list = daoSP.select();
         int i = 0;
+        int j = 0;
+        int z = 0;
         for (SanPhamModel sp : list) {
-            if (i == 0) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+            if (sp.getLoaiSP().equalsIgnoreCase("Iphone")) {
+                if (i == 0) {
                     txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung1.setText(sp.getTenSP());
-                    txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony1.setText(sp.getTenSP());
-                    txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 1) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 1) {
                     txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung2.setText(sp.getTenSP());
-                    txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony2.setText(sp.getTenSP());
-                    txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 2) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 2) {
                     txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung3.setText(sp.getTenSP());
-                    txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony3.setText(sp.getTenSP());
-                    txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 3) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 3) {
                     txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung4.setText(sp.getTenSP());
-                    txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony4.setText(sp.getTenSP());
-                    txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 4) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 4) {
                     txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung5.setText(sp.getTenSP());
-                    txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony5.setText(sp.getTenSP());
-                    txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 5) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 5) {
                     txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung6.setText(sp.getTenSP());
-                    txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony6.setText(sp.getTenSP());
-                    txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 6) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 6) {
                     txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung7.setText(sp.getTenSP());
-                    txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony7.setText(sp.getTenSP());
-                    txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 7) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 7) {
                     txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
-                    txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung8.setText(sp.getTenSP());
-                    txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
-                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSony8.setText(sp.getTenSP());
-                    txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
                 }
-            }
-            if (i == 8) {
-                if (sp.getLoaiSP().trim().equalsIgnoreCase("Iphone")) {
+                if (i == 8) {
                     txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
+                }
+                i++;
+            }
+        }
+
+        for (SanPhamModel sp : list) {
+            if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
+                if (j == 0) {
+
+                    txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung1.setText(sp.getTenSP());
+                    txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 1) {
+
+                    txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung2.setText(sp.getTenSP());
+                    txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 2) {
+
+                    txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung3.setText(sp.getTenSP());
+                    txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (j == 3) {
+
+                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung4.setText(sp.getTenSP());
+                    txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 4) {
+                    txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung5.setText(sp.getTenSP());
+                    txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 5) {
+
+                    txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung6.setText(sp.getTenSP());
+                    txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 6) {
+                    txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung7.setText(sp.getTenSP());
+                    txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 7) {
+
+                    txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung8.setText(sp.getTenSP());
+                    txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
+
+                }
+                if (j == 8) {
+
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
-                } else if (sp.getLoaiSP().trim().equals("Sony")) {
+
+                }
+
+                j++;
+            }
+        }
+
+        for (SanPhamModel sp : list) {
+            if (sp.getLoaiSP().trim().equalsIgnoreCase("Sony")) {
+                if (z == 0) {
+                    txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony1.setText(sp.getTenSP());
+                    txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 1) {
+                    txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony2.setText(sp.getTenSP());
+                    txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 2) {
+                    txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony3.setText(sp.getTenSP());
+                    txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 3) {
+                    txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony4.setText(sp.getTenSP());
+                    txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 4) {
+                    txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony5.setText(sp.getTenSP());
+                    txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 5) {
+
+                    txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony6.setText(sp.getTenSP());
+                    txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 6) {
+                    txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony7.setText(sp.getTenSP());
+                    txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 7) {
+                    txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSony8.setText(sp.getTenSP());
+                    txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
+                }
+                if (z == 8) {
                     txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
                 }
+
             }
-            i++;
+            z++;
         }
     }
 
@@ -2015,13 +2049,10 @@ public class DatHang1 extends javax.swing.JPanel {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setLayout(null);
 
         jLabel101.setFont(new java.awt.Font("sansserif", 1, 30)); // NOI18N
         jLabel101.setForeground(new java.awt.Color(77, 77, 77));
         jLabel101.setText("SAMSUNG");
-        jPanel6.add(jLabel101);
-        jLabel101.setBounds(86, 0, 153, 39);
 
         panelShadow18.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow18.setShadowOpacity(0.3F);
@@ -2096,9 +2127,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(btnAdd11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-
-        jPanel6.add(panelShadow18);
-        panelShadow18.setBounds(35, 57, 137, 202);
 
         panelShadow25.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow25.setShadowOpacity(0.3F);
@@ -2177,9 +2205,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanel6.add(panelShadow25);
-        panelShadow25.setBounds(181, 57, 141, 202);
-
         panelShadow69.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow69.setShadowOpacity(0.3F);
 
@@ -2255,9 +2280,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(btnAdd14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-
-        jPanel6.add(panelShadow69);
-        panelShadow69.setBounds(32, 290, 141, 202);
 
         panelShadow70.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow70.setShadowOpacity(0.3F);
@@ -2336,9 +2358,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.add(panelShadow70);
-        panelShadow70.setBounds(340, 57, 141, 202);
-
         panelShadow71.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow71.setShadowOpacity(0.3F);
 
@@ -2415,9 +2434,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.add(panelShadow71);
-        panelShadow71.setBounds(340, 290, 148, 202);
-
         panelShadow72.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow72.setShadowOpacity(0.3F);
 
@@ -2492,9 +2508,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.add(panelShadow72);
-        panelShadow72.setBounds(180, 290, 141, 202);
-
         panelShadow73.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow73.setShadowOpacity(0.3F);
 
@@ -2542,7 +2555,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(txtTenSamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow73Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(panelShadow73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelShadow73Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -2571,9 +2584,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(btnAdd17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-
-        jPanel6.add(panelShadow73);
-        panelShadow73.setBounds(30, 510, 140, 202);
 
         panelShadow74.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow74.setShadowOpacity(0.3F);
@@ -2618,7 +2628,7 @@ public class DatHang1 extends javax.swing.JPanel {
             .addGroup(panelShadow74Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(txtTenSamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelShadow74Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2633,7 +2643,7 @@ public class DatHang1 extends javax.swing.JPanel {
                             .addComponent(txtSoLuong106, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(txtSoLuongBanSamSung8))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
         panelShadow74Layout.setVerticalGroup(
             panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2651,9 +2661,6 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(btnAdd18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel6.add(panelShadow74);
-        panelShadow74.setBounds(180, 510, 140, 202);
 
         panelShadow75.setBackground(new java.awt.Color(246, 88, 88));
         panelShadow75.setShadowOpacity(0.3F);
@@ -2730,8 +2737,55 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanel6.add(panelShadow75);
-        panelShadow75.setBounds(340, 510, 149, 202);
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLabel101))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(panelShadow18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(panelShadow25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelShadow70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(panelShadow69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(panelShadow72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(panelShadow71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(panelShadow73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(panelShadow74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(panelShadow75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jLabel101)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelShadow18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelShadow25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelShadow70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelShadow69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelShadow72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelShadow71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelShadow73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelShadow74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelShadow75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         jScrollPane2.setViewportView(jPanel6);
 
