@@ -5,7 +5,9 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
 import com.tuandhpc05076.Form.ChuyenDe;
 import com.tuandhpc05076.helper.DateHelper;
@@ -29,6 +31,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class NhanVien extends javax.swing.JPanel {
 
+    ThongKeDao DaoThongKe = new ThongKeDao();
+    MaHoa MH = new MaHoa();
     DefaultTableModel model;
     NhanVienDAO1 Dao = new NhanVienDAO1();
     int row = -1;
@@ -42,6 +46,20 @@ public class NhanVien extends javax.swing.JPanel {
         this.row = -1;
         this.tieude();
         this.filltable();
+        TuDongTangMa();
+    }
+
+    void TuDongTangMa() {
+        List<Object[]> i = DaoThongKe.getSoLuongNV();
+        String name = (String) i.get(0)[0];
+        String[] tbl = name.split("V");
+        String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+        String ten = "NV";
+        for (int j = 0; j <= 2 - so.length(); j++) {
+            ten += "0";
+        }
+        ten = ten + so;
+        txtTaikhoan.setText(ten);
     }
 
     void tieude() {
@@ -76,6 +94,7 @@ public class NhanVien extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Thêm Mới thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Thêm mới thất bại!");
+            e.printStackTrace();
         }
     }
 
@@ -87,6 +106,7 @@ public class NhanVien extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Cập nhật thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Cập nhật mới thất bại!");
+            
         }
     }
 
@@ -114,7 +134,8 @@ public class NhanVien extends javax.swing.JPanel {
         nv.setDiaChi(txtDiachi.getText());
         nv.setSDT(txtSdt.getText());
         nv.setEmail(txtEmail.getText());
-        nv.setMatKhau(txtMatkhau.getText());
+        String mk = MH.toSHA(new String(txtMatkhau.getPassword()));
+        nv.setMatKhau(mk);
         if (cboVaitro.getSelectedItem().equals("Quản lý")) {
             nv.setVaiTro("QL");
         } else {
@@ -147,7 +168,11 @@ public class NhanVien extends javax.swing.JPanel {
         }
         if (nv.getHinh() != "null") {
             txtHinhAnh1.setToolTipText(nv.getHinh());
-            txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));
+            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+            Image originalImage = originalIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(txtHinhAnh1.getWidth(), txtHinhAnh1.getHeight(), Image.SCALE_SMOOTH);
+            txtHinhAnh1.setIcon(new ImageIcon(scaledImage));
+
         }
 
         if (nv.isTrangThai()) {
@@ -207,38 +232,31 @@ public class NhanVien extends javax.swing.JPanel {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanvien.getRowCount() - 1);
+        txtTaikhoan.setEditable(!edit);
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
     }
 
     public boolean check() {
-        if (!txtTaikhoan.getText().matches("^[a-zA-Z0-9]{5}$")) {
-            JOptionPane.showMessageDialog(this, "Mã người học chỉ chứa 5 ký tự và không có kí hiệu đặt biệt");
+        if (txtMatkhau.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Mật khẩu không được để trống");
             return false;
         }
-        if (Dao.findById(txtTaikhoan.getText()) != null) {
-            JOptionPane.showMessageDialog(this, "Mã Nhân Viên đã tồn tại!");
-            return false;
-        }
-        if(txtMatkhau.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Mật khẩu không được để trống");
-            return false;
-        }
-        if(txtHoten.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Họ và tên không được để trống");
+        if (txtHoten.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Họ và tên không được để trống");
             return false;
         }
         if (!txtHoten.getText().matches("^[\\p{L}\\s]{0,50}$")) {
             JOptionPane.showMessageDialog(this, "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự");
             return false;
         }
-        if(txtSdt.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Số điện thoại không được để trống");
+        if (txtSdt.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại không được để trống");
             return false;
         }
-        if(txtDiachi.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Địa chỉ không được để trống");
+        if (txtDiachi.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Địa chỉ không được để trống");
             return false;
         }
         if (txtEmail.getText().equals("")) {
@@ -597,17 +615,22 @@ public class NhanVien extends javax.swing.JPanel {
             return;
         }
         insert();
+        ClearForm();
+        TuDongTangMa();
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-       if (check() == false) {
+        if (check() == false) {
             return;
         }
         update();
+        ClearForm();
+        TuDongTangMa();
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         delete();
+        ClearForm();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblNhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMouseClicked

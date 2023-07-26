@@ -25,7 +25,7 @@ public class MaHoa {
         str+=chuoi;
         try {
             byte[] data= str.getBytes("UTF-8");
-            MessageDigest md =MessageDigest.getInstance("SHA-512");// ngoài ra thì có thể bâm thành SHA-256 SHA-512
+            MessageDigest md =MessageDigest.getInstance("SHA-1");// ngoài ra thì có thể bâm thành SHA-256 SHA-512
             tong = Base64.encodeBase64String(md.digest(data));
            
         } catch (Exception e) {

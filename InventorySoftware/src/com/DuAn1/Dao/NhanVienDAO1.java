@@ -183,7 +183,7 @@ public class NhanVienDAO1 {
         model.setGioiTinh(rs.getBoolean("GioiTinh"));
         model.setDiaChi(rs.getString("DiaChi"));
         model.setSDT(rs.getString("SDT"));
-        model.setEmail(rs.getString("Email"));
+        model.setEmail(rs.getString("Email").trim());
         model.setMatKhau(rs.getString("MatKhau"));
         model.setVaiTro(rs.getString("MaVaiTro"));
         model.setHinh(rs.getString("Hinh"));
