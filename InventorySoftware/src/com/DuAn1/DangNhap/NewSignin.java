@@ -37,11 +37,10 @@ import javax.swing.UIManager;
  * @author Tran Van Vu Chi Thanh
  */
 public class NewSignin extends javax.swing.JFrame {
-
+       MaHoa MH = new MaHoa();
     NhanVienDAO1 dao = new NhanVienDAO1();
-    ThaoTacDAO ThaoTacDao= new ThaoTacDAO();
-    
-    
+    ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
+
     public NewSignin() {
         initComponents();
 
@@ -63,17 +62,17 @@ public class NewSignin extends javax.swing.JFrame {
             return;
         }
         String manv = txtusername.getText();
-        String matKhau = new String(txtmatkhau.getPassword());
-        NhanVienModel taikhoan=null;
+        String mk = MH.toSHA(new String(txtmatkhau.getPassword()));
+        String matKhau = new String(mk);
+        NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
-        System.out.println(taikhoan);
         if (taikhoan == null) {
             JOptionPane.showMessageDialog(this, "Sai tên đăng nhập!");
         } else if (!matKhau.equals(taikhoan.getMatKhau().trim())) {
             JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
         } else {
             ShareHelper.USER = taikhoan;
-            ThaoTacModel model=getForm();
+            ThaoTacModel model = getForm();
 //            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
             com.DuAn1.main.Main main = new com.DuAn1.main.Main();
@@ -82,15 +81,16 @@ public class NewSignin extends javax.swing.JFrame {
         }
 
     }
-    public  ThaoTacModel getForm(){
-         ThaoTacModel cd = new ThaoTacModel();
+
+    public ThaoTacModel getForm() {
+        ThaoTacModel cd = new ThaoTacModel();
         cd.setThoiGianThem(null);
         cd.setThoiGianSua(null);
         cd.setThoiGianXoa(null);
-          LocalDateTime current = LocalDateTime.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-    String formatted = current.format(formatter);
-    ShareHelper.ThoiGianHoatDong= formatted;
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        ShareHelper.ThoiGianHoatDong = formatted;
         cd.setThoIGianHoatDong(formatted);
         cd.setBanThaoTac("Đăng Nhập");
         cd.setMaNV(txtusername.getText());
@@ -437,7 +437,7 @@ public class NewSignin extends javax.swing.JFrame {
 //
 //            JOptionPane.showMessageDialog(null, "Email or Password Invalid");
 //        }
-dangNhap();
+            dangNhap();
         } catch (SQLException ex) {
             Logger.getLogger(NewSignin.class.getName()).log(Level.SEVERE, null, ex);
         }
