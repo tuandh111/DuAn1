@@ -225,9 +225,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setTrangThai(true);
         cd.setHinh(txtHinhAnh.getToolTipText());
         cd.setMaNV(ShareHelper.USER.getMaNV());
-        String MaNV = (String) cboKhuyenMai.getSelectedItem();
-        String MaKhuyenMai = MaNV.substring(0, MaNV.indexOf("-"));
-        cd.setMaGiamGia(MaKhuyenMai);
+        cd.setMaGiamGia((String) cboKhuyenMai.getSelectedItem());
         return cd;
     }
 
@@ -454,7 +452,7 @@ public class SanPham extends javax.swing.JPanel {
             txtHinhAnh.setToolTipText("");
             txtHinhAnh.setIcon(ShareHelper.readLogo(""));
  
-        cboKhuyenMai.setSelectedItem("");
+        cboKhuyenMai.setSelectedItem(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -1001,7 +999,7 @@ public class SanPham extends javax.swing.JPanel {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         them();
         filltable();
-        System.out.println(ShareHelper.ThoiGianHoatDong + "tuan");
+        clear();
 // TODO add your handling code here:
     }//GEN-LAST:event_btnThemActionPerformed
 
