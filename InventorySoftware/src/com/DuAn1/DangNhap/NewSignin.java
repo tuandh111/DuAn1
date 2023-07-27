@@ -72,7 +72,7 @@ public class NewSignin extends javax.swing.JFrame {
         } else {
             ShareHelper.USER = taikhoan;
             ThaoTacModel model = getForm();
-//            ThaoTacDao.insert(model);
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
             com.DuAn1.main.Main main = new com.DuAn1.main.Main();
             main.setVisible(true);
