@@ -994,7 +994,94 @@ public class DongMay extends javax.swing.JPanel {
 
     private void cboLoaiSPRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiSPRAMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cboLoaiSPRAMActionPerformed
+    }//GEN-LAST:event_btnThem3ActionPerformed
+
+    private void cboCPU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPU3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboCPU3ActionPerformed
+
+    private void txtRAM4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRAM4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRAM4ActionPerformed
+
+    private void btnMoi4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoi4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoi4ActionPerformed
+
+    private void btnThem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThem4ActionPerformed
+
+    private void cboCPU4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPU4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboCPU4ActionPerformed
+
+    private void txtRAM5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRAM5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRAM5ActionPerformed
+
+    private void btnMoi5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoi5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoi5ActionPerformed
+
+    private void btnThem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThem5ActionPerformed
+
+    private void cboCPU5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPU5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboCPU5ActionPerformed
+
+    private void tblNhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvienMouseClicked
+
+    private void tblNhanvienMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMousePressed
+        if (evt.getClickCount() == 1) {
+            this.row = tblNhanvien.getSelectedRow();
+            //this.edit();
+        }
+    }//GEN-LAST:event_tblNhanvienMousePressed
+
+    private void tblNhanvien1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien1MouseClicked
+
+    private void tblNhanvien1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien1MousePressed
+
+    private void tblNhanvien2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien2MouseClicked
+
+    private void tblNhanvien2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien2MousePressed
+
+    private void tblNhanvien3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien3MouseClicked
+
+    private void tblNhanvien3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien3MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien3MousePressed
+
+    private void tblNhanvien4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien4MouseClicked
+
+    private void tblNhanvien4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien4MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien4MousePressed
+
+    private void tblNhanvien5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien5MouseClicked
+
+    private void tblNhanvien5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvien5MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvien5MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
