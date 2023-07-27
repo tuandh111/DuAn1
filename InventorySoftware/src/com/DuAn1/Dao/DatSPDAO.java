@@ -7,6 +7,7 @@ package com.DuAn1.Dao;
 import com.DuAn1.Helper.JdbcHelper;
 import com.DuAn1.Model.DatSPModel;
 import com.DuAn1.Model.KhachHangModel;
+import com.DuAn1.Model.SanPhamModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,21 +25,32 @@ public class DatSPDAO {
                 model.getMaDH(),
                 model.getSoLuong(),
                 model.getSDT(),
-                model.getTrangThai(),
+                model.isTrangThai(),
                 model.getDonGia(),
                 model.getTongTien(),
-                model.getThue(),
+                model.getThoiGianDat(),
                 model.getMaNV()
         );
     }
-       private List<KhachHangModel> select(String sql, Object... args) {
-        List<KhachHangModel> list = new ArrayList<>();
+
+    public List<DatSPModel> select() {
+        String sql = "SELECT * FROM DATSP WHERE TrangThai =1";
+        return select(sql);
+    }
+
+    public void delete(DatSPModel model) {
+        String sql = "DELETE DATSP WHERE MaDH = ?";
+        JdbcHelper.executeUpdate(sql, model.getMaDH());
+    }
+
+    private List<DatSPModel> select(String sql, Object... args) {
+        List<DatSPModel> list = new ArrayList<>();
         try {
             ResultSet rs = null;
             try {
                 rs = JdbcHelper.executeQuery(sql, args);
                 while (rs.next()) {
-                    KhachHangModel model = readFromResultSet(rs);
+                    DatSPModel model = readFromResultSet(rs);
                     list.add(model);
                 }
             } finally {
@@ -50,19 +62,16 @@ public class DatSPDAO {
         return list;
     }
 
-    private KhachHangModel readFromResultSet(ResultSet rs) throws SQLException {
-        KhachHangModel model = new KhachHangModel();
-        model.setMaKH(rs.getString(1));
-        model.setTenKH(rs.getString(2));
+    private DatSPModel readFromResultSet(ResultSet rs) throws SQLException {
+        DatSPModel model = new DatSPModel();
+        model.setMaDH(rs.getString(1));
+        model.setSoLuong(rs.getString(2));
         model.setSDT(rs.getString(3));
-        model.setNgaySinh(rs.getString(4));
-        model.setDiaChi(rs.getString(5));
-        model.setGT(rs.getBoolean(6));
-        model.setLoaiKH(rs.getString(7));
-        model.setTrangThai(rs.getBoolean(8));
-        model.setMoTa(rs.getString(9));
-        model.setMaNV(rs.getString(10));
-        model.setHinh(rs.getString(11));
+        model.setTrangThai(rs.getBoolean(4));
+        model.setDonGia(rs.getString(5));
+        model.setTongTien(rs.getString(6));
+        model.setThoiGianDat(rs.getString(7));
+        model.setMaNV(rs.getString(8));
         return model;
     }
 }

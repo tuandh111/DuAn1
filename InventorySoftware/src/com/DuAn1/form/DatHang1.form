@@ -4203,7 +4203,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtDonGia" max="32767" attributes="0"/>
-                                  <Component id="textField4" max="32767" attributes="0"/>
+                                  <Component id="txtMaDatHang" max="32767" attributes="0"/>
                                   <Component id="txtNgayXuat" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -4264,7 +4264,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textField4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMaDatHang" min="-2" max="-2" attributes="0"/>
                                   <Component id="button9" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="txtSoDienThoai" alignment="1" max="32767" attributes="0"/>
                               </Group>
@@ -4340,7 +4340,7 @@
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtNgayXuat">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y xu&#x1ea5;t"/>
+                <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y gian xu&#x1ea5;t"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgayXuatMouseClicked"/>
@@ -4354,7 +4354,7 @@
                 <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtDonGiaCaretUpdate"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.Swing.TextField" name="textField4">
+            <Component class="com.DuAn1.Swing.TextField" name="txtMaDatHang">
               <Properties>
                 <Property name="labelText" type="java.lang.String" value="M&#xe3; &#x111;&#x1eb7;t h&#xe0;ng"/>
               </Properties>
@@ -4394,6 +4394,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="H&#x1ee7;y b&#x1ecf;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="com.DuAn1.swing0.button0" name="button3">
               <Properties>

@@ -9,23 +9,24 @@ package com.DuAn1.Model;
  * @author DELL E5470
  */
 public class DatSPModel {
+
     private String MaDH;
     private String SoLuong;
     private String SDT;
-    private String TrangThai;
+    private boolean TrangThai;
     private String DonGia;
     private String TongTien;
-    private String Thue;
+    private String ThoiGianDat;
     private String MaNV;
 
-    public DatSPModel(String MaDH, String SoLuong, String SDT, String TrangThai, String DonGia, String TongTien, String Thue, String MaNV) {
+    public DatSPModel(String MaDH, String SoLuong, String SDT, boolean TrangThai, String DonGia, String TongTien, String ThoiGianDat, String MaNV) {
         this.MaDH = MaDH;
         this.SoLuong = SoLuong;
         this.SDT = SDT;
         this.TrangThai = TrangThai;
         this.DonGia = DonGia;
         this.TongTien = TongTien;
-        this.Thue = Thue;
+        this.ThoiGianDat = ThoiGianDat;
         this.MaNV = MaNV;
     }
 
@@ -56,11 +57,11 @@ public class DatSPModel {
         this.SDT = SDT;
     }
 
-    public String getTrangThai() {
+    public boolean isTrangThai() {
         return TrangThai;
     }
 
-    public void setTrangThai(String TrangThai) {
+    public void setTrangThai(boolean TrangThai) {
         this.TrangThai = TrangThai;
     }
 
@@ -80,12 +81,12 @@ public class DatSPModel {
         this.TongTien = TongTien;
     }
 
-    public String getThue() {
-        return Thue;
+    public String getThoiGianDat() {
+        return ThoiGianDat;
     }
 
-    public void setThue(String Thue) {
-        this.Thue = Thue;
+    public void setThoiGianDat(String ThoiGianDat) {
+        this.ThoiGianDat = ThoiGianDat;
     }
 
     public String getMaNV() {

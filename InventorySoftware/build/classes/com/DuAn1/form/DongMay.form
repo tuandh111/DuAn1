@@ -63,7 +63,7 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="materialTabbed1" max="32767" attributes="0"/>
+                  <Component id="materialTabbed1" pref="597" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -94,8 +94,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="SONY">
-                    <Property name="tabTitle" type="java.lang.String" value="SONY"/>
+                  <JTabbedPaneConstraints tabName="Qu&#x1ea3;n l&#xfd;">
+                    <Property name="tabTitle" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd;"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -141,29 +141,24 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jPanel13" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace pref="100" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jPanel12" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="100" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -175,8 +170,8 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder justification="1" position="2" title="ROM"/>
                           </Border>
                         </Property>
                       </Properties>
@@ -216,7 +211,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="cboLoaiSPBoNho" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtBoNho" min="-2" max="-2" attributes="0"/>
@@ -273,6 +268,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaRomActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Button" name="btnXoaRom">
                           <Properties>
@@ -281,9 +279,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaRomActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSPBoNho">
                           <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="iPhone"/>
+                                <StringItem index="1" value="Sony"/>
+                                <StringItem index="2" value="SamSung"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
@@ -298,8 +307,8 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder justification="1" position="2" title="M&#xe0;n H&#xec;nh"/>
                           </Border>
                         </Property>
                       </Properties>
@@ -339,7 +348,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="cboLoaiSPManHinh" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtManHinh" min="-2" max="-2" attributes="0"/>
@@ -396,6 +405,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaManHinhActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Button" name="btnXoaManHinh">
                           <Properties>
@@ -404,9 +416,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaManHinhActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSPManHinh">
                           <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="Sony"/>
+                                <StringItem index="1" value="iPhone"/>
+                                <StringItem index="2" value="Samsung"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
@@ -421,8 +444,8 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder justification="1" position="2" title="Camera"/>
                           </Border>
                         </Property>
                       </Properties>
@@ -433,7 +456,7 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="btnSuaCamera" min="-2" pref="100" max="-2" attributes="0"/>
@@ -462,7 +485,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="cboCamera" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtCamera" min="-2" max="-2" attributes="0"/>
@@ -519,6 +542,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaCameraActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Button" name="btnXoaCamera">
                           <Properties>
@@ -527,9 +553,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaCameraActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Combobox" name="cboCamera">
                           <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="iPhone"/>
+                                <StringItem index="1" value="Sony"/>
+                                <StringItem index="2" value="SamSung"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
@@ -544,8 +581,8 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder justification="1" position="2" title="Pin"/>
                           </Border>
                         </Property>
                       </Properties>
@@ -585,7 +622,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="cboPin" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtPin" min="-2" max="-2" attributes="0"/>
@@ -599,7 +636,7 @@
                                       <Component id="btnSuaPin" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnXoaPin" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -642,6 +679,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaPinActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Button" name="btnXoaPin">
                           <Properties>
@@ -650,9 +690,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaPinActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Combobox" name="cboPin">
                           <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="iPhone"/>
+                                <StringItem index="1" value="Sony"/>
+                                <StringItem index="2" value="SamSung"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
@@ -667,8 +718,8 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder justification="1" position="2" title="CPU"/>
                           </Border>
                         </Property>
                       </Properties>
@@ -708,7 +759,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="cboCPU" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtCPU" min="-2" max="-2" attributes="0"/>
@@ -722,7 +773,7 @@
                                       <Component id="btnSuaCPU" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnXoaCPU" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -765,6 +816,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaCPUActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Button" name="btnXoaCPU">
                           <Properties>
@@ -773,9 +827,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaCPUActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Combobox" name="cboCPU">
                           <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="iPhone"/>
+                                <StringItem index="1" value="Sony"/>
+                                <StringItem index="2" value="SamSung"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
@@ -790,8 +855,8 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                            <EtchetBorder/>
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder justification="1" position="2" title="RAM"/>
                           </Border>
                         </Property>
                       </Properties>
@@ -802,7 +867,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="btnSuaRAM" min="-2" pref="100" max="-2" attributes="0"/>
@@ -831,7 +896,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Component id="cboLoaiSPRAM" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtRAM" min="-2" max="-2" attributes="0"/>
@@ -888,6 +953,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaRAMActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Button" name="btnXoaRAM">
                           <Properties>
@@ -896,9 +964,20 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaRAMActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSPRAM">
                           <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="iPhone"/>
+                                <StringItem index="1" value="Sony"/>
+                                <StringItem index="2" value="SamSung"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
@@ -920,8 +999,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="IPHONE">
-                    <Property name="tabTitle" type="java.lang.String" value="IPHONE"/>
+                  <JTabbedPaneConstraints tabName="Danh s&#xe1;ch">
+                    <Property name="tabTitle" type="java.lang.String" value="Danh s&#xe1;ch"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -941,8 +1020,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jScrollPane5" pref="357" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane8" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane8" pref="357" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane5" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -984,15 +1063,22 @@
                       <SubComponents>
                         <Component class="com.raven.swing.table.Table" name="tblManHinh">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder justification="3" position="2" title="M&#xe0;n H&#xec;nh">
+                                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
-                                <Column editable="true" title="sdfsdf" type="java.lang.Object">
+                                <Column editable="true" title="M&#xe3; M&#xe0;n H&#xec;nh" type="java.lang.Object">
                                   <Data value="dsfsdf"/>
                                   <Data value="sdf"/>
                                   <Data value="dsf"/>
                                   <Data value="null"/>
                                 </Column>
-                                <Column editable="true" title="sdfds" type="java.lang.Object">
+                                <Column editable="true" title="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m" type="java.lang.Object">
                                   <Data value="dsfsd"/>
                                   <Data value="sdfs"/>
                                   <Data value="sdf"/>
@@ -1034,15 +1120,22 @@
                       <SubComponents>
                         <Component class="com.raven.swing.table.Table" name="tblRAM">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder justification="3" position="2" title="RAM">
+                                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
-                                <Column editable="true" title="sdfsdf" type="java.lang.Object">
+                                <Column editable="false" title="M&#xe3; Ram" type="java.lang.Object">
                                   <Data value="dsfsdf"/>
                                   <Data value="sdf"/>
                                   <Data value="dsf"/>
                                   <Data value="null"/>
                                 </Column>
-                                <Column editable="true" title="sdfds" type="java.lang.Object">
+                                <Column editable="false" title="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m" type="java.lang.Object">
                                   <Data value="dsfsd"/>
                                   <Data value="sdfs"/>
                                   <Data value="sdf"/>
@@ -1084,15 +1177,22 @@
                       <SubComponents>
                         <Component class="com.raven.swing.table.Table" name="tblROM">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder justification="3" position="2" title="ROM">
+                                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
-                                <Column editable="true" title="sdfsdf" type="java.lang.Object">
+                                <Column editable="false" title="M&#xe3; B&#x1ed9; Nh&#x1edb;" type="java.lang.Object">
                                   <Data value="dsfsdf"/>
                                   <Data value="sdf"/>
                                   <Data value="dsf"/>
                                   <Data value="null"/>
                                 </Column>
-                                <Column editable="true" title="sdfds" type="java.lang.Object">
+                                <Column editable="false" title="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m" type="java.lang.Object">
                                   <Data value="dsfsd"/>
                                   <Data value="sdfs"/>
                                   <Data value="sdf"/>
@@ -1134,15 +1234,22 @@
                       <SubComponents>
                         <Component class="com.raven.swing.table.Table" name="tblCPU">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder justification="3" position="2" title="CPU">
+                                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
-                                <Column editable="true" title="sdfsdf" type="java.lang.Object">
+                                <Column editable="false" title="M&#xe3; CPU" type="java.lang.Object">
                                   <Data value="dsfsdf"/>
                                   <Data value="sdf"/>
                                   <Data value="dsf"/>
                                   <Data value="null"/>
                                 </Column>
-                                <Column editable="true" title="sdfds" type="java.lang.Object">
+                                <Column editable="false" title="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m" type="java.lang.Object">
                                   <Data value="dsfsd"/>
                                   <Data value="sdfs"/>
                                   <Data value="sdf"/>
@@ -1184,15 +1291,22 @@
                       <SubComponents>
                         <Component class="com.raven.swing.table.Table" name="tblCamera">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder justification="3" position="2" title="CAMERA">
+                                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
-                                <Column editable="true" title="sdfsdf" type="java.lang.Object">
+                                <Column editable="true" title="M&#xe3; Camera" type="java.lang.Object">
                                   <Data value="dsfsdf"/>
                                   <Data value="sdf"/>
                                   <Data value="dsf"/>
                                   <Data value="null"/>
                                 </Column>
-                                <Column editable="true" title="sdfds" type="java.lang.Object">
+                                <Column editable="true" title="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m" type="java.lang.Object">
                                   <Data value="dsfsd"/>
                                   <Data value="sdfs"/>
                                   <Data value="sdf"/>
@@ -1234,15 +1348,22 @@
                       <SubComponents>
                         <Component class="com.raven.swing.table.Table" name="tblPin">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder justification="3" position="2" title="PIN">
+                                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                                </TitledBorder>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
-                                <Column editable="true" title="sdfsdf" type="java.lang.Object">
+                                <Column editable="true" title="M&#xe3; Pin " type="java.lang.Object">
                                   <Data value="dsfsdf"/>
                                   <Data value="sdf"/>
                                   <Data value="dsf"/>
                                   <Data value="null"/>
                                 </Column>
-                                <Column editable="true" title="sdfds" type="java.lang.Object">
+                                <Column editable="true" title="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m" type="java.lang.Object">
                                   <Data value="dsfsd"/>
                                   <Data value="sdfs"/>
                                   <Data value="sdf"/>
