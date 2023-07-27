@@ -549,7 +549,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony1.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony1.setText("Mr. Dara");
@@ -629,7 +629,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony2.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony2.setText("Mr. Dara");
@@ -709,7 +709,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony3.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony3.setText("Mr. Dara");
@@ -790,7 +790,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony4.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony4.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony4.setText("Mr. Dara");
@@ -873,7 +873,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony5.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony5.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony5.setText("Mr. Dara");
@@ -954,7 +954,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony6.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony6.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony6.setText("Mr. Dara");
@@ -1036,7 +1036,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony7.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony7.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony7.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony7.setText("Mr. Dara");
@@ -1117,7 +1117,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony8.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony8.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony8.setText("Mr. Dara");
@@ -1199,7 +1199,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        txtTenSony9.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSony9.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSony9.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSony9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSony9.setText("Mr. Dara");
@@ -1342,7 +1342,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone1.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone1.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone1.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone1.setText("Mr. Dara");
@@ -1421,7 +1421,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone3.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone3.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone3.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone3.setText("Mr. Dara");
@@ -1500,7 +1500,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone2.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone2.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone2.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone2.setText("Mr. Dara");
@@ -1579,7 +1579,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone4.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone4.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone4.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone4.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone4.setText("Mr. Dara");
@@ -1652,7 +1652,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone5.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone5.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone5.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone5.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone5.setText("Mr. Dara");
@@ -1727,7 +1727,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone6.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone6.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone6.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone6.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone6.setText("Mr. Dara");
@@ -1802,7 +1802,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone7.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone7.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone7.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone7.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone7.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone7.setText("Mr. Dara");
@@ -1877,7 +1877,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone8.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone8.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone8.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone8.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone8.setText("Mr. Dara");
@@ -1954,7 +1954,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhIphone9.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhIphone9.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenIphone9.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenIphone9.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenIphone9.setForeground(new java.awt.Color(235, 235, 235));
         txtTenIphone9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenIphone9.setText("Mr. Dara");
@@ -2110,7 +2110,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung1.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung1.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung1.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung1.setText("Mr. Dara");
@@ -2187,7 +2187,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung2.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung2.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung2.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung2.setText("Mr. Dara");
@@ -2267,7 +2267,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung3.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung3.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung3.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung3.setText("Mr. Dara");
@@ -2346,7 +2346,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung4.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung4.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung4.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung4.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung4.setText("Mr. Dara");
@@ -2426,7 +2426,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung5.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung5.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung5.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung5.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung5.setText("Mr. Dara");
@@ -2505,7 +2505,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung6.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung6.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung6.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung6.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung6.setText("Mr. Dara");
@@ -2582,7 +2582,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung7.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung7.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung7.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung7.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung7.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung7.setText("Mr. Dara");
@@ -2656,7 +2656,7 @@ public class HoaDon extends javax.swing.JPanel {
         lblSamSung8.setBackground(new java.awt.Color(246, 88, 88));
         lblSamSung8.setShadowOpacity(0.3F);
 
-        txtTenSamSung8.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung8.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung8.setText("Mr. Dara");
@@ -2742,7 +2742,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtHinhAnhSamSung9.setGradientColor2(new java.awt.Color(255, 255, 255));
         txtHinhAnhSamSung9.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
 
-        txtTenSamSung9.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtTenSamSung9.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung9.setForeground(new java.awt.Color(235, 235, 235));
         txtTenSamSung9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTenSamSung9.setText("Mr. Dara");

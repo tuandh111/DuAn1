@@ -209,4 +209,24 @@ public class NhanVienDAO1 {
         String sql = "SELECT * FROM NHANVIEN WHERE MaNV LIKE ?";
         return select(sql, "%" + MaNV + "%");
     }
+
+    public List<NhanVienModel> orderByMaTang() {
+        String sql = "select * from NHANVIEN order by MaNV";
+        return this.select(sql);
+    }
+
+    public List<NhanVienModel> orderByMaGiam() {
+        String sql = "select * from NHANVIEN order by MaNV desc";
+        return this.select(sql);
+    }
+
+    public List<NhanVienModel> orderByTen() {
+        String sql = "select * from NHANVIEN order by HoTen";
+        return this.select(sql);
+    }
+
+    public List<NhanVienModel> orderByTenGiam() {
+        String sql = "select * from NHANVIEN order by HoTen desc";
+        return this.select(sql);
+    }
 }
