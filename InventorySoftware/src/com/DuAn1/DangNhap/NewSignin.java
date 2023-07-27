@@ -18,7 +18,6 @@ import com.tuandhpc05076.Main.Main;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.Object.O_DangNhap;
-import com.DuAn1.form.QuenMatKhau;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -140,15 +139,10 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jPasswordField_Password = new com.DuAn1.Swing.PasswordField();
-        jPasswordField_Password2 = new com.DuAn1.Swing.PasswordField();
         cardRegister2 = new com.DuAn1.component.CardRegister();
-        jTextField_Email = new com.DuAn1.Swing.TextField();
         jTextField_Email3 = new com.DuAn1.Swing.TextField();
-        jTextField_Email1 = new com.DuAn1.Swing.TextField();
         cardRegister3 = new com.DuAn1.component.CardRegister();
-        jTextField_Email1 = new com.DuAn1.Swing.TextField();
-        jLabel21 = new javax.swing.JLabel();
+        jTextField_Email2 = new com.DuAn1.Swing.TextField();
         jButton7 = new javax.swing.JButton();
         txtmatkhau = new com.DuAn1.Swing.PasswordField();
         txtusername = new com.DuAn1.Swing.TextField();
@@ -164,7 +158,7 @@ public class NewSignin extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 0));
         jButton1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 102, 102));
-        jButton1.setText("Đổi mật khẩu");
+        jButton1.setText("Quên Mật Khẩu");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -316,63 +310,25 @@ public class NewSignin extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
-
-        jPasswordField_Password.setCaretColor(new java.awt.Color(0, 102, 204));
-        jPasswordField_Password.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jPasswordField_Password.setLabelText("Mật khẩu");
-        jPasswordField_Password.setLineColor(new java.awt.Color(0, 102, 204));
-        jPasswordField_Password.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jPasswordField_Password.setSelectionColor(new java.awt.Color(169, 224, 49));
-        jPasswordField_Password.setShowAndHide(true);
-        jPanel6.add(jPasswordField_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 330, -1));
-
-        jPasswordField_Password2.setCaretColor(new java.awt.Color(0, 102, 204));
-        jPasswordField_Password2.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jPasswordField_Password2.setLabelText("Mật khẩu");
-        jPasswordField_Password2.setLineColor(new java.awt.Color(0, 102, 204));
-        jPasswordField_Password2.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jPasswordField_Password2.setSelectionColor(new java.awt.Color(169, 224, 49));
-        jPasswordField_Password2.setShowAndHide(true);
-        jPanel6.add(jPasswordField_Password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
         jPanel6.add(cardRegister2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 30));
 
-        jTextField_Email.setLabelText("Tài khoản");
-        jPanel6.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, -1));
-
         jTextField_Email3.setToolTipText("200");
-        jTextField_Email3.setLabelText("Tài khoản");
-        jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
-
-        jTextField_Email1.setCaretColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setLabelText("Tài khoản");
-        jTextField_Email1.setLineColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jPanel6.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 330, -1));
+        jTextField_Email3.setLabelText("Nhập Email");
+        jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 310, -1));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 430, 550));
 
         cardRegister3.setBackground(new java.awt.Color(102, 0, 102));
         jPanel3.add(cardRegister3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 620));
 
-        jTextField_Email1.setCaretColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setLabelText("Tài khoản");
-        jTextField_Email1.setLineColor(new java.awt.Color(0, 102, 204));
-        jTextField_Email1.setSelectedTextColor(new java.awt.Color(169, 224, 49));
-        jPanel3.add(jTextField_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 330, -1));
+        jTextField_Email2.setCaretColor(new java.awt.Color(0, 102, 204));
+        jTextField_Email2.setDisabledTextColor(new java.awt.Color(0, 102, 204));
+        jTextField_Email2.setLabelText("Tài khoản");
+        jTextField_Email2.setLineColor(new java.awt.Color(0, 102, 204));
+        jTextField_Email2.setSelectedTextColor(new java.awt.Color(169, 224, 49));
+        jPanel3.add(jTextField_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 330, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 450, 620));
-
-        jLabel21.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel21.setText("Quên mật khẩu?");
-        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel21MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 140, -1));
 
         jButton7.setBackground(new java.awt.Color(0, 102, 204));
         jButton7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -445,14 +401,8 @@ public class NewSignin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
-    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-        // TODO add your handling code here:
-        QuenMatKhau quen = new QuenMatKhau(false);
-        quen.setVisible(true);
-    }//GEN-LAST:event_jLabel21MouseClicked
-
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+       String ma = JOptionPane.showInternalInputDialog(this,"Nhập mã xác nhận");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -523,18 +473,14 @@ public class NewSignin extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel_SoftZyd;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
-    private com.DuAn1.Swing.PasswordField jPasswordField_Password;
-    private com.DuAn1.Swing.PasswordField jPasswordField_Password2;
     private javax.swing.JSeparator jSeparator1;
-    private com.DuAn1.Swing.TextField jTextField_Email;
-    private com.DuAn1.Swing.TextField jTextField_Email1;
+    private com.DuAn1.Swing.TextField jTextField_Email2;
     private com.DuAn1.Swing.TextField jTextField_Email3;
     private com.DuAn1.Swing.PasswordField txtmatkhau;
     private com.DuAn1.Swing.TextField txtusername;

@@ -3,19 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/form/Form_Home.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThongTinNhanVien.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Model/DatSPModel.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/DangNhap/NewSignin.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/NhanVien.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/NhanVienDAO1.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/SanPhamDAO.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/ThongKeDao.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Model/CPUModel.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/QuetMaQR/QuetMa.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Dao/NhanVienDAO1.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/DangNhap/NewSignin.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/NhanVien.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
         </group>
     </open-files>
 </project-private>
