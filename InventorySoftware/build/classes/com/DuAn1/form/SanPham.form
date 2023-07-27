@@ -282,6 +282,7 @@
             <Property name="labelText" type="java.lang.String" value="T&#xea;n "/>
           </Properties>
           <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTenSPCaretUpdate"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTenSPActionPerformed"/>
           </Events>
         </Component>
@@ -462,7 +463,7 @@
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
                     <StringItem index="0" value="M&#xe3;"/>
-                    <StringItem index="1" value="Ng&#xe0;y nh&#x1ead;p"/>
+                    <StringItem index="1" value="Gi&#xe1;"/>
                     <StringItem index="2" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
                   </StringArray>
                 </Property>

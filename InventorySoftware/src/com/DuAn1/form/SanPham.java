@@ -50,6 +50,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -454,6 +455,25 @@ public class SanPham extends javax.swing.JPanel {
         cboKhuyenMai.setSelectedItem(null);
     }
 
+    public void Sua() {
+        SanPhamModel daoSP = getFormSP();
+        DienThoaiModel daoDT = getFormDT();
+        try {
+            Dao.update(daoSP);
+            DaoDT.update(daoDT);
+            filltable();
+            clear();
+            DialogHelper.alert(this, "Cập nhật thông tin thành công!");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Lỗi sửa thông tin");
+            e.printStackTrace();
+        }
+    }
+
+    public void sapXep() {
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -564,6 +584,11 @@ public class SanPham extends javax.swing.JPanel {
         });
 
         txtTenSP.setLabelText("Tên ");
+        txtTenSP.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTenSPCaretUpdate(evt);
+            }
+        });
         txtTenSP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTenSPActionPerformed(evt);
@@ -635,7 +660,7 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
 
-        cboSapXep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mã", "Ngày nhập", "Số lượng" }));
+        cboSapXep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mã", "Giá", "Số lượng" }));
         cboSapXep.setSelectedIndex(-1);
         cboSapXep.setLabeText("Sắp xếp theo");
         cboSapXep.addActionListener(new java.awt.event.ActionListener() {
@@ -1014,7 +1039,7 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        // TODO add your handling code here:
+        Sua();        // TODO add your handling code here:
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void cboLoaiSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiSanPhamActionPerformed
@@ -1034,11 +1059,98 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_cboSapXepActionPerformed
 
     private void btnTangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTangActionPerformed
-        // TODO add your handling code here:
+        if (cboSapXep.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Bạn cần chọn hình thức sắp xếp");
+            return;
+        }
+        if (cboSapXep.getSelectedItem().equals("Mã")) {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<SanPhamModel> list = Dao.orderByMaTang();
+                for (SanPhamModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+
+        } else if (cboSapXep.getSelectedItem().equals("Giá")) {
+
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<SanPhamModel> list = Dao.orderByGiaTang();
+                for (SanPhamModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        } else {
+
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<SanPhamModel> list = Dao.orderBySoLuongTang();
+                for (SanPhamModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_btnTangActionPerformed
 
     private void btnGiamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiamActionPerformed
         // TODO add your handling code here:
+        if (cboSapXep.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Bạn cần chọn hình thức sắp xếp");
+            return;
+        }
+        if (cboSapXep.getSelectedItem().equals("Mã")) {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<SanPhamModel> list = Dao.orderByMaGiam();
+                for (SanPhamModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+
+        } else if (cboSapXep.getSelectedItem().equals("Giá")) {
+
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<SanPhamModel> list = Dao.orderByGiaGiam();
+                for (SanPhamModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        } else {
+
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<SanPhamModel> list = Dao.orderBySoLuongGiam();
+                for (SanPhamModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
     }//GEN-LAST:event_btnGiamActionPerformed
     String strHinh = null;
     private void txtHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhMouseClicked
@@ -1089,11 +1201,10 @@ public class SanPham extends javax.swing.JPanel {
             }
         } else {
             // create and display a new form
-            
+
             QuetMa n1 = new QuetMa(txtTenSP);
-            System.out.println("");
 //            n1.setVisible(true);
-            txtTenSP.setText(QuetMa.getSoLuong());
+//            txtTenSP.setText(QuetMa.getSoLuong());
             switchButton1.setSelectedAnimate(false);
         }
 
@@ -1220,6 +1331,10 @@ public class SanPham extends javax.swing.JPanel {
     private void cboCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPUActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboCPUActionPerformed
+
+    private void txtTenSPCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTenSPCaretUpdate
+
+    }//GEN-LAST:event_txtTenSPCaretUpdate
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
