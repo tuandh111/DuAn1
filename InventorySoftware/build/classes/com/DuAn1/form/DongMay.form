@@ -17,8 +17,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="443" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="1088" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,13 +44,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="174" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="materialTabbed1" min="-2" pref="1092" max="-2" attributes="0"/>
+                          <Component id="materialTabbed1" min="-2" pref="1098" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -103,143 +103,83 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel3">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnSua1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                          <Component id="btnXoa" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnMoi" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                          <Component id="btnThem" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cboCPU" alignment="0" min="-2" pref="281" max="-2" attributes="0"/>
-                                          <Component id="txtRAM" alignment="0" min="-2" pref="281" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jPanel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="95" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jPanel11" max="32767" attributes="0"/>
+                                  <Component id="jPanel14" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="266" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="cboCPU" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtRAM" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btnMoi" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnThem" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btnSua1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnXoa" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="100" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="94" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="com.DuAn1.Swing.TextField" name="txtRAM">
-                      <Properties>
-                        <Property name="labelText" type="java.lang.String" value="Ram"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAMActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="com.DuAn1.Swing.Button" name="btnMoi">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="99" red="99" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="com.DuAn1.Swing.Button" name="btnThem">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="99" red="99" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="com.DuAn1.Swing.Button" name="btnSua1">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="99" red="99" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
-                      </Properties>
-                    </Component>
-                    <Component class="com.DuAn1.Swing.Button" name="btnXoa">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="ff" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
-                      </Properties>
-                    </Component>
-                    <Component class="com.DuAn1.Swing.Combobox" name="cboCPU">
-                      <Properties>
-                        <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPUActionPerformed"/>
-                      </Events>
-                    </Component>
                     <Container class="javax.swing.JPanel" name="jPanel9">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -250,22 +190,22 @@
                                           <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnSua2" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnSuaRom" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace pref="81" max="32767" attributes="0"/>
-                                                  <Component id="btnXoa1" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnXoaRom" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnMoi1" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnMoiRom" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="btnThem1" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnThemRom" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cboCPU1" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtRAM1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cboLoaiSPBoNho" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtBoNho" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -277,18 +217,18 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="cboCPU1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboLoaiSPBoNho" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtRAM1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtBoNho" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnMoi1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnThem1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnMoiRom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnThemRom" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSua2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnXoa1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSuaRom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaRom" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="19" max="32767" attributes="0"/>
                               </Group>
@@ -296,15 +236,15 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="com.DuAn1.Swing.TextField" name="txtRAM1">
+                        <Component class="com.DuAn1.Swing.TextField" name="txtBoNho">
                           <Properties>
-                            <Property name="labelText" type="java.lang.String" value="Ram"/>
+                            <Property name="labelText" type="java.lang.String" value="B&#x1ed9; nh&#x1edb;"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAM1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBoNhoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnMoi1">
+                        <Component class="com.DuAn1.Swing.Button" name="btnMoiRom">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -312,10 +252,10 @@
                             <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoi1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiRomActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnThem1">
+                        <Component class="com.DuAn1.Swing.Button" name="btnThemRom">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -323,10 +263,10 @@
                             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThem1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemRomActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnSua2">
+                        <Component class="com.DuAn1.Swing.Button" name="btnSuaRom">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -334,7 +274,7 @@
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnXoa1">
+                        <Component class="com.DuAn1.Swing.Button" name="btnXoaRom">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -342,17 +282,27 @@
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Combobox" name="cboCPU1">
+                        <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSPBoNho">
                           <Properties>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPU1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboLoaiSPBoNhoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel10">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -363,22 +313,22 @@
                                           <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnSua3" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnSuaManHinh" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace pref="81" max="32767" attributes="0"/>
-                                                  <Component id="btnXoa2" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnXoaManHinh" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnMoi2" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnMoiManHinh" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="btnThem2" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnThemManHinh" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cboCPU2" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtRAM2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cboLoaiSPManHinh" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtManHinh" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -390,18 +340,18 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="cboCPU2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboLoaiSPManHinh" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtRAM2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtManHinh" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnMoi2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnThem2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnMoiManHinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnThemManHinh" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSua3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnXoa2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSuaManHinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaManHinh" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="19" max="32767" attributes="0"/>
                               </Group>
@@ -409,15 +359,15 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="com.DuAn1.Swing.TextField" name="txtRAM2">
+                        <Component class="com.DuAn1.Swing.TextField" name="txtManHinh">
                           <Properties>
-                            <Property name="labelText" type="java.lang.String" value="Ram"/>
+                            <Property name="labelText" type="java.lang.String" value="M&#xe0;n h&#xec;nh"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAM2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtManHinhActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnMoi2">
+                        <Component class="com.DuAn1.Swing.Button" name="btnMoiManHinh">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -425,10 +375,10 @@
                             <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoi2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiManHinhActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnThem2">
+                        <Component class="com.DuAn1.Swing.Button" name="btnThemManHinh">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -436,10 +386,10 @@
                             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThem2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemManHinhActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnSua3">
+                        <Component class="com.DuAn1.Swing.Button" name="btnSuaManHinh">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -447,7 +397,7 @@
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnXoa2">
+                        <Component class="com.DuAn1.Swing.Button" name="btnXoaManHinh">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -455,17 +405,27 @@
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Combobox" name="cboCPU2">
+                        <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSPManHinh">
                           <Properties>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPU2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboLoaiSPManHinhActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel11">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -473,25 +433,25 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnSua4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnSuaCamera" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace pref="81" max="32767" attributes="0"/>
-                                                  <Component id="btnXoa3" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnXoaCamera" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnMoi3" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="btnThem3" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnMoiCamera" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                                                  <Component id="btnThemCamera" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cboCPU3" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtRAM3" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtCamera" max="32767" attributes="0"/>
+                                              <Component id="cboCamera" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -503,34 +463,34 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="cboCPU3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboCamera" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtRAM3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCamera" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnMoi3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnThem3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnMoiCamera" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnThemCamera" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSua4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnXoa3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSuaCamera" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaCamera" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace pref="35" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="com.DuAn1.Swing.TextField" name="txtRAM3">
+                        <Component class="com.DuAn1.Swing.TextField" name="txtCamera">
                           <Properties>
-                            <Property name="labelText" type="java.lang.String" value="Ram"/>
+                            <Property name="labelText" type="java.lang.String" value="Camera"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAM3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCameraActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnMoi3">
+                        <Component class="com.DuAn1.Swing.Button" name="btnMoiCamera">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -538,10 +498,10 @@
                             <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoi3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiCameraActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnThem3">
+                        <Component class="com.DuAn1.Swing.Button" name="btnThemCamera">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -549,10 +509,10 @@
                             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThem3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemCameraActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnSua4">
+                        <Component class="com.DuAn1.Swing.Button" name="btnSuaCamera">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -560,7 +520,7 @@
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnXoa3">
+                        <Component class="com.DuAn1.Swing.Button" name="btnXoaCamera">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -568,17 +528,27 @@
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Combobox" name="cboCPU3">
+                        <Component class="com.DuAn1.Swing.Combobox" name="cboCamera">
                           <Properties>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPU3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCameraActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel12">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -589,22 +559,22 @@
                                           <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnSua5" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnSuaPin" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace pref="81" max="32767" attributes="0"/>
-                                                  <Component id="btnXoa4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnXoaPin" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnMoi4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnMoiPin" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="btnThem4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnThemPin" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cboCPU4" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtRAM4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cboPin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtPin" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -616,18 +586,18 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="cboCPU4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboPin" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtRAM4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPin" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnMoi4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnThem4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnMoiPin" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnThemPin" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSua5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnXoa4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSuaPin" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaPin" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="19" max="32767" attributes="0"/>
                               </Group>
@@ -635,15 +605,15 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="com.DuAn1.Swing.TextField" name="txtRAM4">
+                        <Component class="com.DuAn1.Swing.TextField" name="txtPin">
                           <Properties>
-                            <Property name="labelText" type="java.lang.String" value="Ram"/>
+                            <Property name="labelText" type="java.lang.String" value="Pin"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAM4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPinActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnMoi4">
+                        <Component class="com.DuAn1.Swing.Button" name="btnMoiPin">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -651,10 +621,10 @@
                             <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoi4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiPinActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnThem4">
+                        <Component class="com.DuAn1.Swing.Button" name="btnThemPin">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -662,10 +632,10 @@
                             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThem4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemPinActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnSua5">
+                        <Component class="com.DuAn1.Swing.Button" name="btnSuaPin">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -673,7 +643,7 @@
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnXoa4">
+                        <Component class="com.DuAn1.Swing.Button" name="btnXoaPin">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -681,17 +651,27 @@
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Combobox" name="cboCPU4">
+                        <Component class="com.DuAn1.Swing.Combobox" name="cboPin">
                           <Properties>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPU4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboPinActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel13">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -702,22 +682,22 @@
                                           <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnSua6" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnSuaCPU" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace pref="81" max="32767" attributes="0"/>
-                                                  <Component id="btnXoa5" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnXoaCPU" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="btnMoi5" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnMoiCPU" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="btnThem5" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btnThemCPU" min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cboCPU5" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtRAM5" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cboCPU" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtCPU" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -729,18 +709,18 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="cboCPU5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboCPU" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtRAM5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCPU" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnMoi5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnThem5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnMoiCPU" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnThemCPU" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSua6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnXoa5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSuaCPU" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaCPU" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="19" max="32767" attributes="0"/>
                               </Group>
@@ -748,15 +728,15 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="com.DuAn1.Swing.TextField" name="txtRAM5">
+                        <Component class="com.DuAn1.Swing.TextField" name="txtCPU">
                           <Properties>
-                            <Property name="labelText" type="java.lang.String" value="Ram"/>
+                            <Property name="labelText" type="java.lang.String" value="CPU"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAM5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCPUActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnMoi5">
+                        <Component class="com.DuAn1.Swing.Button" name="btnMoiCPU">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -764,10 +744,10 @@
                             <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoi5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiCPUActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnThem5">
+                        <Component class="com.DuAn1.Swing.Button" name="btnThemCPU">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -775,10 +755,10 @@
                             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThem5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemCPUActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnSua6">
+                        <Component class="com.DuAn1.Swing.Button" name="btnSuaCPU">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -786,7 +766,7 @@
                             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Button" name="btnXoa5">
+                        <Component class="com.DuAn1.Swing.Button" name="btnXoaCPU">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -794,12 +774,135 @@
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
                         </Component>
-                        <Component class="com.DuAn1.Swing.Combobox" name="cboCPU5">
+                        <Component class="com.DuAn1.Swing.Combobox" name="cboCPU">
                           <Properties>
                             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPU5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCPUActionPerformed"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel14">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="btnSuaRAM" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                                                  <Component id="btnXoaRAM" min="-2" pref="100" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="btnMoiRAM" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="btnThemRAM" min="-2" pref="100" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="cboLoaiSPRAM" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtRAM" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Component id="cboLoaiSPRAM" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtRAM" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnMoiRAM" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnThemRAM" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnSuaRAM" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaRAM" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="com.DuAn1.Swing.TextField" name="txtRAM">
+                          <Properties>
+                            <Property name="labelText" type="java.lang.String" value="Ram"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRAMActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="com.DuAn1.Swing.Button" name="btnMoiRAM">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="99" red="99" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoiRAMActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="com.DuAn1.Swing.Button" name="btnThemRAM">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="99" red="99" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemRAMActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="com.DuAn1.Swing.Button" name="btnSuaRAM">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="99" red="99" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
+                          </Properties>
+                        </Component>
+                        <Component class="com.DuAn1.Swing.Button" name="btnXoaRAM">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="33" green="33" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
+                          </Properties>
+                        </Component>
+                        <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSPRAM">
+                          <Properties>
+                            <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i S&#x1ea3;n Ph&#x1ea9;m"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboLoaiSPRAMActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -832,36 +935,38 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane7" pref="347" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jScrollPane5" pref="369" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane4" pref="348" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane7" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jScrollPane5" pref="357" max="32767" attributes="0"/>
                                   <Component id="jScrollPane8" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane6" min="-2" pref="345" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jScrollPane6" pref="345" max="32767" attributes="0"/>
                                   <Component id="jScrollPane9" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="249" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jScrollPane6" alignment="0" pref="219" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane5" alignment="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane7" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jScrollPane6" alignment="0" pref="219" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane7" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane5" min="-2" pref="219" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane9" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane8" pref="287" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane8" pref="317" max="32767" attributes="0"/>
                                   <Component id="jScrollPane4" alignment="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -877,7 +982,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="com.raven.swing.table.Table" name="tblNhanvien">
+                        <Component class="com.raven.swing.table.Table" name="tblManHinh">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -914,8 +1019,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvienMouseClicked"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvienMousePressed"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblManHinhMouseClicked"/>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblManHinhMousePressed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -927,7 +1032,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="com.raven.swing.table.Table" name="tblNhanvien1">
+                        <Component class="com.raven.swing.table.Table" name="tblRAM">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -964,8 +1069,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien1MouseClicked"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien1MousePressed"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblRAMMouseClicked"/>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblRAMMousePressed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -977,7 +1082,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="com.raven.swing.table.Table" name="tblNhanvien2">
+                        <Component class="com.raven.swing.table.Table" name="tblROM">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -1014,8 +1119,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien2MouseClicked"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien2MousePressed"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblROMMouseClicked"/>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblROMMousePressed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1027,7 +1132,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="com.raven.swing.table.Table" name="tblNhanvien3">
+                        <Component class="com.raven.swing.table.Table" name="tblCPU">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -1064,8 +1169,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien3MouseClicked"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien3MousePressed"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCPUMouseClicked"/>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCPUMousePressed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1077,7 +1182,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="com.raven.swing.table.Table" name="tblNhanvien4">
+                        <Component class="com.raven.swing.table.Table" name="tblCamera">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -1114,8 +1219,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien4MouseClicked"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien4MousePressed"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCameraMouseClicked"/>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCameraMousePressed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1127,7 +1232,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="com.raven.swing.table.Table" name="tblNhanvien5">
+                        <Component class="com.raven.swing.table.Table" name="tblPin">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -1164,8 +1269,8 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien5MouseClicked"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblNhanvien5MousePressed"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblPinMouseClicked"/>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblPinMousePressed"/>
                           </Events>
                         </Component>
                       </SubComponents>
