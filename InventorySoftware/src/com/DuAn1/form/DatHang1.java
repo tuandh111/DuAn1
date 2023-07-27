@@ -4,15 +4,19 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Dao.DatSPDAO;
 import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.DatSPModel;
 import com.DuAn1.Model.KhachHangModel;
 import com.DuAn1.Model.SanPhamModel;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
 import com.sun.jna.platform.win32.Winspool;
-import com.tuandhpc05076.helper.ShareHelper;
+import com.tuandhpc05076.helper.DialogHelper;
+
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -34,6 +38,7 @@ public class DatHang1 extends javax.swing.JPanel {
 
     SanPhamDAO daoSP = new SanPhamDAO();
     KhachHangDAO daoKH = new KhachHangDAO();
+    DatSPDAO daoDatSP = new DatSPDAO();
 
     public DatHang1() {
         initComponents();
@@ -164,43 +169,43 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung3.setVisible(true);
+                    lbISamSung3.setVisible(true);
                 }
                 if (j == 3) {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung4.setVisible(true);
+                    lbISamSung4.setVisible(true);
                 }
                 if (j == 4) {
                     txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung5.setVisible(true);
+                    lbISamSung5.setVisible(true);
                 }
                 if (j == 5) {
                     txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung6.setVisible(true);
+                    lbISamSung6.setVisible(true);
                 }
                 if (j == 6) {
                     txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung7.setVisible(true);
+                    lbISamSung7.setVisible(true);
                 }
                 if (j == 7) {
                     txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung8.setVisible(true);
+                    lbISamSung8.setVisible(true);
                 }
                 if (j == 8) {
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
-                     lbISamSung9.setVisible(true);
+                    lbISamSung9.setVisible(true);
                 }
                 j++;
             }
@@ -224,43 +229,43 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony3.setVisible(true);
+                    LbSony3.setVisible(true);
                 }
                 if (z == 3) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony4.setVisible(true);
+                    LbSony4.setVisible(true);
                 }
                 if (z == 4) {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony5.setVisible(true);
+                    LbSony5.setVisible(true);
                 }
                 if (z == 5) {
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony6.setVisible(true);
+                    LbSony6.setVisible(true);
                 }
                 if (z == 6) {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony7.setVisible(true);
+                    LbSony7.setVisible(true);
                 }
                 if (z == 7) {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony8.setVisible(true);
+                    LbSony8.setVisible(true);
                 }
                 if (z == 8) {
                     txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
-                     LbSony9.setVisible(true);
+                    LbSony9.setVisible(true);
                 }
 
             }
@@ -484,7 +489,7 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoDienThoai = new com.DuAn1.Swing.TextField();
         txtNgayXuat = new com.DuAn1.Swing.TextField();
         txtDonGia = new com.DuAn1.Swing.TextField();
-        textField4 = new com.DuAn1.Swing.TextField();
+        txtMaDatHang = new com.DuAn1.Swing.TextField();
         txtSoLuong = new com.DuAn1.Swing.TextField();
         txtThue = new com.DuAn1.Swing.TextField();
         button01 = new com.DuAn1.swing0.button0();
@@ -2846,7 +2851,7 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        txtNgayXuat.setLabelText("Ngày xuất");
+        txtNgayXuat.setLabelText("Ngày gian xuất");
         txtNgayXuat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtNgayXuatMouseClicked(evt);
@@ -2860,7 +2865,7 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        textField4.setLabelText("Mã đặt hàng");
+        txtMaDatHang.setLabelText("Mã đặt hàng");
 
         txtSoLuong.setLabelText("Tổng số lượng");
         txtSoLuong.addCaretListener(new javax.swing.event.CaretListener() {
@@ -2883,6 +2888,11 @@ public class DatHang1 extends javax.swing.JPanel {
         button2.setBackground(new java.awt.Color(255, 51, 51));
         button2.setForeground(new java.awt.Color(255, 255, 255));
         button2.setText("Hủy bỏ");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         button3.setBackground(new java.awt.Color(153, 153, 255));
         button3.setText("Tạo hóa đơn");
@@ -2963,7 +2973,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMaDatHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNgayXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -3010,7 +3020,7 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMaDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSoDienThoai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(20, 20, 20))
@@ -3138,10 +3148,43 @@ public class DatHang1 extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+    public void Them() {
+        try {
+            DatSPModel model = getFormTao();
+            daoDatSP.insert(model);
+            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }
 
+    DatSPModel getFormTao() {
+        DatSPModel dt = new DatSPModel();
+        dt.setMaDH("DH001");
+        dt.setSoLuong("1");
+        dt.setSDT("78978978978");
+        dt.setTrangThai(true);
+        dt.setDonGia("50000");
+        dt.setTongTien("600000");
+        dt.setThoiGianDat("1900-01-01 02:24:00.000");
+        dt.setMaNV(ShareHelper.USER.getMaNV());
+        return dt;
+    }
+
+    public void Delete() {
+        try {
+            DatSPModel model = getFormTao();
+            daoDatSP.delete(model);
+            com.DuAn1.Helper.DialogHelper.alert(this, "Xóa dữ liệu thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi Xóa dữ liệu");
+        }
+    }
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
-
+        Them();
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
@@ -3536,6 +3579,11 @@ public class DatHang1 extends javax.swing.JPanel {
 // TODO add your handling code here:
     }//GEN-LAST:event_txtSoDienThoaiCaretUpdate
 
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        Delete();        // TODO add your handling code here:
+
+    }//GEN-LAST:event_button2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private swing.PanelShadow LbSony1;
@@ -3615,7 +3663,6 @@ public class DatHang1 extends javax.swing.JPanel {
     private swing.PanelShadow lbIphone9;
     private swing.MaterialTabbed materialTabbed1;
     private javaswingdev.swing.table.Table table1;
-    private com.DuAn1.Swing.TextField textField4;
     private com.DuAn1.Swing.TextField txtDonGia;
     private swing.ImageAvatar txtHinhAnhIphone1;
     private swing.ImageAvatar txtHinhAnhIphone2;
@@ -3644,6 +3691,7 @@ public class DatHang1 extends javax.swing.JPanel {
     private swing.ImageAvatar txtHinhAnhSony7;
     private swing.ImageAvatar txtHinhAnhSony8;
     private swing.ImageAvatar txtHinhAnhSony9;
+    private com.DuAn1.Swing.TextField txtMaDatHang;
     private com.DuAn1.Swing.TextField txtNgayXuat;
     private com.DuAn1.Swing.TextField txtNgayXuat1;
     private com.DuAn1.Swing.TextField txtSoDienThoai;
