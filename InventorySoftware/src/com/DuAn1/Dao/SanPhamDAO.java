@@ -140,4 +140,33 @@ public class SanPhamDAO {
         return list;
     }
 
+    public List<SanPhamModel> orderByMaTang() {
+        String sql = "select * from sanpham order by MaSP";
+        return this.select(sql);
+    }
+
+    public List<SanPhamModel> orderByMaGiam() {
+        String sql = "select * from sanpham order by MaSP desc";
+        return this.select(sql);
+    }
+
+    public List<SanPhamModel> orderByGiaTang() {
+        String sql = "select * from sanpham order by Gia";
+        return this.select(sql);
+    }
+
+    public List<SanPhamModel> orderByGiaGiam() {
+        String sql = "select * from sanpham order by Gia desc";
+        return this.select(sql);
+    }
+       public List<SanPhamModel> orderBySoLuongTang() {
+        String sql = "select * from sanpham order by SoLuong";
+        return this.select(sql);
+    }
+
+    public List<SanPhamModel> orderBySoLuongGiam() {
+        String sql = "select * from sanpham order by SoLuong desc";
+        return this.select(sql);
+    }
+    
 }

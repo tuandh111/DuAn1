@@ -34,7 +34,7 @@ public class DienThoaiDao {
     }
 
     public void update(DienThoaiModel model) {
-        String sql = "update DIENTHOAI set CPU=?,MANHINH=?,BONHO=?,MOTA=?,MASP=?,RAM=?,PIN=?,CAMERA=? where MADT=?";
+        String sql = "update DIENTHOAI set CPU=?,MangHinh=?,BoNho=?,MoTa=?,CAMERA=?,PIN=?,RAM=? where MADT=?";
         JdbcHelper.executeUpdate(sql,
                 model.getCPU(),
                 model.getMangHinh(),

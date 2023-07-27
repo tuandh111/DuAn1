@@ -20,10 +20,6 @@ public class JdbcHelper {
     private static String dburl = "jdbc:sqlserver://localhost:1433;" + "databaseName=CUAHANG_DT;encrypt=false;trustServerCertificate=true;";
     private static String username = "sa";
     private static String password = "123";
-
-    /*
-     * Nạp driver
-     */
     static {
         try {
             Class.forName(driver);
@@ -32,14 +28,6 @@ public class JdbcHelper {
         }
     }
 
-    /*
-     * Xây dựng PreparedStatement
-    PreparedStatement là thực thi câu lệnh giống nhau lập đi lập lại
-     * @param sql là câu lệnh SQL chứa có thể chứa tham số. Nó có thể là một lời gọi thủ tục lưu
-     * @param args là danh sách các giá trị được cung cấp cho các tham số trong câu lệnh sql
-     * @return PreparedStatement tạo được
-     * @throws java.sql.SQLException lỗi sai cú pháp
-     */
     public static PreparedStatement prepareStatement(String sql, Object... args) throws SQLException {
         Connection connection = DriverManager.getConnection(dburl, username, password);
         PreparedStatement pstmt = null;
@@ -53,12 +41,6 @@ public class JdbcHelper {
         }
         return pstmt;
     }
-
-    /*
-     * Thực hiện câu lệnh SQL thao tác (INSERT, UPDATE, DELETE) hoặc thủ tục lưu thao tác dữ liệu
-     * @param sql là câu lệnh SQL chứa có thể chứa tham số. Nó có thể là một lời gọi thủ tục lưu
-     * @param args là danh sách các giá trị được cung cấp cho các tham số trong câu lệnh sql     * 
-     */
     public static void executeUpdate(String sql, Object... args) {
         try {
             PreparedStatement stmt = prepareStatement(sql, args);
@@ -72,11 +54,6 @@ public class JdbcHelper {
         }
     }
 
-    /*
-     * Thực hiện câu lệnh SQL truy vấn (SELECT) hoặc thủ tục lưu truy vấn dữ liệu
-     * @param sql là câu lệnh SQL chứa có thể chứa tham số. Nó có thể là một lời gọi thủ tục lưu
-     * @param args là danh sách các giá trị được cung cấp cho các tham số trong câu lệnh sql
-     */
     public static ResultSet executeQuery(String sql, Object... args) {
         try {
             PreparedStatement stmt = prepareStatement(sql, args);

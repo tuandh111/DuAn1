@@ -24,7 +24,7 @@ public class DatSPDAO {
                 model.getMaDH(),
                 model.getSoLuong(),
                 model.getSDT(),
-                model.isTrangThai(),
+                model.getTrangThai(),
                 model.getDonGia(),
                 model.getTongTien(),
                 model.getThue(),
