@@ -28,7 +28,6 @@ public class KhachHangDAO {
                 model.getDiaChi(),
                 model.isGT(),
                 model.getLoaiKH(),
-                model.getLoaiKH(),
                 model.isTrangThai(),
                 model.getMoTa(),
                 model.getMaNV(),
@@ -44,7 +43,6 @@ public class KhachHangDAO {
                 model.getNgaySinh(),
                 model.getDiaChi(),
                 model.isGT(),
-                model.getLoaiKH(),
                 model.getLoaiKH(),
                 model.isTrangThai(),
                 model.getMoTa(),
@@ -108,5 +106,9 @@ public class KhachHangDAO {
         model.setMaNV(rs.getString(10));
         model.setHinh(rs.getString(11));
         return model;
+    }
+    public List<KhachHangModel> TimKiemTheoMa(String MaKH) {
+        String sql = "SELECT * FROM KHACHHANG WHERE MaKH LIKE ?";
+        return select(sql, "%" + MaKH + "%");
     }
 }

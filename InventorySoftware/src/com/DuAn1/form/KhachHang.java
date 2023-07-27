@@ -133,7 +133,7 @@ public class KhachHang extends javax.swing.JPanel {
         nv.setTrangThai(true);
         nv.setMoTa(txtMota.getText());
         nv.setMaNV(ShareHelper.USER.getMaNV());
-        nv.setHinh(txtHinhAnh1.getToolTipText());
+        nv.setHinh(txtHinhAnh2.getToolTipText());
 
         return nv;
     }
@@ -155,9 +155,9 @@ public class KhachHang extends javax.swing.JPanel {
         if (nv.getMoTa() != null) {
             txtMota.setText(nv.getMoTa());
         }
-        if (nv.getHinh() != "null") {
-            txtHinhAnh1.setToolTipText(nv.getHinh());
-            txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));
+        if (nv.getHinh() != null) {
+            txtHinhAnh2.setToolTipText(nv.getHinh());
+            txtHinhAnh2.setIcon(ShareHelper.readLogo(nv.getHinh()));
         }
     }
 
@@ -169,8 +169,8 @@ public class KhachHang extends javax.swing.JPanel {
         txtDiachi.setText("");
         txtSdt.setText("");
         cbokhach.setSelectedItem("VIP2");
-        txtHinhAnh1.setToolTipText("");
-        txtHinhAnh1.setIcon(ShareHelper.readLogo(""));
+        txtHinhAnh2.setToolTipText("");
+        txtHinhAnh2.setIcon(ShareHelper.readLogo(""));
     }
 
     void edit() {
@@ -208,7 +208,6 @@ public class KhachHang extends javax.swing.JPanel {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblUser.getRowCount() - 1);
-        txtma.setEditable(!edit);
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
@@ -292,12 +291,27 @@ public class KhachHang extends javax.swing.JPanel {
 
         btnThem.setBackground(new java.awt.Color(153, 153, 255));
         btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         btnSua.setBackground(new java.awt.Color(153, 153, 255));
         btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnXoa.setBackground(new java.awt.Color(255, 51, 51));
         btnXoa.setText("Xóa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
         btnMoi.setBackground(new java.awt.Color(153, 153, 255));
         btnMoi.setText("Mới");
@@ -308,6 +322,11 @@ public class KhachHang extends javax.swing.JPanel {
         });
 
         txtTim.setHint("Tìm kiếm");
+        txtTim.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimCaretUpdate(evt);
+            }
+        });
         txtTim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimActionPerformed(evt);
@@ -487,21 +506,17 @@ public class KhachHang extends javax.swing.JPanel {
                 }
 
                 strHinh = file.getName();
-                txtHinhAnh1.setText("");
+                txtHinhAnh2.setText("");
 
-                txtHinhAnh1.setIcon(ShareHelper.readLogo(file.getName()));
-                txtHinhAnh1.setToolTipText(file.getName());
-                txtHinhAnh1.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
+                txtHinhAnh2.setIcon(ShareHelper.readLogo(file.getName()));
+                txtHinhAnh2.setToolTipText(file.getName());
+                txtHinhAnh2.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
             }
         }         // TODO add your handling code here:
     }//GEN-LAST:event_txtHinhAnh2MouseClicked
     String strHinh = null;
-    private void txtHinh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinh2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHinh2MouseClicked
-
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
-        // TODO add your handling code here:
+        ClearForm();
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -523,6 +538,44 @@ public class KhachHang extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboGioitinhActionPerformed
 
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        insert();
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        update();
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        delete();
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void txtTimCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimCaretUpdate
+        if (txtTim.getText().equals("")) {
+            this.filltable();
+        } else {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<KhachHangModel> list = daoKH.TimKiemTheoMa(txtTim.getText());
+                for (KhachHangModel model : list) {
+                    Object[] row = new Object[]{ model.getMaKH(),
+                    model.getTenKH(),
+                    model.getSDT(),
+                    model.getNgaySinh(),
+                    model.getDiaChi(),};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
+    }//GEN-LAST:event_txtTimCaretUpdate
+
+    private void txtHinh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinh2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHinh2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button btnMoi;
@@ -539,11 +592,7 @@ public class KhachHang extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javaswingdev.swing.table.Table tblUser;
     private com.DuAn1.Swing.TextField txtDiachi;
-    private swing.PanelShadow txtHinh;
-    private swing.PanelShadow txtHinh1;
     private swing.PanelShadow txtHinh2;
-    private javax.swing.JLabel txtHinhAnh;
-    private javax.swing.JLabel txtHinhAnh1;
     private javax.swing.JLabel txtHinhAnh2;
     private com.DuAn1.Swing.TextField txtMota;
     private com.DuAn1.Swing.TextField txtNgaySinh;
