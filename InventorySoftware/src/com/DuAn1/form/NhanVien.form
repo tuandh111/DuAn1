@@ -540,13 +540,11 @@
     <Component class="com.DuAn1.Swing.Combobox" name="cboSapXep">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="2">
             <StringItem index="0" value="M&#xe3;"/>
-            <StringItem index="1" value="Ng&#xe0;y nh&#x1ead;p"/>
-            <StringItem index="2" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
+            <StringItem index="1" value="H&#x1ecd; T&#xea;n"/>
           </StringArray>
         </Property>
-        <Property name="selectedIndex" type="int" value="-1"/>
         <Property name="labeText" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo"/>
       </Properties>
       <Events>

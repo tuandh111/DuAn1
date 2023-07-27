@@ -324,7 +324,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -465,7 +465,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -607,7 +607,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -752,7 +752,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony4">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -894,7 +894,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony5">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -1038,7 +1038,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony6">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -1180,7 +1180,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony7">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -1325,7 +1325,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony8">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -1467,7 +1467,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSony9">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -1721,7 +1721,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -1861,7 +1861,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2001,7 +2001,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2132,7 +2132,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone4">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2265,7 +2265,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone5">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2398,7 +2398,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone6">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2531,7 +2531,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone7">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2667,7 +2667,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone8">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2803,7 +2803,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenIphone9">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -2988,7 +2988,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3130,7 +3130,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3270,7 +3270,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3412,7 +3412,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung4">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3552,7 +3552,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung5">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3689,7 +3689,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung6">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3830,7 +3830,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung7">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -3952,7 +3952,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung8">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>
@@ -4110,7 +4110,7 @@
                         <Component class="javax.swing.JLabel" name="txtTenSamSung9">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="sansserif" size="24" style="1"/>
+                              <Font name="sansserif" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="eb" green="eb" red="eb" type="rgb"/>

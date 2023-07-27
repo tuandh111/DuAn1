@@ -260,6 +260,10 @@ public class NhanVien extends javax.swing.JPanel {
             DialogHelper.alert(this, "Bạn chưa chọn hình ảnh");
             return false;
         }
+        if (Dao.findById(txtTaikhoan.getText()) != null) {
+            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
+            return false;
+        }
         if (txtMatkhau.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Mật khẩu không được để trống");
             return false;
@@ -558,8 +562,7 @@ public class NhanVien extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        cboSapXep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mã", "Ngày nhập", "Số lượng" }));
-        cboSapXep.setSelectedIndex(-1);
+        cboSapXep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mã", "Họ Tên" }));
         cboSapXep.setLabeText("Sắp xếp theo");
         cboSapXep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -826,22 +829,22 @@ public class NhanVien extends javax.swing.JPanel {
     }//GEN-LAST:event_txtMatkhauActionPerformed
 
     private void txtTimCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimCaretUpdate
-       if(txtTim.getText().equals("")){
-           this.filltable();
-       }else{
-           model = (DefaultTableModel) tblNhanvien.getModel();
-        model.setRowCount(0);
-        try {
-            List<NhanVienModel> list = Dao.TimKiemTheoTen(txtTim.getText());
-            for (NhanVienModel nv : list) {
-                Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
-                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
-                model.addRow(row);
+        if (txtTim.getText().equals("")) {
+            this.filltable();
+        } else {
+            model = (DefaultTableModel) tblNhanvien.getModel();
+            model.setRowCount(0);
+            try {
+                List<NhanVienModel> list = Dao.TimKiemTheoTen(txtTim.getText());
+                for (NhanVienModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                        nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
-       }
     }//GEN-LAST:event_txtTimCaretUpdate
 
     private void txtTaikhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTaikhoanActionPerformed
@@ -849,11 +852,75 @@ public class NhanVien extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTaikhoanActionPerformed
 
     private void btnTangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTangActionPerformed
-        // TODO add your handling code here:
+        if (cboSapXep.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Bạn cần chọn hình thức sắp xếp");
+            return;
+        }
+        if (cboSapXep.getSelectedItem().equals("Mã")) {
+            model = (DefaultTableModel) tblNhanvien.getModel();
+            model.setRowCount(0);
+            try {
+                List<NhanVienModel> list = Dao.orderByMaTang();
+                for (NhanVienModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+
+        }else {
+
+            model = (DefaultTableModel) tblNhanvien.getModel();
+            model.setRowCount(0);
+            try {
+                List<NhanVienModel> list = Dao.orderByTen();
+                for (NhanVienModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
     }//GEN-LAST:event_btnTangActionPerformed
 
     private void btnGiamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiamActionPerformed
-        // TODO add your handling code here:
+         if (cboSapXep.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Bạn cần chọn hình thức sắp xếp");
+            return;
+        }
+        if (cboSapXep.getSelectedItem().equals("Mã")) {
+            model = (DefaultTableModel) tblNhanvien.getModel();
+            model.setRowCount(0);
+            try {
+                List<NhanVienModel> list = Dao.orderByMaGiam();
+                for (NhanVienModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+
+        } else {
+
+            model = (DefaultTableModel) tblNhanvien.getModel();
+            model.setRowCount(0);
+            try {
+                List<NhanVienModel> list = Dao.orderByTenGiam();
+                for (NhanVienModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
     }//GEN-LAST:event_btnGiamActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
