@@ -129,12 +129,10 @@ CREATE TABLE DIENTHOAI(
 
 CREATE TABLE HOADON(
 	MaHD CHAR(10) PRIMARY KEY,
-	TenSP NVARCHAR(50) NOT NULL,
 	SoLuong INT NOT NULL,
 	TrangThai BIT NOT NULL,
 	DonGia MONEY NOT NULL,
 	TongTien MONEY NOT NULL,
-	Thue FLOAT,
 	NgayXuat DATETIME NOT NULL,
 	MoTa TEXT,
 	TenCTY NVARCHAR(50) NOT NULL,
@@ -167,7 +165,7 @@ CREATE TABLE DATSP(
 	TrangThai BIT NOT NULL,
 	DonGia MONEY NOT NULL,
 	TongTien MONEY NOT NULL,
-	Thue FLOAT,
+	ThoiGianDat datetime ,
 	MaNV CHAR(10) NOT NULL,
 	FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV) ON DELETE NO ACTION ON UPDATE CASCADE
 )
@@ -338,14 +336,14 @@ update DIENTHOAI set CPU='Snapdragon',MANHINH='OLED',BONHO='256GB',MOTA=null,MAS
 delete from DIENTHOAI where MADT='DT001'
 select * from DIENTHOAI where MADT='DT001'
 
-Insert into HOADON values ('HD00001','IPNONE 14S',2,1,'14500000','29000000',null,'2023-07-07',null,'Apple','NV001')
-Insert into HOADON values ('HD00002','IPNONE 12S',1,1,'10500000','10500000',null,'2023-07-07',null,'Apple','NV001')
-Insert into HOADON values ('HD00003','IPNONE 13S',3,1,'11500000','34500000',null,'2023-07-07',null,'Apple','NV001')
-Insert into HOADON values ('HD00004','IPNONE 12S',1,1,'14500000','29000000',null,'2023-07-07',null,'Apple','NV001')
-Insert into HOADON values ('HD00005','IPNONE 13S',2,1,'14500000','29000000',null,'2023-07-07',null,'Apple','NV002')
-Insert into HOADON values ('HD00006','IPNONE 12S',1,1,'14500000','29000000',null,'2023-07-07',null,'Apple','NV002')
-Insert into HOADON values ('HD00007','IPNONE 14S',2,1,'14500000','29000000',null,'2023-07-07',null,'Apple','NV002')
-Insert into HOADON values ('HD00008','IPNONE 12S',3,1,'14500000','29000000',null,'2023-07-07',null,'Apple','NV002')
+Insert into HOADON values ('HD00001',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV001')
+Insert into HOADON values ('HD00002',1,1,'10500000','10500000','2023-07-07',null,'Apple','NV001')
+Insert into HOADON values ('HD00003',3,1,'11500000','34500000','2023-07-07',null,'Apple','NV001')
+Insert into HOADON values ('HD00004',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV001')
+Insert into HOADON values ('HD00005',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV002')
+Insert into HOADON values ('HD00006',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV002')
+Insert into HOADON values ('HD00007',2,0,'14500000','29000000','2023-07-07',null,'Apple','NV002')
+Insert into HOADON values ('HD00008',3,1,'14500000','29000000','2023-07-07',null,'Apple','NV002')
 update HOADON set TENSP='Samsung A73',SOLUONG=2,TRANGTHAI=1,DONGIA='100000',TONGTIEN='200000',MOTA=null,NGAYXUAT='2023-07-07',THUE=null,TENCTY='Samsung',MANV='QL001' where MAHD = 'HD001'
 delete from HOADON where MAHD='HD001'
 select * from HOADON where MAHD='HD001'

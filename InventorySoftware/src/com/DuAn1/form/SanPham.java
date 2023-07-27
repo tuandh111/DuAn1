@@ -80,7 +80,7 @@ public class SanPham extends javax.swing.JPanel {
     ThongKeDao DaoThongKe = new ThongKeDao();
     // the webcam object
     private WebcamPanel panel;
-    int index = -1;
+    int row = -1;
 
     public SanPham() {
         initComponents();
@@ -254,6 +254,11 @@ public class SanPham extends javax.swing.JPanel {
         if (sp.getHinh() != null) {
             txtHinhAnh.setToolTipText(sp.getHinh());
             txtHinhAnh.setIcon(ShareHelper.readLogo(sp.getHinh()));
+            txtHinhAnh.setToolTipText(sp.getHinh());
+            ImageIcon originalIcon = ShareHelper.readLogo(sp.getHinh());
+            Image originalImage = originalIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(txtHinhAnh.getWidth(), txtHinhAnh.getHeight(), Image.SCALE_SMOOTH);
+            txtHinhAnh.setIcon(new ImageIcon(scaledImage));
         }
         cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim());
 
@@ -284,8 +289,8 @@ public class SanPham extends javax.swing.JPanel {
         btnSua.setEnabled(!insertable);
         btnXoa.setEnabled(!insertable);
 
-        boolean first = this.index > 0;
-        boolean last = this.index < tblUser.getRowCount() - 1;
+        boolean first = this.row > 0;
+        boolean last = this.row < tblUser.getRowCount() - 1;
         btnFirst.setEnabled(!insertable && first);
         btnPrev.setEnabled(!insertable && first);
         btnLast.setEnabled(!insertable && last);
@@ -440,6 +445,9 @@ public class SanPham extends javax.swing.JPanel {
     }
 
     void clear() {
+        btnThem.setEnabled(true);
+        btnSua.setEnabled(false);
+        btnXoa.setEnabled(false);
         txtMaSP.setText("");
         txtTenSP.setText("");
         cboMau.setSelectedItem(null);
@@ -456,6 +464,7 @@ public class SanPham extends javax.swing.JPanel {
     }
 
     public void Sua() {
+        if(checkForm()==false)return;
         SanPhamModel daoSP = getFormSP();
         DienThoaiModel daoDT = getFormDT();
         try {
@@ -470,8 +479,32 @@ public class SanPham extends javax.swing.JPanel {
         }
     }
 
-    public void sapXep() {
+    void first() {
+        this.row = 0;
+        tblUser.setRowSelectionInterval(row, row);
+        this.edit();
+    }
 
+    void prev() {
+        if (this.row > 0) {
+            this.row--;
+            tblUser.setRowSelectionInterval(row, row);
+            this.edit();
+        }
+    }
+
+    void next() {
+        if (this.row < tblUser.getRowCount() - 1) {
+            this.row++;
+            tblUser.setRowSelectionInterval(row, row);
+            this.edit();
+        }
+    }
+
+    void last() {
+        this.row = tblUser.getRowCount() - 1;
+        tblUser.setRowSelectionInterval(row, row);
+        this.edit();
     }
 
     @SuppressWarnings("unchecked")
@@ -823,15 +856,35 @@ public class SanPham extends javax.swing.JPanel {
 
         btnNext.setBackground(new java.awt.Color(153, 153, 255));
         btnNext.setText(">|");
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
 
         btnFirst.setBackground(new java.awt.Color(153, 153, 255));
         btnFirst.setText("|<");
+        btnFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFirstActionPerformed(evt);
+            }
+        });
 
         btnPrev.setBackground(new java.awt.Color(153, 153, 255));
         btnPrev.setText("<<");
+        btnPrev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrevActionPerformed(evt);
+            }
+        });
 
         btnLast.setBackground(new java.awt.Color(153, 153, 255));
         btnLast.setText(">>");
+        btnLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLastActionPerformed(evt);
+            }
+        });
 
         txtHinh.setBackground(new java.awt.Color(255, 255, 255));
         txtHinh.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1212,7 +1265,7 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_switchButton1MouseClicked
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
-        clear();        // TODO add your handling code here:
+        clear();  TuDongTangMa();      // TODO add your handling code here:
 
     }//GEN-LAST:event_btnMoiActionPerformed
 //   public void tuDongTangMa() {
@@ -1260,8 +1313,8 @@ public class SanPham extends javax.swing.JPanel {
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         // TODO add your handling code here:
         if (evt.getClickCount() == 2) {
-            this.index = tblUser.rowAtPoint(evt.getPoint());
-            if (this.index >= 0) {
+            this.row = tblUser.rowAtPoint(evt.getPoint());
+            if (this.row >= 0) {
                 this.edit();
                 this.editDT();
             }
@@ -1270,12 +1323,12 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_tblUserMouseClicked
     void edit() {
         try {
-            String macd = (String) tblUser.getValueAt(this.index, 0);
+            String macd = (String) tblUser.getValueAt(this.row, 0);
             SanPhamModel model = Dao.findById(macd);
             DienThoaiModel modelDT = DaoDT.findById(macd);
             if (model != null) {
                 this.setFormSP(model);
-
+                this.setFormDT(modelDT);
                 this.updateStatus(false);
             }
         } catch (Exception e) {
@@ -1286,7 +1339,7 @@ public class SanPham extends javax.swing.JPanel {
 
     void editDT() {
         try {
-            String macd = (String) tblUser.getValueAt(this.index, 0);
+            String macd = (String) tblUser.getValueAt(this.row, 0);
             DienThoaiModel modelDT = DaoDT.findById(macd);
             if (modelDT != null) {
                 this.setFormDT(modelDT);
@@ -1335,6 +1388,22 @@ public class SanPham extends javax.swing.JPanel {
     private void txtTenSPCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTenSPCaretUpdate
 
     }//GEN-LAST:event_txtTenSPCaretUpdate
+
+    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
+first();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFirstActionPerformed
+
+    private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
+prev();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPrevActionPerformed
+
+    private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
+next();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLastActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+ last();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
