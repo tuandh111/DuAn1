@@ -28,7 +28,6 @@ public class KhachHangDAO {
                 model.getDiaChi(),
                 model.isGT(),
                 model.getLoaiKH(),
-                model.getLoaiKH(),
                 model.isTrangThai(),
                 model.getMoTa(),
                 model.getMaNV(),
@@ -45,7 +44,6 @@ public class KhachHangDAO {
                 model.getDiaChi(),
                 model.isGT(),
                 model.getLoaiKH(),
-                model.getLoaiKH(),
                 model.isTrangThai(),
                 model.getMoTa(),
                 model.getMaNV(),
@@ -54,14 +52,27 @@ public class KhachHangDAO {
         );
     }
 
+    public KhachHangModel findById(String makh) {
+        String sql = "select * from KHACHHANG WHERE MaKH = ?";
+        List<KhachHangModel> list = select(sql, makh);
+        return list.size() > 0 ? list.get(0) : null;
+    }
+
+    public void delete(KhachHangModel model) {
+        String sql = "Update KHACHHANG set TrangThai=0 where MaKH=?";
+        JdbcHelper.executeUpdate(sql, model.getMaKH());
+    }
+
     public List<KhachHangModel> select() {
         String sql = "SELECT * from KHACHHANG where TrangThai=1";
         return select(sql);
     }
+
     public List<KhachHangModel> selectSDT(String SDT) {
         String sql = "SELECT * from KHACHHANG where SDT = ?";
-        return select(sql,SDT);
+        return select(sql, SDT);
     }
+
     private List<KhachHangModel> select(String sql, Object... args) {
         List<KhachHangModel> list = new ArrayList<>();
         try {
@@ -95,5 +106,9 @@ public class KhachHangDAO {
         model.setMaNV(rs.getString(10));
         model.setHinh(rs.getString(11));
         return model;
+    }
+    public List<KhachHangModel> TimKiemTheoMa(String MaKH) {
+        String sql = "SELECT * FROM KHACHHANG WHERE MaKH LIKE ?";
+        return select(sql, "%" + MaKH + "%");
     }
 }

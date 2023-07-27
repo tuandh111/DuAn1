@@ -165,19 +165,19 @@
                                   </Group>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="panelShadow41" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSony4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="panelShadow42" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSony5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="panelShadow103" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSony6" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="panelShadow104" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSony7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="panelShadow105" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSony8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="panelShadow106" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSony9" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -203,15 +203,15 @@
                               </Group>
                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="panelShadow42" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="panelShadow41" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="panelShadow103" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LbSony5" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LbSony4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LbSony6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="panelShadow105" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="panelShadow104" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="panelShadow106" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LbSony8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LbSony7" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LbSony9" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="1094" max="32767" attributes="0"/>
                           </Group>
@@ -654,7 +654,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow41">
+                    <Container class="swing.PanelShadow" name="LbSony4">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -799,7 +799,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow42">
+                    <Container class="swing.PanelShadow" name="LbSony5">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -941,7 +941,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow103">
+                    <Container class="swing.PanelShadow" name="LbSony6">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1085,7 +1085,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow104">
+                    <Container class="swing.PanelShadow" name="LbSony7">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1227,7 +1227,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow105">
+                    <Container class="swing.PanelShadow" name="LbSony8">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1365,7 +1365,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow106">
+                    <Container class="swing.PanelShadow" name="LbSony9">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1548,33 +1548,33 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="panelShadow26" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbIphone7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="panelShadow24" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbIphone8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="panelShadow27" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="panelShadow9" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbIphone1" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="panelShadow20" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbIphone2" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="panelShadow21" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbIphone4" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="panelShadow23" max="32767" attributes="0"/>
+                                                  <Component id="lbIphone5" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="panelShadow22" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbIphone6" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="panelShadow19" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbIphone3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -1589,27 +1589,27 @@
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelShadow9" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbIphone1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbIphone2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbIphone3" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelShadow21" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow22" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow23" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbIphone4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbIphone6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbIphone5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="panelShadow24" min="-2" max="-2" attributes="0"/>
-                                          <Component id="panelShadow26" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbIphone8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbIphone7" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="1177" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="panelShadow27" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1629,7 +1629,7 @@
                         <Property name="text" type="java.lang.String" value="Iphone"/>
                       </Properties>
                     </Component>
-                    <Container class="swing.PanelShadow" name="panelShadow9">
+                    <Container class="swing.PanelShadow" name="lbIphone1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1769,7 +1769,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow19">
+                    <Container class="swing.PanelShadow" name="lbIphone3">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -1909,7 +1909,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow20">
+                    <Container class="swing.PanelShadow" name="lbIphone2">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2049,7 +2049,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow21">
+                    <Container class="swing.PanelShadow" name="lbIphone4">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2180,7 +2180,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow22">
+                    <Container class="swing.PanelShadow" name="lbIphone6">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2322,7 +2322,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow23">
+                    <Container class="swing.PanelShadow" name="lbIphone5">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2455,7 +2455,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow24">
+                    <Container class="swing.PanelShadow" name="lbIphone8">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2588,7 +2588,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow26">
+                    <Container class="swing.PanelShadow" name="lbIphone7">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2724,7 +2724,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow27">
+                    <Container class="swing.PanelShadow" name="lbIphone9">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -2897,27 +2897,27 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
-                              <Component id="panelShadow18" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
-                              <Component id="panelShadow25" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                              <Component id="panelShadow70" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
-                              <Component id="panelShadow69" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                              <Component id="panelShadow72" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
-                              <Component id="panelShadow71" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung6" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                              <Component id="panelShadow73" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="panelShadow74" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Component id="panelShadow75" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbISamSung9" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2927,21 +2927,21 @@
                               <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelShadow18" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow25" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow70" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelShadow69" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow72" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow71" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="panelShadow73" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow74" min="-2" max="-2" attributes="0"/>
-                                  <Component id="panelShadow75" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung9" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -2959,7 +2959,7 @@
                         <Property name="text" type="java.lang.String" value="SAMSUNG"/>
                       </Properties>
                     </Component>
-                    <Container class="swing.PanelShadow" name="panelShadow18">
+                    <Container class="swing.PanelShadow" name="lbISamSung1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3091,7 +3091,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow25">
+                    <Container class="swing.PanelShadow" name="lbISamSung2">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3228,7 +3228,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow69">
+                    <Container class="swing.PanelShadow" name="lbISamSung4">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3363,7 +3363,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow70">
+                    <Container class="swing.PanelShadow" name="lbISamSung3">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3500,7 +3500,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow71">
+                    <Container class="swing.PanelShadow" name="lbISamSung6">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3635,7 +3635,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow72">
+                    <Container class="swing.PanelShadow" name="lbISamSung5">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3767,7 +3767,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow73">
+                    <Container class="swing.PanelShadow" name="lbISamSung7">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -3903,7 +3903,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow74">
+                    <Container class="swing.PanelShadow" name="lbISamSung8">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>
@@ -4039,7 +4039,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="swing.PanelShadow" name="panelShadow75">
+                    <Container class="swing.PanelShadow" name="lbISamSung9">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="58" green="58" red="f6" type="rgb"/>

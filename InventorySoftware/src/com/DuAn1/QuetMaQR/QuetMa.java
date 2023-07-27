@@ -31,6 +31,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class QuetMa extends JDialog {
@@ -41,8 +42,8 @@ public class QuetMa extends JDialog {
     private static final String QR_CODE_PREFIX = "https://www.google.com/products/";
     public static String tenSP = "";
     public static int i = 0;
-    
-public static String Ten="";
+
+    public static String Ten = "";
 
     public static String getSoLuong() {
         return Ten;
@@ -51,8 +52,9 @@ public static String Ten="";
     public static void setSoLuong(String soLuong) {
         QuetMa.Ten = soLuong;
     }
-public QuetMa(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+
+    public QuetMa(JTextField txt) {
+        //super(parent, modal);
         // set the title of the frame
         setLayout(new FlowLayout()); // set the layout of the frame
         // set the default close operation of the frame
@@ -79,30 +81,38 @@ public QuetMa(java.awt.Frame parent, boolean modal) {
                 while (true) { // loop indefinitely
                     try {
                         BufferedImage image = webcam.getImage(); // get the image from the webcam
-                        LuminanceSource source = new BufferedImageLuminanceSource(image); // create a luminance source from the image
-                        BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source)); // create a binary bitmap from the luminance source
-                        Result result = new MultiFormatReader().decode(bitmap); // decode the bitmap using a multi-format reader
-                        String qrText = result.getText(); // get the text from the result
-                        label.setText(qrText); // set the text of the label for QR code text to qrText
-                        System.out.println("Hình ảnh là:" + result);
-                        tenSP = qrText;
-                        QuetMa.setSoLuong(qrText);
-                        System.out.println(tenSP);
-                        int j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-                        if (j == 0) {
-                            setVisible(false);
-                            webcam.close();                           
+                        if (image != null) {
+                            LuminanceSource source = new BufferedImageLuminanceSource(image); // create a luminance source from the image
+                            BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source)); // create a binary bitmap from the luminance source
+                            Result result = new MultiFormatReader().decode(bitmap); // decode the bitmap using a multi-format reader
+                            String qrText = result.getText(); // get the text from the result
+                            label.setText(qrText); // set the text of the label for QR code text to qrText
+                            tenSP = qrText;
+
+                            txt.setText(qrText);
+
+                            QuetMa.setSoLuong(qrText);
+                            int j;
+                            if (txt != null) {
+                                j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+                                if (j == 0) {
+                                    setVisible(false);
+                                    webcam.close();
+                                }
+                            }
+
+                            i = 1;
                         }
-                       i=1;
                     } catch (NotFoundException e) {
                         label.setText("No QR code found");
-                    } 
+                    }
                 }
-              
+
             }
         }).start(); // start the thread
     }
-   public static String getData() {
+
+    public static String getData() {
         return tenSP; // return the text from the text field
     }
 }
