@@ -111,4 +111,27 @@ public class ThongKeDao {
         }
         return list;
     }
+    public List<Object[]> getSoLuongKH() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call MaxMaKH}";
+                rs = JdbcHelper.executeQuery(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("MaxProductCode").trim(),};
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
 }

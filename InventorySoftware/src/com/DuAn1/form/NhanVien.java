@@ -5,18 +5,22 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Dao.VaiTroDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.DuAn1.Model.VaiTroModel;
 import com.tuandhpc05076.Form.ChuyenDe;
 import com.tuandhpc05076.helper.DateHelper;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +41,7 @@ import javax.swing.table.DefaultTableModel;
 public class NhanVien extends javax.swing.JPanel {
 
     ThongKeDao DaoThongKe = new ThongKeDao();
+    ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
     MaHoa MH = new MaHoa();
     DefaultTableModel model;
     NhanVienDAO1 Dao = new NhanVienDAO1();
@@ -108,6 +113,8 @@ public class NhanVien extends javax.swing.JPanel {
             Dao.insert(nv);
             this.filltable();
             this.ClearForm();
+            ThaoTacModel model = getFormThem();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Thêm Mới thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Thêm mới thất bại!");
@@ -120,6 +127,8 @@ public class NhanVien extends javax.swing.JPanel {
         try {
             Dao.update(nv);
             this.filltable();
+            ThaoTacModel model = getFormSua();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Cập nhật thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Cập nhật mới thất bại!");
@@ -132,6 +141,8 @@ public class NhanVien extends javax.swing.JPanel {
         try {
             Dao.delete(nv);
             this.filltable();
+            ThaoTacModel model = getFormXoa();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Xóa thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Xóa thất bại!");
@@ -255,21 +266,70 @@ public class NhanVien extends javax.swing.JPanel {
         btnXoa.setEnabled(edit);
     }
 
+    public ThaoTacModel getFormThem() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Nhân Viên");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormSua() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Nhân Viên");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormXoa() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Nhân Viên");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
     public boolean check() {
         if (txtHinhAnh1.getToolTipText() == null) {
             DialogHelper.alert(this, "Bạn chưa chọn hình ảnh");
             return false;
         }
-        if (Dao.findById(txtTaikhoan.getText()) != null) {
-            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
-            return false;
-        }
+//        if (Dao.findById(txtTaikhoan.getText()) != null) {
+//            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
+//            return false;
+//        }
         if (txtMatkhau.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Mật khẩu không được để trống");
             return false;
         }
         if (txtHoten.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Họ và tên không được để trống");
+            return false;
+        }
+        if (txtNgaysinh.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ngày sinh không được để trống");
             return false;
         }
         if (!txtHoten.getText().matches("^[\\p{L}\\s]{0,50}$")) {
@@ -863,14 +923,14 @@ public class NhanVien extends javax.swing.JPanel {
                 List<NhanVienModel> list = Dao.orderByMaTang();
                 for (NhanVienModel nv : list) {
                     Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
-                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                        nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
                     model.addRow(row);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             }
 
-        }else {
+        } else {
 
             model = (DefaultTableModel) tblNhanvien.getModel();
             model.setRowCount(0);
@@ -878,7 +938,7 @@ public class NhanVien extends javax.swing.JPanel {
                 List<NhanVienModel> list = Dao.orderByTen();
                 for (NhanVienModel nv : list) {
                     Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
-                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                        nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
                     model.addRow(row);
                 }
             } catch (Exception e) {
@@ -888,7 +948,7 @@ public class NhanVien extends javax.swing.JPanel {
     }//GEN-LAST:event_btnTangActionPerformed
 
     private void btnGiamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiamActionPerformed
-         if (cboSapXep.getSelectedItem() == null) {
+        if (cboSapXep.getSelectedItem() == null) {
             DialogHelper.alert(this, "Bạn cần chọn hình thức sắp xếp");
             return;
         }
@@ -899,7 +959,7 @@ public class NhanVien extends javax.swing.JPanel {
                 List<NhanVienModel> list = Dao.orderByMaGiam();
                 for (NhanVienModel nv : list) {
                     Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
-                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                        nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
                     model.addRow(row);
                 }
             } catch (Exception e) {
@@ -914,7 +974,7 @@ public class NhanVien extends javax.swing.JPanel {
                 List<NhanVienModel> list = Dao.orderByTenGiam();
                 for (NhanVienModel nv : list) {
                     Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
-                    nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                        nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
                     model.addRow(row);
                 }
             } catch (Exception e) {

@@ -4,8 +4,13 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.VaiTroDao;
+import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.ThaoTacModel;
 import com.DuAn1.Model.VaiTroModel;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -17,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class VaiTro extends javax.swing.JPanel {
 
     DefaultTableModel model;
+    ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
     VaiTroDao Dao = new VaiTroDao();
     int row = -1;
 
@@ -58,6 +64,8 @@ public class VaiTro extends javax.swing.JPanel {
             Dao.insert(nv);
             this.filltable();
             this.ClearForm();
+            ThaoTacModel model = getFormThem();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Thêm Mới thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Thêm mới thất bại!");
@@ -70,6 +78,8 @@ public class VaiTro extends javax.swing.JPanel {
         try {
             Dao.update(nv);
             this.filltable();
+             ThaoTacModel model = getFormSua();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Cập nhật thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Cập nhật mới thất bại!");
@@ -82,6 +92,8 @@ public class VaiTro extends javax.swing.JPanel {
         try {
             Dao.delete(nv);
             this.filltable();
+            ThaoTacModel model = getFormXoa();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Xóa thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Xóa thất bại!");
@@ -149,7 +161,50 @@ public class VaiTro extends javax.swing.JPanel {
         btnSua.setEnabled(edit);
         btnSua.setEnabled(edit);
     }
+    public ThaoTacModel getFormThem() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Vai Trò");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
 
+    public ThaoTacModel getFormSua() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Vai Trò");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormXoa() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Vai Trò");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
