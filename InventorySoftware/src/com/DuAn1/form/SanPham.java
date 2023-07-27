@@ -1089,9 +1089,10 @@ public class SanPham extends javax.swing.JPanel {
             }
         } else {
             // create and display a new form
-
-            QuetMa n1 = new QuetMa(Main.getMain(), true);
-            n1.setVisible(true);
+            
+            QuetMa n1 = new QuetMa(txtTenSP);
+            System.out.println("");
+//            n1.setVisible(true);
             txtTenSP.setText(QuetMa.getSoLuong());
             switchButton1.setSelectedAnimate(false);
         }

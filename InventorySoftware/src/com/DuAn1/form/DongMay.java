@@ -908,7 +908,7 @@ public class DongMay extends javax.swing.JPanel {
     private void tblNhanvienMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMousePressed
         if (evt.getClickCount() == 1) {
             this.row = tblNhanvien.getSelectedRow();
-            this.edit();
+            //this.edit();
         }
     }//GEN-LAST:event_tblNhanvienMousePressed
 

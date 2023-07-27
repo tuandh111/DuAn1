@@ -33,7 +33,8 @@ import javax.swing.JOptionPane;
 public class DatHang1 extends javax.swing.JPanel {
 
     SanPhamDAO daoSP = new SanPhamDAO();
-    KhachHangDAO daoKH= new KhachHangDAO();
+    KhachHangDAO daoKH = new KhachHangDAO();
+
     public DatHang1() {
         initComponents();
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
@@ -49,6 +50,33 @@ public class DatHang1 extends javax.swing.JPanel {
                 }
             }
         });
+        LbSony1.setVisible(false);
+        LbSony2.setVisible(false);
+        LbSony3.setVisible(false);
+        LbSony4.setVisible(false);
+        LbSony5.setVisible(false);
+        LbSony6.setVisible(false);
+        LbSony7.setVisible(false);
+        LbSony8.setVisible(false);
+        LbSony9.setVisible(false);
+        lbIphone1.setVisible(false);
+        lbIphone2.setVisible(false);
+        lbIphone3.setVisible(false);
+        lbIphone4.setVisible(false);
+        lbIphone5.setVisible(false);
+        lbIphone6.setVisible(false);
+        lbIphone7.setVisible(false);
+        lbIphone8.setVisible(false);
+        lbIphone9.setVisible(false);
+        lbISamSung1.setVisible(false);
+        lbISamSung2.setVisible(false);
+        lbISamSung3.setVisible(false);
+        lbISamSung4.setVisible(false);
+        lbISamSung5.setVisible(false);
+        lbISamSung6.setVisible(false);
+        lbISamSung7.setVisible(false);
+        lbISamSung8.setVisible(false);
+        lbISamSung9.setVisible(false);
         LoadSP();
         txtThongBao.setVisible(false);
     }
@@ -64,46 +92,55 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone1.setVisible(true);
                 }
                 if (i == 1) {
                     txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone2.setVisible(true);
                 }
                 if (i == 2) {
                     txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone3.setVisible(true);
                 }
                 if (i == 3) {
                     txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone4.setVisible(true);
                 }
                 if (i == 4) {
                     txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone5.setVisible(true);
                 }
                 if (i == 5) {
                     txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone6.setVisible(true);
                 }
                 if (i == 6) {
                     txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone7.setVisible(true);
                 }
                 if (i == 7) {
                     txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone8.setVisible(true);
                 }
                 if (i == 8) {
                     txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
+                    lbIphone9.setVisible(true);
                 }
                 i++;
             }
@@ -115,46 +152,55 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
+                    lbISamSung1.setVisible(true);
                 }
                 if (j == 1) {
                     txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
+                    lbISamSung2.setVisible(true);
                 }
                 if (j == 2) {
                     txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung3.setVisible(true);
                 }
                 if (j == 3) {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung4.setVisible(true);
                 }
                 if (j == 4) {
                     txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung5.setVisible(true);
                 }
                 if (j == 5) {
                     txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung6.setVisible(true);
                 }
                 if (j == 6) {
                     txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung7.setVisible(true);
                 }
                 if (j == 7) {
                     txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung8.setVisible(true);
                 }
                 if (j == 8) {
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
+                     lbISamSung9.setVisible(true);
                 }
                 j++;
             }
@@ -166,47 +212,55 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
+                    LbSony1.setVisible(true);
                 }
                 if (z == 1) {
                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
+                    LbSony2.setVisible(true);
                 }
                 if (z == 2) {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony3.setVisible(true);
                 }
                 if (z == 3) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony4.setVisible(true);
                 }
                 if (z == 4) {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony5.setVisible(true);
                 }
                 if (z == 5) {
-
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony6.setVisible(true);
                 }
                 if (z == 6) {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony7.setVisible(true);
                 }
                 if (z == 7) {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony8.setVisible(true);
                 }
                 if (z == 8) {
                     txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
+                     LbSony9.setVisible(true);
                 }
 
             }
@@ -251,42 +305,42 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongConSony3 = new javax.swing.JLabel();
         txtSoLuong152 = new javax.swing.JLabel();
         txtSoLuongBan3 = new javax.swing.JLabel();
-        panelShadow41 = new swing.PanelShadow();
+        LbSony4 = new swing.PanelShadow();
         txtHinhAnhSony4 = new swing.ImageAvatar();
         txtadd1 = new com.DuAn1.swing0.button0();
         txtTenSony4 = new javax.swing.JLabel();
         txtSoLuongConSony4 = new javax.swing.JLabel();
         txtSoLuong155 = new javax.swing.JLabel();
         txtSoLuongBan4 = new javax.swing.JLabel();
-        panelShadow42 = new swing.PanelShadow();
+        LbSony5 = new swing.PanelShadow();
         txtHinhAnhSony5 = new swing.ImageAvatar();
         txtadd2 = new com.DuAn1.swing0.button0();
         txtTenSony5 = new javax.swing.JLabel();
         txtSoLuongConSony5 = new javax.swing.JLabel();
         txtSoLuong158 = new javax.swing.JLabel();
         txtSoLuongBan5 = new javax.swing.JLabel();
-        panelShadow103 = new swing.PanelShadow();
+        LbSony6 = new swing.PanelShadow();
         txtHinhAnhSony6 = new swing.ImageAvatar();
         txtadd5 = new com.DuAn1.swing0.button0();
         txtTenSony6 = new javax.swing.JLabel();
         txtSoLuongConSony6 = new javax.swing.JLabel();
         txtSoLuong161 = new javax.swing.JLabel();
         txtSoLuongBan6 = new javax.swing.JLabel();
-        panelShadow104 = new swing.PanelShadow();
+        LbSony7 = new swing.PanelShadow();
         txtHinhAnhSony7 = new swing.ImageAvatar();
         txtadd6 = new com.DuAn1.swing0.button0();
         txtTenSony7 = new javax.swing.JLabel();
         txtSoLuongConSony7 = new javax.swing.JLabel();
         txtSoLuong170 = new javax.swing.JLabel();
         txtSoLuongBan7 = new javax.swing.JLabel();
-        panelShadow105 = new swing.PanelShadow();
+        LbSony8 = new swing.PanelShadow();
         txtHinhAnhSony8 = new swing.ImageAvatar();
         txtadd7 = new com.DuAn1.swing0.button0();
         txtTenSony8 = new javax.swing.JLabel();
         txtSoLuongConSony8 = new javax.swing.JLabel();
         txtSoLuong167 = new javax.swing.JLabel();
         txtSoLuongBan8 = new javax.swing.JLabel();
-        panelShadow106 = new swing.PanelShadow();
+        LbSony9 = new swing.PanelShadow();
         txtHinhAnhSony9 = new swing.ImageAvatar();
         txtadd8 = new com.DuAn1.swing0.button0();
         txtTenSony9 = new javax.swing.JLabel();
@@ -296,63 +350,63 @@ public class DatHang1 extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        panelShadow9 = new swing.PanelShadow();
+        lbIphone1 = new swing.PanelShadow();
         txtHinhAnhIphone1 = new swing.ImageAvatar();
         txtTenIphone1 = new javax.swing.JLabel();
         txtSoLuongConIphone1 = new javax.swing.JLabel();
         txtSoLuong110 = new javax.swing.JLabel();
         txtSoLuongBanIphone1 = new javax.swing.JLabel();
         btnAdd2 = new com.DuAn1.swing0.button0();
-        panelShadow19 = new swing.PanelShadow();
+        lbIphone3 = new swing.PanelShadow();
         txtHinhAnhIphone3 = new swing.ImageAvatar();
         txtTenIphone3 = new javax.swing.JLabel();
         txtSoLuongConIphone3 = new javax.swing.JLabel();
         txtSoLuong114 = new javax.swing.JLabel();
         txtSoLuongBanIphone3 = new javax.swing.JLabel();
         btnAdd4 = new com.DuAn1.swing0.button0();
-        panelShadow20 = new swing.PanelShadow();
+        lbIphone2 = new swing.PanelShadow();
         txtHinhAnhIphone2 = new swing.ImageAvatar();
         txtTenIphone2 = new javax.swing.JLabel();
         txtSoLuongConIphone2 = new javax.swing.JLabel();
         txtSoLuong112 = new javax.swing.JLabel();
         txtSoLuongBanIphone2 = new javax.swing.JLabel();
         btnAdd3 = new com.DuAn1.swing0.button0();
-        panelShadow21 = new swing.PanelShadow();
+        lbIphone4 = new swing.PanelShadow();
         txtHinhAnhIphone4 = new swing.ImageAvatar();
         txtTenIphone4 = new javax.swing.JLabel();
         txtSoLuongConIphone4 = new javax.swing.JLabel();
         txtSoLuong120 = new javax.swing.JLabel();
         txtSoLuongBanIphone4 = new javax.swing.JLabel();
         btnAdd5 = new com.DuAn1.swing0.button0();
-        panelShadow22 = new swing.PanelShadow();
+        lbIphone6 = new swing.PanelShadow();
         txtHinhAnhIphone6 = new swing.ImageAvatar();
         txtTenIphone6 = new javax.swing.JLabel();
         txtSoLuongConIphone6 = new javax.swing.JLabel();
         txtSoLuong116 = new javax.swing.JLabel();
         txtSoLuongBanIphone6 = new javax.swing.JLabel();
         btnAdd7 = new com.DuAn1.swing0.button0();
-        panelShadow23 = new swing.PanelShadow();
+        lbIphone5 = new swing.PanelShadow();
         txtHinhAnhIphone5 = new swing.ImageAvatar();
         txtTenIphone5 = new javax.swing.JLabel();
         txtSoLuongConIphone5 = new javax.swing.JLabel();
         txtSoLuong118 = new javax.swing.JLabel();
         txtSoLuongBanIphone5 = new javax.swing.JLabel();
         btnAdd6 = new com.DuAn1.swing0.button0();
-        panelShadow24 = new swing.PanelShadow();
+        lbIphone8 = new swing.PanelShadow();
         txtHinhAnhIphone8 = new swing.ImageAvatar();
         txtTenIphone8 = new javax.swing.JLabel();
         txtSoLuongConIphone8 = new javax.swing.JLabel();
         txtSoLuong124 = new javax.swing.JLabel();
         txtSoLuongBanIphone8 = new javax.swing.JLabel();
         btnAdd9 = new com.DuAn1.swing0.button0();
-        panelShadow26 = new swing.PanelShadow();
+        lbIphone7 = new swing.PanelShadow();
         txtHinhAnhIphone7 = new swing.ImageAvatar();
         txtTenIphone7 = new javax.swing.JLabel();
         txtSoLuongConIphone7 = new javax.swing.JLabel();
         txtSoLuong122 = new javax.swing.JLabel();
         txtSoLuongBanIphone7 = new javax.swing.JLabel();
         btnAdd8 = new com.DuAn1.swing0.button0();
-        panelShadow27 = new swing.PanelShadow();
+        lbIphone9 = new swing.PanelShadow();
         txtHinhAnhIphone9 = new swing.ImageAvatar();
         txtTenIphone9 = new javax.swing.JLabel();
         txtSoLuongConIphone9 = new javax.swing.JLabel();
@@ -362,63 +416,63 @@ public class DatHang1 extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel101 = new javax.swing.JLabel();
-        panelShadow18 = new swing.PanelShadow();
+        lbISamSung1 = new swing.PanelShadow();
         txtHinhAnhSamSung1 = new swing.ImageAvatar();
         txtTenSamSung1 = new javax.swing.JLabel();
         txtSoLuongBanSamSung1 = new javax.swing.JLabel();
         txtSoLuong98 = new javax.swing.JLabel();
         txtSoLuongConSamSung1 = new javax.swing.JLabel();
         btnAdd11 = new com.DuAn1.swing0.button0();
-        panelShadow25 = new swing.PanelShadow();
+        lbISamSung2 = new swing.PanelShadow();
         txtHinhAnhSamSung2 = new swing.ImageAvatar();
         txtTenSamSung2 = new javax.swing.JLabel();
         txtSoLuongBanSamSung2 = new javax.swing.JLabel();
         txtSoLuong99 = new javax.swing.JLabel();
         txtSoLuongConSamSung2 = new javax.swing.JLabel();
         btnAdd12 = new com.DuAn1.swing0.button0();
-        panelShadow69 = new swing.PanelShadow();
+        lbISamSung4 = new swing.PanelShadow();
         txtHinhAnhSamSung4 = new swing.ImageAvatar();
         txtTenSamSung4 = new javax.swing.JLabel();
         txtSoLuongBanSamSung4 = new javax.swing.JLabel();
         txtSoLuong103 = new javax.swing.JLabel();
         txtSoLuongConSamSung4 = new javax.swing.JLabel();
         btnAdd14 = new com.DuAn1.swing0.button0();
-        panelShadow70 = new swing.PanelShadow();
+        lbISamSung3 = new swing.PanelShadow();
         txtHinhAnhSamSung3 = new swing.ImageAvatar();
         txtTenSamSung3 = new javax.swing.JLabel();
         txtSoLuongBanSamSung3 = new javax.swing.JLabel();
         txtSoLuong100 = new javax.swing.JLabel();
         txtSoLuongConSamSung3 = new javax.swing.JLabel();
         btnAdd13 = new com.DuAn1.swing0.button0();
-        panelShadow71 = new swing.PanelShadow();
+        lbISamSung6 = new swing.PanelShadow();
         txtHinhAnhSamSung6 = new swing.ImageAvatar();
         txtTenSamSung6 = new javax.swing.JLabel();
         txtSoLuongBanSamSung6 = new javax.swing.JLabel();
         txtSoLuong101 = new javax.swing.JLabel();
         txtSoLuongConSamSung6 = new javax.swing.JLabel();
         btnAdd16 = new com.DuAn1.swing0.button0();
-        panelShadow72 = new swing.PanelShadow();
+        lbISamSung5 = new swing.PanelShadow();
         txtHinhAnhSamSung5 = new swing.ImageAvatar();
         txtTenSamSung5 = new javax.swing.JLabel();
         txtSoLuongBanSamSung5 = new javax.swing.JLabel();
         txtSoLuong102 = new javax.swing.JLabel();
         txtSoLuongConSamSung5 = new javax.swing.JLabel();
         btnAdd15 = new com.DuAn1.swing0.button0();
-        panelShadow73 = new swing.PanelShadow();
+        lbISamSung7 = new swing.PanelShadow();
         txtHinhAnhSamSung7 = new swing.ImageAvatar();
         txtTenSamSung7 = new javax.swing.JLabel();
         txtSoLuongBanSamSung7 = new javax.swing.JLabel();
         txtSoLuong104 = new javax.swing.JLabel();
         txtSoLuongConSamSung7 = new javax.swing.JLabel();
         btnAdd17 = new com.DuAn1.swing0.button0();
-        panelShadow74 = new swing.PanelShadow();
+        lbISamSung8 = new swing.PanelShadow();
         txtTenSamSung8 = new javax.swing.JLabel();
         txtHinhAnhSamSung8 = new swing.ImageAvatar();
         txtSoLuongConSamSung8 = new javax.swing.JLabel();
         txtSoLuong106 = new javax.swing.JLabel();
         txtSoLuongBanSamSung8 = new javax.swing.JLabel();
         btnAdd18 = new com.DuAn1.swing0.button0();
-        panelShadow75 = new swing.PanelShadow();
+        lbISamSung9 = new swing.PanelShadow();
         txtHinhAnhSamSung9 = new swing.ImageAvatar();
         txtTenSamSung9 = new javax.swing.JLabel();
         txtSoLuongConSamSung9 = new javax.swing.JLabel();
@@ -718,8 +772,8 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addContainerGap(77, Short.MAX_VALUE)))
         );
 
-        panelShadow41.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow41.setShadowOpacity(0.3F);
+        LbSony4.setBackground(new java.awt.Color(246, 88, 88));
+        LbSony4.setShadowOpacity(0.3F);
 
         txtHinhAnhSony4.setBorderSize(5);
         txtHinhAnhSony4.setBorderSpace(0);
@@ -754,55 +808,55 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongBan4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongBan4.setText("0");
 
-        javax.swing.GroupLayout panelShadow41Layout = new javax.swing.GroupLayout(panelShadow41);
-        panelShadow41.setLayout(panelShadow41Layout);
-        panelShadow41Layout.setHorizontalGroup(
-            panelShadow41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow41Layout.createSequentialGroup()
+        javax.swing.GroupLayout LbSony4Layout = new javax.swing.GroupLayout(LbSony4);
+        LbSony4.setLayout(LbSony4Layout);
+        LbSony4Layout.setHorizontalGroup(
+            LbSony4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony4Layout.createSequentialGroup()
                 .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(txtHinhAnhSony4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
-            .addGroup(panelShadow41Layout.createSequentialGroup()
+            .addGroup(LbSony4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow41Layout.createSequentialGroup()
+                .addGroup(LbSony4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LbSony4Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(txtadd1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow41Layout.createSequentialGroup()
+                    .addGroup(LbSony4Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSony4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong155, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuongBan4)))
                 .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(panelShadow41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow41Layout.createSequentialGroup()
+            .addGroup(LbSony4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony4Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
-        panelShadow41Layout.setVerticalGroup(
-            panelShadow41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow41Layout.createSequentialGroup()
+        LbSony4Layout.setVerticalGroup(
+            LbSony4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LbSony4Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(txtHinhAnhSony4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(panelShadow41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LbSony4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuong155)
                     .addComponent(txtSoLuongConSony4)
                     .addComponent(txtSoLuongBan4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
-            .addGroup(panelShadow41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow41Layout.createSequentialGroup()
+            .addGroup(LbSony4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony4Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addComponent(txtTenSony4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(60, Short.MAX_VALUE)))
         );
 
-        panelShadow42.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow42.setShadowOpacity(0.3F);
+        LbSony5.setBackground(new java.awt.Color(246, 88, 88));
+        LbSony5.setShadowOpacity(0.3F);
 
         txtHinhAnhSony5.setBorderSize(5);
         txtHinhAnhSony5.setBorderSpace(0);
@@ -837,53 +891,53 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongBan5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongBan5.setText("0");
 
-        javax.swing.GroupLayout panelShadow42Layout = new javax.swing.GroupLayout(panelShadow42);
-        panelShadow42.setLayout(panelShadow42Layout);
-        panelShadow42Layout.setHorizontalGroup(
-            panelShadow42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow42Layout.createSequentialGroup()
+        javax.swing.GroupLayout LbSony5Layout = new javax.swing.GroupLayout(LbSony5);
+        LbSony5.setLayout(LbSony5Layout);
+        LbSony5Layout.setHorizontalGroup(
+            LbSony5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(txtHinhAnhSony5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
-            .addGroup(panelShadow42Layout.createSequentialGroup()
+            .addGroup(LbSony5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(LbSony5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtadd2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow42Layout.createSequentialGroup()
+                    .addGroup(LbSony5Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSony5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong158, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBan5)))
                 .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(panelShadow42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow42Layout.createSequentialGroup()
+            .addGroup(LbSony5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony5Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
-        panelShadow42Layout.setVerticalGroup(
-            panelShadow42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow42Layout.createSequentialGroup()
+        LbSony5Layout.setVerticalGroup(
+            LbSony5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LbSony5Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(txtHinhAnhSony5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(panelShadow42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LbSony5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSony5)
                     .addComponent(txtSoLuong158)
                     .addComponent(txtSoLuongBan5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
-            .addGroup(panelShadow42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow42Layout.createSequentialGroup()
+            .addGroup(LbSony5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony5Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addComponent(txtTenSony5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(66, Short.MAX_VALUE)))
         );
 
-        panelShadow103.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow103.setShadowOpacity(0.3F);
+        LbSony6.setBackground(new java.awt.Color(246, 88, 88));
+        LbSony6.setShadowOpacity(0.3F);
 
         txtHinhAnhSony6.setBorderSize(5);
         txtHinhAnhSony6.setBorderSpace(0);
@@ -918,54 +972,54 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongBan6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongBan6.setText("0");
 
-        javax.swing.GroupLayout panelShadow103Layout = new javax.swing.GroupLayout(panelShadow103);
-        panelShadow103.setLayout(panelShadow103Layout);
-        panelShadow103Layout.setHorizontalGroup(
-            panelShadow103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow103Layout.createSequentialGroup()
+        javax.swing.GroupLayout LbSony6Layout = new javax.swing.GroupLayout(LbSony6);
+        LbSony6.setLayout(LbSony6Layout);
+        LbSony6Layout.setHorizontalGroup(
+            LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony6Layout.createSequentialGroup()
                 .addGap(0, 16, Short.MAX_VALUE)
-                .addGroup(panelShadow103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow103Layout.createSequentialGroup()
+                .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony6Layout.createSequentialGroup()
                         .addComponent(txtHinhAnhSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow103Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony6Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong161, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuongBan6)
                         .addGap(12, 12, 12))
-                    .addGroup(panelShadow103Layout.createSequentialGroup()
+                    .addGroup(LbSony6Layout.createSequentialGroup()
                         .addComponent(txtadd5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(panelShadow103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow103Layout.createSequentialGroup()
+            .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony6Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
-        panelShadow103Layout.setVerticalGroup(
-            panelShadow103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow103Layout.createSequentialGroup()
+        LbSony6Layout.setVerticalGroup(
+            LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LbSony6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addGroup(panelShadow103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSony6)
                     .addComponent(txtSoLuong161)
                     .addComponent(txtSoLuongBan6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(13, Short.MAX_VALUE))
-            .addGroup(panelShadow103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow103Layout.createSequentialGroup()
+            .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony6Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addComponent(txtTenSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(73, Short.MAX_VALUE)))
         );
 
-        panelShadow104.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow104.setShadowOpacity(0.3F);
+        LbSony7.setBackground(new java.awt.Color(246, 88, 88));
+        LbSony7.setShadowOpacity(0.3F);
 
         txtHinhAnhSony7.setBorderSize(5);
         txtHinhAnhSony7.setBorderSpace(0);
@@ -1000,53 +1054,53 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongBan7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongBan7.setText("0");
 
-        javax.swing.GroupLayout panelShadow104Layout = new javax.swing.GroupLayout(panelShadow104);
-        panelShadow104.setLayout(panelShadow104Layout);
-        panelShadow104Layout.setHorizontalGroup(
-            panelShadow104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow104Layout.createSequentialGroup()
+        javax.swing.GroupLayout LbSony7Layout = new javax.swing.GroupLayout(LbSony7);
+        LbSony7.setLayout(LbSony7Layout);
+        LbSony7Layout.setHorizontalGroup(
+            LbSony7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony7Layout.createSequentialGroup()
                 .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(txtHinhAnhSony7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
-            .addGroup(panelShadow104Layout.createSequentialGroup()
+            .addGroup(LbSony7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(LbSony7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtadd6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow104Layout.createSequentialGroup()
+                    .addGroup(LbSony7Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSony7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong170, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBan7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelShadow104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow104Layout.createSequentialGroup()
+            .addGroup(LbSony7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony7Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
-        panelShadow104Layout.setVerticalGroup(
-            panelShadow104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow104Layout.createSequentialGroup()
+        LbSony7Layout.setVerticalGroup(
+            LbSony7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LbSony7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSony7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addGroup(panelShadow104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LbSony7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSony7)
                     .addComponent(txtSoLuong170)
                     .addComponent(txtSoLuongBan7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
-            .addGroup(panelShadow104Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow104Layout.createSequentialGroup()
+            .addGroup(LbSony7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony7Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addComponent(txtTenSony7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(72, Short.MAX_VALUE)))
         );
 
-        panelShadow105.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow105.setShadowOpacity(0.3F);
+        LbSony8.setBackground(new java.awt.Color(246, 88, 88));
+        LbSony8.setShadowOpacity(0.3F);
 
         txtHinhAnhSony8.setBorderSize(5);
         txtHinhAnhSony8.setBorderSpace(0);
@@ -1081,50 +1135,50 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongBan8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongBan8.setText("0");
 
-        javax.swing.GroupLayout panelShadow105Layout = new javax.swing.GroupLayout(panelShadow105);
-        panelShadow105.setLayout(panelShadow105Layout);
-        panelShadow105Layout.setHorizontalGroup(
-            panelShadow105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow105Layout.createSequentialGroup()
+        javax.swing.GroupLayout LbSony8Layout = new javax.swing.GroupLayout(LbSony8);
+        LbSony8.setLayout(LbSony8Layout);
+        LbSony8Layout.setHorizontalGroup(
+            LbSony8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony8Layout.createSequentialGroup()
                 .addGap(0, 18, Short.MAX_VALUE)
-                .addGroup(panelShadow105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtHinhAnhSony8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtadd7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow105Layout.createSequentialGroup()
+                    .addGroup(LbSony8Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSony8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong167, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBan8)))
                 .addContainerGap())
-            .addGroup(panelShadow105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow105Layout.createSequentialGroup()
+            .addGroup(LbSony8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony8Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
-        panelShadow105Layout.setVerticalGroup(
-            panelShadow105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow105Layout.createSequentialGroup()
+        LbSony8Layout.setVerticalGroup(
+            LbSony8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LbSony8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSony8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelShadow105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LbSony8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSony8)
                     .addComponent(txtSoLuong167)
                     .addComponent(txtSoLuongBan8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
-            .addGroup(panelShadow105Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow105Layout.createSequentialGroup()
+            .addGroup(LbSony8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony8Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addComponent(txtTenSony8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(66, Short.MAX_VALUE)))
         );
 
-        panelShadow106.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow106.setShadowOpacity(0.3F);
+        LbSony9.setBackground(new java.awt.Color(246, 88, 88));
+        LbSony9.setShadowOpacity(0.3F);
 
         txtHinhAnhSony9.setBorderSize(5);
         txtHinhAnhSony9.setBorderSpace(0);
@@ -1159,46 +1213,46 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoLuongBan9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongBan9.setText("0");
 
-        javax.swing.GroupLayout panelShadow106Layout = new javax.swing.GroupLayout(panelShadow106);
-        panelShadow106.setLayout(panelShadow106Layout);
-        panelShadow106Layout.setHorizontalGroup(
-            panelShadow106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow106Layout.createSequentialGroup()
+        javax.swing.GroupLayout LbSony9Layout = new javax.swing.GroupLayout(LbSony9);
+        LbSony9.setLayout(LbSony9Layout);
+        LbSony9Layout.setHorizontalGroup(
+            LbSony9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony9Layout.createSequentialGroup()
                 .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(txtHinhAnhSony9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
-            .addGroup(panelShadow106Layout.createSequentialGroup()
+            .addGroup(LbSony9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(LbSony9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtadd8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow106Layout.createSequentialGroup()
+                    .addGroup(LbSony9Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSony9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong164, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBan9)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelShadow106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow106Layout.createSequentialGroup()
+            .addGroup(LbSony9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony9Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
         );
-        panelShadow106Layout.setVerticalGroup(
-            panelShadow106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow106Layout.createSequentialGroup()
+        LbSony9Layout.setVerticalGroup(
+            LbSony9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LbSony9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSony9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(panelShadow106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LbSony9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSony9)
                     .addComponent(txtSoLuong164)
                     .addComponent(txtSoLuongBan9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtadd8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
-            .addGroup(panelShadow106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelShadow106Layout.createSequentialGroup()
+            .addGroup(LbSony9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LbSony9Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
                     .addComponent(txtTenSony9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(72, Short.MAX_VALUE)))
@@ -1219,18 +1273,18 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(LbSony3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel8Layout.createSequentialGroup()
-                            .addComponent(panelShadow41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbSony4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(panelShadow42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbSony5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(panelShadow103, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LbSony6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addGap(6, 6, 6)
-                            .addComponent(panelShadow104, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbSony7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(panelShadow105, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbSony8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(panelShadow106, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(LbSony9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(752, 752, 752))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
@@ -1249,14 +1303,14 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(LbSony1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(panelShadow42, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelShadow41, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelShadow103, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LbSony5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LbSony4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LbSony6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelShadow105, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelShadow104, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelShadow106, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LbSony8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LbSony7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LbSony9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(1094, Short.MAX_VALUE))
         );
 
@@ -1273,8 +1327,8 @@ public class DatHang1 extends javax.swing.JPanel {
         jLabel11.setForeground(new java.awt.Color(77, 77, 77));
         jLabel11.setText("Iphone");
 
-        panelShadow9.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow9.setShadowOpacity(0.3F);
+        lbIphone1.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone1.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone1.setBorderSize(5);
         txtHinhAnhIphone1.setBorderSpace(0);
@@ -1309,25 +1363,25 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow9Layout = new javax.swing.GroupLayout(panelShadow9);
-        panelShadow9.setLayout(panelShadow9Layout);
-        panelShadow9Layout.setHorizontalGroup(
-            panelShadow9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow9Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone1Layout = new javax.swing.GroupLayout(lbIphone1);
+        lbIphone1.setLayout(lbIphone1Layout);
+        lbIphone1Layout.setHorizontalGroup(
+            lbIphone1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone1Layout.createSequentialGroup()
                 .addContainerGap(10, Short.MAX_VALUE)
-                .addGroup(panelShadow9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow9Layout.createSequentialGroup()
+                .addGroup(lbIphone1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbIphone1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow9Layout.createSequentialGroup()
-                            .addGroup(panelShadow9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(panelShadow9Layout.createSequentialGroup()
+                    .addGroup(lbIphone1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone1Layout.createSequentialGroup()
+                            .addGroup(lbIphone1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(lbIphone1Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(txtTenIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(txtHinhAnhIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(14, 14, 14))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow9Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone1Layout.createSequentialGroup()
                             .addComponent(txtSoLuongConIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtSoLuong110, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1335,15 +1389,15 @@ public class DatHang1 extends javax.swing.JPanel {
                             .addComponent(txtSoLuongBanIphone1)
                             .addContainerGap()))))
         );
-        panelShadow9Layout.setVerticalGroup(
-            panelShadow9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow9Layout.createSequentialGroup()
+        lbIphone1Layout.setVerticalGroup(
+            lbIphone1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone1)
                     .addComponent(txtSoLuong110)
                     .addComponent(txtSoLuongBanIphone1))
@@ -1352,8 +1406,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow19.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow19.setShadowOpacity(0.3F);
+        lbIphone3.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone3.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone3.setBorderSize(5);
         txtHinhAnhIphone3.setBorderSpace(0);
@@ -1388,25 +1442,25 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow19Layout = new javax.swing.GroupLayout(panelShadow19);
-        panelShadow19.setLayout(panelShadow19Layout);
-        panelShadow19Layout.setHorizontalGroup(
-            panelShadow19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow19Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone3Layout = new javax.swing.GroupLayout(lbIphone3);
+        lbIphone3.setLayout(lbIphone3Layout);
+        lbIphone3Layout.setHorizontalGroup(
+            lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone3Layout.createSequentialGroup()
                 .addContainerGap(10, Short.MAX_VALUE)
-                .addGroup(panelShadow19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow19Layout.createSequentialGroup()
+                .addGroup(lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbIphone3Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow19Layout.createSequentialGroup()
-                            .addGroup(panelShadow19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(panelShadow19Layout.createSequentialGroup()
+                    .addGroup(lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone3Layout.createSequentialGroup()
+                            .addGroup(lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(lbIphone3Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(txtTenIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(txtHinhAnhIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(14, 14, 14))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow19Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone3Layout.createSequentialGroup()
                             .addComponent(txtSoLuongConIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtSoLuong114, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1414,15 +1468,15 @@ public class DatHang1 extends javax.swing.JPanel {
                             .addComponent(txtSoLuongBanIphone3)
                             .addContainerGap()))))
         );
-        panelShadow19Layout.setVerticalGroup(
-            panelShadow19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow19Layout.createSequentialGroup()
+        lbIphone3Layout.setVerticalGroup(
+            lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone3)
                     .addComponent(txtSoLuong114)
                     .addComponent(txtSoLuongBanIphone3))
@@ -1431,8 +1485,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow20.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow20.setShadowOpacity(0.3F);
+        lbIphone2.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone2.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone2.setBorderSize(5);
         txtHinhAnhIphone2.setBorderSpace(0);
@@ -1467,25 +1521,25 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow20Layout = new javax.swing.GroupLayout(panelShadow20);
-        panelShadow20.setLayout(panelShadow20Layout);
-        panelShadow20Layout.setHorizontalGroup(
-            panelShadow20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow20Layout.createSequentialGroup()
-                .addGroup(panelShadow20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow20Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone2Layout = new javax.swing.GroupLayout(lbIphone2);
+        lbIphone2.setLayout(lbIphone2Layout);
+        lbIphone2Layout.setHorizontalGroup(
+            lbIphone2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone2Layout.createSequentialGroup()
+                .addGroup(lbIphone2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbIphone2Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addGroup(panelShadow20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelShadow20Layout.createSequentialGroup()
+                        .addGroup(lbIphone2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lbIphone2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(txtTenIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtHinhAnhIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 10, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow20Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(panelShadow20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lbIphone2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelShadow20Layout.createSequentialGroup()
+                            .addGroup(lbIphone2Layout.createSequentialGroup()
                                 .addComponent(txtSoLuongConIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtSoLuong112, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1493,15 +1547,15 @@ public class DatHang1 extends javax.swing.JPanel {
                                 .addComponent(txtSoLuongBanIphone2)))))
                 .addContainerGap())
         );
-        panelShadow20Layout.setVerticalGroup(
-            panelShadow20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow20Layout.createSequentialGroup()
+        lbIphone2Layout.setVerticalGroup(
+            lbIphone2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone2)
                     .addComponent(txtSoLuong112)
                     .addComponent(txtSoLuongBanIphone2))
@@ -1510,8 +1564,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow21.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow21.setShadowOpacity(0.3F);
+        lbIphone4.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone4.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone4.setBorderSize(5);
         txtHinhAnhIphone4.setBorderSpace(0);
@@ -1546,19 +1600,19 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow21Layout = new javax.swing.GroupLayout(panelShadow21);
-        panelShadow21.setLayout(panelShadow21Layout);
-        panelShadow21Layout.setHorizontalGroup(
-            panelShadow21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow21Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone4Layout = new javax.swing.GroupLayout(lbIphone4);
+        lbIphone4.setLayout(lbIphone4Layout);
+        lbIphone4Layout.setHorizontalGroup(
+            lbIphone4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lbIphone4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnAdd5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelShadow21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(lbIphone4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lbIphone4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtHinhAnhIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTenIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelShadow21Layout.createSequentialGroup()
+                        .addGroup(lbIphone4Layout.createSequentialGroup()
                             .addComponent(txtSoLuongConIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtSoLuong120, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1566,15 +1620,15 @@ public class DatHang1 extends javax.swing.JPanel {
                             .addComponent(txtSoLuongBanIphone4))))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
-        panelShadow21Layout.setVerticalGroup(
-            panelShadow21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow21Layout.createSequentialGroup()
+        lbIphone4Layout.setVerticalGroup(
+            lbIphone4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone4)
                     .addComponent(txtSoLuong120)
                     .addComponent(txtSoLuongBanIphone4))
@@ -1583,8 +1637,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow22.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow22.setShadowOpacity(0.3F);
+        lbIphone6.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone6.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone6.setBorderSize(5);
         txtHinhAnhIphone6.setBorderSpace(0);
@@ -1619,42 +1673,42 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow22Layout = new javax.swing.GroupLayout(panelShadow22);
-        panelShadow22.setLayout(panelShadow22Layout);
-        panelShadow22Layout.setHorizontalGroup(
-            panelShadow22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow22Layout.createSequentialGroup()
-                .addGroup(panelShadow22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow22Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone6Layout = new javax.swing.GroupLayout(lbIphone6);
+        lbIphone6.setLayout(lbIphone6Layout);
+        lbIphone6Layout.setHorizontalGroup(
+            lbIphone6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone6Layout.createSequentialGroup()
+                .addGroup(lbIphone6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone6Layout.createSequentialGroup()
                         .addContainerGap(13, Short.MAX_VALUE)
-                        .addGroup(panelShadow22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lbIphone6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelShadow22Layout.createSequentialGroup()
+                            .addGroup(lbIphone6Layout.createSequentialGroup()
                                 .addComponent(txtSoLuongConIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtSoLuong116, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtSoLuongBanIphone6))))
-                    .addGroup(panelShadow22Layout.createSequentialGroup()
-                        .addGroup(panelShadow22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelShadow22Layout.createSequentialGroup()
+                    .addGroup(lbIphone6Layout.createSequentialGroup()
+                        .addGroup(lbIphone6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lbIphone6Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(txtTenIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelShadow22Layout.createSequentialGroup()
+                            .addGroup(lbIphone6Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(txtHinhAnhIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        panelShadow22Layout.setVerticalGroup(
-            panelShadow22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow22Layout.createSequentialGroup()
+        lbIphone6Layout.setVerticalGroup(
+            lbIphone6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone6)
                     .addComponent(txtSoLuong116)
                     .addComponent(txtSoLuongBanIphone6))
@@ -1663,8 +1717,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow23.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow23.setShadowOpacity(0.3F);
+        lbIphone5.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone5.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone5.setBorderSize(5);
         txtHinhAnhIphone5.setBorderSpace(0);
@@ -1699,21 +1753,21 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow23Layout = new javax.swing.GroupLayout(panelShadow23);
-        panelShadow23.setLayout(panelShadow23Layout);
-        panelShadow23Layout.setHorizontalGroup(
-            panelShadow23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow23Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone5Layout = new javax.swing.GroupLayout(lbIphone5);
+        lbIphone5.setLayout(lbIphone5Layout);
+        lbIphone5Layout.setHorizontalGroup(
+            lbIphone5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lbIphone5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtHinhAnhIphone5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTenIphone5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow23Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelShadow23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lbIphone5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdd6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow23Layout.createSequentialGroup()
+                    .addGroup(lbIphone5Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConIphone5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong118, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1721,15 +1775,15 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongBanIphone5)))
                 .addContainerGap())
         );
-        panelShadow23Layout.setVerticalGroup(
-            panelShadow23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow23Layout.createSequentialGroup()
+        lbIphone5Layout.setVerticalGroup(
+            lbIphone5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone5)
                     .addComponent(txtSoLuong118)
                     .addComponent(txtSoLuongBanIphone5))
@@ -1738,8 +1792,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow24.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow24.setShadowOpacity(0.3F);
+        lbIphone8.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone8.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone8.setBorderSize(5);
         txtHinhAnhIphone8.setBorderSpace(0);
@@ -1774,21 +1828,21 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow24Layout = new javax.swing.GroupLayout(panelShadow24);
-        panelShadow24.setLayout(panelShadow24Layout);
-        panelShadow24Layout.setHorizontalGroup(
-            panelShadow24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow24Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone8Layout = new javax.swing.GroupLayout(lbIphone8);
+        lbIphone8.setLayout(lbIphone8Layout);
+        lbIphone8Layout.setHorizontalGroup(
+            lbIphone8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone8Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(panelShadow24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lbIphone8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTenIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHinhAnhIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow24Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelShadow24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lbIphone8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdd9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow24Layout.createSequentialGroup()
+                    .addGroup(lbIphone8Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong124, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1796,15 +1850,15 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongBanIphone8)))
                 .addContainerGap())
         );
-        panelShadow24Layout.setVerticalGroup(
-            panelShadow24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow24Layout.createSequentialGroup()
+        lbIphone8Layout.setVerticalGroup(
+            lbIphone8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone8)
                     .addComponent(txtSoLuong124)
                     .addComponent(txtSoLuongBanIphone8))
@@ -1813,8 +1867,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow26.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow26.setShadowOpacity(0.3F);
+        lbIphone7.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone7.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone7.setBorderSize(5);
         txtHinhAnhIphone7.setBorderSpace(0);
@@ -1849,23 +1903,23 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow26Layout = new javax.swing.GroupLayout(panelShadow26);
-        panelShadow26.setLayout(panelShadow26Layout);
-        panelShadow26Layout.setHorizontalGroup(
-            panelShadow26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow26Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone7Layout = new javax.swing.GroupLayout(lbIphone7);
+        lbIphone7.setLayout(lbIphone7Layout);
+        lbIphone7Layout.setHorizontalGroup(
+            lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone7Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(panelShadow26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTenIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHinhAnhIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow26Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelShadow26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow26Layout.createSequentialGroup()
+                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbIphone7Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow26Layout.createSequentialGroup()
+                    .addGroup(lbIphone7Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong122, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1873,15 +1927,15 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongBanIphone7)))
                 .addContainerGap())
         );
-        panelShadow26Layout.setVerticalGroup(
-            panelShadow26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow26Layout.createSequentialGroup()
+        lbIphone7Layout.setVerticalGroup(
+            lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone7)
                     .addComponent(txtSoLuong122)
                     .addComponent(txtSoLuongBanIphone7))
@@ -1890,8 +1944,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow27.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow27.setShadowOpacity(0.3F);
+        lbIphone9.setBackground(new java.awt.Color(246, 88, 88));
+        lbIphone9.setShadowOpacity(0.3F);
 
         txtHinhAnhIphone9.setBorderSize(5);
         txtHinhAnhIphone9.setBorderSpace(0);
@@ -1926,23 +1980,23 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow27Layout = new javax.swing.GroupLayout(panelShadow27);
-        panelShadow27.setLayout(panelShadow27Layout);
-        panelShadow27Layout.setHorizontalGroup(
-            panelShadow27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow27Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbIphone9Layout = new javax.swing.GroupLayout(lbIphone9);
+        lbIphone9.setLayout(lbIphone9Layout);
+        lbIphone9Layout.setHorizontalGroup(
+            lbIphone9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone9Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(panelShadow27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lbIphone9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTenIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHinhAnhIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow27Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone9Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelShadow27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow27Layout.createSequentialGroup()
+                .addGroup(lbIphone9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbIphone9Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd10, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow27Layout.createSequentialGroup()
+                    .addGroup(lbIphone9Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong126, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1950,15 +2004,15 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongBanIphone9)))
                 .addContainerGap())
         );
-        panelShadow27Layout.setVerticalGroup(
-            panelShadow27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow27Layout.createSequentialGroup()
+        lbIphone9Layout.setVerticalGroup(
+            lbIphone9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbIphone9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbIphone9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConIphone9)
                     .addComponent(txtSoLuong126)
                     .addComponent(txtSoLuongBanIphone9))
@@ -1980,28 +2034,28 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelShadow26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(panelShadow24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(panelShadow27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(35, 35, 35)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(panelShadow9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(panelShadow20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lbIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(panelShadow21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(panelShadow23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(lbIphone5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGap(10, 10, 10)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
-                                    .addComponent(panelShadow22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(panelShadow19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(lbIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lbIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(820, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -2010,23 +2064,23 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelShadow9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbIphone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelShadow21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbIphone4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbIphone5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelShadow24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelShadow26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(1177, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(panelShadow27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -2043,8 +2097,8 @@ public class DatHang1 extends javax.swing.JPanel {
         jLabel101.setForeground(new java.awt.Color(77, 77, 77));
         jLabel101.setText("SAMSUNG");
 
-        panelShadow18.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow18.setShadowOpacity(0.3F);
+        lbISamSung1.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung1.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung1.setBorderSize(5);
         txtHinhAnhSamSung1.setBorderSpace(0);
@@ -2079,20 +2133,20 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow18Layout = new javax.swing.GroupLayout(panelShadow18);
-        panelShadow18.setLayout(panelShadow18Layout);
-        panelShadow18Layout.setHorizontalGroup(
-            panelShadow18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow18Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung1Layout = new javax.swing.GroupLayout(lbISamSung1);
+        lbISamSung1.setLayout(lbISamSung1Layout);
+        lbISamSung1Layout.setHorizontalGroup(
+            lbISamSung1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow18Layout.createSequentialGroup()
+                .addGroup(lbISamSung1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd11, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(lbISamSung1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(txtHinhAnhSamSung1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtTenSamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow18Layout.createSequentialGroup()
+                    .addGroup(lbISamSung1Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong98, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2100,15 +2154,15 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongBanSamSung1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelShadow18Layout.setVerticalGroup(
-            panelShadow18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow18Layout.createSequentialGroup()
+        lbISamSung1Layout.setVerticalGroup(
+            lbISamSung1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung1)
                     .addComponent(txtSoLuong98)
                     .addComponent(txtSoLuongBanSamSung1))
@@ -2117,8 +2171,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow25.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow25.setShadowOpacity(0.3F);
+        lbISamSung2.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung2.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung2.setBorderSize(5);
         txtHinhAnhSamSung2.setBorderSpace(0);
@@ -2153,23 +2207,23 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow25Layout = new javax.swing.GroupLayout(panelShadow25);
-        panelShadow25.setLayout(panelShadow25Layout);
-        panelShadow25Layout.setHorizontalGroup(
-            panelShadow25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow25Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung2Layout = new javax.swing.GroupLayout(lbISamSung2);
+        lbISamSung2.setLayout(lbISamSung2Layout);
+        lbISamSung2Layout.setHorizontalGroup(
+            lbISamSung2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow25Layout.createSequentialGroup()
+                .addGroup(lbISamSung2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd12, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelShadow25Layout.createSequentialGroup()
-                        .addGroup(panelShadow25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelShadow25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(lbISamSung2Layout.createSequentialGroup()
+                        .addGroup(lbISamSung2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lbISamSung2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtHinhAnhSamSung2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtTenSamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelShadow25Layout.createSequentialGroup()
+                            .addGroup(lbISamSung2Layout.createSequentialGroup()
                                 .addComponent(txtSoLuongConSamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtSoLuong99, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2177,15 +2231,15 @@ public class DatHang1 extends javax.swing.JPanel {
                                 .addComponent(txtSoLuongBanSamSung2)))
                         .addContainerGap(10, Short.MAX_VALUE))))
         );
-        panelShadow25Layout.setVerticalGroup(
-            panelShadow25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow25Layout.createSequentialGroup()
+        lbISamSung2Layout.setVerticalGroup(
+            lbISamSung2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung2)
                     .addComponent(txtSoLuong99)
                     .addComponent(txtSoLuongBanSamSung2))
@@ -2194,8 +2248,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow69.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow69.setShadowOpacity(0.3F);
+        lbISamSung4.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung4.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung4.setBorderSize(5);
         txtHinhAnhSamSung4.setBorderSpace(0);
@@ -2230,38 +2284,38 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow69Layout = new javax.swing.GroupLayout(panelShadow69);
-        panelShadow69.setLayout(panelShadow69Layout);
-        panelShadow69Layout.setHorizontalGroup(
-            panelShadow69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow69Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung4Layout = new javax.swing.GroupLayout(lbISamSung4);
+        lbISamSung4.setLayout(lbISamSung4Layout);
+        lbISamSung4Layout.setHorizontalGroup(
+            lbISamSung4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow69Layout.createSequentialGroup()
+                .addGroup(lbISamSung4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung4Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd14, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow69Layout.createSequentialGroup()
+                    .addGroup(lbISamSung4Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong103, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBanSamSung4))
-                    .addGroup(panelShadow69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(lbISamSung4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtHinhAnhSamSung4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelShadow69Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, lbISamSung4Layout.createSequentialGroup()
                             .addGap(14, 14, 14)
                             .addComponent(txtTenSamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
-        panelShadow69Layout.setVerticalGroup(
-            panelShadow69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow69Layout.createSequentialGroup()
+        lbISamSung4Layout.setVerticalGroup(
+            lbISamSung4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung4)
                     .addComponent(txtSoLuong103)
                     .addComponent(txtSoLuongBanSamSung4))
@@ -2270,8 +2324,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow70.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow70.setShadowOpacity(0.3F);
+        lbISamSung3.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung3.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung3.setBorderSize(5);
         txtHinhAnhSamSung3.setBorderSpace(0);
@@ -2306,23 +2360,23 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow70Layout = new javax.swing.GroupLayout(panelShadow70);
-        panelShadow70.setLayout(panelShadow70Layout);
-        panelShadow70Layout.setHorizontalGroup(
-            panelShadow70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow70Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung3Layout = new javax.swing.GroupLayout(lbISamSung3);
+        lbISamSung3.setLayout(lbISamSung3Layout);
+        lbISamSung3Layout.setHorizontalGroup(
+            lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow70Layout.createSequentialGroup()
+                .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung3Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd13, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelShadow70Layout.createSequentialGroup()
-                        .addGroup(panelShadow70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelShadow70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(lbISamSung3Layout.createSequentialGroup()
+                        .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtHinhAnhSamSung3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtTenSamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelShadow70Layout.createSequentialGroup()
+                            .addGroup(lbISamSung3Layout.createSequentialGroup()
                                 .addComponent(txtSoLuongConSamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtSoLuong100, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2330,15 +2384,15 @@ public class DatHang1 extends javax.swing.JPanel {
                                 .addComponent(txtSoLuongBanSamSung3)))
                         .addContainerGap(10, Short.MAX_VALUE))))
         );
-        panelShadow70Layout.setVerticalGroup(
-            panelShadow70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow70Layout.createSequentialGroup()
+        lbISamSung3Layout.setVerticalGroup(
+            lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung3)
                     .addComponent(txtSoLuong100)
                     .addComponent(txtSoLuongBanSamSung3))
@@ -2347,8 +2401,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow71.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow71.setShadowOpacity(0.3F);
+        lbISamSung6.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung6.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung6.setBorderSize(5);
         txtHinhAnhSamSung6.setBorderSpace(0);
@@ -2383,38 +2437,38 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow71Layout = new javax.swing.GroupLayout(panelShadow71);
-        panelShadow71.setLayout(panelShadow71Layout);
-        panelShadow71Layout.setHorizontalGroup(
-            panelShadow71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow71Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung6Layout = new javax.swing.GroupLayout(lbISamSung6);
+        lbISamSung6.setLayout(lbISamSung6Layout);
+        lbISamSung6Layout.setHorizontalGroup(
+            lbISamSung6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow71Layout.createSequentialGroup()
+                .addGroup(lbISamSung6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung6Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong101, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBanSamSung6))
-                    .addGroup(panelShadow71Layout.createSequentialGroup()
+                    .addGroup(lbISamSung6Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd16, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow71Layout.createSequentialGroup()
+                    .addGroup(lbISamSung6Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(panelShadow71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lbISamSung6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtHinhAnhSamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTenSamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
-        panelShadow71Layout.setVerticalGroup(
-            panelShadow71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow71Layout.createSequentialGroup()
+        lbISamSung6Layout.setVerticalGroup(
+            lbISamSung6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung6)
                     .addComponent(txtSoLuong101)
                     .addComponent(txtSoLuongBanSamSung6))
@@ -2423,8 +2477,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow72.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow72.setShadowOpacity(0.3F);
+        lbISamSung5.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung5.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung5.setBorderSize(5);
         txtHinhAnhSamSung5.setBorderSpace(0);
@@ -2459,36 +2513,36 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow72Layout = new javax.swing.GroupLayout(panelShadow72);
-        panelShadow72.setLayout(panelShadow72Layout);
-        panelShadow72Layout.setHorizontalGroup(
-            panelShadow72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow72Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung5Layout = new javax.swing.GroupLayout(lbISamSung5);
+        lbISamSung5.setLayout(lbISamSung5Layout);
+        lbISamSung5Layout.setHorizontalGroup(
+            lbISamSung5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lbISamSung5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(txtHinhAnhSamSung5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtTenSamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow72Layout.createSequentialGroup()
+                    .addGroup(lbISamSung5Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong102, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSoLuongBanSamSung5))
-                    .addGroup(panelShadow72Layout.createSequentialGroup()
+                    .addGroup(lbISamSung5Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd15, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
-        panelShadow72Layout.setVerticalGroup(
-            panelShadow72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow72Layout.createSequentialGroup()
+        lbISamSung5Layout.setVerticalGroup(
+            lbISamSung5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung5)
                     .addComponent(txtSoLuong102)
                     .addComponent(txtSoLuongBanSamSung5))
@@ -2497,8 +2551,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow73.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow73.setShadowOpacity(0.3F);
+        lbISamSung7.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung7.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung7.setBorderSize(5);
         txtHinhAnhSamSung7.setBorderSpace(0);
@@ -2533,23 +2587,23 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow73Layout = new javax.swing.GroupLayout(panelShadow73);
-        panelShadow73.setLayout(panelShadow73Layout);
-        panelShadow73Layout.setHorizontalGroup(
-            panelShadow73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow73Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung7Layout = new javax.swing.GroupLayout(lbISamSung7);
+        lbISamSung7.setLayout(lbISamSung7Layout);
+        lbISamSung7Layout.setHorizontalGroup(
+            lbISamSung7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lbISamSung7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtHinhAnhSamSung7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTenSamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow73Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbISamSung7Layout.createSequentialGroup()
                 .addContainerGap(9, Short.MAX_VALUE)
-                .addGroup(panelShadow73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow73Layout.createSequentialGroup()
+                .addGroup(lbISamSung7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung7Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnAdd17, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelShadow73Layout.createSequentialGroup()
+                    .addGroup(lbISamSung7Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConSamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSoLuong104, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2557,15 +2611,15 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongBanSamSung7)))
                 .addContainerGap())
         );
-        panelShadow73Layout.setVerticalGroup(
-            panelShadow73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow73Layout.createSequentialGroup()
+        lbISamSung7Layout.setVerticalGroup(
+            lbISamSung7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung7)
                     .addComponent(txtSoLuong104)
                     .addComponent(txtSoLuongBanSamSung7))
@@ -2574,8 +2628,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelShadow74.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow74.setShadowOpacity(0.3F);
+        lbISamSung8.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung8.setShadowOpacity(0.3F);
 
         txtTenSamSung8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         txtTenSamSung8.setForeground(new java.awt.Color(235, 235, 235));
@@ -2610,23 +2664,23 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow74Layout = new javax.swing.GroupLayout(panelShadow74);
-        panelShadow74.setLayout(panelShadow74Layout);
-        panelShadow74Layout.setHorizontalGroup(
-            panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow74Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung8Layout = new javax.swing.GroupLayout(lbISamSung8);
+        lbISamSung8.setLayout(lbISamSung8Layout);
+        lbISamSung8Layout.setHorizontalGroup(
+            lbISamSung8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung8Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(txtTenSamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelShadow74Layout.createSequentialGroup()
+            .addGroup(lbISamSung8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lbISamSung8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtHinhAnhSamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelShadow74Layout.createSequentialGroup()
+                    .addGroup(lbISamSung8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lbISamSung8Layout.createSequentialGroup()
                             .addGap(6, 6, 6)
                             .addComponent(btnAdd18, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelShadow74Layout.createSequentialGroup()
+                        .addGroup(lbISamSung8Layout.createSequentialGroup()
                             .addComponent(txtSoLuongConSamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtSoLuong106, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2634,15 +2688,15 @@ public class DatHang1 extends javax.swing.JPanel {
                             .addComponent(txtSoLuongBanSamSung8))))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
-        panelShadow74Layout.setVerticalGroup(
-            panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow74Layout.createSequentialGroup()
+        lbISamSung8Layout.setVerticalGroup(
+            lbISamSung8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung8)
                     .addComponent(txtSoLuong106)
                     .addComponent(txtSoLuongBanSamSung8))
@@ -2651,8 +2705,8 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelShadow75.setBackground(new java.awt.Color(246, 88, 88));
-        panelShadow75.setShadowOpacity(0.3F);
+        lbISamSung9.setBackground(new java.awt.Color(246, 88, 88));
+        lbISamSung9.setShadowOpacity(0.3F);
 
         txtHinhAnhSamSung9.setBorderSize(5);
         txtHinhAnhSamSung9.setBorderSpace(0);
@@ -2687,37 +2741,37 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout panelShadow75Layout = new javax.swing.GroupLayout(panelShadow75);
-        panelShadow75.setLayout(panelShadow75Layout);
-        panelShadow75Layout.setHorizontalGroup(
-            panelShadow75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow75Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbISamSung9Layout = new javax.swing.GroupLayout(lbISamSung9);
+        lbISamSung9.setLayout(lbISamSung9Layout);
+        lbISamSung9Layout.setHorizontalGroup(
+            lbISamSung9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelShadow75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelShadow75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lbISamSung9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lbISamSung9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnAdd19, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(panelShadow75Layout.createSequentialGroup()
+                        .addGroup(lbISamSung9Layout.createSequentialGroup()
                             .addComponent(txtSoLuongConSamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtSoLuong108, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(txtSoLuongBanSamSung9)))
-                    .addGroup(panelShadow75Layout.createSequentialGroup()
+                    .addGroup(lbISamSung9Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(panelShadow75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lbISamSung9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtHinhAnhSamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTenSamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
-        panelShadow75Layout.setVerticalGroup(
-            panelShadow75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelShadow75Layout.createSequentialGroup()
+        lbISamSung9Layout.setVerticalGroup(
+            lbISamSung9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbISamSung9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtHinhAnhSamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenSamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelShadow75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lbISamSung9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSoLuongConSamSung9)
                     .addComponent(txtSoLuong108)
                     .addComponent(txtSoLuongBanSamSung9))
@@ -2735,25 +2789,25 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(jLabel101))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(panelShadow18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbISamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(panelShadow25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbISamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(panelShadow70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lbISamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(panelShadow69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbISamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addComponent(panelShadow72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbISamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
-                .addComponent(panelShadow71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lbISamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(panelShadow73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbISamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(panelShadow74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbISamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(panelShadow75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lbISamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2761,19 +2815,19 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(jLabel101)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelShadow18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbISamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbISamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbISamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelShadow69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbISamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbISamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbISamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelShadow73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lbISamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbISamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbISamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jScrollPane2.setViewportView(jPanel6);
@@ -3087,7 +3141,7 @@ public class DatHang1 extends javax.swing.JPanel {
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
@@ -3465,15 +3519,19 @@ public class DatHang1 extends javax.swing.JPanel {
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
         // TODO add your handling code here:
-    
-        
+
+
     }//GEN-LAST:event_button9ActionPerformed
 
     private void txtSoDienThoaiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoDienThoaiCaretUpdate
-    List<KhachHangModel> list=daoKH.selectSDT(txtSoDienThoai.getText());
-    txtThongBao.setVisible(true);
-    if(list.size()==0){txtThongBao.setText("Khách hàng chưa tồn tại");}
-    if(list.size()>0){txtThongBao.setText("OK");}
+        List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
+        txtThongBao.setVisible(true);
+        if (list.size() == 0) {
+            txtThongBao.setText("Khách hàng chưa tồn tại");
+        }
+        if (list.size() > 0) {
+            txtThongBao.setText("OK");
+        }
 
 // TODO add your handling code here:
     }//GEN-LAST:event_txtSoDienThoaiCaretUpdate
@@ -3483,6 +3541,12 @@ public class DatHang1 extends javax.swing.JPanel {
     private swing.PanelShadow LbSony1;
     private swing.PanelShadow LbSony2;
     private swing.PanelShadow LbSony3;
+    private swing.PanelShadow LbSony4;
+    private swing.PanelShadow LbSony5;
+    private swing.PanelShadow LbSony6;
+    private swing.PanelShadow LbSony7;
+    private swing.PanelShadow LbSony8;
+    private swing.PanelShadow LbSony9;
     private com.DuAn1.swing0.button0 btnAdd1;
     private com.DuAn1.swing0.button0 btnAdd10;
     private com.DuAn1.swing0.button0 btnAdd11;
@@ -3531,31 +3595,25 @@ public class DatHang1 extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private swing.PanelShadow lbISamSung1;
+    private swing.PanelShadow lbISamSung2;
+    private swing.PanelShadow lbISamSung3;
+    private swing.PanelShadow lbISamSung4;
+    private swing.PanelShadow lbISamSung5;
+    private swing.PanelShadow lbISamSung6;
+    private swing.PanelShadow lbISamSung7;
+    private swing.PanelShadow lbISamSung8;
+    private swing.PanelShadow lbISamSung9;
+    private swing.PanelShadow lbIphone1;
+    private swing.PanelShadow lbIphone2;
+    private swing.PanelShadow lbIphone3;
+    private swing.PanelShadow lbIphone4;
+    private swing.PanelShadow lbIphone5;
+    private swing.PanelShadow lbIphone6;
+    private swing.PanelShadow lbIphone7;
+    private swing.PanelShadow lbIphone8;
+    private swing.PanelShadow lbIphone9;
     private swing.MaterialTabbed materialTabbed1;
-    private swing.PanelShadow panelShadow103;
-    private swing.PanelShadow panelShadow104;
-    private swing.PanelShadow panelShadow105;
-    private swing.PanelShadow panelShadow106;
-    private swing.PanelShadow panelShadow18;
-    private swing.PanelShadow panelShadow19;
-    private swing.PanelShadow panelShadow20;
-    private swing.PanelShadow panelShadow21;
-    private swing.PanelShadow panelShadow22;
-    private swing.PanelShadow panelShadow23;
-    private swing.PanelShadow panelShadow24;
-    private swing.PanelShadow panelShadow25;
-    private swing.PanelShadow panelShadow26;
-    private swing.PanelShadow panelShadow27;
-    private swing.PanelShadow panelShadow41;
-    private swing.PanelShadow panelShadow42;
-    private swing.PanelShadow panelShadow69;
-    private swing.PanelShadow panelShadow70;
-    private swing.PanelShadow panelShadow71;
-    private swing.PanelShadow panelShadow72;
-    private swing.PanelShadow panelShadow73;
-    private swing.PanelShadow panelShadow74;
-    private swing.PanelShadow panelShadow75;
-    private swing.PanelShadow panelShadow9;
     private javaswingdev.swing.table.Table table1;
     private com.DuAn1.Swing.TextField textField4;
     private com.DuAn1.Swing.TextField txtDonGia;
