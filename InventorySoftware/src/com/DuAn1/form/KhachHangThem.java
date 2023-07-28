@@ -28,6 +28,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
 
@@ -318,7 +319,6 @@ public class KhachHangThem extends javax.swing.JDialog {
             return;
         }
         insert();
-        ClearForm();
         TuDongTangMa();
         DatHang1.setSoLuong(txtSdt.getText());
         dispose();
@@ -381,7 +381,6 @@ public class KhachHangThem extends javax.swing.JDialog {
         KhachHangModel nv = getForm();
         try {
             daoKH.insert(nv);
-            this.ClearForm();
             ThaoTacModel model = getFormThem();
             ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Thêm Mới thành công!");

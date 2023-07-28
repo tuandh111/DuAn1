@@ -79,6 +79,10 @@ public class ThanhToanLuongDAO {
         String sql="select* from LUONG where MaLuong like ?";
         return select(sql,"%" + maLuong + "%");
     }
+    public List<ThanhToanLuongModel> LocTheoLuongCoBan(String maLuong){
+        String sql="select* from LUONG where LuongCoBan like ?";
+        return select(sql,"%" + maLuong + "%");
+    }
     private ThanhToanLuongModel readFromResultSet(ResultSet rs) throws SQLException {
         ThanhToanLuongModel model = new ThanhToanLuongModel();
         model.setMaLuong(rs.getString(1));
