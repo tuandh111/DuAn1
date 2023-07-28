@@ -59,8 +59,10 @@ public class DatHang1 extends javax.swing.JPanel {
     public static void setSoLuong(String soLuong) {
         DatHang1.soLuong = soLuong;
     }
+
     public DatHang1() {
         initComponents();
+        
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
 //panelShadow6.setVisible(false); ẩn jpanel
 //panelShadow6.setBackground(Color.pink);
@@ -603,7 +605,6 @@ public class DatHang1 extends javax.swing.JPanel {
         button10 = new com.DuAn1.swing0.button0();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
-        button4 = new com.DuAn1.swing0.button0();
         button8 = new com.DuAn1.swing0.button0();
         button5 = new com.DuAn1.swing0.button0();
         button6 = new com.DuAn1.swing0.button0();
@@ -3229,6 +3230,11 @@ public class DatHang1 extends javax.swing.JPanel {
                 txtSoDienThoaiCaretUpdate(evt);
             }
         });
+        txtSoDienThoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtSoDienThoaiMousePressed(evt);
+            }
+        });
 
         txtNgayXuat.setLabelText("Ngày gian xuất");
         txtNgayXuat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -3400,7 +3406,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(button01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(575, 575, 575))
+                .addContainerGap())
         );
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
@@ -3416,11 +3422,9 @@ public class DatHang1 extends javax.swing.JPanel {
         ));
         jScrollPane4.setViewportView(tblUser);
 
-        button4.setBackground(new java.awt.Color(153, 153, 255));
-        button4.setText("Làm mới");
-
         button8.setBackground(new java.awt.Color(255, 51, 51));
-        button8.setText("Xóa sản phẩm");
+        button8.setForeground(new java.awt.Color(255, 255, 255));
+        button8.setText("Xóa tất cả");
         button8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button8ActionPerformed(evt);
@@ -3429,7 +3433,12 @@ public class DatHang1 extends javax.swing.JPanel {
 
         button5.setBackground(new java.awt.Color(255, 51, 51));
         button5.setForeground(new java.awt.Color(255, 255, 255));
-        button5.setText("Xóa tất cả");
+        button5.setText("Xóa sản phẩm");
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
 
         button6.setBackground(new java.awt.Color(153, 153, 255));
         button6.setText("Thêm vào đặt hàng");
@@ -3448,12 +3457,11 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(37, 37, 37)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addContainerGap()
                             .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(44, 44, 44)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(63, 63, 63)
                             .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3463,20 +3471,22 @@ public class DatHang1 extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 1051, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3490,7 +3500,10 @@ public class DatHang1 extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     public void Them() {
@@ -3504,14 +3517,15 @@ public class DatHang1 extends javax.swing.JPanel {
     }
 
     void clearForm() {
-        txtMaDatHang.setText(null);
-        txtSoDienThoai.setText(null);
-        txtDonGia.setText(null);
+        txtMaDatHang.setText("");
+        txtSoDienThoai.setText("");
+        txtDonGia.setText("");
+        txtSoLuong.setText("");
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         String formatted = current.format(formatter);
         txtNgayXuat.setText(formatted);
-        txtTongTien.setText(null);
+        txtTongTien.setText("");
     }
 
     DatSPModel getFormTao() {
@@ -3596,7 +3610,7 @@ public class DatHang1 extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNgayXuatMouseClicked
 
     private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
-        // TODO add your handling code here:
+        deleteAll();        // TODO add your handling code here:
     }//GEN-LAST:event_button8ActionPerformed
 
     private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
@@ -4008,16 +4022,45 @@ public class DatHang1 extends javax.swing.JPanel {
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
         DatHang1.setSoLuong(txtSoDienThoai.getText());
-        KhachHangThem kh= new KhachHangThem(com.DuAn1.main.Main.getMain(), true);
-    kh.setVisible(true);
-    txtSoDienThoai.setText(DatHang1.getSoLuong());
-    // TODO add your handling code here:
-        
-    }//GEN-LAST:event_button9ActionPerformed
+        KhachHangThem kh = new KhachHangThem(com.DuAn1.main.Main.getMain(), true);
+        kh.setVisible(true);
+        txtSoDienThoai.setText(DatHang1.getSoLuong());
+        // TODO add your handling code here:
 
+    }//GEN-LAST:event_button9ActionPerformed
+    void delete() {
+        int chon = tblUser.getSelectedRow();
+        if(chon<0){DialogHelper.alert(this,"Bạn cần chọn sản phẩm để có thể xóa");return;}
+        String maSP = (String) tblUser.getValueAt(chon, 2);
+        try {
+            daoDatSPCT.Xoa(txtMaDatHang.getText(), maSP);
+
+            filltable();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Xóa sản phẩm thành công");
+        } catch (Exception e) {
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi xóa dữ liệu");
+        }
+
+    }
+
+    void deleteAll() {
+        int chon = tblUser.getSelectedRow();
+        String maSP = (String) tblUser.getValueAt(chon, 2);
+        try {
+            daoDatSPCT.XoaTatCa(txtMaDatHang.getText());
+
+            filltable();
+ 
+            com.DuAn1.Helper.DialogHelper.alert(this, "Xóa tất cả sản phẩm thành công");
+        } catch (Exception e) {
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi xóa dữ liệu");
+        }
+
+    }
     private void txtSoDienThoaiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoDienThoaiCaretUpdate
         List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
         txtThongBao.setVisible(true);
+          
         if (list.size() == 0) {
             txtThongBao.setText("Khách hàng chưa tồn tại");
         }
@@ -4077,8 +4120,25 @@ public class DatHang1 extends javax.swing.JPanel {
     }//GEN-LAST:event_button6ActionPerformed
 
     private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
-clearForm();        // TODO add your handling code here:
+        clearForm();        // TODO add your handling code here:
     }//GEN-LAST:event_button01ActionPerformed
+
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        // TODO add your handling code here:
+        delete();
+    }//GEN-LAST:event_button5ActionPerformed
+
+    private void txtSoDienThoaiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSoDienThoaiMousePressed
+ List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
+        txtThongBao.setVisible(true);
+          txtSoDienThoai.setText(DatHang1.getSoLuong());
+        if (list.size() == 0) {
+            txtThongBao.setText("Khách hàng chưa tồn tại");
+        }
+        if (list.size() > 0) {
+            txtThongBao.setText("OK");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSoDienThoaiMousePressed
     public void themSPCT() {
         try {
             DatSPCTModel model = getFormThemIPhone1();
@@ -4367,7 +4427,6 @@ clearForm();        // TODO add your handling code here:
     private com.DuAn1.swing0.button0 button10;
     private com.DuAn1.swing0.button0 button2;
     private com.DuAn1.swing0.button0 button3;
-    private com.DuAn1.swing0.button0 button4;
     private com.DuAn1.swing0.button0 button5;
     private com.DuAn1.swing0.button0 button6;
     private com.DuAn1.swing0.button0 button7;

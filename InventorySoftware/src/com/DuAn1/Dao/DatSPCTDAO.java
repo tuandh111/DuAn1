@@ -36,7 +36,14 @@ public class DatSPCTDAO {
         String sql = "UPDATE DATSP SET TRANGTHAI = 0 WHERE MaDH = ?";
         JdbcHelper.executeUpdate(sql, model.getMaSP());
     }
-
+       public void Xoa(String maDH,String MaSP) {
+        String sql = "DELETE DATSPCT WHERE MaDH = ? and MaSP=?";
+        JdbcHelper.executeUpdate(sql,maDH,MaSP );
+    }
+     public void XoaTatCa(String MaDH) {
+        String sql = "DELETE DATSPCT WHERE MaDH = ?";
+        JdbcHelper.executeUpdate(sql, MaDH);
+    }
     private List<DatSPCTModel> select(String sql, Object... args) {
         List<DatSPCTModel> list = new ArrayList<>();
         try {
