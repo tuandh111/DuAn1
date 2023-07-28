@@ -116,13 +116,15 @@
                           <Component id="btnSua" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnXoa" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="cboLoc" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtLoc" min="-2" pref="178" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnLoc" min="-2" pref="57" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtTimKiem" min="-2" pref="272" max="-2" attributes="0"/>
-                          <EmptySpace pref="16" max="32767" attributes="0"/>
+                          <Component id="txtTimKiem" pref="223" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnTim" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -163,9 +165,10 @@
                               <Component id="btnSua" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnXoa" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnMoi" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cboLoc" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtTimKiem" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnTim" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtLoc" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLoc" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="258" max="-2" attributes="0"/>
@@ -329,11 +332,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.Swing.Combobox" name="cboLoc">
-          <Properties>
-            <Property name="labeText" type="java.lang.String" value="L&#x1ecd;c "/>
-          </Properties>
-        </Component>
         <Component class="com.DuAn1.Swing.TextField1" name="txtTimKiem">
           <Properties>
             <Property name="hint" type="java.lang.String" value="T&#xec;m  theo m&#xe3;"/>
@@ -394,6 +392,25 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTimActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="com.DuAn1.Swing.TextField1" name="txtLoc">
+          <Properties>
+            <Property name="hint" type="java.lang.String" value="L&#x1ecd;c theo l&#x1b0;&#x1a1;ng"/>
+          </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLocCaretUpdate"/>
+          </Events>
+        </Component>
+        <Component class="com.DuAn1.Swing.Button" name="btnLoc">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="L&#x1ecd;c"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLocActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

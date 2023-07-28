@@ -6,6 +6,8 @@ package com.DuAn1.form;
 
 import com.DuAn1.Dao.DienThoaiDao;
 import com.DuAn1.Dao.DongMayDAO;
+import com.DuAn1.Dao.ThaoTacDAO;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.BoNhoModel;
 import com.DuAn1.Model.CPUModel;
 import com.DuAn1.Model.CameraModel;
@@ -13,7 +15,10 @@ import com.DuAn1.Model.DienThoaiModel;
 import com.DuAn1.Model.MangHinhModel;
 import com.DuAn1.Model.PinModel;
 import com.DuAn1.Model.RamModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.helper.DialogHelper;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
@@ -26,6 +31,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DongMay extends javax.swing.JPanel {
 
+    ThaoTacDAO ttdao = new ThaoTacDAO();
     DefaultTableModel model;
     DongMayDAO dao = new DongMayDAO();
     int row = -1;
@@ -42,6 +48,277 @@ public class DongMay extends javax.swing.JPanel {
         fillTableManHinh();
         fillTablePin();
     }
+
+    public ThaoTacModel getFormThaoTacThemCPU() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm CPU");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacThemRAM() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm RAM");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacThemROM() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm ROM");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacThemManHinh() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Màn Hình");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacThemCamera() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Camera");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacThemPin() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Pin");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSuaCPU() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa CPU");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSuaRAM() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa RAM");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSuaROM() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa ROM");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSuaCamera() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Camera");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSuaManHinh() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Màn Hình");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSuaPin() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Pin");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoaCPU() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa CPU");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoaRAM() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa RAM");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoaROM() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa ROM");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoaManHinh() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Màn Hình");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoaCamera() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Camera");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoaPin() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Pin");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
     //Load các cbo
     void LoadComboboxCPU() {
         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
@@ -53,8 +330,9 @@ public class DongMay extends javax.swing.JPanel {
         cboCPU.setModel(comboboxmodel);
         cboCPU.setSelectedIndex(-1);
     }
-    void LoadComboboxRAM(){
-         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+
+    void LoadComboboxRAM() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         DongMayDAO vtDao = new DongMayDAO();
         ArrayList<RamModel> listVaitro = (ArrayList<RamModel>) vtDao.selectallRAM();
         for (RamModel gg : listVaitro) {
@@ -63,8 +341,9 @@ public class DongMay extends javax.swing.JPanel {
         cboLoaiSPRAM.setModel(comboboxmodel);
         cboLoaiSPRAM.setSelectedIndex(-1);
     }
-    void LoadComboboxROM(){
-         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+
+    void LoadComboboxROM() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         DongMayDAO vtDao = new DongMayDAO();
         ArrayList<BoNhoModel> listVaitro = (ArrayList<BoNhoModel>) vtDao.selectallROM();
         for (BoNhoModel gg : listVaitro) {
@@ -73,8 +352,9 @@ public class DongMay extends javax.swing.JPanel {
         cboLoaiSPBoNho.setModel(comboboxmodel);
         cboLoaiSPBoNho.setSelectedIndex(-1);
     }
-    void LoadComboboxManHinh(){
-         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+
+    void LoadComboboxManHinh() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         DongMayDAO vtDao = new DongMayDAO();
         ArrayList<MangHinhModel> listVaitro = (ArrayList<MangHinhModel>) vtDao.selectallManHinh();
         for (MangHinhModel gg : listVaitro) {
@@ -83,8 +363,9 @@ public class DongMay extends javax.swing.JPanel {
         cboLoaiSPManHinh.setModel(comboboxmodel);
         cboLoaiSPManHinh.setSelectedIndex(-1);
     }
-    void LoadComboboxCamera(){
-         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+
+    void LoadComboboxCamera() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         DongMayDAO vtDao = new DongMayDAO();
         ArrayList<CameraModel> listVaitro = (ArrayList<CameraModel>) vtDao.selectallCamera();
         for (CameraModel gg : listVaitro) {
@@ -93,8 +374,9 @@ public class DongMay extends javax.swing.JPanel {
         cboCamera.setModel(comboboxmodel);
         cboCamera.setSelectedIndex(-1);
     }
-    void LoadComboboxPin(){
-         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
+
+    void LoadComboboxPin() {
+        DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         DongMayDAO vtDao = new DongMayDAO();
         ArrayList<PinModel> listVaitro = (ArrayList<PinModel>) vtDao.selectallPin();
         for (PinModel gg : listVaitro) {
@@ -103,12 +385,13 @@ public class DongMay extends javax.swing.JPanel {
         cboPin.setModel(comboboxmodel);
         cboPin.setSelectedIndex(-1);
     }
+
     //Fill các table
     void fillTableCPU() {
         model = (DefaultTableModel) tblCPU.getModel();
         model.setRowCount(0);
         try {
-          
+
             List<CPUModel> list = dao.selectallCPU();
             for (CPUModel cpu : list) {
                 Object[] row = new Object[]{cpu.getMaCPU(), cpu.getLoaiSanPham()};
@@ -119,11 +402,12 @@ public class DongMay extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     void fillTableRAM() {
         model = (DefaultTableModel) tblRAM.getModel();
         model.setRowCount(0);
         try {
-          
+
             List<RamModel> list = dao.selectallRAM();
             for (RamModel ram : list) {
                 Object[] row = new Object[]{ram.getMaRam(), ram.getLoaiSP()};
@@ -133,11 +417,12 @@ public class DongMay extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     void fillTableROM() {
         model = (DefaultTableModel) tblROM.getModel();
         model.setRowCount(0);
         try {
-          
+
             List<BoNhoModel> list = dao.selectallROM();
             for (BoNhoModel rom : list) {
                 Object[] row = new Object[]{rom.getMaBoNho(), rom.getLoaiSP()};
@@ -147,11 +432,12 @@ public class DongMay extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     void fillTableCamera() {
         model = (DefaultTableModel) tblCamera.getModel();
         model.setRowCount(0);
         try {
-          
+
             List<CameraModel> list = dao.selectallCamera();
             for (CameraModel rom : list) {
                 Object[] row = new Object[]{rom.getMaCamera(), rom.getLoaiSP()};
@@ -161,11 +447,12 @@ public class DongMay extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     void fillTableManHinh() {
         model = (DefaultTableModel) tblManHinh.getModel();
         model.setRowCount(0);
         try {
-          
+
             List<MangHinhModel> list = dao.selectallManHinh();
             for (MangHinhModel rom : list) {
                 Object[] row = new Object[]{rom.getMaMangHinh(), rom.getLoaiSp()};
@@ -175,11 +462,12 @@ public class DongMay extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     void fillTablePin() {
         model = (DefaultTableModel) tblPin.getModel();
         model.setRowCount(0);
         try {
-          
+
             List<PinModel> list = dao.selectallPin();
             for (PinModel rom : list) {
                 Object[] row = new Object[]{rom.getMaPin(), rom.getLoaiSP()};
@@ -189,68 +477,81 @@ public class DongMay extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     //Get set các bảng
-    CPUModel getForm(){
+    CPUModel getForm() {
         CPUModel cpu = new CPUModel();
         cpu.setLoaiSanPham((String) cboCPU.getSelectedItem());
         cpu.setMaCPU(txtCPU.getText());
         return cpu;
     }
-    void setForm(CPUModel cpu){
-       cboCPU.setSelectedItem(cpu.getLoaiSanPham().trim());  
-       txtCPU.setText(cpu.getMaCPU().trim());
+
+    void setForm(CPUModel cpu) {
+        cboCPU.setSelectedItem(cpu.getLoaiSanPham().trim());
+        txtCPU.setText(cpu.getMaCPU().trim());
     }
-    MangHinhModel getFormMH(){
+
+    MangHinhModel getFormMH() {
         MangHinhModel cpu = new MangHinhModel();
         cpu.setLoaiSp((String) cboLoaiSPManHinh.getSelectedItem());
         cpu.setMaMangHinh(txtManHinh.getText());
         return cpu;
     }
-    void setFormMH(MangHinhModel cpu){
-       cboLoaiSPManHinh.setSelectedItem(cpu.getLoaiSp().trim());
-       txtManHinh.setText(cpu.getMaMangHinh().trim());
+
+    void setFormMH(MangHinhModel cpu) {
+        cboLoaiSPManHinh.setSelectedItem(cpu.getLoaiSp().trim());
+        txtManHinh.setText(cpu.getMaMangHinh().trim());
     }
-    CameraModel getFormCamera(){
-        CameraModel cpu = new  CameraModel();
+
+    CameraModel getFormCamera() {
+        CameraModel cpu = new CameraModel();
         cpu.setLoaiSP((String) cboCamera.getSelectedItem());
         cpu.setMaCamera(txtCamera.getText());
         return cpu;
     }
-    void setFormCamera(CameraModel cpu){
-       cboCamera.setSelectedItem(cpu.getLoaiSP().trim());
-       txtCamera.setText(cpu.getMaCamera().trim());
+
+    void setFormCamera(CameraModel cpu) {
+        cboCamera.setSelectedItem(cpu.getLoaiSP().trim());
+        txtCamera.setText(cpu.getMaCamera().trim());
     }
-     BoNhoModel getFormRom(){
+
+    BoNhoModel getFormRom() {
         BoNhoModel cpu = new BoNhoModel();
         cpu.setLoaiSP((String) cboLoaiSPBoNho.getSelectedItem());
         cpu.setMaBoNho(txtBoNho.getText());
         return cpu;
     }
-    void setFormRom(BoNhoModel cpu){
-       cboLoaiSPBoNho.setSelectedItem(cpu.getLoaiSP().trim());
-       txtBoNho.setText(cpu.getMaBoNho().trim());
+
+    void setFormRom(BoNhoModel cpu) {
+        cboLoaiSPBoNho.setSelectedItem(cpu.getLoaiSP().trim());
+        txtBoNho.setText(cpu.getMaBoNho().trim());
     }
-    RamModel getFormRam(){
+
+    RamModel getFormRam() {
         RamModel cpu = new RamModel();
         cpu.setLoaiSP((String) cboLoaiSPRAM.getSelectedItem());
         cpu.setMaRam(txtRAM.getText());
         return cpu;
     }
-    void setFormRam(RamModel cpu){
-       cboLoaiSPRAM.setSelectedItem(cpu.getLoaiSP().trim());
-       txtRAM.setText(cpu.getMaRam().trim());
+
+    void setFormRam(RamModel cpu) {
+        cboLoaiSPRAM.setSelectedItem(cpu.getLoaiSP().trim());
+        txtRAM.setText(cpu.getMaRam().trim());
     }
-    PinModel getFormPin(){
+
+    PinModel getFormPin() {
         PinModel cpu = new PinModel();
         cpu.setLoaiSP((String) cboPin.getSelectedItem());
         cpu.setMaPin(txtPin.getText());
         return cpu;
     }
-    void setFormPin(PinModel cpu){
-       cboPin.setSelectedItem(cpu.getLoaiSP().trim());
-       txtPin.setText(cpu.getMaPin().trim());
+
+    void setFormPin(PinModel cpu) {
+        cboPin.setSelectedItem(cpu.getLoaiSP().trim());
+        txtPin.setText(cpu.getMaPin().trim());
     }
-    void clearForm(){
+
+    void clearForm() {
         txtCPU.setText("");
         cboCPU.setSelectedItem(null);
         txtBoNho.setText("");
@@ -264,103 +565,111 @@ public class DongMay extends javax.swing.JPanel {
         txtCamera.setText("");
         cboCamera.setSelectedItem(null);
     }
+
     // uptStatus
     void updateStatusCPU() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblCPU.getRowCount() - 1);
-        
+
         btnThemCPU.setEnabled(edit);
         btnSuaCPU.setEnabled(edit);
         btnXoaCPU.setEnabled(edit);
     }
+
     void updateStatusRam() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblRAM.getRowCount() - 1);
-        
-        
+
         btnThemRAM.setEnabled(edit);
         btnSuaRAM.setEnabled(edit);
         btnXoaRAM.setEnabled(edit);
     }
+
     void updateStatusRom() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblROM.getRowCount() - 1);
-        
-        
+
         btnThemRom.setEnabled(edit);
         btnSuaRom.setEnabled(edit);
         btnXoaRom.setEnabled(edit);
     }
+
     void updateStatusManHinh() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblManHinh.getRowCount() - 1);
-        
-        
+
         btnThemManHinh.setEnabled(edit);
         btnSuaManHinh.setEnabled(edit);
         btnXoaManHinh.setEnabled(edit);
     }
+
     void updateStatusCam() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblCamera.getRowCount() - 1);
-        
-        
+
         btnThemCamera.setEnabled(edit);
         btnSuaCamera.setEnabled(edit);
         btnXoaCamera.setEnabled(edit);
     }
+
     void updateStatusPin() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblPin.getRowCount() - 1);
-        
-        
+
         btnThemPin.setEnabled(edit);
         btnSuaPin.setEnabled(edit);
         btnXoaPin.setEnabled(edit);
     }
+
     //edit các bảng
-    void editCPU(){
+    void editCPU() {
         String maluong = (String) tblCPU.getValueAt(this.row, 0);
         CPUModel ttl = dao.findByIdCPU(maluong);
         this.setForm(ttl);
         this.updateStatusCPU();
     }
-    void editRam(){
+
+    void editRam() {
         String maluong = (String) tblRAM.getValueAt(this.row, 0);
         RamModel ttl = dao.findByIdRAM(maluong);
         this.setFormRam(ttl);
         this.updateStatusRam();
     }
-    void editRom(){
+
+    void editRom() {
         String maluong = (String) tblROM.getValueAt(this.row, 0);
         BoNhoModel ttl = dao.findByIdROM(maluong);
         this.setFormRom(ttl);
         this.updateStatusRom();
     }
-    void editManHinh(){
+
+    void editManHinh() {
         String maluong = (String) tblManHinh.getValueAt(this.row, 0);
         MangHinhModel ttl = dao.findByIdManHinh(maluong);
         this.setFormMH(ttl);
         this.updateStatusManHinh();
     }
-    void editCamera(){
+
+    void editCamera() {
         String maluong = (String) tblCamera.getValueAt(this.row, 0);
         CameraModel ttl = dao.findByIdCamera(maluong);
         this.setFormCamera(ttl);
         this.updateStatusCam();
     }
-    void editPin(){
+
+    void editPin() {
         String maluong = (String) tblPin.getValueAt(this.row, 0);
-       PinModel ttl = dao.findByIdPin(maluong);
+        PinModel ttl = dao.findByIdPin(maluong);
         this.setFormPin(ttl);
         this.updateStatusPin();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -373,6 +682,20 @@ public class DongMay extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         materialTabbed1 = new swing.MaterialTabbed();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblManHinh = new com.raven.swing.table.Table();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblRAM = new com.raven.swing.table.Table();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblROM = new com.raven.swing.table.Table();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblCPU = new com.raven.swing.table.Table();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblCamera = new com.raven.swing.table.Table();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblPin = new com.raven.swing.table.Table();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -417,26 +740,210 @@ public class DongMay extends javax.swing.JPanel {
         btnSuaRAM = new com.DuAn1.Swing.Button();
         btnXoaRAM = new com.DuAn1.Swing.Button();
         cboLoaiSPRAM = new com.DuAn1.Swing.Combobox();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tblManHinh = new com.raven.swing.table.Table();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tblRAM = new com.raven.swing.table.Table();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tblROM = new com.raven.swing.table.Table();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tblCPU = new com.raven.swing.table.Table();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tblCamera = new com.raven.swing.table.Table();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        tblPin = new com.raven.swing.table.Table();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Dòng máy");
+
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        tblManHinh.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Màn Hình", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        tblManHinh.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"dsfsdf", "dsfsd"},
+                {"sdf", "sdfs"},
+                {"dsf", "sdf"},
+                {null, null}
+            },
+            new String [] {
+                "Mã Màn Hình", "Loại Sản Phẩm"
+            }
+        ));
+        tblManHinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblManHinhMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblManHinhMousePressed(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tblManHinh);
+
+        tblRAM.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RAM", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        tblRAM.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"dsfsdf", "dsfsd"},
+                {"sdf", "sdfs"},
+                {"dsf", "sdf"},
+                {null, null}
+            },
+            new String [] {
+                "Mã Ram", "Loại Sản Phẩm"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblRAM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblRAMMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblRAMMousePressed(evt);
+            }
+        });
+        jScrollPane5.setViewportView(tblRAM);
+
+        tblROM.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ROM", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        tblROM.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"dsfsdf", "dsfsd"},
+                {"sdf", "sdfs"},
+                {"dsf", "sdf"},
+                {null, null}
+            },
+            new String [] {
+                "Mã Bộ Nhớ", "Loại Sản Phẩm"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblROM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblROMMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblROMMousePressed(evt);
+            }
+        });
+        jScrollPane6.setViewportView(tblROM);
+
+        tblCPU.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CPU", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        tblCPU.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"dsfsdf", "dsfsd"},
+                {"sdf", "sdfs"},
+                {"dsf", "sdf"},
+                {null, null}
+            },
+            new String [] {
+                "Mã CPU", "Loại Sản Phẩm"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCPU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCPUMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblCPUMousePressed(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tblCPU);
+
+        tblCamera.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CAMERA", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        tblCamera.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"dsfsdf", "dsfsd"},
+                {"sdf", "sdfs"},
+                {"dsf", "sdf"},
+                {null, null}
+            },
+            new String [] {
+                "Mã Camera", "Loại Sản Phẩm"
+            }
+        ));
+        tblCamera.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCameraMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblCameraMousePressed(evt);
+            }
+        });
+        jScrollPane8.setViewportView(tblCamera);
+
+        tblPin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PIN", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        tblPin.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"dsfsdf", "dsfsd"},
+                {"sdf", "sdfs"},
+                {"dsf", "sdf"},
+                {null, null}
+            },
+            new String [] {
+                "Mã Pin ", "Loại Sản Phẩm"
+            }
+        ));
+        tblPin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblPinMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblPinMousePressed(evt);
+            }
+        });
+        jScrollPane9.setViewportView(tblPin);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jScrollPane1.setViewportView(jPanel2);
+
+        materialTabbed1.addTab("Danh sách", jScrollPane1);
 
         jScrollPane3.setBorder(null);
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -595,16 +1102,17 @@ public class DongMay extends javax.swing.JPanel {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(btnSuaManHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnXoaManHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(btnMoiManHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnThemManHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(113, 113, 113)
+                                .addComponent(btnThemManHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(74, 74, 74))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -874,7 +1382,7 @@ public class DongMay extends javax.swing.JPanel {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addComponent(btnSuaCPU, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1011,251 +1519,47 @@ public class DongMay extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(jPanel3);
 
         materialTabbed1.addTab("Quản lý", jScrollPane3);
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        tblManHinh.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Màn Hình", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        tblManHinh.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"dsfsdf", "dsfsd"},
-                {"sdf", "sdfs"},
-                {"dsf", "sdf"},
-                {null, null}
-            },
-            new String [] {
-                "Mã Màn Hình", "Loại Sản Phẩm"
-            }
-        ));
-        tblManHinh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblManHinhMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblManHinhMousePressed(evt);
-            }
-        });
-        jScrollPane4.setViewportView(tblManHinh);
-
-        tblRAM.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RAM", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        tblRAM.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"dsfsdf", "dsfsd"},
-                {"sdf", "sdfs"},
-                {"dsf", "sdf"},
-                {null, null}
-            },
-            new String [] {
-                "Mã Ram", "Loại Sản Phẩm"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblRAM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblRAMMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblRAMMousePressed(evt);
-            }
-        });
-        jScrollPane5.setViewportView(tblRAM);
-
-        tblROM.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ROM", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        tblROM.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"dsfsdf", "dsfsd"},
-                {"sdf", "sdfs"},
-                {"dsf", "sdf"},
-                {null, null}
-            },
-            new String [] {
-                "Mã Bộ Nhớ", "Loại Sản Phẩm"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblROM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblROMMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblROMMousePressed(evt);
-            }
-        });
-        jScrollPane6.setViewportView(tblROM);
-
-        tblCPU.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CPU", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        tblCPU.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"dsfsdf", "dsfsd"},
-                {"sdf", "sdfs"},
-                {"dsf", "sdf"},
-                {null, null}
-            },
-            new String [] {
-                "Mã CPU", "Loại Sản Phẩm"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblCPU.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblCPUMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblCPUMousePressed(evt);
-            }
-        });
-        jScrollPane7.setViewportView(tblCPU);
-
-        tblCamera.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CAMERA", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        tblCamera.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"dsfsdf", "dsfsd"},
-                {"sdf", "sdfs"},
-                {"dsf", "sdf"},
-                {null, null}
-            },
-            new String [] {
-                "Mã Camera", "Loại Sản Phẩm"
-            }
-        ));
-        tblCamera.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblCameraMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblCameraMousePressed(evt);
-            }
-        });
-        jScrollPane8.setViewportView(tblCamera);
-
-        tblPin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PIN", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        tblPin.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"dsfsdf", "dsfsd"},
-                {"sdf", "sdfs"},
-                {"dsf", "sdf"},
-                {null, null}
-            },
-            new String [] {
-                "Mã Pin ", "Loại Sản Phẩm"
-            }
-        ));
-        tblPin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblPinMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblPinMousePressed(evt);
-            }
-        });
-        jScrollPane9.setViewportView(tblPin);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(249, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        jScrollPane1.setViewportView(jPanel2);
-
-        materialTabbed1.addTab("Danh sách", jScrollPane1);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 1098, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(949, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1272,8 +1576,8 @@ public class DongMay extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1088, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1294,7 +1598,9 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemManHinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemManHinhActionPerformed
         // TODO add your handling code here:
-        themMH();
+        if (check()) {
+            themMH();
+        }
     }//GEN-LAST:event_btnThemManHinhActionPerformed
 
     private void cboLoaiSPManHinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiSPManHinhActionPerformed
@@ -1312,7 +1618,9 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemCPUActionPerformed
         // TODO add your handling code here:
-        themCPU();
+        if (check()) {
+            themCPU();
+        }
     }//GEN-LAST:event_btnThemCPUActionPerformed
 
     private void cboCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPUActionPerformed
@@ -1400,7 +1708,9 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemPinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemPinActionPerformed
         // TODO add your handling code here:
-        themPin();
+        if (check()) {
+            themPin();
+        }
     }//GEN-LAST:event_btnThemPinActionPerformed
 
     private void btnMoiPinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiPinActionPerformed
@@ -1418,7 +1728,9 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemRomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemRomActionPerformed
         // TODO add your handling code here:
-        themRom();
+        if (check()) {
+            themRom();
+        }
     }//GEN-LAST:event_btnThemRomActionPerformed
 
     private void btnMoiRomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiRomActionPerformed
@@ -1436,7 +1748,9 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemCameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemCameraActionPerformed
         // TODO add your handling code here:
-        themCamera();
+        if (check()) {
+            themCamera();
+        }
     }//GEN-LAST:event_btnThemCameraActionPerformed
 
     private void btnMoiCameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiCameraActionPerformed
@@ -1451,217 +1765,322 @@ public class DongMay extends javax.swing.JPanel {
     private void txtRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRAMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRAMActionPerformed
-void themRam(){
-    RamModel ram = getFormRam();
-    try {
-        dao.insertRAM(ram);
-        this.fillTableRAM();
-        this.clearForm();
-        DialogHelper.alert(this, "Thêm thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm thất bại");
+    void themRam() {
+        RamModel ram = getFormRam();
+        try {
+            dao.insertRAM(ram);
+            this.fillTableRAM();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacThemRAM();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
     }
-}
-void suaRam(){
-    RamModel ram = getFormRam();
-    try {
-        dao.updateRAM(ram);
-        this.fillTableRAM();
-        this.clearForm();
-        DialogHelper.alert(this, "Sửa thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Sửa thất bại");
+
+    void suaRam() {
+        RamModel ram = getFormRam();
+        try {
+            dao.updateRAM(ram);
+            this.fillTableRAM();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacSuaRAM();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Sửa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Sửa thất bại");
             e.printStackTrace();
+        }
     }
-}
-void suaCPU(){
-    CPUModel ram = getForm();
-    try {
-        dao.updateCPU(ram);
-        this.fillTableCPU();
-        this.clearForm();
-        DialogHelper.alert(this, "Sửa thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Sửa thất bại");
+
+    void suaCPU() {
+        CPUModel ram = getForm();
+        try {
+            dao.updateCPU(ram);
+            this.fillTableCPU();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacSuaCPU();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Sửa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Sửa thất bại");
             e.printStackTrace();
+        }
     }
-}
-void suaRom(){
-    BoNhoModel ram = getFormRom();
-    try {
-        dao.updateROM(ram);
-        this.fillTableROM();
-        this.clearForm();
-        DialogHelper.alert(this, "Sửa thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Sửa thất bại");
+
+    void suaRom() {
+        BoNhoModel ram = getFormRom();
+        try {
+            dao.updateROM(ram);
+            this.fillTableROM();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacSuaROM();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Sửa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Sửa thất bại");
             e.printStackTrace();
+        }
     }
-}
-void suaCamera(){
-    CameraModel ram = getFormCamera();
-    try {
-        dao.updateCamera(ram);
-        this.fillTableCamera();
-        this.clearForm();
-        DialogHelper.alert(this, "Sửa thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Sửa thất bại");
+
+    void suaCamera() {
+        CameraModel ram = getFormCamera();
+        try {
+            dao.updateCamera(ram);
+            this.fillTableCamera();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacSuaCamera();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Sửa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Sửa thất bại");
             e.printStackTrace();
+        }
     }
-}
-void suaManHinh(){
-   MangHinhModel ram = getFormMH();
-    try {
-        dao.updateManHinh(ram);
-        this.fillTableManHinh();
-        this.clearForm();
-        DialogHelper.alert(this, "Sửa thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Sửa thất bại");
+
+    boolean check() {
+        if (cboCPU.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtCPU.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập CPU");
+            return false;
+        }
+        if (cboLoaiSPRAM.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtRAM.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập RAM");
+            return false;
+        }
+        if (cboLoaiSPBoNho.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtBoNho.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập ROM");
+            return false;
+        }
+        if (cboCamera.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtCamera.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập Camera");
+            return false;
+        }
+        if (cboLoaiSPManHinh.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtManHinh.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập màn hình");
+            return false;
+        }
+        if (cboPin.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtPin.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập pin");
+            return false;
+        }
+        return true;
+    }
+
+    void suaManHinh() {
+        MangHinhModel ram = getFormMH();
+        try {
+            dao.updateManHinh(ram);
+            this.fillTableManHinh();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacSuaManHinh();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Sửa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Sửa thất bại");
             e.printStackTrace();
+        }
     }
-}
-void suaPin(){
-   PinModel ram = getFormPin();
-    try {
-        dao.updatePin(ram);
-        this.fillTablePin();
-        this.clearForm();
-        DialogHelper.alert(this, "Sửa thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Sửa thất bại");
+
+    void suaPin() {
+        PinModel ram = getFormPin();
+        try {
+            dao.updatePin(ram);
+            this.fillTablePin();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacSuaPin();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Sửa thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Sửa thất bại");
             e.printStackTrace();
+        }
     }
-}
-void xoaRam() {
+
+    void xoaRam() {
         RamModel sp = getFormRam();
         try {
             dao.deleteRAM(sp);
             fillTableRAM();
             clearForm();
+            ThaoTacModel model = getFormThaoTacXoaRAM();
+            ttdao.insert(model);
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
     }
-void xoaCPU() {
+
+    void xoaCPU() {
         CPUModel sp = getForm();
         try {
             dao.deleteCPU(sp);
             fillTableCPU();
             clearForm();
+            ThaoTacModel model = getFormThaoTacXoaCPU();
+            ttdao.insert(model);
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
 
     }
-void xoaRom() {
+
+    void xoaRom() {
         BoNhoModel sp = getFormRom();
         try {
             dao.deleteROM(sp);
             fillTableROM();
             clearForm();
+            ThaoTacModel model = getFormThaoTacXoaROM();
+            ttdao.insert(model);
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
     }
-void xoaCamera() {
+
+    void xoaCamera() {
         CameraModel sp = getFormCamera();
         try {
             dao.deleteCamera(sp);
             fillTableCamera();
             clearForm();
+            ThaoTacModel model = getFormThaoTacXoaCamera();
+            ttdao.insert(model);
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
     }
-void xoaManHinh() {
+
+    void xoaManHinh() {
         MangHinhModel sp = getFormMH();
         try {
             dao.deleteManHinh(sp);
             fillTableManHinh();
             clearForm();
+            ThaoTacModel model = getFormThaoTacXoaManHinh();
+            ttdao.insert(model);
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
     }
-void xoaPin() {
-       PinModel sp = getFormPin();
+
+    void xoaPin() {
+        PinModel sp = getFormPin();
         try {
             dao.deletePin(sp);
             fillTablePin();
             clearForm();
+            ThaoTacModel model = getFormThaoTacXoaPin();
+            ttdao.insert(model);
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
     }
-void themRom(){
-    BoNhoModel rom = getFormRom();
-    try {
-        dao.insertROM(rom);
-        this.fillTableROM();
-        this.clearForm();
-        DialogHelper.alert(this, "Thêm thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm thất bại");
+
+    void themRom() {
+        BoNhoModel rom = getFormRom();
+        try {
+            dao.insertROM(rom);
+            this.fillTableROM();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacThemROM();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
     }
-}
-void themCPU(){
-    CPUModel cpu = getForm();
-    try {
-        dao.insertCPU(cpu);
-        this.fillTableCPU();
-        this.clearForm();
-        DialogHelper.alert(this, "Thêm thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm thất bại");
+
+    void themCPU() {
+        CPUModel cpu = getForm();
+        try {
+            dao.insertCPU(cpu);
+            this.fillTableCPU();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacThemCPU();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
     }
-}
-void themMH(){
-    MangHinhModel ram = getFormMH();
-    try {
-        dao.insertManHinh(ram);
-        this.fillTableManHinh();
-        this.clearForm();
-        DialogHelper.alert(this, "Thêm thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm thất bại");
+
+    void themMH() {
+        MangHinhModel ram = getFormMH();
+        try {
+            dao.insertManHinh(ram);
+            this.fillTableManHinh();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacThemManHinh();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
     }
-}
-void themCamera(){
-    CameraModel ram = getFormCamera();
-    try {
-        dao.insertCamera(ram);
-        this.fillTableCamera();
-        this.clearForm();
-        DialogHelper.alert(this, "Thêm thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm thất bại");
+
+    void themCamera() {
+        CameraModel ram = getFormCamera();
+        try {
+            dao.insertCamera(ram);
+            this.fillTableCamera();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacThemCamera();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
     }
-}
-void themPin(){
-   PinModel ram = getFormPin();
-    try {
-        dao.insertPin(ram);
-        this.fillTablePin();
-        this.clearForm();
-        DialogHelper.alert(this, "Thêm thành công");
-    } catch (Exception e) {
-        DialogHelper.alert(this, "Thêm thất bại");
+
+    void themPin() {
+        PinModel ram = getFormPin();
+        try {
+            dao.insertPin(ram);
+            this.fillTablePin();
+            this.clearForm();
+            ThaoTacModel model = getFormThaoTacThemPin();
+            ttdao.insert(model);
+            DialogHelper.alert(this, "Thêm thành công");
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
     }
-}
     private void btnMoiRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiRAMActionPerformed
         // TODO add your handling code here:
         clearForm();
@@ -1669,12 +2088,14 @@ void themPin(){
 
     private void btnThemRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemRAMActionPerformed
         // TODO add your handling code here:
-        themRam();
+        if (check()) {
+            themRam();
+        }
     }//GEN-LAST:event_btnThemRAMActionPerformed
 
-    private void cboLoaiSPRAMActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void cboLoaiSPRAMActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                        
+    }
 
     private void cboCPU3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCPU3ActionPerformed
         // TODO add your handling code here:
