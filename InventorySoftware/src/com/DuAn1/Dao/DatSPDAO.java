@@ -53,7 +53,7 @@ public class DatSPDAO {
     }
 
     public void delete(DatSPModel model) {
-        String sql = "DELETE DATSP WHERE MaDH = ?";
+        String sql = "update datsp set TrangThai=0 where MaDH= ?";
         JdbcHelper.executeUpdate(sql, model.getMaDH());
     }
 
