@@ -17,12 +17,13 @@ import java.util.List;
  */
 public class HoaDonCTDAO {
     public void insert(HoaDonCTModel model) {
-        String sql = "Insert into HOADONCT values (?,?,?,?)";
+        String sql = "Insert into HOADONCT values (?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaHDCT(),
                 model.getMaSP(),
                 model.getSoLuong(),
-                model.getMaHD()
+                model.getMaHD(),
+                model.getGia()
         );
     }
 
@@ -32,11 +33,11 @@ public class HoaDonCTDAO {
     }
 
     public void delete(HoaDonCTModel model) {
-        String sql = "DELETE HOADONCT WHERE MaHD = ?";
+        String sql = "DELETE HOADONCT WHERE MaHDCT = ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
 
-    private List<HoaDonCTModel> select(String sql, Object... args) {
+    public List<HoaDonCTModel> select(String sql, Object... args) {
         List<HoaDonCTModel> list = new ArrayList<>();
         try {
             ResultSet rs = null;
@@ -61,6 +62,7 @@ public class HoaDonCTDAO {
         model.setMaSP(rs.getString(2));
         model.setSoLuong(rs.getFloat(3));
         model.setMaHD(rs.getString(4));
+        model.setGia(rs.getDouble(5));
         return model;
     }
 }

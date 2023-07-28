@@ -16,8 +16,9 @@ import java.util.List;
  * @author Administrator
  */
 public class HoaDonDAO {
-        public void insert(HoaDonModel model) {
-        String sql = "Insert into HOADON values (?,?,?,?,?,?,?,?,?)";
+
+    public void insert(HoaDonModel model) {
+        String sql = "Insert into HOADON values (?,?,?,?,?,?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaHD(),
                 model.getSoluong(),
@@ -27,7 +28,24 @@ public class HoaDonDAO {
                 model.getNgayXuat(),
                 model.getMota(),
                 model.getTenCty(),
-                model.getMaNV()
+                model.getMaNV(),
+                model.getTenKH()
+        );
+    }
+
+    public void update(HoaDonModel model) {
+        String sql = "update HOADON set  SoLuong=?,TrangThai=?,DonGia=?,TongTien=?,NgayXuat=?,MoTa=?,TenCTY = ?,MaNV=?, TenKH=? where MaDH =? ";
+        JdbcHelper.executeUpdate(sql,
+                model.getSoluong(),
+                model.isTrangThai(),
+                model.getDongia(),
+                model.getTongtien(),
+                model.getNgayXuat(),
+                model.getMota(),
+                model.getTenCty(),
+                model.getMaNV(),
+                model.getTenKH(),
+                model.getMaHD()
         );
     }
 
@@ -63,14 +81,15 @@ public class HoaDonDAO {
     private HoaDonModel readFromResultSet(ResultSet rs) throws SQLException {
         HoaDonModel model = new HoaDonModel();
         model.setMaHD(rs.getString(1));
-        model.setSoluong(rs.getFloat(2));
+        model.setSoluong(rs.getString(2));
         model.setTrangThai(rs.getBoolean(3));
-        model.setDongia(rs.getFloat(4));
-        model.setTongtien(rs.getFloat(5));
+        model.setDongia(rs.getString(4));
+        model.setTongtien(rs.getString(5));
         model.setNgayXuat(rs.getString(6));
         model.setMota(rs.getString(7));
         model.setTenCty(rs.getString(8));
         model.setMaNV(rs.getString(9));
+        model.setTenKH(rs.getString(10));
         return model;
     }
 }
