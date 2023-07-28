@@ -8,6 +8,7 @@ import com.DuAn1.Dao.DatSPCTDAO;
 import com.DuAn1.Dao.DatSPDAO;
 import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.DatSPCTModel;
@@ -50,6 +51,7 @@ public class DatHang1 extends javax.swing.JPanel {
     DefaultTableModel tblModel;
     DatSPCTDAO daoDatSPCT = new DatSPCTDAO();
     ThongKeDao daoThongKe = new ThongKeDao();
+    ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     public static String soLuong = "";
 
     public static String getSoLuong() {
@@ -62,7 +64,7 @@ public class DatHang1 extends javax.swing.JPanel {
 
     public DatHang1() {
         initComponents();
-        
+
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
 //panelShadow6.setVisible(false); ẩn jpanel
 //panelShadow6.setBackground(Color.pink);
@@ -3564,11 +3566,29 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPModel model = getFormTao();
             daoDatSP.delete(model);
+            ThaoTacModel ThaoTacModel = getFormDelete();
+            daoThaoTac.insert(ThaoTacModel);
+            clearForm();
             com.DuAn1.Helper.DialogHelper.alert(this, "Xóa dữ liệu thành công");
         } catch (Exception e) {
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi Xóa dữ liệu");
         }
+    }
+
+    public ThaoTacModel getFormDelete() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Đặt Hàng");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
     }
 
     void TuDongTangMa() {
@@ -3593,11 +3613,28 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPModel model = getFormTao();
             daoDatSP.update(model);
+            ThaoTacModel ThaoTacModel = getFormThem();
+            daoThaoTac.insert(ThaoTacModel);
             com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
         } catch (Exception e) {
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
+    }
+
+    public ThaoTacModel getFormThem() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Đặt Hàng");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
     }
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
         // TODO add your handling code here:
@@ -4030,7 +4067,10 @@ public class DatHang1 extends javax.swing.JPanel {
     }//GEN-LAST:event_button9ActionPerformed
     void delete() {
         int chon = tblUser.getSelectedRow();
-        if(chon<0){DialogHelper.alert(this,"Bạn cần chọn sản phẩm để có thể xóa");return;}
+        if (chon < 0) {
+            DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            return;
+        }
         String maSP = (String) tblUser.getValueAt(chon, 2);
         try {
             daoDatSPCT.Xoa(txtMaDatHang.getText(), maSP);
@@ -4044,13 +4084,11 @@ public class DatHang1 extends javax.swing.JPanel {
     }
 
     void deleteAll() {
-        int chon = tblUser.getSelectedRow();
-        String maSP = (String) tblUser.getValueAt(chon, 2);
         try {
             daoDatSPCT.XoaTatCa(txtMaDatHang.getText());
 
             filltable();
- 
+
             com.DuAn1.Helper.DialogHelper.alert(this, "Xóa tất cả sản phẩm thành công");
         } catch (Exception e) {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi xóa dữ liệu");
@@ -4060,7 +4098,7 @@ public class DatHang1 extends javax.swing.JPanel {
     private void txtSoDienThoaiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoDienThoaiCaretUpdate
         List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
         txtThongBao.setVisible(true);
-          
+
         if (list.size() == 0) {
             txtThongBao.setText("Khách hàng chưa tồn tại");
         }
@@ -4113,12 +4151,27 @@ public class DatHang1 extends javax.swing.JPanel {
             txtSoLuong.setText(String.valueOf(tongSoLuong));
             double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
             txtTongTien.setText(String.format("%.0f", tongTien));
+            ThaoTacModel ThaoTacModel = getFormUpdate();
+            daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }        // TODO add your handling code here:
 
     }//GEN-LAST:event_button6ActionPerformed
+    public ThaoTacModel getFormUpdate() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
 
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm vào đặt hàng");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
     private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
         clearForm();        // TODO add your handling code here:
     }//GEN-LAST:event_button01ActionPerformed
@@ -4129,9 +4182,9 @@ public class DatHang1 extends javax.swing.JPanel {
     }//GEN-LAST:event_button5ActionPerformed
 
     private void txtSoDienThoaiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSoDienThoaiMousePressed
- List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
+        List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
         txtThongBao.setVisible(true);
-          txtSoDienThoai.setText(DatHang1.getSoLuong());
+        txtSoDienThoai.setText(DatHang1.getSoLuong());
         if (list.size() == 0) {
             txtThongBao.setText("Khách hàng chưa tồn tại");
         }
