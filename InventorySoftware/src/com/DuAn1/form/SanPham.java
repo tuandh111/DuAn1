@@ -8,6 +8,7 @@ import com.DuAn1.Dao.DienThoaiDao;
 import com.DuAn1.Dao.DongMayDAO;
 import com.DuAn1.Dao.GiamGiaDao;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.QuetMaQR.QuetMa;
@@ -37,6 +38,7 @@ import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.PinModel;
 import com.DuAn1.Model.RamModel;
 import com.DuAn1.Model.SanPhamModel;
+import com.DuAn1.Model.ThaoTacModel;
 import static com.tuandhpc05076.Form.NguoiHoc.listNH;
 import com.tuandhpc05076.Object.O_NguoiHoc;
 import java.awt.Desktop;
@@ -48,6 +50,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -78,6 +82,7 @@ public class SanPham extends javax.swing.JPanel {
     DienThoaiDao DaoDT = new DienThoaiDao();
     DongMayDAO daoDongMay = new DongMayDAO();
     ThongKeDao DaoThongKe = new ThongKeDao();
+    ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     // the webcam object
     private WebcamPanel panel;
     int row = -1;
@@ -376,6 +381,8 @@ public class SanPham extends javax.swing.JPanel {
             DienThoaiModel modeldt = getFormDT();
             Dao.insert(model);
             DaoDT.insert(modeldt);
+            ThaoTacModel ThaoTacModel = getFormThem();
+            daoThaoTac.insert(ThaoTacModel);
             DialogHelper.alert(this, "Thêm dữ liệu thành công");
         } catch (Exception e) {
             e.printStackTrace();
@@ -383,11 +390,56 @@ public class SanPham extends javax.swing.JPanel {
         }
     }
 
+    public ThaoTacModel getFormThem() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sản Phẩm");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+    public ThaoTacModel getFormUpdate() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sản Phẩm");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+        public ThaoTacModel getFormDelete() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sản Phẩm");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
     void delete() {
         SanPhamModel sp = getFormSP();
         try {
             Dao.delete(sp);
+            ThaoTacModel ThaoTacModel = getFormDelete();
+            daoThaoTac.insert(ThaoTacModel);
             filltable();
+            clear();
             DialogHelper.alert(this, "Xóa thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
@@ -464,13 +516,17 @@ public class SanPham extends javax.swing.JPanel {
     }
 
     public void Sua() {
-        if(checkForm()==false)return;
+        if (checkForm() == false) {
+            return;
+        }
         SanPhamModel daoSP = getFormSP();
         DienThoaiModel daoDT = getFormDT();
         try {
             Dao.update(daoSP);
             DaoDT.update(daoDT);
             filltable();
+            ThaoTacModel ThaoTacModel = getFormUpdate();
+            daoThaoTac.insert(ThaoTacModel);
             clear();
             DialogHelper.alert(this, "Cập nhật thông tin thành công!");
         } catch (Exception e) {
@@ -1265,7 +1321,8 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_switchButton1MouseClicked
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
-        clear();  TuDongTangMa();      // TODO add your handling code here:
+        clear();
+        TuDongTangMa();      // TODO add your handling code here:
 
     }//GEN-LAST:event_btnMoiActionPerformed
 //   public void tuDongTangMa() {
@@ -1390,19 +1447,19 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTenSPCaretUpdate
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
-first();        // TODO add your handling code here:
+        first();        // TODO add your handling code here:
     }//GEN-LAST:event_btnFirstActionPerformed
 
     private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
-prev();        // TODO add your handling code here:
+        prev();        // TODO add your handling code here:
     }//GEN-LAST:event_btnPrevActionPerformed
 
     private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
-next();        // TODO add your handling code here:
+        next();        // TODO add your handling code here:
     }//GEN-LAST:event_btnLastActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
- last();        // TODO add your handling code here:
+        last();        // TODO add your handling code here:
     }//GEN-LAST:event_btnNextActionPerformed
 
 
