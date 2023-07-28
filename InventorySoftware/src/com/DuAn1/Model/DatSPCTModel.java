@@ -12,14 +12,17 @@ public class DatSPCTModel {
     private int ID;
     private String MaSP;
     private String MaDH;
-    private String SoLuong;
+    private double gia;
+    private int SoLuong;
 
-    public DatSPCTModel(int ID, String MaSP, String MaHD, String SoLuong) {
+    public DatSPCTModel(int ID, String MaSP, String MaDH, double gia, int SoLuong) {
         this.ID = ID;
         this.MaSP = MaSP;
-        this.MaDH = MaHD;
+        this.MaDH = MaDH;
+        this.gia = gia;
         this.SoLuong = SoLuong;
     }
+
 
     public DatSPCTModel() {
     }
@@ -48,12 +51,23 @@ public class DatSPCTModel {
         this.MaDH = MaDH;
     }
 
-    public String getSoLuong() {
+    public double getGia() {
+        return gia;
+    }
+
+    public void setGia(double gia) {
+        this.gia = gia;
+    }
+
+    public int getSoLuong() {
         return SoLuong;
     }
 
-    public void setSoLuong(String SoLuong) {
+    public void setSoLuong(int SoLuong) {
         this.SoLuong = SoLuong;
     }
+    
+ 
+
     
 }

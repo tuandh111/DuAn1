@@ -33,6 +33,20 @@ public class DatSPDAO {
         );
     }
 
+    public void update(DatSPModel model) {
+        String sql = "update DATSP set  SoLuong=?,SDT=?,TrangThai=?,DonGia=?,TongTien=?,ThoiGianDat=?,MaNV=? where MaDH =? ";
+        JdbcHelper.executeUpdate(sql,
+                model.getSoLuong(),
+                model.getSDT(),
+                model.isTrangThai(),
+                model.getDonGia(),
+                model.getTongTien(),
+                model.getThoiGianDat(),
+                model.getMaNV(),
+                model.getMaDH()
+        );
+    }
+
     public List<DatSPModel> select() {
         String sql = "SELECT * FROM DATSP WHERE TrangThai =1";
         return select(sql);
