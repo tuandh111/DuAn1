@@ -11,19 +11,20 @@ package com.DuAn1.Model;
 public class HoaDonModel {
 
     private String MaHD;
-    private double Soluong;
+    private String Soluong;
     private boolean TrangThai;
-    private double Dongia;
-    private double Tongtien;
+    private String Dongia;
+    private String Tongtien;
     private String NgayXuat;
     private String Mota;
     private String TenCty;
     private String MaNV;
+    private String TenKH;
 
     public HoaDonModel() {
     }
 
-    public HoaDonModel(String MaHD, double Soluong, boolean TrangThai, double Dongia, double Tongtien, String NgayXuat, String Mota, String TenCty, String MaNV) {
+    public HoaDonModel(String MaHD, String Soluong, boolean TrangThai, String Dongia, String Tongtien, String NgayXuat, String Mota, String TenCty, String MaNV, String TenKH) {
         this.MaHD = MaHD;
         this.Soluong = Soluong;
         this.TrangThai = TrangThai;
@@ -33,6 +34,7 @@ public class HoaDonModel {
         this.Mota = Mota;
         this.TenCty = TenCty;
         this.MaNV = MaNV;
+        this.TenKH = TenKH;
     }
 
     public String getMaHD() {
@@ -43,11 +45,11 @@ public class HoaDonModel {
         this.MaHD = MaHD;
     }
 
-    public double getSoluong() {
+    public String getSoluong() {
         return Soluong;
     }
 
-    public void setSoluong(double Soluong) {
+    public void setSoluong(String Soluong) {
         this.Soluong = Soluong;
     }
 
@@ -59,19 +61,19 @@ public class HoaDonModel {
         this.TrangThai = TrangThai;
     }
 
-    public double getDongia() {
+    public String getDongia() {
         return Dongia;
     }
 
-    public void setDongia(double Dongia) {
+    public void setDongia(String Dongia) {
         this.Dongia = Dongia;
     }
 
-    public double getTongtien() {
+    public String getTongtien() {
         return Tongtien;
     }
 
-    public void setTongtien(double Tongtien) {
+    public void setTongtien(String Tongtien) {
         this.Tongtien = Tongtien;
     }
 
@@ -105,6 +107,14 @@ public class HoaDonModel {
 
     public void setMaNV(String MaNV) {
         this.MaNV = MaNV;
+    }
+
+    public String getTenKH() {
+        return TenKH;
+    }
+
+    public void setTenKH(String TenKH) {
+        this.TenKH = TenKH;
     }
 
 }

@@ -14,15 +14,17 @@ public class HoaDonCTModel {
     private String MaSP;
     private double SoLuong;
     private String MaHD;
+    private double gia;
 
     public HoaDonCTModel() {
     }
 
-    public HoaDonCTModel(String MaHDCT, String MaSP, double SoLuong, String MaHD) {
+    public HoaDonCTModel(String MaHDCT, String MaSP, double SoLuong, String MaHD, double gia) {
         this.MaHDCT = MaHDCT;
         this.MaSP = MaSP;
         this.SoLuong = SoLuong;
         this.MaHD = MaHD;
+        this.gia = gia;
     }
 
     public String getMaHDCT() {
@@ -55,6 +57,14 @@ public class HoaDonCTModel {
 
     public void setMaHD(String MaHD) {
         this.MaHD = MaHD;
+    }
+
+    public double getGia() {
+        return gia;
+    }
+
+    public void setGia(double gia) {
+        this.gia = gia;
     }
 
 }

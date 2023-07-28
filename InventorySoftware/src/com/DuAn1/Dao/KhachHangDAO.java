@@ -73,6 +73,11 @@ public class KhachHangDAO {
         return select(sql, SDT);
     }
 
+    public List<KhachHangModel> selectTen(String SDT) {
+        String sql = "SELECT * from KHACHHANG where TenKH = ?";
+        return select(sql, SDT);
+    }
+
     private List<KhachHangModel> select(String sql, Object... args) {
         List<KhachHangModel> list = new ArrayList<>();
         try {
@@ -107,6 +112,7 @@ public class KhachHangDAO {
         model.setHinh(rs.getString(11));
         return model;
     }
+
     public List<KhachHangModel> TimKiemTheoMa(String MaKH) {
         String sql = "SELECT * FROM KHACHHANG WHERE MaKH LIKE ?";
         return select(sql, "%" + MaKH + "%");
