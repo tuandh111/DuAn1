@@ -87,11 +87,11 @@
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="button8" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="btnXoaTatCa" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="button6" min="-2" pref="221" max="-2" attributes="0"/>
+                              <Component id="btnThemDatHang" min="-2" pref="221" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                              <Component id="button5" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="btnXoaSP" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane4" min="-2" pref="547" max="-2" attributes="0"/>
                       </Group>
@@ -112,19 +112,17 @@
                           <Component id="jScrollPane4" min="-2" pref="228" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="button5" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="button8" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="button6" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="btnXoaSP" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="btnXoaTatCa" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="btnThemDatHang" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="77" max="32767" attributes="0"/>
+                  <EmptySpace pref="127" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -188,19 +186,12 @@
                               </Group>
                               <EmptySpace min="-2" pref="752" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="LbSony2" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LbSony3" alignment="0" max="32767" attributes="0"/>
@@ -224,17 +215,6 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel102">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="sansserif" size="30" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="4d" green="4d" red="4d" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Sony"/>
-                      </Properties>
-                    </Component>
                     <Container class="swing.PanelShadow" name="LbSony1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3218,10 +3198,6 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="86" pref="86" max="-2" attributes="0"/>
-                                      <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                                       <Component id="lbISamSung7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
@@ -3256,8 +3232,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lbISamSung1" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbISamSung2" min="-2" max="-2" attributes="0"/>
@@ -3280,17 +3255,6 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel101">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="sansserif" size="30" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="4d" green="4d" red="4d" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="SAMSUNG"/>
-                      </Properties>
-                    </Component>
                     <Container class="swing.PanelShadow" name="lbISamSung1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4726,7 +4690,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="button7" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnDatHang" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="button3" min="-2" pref="158" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -4738,7 +4702,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="txtDonGia" alignment="0" pref="198" max="32767" attributes="0"/>
-                                          <Component id="button01" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="btnLamMoi" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                           <Component id="txtMaDatHang" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -4757,7 +4721,7 @@
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="button2" min="-2" pref="174" max="-2" attributes="0"/>
+                                              <Component id="btnHuyDatHang" min="-2" pref="174" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -4807,11 +4771,11 @@
                       </Group>
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="button2" min="-2" pref="48" max="-2" attributes="0"/>
-                          <Component id="button01" max="32767" attributes="0"/>
+                          <Component id="btnHuyDatHang" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="btnLamMoi" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="button7" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDatHang" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -4867,7 +4831,7 @@
                 <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtSoLuongCaretUpdate"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.swing0.button0" name="button01">
+            <Component class="com.DuAn1.swing0.button0" name="btnLamMoi">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -4875,10 +4839,10 @@
                 <Property name="text" type="java.lang.String" value="l&#xe0;m m&#x1edb;i"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button01ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLamMoiActionPerformed"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.swing0.button0" name="button2">
+            <Component class="com.DuAn1.swing0.button0" name="btnHuyDatHang">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -4889,7 +4853,7 @@
                 <Property name="text" type="java.lang.String" value="H&#x1ee7;y danh s&#xe1;ch &#x111;&#x1eb7;t h&#xe0;ng"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHuyDatHangActionPerformed"/>
               </Events>
             </Component>
             <Component class="com.DuAn1.swing0.button0" name="button3">
@@ -4903,7 +4867,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.swing0.button0" name="button7">
+            <Component class="com.DuAn1.swing0.button0" name="btnDatHang">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -4914,7 +4878,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button7ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDatHangActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
@@ -4956,7 +4920,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel3"/>
               </Properties>
             </Component>
             <Component class="com.DuAn1.swing0.button0" name="button10">
@@ -4964,7 +4927,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch H&#x110;"/>
+                <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch &#x110;H"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button10ActionPerformed"/>
@@ -5026,7 +4989,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.DuAn1.swing0.button0" name="button8">
+        <Component class="com.DuAn1.swing0.button0" name="btnXoaTatCa">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -5037,10 +5000,10 @@
             <Property name="text" type="java.lang.String" value="X&#xf3;a t&#x1ea5;t c&#x1ea3;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaTatCaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.swing0.button0" name="button5">
+        <Component class="com.DuAn1.swing0.button0" name="btnXoaSP">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -5051,10 +5014,10 @@
             <Property name="text" type="java.lang.String" value="X&#xf3;a s&#x1ea3;n ph&#x1ea9;m"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaSPActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.swing0.button0" name="button6">
+        <Component class="com.DuAn1.swing0.button0" name="btnThemDatHang">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -5062,7 +5025,7 @@
             <Property name="text" type="java.lang.String" value="Th&#xea;m v&#xe0;o &#x111;&#x1eb7;t h&#xe0;ng"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemDatHangActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

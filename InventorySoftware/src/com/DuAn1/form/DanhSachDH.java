@@ -30,16 +30,26 @@ import javax.swing.table.DefaultTableModel;
  * @author DELL E5470
  */
 public class DanhSachDH extends javax.swing.JDialog {
+
     DefaultTableModel tblModel;
     DatSPDAO daoSP = new DatSPDAO();
-   public static String name1 ="";
-   public static int soLuong=0;
-   public static double DonGia=0;
-   public static double tongTien=0;
-public static String ngay ="";
+    public static String name1 = "";
+    public static int soLuong = 0;
+    public static double DonGia = 0;
+    public static double tongTien = 0;
+      public static String SDT = "";
+    public static String ngay = "";
 
     public static String getNgay() {
         return ngay;
+    }
+
+    public static String getSDT() {
+        return SDT;
+    }
+
+    public static void setSDT(String SDT) {
+        DanhSachDH.SDT = SDT;
     }
 
     public static void setNgay(String ngay) {
@@ -69,7 +79,7 @@ public static String ngay ="";
     public static void setTongTien(double tongTien) {
         DanhSachDH.tongTien = tongTien;
     }
-   
+
     public static String getName1() {
         return name1;
     }
@@ -77,23 +87,24 @@ public static String ngay ="";
     public static void setName1(String name1) {
         DanhSachDH.name1 = name1;
     }
-   
+
     public DanhSachDH(java.awt.Frame parent, boolean modal) {
-                super(parent, modal);
+        super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         tblUser.fixTable(jScrollPane1);
 //        initTableData();
-filltable();
+        filltable();
 
     }
-       void filltable() {
+
+    void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
             List<DatSPModel> list = daoSP.select();
             for (DatSPModel nv : list) {
-                Object[] row = new Object[]{nv.getMaDH(),nv.getSoLuong(),nv.getSDT(),nv.getDonGia(),nv.getTongTien(),nv.getThoiGianDat(),nv.getMaNV()};
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), nv.getThoiGianDat(), nv.getMaNV()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -130,7 +141,6 @@ filltable();
 //        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Trân", "Nữ", "C#", 300).toRowTable(eventAction));
 //        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Yến", "Nữ", "C#", 700).toRowTable(eventAction));
 //    }
-
     private boolean showMessage(String message) {
         Message obj = new Message(Main.getFrames()[0], true);
         obj.showMessage(message);
@@ -189,7 +199,7 @@ filltable();
         jScrollPane1.setViewportView(tblUser);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Danh sách hóa đơn chờ");
+        jLabel1.setText("Danh sách đặt hàng ");
 
         textField11.setToolTipText("");
         textField11.setHint("Tìm kiếm");
@@ -284,14 +294,16 @@ filltable();
 
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         int chon = tblUser.getSelectedRow();
-        String name =(String) tblUser.getValueAt(chon, 0);
+        String name = (String) tblUser.getValueAt(chon, 0);
         String soLuong = (String) tblUser.getValueAt(chon, 1);
+        String SDT = (String) tblUser.getValueAt(chon, 2);
         String donGia = (String) tblUser.getValueAt(chon, 3);
         String tongTien = (String) tblUser.getValueAt(chon, 4);
         String ThoiGian = (String) tblUser.getValueAt(chon, 5);
         DanhSachDH.setTongTien(Double.parseDouble(tongTien));
         DanhSachDH.setSoLuong(Integer.parseInt(soLuong));
         DanhSachDH.setDonGia(Double.parseDouble(donGia));
+        DanhSachDH.setSDT(SDT);
         DanhSachDH.setName1(name);
         DanhSachDH.setNgay(ThoiGian);
         this.dispose();

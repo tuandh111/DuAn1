@@ -185,7 +185,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch h&#xf3;a &#x111;&#x1a1;n ch&#x1edd;"/>
+            <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch &#x111;&#x1eb7;t h&#xe0;ng "/>
           </Properties>
         </Component>
         <Component class="com.DuAn1.Swing.TextField1" name="textField11">

@@ -107,6 +107,11 @@ public class DatHang1 extends javax.swing.JPanel {
         lbISamSung9.setVisible(false);
         LoadSP();
         txtThongBao.setVisible(false);
+        btnHuyDatHang.setEnabled(false);
+        btnDatHang.setEnabled(false);
+        btnXoaSP.setEnabled(false);
+        btnThemDatHang.setEnabled(false);
+        btnXoaTatCa.setEnabled(false);
     }
 
     public void LoadSP() {
@@ -365,7 +370,6 @@ public class DatHang1 extends javax.swing.JPanel {
         materialTabbed1 = new swing.MaterialTabbed();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
-        jLabel102 = new javax.swing.JLabel();
         LbSony1 = new swing.PanelShadow();
         txtHinhAnhSony1 = new swing.ImageAvatar();
         btnAdd1 = new com.DuAn1.swing0.button0();
@@ -515,7 +519,6 @@ public class DatHang1 extends javax.swing.JPanel {
         txtGiaIphone39 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
-        jLabel101 = new javax.swing.JLabel();
         lbISamSung1 = new swing.PanelShadow();
         txtHinhAnhSamSung1 = new swing.ImageAvatar();
         txtTenSamSung1 = new javax.swing.JLabel();
@@ -595,10 +598,10 @@ public class DatHang1 extends javax.swing.JPanel {
         txtDonGia = new com.DuAn1.Swing.TextField();
         txtMaDatHang = new com.DuAn1.Swing.TextField();
         txtSoLuong = new com.DuAn1.Swing.TextField();
-        button01 = new com.DuAn1.swing0.button0();
-        button2 = new com.DuAn1.swing0.button0();
+        btnLamMoi = new com.DuAn1.swing0.button0();
+        btnHuyDatHang = new com.DuAn1.swing0.button0();
         button3 = new com.DuAn1.swing0.button0();
-        button7 = new com.DuAn1.swing0.button0();
+        btnDatHang = new com.DuAn1.swing0.button0();
         jLabel1 = new javax.swing.JLabel();
         txtTongTien = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -607,9 +610,9 @@ public class DatHang1 extends javax.swing.JPanel {
         button10 = new com.DuAn1.swing0.button0();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
-        button8 = new com.DuAn1.swing0.button0();
-        button5 = new com.DuAn1.swing0.button0();
-        button6 = new com.DuAn1.swing0.button0();
+        btnXoaTatCa = new com.DuAn1.swing0.button0();
+        btnXoaSP = new com.DuAn1.swing0.button0();
+        btnThemDatHang = new com.DuAn1.swing0.button0();
 
         dateChooser.setDateFormat("yyyy-MM-dd");
         dateChooser.setTextRefernce(txtNgayXuat);
@@ -629,10 +632,6 @@ public class DatHang1 extends javax.swing.JPanel {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel102.setFont(new java.awt.Font("sansserif", 1, 30)); // NOI18N
-        jLabel102.setForeground(new java.awt.Color(77, 77, 77));
-        jLabel102.setText("Sony");
 
         LbSony1.setBackground(new java.awt.Color(246, 88, 88));
         LbSony1.setShadowOpacity(0.3F);
@@ -1468,17 +1467,11 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(LbSony9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(752, 752, 752))
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel102)
-                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel102)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(LbSony2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LbSony3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2368,10 +2361,6 @@ public class DatHang1 extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel101.setFont(new java.awt.Font("sansserif", 1, 30)); // NOI18N
-        jLabel101.setForeground(new java.awt.Color(77, 77, 77));
-        jLabel101.setText("SAMSUNG");
-
         lbISamSung1.setBackground(new java.awt.Color(246, 88, 88));
         lbISamSung1.setShadowOpacity(0.3F);
 
@@ -3170,9 +3159,6 @@ public class DatHang1 extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(jLabel101))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(lbISamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
@@ -3199,8 +3185,7 @@ public class DatHang1 extends javax.swing.JPanel {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel101)
-                .addGap(18, 18, 18)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbISamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbISamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3266,20 +3251,20 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        button01.setBackground(new java.awt.Color(153, 153, 255));
-        button01.setText("làm mới");
-        button01.addActionListener(new java.awt.event.ActionListener() {
+        btnLamMoi.setBackground(new java.awt.Color(153, 153, 255));
+        btnLamMoi.setText("làm mới");
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button01ActionPerformed(evt);
+                btnLamMoiActionPerformed(evt);
             }
         });
 
-        button2.setBackground(new java.awt.Color(255, 51, 51));
-        button2.setForeground(new java.awt.Color(255, 255, 255));
-        button2.setText("Hủy danh sách đặt hàng");
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        btnHuyDatHang.setBackground(new java.awt.Color(255, 51, 51));
+        btnHuyDatHang.setForeground(new java.awt.Color(255, 255, 255));
+        btnHuyDatHang.setText("Hủy danh sách đặt hàng");
+        btnHuyDatHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                btnHuyDatHangActionPerformed(evt);
             }
         });
 
@@ -3291,12 +3276,12 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        button7.setBackground(new java.awt.Color(153, 153, 255));
-        button7.setText("Đặt hàng");
-        button7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        button7.addActionListener(new java.awt.event.ActionListener() {
+        btnDatHang.setBackground(new java.awt.Color(153, 153, 255));
+        btnDatHang.setText("Đặt hàng");
+        btnDatHang.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnDatHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button7ActionPerformed(evt);
+                btnDatHangActionPerformed(evt);
             }
         });
 
@@ -3317,10 +3302,9 @@ public class DatHang1 extends javax.swing.JPanel {
 
         txtThongBao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtThongBao.setForeground(new java.awt.Color(255, 0, 0));
-        txtThongBao.setText("jLabel3");
 
         button10.setBackground(new java.awt.Color(153, 153, 255));
-        button10.setText("Danh sách HĐ");
+        button10.setText("Danh sách ĐH");
         button10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button10ActionPerformed(evt);
@@ -3343,7 +3327,7 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addGap(43, 43, 43))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(button7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDatHang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3354,7 +3338,7 @@ public class DatHang1 extends javax.swing.JPanel {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txtDonGia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                    .addComponent(button01, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnLamMoi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtMaDatHang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3369,7 +3353,7 @@ public class DatHang1 extends javax.swing.JPanel {
                                         .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(btnHuyDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(txtNgayXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(24, 24, 24))))
         );
@@ -3404,10 +3388,10 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGap(72, 72, 72)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnHuyDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLamMoi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -3424,29 +3408,29 @@ public class DatHang1 extends javax.swing.JPanel {
         ));
         jScrollPane4.setViewportView(tblUser);
 
-        button8.setBackground(new java.awt.Color(255, 51, 51));
-        button8.setForeground(new java.awt.Color(255, 255, 255));
-        button8.setText("Xóa tất cả");
-        button8.addActionListener(new java.awt.event.ActionListener() {
+        btnXoaTatCa.setBackground(new java.awt.Color(255, 51, 51));
+        btnXoaTatCa.setForeground(new java.awt.Color(255, 255, 255));
+        btnXoaTatCa.setText("Xóa tất cả");
+        btnXoaTatCa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button8ActionPerformed(evt);
+                btnXoaTatCaActionPerformed(evt);
             }
         });
 
-        button5.setBackground(new java.awt.Color(255, 51, 51));
-        button5.setForeground(new java.awt.Color(255, 255, 255));
-        button5.setText("Xóa sản phẩm");
-        button5.addActionListener(new java.awt.event.ActionListener() {
+        btnXoaSP.setBackground(new java.awt.Color(255, 51, 51));
+        btnXoaSP.setForeground(new java.awt.Color(255, 255, 255));
+        btnXoaSP.setText("Xóa sản phẩm");
+        btnXoaSP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button5ActionPerformed(evt);
+                btnXoaSPActionPerformed(evt);
             }
         });
 
-        button6.setBackground(new java.awt.Color(153, 153, 255));
-        button6.setText("Thêm vào đặt hàng");
-        button6.addActionListener(new java.awt.event.ActionListener() {
+        btnThemDatHang.setBackground(new java.awt.Color(153, 153, 255));
+        btnThemDatHang.setText("Thêm vào đặt hàng");
+        btnThemDatHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button6ActionPerformed(evt);
+                btnThemDatHangActionPerformed(evt);
             }
         });
 
@@ -3460,11 +3444,11 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnXoaTatCa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThemDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(63, 63, 63)
-                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnXoaSP, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3480,15 +3464,13 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50))
+                            .addComponent(btnXoaSP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnXoaTatCa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThemDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3561,8 +3543,15 @@ public class DatHang1 extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-
+    boolean check(){
+        if(txtMaDatHang.getText().equals("")){
+            DialogHelper.alert(this,"Mã bạn đã để trống");
+            return false;
+        }
+        return true;
+    }
     public void Delete() {
+        if(check()==false)return;
         try {
             DatSPModel model = getFormTao();
             daoDatSP.delete(model);
@@ -3607,9 +3596,18 @@ public class DatHang1 extends javax.swing.JPanel {
         // TODO add your handling code here:
         TuDongTangMa();
         Them();
+        btnHuyDatHang.setEnabled(true);
+        btnDatHang.setEnabled(true);
+        btnXoaSP.setEnabled(true);
+        btnThemDatHang.setEnabled(true);
+        btnXoaTatCa.setEnabled(true);
 
     }//GEN-LAST:event_button3ActionPerformed
     void them() {
+          if(txtMaDatHang.getText().equals("")){
+            DialogHelper.alert(this,"Bạn chưa tạo đặt hàng nào");
+            return;
+        }
         try {
             DatSPModel model = getFormTao();
             daoDatSP.update(model);
@@ -3636,19 +3634,19 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
-    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+    private void btnDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatHangActionPerformed
         // TODO add your handling code here:
         them();
         clearForm();
-    }//GEN-LAST:event_button7ActionPerformed
+    }//GEN-LAST:event_btnDatHangActionPerformed
 
     private void txtNgayXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuatMouseClicked
         dateChooser.showPopup();        // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayXuatMouseClicked
 
-    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
+    private void btnXoaTatCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaTatCaActionPerformed
         deleteAll();        // TODO add your handling code here:
-    }//GEN-LAST:event_button8ActionPerformed
+    }//GEN-LAST:event_btnXoaTatCaActionPerformed
 
     private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
@@ -4066,6 +4064,10 @@ public class DatHang1 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_button9ActionPerformed
     void delete() {
+          if(txtMaDatHang.getText().equals("")){
+            DialogHelper.alert(this,"Bạn đặt hàng nào");
+            return;
+        }
         int chon = tblUser.getSelectedRow();
         if (chon < 0) {
             DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
@@ -4084,6 +4086,10 @@ public class DatHang1 extends javax.swing.JPanel {
     }
 
     void deleteAll() {
+          if(txtMaDatHang.getText().equals("")){
+            DialogHelper.alert(this,"Bạn có đặt hàng nào");
+            return;
+        }
         try {
             daoDatSPCT.XoaTatCa(txtMaDatHang.getText());
 
@@ -4109,10 +4115,10 @@ public class DatHang1 extends javax.swing.JPanel {
 // TODO add your handling code here:
     }//GEN-LAST:event_txtSoDienThoaiCaretUpdate
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+    private void btnHuyDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyDatHangActionPerformed
         Delete();        // TODO add your handling code here:
 
-    }//GEN-LAST:event_button2ActionPerformed
+    }//GEN-LAST:event_btnHuyDatHangActionPerformed
 
     private void btnAdd20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd20ActionPerformed
         // TODO add your handling code here:
@@ -4130,6 +4136,13 @@ public class DatHang1 extends javax.swing.JPanel {
 //          DecimalFormat df = new DecimalFormat("#,##0.##");
         txtTongTien.setText(String.format("%.1f", DanhSachDH.getTongTien()));
         txtNgayXuat.setText(DanhSachDH.getNgay());
+        txtSoDienThoai.setText(DanhSachDH.getSDT());
+          txtThongBao.setVisible(true);
+        btnHuyDatHang.setEnabled(true);
+        btnDatHang.setEnabled(true);
+        btnXoaSP.setEnabled(true);
+        btnThemDatHang.setEnabled(true);
+        btnXoaTatCa.setEnabled(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_button10ActionPerformed
 
@@ -4138,9 +4151,13 @@ public class DatHang1 extends javax.swing.JPanel {
         filltable();
     }//GEN-LAST:event_txtMaDatHangCaretUpdate
 
-    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+    private void btnThemDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDatHangActionPerformed
         double tongGia = 0;
         int tongSoLuong = 0;
+        if(txtMaDatHang.getText().equals("")){
+            DialogHelper.alert(this,"Bạn chưa tạo đặt hàng nào");
+            return;
+        }
         try {
             List<DatSPCTModel> list = daoDatSPCT.select(txtMaDatHang.getText());
             for (DatSPCTModel nv : list) {
@@ -4157,7 +4174,7 @@ public class DatHang1 extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }        // TODO add your handling code here:
 
-    }//GEN-LAST:event_button6ActionPerformed
+    }//GEN-LAST:event_btnThemDatHangActionPerformed
     public ThaoTacModel getFormUpdate() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
@@ -4172,14 +4189,14 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
-    private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
         clearForm();        // TODO add your handling code here:
-    }//GEN-LAST:event_button01ActionPerformed
+    }//GEN-LAST:event_btnLamMoiActionPerformed
 
-    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+    private void btnXoaSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaSPActionPerformed
         // TODO add your handling code here:
         delete();
-    }//GEN-LAST:event_button5ActionPerformed
+    }//GEN-LAST:event_btnXoaSPActionPerformed
 
     private void txtSoDienThoaiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSoDienThoaiMousePressed
         List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
@@ -4476,20 +4493,18 @@ public class DatHang1 extends javax.swing.JPanel {
     private com.DuAn1.swing0.button0 btnAdd7;
     private com.DuAn1.swing0.button0 btnAdd8;
     private com.DuAn1.swing0.button0 btnAdd9;
-    private com.DuAn1.swing0.button0 button01;
+    private com.DuAn1.swing0.button0 btnDatHang;
+    private com.DuAn1.swing0.button0 btnHuyDatHang;
+    private com.DuAn1.swing0.button0 btnLamMoi;
+    private com.DuAn1.swing0.button0 btnThemDatHang;
+    private com.DuAn1.swing0.button0 btnXoaSP;
+    private com.DuAn1.swing0.button0 btnXoaTatCa;
     private com.DuAn1.swing0.button0 button10;
-    private com.DuAn1.swing0.button0 button2;
     private com.DuAn1.swing0.button0 button3;
-    private com.DuAn1.swing0.button0 button5;
-    private com.DuAn1.swing0.button0 button6;
-    private com.DuAn1.swing0.button0 button7;
-    private com.DuAn1.swing0.button0 button8;
     private com.DuAn1.swing0.button0 button9;
     private com.raven.datechooser.DateChooser dateChooser;
     private swing.ImageAvatar imageAvatar68;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
