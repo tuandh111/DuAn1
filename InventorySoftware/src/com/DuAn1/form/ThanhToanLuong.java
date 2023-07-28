@@ -6,9 +6,12 @@ package com.DuAn1.form;
 
 import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Dao.ThanhToanLuongDAO;
+import com.DuAn1.Dao.ThaoTacDAO;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.GiamGiaModel;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.ThanhToanLuongModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.Dao.NhanVienDAO;
 import com.tuandhpc05076.helper.DateHelper;
 import com.tuandhpc05076.helper.DialogHelper;
@@ -16,6 +19,8 @@ import java.awt.Color;
 import java.awt.geom.Path2D;
 import java.awt.geom.RoundRectangle2D;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,7 +33,8 @@ import javax.swing.table.DefaultTableModel;
  * @author DELL E5470
  */
 public class ThanhToanLuong extends javax.swing.JPanel {
-    
+
+    ThaoTacDAO thaotacdao = new ThaoTacDAO();
     ThanhToanLuongDAO dao = new ThanhToanLuongDAO();
     int row = -1;
     DefaultTableModel model;
@@ -37,11 +43,56 @@ public class ThanhToanLuong extends javax.swing.JPanel {
      * Creates new form GiamGia
      */
     public ThanhToanLuong() {
-        initComponents();        
+        initComponents();
         tblThanhToanLuong.getColumnModel().getColumn(1).setPreferredWidth(40);
-        
+
         fillTable();
         LoadCBOMaLuong();
+    }
+
+    public ThaoTacModel getFormThaoTacThem() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Thanh Toán Lương");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacSua() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Thanh Toán Lương");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormThaoTacXoa() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Thanh Toán Lương");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
     }
 
     void LoadCBOMaLuong() {
@@ -53,11 +104,11 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         txtMaLuong.setModel(cboModel);
         txtMaLuong.setSelectedIndex(-1);
-        
+
     }
 
     void fillTable() {
-        
+
         model = (DefaultTableModel) tblThanhToanLuong.getModel();
         model.setRowCount(0);
         try {
@@ -65,14 +116,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             System.out.println(list.size());
             for (ThanhToanLuongModel ttl : list) {
                 Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), ttl.getNgayVaoCTy(), ttl.getSoGioTangCa(),
-                     ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
+                    ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
                 model.addRow(rows);
             }
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
-    
+
     ThanhToanLuongModel getForm() {
         ThanhToanLuongModel ttl = new ThanhToanLuongModel();
         ttl.setMaLuong((String) txtMaLuong.getSelectedItem());
@@ -91,9 +142,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         return ttl;
     }
-    
+
     void setForm(ThanhToanLuongModel ttl) {
-        
+
         txtMaLuong.setSelectedItem(ttl.getMaLuong().trim());
         txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
         txtLuongCoBan.setText(String.valueOf(ttl.getLuongCoBan()));
@@ -125,7 +176,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTrangThai.setText("Chưa thanh toán");
         lblTrangThai.setForeground(Color.red);
     }
-    
+
     void edit() {
         String maluong = (String) tblThanhToanLuong.getValueAt(this.row, 0);
         ThanhToanLuongModel ttl = dao.findById(maluong);
@@ -137,7 +188,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblThanhToanLuong.getRowCount() - 1);
-        
+
         txtMaLuong.setEditable(!edit);
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
@@ -169,7 +220,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         btnThem = new com.DuAn1.Swing.Button();
         btnSua = new com.DuAn1.Swing.Button();
         btnXoa = new com.DuAn1.Swing.Button();
-        cboLoc = new com.DuAn1.Swing.Combobox();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
         txtKhoangTru = new com.DuAn1.Swing.TextField();
         txtNgayVaoCTY = new com.DuAn1.Swing.TextField();
@@ -177,6 +227,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtLuongTangCa = new com.DuAn1.Swing.TextField();
         txtMaLuong = new com.DuAn1.Swing.Combobox();
         btnTim = new com.DuAn1.Swing.Button();
+        txtLoc = new com.DuAn1.Swing.TextField1();
+        btnLoc = new com.DuAn1.Swing.Button();
 
         dateChooser.setDateFormat("yyyy-MM-dd");
         dateChooser.setTextRefernce(txtNgayVaoCTY);
@@ -287,8 +339,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
-        cboLoc.setLabeText("Lọc ");
-
         txtTimKiem.setHint("Tìm  theo mã");
         txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -352,6 +402,21 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
+        txtLoc.setHint("Lọc theo lương");
+        txtLoc.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtLocCaretUpdate(evt);
+            }
+        });
+
+        btnLoc.setBackground(new java.awt.Color(153, 153, 255));
+        btnLoc.setText("Lọc");
+        btnLoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -401,13 +466,15 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                         .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(cboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,9 +507,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                             .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(118, 118, 118))
@@ -495,20 +563,106 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             dao.insert(ttl);
             this.fillTable();
             this.clearForm();
+            ThaoTacModel model = getFormThaoTacThem();
+            thaotacdao.insert(model);
             DialogHelper.alert(this, "Thêm thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
         }
     }
+
+    boolean check() {
+        if (txtMaLuong.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn mã lương!");
+            return false;
+        }
+        if (txtSoNgayLamViec.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập số ngày làm việc!");
+            return false;
+        }
+        try {
+            Float.parseFloat(txtSoNgayLamViec.getText());
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
+            return false;
+        }
+        if (Float.parseFloat(txtSoNgayLamViec.getText()) < 0) {
+            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
+            return false;
+        }
+        if (txtNgayVaoCTY.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập ngày vào CTY!");
+            return false;
+        }
+        if (txtLuongCoBan.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập lương cơ bản");
+            return false;
+        }
+        try {
+            Double.parseDouble(txtLuongCoBan.getText());
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
+            return false;
+        }
+        if (Double.parseDouble(txtLuongCoBan.getText()) < 0) {
+            DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
+            return false;
+        }
+        if (txtLuongTangCa.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập lương tăng ca!");
+            return false;
+        }
+        try {
+            Double.parseDouble(txtLuongTangCa.getText());
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Số lương tăng ca không hợp lệ!");
+            return false;
+        }
+        if (Double.parseDouble(txtLuongTangCa.getText()) < 0) {
+            DialogHelper.alert(this, "Số lương tăng ca không hợp lệ!");
+            return false;
+        }
+        if (txtSoHTangCa.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập số giờ tăng ca!");
+            return false;
+        }
+        try {
+            Double.parseDouble(txtSoHTangCa.getText());
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Số giờ tăng ca không hợp lệ!");
+            return false;
+        }
+        if (Double.parseDouble(txtSoHTangCa.getText()) < 0) {
+            DialogHelper.alert(this, "Số giờ tăng ca không hợp lệ!");
+            return false;
+        }
+        if (txtKhoangTru.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập khoảng trừ!");
+            return false;
+        }
+        try {
+            Double.parseDouble(txtKhoangTru.getText());
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
+            return false;
+        }
+        if (Double.parseDouble(txtKhoangTru.getText()) < 0) {
+            DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
+            return false;
+        }
+        return true;
+    }
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        them();
+        if (check()) {
+            them();
+        }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void txtSoNgayLamViecCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoNgayLamViecCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 1;
+        double tongTien = 0;
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -525,7 +679,25 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
         // TODO add your handling code here:
+        double tongTien = 1;
+        if (txtSoNgayLamViec.getText().equals("")) {
+            return;
+        }
+        if (txtLuongCoBan.getText().endsWith("")) {
+            return;
+        }
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
+            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
+                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+        }
+        if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
+            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
+                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText())
+                    - Double.parseDouble(txtKhoangTru.getText());
+        }
 
+        lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtKhoangTruCaretUpdate
 
     private void txtKhoangTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTruActionPerformed
@@ -557,7 +729,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
                 + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
-        
+
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
     void sua() {
@@ -565,6 +737,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         try {
             dao.update(ttl);
             this.fillTable();
+            ThaoTacModel model = getFormThaoTacSua();
+            thaotacdao.insert(model);
             DialogHelper.alert(this, "Cập nhật thành công");
         } catch (Exception e) {
             DialogHelper.alert(this, "Cập nhật thất bại");
@@ -591,6 +765,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 dao.delete(maluong);
                 this.fillTable();
                 this.clearForm();
+                ThaoTacModel model = getFormThaoTacXoa();
+                thaotacdao.insert(model);
                 DialogHelper.alert(this, "Xóa thành công");
             } catch (Exception e) {
                 DialogHelper.alert(this, "Xóa thất bại");
@@ -604,14 +780,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtLuongCoBanCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongCoBanCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 1;
+        double tongTien = 0;
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
         if (txtLuongCoBan.getText().equals("")) {
             return;
         }
-        if(txtLuongTangCa.getText().equals("")){
+        if (txtLuongTangCa.getText().equals("")) {
             return;
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
@@ -639,7 +815,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
                 + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
-        
+
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtLuongTangCaCaretUpdate
 
@@ -649,9 +825,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
 
-if(txtTimKiem.getText().equals("")){
-    this.fillTable();
-}
+        if (txtTimKiem.getText().equals("")) {
+            this.fillTable();
+        }
     }//GEN-LAST:event_txtTimKiemCaretUpdate
 
     private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimActionPerformed
@@ -659,10 +835,10 @@ if(txtTimKiem.getText().equals("")){
         model = (DefaultTableModel) tblThanhToanLuong.getModel();
         model.setRowCount(0);
         try {
-            List<ThanhToanLuongModel> list  = (List<ThanhToanLuongModel>) dao.TimTheoMaLuong(txtTimKiem.getText());
+            List<ThanhToanLuongModel> list = (List<ThanhToanLuongModel>) dao.TimTheoMaLuong(txtTimKiem.getText());
             for (ThanhToanLuongModel ttl : list) {
-                Object [] row = new Object[]{ttl.getMaLuong(),ttl.getSoNgayLam(),ttl.getLuongCoBan(),ttl.getNgayVaoCTy()
-                ,ttl.getSoGioTangCa(),ttl.getLuongTangCa(),ttl.getKhoanTru(),ttl.getTongTien(),ttl.isTrangThai()};
+                Object[] row = new Object[]{ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), ttl.getNgayVaoCTy(),
+                     ttl.getSoGioTangCa(), ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
                 model.addRow(row);
             }
         } catch (Exception e) {
@@ -671,15 +847,39 @@ if(txtTimKiem.getText().equals("")){
         }
     }//GEN-LAST:event_btnTimActionPerformed
 
+    private void btnLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocActionPerformed
+        // TODO add your handling code here:
+        model = (DefaultTableModel) tblThanhToanLuong.getModel();
+        model.setRowCount(0);
+        try {
+            List<ThanhToanLuongModel> list = (List<ThanhToanLuongModel>) dao.LocTheoLuongCoBan(txtLoc.getText());
+            for (ThanhToanLuongModel ttl : list) {
+                Object[] row = new Object[]{ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), ttl.getNgayVaoCTy(),
+                     ttl.getSoGioTangCa(), ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
+    }//GEN-LAST:event_btnLocActionPerformed
+
+    private void txtLocCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLocCaretUpdate
+        // TODO add your handling code here:
+        if (txtLoc.getText().equals("")) {
+            this.fillTable();
+        }
+    }//GEN-LAST:event_txtLocCaretUpdate
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.DuAn1.Swing.Button btnLoc;
     private com.DuAn1.Swing.Button btnMoi;
     private com.DuAn1.Swing.Button btnSua;
     private com.DuAn1.Swing.Button btnThem;
     private com.DuAn1.Swing.Button btnTim;
     private com.DuAn1.swing0.SwitchButton btnTrangThai;
     private com.DuAn1.Swing.Button btnXoa;
-    private com.DuAn1.Swing.Combobox cboLoc;
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -690,6 +890,7 @@ if(txtTimKiem.getText().equals("")){
     private javax.swing.JLabel lblTrangThai;
     private com.raven.swing.table.Table tblThanhToanLuong;
     private com.DuAn1.Swing.TextField txtKhoangTru;
+    private com.DuAn1.Swing.TextField1 txtLoc;
     private com.DuAn1.Swing.TextField txtLuongCoBan;
     private com.DuAn1.Swing.TextField txtLuongTangCa;
     private com.DuAn1.Swing.Combobox txtMaLuong;
