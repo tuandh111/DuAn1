@@ -5,9 +5,12 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.KhachHangDAO;
+import com.DuAn1.Dao.ThaoTacDAO;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.KhachHangModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
@@ -16,6 +19,8 @@ import com.tuandhpc05076.Form.ChuyenDe;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +37,8 @@ import javax.swing.table.DefaultTableModel;
 public class KhachHang extends javax.swing.JPanel {
 
     DefaultTableModel tblModel;
+    ThongKeDao DaoThongKe = new ThongKeDao();
+    ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
     KhachHangDAO daoKH = new KhachHangDAO();
     int row = -1;
 
@@ -40,6 +47,20 @@ public class KhachHang extends javax.swing.JPanel {
         tieude();
         filltable();
         this.row = -1;
+        TuDongTangMa();
+    }
+
+    void TuDongTangMa() {
+        List<Object[]> i = DaoThongKe.getSoLuongKH();
+        String name = (String) i.get(0)[0];
+        String[] tbl = name.split("H");
+        String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+        String ten = "KH";
+        for (int j = 0; j <= 3 - so.length(); j++) {
+            ten += "0";
+        }
+        ten = ten + so;
+        txtma.setText(ten);
     }
 
     void tieude() {
@@ -81,6 +102,8 @@ public class KhachHang extends javax.swing.JPanel {
             daoKH.insert(nv);
             this.filltable();
             this.ClearForm();
+            ThaoTacModel model = getFormThem();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Thêm Mới thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Thêm mới thất bại!");
@@ -93,6 +116,8 @@ public class KhachHang extends javax.swing.JPanel {
         try {
             daoKH.update(nv);
             this.filltable();
+            ThaoTacModel model = getFormSua();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Cập nhật thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Cập nhật mới thất bại!");
@@ -105,6 +130,8 @@ public class KhachHang extends javax.swing.JPanel {
         try {
             daoKH.delete(nv);
             this.filltable();
+            ThaoTacModel model = getFormXoa();
+            ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Xóa thành công!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Xóa thất bại!");
@@ -211,6 +238,92 @@ public class KhachHang extends javax.swing.JPanel {
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
+    }
+
+    public ThaoTacModel getFormThem() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(formatted);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thêm Khách Hàng");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormSua() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Sửa Khách Hàng");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public ThaoTacModel getFormXoa() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+        ShareHelper.ThoiGianHoatDong = formatted;
+        cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Xóa Khách Hàng");
+        cd.setMaNV(ShareHelper.USER.getMaNV());
+        return cd;
+    }
+
+    public boolean check() {
+//        if (Dao.findById(txtTaikhoan.getText()) != null) {
+//            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
+//            return false;
+//        }
+        if (txtHinhAnh2.getToolTipText() == null) {
+            DialogHelper.alert(this, "Bạn chưa chọn hình ảnh");
+            return false;
+        }
+//        if (txtma.getText().equals("")) {
+//            JOptionPane.showMessageDialog(this, "Mã Khách Hàng không được để trống");
+//            return false;
+//        }
+        if (txtTen.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Họ và tên không được để trống");
+            return false;
+        }
+        if (!txtTen.getText().matches("^[\\p{L}\\s]{0,50}$")) {
+            JOptionPane.showMessageDialog(this, "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự");
+            return false;
+        }
+        if (txtNgaySinh.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ngày sinh không được để trống");
+            return false;
+        }
+        if (txtSdt.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại không được để trống");
+            return false;
+        }
+        if (txtDiachi.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Địa chỉ không được để trống");
+            return false;
+        }
+        if (txtMota.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Mô tả không được để trống!");
+            return false;
+        }
+
+        return true;
     }
 
     @SuppressWarnings("unchecked")
@@ -517,6 +630,7 @@ public class KhachHang extends javax.swing.JPanel {
     String strHinh = null;
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         ClearForm();
+        TuDongTangMa();
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -539,15 +653,26 @@ public class KhachHang extends javax.swing.JPanel {
     }//GEN-LAST:event_cboGioitinhActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        if (check() == false) {
+            return;
+        }
         insert();
+        ClearForm();
+        TuDongTangMa();
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        if (check() == false) {
+            return;
+        }
         update();
+        ClearForm();
+        TuDongTangMa();
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         delete();
+        ClearForm();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void txtTimCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimCaretUpdate
@@ -559,11 +684,11 @@ public class KhachHang extends javax.swing.JPanel {
             try {
                 List<KhachHangModel> list = daoKH.TimKiemTheoMa(txtTim.getText());
                 for (KhachHangModel model : list) {
-                    Object[] row = new Object[]{ model.getMaKH(),
-                    model.getTenKH(),
-                    model.getSDT(),
-                    model.getNgaySinh(),
-                    model.getDiaChi(),};
+                    Object[] row = new Object[]{model.getMaKH(),
+                        model.getTenKH(),
+                        model.getSDT(),
+                        model.getNgaySinh(),
+                        model.getDiaChi(),};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
