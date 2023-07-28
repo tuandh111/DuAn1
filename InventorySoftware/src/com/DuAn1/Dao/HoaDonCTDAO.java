@@ -17,9 +17,8 @@ import java.util.List;
  */
 public class HoaDonCTDAO {
     public void insert(HoaDonCTModel model) {
-        String sql = "Insert into HOADONCT values (?,?,?,?,?)";
+        String sql = "Insert into HOADONCT values (?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
-                model.getMaHDCT(),
                 model.getMaSP(),
                 model.getSoLuong(),
                 model.getMaHD(),
@@ -27,9 +26,9 @@ public class HoaDonCTDAO {
         );
     }
 
-    public List<HoaDonCTModel> select() {
-        String sql = "SELECT * FROM HOADONCT";
-        return select(sql);
+    public List<HoaDonCTModel> selectAll(String MaHDCT) {
+        String sql = "SELECT * FROM HOADONCT WHERE MaHD = ?";
+        return select(sql,MaHDCT);
     }
 
     public void delete(HoaDonCTModel model) {

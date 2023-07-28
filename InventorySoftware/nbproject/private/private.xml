@@ -5,11 +5,10 @@
         <group>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonDAO.java</file>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonCTDAO.java</file>
-            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/GiamGia.java</file>
-            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/NhanVien.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Dao/DatSPCTDAO.java</file>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
-            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHang.java</file>
-            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/VaiTro.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Model/HoaDonCTModel.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
         </group>
     </open-files>
 </project-private>

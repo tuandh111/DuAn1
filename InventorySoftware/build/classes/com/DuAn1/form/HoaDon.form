@@ -169,10 +169,18 @@
                                   </Group>
                                   <Component id="btnThanhtoan" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtMota" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtMa" min="-2" pref="194" max="-2" attributes="0"/>
-                                      <EmptySpace pref="31" max="32767" attributes="0"/>
-                                      <Component id="txtKhachhang" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="txtThongBao" min="-2" pref="134" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="txtMa" min="-2" pref="194" max="-2" attributes="0"/>
+                                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                                              <Component id="txtKhachhang" min="-2" pref="135" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="button9" min="-2" pref="62" max="-2" attributes="0"/>
                                   </Group>
@@ -182,18 +190,10 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="btnMoiHD" min="-2" pref="108" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="btnHuyHD" min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="txtThongBao" min="-2" pref="134" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                      <Component id="btnMoiHD" min="-2" pref="108" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="btnHuyHD" min="-2" pref="102" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -215,9 +215,9 @@
                           </Group>
                           <Component id="button9" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtThongBao" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtDonGia" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSoLuong" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -258,6 +258,8 @@
                 <Property name="labelText" type="java.lang.String" value="T&#xea;n kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
+                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtKhachhangCaretUpdate"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtKhachhangMousePressed"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKhachhangActionPerformed"/>
               </Events>
             </Component>

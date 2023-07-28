@@ -10,6 +10,7 @@ import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Dao.SanPhamDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.HoaDonCTModel;
 import com.DuAn1.Model.HoaDonModel;
 import com.DuAn1.Model.KhachHangModel;
@@ -28,7 +29,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import com.DuAn1.main.Main;
-import com.tuandhpc05076.helper.ShareHelper;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -107,54 +107,72 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone1.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone1.setText(sp.getMaSP());
                     lbIphone1.setVisible(true);
                 }
                 if (i == 1) {
                     txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone2.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone2.setText(sp.getMaSP());
                     lbIphone2.setVisible(true);
                 }
                 if (i == 2) {
                     txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone3.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone3.setText(sp.getMaSP());
                     lbIphone3.setVisible(true);
                 }
                 if (i == 3) {
                     txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone4.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone4.setText(sp.getMaSP());
                     lbIphone4.setVisible(true);
                 }
                 if (i == 4) {
                     txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone5.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone5.setText(sp.getMaSP());
                     lbIphone5.setVisible(true);
                 }
                 if (i == 5) {
                     txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone6.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone6.setText(sp.getMaSP());
                     lbIphone6.setVisible(true);
                 }
                 if (i == 6) {
                     txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone7.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone7.setText(sp.getMaSP());
                     lbIphone7.setVisible(true);
                 }
                 if (i == 7) {
                     txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone8.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone8.setText(sp.getMaSP());
                     lbIphone8.setVisible(true);
                 }
                 if (i == 8) {
                     txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone9.setText(String.format("%.0f", sp.getGia()));
+                    txtMaIphone9.setText(sp.getMaSP());
                     lbIphone9.setVisible(true);
                 }
                 i++;
@@ -167,54 +185,72 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung1.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung1.setText(sp.getMaSP());
                     lbISamSung1.setVisible(true);
                 }
                 if (j == 1) {
                     txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung2.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung2.setText(sp.getMaSP());
                     lbISamSung2.setVisible(true);
                 }
                 if (j == 2) {
-                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung4.setText(sp.getTenSP());
+                    txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung3.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung3.setText(sp.getMaSP());
                     lbISamSung3.setVisible(true);
                 }
                 if (j == 3) {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung4.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung4.setText(sp.getMaSP());
                     lbISamSung4.setVisible(true);
                 }
                 if (j == 4) {
                     txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung5.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung5.setText(sp.getMaSP());
                     lbISamSung5.setVisible(true);
                 }
                 if (j == 5) {
                     txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung6.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung6.setText(sp.getMaSP());
                     lbISamSung6.setVisible(true);
                 }
                 if (j == 6) {
                     txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung7.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung7.setText(sp.getMaSP());
                     lbISamSung7.setVisible(true);
                 }
                 if (j == 7) {
                     txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung8.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung8.setText(sp.getMaSP());
                     lbISamSung8.setVisible(true);
                 }
                 if (j == 8) {
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung9.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSamSung9.setText(sp.getMaSP());
                     lbISamSung9.setVisible(true);
                 }
                 j++;
@@ -227,54 +263,72 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy1.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony1.setText(sp.getMaSP());
                     LbSony1.setVisible(true);
                 }
                 if (z == 1) {
                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy2.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony2.setText(sp.getMaSP());
                     LbSony2.setVisible(true);
                 }
                 if (z == 2) {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy3.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony3.setText(sp.getMaSP());
                     LbSony3.setVisible(true);
                 }
                 if (z == 3) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy4.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony4.setText(sp.getMaSP());
                     LbSony4.setVisible(true);
                 }
                 if (z == 4) {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy5.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony5.setText(sp.getMaSP());
                     LbSony5.setVisible(true);
                 }
                 if (z == 5) {
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy6.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony6.setText(sp.getMaSP());
                     LbSony6.setVisible(true);
                 }
                 if (z == 6) {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy7.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony7.setText(sp.getMaSP());
                     LbSony7.setVisible(true);
                 }
                 if (z == 7) {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy8.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony8.setText(sp.getMaSP());
                     LbSony8.setVisible(true);
                 }
                 if (z == 8) {
                     txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy9.setText(String.format("%.0f", sp.getGia()));
+                    txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
 
@@ -283,10 +337,12 @@ public class HoaDon extends javax.swing.JPanel {
         }
     }
 
-    public void Them() {
+
+    void Them() {
         try {
             HoaDonModel model = getFormTao();
-            HDDao.insert(model);
+            HDDao.update(model);
+            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
         } catch (Exception e) {
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -308,7 +364,7 @@ public class HoaDon extends javax.swing.JPanel {
     HoaDonModel getFormTao() {
         HoaDonModel dt = new HoaDonModel();
         dt.setMaHD(txtMa.getText());
-        dt.setSoluong(String.valueOf(txtSoLuong));
+        dt.setSoluong(String.valueOf(txtSoLuong.getText()));
         dt.setTenKH(txtKhachhang.getText());
         dt.setTrangThai(true);
         dt.setDongia(String.valueOf(txtDonGia.getText()));
@@ -317,6 +373,7 @@ public class HoaDon extends javax.swing.JPanel {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         String formatted = current.format(formatter);
         txtNgayXuat.setText(formatted);
+        dt.setMota(txtMota.getText());
         dt.setNgayXuat(formatted);
         dt.setMaNV(ShareHelper.USER.getMaNV());
         return dt;
@@ -326,7 +383,7 @@ public class HoaDon extends javax.swing.JPanel {
         tblModel = (DefaultTableModel) tblHoadon.getModel();
         tblModel.setRowCount(0);
         try {
-            List<HoaDonCTModel> list = HDCTDao.select(txtMa.getText());
+            List<HoaDonCTModel> list = HDCTDao.selectAll(txtMa.getText());
             for (HoaDonCTModel nv : list) {
                 Object[] row = new Object[]{nv.getMaHDCT(), nv.getMaSP(), nv.getSoLuong(), nv.getMaHD(), String.format("%.0f", nv.getGia())};
                 tblModel.addRow(row);
@@ -361,11 +418,10 @@ public class HoaDon extends javax.swing.JPanel {
         txtMa.setText(ten);
     }
 
-    void them() {
+    public void them() {
         try {
             HoaDonModel model = getFormTao();
-            HDDao.update(model);
-            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
+            HDDao.insert(model);
         } catch (Exception e) {
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -654,6 +710,16 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel28.setText("Hóa đơn");
 
         txtKhachhang.setLabelText("Tên khách hàng");
+        txtKhachhang.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtKhachhangCaretUpdate(evt);
+            }
+        });
+        txtKhachhang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtKhachhangMousePressed(evt);
+            }
+        });
         txtKhachhang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtKhachhangActionPerformed(evt);
@@ -780,23 +846,23 @@ public class HoaDon extends javax.swing.JPanel {
                                 .addComponent(jLabel4))
                             .addComponent(btnThanhtoan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtMota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(txtTongtienLayout.createSequentialGroup()
-                                .addComponent(txtMa, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                                .addComponent(txtKhachhang, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txtTongtienLayout.createSequentialGroup()
+                                .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(txtTongtienLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(txtThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(txtTongtienLayout.createSequentialGroup()
+                                        .addComponent(txtMa, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                        .addComponent(txtKhachhang, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(11, 11, 11))))
             .addGroup(txtTongtienLayout.createSequentialGroup()
-                .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(btnMoiHD, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnHuyHD, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(txtThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(101, 101, 101)
+                .addComponent(btnMoiHD, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnHuyHD, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         txtTongtienLayout.setVerticalGroup(
@@ -813,9 +879,9 @@ public class HoaDon extends javax.swing.JPanel {
                         .addComponent(txtKhachhang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtMa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtThongBao)
-                .addGap(18, 18, 18)
+                .addGap(46, 46, 46)
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3542,7 +3608,7 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_button3ActionPerformed
 
     private void btnThanhtoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhtoanActionPerformed
-        them();
+        Them();
         clearForm();
     }//GEN-LAST:event_btnThanhtoanActionPerformed
 
@@ -3564,7 +3630,7 @@ public class HoaDon extends javax.swing.JPanel {
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         // TODO add your handling code here:
         TuDongTangMa();
-        Them();
+        them();
     }//GEN-LAST:event_button4ActionPerformed
 
     private void txtNgayXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuatMouseClicked
@@ -3599,7 +3665,7 @@ public class HoaDon extends javax.swing.JPanel {
         double tongGia = 0;
         int tongSoLuong = 0;
         try {
-            List<HoaDonCTModel> list = HDCTDao.select(txtMa.getText());
+            List<HoaDonCTModel> list = HDCTDao.selectAll(txtMa.getText());
             for (HoaDonCTModel nv : list) {
                 tongGia += nv.getGia();
                 tongSoLuong += nv.getSoLuong();
@@ -3610,6 +3676,7 @@ public class HoaDon extends javax.swing.JPanel {
             txtTongTien.setText(String.format("%.0f", tongTien));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            e.printStackTrace();
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -3625,7 +3692,7 @@ public class HoaDon extends javax.swing.JPanel {
             HoaDonCTModel model = getFormThemSony1();
 
             HDCTDao.insert(model);
-            filltable();
+//            filltable();
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3931,7 +3998,7 @@ public class HoaDon extends javax.swing.JPanel {
         try {
             HoaDonCTModel model = getFormThemSamsung3();
 
-           HDCTDao.insert(model);
+            HDCTDao.insert(model);
             filltable();
         } catch (Exception e) {
             e.printStackTrace();
@@ -4014,6 +4081,31 @@ public class HoaDon extends javax.swing.JPanel {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd19ActionPerformed
+
+    private void txtKhachhangCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhachhangCaretUpdate
+        List<KhachHangModel> list = daoKH.selectSDT(txtKhachhang.getText());
+        txtThongBao.setVisible(true);
+          
+        if (list.size() == 0) {
+            txtThongBao.setText("Khách hàng chưa tồn tại");
+        }
+        if (list.size() > 0) {
+            txtThongBao.setText("OK");
+        }
+
+    }//GEN-LAST:event_txtKhachhangCaretUpdate
+
+    private void txtKhachhangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKhachhangMousePressed
+         List<KhachHangModel> list = daoKH.selectSDT(txtKhachhang.getText());
+        txtThongBao.setVisible(true);
+          txtKhachhang.setText(DatHang1.getSoLuong());
+        if (list.size() == 0) {
+            txtThongBao.setText("Khách hàng chưa tồn tại");
+        }
+        if (list.size() > 0) {
+            txtThongBao.setText("OK");
+        }
+    }//GEN-LAST:event_txtKhachhangMousePressed
     public void themSPCT() {
         try {
             HoaDonCTModel model = getFormThemIPhone1();
