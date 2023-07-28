@@ -172,6 +172,7 @@ CREATE TABLE DATSP(
 CREATE TABLE DATSPCT(
 	MaDatCT INT IDENTITY(1,1) PRIMARY KEY,
 	SoLuong INT NOT NULL,
+	gia money not null,
 	MaDH CHAR(10) NOT NULL,
 	MaSP CHAR(10) NOT NULL,
 	FOREIGN KEY (MaSP) REFERENCES SANPHAM(MaSP) ON DELETE NO ACTION ON UPDATE CASCADE,
@@ -380,12 +381,12 @@ update DATSP set SOLUONG=1,SDT='009900990',TRANGTHAI=1,DONGIA='500000',TONGTIEN=
 delete from DATSP where MADHANG='DH001'
 select * from DATSP where MADHANG='DH001'
 
-Insert into DATSPCT values (3,'DH00001','SP00002')
-Insert into DATSPCT values (7,'DH00002','SP00001')
-Insert into DATSPCT values (10,'DH00003','SP00003')
-Insert into DATSPCT values (12,'DH00004','SP00001')
-Insert into DATSPCT values (9,'DH00005','SP00002')
-Insert into DATSPCT values (6,'DH00006','SP00004')
+Insert into DATSPCT values (3,'12000000','DH00001','SP00002')
+Insert into DATSPCT values (7,'12000000','DH00002','SP00001')
+Insert into DATSPCT values (10,'12000000','DH00003','SP00003')
+Insert into DATSPCT values (12,'12000000','DH00004','SP00001')
+Insert into DATSPCT values (9,'12000000','DH00005','SP00002')
+Insert into DATSPCT values (6,'12000000','DH00006','SP00004')
 update DATSPCT set SoLuong=1,MaDH='DH001',MaSP='IP001' where MaDatCT=1
 delete from DATSPCT where MaDatCT=1
 select * from DATSPCT where MaDatCT=1 
@@ -539,3 +540,13 @@ BEGIN
     FROM KHACHHANG;
 END
 GO
+--
+CREATE PROCEDURE MaxMadatsp
+AS
+BEGIN
+    SELECT MAX(Madh) AS MaxProductCode
+    FROM datSp;
+END
+GO
+
+execute MaxMadatsp

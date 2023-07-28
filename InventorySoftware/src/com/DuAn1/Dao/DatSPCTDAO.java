@@ -18,9 +18,10 @@ import java.util.List;
 public class DatSPCTDAO {
 
     public void insert(DatSPCTModel model) {
-        String sql = "Insert into DATSPCT values (?,?,?)";
+        String sql = "Insert into DATSPCT values (?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getSoLuong(),
+                model.getGia(),
                 model.getMaDH(),
                 model.getMaSP()
         );
@@ -32,7 +33,7 @@ public class DatSPCTDAO {
     }
 
     public void delete(DatSPCTModel model) {
-        String sql = "DELETE DATSPCT WHERE MaSP = ?";
+        String sql = "UPDATE DATSP SET TRANGTHAI = 0 WHERE MaDH = ?";
         JdbcHelper.executeUpdate(sql, model.getMaSP());
     }
 
@@ -58,9 +59,10 @@ public class DatSPCTDAO {
     private DatSPCTModel readFromResultSet(ResultSet rs) throws SQLException {
         DatSPCTModel model = new DatSPCTModel();
         model.setID(rs.getInt(1));
-        model.setSoLuong(rs.getString(2));
-        model.setMaDH(rs.getString(3));
-        model.setMaSP(rs.getString(4));
+        model.setSoLuong(rs.getInt(2));
+        model.setGia(rs.getDouble(3));
+        model.setMaDH(rs.getString(4));
+        model.setMaSP(rs.getString(5));
         return model;
     }
 }

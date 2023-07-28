@@ -8,11 +8,14 @@ import com.DuAn1.Dao.DatSPCTDAO;
 import com.DuAn1.Dao.DatSPDAO;
 import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.DatSPCTModel;
 import com.DuAn1.Model.DatSPModel;
+import com.DuAn1.Model.DienThoaiModel;
 import com.DuAn1.Model.KhachHangModel;
 import com.DuAn1.Model.SanPhamModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
@@ -24,6 +27,8 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -44,7 +49,16 @@ public class DatHang1 extends javax.swing.JPanel {
     DatSPDAO daoDatSP = new DatSPDAO();
     DefaultTableModel tblModel;
     DatSPCTDAO daoDatSPCT = new DatSPCTDAO();
+    ThongKeDao daoThongKe = new ThongKeDao();
+    public static String soLuong = "";
 
+    public static String getSoLuong() {
+        return soLuong;
+    }
+
+    public static void setSoLuong(String soLuong) {
+        DatHang1.soLuong = soLuong;
+    }
     public DatHang1() {
         initComponents();
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
@@ -577,22 +591,16 @@ public class DatHang1 extends javax.swing.JPanel {
         txtDonGia = new com.DuAn1.Swing.TextField();
         txtMaDatHang = new com.DuAn1.Swing.TextField();
         txtSoLuong = new com.DuAn1.Swing.TextField();
-        txtThue = new com.DuAn1.Swing.TextField();
         button01 = new com.DuAn1.swing0.button0();
         button2 = new com.DuAn1.swing0.button0();
         button3 = new com.DuAn1.swing0.button0();
         button7 = new com.DuAn1.swing0.button0();
         jLabel1 = new javax.swing.JLabel();
-        txtTienKhachDua = new com.DuAn1.Swing.TextField();
-        jLabel2 = new javax.swing.JLabel();
-        combobox5 = new com.DuAn1.Swing.Combobox();
-        txtNgayXuat1 = new com.DuAn1.Swing.TextField();
         txtTongTien = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtTienConLai = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         button9 = new com.DuAn1.swing0.button0();
         txtThongBao = new javax.swing.JLabel();
+        button10 = new com.DuAn1.swing0.button0();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
         button4 = new com.DuAn1.swing0.button0();
@@ -600,6 +608,7 @@ public class DatHang1 extends javax.swing.JPanel {
         button5 = new com.DuAn1.swing0.button0();
         button6 = new com.DuAn1.swing0.button0();
 
+        dateChooser.setDateFormat("yyyy-MM-dd");
         dateChooser.setTextRefernce(txtNgayXuat);
 
         imageAvatar68.setBorderSize(5);
@@ -679,7 +688,7 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtSoLuongConSony1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtGiaSoNy1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(txtGiaIphone20)))
                 .addGap(12, 12, 12))
             .addGroup(LbSony1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1123,21 +1132,17 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addComponent(txtMaSony6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony6Layout.createSequentialGroup()
-                .addGap(0, 11, Short.MAX_VALUE)
+                .addGap(0, 22, Short.MAX_VALUE)
                 .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony6Layout.createSequentialGroup()
-                        .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtadd5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(LbSony6Layout.createSequentialGroup()
-                                .addComponent(txtSoLuongConSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtGiaSoNy6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtGiaIphone25)))
-                        .addGap(15, 15, 15))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony6Layout.createSequentialGroup()
-                        .addComponent(txtHinhAnhSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))))
+                    .addComponent(txtHinhAnhSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtadd5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(LbSony6Layout.createSequentialGroup()
+                        .addComponent(txtSoLuongConSony6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtGiaSoNy6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtGiaIphone25)))
+                .addGap(15, 15, 15))
             .addGroup(LbSony6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(LbSony6Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
@@ -2077,18 +2082,6 @@ public class DatHang1 extends javax.swing.JPanel {
         lbIphone7.setLayout(lbIphone7Layout);
         lbIphone7Layout.setHorizontalGroup(
             lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtHinhAnhIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(lbIphone7Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btnAdd8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(lbIphone7Layout.createSequentialGroup()
-                        .addComponent(txtSoLuongConIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtGiaIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(7, 7, 7))
             .addGroup(lbIphone7Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2097,6 +2090,16 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addComponent(txtMaIphone7)
                         .addComponent(txtTenIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone7Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdd8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHinhAnhIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(lbIphone7Layout.createSequentialGroup()
+                        .addComponent(txtSoLuongConIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtGiaIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(13, 13, 13))
             .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(lbIphone7Layout.createSequentialGroup()
                     .addGap(57, 57, 57)
@@ -2117,9 +2120,9 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(txtSoLuongConIphone7)
                     .addComponent(txtGiaIphone7)
                     .addComponent(txtGiaIphone17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdd8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(lbIphone7Layout.createSequentialGroup()
                     .addGap(91, 91, 91)
@@ -2893,7 +2896,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(txtGiaSamsung5)
                     .addComponent(txtGiaIphone33))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAdd15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAdd15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3218,7 +3221,7 @@ public class DatHang1 extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel28.setText("Đặt hàng sản phẩm");
+        jLabel28.setText("Đặt hàng");
 
         txtSoDienThoai.setLabelText("Số điện thoại");
         txtSoDienThoai.addCaretListener(new javax.swing.event.CaretListener() {
@@ -3242,6 +3245,11 @@ public class DatHang1 extends javax.swing.JPanel {
         });
 
         txtMaDatHang.setLabelText("Mã đặt hàng");
+        txtMaDatHang.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtMaDatHangCaretUpdate(evt);
+            }
+        });
 
         txtSoLuong.setLabelText("Tổng số lượng");
         txtSoLuong.addCaretListener(new javax.swing.event.CaretListener() {
@@ -3250,20 +3258,17 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
-        txtThue.setText("0");
-        txtThue.setLabelText("Thuế (%)");
-        txtThue.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtThueCaretUpdate(evt);
+        button01.setBackground(new java.awt.Color(153, 153, 255));
+        button01.setText("làm mới");
+        button01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button01ActionPerformed(evt);
             }
         });
 
-        button01.setBackground(new java.awt.Color(153, 153, 255));
-        button01.setText("làm mới");
-
         button2.setBackground(new java.awt.Color(255, 51, 51));
         button2.setForeground(new java.awt.Color(255, 255, 255));
-        button2.setText("Hủy bỏ");
+        button2.setText("Hủy danh sách đặt hàng");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button2ActionPerformed(evt);
@@ -3289,36 +3294,10 @@ public class DatHang1 extends javax.swing.JPanel {
 
         jLabel1.setText("Tổng tiền:");
 
-        txtTienKhachDua.setText("0");
-        txtTienKhachDua.setLabelText("Tiền khách đưa");
-        txtTienKhachDua.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtTienKhachDuaCaretUpdate(evt);
-            }
-        });
-
-        jLabel2.setText("Số tiền còn lại:");
-
-        combobox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền mặt", "Chuyển khoản" }));
-        combobox5.setSelectedIndex(-1);
-        combobox5.setLabeText("Hình thức thanh toán");
-
-        txtNgayXuat1.setLabelText("Mô tả");
-        txtNgayXuat1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNgayXuat1MouseClicked(evt);
-            }
-        });
-
         txtTongTien.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtTongTien.setText("0");
+        txtTongTien.setForeground(new java.awt.Color(255, 51, 51));
 
         jLabel4.setText("Đồng");
-
-        txtTienConLai.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtTienConLai.setText("0");
-
-        jLabel6.setText("Đồng");
 
         button9.setBackground(new java.awt.Color(153, 153, 255));
         button9.setText("+");
@@ -3332,58 +3311,59 @@ public class DatHang1 extends javax.swing.JPanel {
         txtThongBao.setForeground(new java.awt.Color(255, 0, 0));
         txtThongBao.setText("jLabel3");
 
+        button10.setBackground(new java.awt.Color(153, 153, 255));
+        button10.setText("Danh sách HĐ");
+        button10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button10ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(button01, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel4)
+                        .addGap(43, 43, 43))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtMaDatHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNgayXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSoLuong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtThue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtSoDienThoai, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                    .addComponent(txtThongBao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(txtNgayXuat1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtTienKhachDua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(button7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel28))
-                            .addComponent(combobox5, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel28)
+                                .addGap(18, 18, 18)
+                                .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(61, 61, 61)
-                                .addComponent(txtTongTien)
-                                .addGap(110, 110, 110)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(31, 31, 31)
-                                .addComponent(txtTienConLai)
-                                .addGap(122, 122, 122)
-                                .addComponent(jLabel6)))
-                        .addGap(0, 30, Short.MAX_VALUE)))
-                .addGap(24, 24, 24))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtDonGia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                    .addComponent(button01, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMaDatHang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtSoLuong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                                                .addComponent(txtThongBao, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtSoDienThoai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtNgayXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(24, 24, 24))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3391,63 +3371,47 @@ public class DatHang1 extends javax.swing.JPanel {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel28)
+                    .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMaDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSoDienThoai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(20, 20, 20))
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(txtThongBao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNgayXuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtTongTien)
-                    .addComponent(jLabel4))
-                .addGap(15, 15, 15)
-                .addComponent(combobox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(txtTienKhachDua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(146, 146, 146)))
+                .addComponent(txtNgayXuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTienConLai)
-                            .addComponent(jLabel2)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)))
-                .addGap(13, 13, 13)
-                .addComponent(txtNgayXuat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel1))
+                .addGap(72, 72, 72)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(581, 581, 581))
+                .addGap(575, 575, 575))
         );
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã ĐH", "Mã SP", "Số lượng"
+                "STT", "Mã ĐH", "Mã SP", "Số lượng", "Giá"
             }
         ));
         jScrollPane4.setViewportView(tblUser);
@@ -3455,8 +3419,8 @@ public class DatHang1 extends javax.swing.JPanel {
         button4.setBackground(new java.awt.Color(153, 153, 255));
         button4.setText("Làm mới");
 
-        button8.setBackground(new java.awt.Color(153, 153, 255));
-        button8.setText("Sửa");
+        button8.setBackground(new java.awt.Color(255, 51, 51));
+        button8.setText("Xóa sản phẩm");
         button8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button8ActionPerformed(evt);
@@ -3465,10 +3429,15 @@ public class DatHang1 extends javax.swing.JPanel {
 
         button5.setBackground(new java.awt.Color(255, 51, 51));
         button5.setForeground(new java.awt.Color(255, 255, 255));
-        button5.setText("Hủy bỏ");
+        button5.setText("Xóa tất cả");
 
         button6.setBackground(new java.awt.Color(153, 153, 255));
-        button6.setText("Thêm ");
+        button6.setText("Thêm vào đặt hàng");
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -3481,7 +3450,7 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(37, 37, 37)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(44, 44, 44)
@@ -3503,7 +3472,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 1048, Short.MAX_VALUE))
+                .addGap(0, 1051, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3528,22 +3497,36 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPModel model = getFormTao();
             daoDatSP.insert(model);
-            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
         } catch (Exception e) {
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
     }
 
+    void clearForm() {
+        txtMaDatHang.setText(null);
+        txtSoDienThoai.setText(null);
+        txtDonGia.setText(null);
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        txtNgayXuat.setText(formatted);
+        txtTongTien.setText(null);
+    }
+
     DatSPModel getFormTao() {
         DatSPModel dt = new DatSPModel();
-        dt.setMaDH("DH002");
-        dt.setSoLuong("1");
-        dt.setSDT("78978978978");
+        dt.setMaDH(txtMaDatHang.getText());
+        dt.setSoLuong(String.valueOf(txtSoLuong.getText()));
+        dt.setSDT(txtSoDienThoai.getText());
         dt.setTrangThai(true);
-        dt.setDonGia("50000");
-        dt.setTongTien("600000");
-        dt.setThoiGianDat("1900-01-01 02:24:00.000");
+        dt.setDonGia(String.valueOf(txtDonGia.getText()));
+        dt.setTongTien(txtTongTien.getText());
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        txtNgayXuat.setText(formatted);
+        dt.setThoiGianDat(formatted);
         dt.setMaNV(ShareHelper.USER.getMaNV());
         return dt;
     }
@@ -3554,10 +3537,11 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             List<DatSPCTModel> list = daoDatSPCT.select(txtMaDatHang.getText());
             for (DatSPCTModel nv : list) {
-                Object[] row = new Object[]{nv.getID(), nv.getMaDH(), nv.getMaSP(), nv.getSoLuong()};
+                Object[] row = new Object[]{nv.getID(), nv.getMaDH(), nv.getMaSP(), nv.getSoLuong(), String.format("%.0f", nv.getGia())};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
@@ -3572,14 +3556,39 @@ public class DatHang1 extends javax.swing.JPanel {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi Xóa dữ liệu");
         }
     }
+
+    void TuDongTangMa() {
+        List<Object[]> i = daoThongKe.getMaxMaDatSP();
+        String name = (String) i.get(0)[0];
+        String[] tbl = name.split("H");
+        String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+        String ten = "DH";
+        for (int j = 0; j <= 4 - so.length(); j++) {
+            ten += "0";
+        }
+        ten = ten + so;
+        txtMaDatHang.setText(ten);
+    }
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
+        TuDongTangMa();
         Them();
 
     }//GEN-LAST:event_button3ActionPerformed
-
+    void them() {
+        try {
+            DatSPModel model = getFormTao();
+            daoDatSP.update(model);
+            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
         // TODO add your handling code here:
+        them();
+        clearForm();
     }//GEN-LAST:event_button7ActionPerformed
 
     private void txtNgayXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuatMouseClicked
@@ -3593,356 +3602,417 @@ public class DatHang1 extends javax.swing.JPanel {
     private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony9.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony9.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony9.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony9.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSony9();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtadd8ActionPerformed
 
     private void txtadd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd7ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony8.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony8.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony8.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony8.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSony8();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtadd7ActionPerformed
 
     private void txtadd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd6ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony7.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony7.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony7.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony7.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSony7();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtadd6ActionPerformed
 
     private void txtadd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd5ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony6.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony6.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony6.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony6.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemSony6();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+
     }//GEN-LAST:event_txtadd5ActionPerformed
 
     private void txtadd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd2ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony5.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony5.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony5.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony5.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemSony5();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+
     }//GEN-LAST:event_txtadd2ActionPerformed
 
     private void txtadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd1ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony4.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony4.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony4.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony4.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSony4();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtadd1ActionPerformed
 
     private void txtadd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd4ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony3.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony3.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony3.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony3.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemSony3();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+
     }//GEN-LAST:event_txtadd4ActionPerformed
 
     private void txtadd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd3ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony2.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony2.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony2.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony2.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemSony2();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+
     }//GEN-LAST:event_txtadd3ActionPerformed
 
     private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
         // TODO add your handling code here:     
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSony1.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSony1.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSony1.getText());
-        j = j + sl.getSoLuong();
-        txtMaSony1.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemSony1();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
 
     }//GEN-LAST:event_btnAdd1ActionPerformed
 
-    private void txtNgayXuat1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuat1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgayXuat1MouseClicked
-
-    private void txtTienKhachDuaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTienKhachDuaCaretUpdate
-        // TODO add your handling code here:
-        float tong = 0;
-        if (txtTienKhachDua.getText().equals("")) {
-            return;
-        }
-        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
-        txtTienConLai.setText(String.format("%.2f", tong));
-    }//GEN-LAST:event_txtTienKhachDuaCaretUpdate
-
     private void txtDonGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtDonGiaCaretUpdate
-        // TODO add your handling code here:
-        float TongTien = 0;
-        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
-        TongTien = TongTien + TongTien * (Float.parseFloat(txtThue.getText()) / 100);
-        txtTongTien.setText(String.format("%.2f", TongTien));
-        float tong = 0;
-        if (txtTienKhachDua.getText().equals("")) {
-            return;
-        }
-        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
-        txtTienConLai.setText(String.format("%.2f", tong));
+        // TODO add your handling code here
     }//GEN-LAST:event_txtDonGiaCaretUpdate
 
     private void txtSoLuongCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoLuongCaretUpdate
-        float TongTien = 0;
-        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
-        TongTien = TongTien + TongTien * (Float.parseFloat(txtThue.getText()) / 100);
-        txtTongTien.setText(String.format("%.2f", TongTien));
-        float tong = 0;
-        if (txtTienKhachDua.getText().equals("")) {
-            return;
-        }
-        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
-        txtTienConLai.setText(String.format("%.2f", tong));
+
 // TODO add your handling code here:
     }//GEN-LAST:event_txtSoLuongCaretUpdate
-
-    private void txtThueCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtThueCaretUpdate
-        float TongTien = 0;
-        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
-        TongTien = TongTien + TongTien * (Float.parseFloat(txtThue.getText()) / 100);
-        txtTongTien.setText(String.format("%.2f", TongTien));
-        float tong = 0;
-        if (txtTienKhachDua.getText().equals("")) {
-            return;
-        }
-        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
-        txtTienConLai.setText(String.format("%.2f", tong));        // TODO add your handling code here:
-    }//GEN-LAST:event_txtThueCaretUpdate
 
     private void btnAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd3ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone2.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone2.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone2.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone2.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone2();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd3ActionPerformed
 
     private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone3.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone3.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone3.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone3.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone3();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd4ActionPerformed
 
     private void btnAdd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd5ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone4.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone4.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone4.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone4.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemIPhone4();
+
+            daoDatSPCT.insert(model);
+            filltable();
+            DialogHelper.alert(this, "Thêm sản phẩm thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+
     }//GEN-LAST:event_btnAdd5ActionPerformed
 
     private void btnAdd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd6ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone5.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone5.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone5.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone5.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone5();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd6ActionPerformed
 
     private void btnAdd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd7ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone6.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone6.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone6.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone6.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone6();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd7ActionPerformed
 
     private void btnAdd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd8ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone7.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone7.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone7.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone7.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone7();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd8ActionPerformed
 
     private void btnAdd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd9ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone8.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone8.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone8.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone8.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone8();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd9ActionPerformed
 
     private void btnAdd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd10ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConIphone9.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConIphone9.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaIphone9.getText());
-        j = j + sl.getSoLuong();
-        txtMaIphone9.setText(String.valueOf(j));        // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemIPhone9();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd10ActionPerformed
 
     private void btnAdd11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd11ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung1.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung1.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung1.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung1.setText(String.valueOf(j));
+        try {
+            DatSPCTModel model = getFormThemSamsung1();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+
     }//GEN-LAST:event_btnAdd11ActionPerformed
 
     private void btnAdd12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd12ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung2.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung2.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung2.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung2.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung2();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd12ActionPerformed
 
     private void btnAdd13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd13ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung3.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung3.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung3.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung3.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung3();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd13ActionPerformed
 
     private void btnAdd14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd14ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung4.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung4.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung4.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung4.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung4();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd14ActionPerformed
 
     private void btnAdd15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd15ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung5.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung5.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung5.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung5.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung5();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd15ActionPerformed
 
     private void btnAdd16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd16ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung6.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung6.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung6.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung6.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung6();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd16ActionPerformed
 
     private void btnAdd17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd17ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung7.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung7.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung7.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung7.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung7();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd17ActionPerformed
 
     private void btnAdd18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd18ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung8.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung8.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung8.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung8.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung8();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd18ActionPerformed
 
     private void btnAdd19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd19ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
-        int i = Integer.parseInt(txtSoLuongConSamSung9.getText());
-        i = i - sl.getSoLuong();
-        txtSoLuongConSamSung9.setText(String.valueOf(i));
-        int j = Integer.parseInt(txtMaSamSung9.getText());
-        j = j + sl.getSoLuong();
-        txtMaSamSung9.setText(String.valueOf(j));         // TODO add your handling code here:
+        try {
+            DatSPCTModel model = getFormThemSamsung9();
+
+            daoDatSPCT.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd19ActionPerformed
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
-        // TODO add your handling code here:
-
-
+        DatHang1.setSoLuong(txtSoDienThoai.getText());
+        KhachHangThem kh= new KhachHangThem(com.DuAn1.main.Main.getMain(), true);
+    kh.setVisible(true);
+    txtSoDienThoai.setText(DatHang1.getSoLuong());
+    // TODO add your handling code here:
+        
     }//GEN-LAST:event_button9ActionPerformed
 
     private void txtSoDienThoaiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoDienThoaiCaretUpdate
@@ -3969,13 +4039,52 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         themSPCT();
     }//GEN-LAST:event_btnAdd20ActionPerformed
+
+    private void button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button10ActionPerformed
+        DanhSachDH danhSach = new DanhSachDH(com.DuAn1.main.Main.getMain(), true);
+        danhSach.setVisible(true);
+        txtMaDatHang.setText(DanhSachDH.getName1());
+        txtSoLuong.setText(String.valueOf(DanhSachDH.getSoLuong()));
+        txtDonGia.setText(String.format("%.0f", DanhSachDH.getDonGia()));
+//          DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtTongTien.setText(String.format("%.1f", DanhSachDH.getTongTien()));
+        txtNgayXuat.setText(DanhSachDH.getNgay());
+// TODO add your handling code here:
+    }//GEN-LAST:event_button10ActionPerformed
+
+    private void txtMaDatHangCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMaDatHangCaretUpdate
+        // TODO add your handling code here:
+        filltable();
+    }//GEN-LAST:event_txtMaDatHangCaretUpdate
+
+    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+        double tongGia = 0;
+        int tongSoLuong = 0;
+        try {
+            List<DatSPCTModel> list = daoDatSPCT.select(txtMaDatHang.getText());
+            for (DatSPCTModel nv : list) {
+                tongGia += nv.getGia();
+                tongSoLuong += nv.getSoLuong();
+            }
+            txtDonGia.setText(String.format("%.0f", tongGia));
+            txtSoLuong.setText(String.valueOf(tongSoLuong));
+            double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
+            txtTongTien.setText(String.format("%.0f", tongTien));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }        // TODO add your handling code here:
+
+    }//GEN-LAST:event_button6ActionPerformed
+
+    private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
+clearForm();        // TODO add your handling code here:
+    }//GEN-LAST:event_button01ActionPerformed
     public void themSPCT() {
         try {
             DatSPCTModel model = getFormThemIPhone1();
 
             daoDatSPCT.insert(model);
             filltable();
-            DialogHelper.alert(this, "Thêm dữ liệu thành công");
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3984,9 +4093,244 @@ public class DatHang1 extends javax.swing.JPanel {
 
     DatSPCTModel getFormThemIPhone1() {
         DatSPCTModel cd = new DatSPCTModel();
-        cd.setSoLuong(String.valueOf(SoLuong.getSoLuong()));
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone1.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone1.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone2() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone2.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone2.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone3() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone3.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone3.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone4() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone4.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone4.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone5() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone5.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone5.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone6() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone6.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone6.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone7() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone7.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone7.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone8() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone8.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone8.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemIPhone9() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaIphone9.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaIphone9.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony1() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy1.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony1.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony2() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony2.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony3() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony3.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony4() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony4.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony5() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony5.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony6() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony6.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony7() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony7.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony8() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony8.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSony9() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSony9.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung1() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung1.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung1.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung2() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung2.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung2.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung3() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung3.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung3.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung4() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung4.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung4.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung5() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung5.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung5.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung6() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung6.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung6.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung7() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung7.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung7.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung8() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung8.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung8.getText());
+        return cd;
+    }
+
+    DatSPCTModel getFormThemSamsung9() {
+        DatSPCTModel cd = new DatSPCTModel();
+        cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setGia(Double.parseDouble(txtGiaSamsung9.getText()));
+        cd.setMaDH(txtMaDatHang.getText());
+        cd.setMaSP(txtMaSamSung9.getText());
         return cd;
     }
 
@@ -4020,6 +4364,7 @@ public class DatHang1 extends javax.swing.JPanel {
     private com.DuAn1.swing0.button0 btnAdd8;
     private com.DuAn1.swing0.button0 btnAdd9;
     private com.DuAn1.swing0.button0 button01;
+    private com.DuAn1.swing0.button0 button10;
     private com.DuAn1.swing0.button0 button2;
     private com.DuAn1.swing0.button0 button3;
     private com.DuAn1.swing0.button0 button4;
@@ -4028,16 +4373,13 @@ public class DatHang1 extends javax.swing.JPanel {
     private com.DuAn1.swing0.button0 button7;
     private com.DuAn1.swing0.button0 button8;
     private com.DuAn1.swing0.button0 button9;
-    private com.DuAn1.Swing.Combobox combobox5;
     private com.raven.datechooser.DateChooser dateChooser;
     private swing.ImageAvatar imageAvatar68;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -4179,7 +4521,6 @@ public class DatHang1 extends javax.swing.JPanel {
     private javax.swing.JLabel txtMaSony8;
     private javax.swing.JLabel txtMaSony9;
     private com.DuAn1.Swing.TextField txtNgayXuat;
-    private com.DuAn1.Swing.TextField txtNgayXuat1;
     private com.DuAn1.Swing.TextField txtSoDienThoai;
     private com.DuAn1.Swing.TextField txtSoLuong;
     private javax.swing.JLabel txtSoLuongConIphone1;
@@ -4237,9 +4578,6 @@ public class DatHang1 extends javax.swing.JPanel {
     private javax.swing.JLabel txtTenSony8;
     private javax.swing.JLabel txtTenSony9;
     private javax.swing.JLabel txtThongBao;
-    private com.DuAn1.Swing.TextField txtThue;
-    private javax.swing.JLabel txtTienConLai;
-    private com.DuAn1.Swing.TextField txtTienKhachDua;
     private javax.swing.JLabel txtTongTien;
     private com.DuAn1.swing0.button0 txtadd1;
     private com.DuAn1.swing0.button0 txtadd2;
