@@ -3299,19 +3299,6 @@ public class HoaDon extends javax.swing.JPanel {
 // TODO add your handling code here:
     }//GEN-LAST:event_txtSoLuongCaretUpdate
 
-    private void txtThueCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtThueCaretUpdate
-        float TongTien = 0;
-        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
-        TongTien = TongTien + TongTien * (Float.parseFloat(txtThue.getText()) / 100);
-        txtTongTien.setText(String.format("%.2f", TongTien));
-        float tong = 0;
-        if (txtTienKhachDua.getText().equals("")) {
-            return;
-        }
-        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
-        txtTienConLai.setText(String.format("%.2f", tong));        // TODO add your handling code here:
-    }//GEN-LAST:event_txtThueCaretUpdate
-
     private void btnAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd2ActionPerformed
         // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
@@ -3516,6 +3503,19 @@ public class HoaDon extends javax.swing.JPanel {
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button9ActionPerformed
+
+    private void txtThueCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtThueCaretUpdate
+        float TongTien = 0;
+        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
+        TongTien = TongTien + TongTien * (Float.parseFloat(txtThue.getText()) / 100);
+        txtTongTien.setText(String.format("%.2f", TongTien));
+        float tong = 0;
+        if (txtTienKhachDua.getText().equals("")) {
+            return;
+        }
+        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
+        txtTienConLai.setText(String.format("%.2f", tong));        // TODO add your handling code here:
+    }//GEN-LAST:event_txtThueCaretUpdate
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
