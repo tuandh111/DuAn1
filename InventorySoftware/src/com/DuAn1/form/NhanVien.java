@@ -199,6 +199,11 @@ public class NhanVien extends javax.swing.JPanel {
         if (nv.getHinh() != null) {
             txtHinhAnh1.setToolTipText(nv.getHinh());
             txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));
+            txtHinhAnh1.setToolTipText(nv.getHinh());
+            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+            Image originalImage = originalIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(txtHinhAnh1.getWidth(), txtHinhAnh1.getHeight(), Image.SCALE_SMOOTH);
+            txtHinhAnh1.setIcon(new ImageIcon(scaledImage));
         }
 
         if (nv.isTrangThai()) {

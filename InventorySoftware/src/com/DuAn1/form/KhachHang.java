@@ -56,7 +56,7 @@ public class KhachHang extends javax.swing.JPanel {
         String[] tbl = name.split("H");
         String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
         String ten = "KH";
-        for (int j = 0; j <= 3 - so.length(); j++) {
+        for (int j = 0; j <= 4 - so.length(); j++) {
             ten += "0";
         }
         ten = ten + so;
@@ -185,6 +185,11 @@ public class KhachHang extends javax.swing.JPanel {
         if (nv.getHinh() != null) {
             txtHinhAnh2.setToolTipText(nv.getHinh());
             txtHinhAnh2.setIcon(ShareHelper.readLogo(nv.getHinh()));
+            txtHinhAnh2.setToolTipText(nv.getHinh());
+            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+            Image originalImage = originalIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(txtHinhAnh2.getWidth(), txtHinhAnh2.getHeight(), Image.SCALE_SMOOTH);
+            txtHinhAnh2.setIcon(new ImageIcon(scaledImage));
         }
     }
 
