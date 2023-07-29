@@ -4,9 +4,16 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Dao.BaoHanhCTDAO;
 import com.DuAn1.Dao.BaoHanhDAO;
+import com.DuAn1.Dao.HoaDonDAO;
+import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Dao.ThongKeDao;
+import com.DuAn1.Model.BaoHanhCTModel;
 import com.DuAn1.Model.BaoHanhModel;
+import com.DuAn1.Model.HoaDonModel;
+import com.DuAn1.Model.KhachHangModel;
 import com.DuAn1.Model.SanPhamModel;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
@@ -18,9 +25,13 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -34,14 +45,17 @@ public class BaoHanh extends javax.swing.JPanel {
     DefaultTableModel model;
     int row =-1;
     BaoHanhDAO dao = new BaoHanhDAO();
+    BaoHanhCTDAO bhctdao= new BaoHanhCTDAO();
     SanPhamDAO daosp= new SanPhamDAO();
+    ThongKeDao daoThongKe = new ThongKeDao();
     /**
      * Creates new form SanPham1
      */
     public BaoHanh() {
         initComponents();
-        tieude();
-        
+        loadCboHD();
+        loadCboKH();
+//        fillTable();
         setOpaque(false);
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
 //panelShadow6.setVisible(false); ẩn jpanel
@@ -281,17 +295,36 @@ void fillTable(){
     model = (DefaultTableModel) tblBH.getModel();
     model.setRowCount(0);
     try {
-        List<BaoHanhModel> list = dao.select();
-        for (BaoHanhModel bh : list) {
-            Object[] row = new Object[]{bh.getMaBH(),bh.getMaHD(),bh.getSoEmei(),bh.getNgayBH(),bh.getNgayHetHan(),bh.getGhiChu(),
-            bh.getMaKH()};
+        List<BaoHanhCTModel> list = bhctdao.selectAll(txtMaBH.getText());
+        for (BaoHanhCTModel bhct : list) {
+            Object[] row = new Object[]{bhct.getMaBHCT(),bhct.getMaBH(),bhct.getMaHD(),bhct.getSoLuong()};
             model.addRow(row);
         }
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
-    } 
+        e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+    }
 }
-
+void loadCboHD(){
+    DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
+    HoaDonDAO hddao = new HoaDonDAO();
+    ArrayList<HoaDonModel> listhd = (ArrayList<HoaDonModel>) hddao.select();
+    for (HoaDonModel nv : listhd) {
+            cboModel.addElement(nv.getMaHD().trim());
+        }
+        cboMaHD.setModel(cboModel);
+        cboMaHD.setSelectedIndex(-1);
+}
+void loadCboKH(){
+    DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
+    KhachHangDAO hddao = new KhachHangDAO();
+    ArrayList<KhachHangModel> listhd = (ArrayList<KhachHangModel>) hddao.select();
+    for (KhachHangModel nv : listhd) {
+            cboModel.addElement(nv.getMaKH().trim());
+        }
+        cboMaKH.setModel(cboModel);
+        cboMaKH.setSelectedIndex(-1);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -304,6 +337,7 @@ void fillTable(){
 
         dateChooser = new com.raven.datechooser.DateChooser();
         imageAvatar68 = new swing.ImageAvatar();
+        dateChooser1 = new com.raven.datechooser.DateChooser();
         jPanel1 = new javax.swing.JPanel();
         materialTabbed1 = new swing.MaterialTabbed();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -507,17 +541,17 @@ void fillTable(){
         jPanel3 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         txtNgayHetHan = new com.DuAn1.Swing.TextField();
-        txtDonGia = new com.DuAn1.Swing.TextField();
+        txtemei = new com.DuAn1.Swing.TextField();
         txtMaBH = new com.DuAn1.Swing.TextField();
         button01 = new com.DuAn1.swing0.button0();
         button2 = new com.DuAn1.swing0.button0();
-        button3 = new com.DuAn1.swing0.button0();
+        btnXemDSBH = new com.DuAn1.swing0.button0();
         button7 = new com.DuAn1.swing0.button0();
-        buttonBadges1 = new com.DuAn1.swing1.ButtonBadges();
         txtNgayXuat1 = new com.DuAn1.Swing.TextField();
         cboMaHD = new com.DuAn1.Swing.Combobox();
         cboMaKH = new com.DuAn1.Swing.Combobox();
         txtNgayBaoHanh = new com.DuAn1.Swing.TextField();
+        btnTaoBH = new com.DuAn1.swing0.button0();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBH = new javaswingdev.swing.table.Table();
         button4 = new com.DuAn1.swing0.button0();
@@ -525,13 +559,15 @@ void fillTable(){
         button5 = new com.DuAn1.swing0.button0();
         button6 = new com.DuAn1.swing0.button0();
 
-        dateChooser.setTextRefernce(txtNgayHetHan);
+        dateChooser.setTextRefernce(txtNgayBaoHanh);
 
         imageAvatar68.setBorderSize(5);
         imageAvatar68.setBorderSpace(0);
         imageAvatar68.setGradientColor1(new java.awt.Color(255, 255, 255));
         imageAvatar68.setGradientColor2(new java.awt.Color(255, 255, 255));
         imageAvatar68.setImage(new javax.swing.ImageIcon(getClass().getResource("/image/img1_d.jpg"))); // NOI18N
+
+        dateChooser1.setTextRefernce(txtNgayHetHan);
 
         setPreferredSize(new java.awt.Dimension(1058, 1643));
 
@@ -2841,10 +2877,10 @@ void fillTable(){
             }
         });
 
-        txtDonGia.setLabelText("Số IMEI");
-        txtDonGia.addCaretListener(new javax.swing.event.CaretListener() {
+        txtemei.setLabelText("Số IMEI");
+        txtemei.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtDonGiaCaretUpdate(evt);
+                txtemeiCaretUpdate(evt);
             }
         });
 
@@ -2857,11 +2893,11 @@ void fillTable(){
         button2.setForeground(new java.awt.Color(255, 255, 255));
         button2.setText("Hủy bỏ");
 
-        button3.setBackground(new java.awt.Color(153, 153, 255));
-        button3.setText("Xem danh sách bảo hành");
-        button3.addActionListener(new java.awt.event.ActionListener() {
+        btnXemDSBH.setBackground(new java.awt.Color(153, 153, 255));
+        btnXemDSBH.setText("Xem danh sách bảo hành");
+        btnXemDSBH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button3ActionPerformed(evt);
+                btnXemDSBHActionPerformed(evt);
             }
         });
 
@@ -2871,15 +2907,6 @@ void fillTable(){
         button7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button7ActionPerformed(evt);
-            }
-        });
-
-        buttonBadges1.setForeground(new java.awt.Color(250, 49, 49));
-        buttonBadges1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/notification.png"))); // NOI18N
-        buttonBadges1.setBadges(10);
-        buttonBadges1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBadges1ActionPerformed(evt);
             }
         });
 
@@ -2905,6 +2932,14 @@ void fillTable(){
             }
         });
 
+        btnTaoBH.setBackground(new java.awt.Color(153, 153, 255));
+        btnTaoBH.setText("Tạo bảo hành");
+        btnTaoBH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaoBHActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -2914,20 +2949,20 @@ void fillTable(){
                 .addComponent(button01, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 132, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnXemDSBH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                        .addComponent(buttonBadges1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnTaoBH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtemei, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtMaBH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNgayBaoHanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2941,20 +2976,17 @@ void fillTable(){
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(buttonBadges1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel28)))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnXemDSBH, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(btnTaoBH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtMaBH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboMaHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtemei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -3021,7 +3053,7 @@ void fillTable(){
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3371,23 +3403,17 @@ void fillTable(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayXuat1MouseClicked
 
-    private void buttonBadges1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges1ActionPerformed
-        // TODO add your handling code here:
-        HoaDonCho hdc = new HoaDonCho(com.DuAn1.main.Main.getMain(), true);
-        hdc.setVisible(true);
-    }//GEN-LAST:event_buttonBadges1ActionPerformed
-
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button7ActionPerformed
 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+    private void btnXemDSBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDSBHActionPerformed
         // TODO add your handling code here:
         DanhSachHoaDon dshd = new DanhSachHoaDon(true);
         dshd.setVisible(true);
-    }//GEN-LAST:event_button3ActionPerformed
+    }//GEN-LAST:event_btnXemDSBHActionPerformed
 
-    private void txtDonGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtDonGiaCaretUpdate
+    private void txtemeiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtemeiCaretUpdate
         // TODO add your handling code here:
 //        float TongTien = 0;
 //        TongTien = Float.parseFloat(txtDonGia.getText()) * Float.parseFloat(txtSoLuong.getText());
@@ -3399,7 +3425,7 @@ void fillTable(){
 //        }
 //        tong = Float.parseFloat(txtTongTien.getText()) - Float.parseFloat(txtTienKhachDua.getText());
 //        txtTienConLai.setText(String.format("%.2f", tong));
-    }//GEN-LAST:event_txtDonGiaCaretUpdate
+    }//GEN-LAST:event_txtemeiCaretUpdate
 
     private void txtNgayHetHanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayHetHanMouseClicked
         dateChooser.showPopup();        // TODO add your handling code here:
@@ -3409,6 +3435,59 @@ void fillTable(){
         // TODO add your handling code here:
         dateChooser.showPopup();
     }//GEN-LAST:event_txtNgayBaoHanhMouseClicked
+BaoHanhModel getFormTao(){
+    BaoHanhModel bh = new BaoHanhModel();
+    bh.setMaBH(txtMaBH.getText());
+    bh.setMaHD(String.valueOf(cboMaHD.getSelectedItem()));
+    bh.setSoEmei(txtemei.getText());
+    try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayBaoHanh.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            bh.setNgayBH(ngayNhap);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayHetHan.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            bh.setNgayHetHan(ngayNhap);
+
+        } catch (Exception e) {
+        }
+    bh.setMaKH(String.valueOf(cboMaKH.getSelectedItem()));
+    return bh;
+}
+    void TuDongTangMa() {
+        List<Object[]> i = daoThongKe.getMaxMaBH();
+        String name = (String) i.get(0)[0];
+        String[] tbl = name.split("H");
+        String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+        String ten = "BH";
+        for (int j = 0; j <= 4 - so.length(); j++) {
+            ten += "0";
+        }
+        ten = ten + so;
+        txtMaBH.setText(ten);
+    }
+void themTaoBH(){
+    try {
+            BaoHanhModel model = getFormTao();
+            dao.insert(model);
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+}
+    private void btnTaoBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoBHActionPerformed
+        // TODO add your handling code here:
+        TuDongTangMa();
+        themTaoBH();
+    }//GEN-LAST:event_btnTaoBHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -3440,18 +3519,19 @@ void fillTable(){
     private com.DuAn1.swing0.button0 btnAdd7;
     private com.DuAn1.swing0.button0 btnAdd8;
     private com.DuAn1.swing0.button0 btnAdd9;
+    private com.DuAn1.swing0.button0 btnTaoBH;
+    private com.DuAn1.swing0.button0 btnXemDSBH;
     private com.DuAn1.swing0.button0 button01;
     private com.DuAn1.swing0.button0 button2;
-    private com.DuAn1.swing0.button0 button3;
     private com.DuAn1.swing0.button0 button4;
     private com.DuAn1.swing0.button0 button5;
     private com.DuAn1.swing0.button0 button6;
     private com.DuAn1.swing0.button0 button7;
     private com.DuAn1.swing0.button0 button8;
-    private com.DuAn1.swing1.ButtonBadges buttonBadges1;
     private com.DuAn1.Swing.Combobox cboMaHD;
     private com.DuAn1.Swing.Combobox cboMaKH;
     private com.raven.datechooser.DateChooser dateChooser;
+    private com.raven.datechooser.DateChooser dateChooser1;
     private swing.ImageAvatar imageAvatar68;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
@@ -3486,7 +3566,6 @@ void fillTable(){
     private swing.PanelShadow lblSamSung9;
     private swing.MaterialTabbed materialTabbed1;
     private javaswingdev.swing.table.Table tblBH;
-    private com.DuAn1.Swing.TextField txtDonGia;
     private swing.ImageAvatar txtHinhAnhIphone1;
     private swing.ImageAvatar txtHinhAnhIphone2;
     private swing.ImageAvatar txtHinhAnhIphone3;
@@ -3634,5 +3713,6 @@ void fillTable(){
     private com.DuAn1.swing0.button0 txtadd6;
     private com.DuAn1.swing0.button0 txtadd7;
     private com.DuAn1.swing0.button0 txtadd8;
+    private com.DuAn1.Swing.TextField txtemei;
     // End of variables declaration//GEN-END:variables
 }
