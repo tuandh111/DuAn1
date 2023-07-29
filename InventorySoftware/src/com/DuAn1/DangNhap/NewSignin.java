@@ -36,13 +36,13 @@ import javax.swing.UIManager;
  * @author Tran Van Vu Chi Thanh
  */
 public class NewSignin extends javax.swing.JFrame {
-       MaHoa MH = new MaHoa();
+
+    MaHoa MH = new MaHoa();
     NhanVienDAO1 dao = new NhanVienDAO1();
     ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
 
     public NewSignin() {
         initComponents();
-
         this.setLocationRelativeTo(null);
         jPanel6.setVisible(false);
         jLabel_SoftZyd.setVisible(true);
@@ -402,7 +402,7 @@ public class NewSignin extends javax.swing.JFrame {
 
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       String ma = JOptionPane.showInternalInputDialog(this,"Nhập mã xác nhận");
+        String ma = JOptionPane.showInternalInputDialog(this, "Nhập mã xác nhận");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed

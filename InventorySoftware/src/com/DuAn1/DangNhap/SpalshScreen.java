@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.DuAn1.DangNhap;
 
 /**
@@ -31,35 +30,22 @@ public class SpalshScreen extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
         jProgressBar2 = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
-        jLabel_SoftZyd = new javax.swing.JLabel();
-        jLabel_inven = new javax.swing.JLabel();
         loadingprogress = new javax.swing.JProgressBar();
         loadingnumber = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        loading = new javax.swing.JLabel();
+        jLabel_SoftZyd = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel_inven1 = new javax.swing.JLabel();
-        loading = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(21, 25, 28));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_DOT_100px.png"))); // NOI18N
-        jLabel_SoftZyd.setText("TTA MOBILE");
-        jLabel_SoftZyd.setToolTipText("");
-        jPanel1.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 410, -1));
-
-        jLabel_inven.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel_inven.setForeground(new java.awt.Color(169, 106, 177));
-        jLabel_inven.setText("thezydsoft@gmail.com");
-        jPanel1.add(jLabel_inven, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, 30));
 
         loadingprogress.setForeground(new java.awt.Color(169, 224, 49));
         loadingprogress.setBorderPainted(false);
@@ -69,19 +55,22 @@ public class SpalshScreen extends javax.swing.JFrame {
         jPanel1.add(loadingprogress, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 470, 820, 40));
 
         loadingnumber.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        loadingnumber.setForeground(new java.awt.Color(169, 224, 49));
+        loadingnumber.setForeground(new java.awt.Color(0, 51, 255));
         loadingnumber.setText("99%");
         jPanel1.add(loadingnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, -1, -1));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Instagram_32px.png"))); // NOI18N
-        jButton4.setToolTipText("Instagram");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Instagram_32px_3.png"))); // NOI18N
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 11, -1, 28));
+        loading.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        loading.setForeground(new java.awt.Color(0, 102, 255));
+        loading.setText("99%");
+        jPanel1.add(loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Twitter_32px.png"))); // NOI18N
+        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
+        jLabel_SoftZyd.setText("TTA MOBILE");
+        jPanel1.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 360, 100));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconSwitter-removebg-preview (1).png"))); // NOI18N
         jButton2.setToolTipText("Twitter");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
@@ -89,7 +78,7 @@ public class SpalshScreen extends javax.swing.JFrame {
         jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Twitter_32px_2.png"))); // NOI18N
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 28));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Facebook_32px_2.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconFB-removebg-preview (1).png"))); // NOI18N
         jButton3.setToolTipText("Facebook");
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
@@ -97,7 +86,15 @@ public class SpalshScreen extends javax.swing.JFrame {
         jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Facebook_32px_7.png"))); // NOI18N
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 11, -1, 28));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_YouTube_32px.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconInsta-removebg-preview (1).png"))); // NOI18N
+        jButton4.setToolTipText("Instagram");
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Instagram_32px_3.png"))); // NOI18N
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 11, -1, 28));
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconYTB-removebg-preview (1).png"))); // NOI18N
         jButton6.setToolTipText("YouTube");
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
@@ -105,24 +102,13 @@ public class SpalshScreen extends javax.swing.JFrame {
         jButton6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_YouTube_32px_1.png"))); // NOI18N
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 11, -1, 28));
 
-        jButton5.setBackground(new java.awt.Color(169, 106, 177));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Secured_Letter_32px.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconGmail-removebg-preview (1).png"))); // NOI18N
         jButton5.setToolTipText("Email");
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
         jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Secured_Letter_32px_2.png"))); // NOI18N
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 11, -1, 28));
-
-        jLabel_inven1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        jLabel_inven1.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel_inven1.setText("Phone Manager");
-        jPanel1.add(jLabel_inven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 280, 50));
-
-        loading.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        loading.setForeground(new java.awt.Color(169, 224, 49));
-        loading.setText("99%");
-        jPanel1.add(loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,11 +151,46 @@ public class SpalshScreen extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SpalshScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        SpalshScreen screen = new SpalshScreen();
+        screen.setVisible(true);
+        try {
+            for (int row = 0; row <= 100; row++) {
+                Thread.sleep(10);
+                screen.loadingnumber.setText(Integer.toString(row) + "%");
+                screen.loadingprogress.setValue(row);
+                int value = screen.loadingprogress.getValue();
+                if (value < 100) {
+
+                    if (value < 10) {
+                        screen.loading.setText("Turning on modules...");
+                    }
+                    if (value == 20) {
+                        screen.loading.setText("Loading modules...");
+                    }
+                    if (value == 50) {
+                        screen.loading.setText("Connecting to database...");
+                    }
+                    if (value == 70) {
+                        screen.loading.setText("Connection to successfull...");
+                    }
+                    if (value == 80) {
+                        screen.loading.setText("Launching Application...");
+                    }
+                    screen.loadingprogress.setValue(value + 1);
+                }
+                if (row == 100) {
+                    NewSignin dn = new NewSignin();
+                    dn.setVisible(true);
+                    screen.dispose();
+                }
+            }
+        } catch (Exception e) {
+        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SpalshScreen().setVisible(true);
+                new SpalshScreen().setVisible(false);
             }
         });
     }
@@ -181,13 +202,11 @@ public class SpalshScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel_SoftZyd;
-    private javax.swing.JLabel jLabel_inven;
-    private javax.swing.JLabel jLabel_inven1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
-    public javax.swing.JLabel loading;
-    public javax.swing.JLabel loadingnumber;
-    public javax.swing.JProgressBar loadingprogress;
+    private javax.swing.JLabel loading;
+    private javax.swing.JLabel loadingnumber;
+    private javax.swing.JProgressBar loadingprogress;
     // End of variables declaration//GEN-END:variables
 }
