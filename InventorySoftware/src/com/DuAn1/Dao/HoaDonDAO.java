@@ -59,6 +59,11 @@ public class HoaDonDAO {
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
 
+    public List<HoaDonModel> TimKiem(String Ma) {
+        String sql = "SELECT * FROM HOADON WHERE TrangThai =1 and MaHD like ?";
+        return select(sql, "%" + Ma + "%");
+    }
+
     private List<HoaDonModel> select(String sql, Object... args) {
         List<HoaDonModel> list = new ArrayList<>();
         try {
