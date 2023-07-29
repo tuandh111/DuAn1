@@ -663,8 +663,19 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private void txtSoNgayLamViecCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoNgayLamViecCaretUpdate
         // TODO add your handling code here:
         double tongTien = 1;
-        double tientangca = 1;
-        tientangca= Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+        if (txtSoNgayLamViec.getText().equals("")) {
+            return;
+        }
+        if (txtLuongCoBan.getText().equals("")) {
+            return;
+        }
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        lblTongTien.setText(String.valueOf(tongTien));
+    }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
+
+    private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
+        // TODO add your handling code here:
+        double tongTien = 1;
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -673,25 +684,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien+tientangca;
-        }
-        lblTongTien.setText(String.valueOf(tongTien));
-    }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
-
-    private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
-        // TODO add your handling code here:
-        double tongTien = 1;
-        double tientangca = 1;
-        tientangca= Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
-        if (txtSoNgayLamViec.getText().equals("")) {
-            return;
-        }
-        if (txtLuongCoBan.getText().endsWith("")) {
-            return;
-        }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien+tientangca;
+            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
+                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
             tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
