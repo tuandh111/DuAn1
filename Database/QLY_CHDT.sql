@@ -275,7 +275,7 @@ Insert into SANPHAM values ('SP00005','IPHONE 14S',N'Trắng','10500000',N'Iphon
 Insert into SANPHAM values ('SP00006','IPHONE 14S',N'Trắng','9500000',N'Iphone','2022-01-01',N'Nước Nhật',18,1,'null','NV002','KM006')
 Insert into SANPHAM values ('SP00007','IPHONE 14S',N'Xanh','22500000',N'Iphone','2022-01-01',N'Nước Nhật',12,1,'null','NV002','KM007')
 Insert into SANPHAM values ('SP00008','IPHONE 14S',N'Trắng','15500000',N'Iphone','2022-01-01',N'Nước Nhật',35,1,'null','NV001','KM001')
-Insert into SANPHAM values ('SP00009','IPHONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','GG002')
+Insert into SANPHAM values ('SP00009','IPHONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','KM002')
 Update SANPHAM set TenSP='iPhone 14',MAU='Lam',Gia='1000',LoaiSP='US',NgayNhap='2022-01-01',NoiNhap=N'Mỹ',SoLuong=12,TrangThai=1,Hinh='1',MaNV='QL001',MaGiamGia='GG001',MaDT='DT001' where MaSP='IP001'
 delete from SANPHAM where MaSP='IP001' 
 select * from SANPHAM where MaSP='IP001'
@@ -360,14 +360,14 @@ update HOADON set TENSP='Samsung A73',SOLUONG=2,TRANGTHAI=1,DONGIA='100000',TONG
 delete from HOADON where MAHD='HD001'
 select * from HOADON where MAHD='HD001'
 
-Insert into HOADONCT values ('SP00002',3,'HD00001')
-Insert into HOADONCT values ('SP00002',1,'HD00002')
-Insert into HOADONCT values ('SP00001',7,'HD00003')
-Insert into HOADONCT values ('SP00003',4,'HD00004')
-Insert into HOADONCT values ('SP00001',6,'HD00005')
-Insert into HOADONCT values ('SP00002',2,'HD00006')
-Insert into HOADONCT values ('SP00008',6,'HD00007')
-Insert into HOADONCT values ('SP00004',5,'HD00008')
+Insert into HOADONCT values ('SP00002',3,'HD00001','100000000')
+Insert into HOADONCT values ('SP00002',1,'HD00002','100000000')
+Insert into HOADONCT values ('SP00001',7,'HD00003','100000000')
+Insert into HOADONCT values ('SP00003',4,'HD00004','100000000')
+Insert into HOADONCT values ('SP00001',6,'HD00005','100000000')
+Insert into HOADONCT values ('SP00002',2,'HD00006','100000000')
+Insert into HOADONCT values ('SP00008',6,'HD00007','100000000')
+Insert into HOADONCT values ('SP00004',5,'HD00008','100000000')
 update HOADONCT set MASP ='IP001',SOLUONG=1,MAHD='HD001' where MAHDCT =1
 delete from HOADONCT where MAHDCT=1
 select * from HOADONCT where MAHDCT=1
@@ -580,3 +580,11 @@ END
 GO
 
 execute MaxMadatsp
+
+CREATE PROCEDURE MaxHDDH
+AS
+BEGIN
+    SELECT MAX(MaHD) AS MaxProductCode
+    FROM HOADON;
+END
+GO

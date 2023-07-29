@@ -6,6 +6,7 @@ package com.DuAn1.Dao;
 
 import com.DuAn1.Helper.JdbcHelper;
 import com.DuAn1.Model.NhanVienModel;
+import com.DuAn1.Model.ThanhToanLuongModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -139,6 +140,12 @@ public class NhanVienDAO1 {
         JdbcHelper.executeUpdate(sql,
                 model.getMaNV()
         );
+    }
+  public List<NhanVienModel> selectcombobox() {
+        String sql = "SELECT *\n"
+                + "FROM NhanVien\n"
+                + "WHERE Nhanvien.Manv NOT IN (SELECT luong.MaLuong FROM luong);";
+        return select(sql);
     }
 
     public List<NhanVienModel> select() {
