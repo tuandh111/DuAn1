@@ -53,8 +53,8 @@ public class BaoHanh extends javax.swing.JPanel {
      */
     public BaoHanh() {
         initComponents();
-        loadCboHD();
-        loadCboKH();
+//        loadCboHD();
+//        loadCboKH();
 //        fillTable();
         setOpaque(false);
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
@@ -305,26 +305,26 @@ void fillTable(){
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
     }
 }
-void loadCboHD(){
-    DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
-    HoaDonDAO hddao = new HoaDonDAO();
-    ArrayList<HoaDonModel> listhd = (ArrayList<HoaDonModel>) hddao.select();
-    for (HoaDonModel nv : listhd) {
-            cboModel.addElement(nv.getMaHD().trim());
-        }
-        cboMaHD.setModel(cboModel);
-        cboMaHD.setSelectedIndex(-1);
-}
-void loadCboKH(){
-    DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
-    KhachHangDAO hddao = new KhachHangDAO();
-    ArrayList<KhachHangModel> listhd = (ArrayList<KhachHangModel>) hddao.select();
-    for (KhachHangModel nv : listhd) {
-            cboModel.addElement(nv.getMaKH().trim());
-        }
-        cboMaKH.setModel(cboModel);
-        cboMaKH.setSelectedIndex(-1);
-}
+//void loadCboHD(){
+//    DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
+//    HoaDonDAO hddao = new HoaDonDAO();
+//    ArrayList<HoaDonModel> listhd = (ArrayList<HoaDonModel>) hddao.select();
+//    for (HoaDonModel nv : listhd) {
+//            cboModel.addElement(nv.getMaHD().trim());
+//        }
+//        cboMaHD.setModel(cboModel);
+//        cboMaHD.setSelectedIndex(-1);
+//}
+//void loadCboKH(){
+//    DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
+//    KhachHangDAO hddao = new KhachHangDAO();
+//    ArrayList<KhachHangModel> listhd = (ArrayList<KhachHangModel>) hddao.select();
+//    for (KhachHangModel nv : listhd) {
+//            cboModel.addElement(nv.getMaKH().trim());
+//        }
+//        cboMaKH.setModel(cboModel);
+//        cboMaKH.setSelectedIndex(-1);
+//}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -548,10 +548,10 @@ void loadCboKH(){
         btnXemDSBH = new com.DuAn1.swing0.button0();
         button7 = new com.DuAn1.swing0.button0();
         txtNgayXuat1 = new com.DuAn1.Swing.TextField();
-        cboMaHD = new com.DuAn1.Swing.Combobox();
-        cboMaKH = new com.DuAn1.Swing.Combobox();
         txtNgayBaoHanh = new com.DuAn1.Swing.TextField();
         btnTaoBH = new com.DuAn1.swing0.button0();
+        txtmaHD = new com.DuAn1.Swing.TextField();
+        txtmaKH = new com.DuAn1.Swing.TextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBH = new javaswingdev.swing.table.Table();
         button4 = new com.DuAn1.swing0.button0();
@@ -2885,6 +2885,11 @@ void loadCboKH(){
         });
 
         txtMaBH.setLabelText("Mã bào hành");
+        txtMaBH.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtMaBHCaretUpdate(evt);
+            }
+        });
 
         button01.setBackground(new java.awt.Color(153, 153, 255));
         button01.setText("làm mới");
@@ -2917,14 +2922,6 @@ void loadCboKH(){
             }
         });
 
-        cboMaHD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền mặt", "Chuyển khoản" }));
-        cboMaHD.setSelectedIndex(-1);
-        cboMaHD.setLabeText("Mã Hóa Đơn");
-
-        cboMaKH.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền mặt", "Chuyển khoản" }));
-        cboMaKH.setSelectedIndex(-1);
-        cboMaKH.setLabeText("Mã Khách Hàng");
-
         txtNgayBaoHanh.setLabelText("Ngày bảo hành");
         txtNgayBaoHanh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2939,6 +2936,10 @@ void loadCboKH(){
                 btnTaoBHActionPerformed(evt);
             }
         });
+
+        txtmaHD.setLabelText("Mã Hóa Đơn");
+
+        txtmaKH.setLabelText("Mã Khách Hàng");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -2967,9 +2968,9 @@ void loadCboKH(){
                             .addComponent(txtNgayBaoHanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cboMaHD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                            .addComponent(txtNgayHetHan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cboMaKH, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
+                            .addComponent(txtNgayHetHan, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                            .addComponent(txtmaHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtmaKH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(txtNgayXuat1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
@@ -2981,13 +2982,14 @@ void loadCboKH(){
                     .addComponent(btnXemDSBH, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28)
                     .addComponent(btnTaoBH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMaBH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboMaHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtmaHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtemei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtmaKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNgayHetHan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3438,7 +3440,7 @@ void loadCboKH(){
 BaoHanhModel getFormTao(){
     BaoHanhModel bh = new BaoHanhModel();
     bh.setMaBH(txtMaBH.getText());
-    bh.setMaHD(String.valueOf(cboMaHD.getSelectedItem()));
+    bh.setMaHD( txtmaHD.getText());
     bh.setSoEmei(txtemei.getText());
     try {
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayBaoHanh.getText());
@@ -3459,7 +3461,7 @@ BaoHanhModel getFormTao(){
 
         } catch (Exception e) {
         }
-    bh.setMaKH(String.valueOf(cboMaKH.getSelectedItem()));
+    bh.setMaKH( txtmaKH.getText());
     return bh;
 }
     void TuDongTangMa() {
@@ -3488,6 +3490,11 @@ void themTaoBH(){
         TuDongTangMa();
         themTaoBH();
     }//GEN-LAST:event_btnTaoBHActionPerformed
+
+    private void txtMaBHCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMaBHCaretUpdate
+        // TODO add your handling code here:
+        fillTable();
+    }//GEN-LAST:event_txtMaBHCaretUpdate
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -3528,8 +3535,6 @@ void themTaoBH(){
     private com.DuAn1.swing0.button0 button6;
     private com.DuAn1.swing0.button0 button7;
     private com.DuAn1.swing0.button0 button8;
-    private com.DuAn1.Swing.Combobox cboMaHD;
-    private com.DuAn1.Swing.Combobox cboMaKH;
     private com.raven.datechooser.DateChooser dateChooser;
     private com.raven.datechooser.DateChooser dateChooser1;
     private swing.ImageAvatar imageAvatar68;
@@ -3714,5 +3719,7 @@ void themTaoBH(){
     private com.DuAn1.swing0.button0 txtadd7;
     private com.DuAn1.swing0.button0 txtadd8;
     private com.DuAn1.Swing.TextField txtemei;
+    private com.DuAn1.Swing.TextField txtmaHD;
+    private com.DuAn1.Swing.TextField txtmaKH;
     // End of variables declaration//GEN-END:variables
 }

@@ -3524,6 +3524,7 @@ public class DatHang1 extends javax.swing.JPanel {
         dt.setSDT(txtSoDienThoai.getText());
         dt.setTrangThai(true);
         dt.setDonGia(String.valueOf(txtDonGia.getText()));
+        
         dt.setTongTien(txtTongTien.getText());
         try {
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayXuat.getText());

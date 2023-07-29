@@ -20,7 +20,7 @@ import java.util.List;
 public class BaoHanhDAO {
     public void insert(BaoHanhModel model){
         String sql ="Insert into BAOHANH values (?,?,?,?,?,?,?) ";
-        com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,model.getMaBH(),model.getMaHD(),model.getSoEmei()
+        JdbcHelper.executeUpdate(sql,model.getMaBH(),model.getMaHD(),model.getSoEmei()
         ,model.getNgayBH(),model.getNgayHetHan(),model.getGhiChu(),model.getMaKH());
     }
     public List<BaoHanhModel> select() {
