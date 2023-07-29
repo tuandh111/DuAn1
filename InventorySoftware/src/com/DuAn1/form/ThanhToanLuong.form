@@ -70,7 +70,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="txtSoHTangCa" alignment="0" pref="252" max="32767" attributes="0"/>
                               <Component id="txtLuongCoBan" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtMaLuong" max="32767" attributes="0"/>
+                              <Component id="cboMaLuong" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -138,7 +138,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtSoNgayLamViec" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtNgayVaoCTY" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtMaLuong" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cboMaLuong" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -250,6 +250,7 @@
         </Component>
         <Container class="com.DuAn1.swing0.SwitchButton" name="btnTrangThai">
           <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="selectedAnimate" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -380,10 +381,13 @@
             <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtLuongTangCaCaretUpdate"/>
           </Events>
         </Component>
-        <Component class="com.DuAn1.Swing.Combobox" name="txtMaLuong">
+        <Component class="com.DuAn1.Swing.Combobox" name="cboMaLuong">
           <Properties>
             <Property name="labeText" type="java.lang.String" value="M&#xe3; l&#x1b0;&#x1a1;ng"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboMaLuongActionPerformed"/>
+          </Events>
         </Component>
         <Component class="com.DuAn1.Swing.Button" name="btnTim">
           <Properties>
