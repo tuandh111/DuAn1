@@ -1,5 +1,6 @@
 package com.raven.form;
 
+import com.DuAn1.Dao.DatSPDAO;
 import com.DuAn1.main.Main;
 import com.raven.dialog.Message;
 
@@ -15,6 +16,7 @@ import com.DuAn1.Dao.SanPhamDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.DatSPModel;
 import com.DuAn1.Model.NhanVienModel;
 import java.awt.Color;
 import java.util.List;
@@ -35,7 +37,7 @@ public class Form_Home extends javax.swing.JPanel {
 
     NhanVienDAO1 dao = new NhanVienDAO1();
     ThongKeDao DaoThongKe = new ThongKeDao();
-
+    DatSPDAO daoDatSP = new DatSPDAO();
     public Form_Home() {
         initComponents();
 
@@ -147,7 +149,7 @@ public class Form_Home extends javax.swing.JPanel {
         List<Object[]> j = DaoThongKe.DoanhThuThang();
         String name = (String) j.get(0)[1];
         List<NhanVienModel> list = dao.select();
-
+        List<DatSPModel> sp = daoDatSP.select();
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card1.setData(new ModelCard("Số lượng sản phẩm", tongSoLuong, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
@@ -155,7 +157,7 @@ public class Form_Home extends javax.swing.JPanel {
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card3.setData(new ModelCard("Nhân viên", list.size(), 80, icon3));
         Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card4.setData(new ModelCard("Hóa đơn", 550, 95, icon4));
+        card4.setData(new ModelCard("Số lượng đặt hàng", sp.size(), 95, icon4));
     }
 
     private void initNoticeBoard() {
