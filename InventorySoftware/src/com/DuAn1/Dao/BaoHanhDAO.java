@@ -20,12 +20,18 @@ import java.util.List;
 public class BaoHanhDAO {
     public void insert(BaoHanhModel model){
         String sql ="Insert into BAOHANH values (?,?,?,?,?,?,?) ";
-        JdbcHelper.executeUpdate(sql,model.getMaBH(),model.getMaHD(),model.getSoEmei()
-        ,model.getNgayBH(),model.getNgayHetHan(),model.getGhiChu(),model.getMaKH());
+        JdbcHelper.executeUpdate(sql,
+                model.getMaBH(),
+                model.getMaHD(),
+                model.getSoEmei(),
+                model.getNgayBH(),
+                model.getNgayHetHan(),
+                model.getGhiChu(),
+                model.getMaKH());
     }
-    public List<BaoHanhModel> select() {
-        String sql = "SELECT * FROM BaoHanh";
-        return select(sql);
+    public List<BaoHanhModel> select(String MaBH) {
+        String sql = "SELECT * FROM BaoHanh WHERE MaBH like ?";
+        return select(sql,"%"+MaBH+"%");
     }
     public void delete(BaoHanhModel model) {
         String sql = "DELETE BaoHanh WHERE MaBH = ?";

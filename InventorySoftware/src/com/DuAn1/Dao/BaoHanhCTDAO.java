@@ -7,6 +7,7 @@ package com.DuAn1.Dao;
 import com.DuAn1.Model.BaoHanhCTModel;
 import com.DuAn1.Model.HoaDonCTModel;
 import com.tuandhpc05076.helper.JdbcHelper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,8 +20,7 @@ import java.util.List;
 public class BaoHanhCTDAO {
     public void insert(BaoHanhCTModel model) {
         String sql = "Insert into BAOHANHCT values (?,?,?)";
-        JdbcHelper.executeUpdate(sql,
-                model.getMaBHCT(),
+        com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,
                 model.getMaBH(),
                 model.getMaHD(),
                 model.getSoLuong()
@@ -31,7 +31,7 @@ public class BaoHanhCTDAO {
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
     public List<BaoHanhCTModel> selectAll(String MaBHCT) {
-        String sql = "SELECT * FROM HOADONCT WHERE MaHD = ?";
+        String sql = "SELECT * FROM BAOHANHCT WHERE MaBH = ?";
         return select(sql,MaBHCT);
     }
     public List<BaoHanhCTModel> select(String sql, Object... args) {
