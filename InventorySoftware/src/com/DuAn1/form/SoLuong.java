@@ -4,6 +4,8 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Helper.ShareHelper;
+import java.awt.Image;
 import javax.swing.JOptionPane;
 import sun.security.jgss.spnego.SpNegoContext;
 
@@ -28,8 +30,11 @@ public static int soLuong=0;
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(ShareHelper.APP_ICON);
      
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.

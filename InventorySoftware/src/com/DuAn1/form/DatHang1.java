@@ -28,9 +28,11 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -614,7 +616,7 @@ public class DatHang1 extends javax.swing.JPanel {
         btnXoaSP = new com.DuAn1.swing0.button0();
         btnThemDatHang = new com.DuAn1.swing0.button0();
 
-        dateChooser.setDateFormat("yyyy-MM-dd");
+        dateChooser.setDateFormat("dd-MM-yyyy HH:mm:ss.SSS");
         dateChooser.setTextRefernce(txtNgayXuat);
 
         imageAvatar68.setBorderSize(5);
@@ -3230,6 +3232,7 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
+        txtDonGia.setEditable(false);
         txtDonGia.setLabelText("Tổng đơn giá");
         txtDonGia.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3244,6 +3247,7 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         });
 
+        txtSoLuong.setEditable(false);
         txtSoLuong.setLabelText("Tổng số lượng");
         txtSoLuong.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3505,10 +3509,10 @@ public class DatHang1 extends javax.swing.JPanel {
         txtSoDienThoai.setText("");
         txtDonGia.setText("");
         txtSoLuong.setText("");
-        LocalDateTime current = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-        String formatted = current.format(formatter);
-        txtNgayXuat.setText(formatted);
+//        LocalDateTime current = LocalDateTime.now();
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS");
+//        String formatted = current.format(formatter);
+//        txtNgayXuat.setText(f);
         txtTongTien.setText("");
     }
 
@@ -3520,11 +3524,15 @@ public class DatHang1 extends javax.swing.JPanel {
         dt.setTrangThai(true);
         dt.setDonGia(String.valueOf(txtDonGia.getText()));
         dt.setTongTien(txtTongTien.getText());
-        LocalDateTime current = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-        String formatted = current.format(formatter);
-        txtNgayXuat.setText(formatted);
-        dt.setThoiGianDat(formatted);
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayXuat.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            dt.setThoiGianDat(ngayNhap);
+
+        } catch (Exception e) {
+        }
         dt.setMaNV(ShareHelper.USER.getMaNV());
         return dt;
     }
@@ -3543,15 +3551,19 @@ public class DatHang1 extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-    boolean check(){
-        if(txtMaDatHang.getText().equals("")){
-            DialogHelper.alert(this,"Mã bạn đã để trống");
+
+    boolean check() {
+        if (txtMaDatHang.getText().equals("")) {
+            DialogHelper.alert(this, "Mã bạn đã để trống");
             return false;
         }
         return true;
     }
+
     public void Delete() {
-        if(check()==false)return;
+        if (check() == false) {
+            return;
+        }
         try {
             DatSPModel model = getFormTao();
             daoDatSP.delete(model);
@@ -3594,6 +3606,7 @@ public class DatHang1 extends javax.swing.JPanel {
     }
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
+        clearForm();
         TuDongTangMa();
         Them();
         btnHuyDatHang.setEnabled(true);
@@ -3604,8 +3617,16 @@ public class DatHang1 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_button3ActionPerformed
     void them() {
-          if(txtMaDatHang.getText().equals("")){
-            DialogHelper.alert(this,"Bạn chưa tạo đặt hàng nào");
+        if (txtMaDatHang.getText().equals("")) {
+            DialogHelper.alert(this, "Bạn chưa tạo đặt hàng nào");
+            return;
+        }
+          if (txtSoDienThoai.getText().equals("")) {
+            DialogHelper.alert(this, "Bạn chưa nhập số điện thoại");
+            return;
+        }
+        if (txtThongBao.getText().equals("Khách hàng chưa tồn tại")) {
+            DialogHelper.alert(this, "Vui lòng tạo khách hàng trước");
             return;
         }
         try {
@@ -3614,6 +3635,7 @@ public class DatHang1 extends javax.swing.JPanel {
             ThaoTacModel ThaoTacModel = getFormThem();
             daoThaoTac.insert(ThaoTacModel);
             com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
+            clearForm();
         } catch (Exception e) {
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3637,7 +3659,7 @@ public class DatHang1 extends javax.swing.JPanel {
     private void btnDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatHangActionPerformed
         // TODO add your handling code here:
         them();
-        clearForm();
+        
     }//GEN-LAST:event_btnDatHangActionPerformed
 
     private void txtNgayXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayXuatMouseClicked
@@ -4064,8 +4086,8 @@ public class DatHang1 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_button9ActionPerformed
     void delete() {
-          if(txtMaDatHang.getText().equals("")){
-            DialogHelper.alert(this,"Bạn đặt hàng nào");
+        if (txtMaDatHang.getText().equals("")) {
+            DialogHelper.alert(this, "Bạn đặt hàng nào");
             return;
         }
         int chon = tblUser.getSelectedRow();
@@ -4086,8 +4108,8 @@ public class DatHang1 extends javax.swing.JPanel {
     }
 
     void deleteAll() {
-          if(txtMaDatHang.getText().equals("")){
-            DialogHelper.alert(this,"Bạn có đặt hàng nào");
+        if (txtMaDatHang.getText().equals("")) {
+            DialogHelper.alert(this, "Bạn có đặt hàng nào");
             return;
         }
         try {
@@ -4135,9 +4157,11 @@ public class DatHang1 extends javax.swing.JPanel {
         txtDonGia.setText(String.format("%.0f", DanhSachDH.getDonGia()));
 //          DecimalFormat df = new DecimalFormat("#,##0.##");
         txtTongTien.setText(String.format("%.1f", DanhSachDH.getTongTien()));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtTongTien.setText(df.format(DanhSachDH.getTongTien()));
         txtNgayXuat.setText(DanhSachDH.getNgay());
         txtSoDienThoai.setText(DanhSachDH.getSDT());
-          txtThongBao.setVisible(true);
+        txtThongBao.setVisible(true);
         btnHuyDatHang.setEnabled(true);
         btnDatHang.setEnabled(true);
         btnXoaSP.setEnabled(true);
@@ -4154,8 +4178,8 @@ public class DatHang1 extends javax.swing.JPanel {
     private void btnThemDatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDatHangActionPerformed
         double tongGia = 0;
         int tongSoLuong = 0;
-        if(txtMaDatHang.getText().equals("")){
-            DialogHelper.alert(this,"Bạn chưa tạo đặt hàng nào");
+        if (txtMaDatHang.getText().equals("")) {
+            DialogHelper.alert(this, "Bạn chưa tạo đặt hàng nào");
             return;
         }
         try {
@@ -4168,6 +4192,8 @@ public class DatHang1 extends javax.swing.JPanel {
             txtSoLuong.setText(String.valueOf(tongSoLuong));
             double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
             txtTongTien.setText(String.format("%.0f", tongTien));
+            DecimalFormat df = new DecimalFormat("#,##0.##");
+            txtTongTien.setText(df.format(tongTien));
             ThaoTacModel ThaoTacModel = getFormUpdate();
             daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {

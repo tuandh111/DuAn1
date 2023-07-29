@@ -50,11 +50,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -224,7 +227,17 @@ public class SanPham extends javax.swing.JPanel {
         cd.setMau((String) cboMau.getSelectedItem());
         cd.setGia(Double.parseDouble(txtGia.getText()));
         cd.setLoaiSP((String) cboLoaiSanPham.getSelectedItem());
-        cd.setNgayNhap(txtNgayNhap.getText());
+
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayNhap.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            cd.setNgayNhap(ngayNhap);
+
+        } catch (Exception e) {
+        }
+
         cd.setNoiNhap(txtNoiNhap.getText());
         cd.setSoLuong((int) txtSoLuong.getValue());
         cd.setTrangThai(true);
@@ -253,7 +266,15 @@ public class SanPham extends javax.swing.JPanel {
         cboMau.setSelectedItem(sp.getMau());
         txtGia.setText(String.format("%.1f", sp.getGia()));
         cboLoaiSanPham.setSelectedItem(sp.getLoaiSP());
-        txtNgayNhap.setText(sp.getNgayNhap());
+
+        try {
+            String dateString = sp.getNgayNhap();
+            Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgayNhap.setText(formattedDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
         txtNoiNhap.setText(sp.getNoiNhap());
         txtSoLuong.setValue(sp.getSoLuong());
         if (sp.getHinh() != null) {
@@ -384,6 +405,9 @@ public class SanPham extends javax.swing.JPanel {
             ThaoTacModel ThaoTacModel = getFormThem();
             daoThaoTac.insert(ThaoTacModel);
             DialogHelper.alert(this, "Thêm dữ liệu thành công");
+            filltable();
+            clear();
+            TuDongTangMa();
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -404,6 +428,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
+
     public ThaoTacModel getFormUpdate() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
@@ -418,7 +443,8 @@ public class SanPham extends javax.swing.JPanel {
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
-        public ThaoTacModel getFormDelete() {
+
+    public ThaoTacModel getFormDelete() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
@@ -432,6 +458,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
+
     void delete() {
         SanPhamModel sp = getFormSP();
         try {
@@ -612,7 +639,6 @@ public class SanPham extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         button15 = new com.DuAn1.Swing.Button();
 
-        dateChooser.setDateFormat("yyyy-MM-dd");
         dateChooser.setFocusCycleRoot(true);
         dateChooser.setTextRefernce(txtNgayNhap);
 
@@ -1141,9 +1167,7 @@ public class SanPham extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         them();
-        filltable();
-        clear();
-        TuDongTangMa();
+
 // TODO add your handling code here:
     }//GEN-LAST:event_btnThemActionPerformed
 

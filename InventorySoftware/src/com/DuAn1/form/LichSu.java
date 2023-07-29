@@ -9,7 +9,9 @@ import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.helper.DialogHelper;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
@@ -46,18 +48,43 @@ public class LichSu extends javax.swing.JPanel {
         try {
             List<ThaoTacModel> list = daoThaoTac.select();
             for (ThaoTacModel nv : list) {
+                String ThoiGianThem = "";
+                String ThoiGianSua = "";
+                String ThoiGianXoa = "";
+                String ThoiGianHoatDong = "";
+                if (nv.getThoiGianThem() != null) {
+                    String dateString = nv.getThoiGianThem();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                }
+                if (nv.getThoiGianSua() != null) {
+                    String ThoiGianSua0 = nv.getThoiGianSua();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                    ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                }
+                if (nv.getThoiGianXoa() != null) {
+                    String ThoiGianXoa1 = nv.getThoiGianXoa();
+                    Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                    ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                }
+                if (nv.getThoIGianHoatDong() != null) {
+                    String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                    Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                    ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                }
                 Object[] row = {
                     nv.getID(),
-                    nv.getThoiGianThem(),
-                    nv.getThoiGianSua(),
-                    nv.getThoiGianXoa(),
-                    nv.getThoIGianHoatDong(),
+                    ThoiGianThem,
+                    ThoiGianSua,
+                    ThoiGianXoa,
+                    ThoiGianHoatDong,
                     nv.getBanThaoTac(),
                     nv.getMaNV()
                 };
                 model.addRow(row);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
@@ -192,17 +219,40 @@ public class LichSu extends javax.swing.JPanel {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKien(maNVTrim, BangThaoTac);
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -211,17 +261,40 @@ public class LichSu extends javax.swing.JPanel {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKienTuanNay(maNVTrim, BangThaoTac);
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -230,17 +303,40 @@ public class LichSu extends javax.swing.JPanel {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKienThangNay(maNVTrim, BangThaoTac);
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -249,17 +345,40 @@ public class LichSu extends javax.swing.JPanel {
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectDieuKienNamNay(maNVTrim, BangThaoTac);
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -284,19 +403,41 @@ public class LichSu extends javax.swing.JPanel {
                 model.setRowCount(0);
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienMa(maNVTrim);
-                    System.out.println(list.size());
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -311,19 +452,41 @@ public class LichSu extends javax.swing.JPanel {
                 model.setRowCount(0);
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaTuan(maNVTrim);
-                    System.out.println(list.size());
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -339,19 +502,41 @@ public class LichSu extends javax.swing.JPanel {
                 model.setRowCount(0);
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaThang(maNVTrim);
-                    System.out.println(list.size());
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -367,17 +552,40 @@ public class LichSu extends javax.swing.JPanel {
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienMaNam(maNVTrim);
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -399,17 +607,40 @@ public class LichSu extends javax.swing.JPanel {
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKien(maNVTrim, BangThaoTac);
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -418,17 +649,40 @@ public class LichSu extends javax.swing.JPanel {
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienTuanNay(maNVTrim, BangThaoTac);
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -437,17 +691,40 @@ public class LichSu extends javax.swing.JPanel {
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienThangNay(maNVTrim, BangThaoTac);
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -456,17 +733,40 @@ public class LichSu extends javax.swing.JPanel {
                 try {
                     List<ThaoTacModel> list = daoThaoTac.selectDieuKienNamNay(maNVTrim, BangThaoTac);
                     for (ThaoTacModel nv : list) {
+                        String ThoiGianThem = "";
+                        String ThoiGianSua = "";
+                        String ThoiGianXoa = "";
+                        String ThoiGianHoatDong = "";
+                        if (nv.getThoiGianThem() != null) {
+                            String dateString = nv.getThoiGianThem();
+                            Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        }
+                        if (nv.getThoiGianSua() != null) {
+                            String ThoiGianSua0 = nv.getThoiGianSua();
+                            Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        }
+                        if (nv.getThoiGianXoa() != null) {
+                            String ThoiGianXoa1 = nv.getThoiGianXoa();
+                            Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        }
+                        if (nv.getThoIGianHoatDong() != null) {
+                            String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                            Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        }
                         Object[] row = {
                             nv.getID(),
-                            nv.getThoiGianThem(),
-                            nv.getThoiGianSua(),
-                            nv.getThoiGianXoa(),
-                            nv.getThoIGianHoatDong(),
+                            ThoiGianThem,
+                            ThoiGianSua,
+                            ThoiGianXoa,
+                            ThoiGianHoatDong,
                             nv.getBanThaoTac(),
                             nv.getMaNV()
                         };
                         model.addRow(row);
-
                     }
                 } catch (Exception e) {
                     com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -486,19 +786,41 @@ public class LichSu extends javax.swing.JPanel {
             model.setRowCount(0);
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectHomNay();
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -508,19 +830,41 @@ public class LichSu extends javax.swing.JPanel {
             model.setRowCount(0);
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectThangNay();
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -530,19 +874,41 @@ public class LichSu extends javax.swing.JPanel {
             model.setRowCount(0);
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectTuanNay();
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -552,19 +918,41 @@ public class LichSu extends javax.swing.JPanel {
             model.setRowCount(0);
             try {
                 List<ThaoTacModel> list = daoThaoTac.selectNamNay();
-                System.out.println(list.size());
                 for (ThaoTacModel nv : list) {
+                    String ThoiGianThem = "";
+                    String ThoiGianSua = "";
+                    String ThoiGianXoa = "";
+                    String ThoiGianHoatDong = "";
+                    if (nv.getThoiGianThem() != null) {
+                        String dateString = nv.getThoiGianThem();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    if (nv.getThoiGianSua() != null) {
+                        String ThoiGianSua0 = nv.getThoiGianSua();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    }
+                    if (nv.getThoiGianXoa() != null) {
+                        String ThoiGianXoa1 = nv.getThoiGianXoa();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    }
+                    if (nv.getThoIGianHoatDong() != null) {
+                        String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                        Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    }
                     Object[] row = {
                         nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
+                        ThoiGianThem,
+                        ThoiGianSua,
+                        ThoiGianXoa,
+                        ThoiGianHoatDong,
                         nv.getBanThaoTac(),
                         nv.getMaNV()
                     };
                     model.addRow(row);
-
                 }
             } catch (Exception e) {
                 com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -580,32 +968,54 @@ public class LichSu extends javax.swing.JPanel {
 
     private void txtTimKiemTheoMaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemTheoMaCaretUpdate
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_txtTimKiemTheoMaCaretUpdate
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-      DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
-            model.setRowCount(0);
-            try {
-                List<ThaoTacModel> list = daoThaoTac.selectMa(txtTimKiemTheoMa.getText());
-                System.out.println(list.size());
-                for (ThaoTacModel nv : list) {
-                    Object[] row = {
-                        nv.getID(),
-                        nv.getThoiGianThem(),
-                        nv.getThoiGianSua(),
-                        nv.getThoiGianXoa(),
-                        nv.getThoIGianHoatDong(),
-                        nv.getBanThaoTac(),
-                        nv.getMaNV()
-                    };
-                    model.addRow(row);
-
+        DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+        model.setRowCount(0);
+        try {
+            List<ThaoTacModel> list = daoThaoTac.selectMa(txtTimKiemTheoMa.getText());
+            for (ThaoTacModel nv : list) {
+                String ThoiGianThem = "";
+                String ThoiGianSua = "";
+                String ThoiGianXoa = "";
+                String ThoiGianHoatDong = "";
+                if (nv.getThoiGianThem() != null) {
+                    String dateString = nv.getThoiGianThem();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
-                com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
-            }        // TODO add your handling code here:
+                if (nv.getThoiGianSua() != null) {
+                    String ThoiGianSua0 = nv.getThoiGianSua();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
+                    ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                }
+                if (nv.getThoiGianXoa() != null) {
+                    String ThoiGianXoa1 = nv.getThoiGianXoa();
+                    Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
+                    ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                }
+                if (nv.getThoIGianHoatDong() != null) {
+                    String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
+                    Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
+                    ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                }
+                Object[] row = {
+                    nv.getID(),
+                    ThoiGianThem,
+                    ThoiGianSua,
+                    ThoiGianXoa,
+                    ThoiGianHoatDong,
+                    nv.getBanThaoTac(),
+                    nv.getMaNV()
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed
 
 

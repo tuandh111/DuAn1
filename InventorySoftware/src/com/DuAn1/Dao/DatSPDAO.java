@@ -51,18 +51,32 @@ public class DatSPDAO {
         String sql = "SELECT * FROM DATSP WHERE TrangThai =1";
         return select(sql);
     }
-   public List<DatSPModel> selectDaXoa() {
+
+    public List<DatSPModel> TimKiem(String Ma) {
+        String sql = "SELECT * FROM DATSP WHERE TrangThai =1 and MaDH like ?";
+        return select(sql, "%" + Ma + "%");
+    }
+
+    public List<DatSPModel> selectDaXoa() {
         String sql = "SELECT * FROM DATSP WHERE TrangThai =0";
         return select(sql);
     }
+
+    public List<DatSPModel> selectDaXoaTheoMa(String Ma) {
+        String sql = "SELECT * FROM DATSP WHERE TrangThai =0 and MaDH like ?";
+        return select(sql, "%" + Ma + "%");
+    }
+
     public void delete(DatSPModel model) {
         String sql = "update datsp set TrangThai=0 where MaDH= ?";
         JdbcHelper.executeUpdate(sql, model.getMaDH());
     }
-     public void KhoiPhuc(String model) {
+
+    public void KhoiPhuc(String model) {
         String sql = "update datsp set TrangThai=1 where MaDH= ?";
         JdbcHelper.executeUpdate(sql, model);
     }
+
     private List<DatSPModel> select(String sql, Object... args) {
         List<DatSPModel> list = new ArrayList<>();
         try {

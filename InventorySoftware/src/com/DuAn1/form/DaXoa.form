@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -23,7 +23,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace pref="32" max="32767" attributes="0"/>
-              <Component id="textField11" min="-2" pref="858" max="-2" attributes="0"/>
+              <Component id="txtTimKiem" min="-2" pref="858" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Component id="button1" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -42,7 +42,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTimKiem" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="button1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="461" max="32767" attributes="0"/>
@@ -58,10 +58,13 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.DuAn1.Swing.TextField1" name="textField11">
+    <Component class="com.DuAn1.Swing.TextField1" name="txtTimKiem">
       <Properties>
         <Property name="hint" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
       </Properties>
+      <Events>
+        <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTimKiemCaretUpdate"/>
+      </Events>
     </Component>
     <Component class="com.DuAn1.Swing.Button" name="button1">
       <Properties>

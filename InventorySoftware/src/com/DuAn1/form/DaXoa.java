@@ -91,14 +91,19 @@ public class DaXoa extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textField11 = new com.DuAn1.Swing.TextField1();
+        txtTimKiem = new com.DuAn1.Swing.TextField1();
         button1 = new com.DuAn1.Swing.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUser = new com.raven.swing.table.Table();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        textField11.setHint("Tìm kiếm");
+        txtTimKiem.setHint("Tìm kiếm");
+        txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimKiemCaretUpdate(evt);
+            }
+        });
 
         button1.setBackground(new java.awt.Color(51, 153, 255));
         button1.setText("Khôi phục ");
@@ -137,7 +142,7 @@ public class DaXoa extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, 858, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 858, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
@@ -152,7 +157,7 @@ public class DaXoa extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(461, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,11 +194,29 @@ public class DaXoa extends javax.swing.JPanel {
 
     }//GEN-LAST:event_button1ActionPerformed
 
+    private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
+        // TODO add your handling code here:
+        
+          tblModel = (DefaultTableModel) tblUser.getModel();
+        tblModel.setRowCount(0);
+        try {
+            List<DatSPModel> list = daoSP.selectDaXoaTheoMa(txtTimKiem.getText());
+            for (DatSPModel nv : list) {
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), nv.getThoiGianDat(), nv.getMaNV()};
+                tblModel.addRow(row);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
+     
+    }//GEN-LAST:event_txtTimKiemCaretUpdate
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button button1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.raven.swing.table.Table tblUser;
-    private com.DuAn1.Swing.TextField1 textField11;
+    private com.DuAn1.Swing.TextField1 txtTimKiem;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,7 @@ package com.DuAn1.form;
 
 import com.DuAn1.Dao.DatSPCTDAO;
 import com.DuAn1.Dao.DatSPDAO;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.DatSPModel;
 import com.DuAn1.Model.SanPhamModel;
 import com.raven.dialog.Message;
@@ -21,6 +22,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import com.DuAn1.tabledark.Test;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -37,7 +40,7 @@ public class DanhSachDH extends javax.swing.JDialog {
     public static int soLuong = 0;
     public static double DonGia = 0;
     public static double tongTien = 0;
-      public static String SDT = "";
+    public static String SDT = "";
     public static String ngay = "";
 
     public static String getNgay() {
@@ -92,10 +95,10 @@ public class DanhSachDH extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-        tblUser.fixTable(jScrollPane1);
+        tblUser.fixTable(jScrollPane4);
 //        initTableData();
         filltable();
-
+        setIconImage(ShareHelper.APP_ICON);
     }
 
     void filltable() {
@@ -104,7 +107,14 @@ public class DanhSachDH extends javax.swing.JDialog {
         try {
             List<DatSPModel> list = daoSP.select();
             for (DatSPModel nv : list) {
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), nv.getThoiGianDat(), nv.getMaNV()};
+                   String ThoiGianThem = "";
+
+                if (nv.getThoiGianDat() != null) {
+                    String dateString = nv.getThoiGianDat();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                }
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), ThoiGianThem, nv.getMaNV()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -157,10 +167,8 @@ public class DanhSachDH extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblUser = new com.raven.swing.table.Table();
         jLabel1 = new javax.swing.JLabel();
-        textField11 = new com.DuAn1.Swing.TextField1();
+        txtTimKiem = new com.DuAn1.Swing.TextField1();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         button1 = new com.DuAn1.Swing.Button();
@@ -168,6 +176,8 @@ public class DanhSachDH extends javax.swing.JDialog {
         button5 = new com.DuAn1.Swing.Button();
         button4 = new com.DuAn1.Swing.Button();
         button2 = new com.DuAn1.Swing.Button();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblUser = new javaswingdev.swing.table.Table();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -175,35 +185,17 @@ public class DanhSachDH extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        tblUser.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Mã ĐH", "Số lượng", "SĐT", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Mã nhân viên"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblUser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblUserMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tblUser);
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Danh sách đặt hàng ");
 
-        textField11.setToolTipText("");
-        textField11.setHint("Tìm kiếm");
-        textField11.setName(""); // NOI18N
+        txtTimKiem.setToolTipText("");
+        txtTimKiem.setHint("Tìm kiếm");
+        txtTimKiem.setName(""); // NOI18N
+        txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimKiemCaretUpdate(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Số lượng bảng ghi:");
@@ -225,6 +217,32 @@ public class DanhSachDH extends javax.swing.JDialog {
                 button2ActionPerformed(evt);
             }
         });
+
+        tblUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Mã ĐH", "Số lượng", "Số điện thoại", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Mã NV"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUserMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tblUser);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -252,11 +270,11 @@ public class DanhSachDH extends javax.swing.JDialog {
                         .addContainerGap(18, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 990, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -266,11 +284,11 @@ public class DanhSachDH extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
@@ -292,8 +310,30 @@ public class DanhSachDH extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
 
+    private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
+        tblModel = (DefaultTableModel) tblUser.getModel();
+        tblModel.setRowCount(0);
+        try {
+            List<DatSPModel> list = daoSP.TimKiem(txtTimKiem.getText());
+            for (DatSPModel nv : list) {
+                String ThoiGianThem = "";
+
+                if (nv.getThoiGianDat() != null) {
+                    String dateString = nv.getThoiGianDat();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                }
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), ThoiGianThem, nv.getMaNV()};
+                tblModel.addRow(row);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
+    }//GEN-LAST:event_txtTimKiemCaretUpdate
+
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
-        int chon = tblUser.getSelectedRow();
+      int chon = tblUser.getSelectedRow();
         String name = (String) tblUser.getValueAt(chon, 0);
         String soLuong = (String) tblUser.getValueAt(chon, 1);
         String SDT = (String) tblUser.getValueAt(chon, 2);
@@ -306,9 +346,7 @@ public class DanhSachDH extends javax.swing.JDialog {
         DanhSachDH.setSDT(SDT);
         DanhSachDH.setName1(name);
         DanhSachDH.setNgay(ThoiGian);
-        this.dispose();
-
-        // TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 
     /**
@@ -366,8 +404,8 @@ public class DanhSachDH extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private com.raven.swing.table.Table tblUser;
-    private com.DuAn1.Swing.TextField1 textField11;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javaswingdev.swing.table.Table tblUser;
+    private com.DuAn1.Swing.TextField1 txtTimKiem;
     // End of variables declaration//GEN-END:variables
 }

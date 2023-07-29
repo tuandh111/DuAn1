@@ -37,14 +37,14 @@ import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
  * @author DELL E5470
  */
 public class KhachHangThem extends javax.swing.JDialog {
-      ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
-       KhachHangDAO daoKH = new KhachHangDAO();
-           ThongKeDao DaoThongKe = new ThongKeDao();
+
+    ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
+    KhachHangDAO daoKH = new KhachHangDAO();
+    ThongKeDao DaoThongKe = new ThongKeDao();
     MaHoa MH = new MaHoa();
     DefaultTableModel tblModel;
     String strHinh = "";
     NhanVienDAO1 dao = new NhanVienDAO1();
-
 
     public KhachHangThem(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -72,10 +72,12 @@ public class KhachHangThem extends javax.swing.JDialog {
 //
 //        }
 //select();
-    txtSdt.setText(DatHang1.getSoLuong());
+        setIconImage(ShareHelper.APP_ICON);
+        txtSdt.setText(DatHang1.getSoLuong());
         TuDongTangMa();
     }
-        KhachHangModel getForm() {
+
+    KhachHangModel getForm() {
         KhachHangModel nv = new KhachHangModel();
         nv.setMaKH(txtma.getText());
         nv.setTenKH(txtTen.getText());
@@ -102,7 +104,7 @@ public class KhachHangThem extends javax.swing.JDialog {
         return nv;
     }
 
- void ClearForm() {
+    void ClearForm() {
         txtma.setText("");
         txtTen.setText("");
         txtNgaySinh.setText("");
@@ -390,7 +392,8 @@ public class KhachHangThem extends javax.swing.JDialog {
             e.printStackTrace();
         }
     }
-        public ThaoTacModel getFormThem() {
+
+    public ThaoTacModel getFormThem() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
@@ -413,7 +416,7 @@ public class KhachHangThem extends javax.swing.JDialog {
                 try {
                     img = ImageIO.read(file);
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(this,"Lỗi");
+                    JOptionPane.showMessageDialog(this, "Lỗi");
                 }
 
                 strHinh = file.getName();
