@@ -35,6 +35,7 @@ import javax.swing.JPasswordField;
 import javax.swing.UIManager;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.Random;
 import javax.activation.DataHandler;
 import javax.mail.Message;
 import javax.mail.Multipart;
@@ -50,6 +51,7 @@ import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Tran Van Vu Chi Thanh
@@ -288,7 +290,7 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel_SoftZyd.setForeground(new java.awt.Color(0, 102, 204));
         jLabel_SoftZyd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo-removebg-preview (1).png"))); // NOI18N
         jLabel_SoftZyd.setText("TTA MOBILE");
-        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 314, 60));
+        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 314, 70));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -333,7 +335,7 @@ public class NewSignin extends javax.swing.JFrame {
 
         txtEmail.setToolTipText("200");
         txtEmail.setLabelText("Nhập Email");
-        jPanel6.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 310, -1));
+        jPanel6.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 310, -1));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 430, 550));
 
@@ -420,19 +422,19 @@ public class NewSignin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     NhanVienDAO1 daonv = new NhanVienDAO1();
+    MaHoa mahoa = new MaHoa();
+    String ma = "";
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-<<<<<<< HEAD
-        String ma = JOptionPane.showInternalInputDialog(this, "Nhập mã xác nhận");
-=======
-        List<NhanVienModel> list= daonv.select();
-        boolean kiem =true;
+
+        List<NhanVienModel> list = daonv.select();
+        boolean kiem = true;
         for (NhanVienModel nv : list) {
-            if(nv.getEmail().equals(txtEmail.getText())){
-                kiem=false;
+            if (nv.getEmail().equals(txtEmail.getText())) {
+                kiem = false;
             }
         }
-        if(kiem==false){
-                 try {
+        if (kiem == false) {
+            try {
                 Properties p = new Properties();
                 p.put("mail.smtp.auth", "true");
                 p.put("mail.smtp.starttls.enable", "true");
@@ -448,15 +450,17 @@ public class NewSignin extends javax.swing.JFrame {
                     }
                 });
                 String form = "hoangtuan97531@gmail.com";
-            ;
+                ;
                 String subject = "Quên mật khẩu";
-                String body = "123456";
+                Random random = new Random();
+                int number = random.nextInt(10000) % 10000;
+                String body = String.valueOf(number);
                 String ccmail = txtEmail.getText();
                 Message msg = new MimeMessage(s);
-               msg.setFrom(new InternetAddress(form));
+                msg.setFrom(new InternetAddress(form));
 //                msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(tos));
 //                if (!txtduongdan.getText().equals("")) {
-                    msg.addRecipients(Message.RecipientType.CC, InternetAddress.parse(ccmail));
+                msg.addRecipients(Message.RecipientType.CC, InternetAddress.parse(ccmail));
 //                }
                 MimeBodyPart contenPart = new MimeBodyPart();
                 contenPart.setContent(body, "text/html; charset=utf-8");
@@ -473,17 +477,33 @@ public class NewSignin extends javax.swing.JFrame {
 //                    multipart.addBodyPart(filepart);
 //                    msg.setContent(multipart);
 //                }
+                ma = String.valueOf(number);
                 Transport.send(msg);
-                JOptionPane.showMessageDialog(null, "Mail was sent successfully.", "Message", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-
+                String a = JOptionPane.showInputDialog(this, "Nhập mã");
+                if (a.equals(String.valueOf(number))) {
+                    NhanVienModel nv = getForm1();
+                    daonv.quenMK(nv);
+                    DialogHelper.alert(this, "Xác nhận mã thành công");
+                }else{
+                    DialogHelper.alert(this, "Xác nhận mật khẩu không thành công");
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }else{
+            DialogHelper.alert(this,"Email bạn nhập không tồn tại");
         }
-       
->>>>>>> be0bb4f6cc5bf765a9eb801f79af54e3345f248e
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
+
+    NhanVienModel getForm1() {
+        NhanVienModel nv = new NhanVienModel();
+        String name= mahoa.toSHA(ma);
+        nv.setMatKhau(name);
+        nv.setEmail(txtEmail.getText());
+        return nv;
+    }
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         jPanel6.setVisible(false);
         jLabel_SoftZyd.setVisible(true);

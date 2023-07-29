@@ -134,6 +134,16 @@ public class NhanVienDAO1 {
                 model.getMaNV()
         );
     }
+    public void quenMK(NhanVienModel model){
+         String sql = "UPDATE NHANVIEN SET MatKhau=? WHERE Email=?";
+        JdbcHelper.executeUpdate(sql,
+
+                
+                model.getMatKhau(),
+                model.getEmail()
+        
+        );
+    }
 
     public void delete(NhanVienModel model) {
         String sql = "UPDATE NHANVIEN SET TRANGTHAIXOA = 0 WHERE MaNV = ?";
