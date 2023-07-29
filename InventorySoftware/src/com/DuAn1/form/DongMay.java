@@ -1598,7 +1598,7 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemManHinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemManHinhActionPerformed
         // TODO add your handling code here:
-        if (check()) {
+        if (checkManHinh()) {
             themMH();
         }
     }//GEN-LAST:event_btnThemManHinhActionPerformed
@@ -1618,7 +1618,7 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemCPUActionPerformed
         // TODO add your handling code here:
-        if (check()) {
+        if (checkCPU()) {
             themCPU();
         }
     }//GEN-LAST:event_btnThemCPUActionPerformed
@@ -1631,6 +1631,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblManHinh.getSelectedRow();
+             materialTabbed1.setSelectedIndex(1);
             this.editManHinh();
         }
     }//GEN-LAST:event_tblManHinhMouseClicked
@@ -1646,6 +1647,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblRAM.getSelectedRow();
+             materialTabbed1.setSelectedIndex(1);
             this.editRam();
         }
     }//GEN-LAST:event_tblRAMMouseClicked
@@ -1658,6 +1660,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblROM.getSelectedRow();
+             materialTabbed1.setSelectedIndex(1);
             this.editRom();
         }
     }//GEN-LAST:event_tblROMMouseClicked
@@ -1670,6 +1673,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblCPU.getSelectedRow();
+            materialTabbed1.setSelectedIndex(1);
             this.editCPU();
         }
     }//GEN-LAST:event_tblCPUMouseClicked
@@ -1682,6 +1686,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblCamera.getSelectedRow();
+             materialTabbed1.setSelectedIndex(1);
             this.editCamera();
         }
     }//GEN-LAST:event_tblCameraMouseClicked
@@ -1694,6 +1699,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblPin.getSelectedRow();
+             materialTabbed1.setSelectedIndex(1);
             this.editPin();
         }
     }//GEN-LAST:event_tblPinMouseClicked
@@ -1708,7 +1714,7 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemPinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemPinActionPerformed
         // TODO add your handling code here:
-        if (check()) {
+        if (checkPin()) {
             themPin();
         }
     }//GEN-LAST:event_btnThemPinActionPerformed
@@ -1728,7 +1734,7 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemRomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemRomActionPerformed
         // TODO add your handling code here:
-        if (check()) {
+        if (checkROM()) {
             themRom();
         }
     }//GEN-LAST:event_btnThemRomActionPerformed
@@ -1748,7 +1754,7 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnThemCameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemCameraActionPerformed
         // TODO add your handling code here:
-        if (check()) {
+        if (checkCam()) {
             themCamera();
         }
     }//GEN-LAST:event_btnThemCameraActionPerformed
@@ -1839,16 +1845,7 @@ public class DongMay extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-
-    boolean check() {
-        if (cboCPU.getSelectedItem() == null) {
-            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
-            return false;
-        }
-        if (txtCPU.getText().equals("")) {
-            DialogHelper.alert(this, "Hãy nhập CPU");
-            return false;
-        }
+    boolean checkRAM(){
         if (cboLoaiSPRAM.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
             return false;
@@ -1857,6 +1854,9 @@ public class DongMay extends javax.swing.JPanel {
             DialogHelper.alert(this, "Hãy nhập RAM");
             return false;
         }
+        return true;
+    }
+    boolean checkROM(){
         if (cboLoaiSPBoNho.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
             return false;
@@ -1865,6 +1865,9 @@ public class DongMay extends javax.swing.JPanel {
             DialogHelper.alert(this, "Hãy nhập ROM");
             return false;
         }
+        return true;
+    }
+    boolean checkCam(){
         if (cboCamera.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
             return false;
@@ -1873,7 +1876,10 @@ public class DongMay extends javax.swing.JPanel {
             DialogHelper.alert(this, "Hãy nhập Camera");
             return false;
         }
-        if (cboLoaiSPManHinh.getSelectedItem() == null) {
+        return true;
+    }
+    boolean checkManHinh(){
+         if (cboLoaiSPManHinh.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
             return false;
         }
@@ -1881,7 +1887,10 @@ public class DongMay extends javax.swing.JPanel {
             DialogHelper.alert(this, "Hãy nhập màn hình");
             return false;
         }
-        if (cboPin.getSelectedItem() == null) {
+        return true;
+    }
+    boolean checkPin(){
+         if (cboPin.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
             return false;
         }
@@ -1890,6 +1899,17 @@ public class DongMay extends javax.swing.JPanel {
             return false;
         }
         return true;
+    }
+    boolean checkCPU() {
+        if (cboCPU.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Hãy chọn loại sản phẩm");
+            return false;
+        }
+        if (txtCPU.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập CPU");
+            return false;
+        }
+     return true;
     }
 
     void suaManHinh() {
@@ -2083,12 +2103,13 @@ public class DongMay extends javax.swing.JPanel {
     }
     private void btnMoiRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiRAMActionPerformed
         // TODO add your handling code here:
+        
         clearForm();
     }//GEN-LAST:event_btnMoiRAMActionPerformed
 
     private void btnThemRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemRAMActionPerformed
         // TODO add your handling code here:
-        if (check()) {
+        if (checkRAM()) {
             themRam();
         }
     }//GEN-LAST:event_btnThemRAMActionPerformed

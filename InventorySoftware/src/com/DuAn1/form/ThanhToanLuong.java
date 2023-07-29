@@ -18,12 +18,16 @@ import com.tuandhpc05076.helper.DialogHelper;
 import java.awt.Color;
 import java.awt.geom.Path2D;
 import java.awt.geom.RoundRectangle2D;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -38,6 +42,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     ThanhToanLuongDAO dao = new ThanhToanLuongDAO();
     int row = -1;
     DefaultTableModel model;
+    
+    
+    
 
     /**
      * Creates new form GiamGia
@@ -48,7 +55,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         fillTable();
         LoadCBOMaLuong();
+       
+        
     }
+
 
     public ThaoTacModel getFormThaoTacThem() {
         ThaoTacModel cd = new ThaoTacModel();
@@ -115,7 +125,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             List<ThanhToanLuongModel> list = dao.select();
             System.out.println(list.size());
             for (ThanhToanLuongModel ttl : list) {
-                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), ttl.getNgayVaoCTy(), ttl.getSoGioTangCa(),
+                String dateString = ttl.getNgayVaoCTy();
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), 
+                    formattedDate,
+                    ttl.getSoGioTangCa(),
                     ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
                 model.addRow(rows);
             }
@@ -129,7 +144,15 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setMaLuong((String) txtMaLuong.getSelectedItem());
         ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
         ttl.setLuongCoBan(Double.parseDouble(txtLuongCoBan.getText()));
-        ttl.setNgayVaoCTy(txtNgayVaoCTY.getText());
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayVaoCTY.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            ttl.setNgayVaoCTy(ngayNhap);
+
+        } catch (Exception e) {
+        }
         ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
         ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
         ttl.setKhoanTru(Double.parseDouble(txtKhoangTru.getText()));
@@ -148,7 +171,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtMaLuong.setSelectedItem(ttl.getMaLuong().trim());
         txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
         txtLuongCoBan.setText(String.valueOf(ttl.getLuongCoBan()));
-        txtNgayVaoCTY.setText(ttl.getNgayVaoCTy());
+        try {
+            String dateString = ttl.getNgayVaoCTy();
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgayVaoCTY.setText(formattedDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(ThanhToanLuong.class.getName()).log(Level.SEVERE, null, ex);
+        }
         txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
         txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
         txtKhoangTru.setText(String.valueOf(ttl.getKhoanTru()));
@@ -165,12 +195,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     void clearForm() {
         txtMaLuong.setSelectedItem(null);
-        txtLuongCoBan.setText("");
-        txtSoNgayLamViec.setText("");
-        txtNgayVaoCTY.setText("");
-        txtSoHTangCa.setText("");
-        txtLuongTangCa.setText("");
-        txtKhoangTru.setText("");
+        txtLuongCoBan.setText("0");
+        txtSoNgayLamViec.setText("0");
+        txtNgayVaoCTY.setText("dd-MM-yyyy");
+        txtSoHTangCa.setText("0");
+        txtLuongTangCa.setText("0");
+        txtKhoangTru.setText("0");
         lblTongTien.setText("0");
         btnTrangThai.setSelectedAnimate(false);
         lblTrangThai.setText("Chưa thanh toán");
@@ -230,7 +260,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtLoc = new com.DuAn1.Swing.TextField1();
         btnLoc = new com.DuAn1.Swing.Button();
 
-        dateChooser.setDateFormat("yyyy-MM-dd");
         dateChooser.setTextRefernce(txtNgayVaoCTY);
 
         setMinimumSize(new java.awt.Dimension(1058, 741));
@@ -306,6 +335,15 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTongTien.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTongTien.setForeground(new java.awt.Color(255, 0, 51));
         lblTongTien.setText("0");
+        lblTongTien.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                lblTongTienAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         btnMoi.setBackground(new java.awt.Color(153, 153, 255));
         btnMoi.setText("Mới");
@@ -662,7 +700,11 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtSoNgayLamViecCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoNgayLamViecCaretUpdate
         // TODO add your handling code here:
+        String str=txtSoNgayLamViec.getText();
+        str=str.replace(".", "");
         double tongTien = 1;
+        double luongTangCa = 1; 
+        luongTangCa= Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -670,30 +712,43 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             return;
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        lblTongTien.setText(String.valueOf(tongTien));
+         if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
+            tongTien = tongTien+ luongTangCa;
+        }
+         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
+            tongTien = tongTien+luongTangCa-Double.parseDouble(txtKhoangTru.getText());;
+        }
+//        lblTongTien.setText(String.valueOf(tongTien));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
     private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
         // TODO add your handling code here:
         double tongTien = 1;
+        double luongTangCa = 1; 
+        luongTangCa= Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+        if(txtKhoangTru.getText().equals("")){
+            return;
+        }
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
         if (txtLuongCoBan.getText().equals("")) {
             return;
         }
+        
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
-                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+            tongTien = tongTien+ luongTangCa;
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
-                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText())
-                    - Double.parseDouble(txtKhoangTru.getText());
+            tongTien = tongTien+luongTangCa-Double.parseDouble(txtKhoangTru.getText());;
         }
 
         lblTongTien.setText(String.valueOf(tongTien));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtKhoangTruCaretUpdate
 
     private void txtKhoangTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTruActionPerformed
@@ -706,11 +761,13 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtNgayVaoCTYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayVaoCTYActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtNgayVaoCTYActionPerformed
 
     private void txtSoHTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoHTangCaCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 0;
+        double tongTien = 1;
+        
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -723,10 +780,18 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtSoHTangCa.getText().equals("")) {
             return;
         }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
-                + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if(Double.parseDouble(txtLuongTangCa.getText())!=0){
+            tongTien= tongTien + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+                
+        }   
+        if(Double.parseDouble(txtKhoangTru.getText())!=0){
+            tongTien = tongTien+Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText())-Double.parseDouble(txtKhoangTru.getText());
+        }
 
         lblTongTien.setText(String.valueOf(tongTien));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
     void sua() {
         ThanhToanLuongModel ttl = getForm();
@@ -777,6 +842,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private void txtLuongCoBanCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongCoBanCaretUpdate
         // TODO add your handling code here:
         double tongTien = 0;
+        double luongTangCa = 1; 
+        luongTangCa= Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -786,17 +853,24 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtLuongTangCa.getText().equals("")) {
             return;
         }
+        if(txtKhoangTru.getText().equals("")){
+            return;
+        }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
-                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+            tongTien = tongTien+luongTangCa;
+        }
+        if(Double.parseDouble(txtKhoangTru.getText())!=0){
+            tongTien = tongTien+luongTangCa-Double.parseDouble(txtKhoangTru.getText());
         }
         lblTongTien.setText(String.valueOf(tongTien));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtLuongCoBanCaretUpdate
 
     private void txtLuongTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongTangCaCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 0;
+        double tongTien = 1;
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -809,10 +883,16 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtSoHTangCa.getText().equals("")) {
             return;
         }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
-                + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
-
+        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());           
+        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
+            tongTien = tongTien+ Double.parseDouble(txtLuongTangCa.getText())* Double.parseDouble(txtSoHTangCa.getText());;
+        }
+         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
+            tongTien = tongTien+Double.parseDouble(txtLuongTangCa.getText())* Double.parseDouble(txtSoHTangCa.getText())-Double.parseDouble(txtKhoangTru.getText());;
+        }
         lblTongTien.setText(String.valueOf(tongTien));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtLuongTangCaCaretUpdate
 
     private void txtLuongCoBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLuongCoBanActionPerformed
@@ -866,6 +946,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             this.fillTable();
         }
     }//GEN-LAST:event_txtLocCaretUpdate
+
+    private void lblTongTienAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblTongTienAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTongTienAncestorAdded
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
