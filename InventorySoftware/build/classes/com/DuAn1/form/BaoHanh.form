@@ -4214,9 +4214,9 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cboMaHD" alignment="1" pref="196" max="32767" attributes="0"/>
-                                  <Component id="txtNgayHetHan" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="cboMaKH" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="txtNgayHetHan" pref="196" max="32767" attributes="0"/>
+                                  <Component id="txtmaHD" max="32767" attributes="0"/>
+                                  <Component id="txtmaKH" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="txtNgayXuat1" alignment="0" max="32767" attributes="0"/>
@@ -4234,14 +4234,15 @@
                           <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnTaoBH" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="txtMaBH" min="-2" max="-2" attributes="0"/>
-                          <Component id="cboMaHD" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtMaBH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtmaHD" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="txtemei" min="-2" max="-2" attributes="0"/>
-                          <Component id="cboMaKH" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtemei" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtmaKH" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -4291,6 +4292,9 @@
               <Properties>
                 <Property name="labelText" type="java.lang.String" value="M&#xe3; b&#xe0;o h&#xe0;nh"/>
               </Properties>
+              <Events>
+                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtMaBHCaretUpdate"/>
+              </Events>
             </Component>
             <Component class="com.DuAn1.swing0.button0" name="button01">
               <Properties>
@@ -4344,30 +4348,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNgayXuat1MouseClicked"/>
               </Events>
             </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="cboMaHD">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Ti&#x1ec1;n m&#x1eb7;t"/>
-                    <StringItem index="1" value="Chuy&#x1ec3;n kho&#x1ea3;n"/>
-                  </StringArray>
-                </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
-                <Property name="labeText" type="java.lang.String" value="M&#xe3; H&#xf3;a &#x110;&#x1a1;n"/>
-              </Properties>
-            </Component>
-            <Component class="com.DuAn1.Swing.Combobox" name="cboMaKH">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Ti&#x1ec1;n m&#x1eb7;t"/>
-                    <StringItem index="1" value="Chuy&#x1ec3;n kho&#x1ea3;n"/>
-                  </StringArray>
-                </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
-                <Property name="labeText" type="java.lang.String" value="M&#xe3; Kh&#xe1;ch H&#xe0;ng"/>
-              </Properties>
-            </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtNgayBaoHanh">
               <Properties>
                 <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y b&#x1ea3;o h&#xe0;nh"/>
@@ -4386,6 +4366,16 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaoBHActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="com.DuAn1.Swing.TextField" name="txtmaHD">
+              <Properties>
+                <Property name="labelText" type="java.lang.String" value="M&#xe3; H&#xf3;a &#x110;&#x1a1;n"/>
+              </Properties>
+            </Component>
+            <Component class="com.DuAn1.Swing.TextField" name="txtmaKH">
+              <Properties>
+                <Property name="labelText" type="java.lang.String" value="M&#xe3; Kh&#xe1;ch H&#xe0;ng"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
