@@ -435,7 +435,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="com.DuAn1.Swing.TextField" name="jTextField_Email3">
+                <Component class="com.DuAn1.Swing.TextField" name="txtEmail">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="200"/>
                     <Property name="labelText" type="java.lang.String" value="Nh&#x1ead;p Email"/>
