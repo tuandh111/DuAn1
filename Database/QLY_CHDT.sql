@@ -151,21 +151,20 @@ CREATE TABLE HOADONCT(
 )
 CREATE TABLE BAOHANH(
 	MaBH CHAR(10) PRIMARY KEY,
-	MaHD CHAR(10) NOT NULL,
-	SoIMEI CHAR(15) NOT NULL,
-	NgayBH DATETIME NOT NULL,
-	NgayHetHan DATETIME NOT NULL,
+	MaHD CHAR(10) ,
+	SoIMEI CHAR(15),
+	NgayBH DATETIME ,
+	NgayHetHan DATETIME ,
 	GhiChu TEXT,
-	MaKH CHAR(10) NOT NULL,
+	MaKH CHAR(10),
 	FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH) ON DELETE NO ACTION ON UPDATE CASCADE,
-	FOREIGN KEY (MaHD) REFERENCES HOADON(MaHD) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 create table BAOHANHCT(
 MaBHCT int identity(1,1) primary key,
 MaBH char(10) not  null,
-MaHD char(10) not null,
+MaSP char(10) not null,
 soLuong int not null
-foreign key (MaHD) references HOADON(MaHD) ON DELETE NO ACTION ON UPDATE CASCADE,
+foreign key (MaSP) references SANPHAM(MaSP) ON DELETE NO ACTION ON UPDATE CASCADE,
 foreign key (MaBH) references BAOHANH(MaBH) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 
@@ -343,16 +342,14 @@ Insert into BAOHANH values ('BH00005','HD00005','987123','2023-01-20','2023-02-2
 Insert into BAOHANH values ('BH00006','HD00006','567232','2023-01-20','2023-02-25',null,'KH00003')
 
 
-insert into BAOHANHCT values('BH00001','HD00001','103')
-insert into BAOHANHCT values('BH00002','HD00002','112')
-insert into BAOHANHCT values('BH00003','HD00003','230')
-insert into BAOHANHCT values('BH00004','HD00004','98')
-insert into BAOHANHCT values('BH00005','HD00005','198')
-insert into BAOHANHCT values('BH00006','HD00006','28')
+insert into BAOHANHCT values('BH00001','SP00001','103')
+insert into BAOHANHCT values('BH00002','SP00002','112')
+insert into BAOHANHCT values('BH00003','SP00003','230')
+insert into BAOHANHCT values('BH00004','SP00004','98')
+insert into BAOHANHCT values('BH00005','SP00005','198')
+insert into BAOHANHCT values('BH00006','SP00006','28')
 
-update BAOHANHCT set MaBH = 'BH00001', MaHD='HD00001',soLuong='103' where MaBHCT=1
-delete from BAOHANHCT where MaBHCT=1
-select * from BAOHANHCT where MaBHCT=1
+
 
 Insert into DATSP values ('DH00001',5,'0987121212',1,'58500000','60000000',0.1,'NV001')
 Insert into DATSP values ('DH00002',3,'0989898989',1,'58500000','60000000',0.1,'NV001')
@@ -525,7 +522,7 @@ BEGIN
 END
 GO
 
-execute MaxHDDH
+
 
 CREATE PROCEDURE MaxHDDH
 AS
