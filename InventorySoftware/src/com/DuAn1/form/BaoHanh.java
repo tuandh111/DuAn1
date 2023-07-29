@@ -41,7 +41,6 @@ public class BaoHanh extends javax.swing.JPanel {
     public BaoHanh() {
         initComponents();
         tieude();
-        fillTable();
         
         setOpaque(false);
 //        imageAvatar1.setImage(new ImageIcon(getClass().getResource("/com/raven/icon/1.png"))); thay đổi hình ảnh
@@ -57,6 +56,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 }
             }
         });
+        
         LbSony1.setVisible(false);
         LbSony2.setVisible(false);
         LbSony3.setVisible(false);
