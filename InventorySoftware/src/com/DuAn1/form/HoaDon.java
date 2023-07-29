@@ -29,8 +29,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import com.DuAn1.main.Main;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -355,7 +357,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtDonGia.setText(null);
         txtSoLuong.setText(null);
         LocalDateTime current = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS");
         String formatted = current.format(formatter);
         txtNgayXuat.setText(formatted);
         txtTongTien.setText(null);
@@ -369,12 +371,17 @@ public class HoaDon extends javax.swing.JPanel {
         dt.setTrangThai(true);
         dt.setDongia(String.valueOf(txtDonGia.getText()));
         dt.setTongtien(txtTongTien.getText());
-        LocalDateTime current = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-        String formatted = current.format(formatter);
-        txtNgayXuat.setText(formatted);
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").parse(txtNgayXuat.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(date);
+
+            dt.setNgayXuat(ngayNhap);
+
+        } catch (Exception e) {
+        }
         dt.setMota(txtMota.getText());
-        dt.setNgayXuat(formatted);
+//        dt.setNgayXuat(formatted);
         dt.setMaNV(ShareHelper.USER.getMaNV());
         return dt;
     }
@@ -709,7 +716,7 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel28.setText("Hóa đơn");
 
-        txtKhachhang.setLabelText("Tên khách hàng");
+        txtKhachhang.setLabelText("Mã khách hàng");
         txtKhachhang.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtKhachhangCaretUpdate(evt);
@@ -4083,7 +4090,7 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAdd19ActionPerformed
 
     private void txtKhachhangCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhachhangCaretUpdate
-        List<KhachHangModel> list = daoKH.selectSDT(txtKhachhang.getText());
+        List<KhachHangModel> list = daoKH.selectTen(txtKhachhang.getText());
         txtThongBao.setVisible(true);
           
         if (list.size() == 0) {
@@ -4096,7 +4103,7 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_txtKhachhangCaretUpdate
 
     private void txtKhachhangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKhachhangMousePressed
-         List<KhachHangModel> list = daoKH.selectSDT(txtKhachhang.getText());
+         List<KhachHangModel> list = daoKH.selectTen(txtKhachhang.getText());
         txtThongBao.setVisible(true);
           txtKhachhang.setText(DatHang1.getSoLuong());
         if (list.size() == 0) {

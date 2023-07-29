@@ -34,7 +34,7 @@ public class HoaDonDAO {
     }
 
     public void update(HoaDonModel model) {
-        String sql = "update HOADON set  SoLuong=?,TrangThai=?,DonGia=?,TongTien=?,NgayXuat=?,MoTa=?,TenCTY = ?,MaNV=?, TenKH=? where MaDH =? ";
+        String sql = "update HOADON set  SoLuong=?,TrangThai=?,DonGia=?,TongTien=?,NgayXuat=?,MoTa=?,TenCTY = ?,MaNV=?, TenKH=? where MaHD =? ";
         JdbcHelper.executeUpdate(sql,
                 model.getSoluong(),
                 model.isTrangThai(),
