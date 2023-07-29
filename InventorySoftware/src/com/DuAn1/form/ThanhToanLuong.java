@@ -662,18 +662,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtSoNgayLamViecCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoNgayLamViecCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 0;
+        double tongTien = 1;
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
-        if (txtLuongCoBan.getText().endsWith("")) {
+        if (txtLuongCoBan.getText().equals("")) {
             return;
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText())
-                    + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
-        }
         lblTongTien.setText(String.valueOf(tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
@@ -683,7 +679,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
-        if (txtLuongCoBan.getText().endsWith("")) {
+        if (txtLuongCoBan.getText().equals("")) {
             return;
         }
         tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
