@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Component class="com.raven.datechooser.DateChooser" name="dateChooser">
       <Properties>
@@ -152,7 +152,14 @@
                               <EmptySpace pref="13" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="btnMoiHD" min="-2" pref="108" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="btnInBill" min="-2" pref="108" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnHuyHD" min="-2" pref="102" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="txtNgayXuat" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="txtDonGia" min="-2" pref="309" max="-2" attributes="0"/>
@@ -187,13 +194,6 @@
                               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                      <Component id="btnMoiHD" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="btnHuyHD" min="-2" pref="102" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -235,6 +235,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnMoiHD" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnHuyHD" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnInBill" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnThanhtoan" min="-2" max="-2" attributes="0"/>
@@ -291,6 +292,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="H&#x1ee7;y b&#x1ecf;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHuyHDActionPerformed"/>
+              </Events>
             </Component>
             <Component class="com.DuAn1.swing0.button0" name="button3">
               <Properties>
@@ -401,6 +405,17 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel3"/>
               </Properties>
+            </Component>
+            <Component class="com.DuAn1.swing0.button0" name="btnInBill">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="99" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="In h&#xf3;a &#x111;&#x1a1;n"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInBillActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

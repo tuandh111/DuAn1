@@ -4,13 +4,13 @@
  */
 package com.DuAn1.form;
 
-import com.tuandhpc05076.Dao.NhanVienDAO;
+
 import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.main.Main;
-import com.tuandhpc05076.MaHoa.MaHoa;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
@@ -26,7 +26,8 @@ import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
  * @author DELL E5470
  */
 public class ThongTinNhanVien extends javax.swing.JDialog {
-        MaHoa MH = new MaHoa();
+
+    MaHoa MH = new MaHoa();
     String strHinh = "";
     NhanVienDAO1 dao = new NhanVienDAO1();
     public static String soLuong = ShareHelper.USER.getHinh();
@@ -64,11 +65,12 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
 //            txtHinhAnh.setIcon(new ImageIcon(scaledImage));
 //
 //        }
-select();
+        select();
     }
-    public void select(){
-       NhanVienModel nv= dao.findById(txtMaNV.getText());
-         txtHoTen.setText(nv.getHoTen());
+
+    public void select() {
+        NhanVienModel nv = dao.findById(txtMaNV.getText());
+        txtHoTen.setText(nv.getHoTen());
         txtDiaChi.setText(nv.getDiaChi());
         txtSoDienThoai.setText(nv.getSDT());
         txtNgaySinh.setText(nv.getNgaySinh());
@@ -89,23 +91,25 @@ select();
 
         }
     }
+
     public void updateNV() {
         NhanVienModel nv = getForm();
-        
+
         try {
             dao.update(nv);
             DialogHelper.alert(this, "Cập nhật thành công!");
-          ThongTinNhanVien.setSoLuong(nv.getHinh());
+            ThongTinNhanVien.setSoLuong(nv.getHinh());
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Cập nhật thất bại!");
         }
     }
-    public boolean CheckForm(){
-        if(txtMatKhau.getText().equals("")){
+
+    public boolean CheckForm() {
+        if (txtMatKhau.getText().equals("")) {
             DialogHelper.alert(this, "Mật khẩu của bạn đã để trống");
             return false;
-        }else if(!txtNhapLaiMatKhau.getText().equals(txtMatKhau.getText())){
+        } else if (!txtNhapLaiMatKhau.getText().equals(txtMatKhau.getText())) {
             DialogHelper.alert(this, "Nhập lại mật khẩu không hợp lệ");
             return false;
         }
@@ -126,7 +130,7 @@ select();
         cd.setDiaChi(txtDiaChi.getText());
         cd.setSDT(txtSoDienThoai.getText());
         cd.setEmail(txtEmail.getText());
-           String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
+        String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
         cd.setMatKhau(mk);
         cd.setVaiTro(txtVaiTro.getText());
         cd.setHinh(txtHinhAnh.getToolTipText());
@@ -305,31 +309,33 @@ select();
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
-        if(CheckForm()==false)return;
+        if (CheckForm() == false) {
+            return;
+        }
         updateNV();
         dispose();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void txtHinhAnhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhAnhMouseClicked
-//        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-//            File file = jFileChooser1.getSelectedFile();
-//            if (ShareHelper.saveLogo(file)) {
-//                // Hiển thị hình lên form
-//                Image img = null;
-//                try {
-//                    img = ImageIO.read(file);
-//                } catch (IOException ex) {
-//                    ex.printStackTrace();
-//                }
-//
-//                strHinh = file.getName();
-//                txtHinhAnh.setText("");
-//
-//                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
-//                txtHinhAnh.setToolTipText(file.getName());
-//                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
-//            }
-//        }        // TODO add your handling code here:
+        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File file = jFileChooser1.getSelectedFile();
+            if (ShareHelper.saveLogo(file)) {
+                // Hiển thị hình lên form
+                Image img = null;
+                try {
+                    img = ImageIO.read(file);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+                strHinh = file.getName();
+                txtHinhAnh.setText("");
+
+                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
+                txtHinhAnh.setToolTipText(file.getName());
+                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
+            }
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_txtHinhAnhMouseClicked
 
     private void txtHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhMouseClicked

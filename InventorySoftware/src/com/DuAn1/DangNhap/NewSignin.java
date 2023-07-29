@@ -19,18 +19,37 @@ import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.Object.O_DangNhap;
 import java.awt.Color;
+import java.io.File;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.UIManager;
-
+import java.util.ArrayList;
+import java.util.Properties;
+import javax.activation.DataHandler;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.activation.FileDataSource;
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Tran Van Vu Chi Thanh
@@ -140,7 +159,7 @@ public class NewSignin extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         cardRegister2 = new com.DuAn1.component.CardRegister();
-        jTextField_Email3 = new com.DuAn1.Swing.TextField();
+        txtEmail = new com.DuAn1.Swing.TextField();
         cardRegister3 = new com.DuAn1.component.CardRegister();
         jTextField_Email2 = new com.DuAn1.Swing.TextField();
         jButton7 = new javax.swing.JButton();
@@ -312,9 +331,9 @@ public class NewSignin extends javax.swing.JFrame {
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
         jPanel6.add(cardRegister2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 30));
 
-        jTextField_Email3.setToolTipText("200");
-        jTextField_Email3.setLabelText("Nhập Email");
-        jPanel6.add(jTextField_Email3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 310, -1));
+        txtEmail.setToolTipText("200");
+        txtEmail.setLabelText("Nhập Email");
+        jPanel6.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 310, -1));
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 430, 550));
 
@@ -400,9 +419,65 @@ public class NewSignin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
-
+    NhanVienDAO1 daonv = new NhanVienDAO1();
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       String ma = JOptionPane.showInternalInputDialog(this,"Nhập mã xác nhận");
+        List<NhanVienModel> list= daonv.select();
+        boolean kiem =true;
+        for (NhanVienModel nv : list) {
+            if(nv.getEmail().equals(txtEmail.getText())){
+                kiem=false;
+            }
+        }
+        if(kiem==false){
+                 try {
+                Properties p = new Properties();
+                p.put("mail.smtp.auth", "true");
+                p.put("mail.smtp.starttls.enable", "true");
+                p.put("mail.smtp.host", "smtp.gmail.com");
+                p.put("mail.smtp.port", 587);
+                String accountName = "hoangtuan97531@gmail.com";
+                String accountPassword = "sjwomehzrjwnafpd";
+
+                Session s = Session.getInstance(p,
+                        new Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(accountName, accountPassword);
+                    }
+                });
+                String form = "hoangtuan97531@gmail.com";
+            ;
+                String subject = "Quên mật khẩu";
+                String body = "123456";
+                String ccmail = txtEmail.getText();
+                Message msg = new MimeMessage(s);
+               msg.setFrom(new InternetAddress(form));
+//                msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(tos));
+//                if (!txtduongdan.getText().equals("")) {
+                    msg.addRecipients(Message.RecipientType.CC, InternetAddress.parse(ccmail));
+//                }
+                MimeBodyPart contenPart = new MimeBodyPart();
+                contenPart.setContent(body, "text/html; charset=utf-8");
+                msg.setSubject(subject);
+                msg.setText(body);
+//                if (!txtduongdan.getText().equals("")) {
+//                    MimeBodyPart filepart = new MimeBodyPart();
+//                    File file = new File(duongdan);
+//                    FileDataSource fds = new FileDataSource(file);
+//                    filepart.setDataHandler(new DataHandler(fds));
+//                    filepart.setFileName(file.getName());
+//                    MimeMultipart multipart = new MimeMultipart();
+//                    multipart.addBodyPart(contenPart);
+//                    multipart.addBodyPart(filepart);
+//                    msg.setContent(multipart);
+//                }
+                Transport.send(msg);
+                JOptionPane.showMessageDialog(null, "Mail was sent successfully.", "Message", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+       
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -481,7 +556,7 @@ public class NewSignin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private com.DuAn1.Swing.TextField jTextField_Email2;
-    private com.DuAn1.Swing.TextField jTextField_Email3;
+    private com.DuAn1.Swing.TextField txtEmail;
     private com.DuAn1.Swing.PasswordField txtmatkhau;
     private com.DuAn1.Swing.TextField txtusername;
     // End of variables declaration//GEN-END:variables

@@ -55,7 +55,7 @@ public class HoaDonDAO {
     }
 
     public void delete(HoaDonModel model) {
-        String sql = "DELETE HOADON WHERE MaHD = ?";
+        String sql = "update HoaDon set TrangThai=0 where MaDH= ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
 
