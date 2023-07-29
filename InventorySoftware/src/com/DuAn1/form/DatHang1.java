@@ -2320,8 +2320,7 @@ public class DatHang1 extends javax.swing.JPanel {
                                 .addComponent(lbIphone6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbIphone3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 0, 0))
+                                .addComponent(lbIphone3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(lbIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3402,13 +3401,13 @@ public class DatHang1 extends javax.swing.JPanel {
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "STT", "Mã ĐH", "Mã SP", "Số lượng", "Giá"
+                "Mã ĐH", "Mã SP", "Số lượng", "Giá"
             }
         ));
         jScrollPane4.setViewportView(tblUser);
@@ -3475,7 +3474,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1041, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3545,7 +3544,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             List<DatSPCTModel> list = daoDatSPCT.select(txtMaDatHang.getText());
             for (DatSPCTModel nv : list) {
-                Object[] row = new Object[]{nv.getID(), nv.getMaDH(), nv.getMaSP(), nv.getSoLuong(), String.format("%.0f", nv.getGia())};
+                Object[] row = new Object[]{ nv.getMaDH(), nv.getMaSP(), nv.getSoLuong(), String.format("%.0f", nv.getGia())};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -4195,7 +4194,7 @@ public class DatHang1 extends javax.swing.JPanel {
             double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
             txtTongTien.setText(String.format("%.0f", tongTien));
             DecimalFormat df = new DecimalFormat("#,##0.##");
-            txtTongTien.setText(df.format(tongTien));
+            txtTongTien.setText(String.format("%.0f",tongTien));
             ThaoTacModel ThaoTacModel = getFormUpdate();
             daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {

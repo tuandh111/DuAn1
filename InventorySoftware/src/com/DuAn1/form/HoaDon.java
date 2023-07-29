@@ -352,15 +352,15 @@ public class HoaDon extends javax.swing.JPanel {
     }
 
     void clearForm() {
-        txtMa.setText(null);
-        txtKhachhang.setText(null);
-        txtDonGia.setText(null);
-        txtSoLuong.setText(null);
+        txtMa.setText("");
+        txtKhachhang.setText("");
+        txtDonGia.setText("");
+        txtSoLuong.setText("");
 //        LocalDateTime current = LocalDateTime.now();
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS");
 //        String formatted = current.format(formatter);
 //        txtNgayXuat.setText(formatted);
-        txtTongTien.setText("0");
+        txtTongTien.setText("");
     }
 
     HoaDonModel getFormTao() {
