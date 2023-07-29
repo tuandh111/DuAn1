@@ -191,9 +191,6 @@ CREATE TABLE DATSPCT(
 
 Insert into VAITRO values ('QL',N'Quản lý',null)
 Insert into VAITRO values ('NV',N'Nhân Viên',null)
-Update VAITRO set CHUCVU = N'Quản lý',GHICHU = null where MAVAITRO ='QL' 
-delete from VAITRO where MAVAITRO='QL'
-select * from VAITRO where MAVAITRO = 'QL'
 
 Insert into NHANVIEN values ('NV001',N'Trần Văn An','2003-01-23',1,N'Cần Thơ','0987123456','antv@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
 Insert into NHANVIEN values ('NV002',N'Nguyễn Thanh Bình','1999-11-12',1,N'An Giang','0981234556','binhnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
@@ -205,9 +202,6 @@ Insert into NHANVIEN values ('NV007',N'Nguyễn Văn Minh','1999-01-10',1,N'Long
 Insert into NHANVIEN values ('NV008',N'Nguyễn Thanh Tâm','1998-01-10',1,N'Cần Thơ','0987987987','tamnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
 Insert into NHANVIEN values ('NV009',N'Lê Ngọc Ánh','2000-01-10',0,N'An Giang','0987456456','anhln@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
 Insert into NHANVIEN values ('NV010',N'Lê Ngọc Hà','2000-01-10',0,N'An Giang','0987456444','haln@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
-Update NHANVIEN set HOTEN ='A',NGAYSINH='2003-01-23',GIOITINH=1,DIACHI=N'Cần Thơ',SDT='0987123456',EMAIL='antv@gmail.com',MATKHAU='123',HINH='null' where MANV='QL'
-delete from NHANVIEN where MANV='QL'
-select * from NHANVIEN where MAVAITRO = 'QL'
 
 Insert into LUONG values ('NV001','31','20000','2022-12-12','15','25000',null,'5000000',1)
 Insert into LUONG values ('NV002','30','20000','2023-02-12','15','25000',null,'5000000',1)
@@ -218,9 +212,6 @@ Insert into LUONG values ('NV006','31','20000','2023-04-18','15','25000',null,'5
 Insert into LUONG values ('NV007','31','20000','2023-05-25','15','25000',null,'5000000',1)
 Insert into LUONG values ('NV008','30','30000','2022-12-27','15','25000',null,'5000000',1)
 Insert into LUONG values ('NV009','31','30000','2023-01-30','15','25000',null,'5000000',1)
-Update LUONG set SONGAYLAM = '2',LUONCOBAN='3000',NGAYVAOCTY='2023-01-30',SOGIOTANGCA ='1',LUONGTANGCA ='2000',KHOANTRU=null,TONGTIEN='5000',TRANGTHAI=1 where MALUONG='NV001'
-delete from LUONG where MALUONG ='NV001'
-select* from LUONG where MALUONG = 'NV001'
 
 Insert into GIAMGIA values ('KM001','2022-12-12','2023-01-15','0.1',null,1,'NV001')
 Insert into GIAMGIA values ('KM002','2022-12-01','2022-12-15','0.15',null,1,'NV001')
@@ -230,9 +221,6 @@ Insert into GIAMGIA values ('KM005','2022-10-12','2022-12-15','0.1',null,1,'NV00
 Insert into GIAMGIA values ('KM006','2023-01-12','2023-01-27','0.15',null,1,'NV001')
 Insert into GIAMGIA values ('KM007','2022-10-12','2022-12-15','0.2',null,1,'NV002')
 Insert into GIAMGIA values ('KM008','2022-11-12','2023-01-05','0.18',null,1,'NV001')
-Update GIAMGIA set NGAYBD='2022-12-12',NGAYKT='2023-01-15',PHANTRAM ='0.1',MOTA=null,TRANGTHAI=1,MANV='QL001' where MAGIAMGIA ='GG001'
-delete from  GIAMGIA where MAGIAMGIA='GG001'
-select * from GIAMGIA where MAGIAMGIA='GG001'
 
 Insert into KHACHHANG values ('KH00001',N'Trần Thị Ánh','0989898989','2002-10-10',N'Cần Thơ',1,'VIP1',1,null,'NV001','null')
 Insert into KHACHHANG values ('KH00002',N'Nguyễn Thị Minh','0923232323','2002-10-10',N'Trà Vinh',0,'VIP1',1,null,'NV002','null')
@@ -242,9 +230,7 @@ Insert into KHACHHANG values ('KH00005',N'Trần Ngọc Cầm','0981234567','200
 Insert into KHACHHANG values ('KH00006',N'Trần Thanh Trí','0912121212','2002-10-10',N'Cần Thơ',1,N'Thường',1,null,'NV002','null')
 Insert into KHACHHANG values ('KH00007',N'Trần Anh Khoa','0933112233','2002-10-10',N'Cà Mau',1,'VIP2',1,null,'NV001','null')
 Insert into KHACHHANG values ('KH00008',N'Nguyễn Anh Duy','0989898988','2002-10-10',N'Cần Thơ',1,'VIP2',1,null,'NV002','null')
-Update KHACHHANG set TENKH='A',SDT='09009400922',NGAYSINH='2002-10-10',DIACHI=N'Cần Thơ',GIOITINH=1,LOAIKH='vip2',TRANGTHAI=1,MOTA=null,MANV='QL001',HINH='1' where MAKH='KH001'
-delete from KHACHHANG where MAKH='KH001'
-select * from KHACHHANG where MAKH='KH001'
+
 
 Insert into LICHSU values (null,null,null,'2023-07-01',N'Hóa Đơn','NV001')
 Insert into LICHSU values (null,null,null,'2023-07-08',N'Bảo Hành','NV001')
@@ -254,9 +240,6 @@ Insert into LICHSU values (null,null,null,'2023-06-29',N'Hóa Đơn','NV002')
 Insert into LICHSU values (null,null,null,'2023-05-16',N'Đặt Hàng','NV001')
 Insert into LICHSU values (null,null,null,'2023-07-15',N'Hóa Đơn','NV002')
 Insert into LICHSU values (null,null,null,'2023-03-01',N'Bảo Hành','NV001')
-Update LICHSU set THOIGIANTHEM=null,THOIGIANSUA=null,THOIGIANXOA=null,THOIGIANHD='2023-07-01',BANGTHAOTAC=N'Hóa Đơn',MANV='QL001' where ID=1
-delete from LICHSU where ID=1
-select * from LICHSU where ID=1
 
 Insert into SANPHAM values ('SP00001','Samsung A73',N'Trắng','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',12,1,'null','NV001','KM001')
 Insert into SANPHAM values ('SP00002','IPHONE 13S',N'Vàng','11500000',N'Iphone','2022-01-01',N'Nước China',20,1,'null','NV001','KM002')
@@ -267,9 +250,6 @@ Insert into SANPHAM values ('SP00006','IPHONE 14S',N'Trắng','9500000',N'Iphone
 Insert into SANPHAM values ('SP00007','IPHONE 14S',N'Xanh','22500000',N'Iphone','2022-01-01',N'Nước Nhật',12,1,'null','NV002','KM007')
 Insert into SANPHAM values ('SP00008','IPHONE 14S',N'Trắng','15500000',N'Iphone','2022-01-01',N'Nước Nhật',35,1,'null','NV001','KM001')
 Insert into SANPHAM values ('SP00009','IPHONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','KM002')
-Update SANPHAM set TenSP='iPhone 14',MAU='Lam',Gia='1000',LoaiSP='US',NgayNhap='2022-01-01',NoiNhap=N'Mỹ',SoLuong=12,TrangThai=1,Hinh='1',MaNV='QL001',MaGiamGia='GG001',MaDT='DT001' where MaSP='IP001'
-delete from SANPHAM where MaSP='IP001' 
-select * from SANPHAM where MaSP='IP001'
 
 insert into CPU values ('Bionics','iPhone')
 insert into CPU values ('NDragons','iPhone')
@@ -277,9 +257,6 @@ insert into CPU values ('Helios','iPhone')
 insert into CPU values ('Bionits','SamSung')
 insert into CPU values ('NDragos','SamSung')
 insert into CPU values ('Helyos','Sony')
-update CPU set loaiSP = 'Samsung' where maCPU='NDragon'
-delete from CPU where maCPU='NDragon'
-select * from CPU where maCPU='NDragon'
 
 insert into BoNho values('12GB','iPhone')
 insert into BoNho values('111GB','iPhone')
@@ -287,33 +264,25 @@ insert into BoNho values('198GB','iPhone')
 insert into BoNho values('11GB','SamSung')
 insert into BoNho values('151GB','SamSung')
 insert into BoNho values('178GB','Sony')
-update BoNho set loaiSP='Sony' where maBoNho='64GB'
-delete from BoNho where maBoNho='64GB'
-select* from BoNho where  maBoNho='64GB'
+
 
 insert into RAM values('1GB','iPhone')
 insert into RAM values('4GB','iPhone')
 insert into RAM values('94GB','SamSung')
 insert into RAM values('63GB','Sony')
-update RAM set loaiSP='Sony' where maRAM='6GB'
-delete from RAM where maRAM='6GB'
-select * from RAM where maRAM='6GB'
+
 
 insert into Camera values('26px','iPhone')
 insert into Camera values('22Mb','iPhone')
 insert into Camera values('27px','SamSung')
 insert into Camera values('21Mb','Sony')
-update Camera set loaiSP='Sony' where maRAM='32px'
-delete from Camera where maCamera='32px'
-select * from Camera where maCamera='32px'
+
 
 insert into Pin values('5453mAh','iPhone')
 insert into Pin values('4657Mh','iPhone')
 insert into Pin values('4757Mh','SamSung')
 insert into Pin values('4627Mh','Sony')
-update Pin set loaiSP='Sony' where maPin='5000mAh'
-delete from Pin where maPin='5000mAh'
-select * from Pin where maPin='5000mAh'
+
 
 insert into ManHinh values('HDe','iPhone')
 insert into ManHinh values('OLEDt','iPhone')
@@ -321,9 +290,7 @@ insert into ManHinh values('HDPluys','iPhone')
 insert into ManHinh values('HDt','SamSung')
 insert into ManHinh values('OLEt','SamSung')
 insert into ManHinh values('HDluys','Sony')
-update ManHinh set loaiSP='Samsung' where maManHinh='HD'
-delete from ManHinh where maManHinh='HD'
-select * from ManHinh where maManHinh='HD'
+
 
 
 Insert into DIENTHOAI values('SP00001','Bionics','HDe','11GB',null,'26px','5453mAh','1GB')
@@ -335,9 +302,7 @@ Insert into DIENTHOAI values('SP00006','Bionics','OLEDt','11GB',null,'22Mb','465
 Insert into DIENTHOAI values('SP00007','Bionics','OLEDt','12GB',null,'22Mb','4657Mh','1GB')
 Insert into DIENTHOAI values('SP00008','Bionics','OLEDt','111GB',null,'22Mb','4657Mh','1GB')
 Insert into DIENTHOAI values('SP00009','Bionics','HDe','12GB',null,'22Mb','5453mAh','4GB')
-update DIENTHOAI set CPU='Snapdragon',MANHINH='OLED',BONHO='256GB',MOTA=null,MASP='SS001',RAM='16GB',PIN='5000Mh',CAMERA='32px' where MADT='DT001'
-delete from DIENTHOAI where MADT='DT001'
-select * from DIENTHOAI where MADT='DT001'
+
 
 Insert into HOADON values ('HD00001',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Trần Thị Ánh')
 Insert into HOADON values ('HD00002',1,1,'10500000','10500000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thị Minh')
@@ -347,9 +312,7 @@ Insert into HOADON values ('HD00005',2,1,'14500000','29000000','2023-07-07',null
 Insert into HOADON values ('HD00006',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Thanh Trí')
 Insert into HOADON values ('HD00007',2,0,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Anh Khoa')
 Insert into HOADON values ('HD00008',3,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Nguyễn Anh Duy')
-update HOADON set TENSP='Samsung A73',SOLUONG=2,TRANGTHAI=1,DONGIA='100000',TONGTIEN='200000',MOTA=null,NGAYXUAT='2023-07-07',THUE=null,TENCTY='Samsung',MANV='QL001' where MAHD = 'HD001'
-delete from HOADON where MAHD='HD001'
-select * from HOADON where MAHD='HD001'
+
 
 Insert into HOADONCT values ('SP00002',3,'HD00001','100000000')
 Insert into HOADONCT values ('SP00002',1,'HD00002','100000000')
@@ -359,9 +322,7 @@ Insert into HOADONCT values ('SP00001',6,'HD00005','100000000')
 Insert into HOADONCT values ('SP00002',2,'HD00006','100000000')
 Insert into HOADONCT values ('SP00008',6,'HD00007','100000000')
 Insert into HOADONCT values ('SP00004',5,'HD00008','100000000')
-update HOADONCT set MASP ='IP001',SOLUONG=1,MAHD='HD001' where MAHDCT =1
-delete from HOADONCT where MAHDCT=1
-select * from HOADONCT where MAHDCT=1
+
 
 Insert into BAOHANH values ('BH00001','HD00001','123123','2023-01-20','2023-02-25',null,'KH00001')
 Insert into BAOHANH values ('BH00002','HD00002','112121','2023-01-20','2023-02-25',null,'KH00002')
@@ -369,9 +330,7 @@ Insert into BAOHANH values ('BH00003','HD00003','234123','2023-01-20','2023-02-2
 Insert into BAOHANH values ('BH00004','HD00004','192572','2023-01-20','2023-02-25',null,'KH00006')
 Insert into BAOHANH values ('BH00005','HD00005','987123','2023-01-20','2023-02-25',null,'KH00005')
 Insert into BAOHANH values ('BH00006','HD00006','567232','2023-01-20','2023-02-25',null,'KH00003')
-update BAOHANH set MAHD ='HD001',SOIMEI='111222',NGAYBH='2023-01-20',NGAYHETHAN='2023-02-25',GHICHU=null,MAKH='KH001' where MABH='BH001'
-delete from BAOHANH where MABH='BH001'
-select * from BAOHANH where MABH='BH001'
+
 
 Insert into DATSP values ('DH00001',5,'0987121212',1,'58500000','60000000',0.1,'NV001')
 Insert into DATSP values ('DH00002',3,'0989898989',1,'58500000','60000000',0.1,'NV001')
@@ -379,9 +338,6 @@ Insert into DATSP values ('DH00003',15,'0999999999',1,'58500000','60000000',0.1,
 Insert into DATSP values ('DH00004',20,'0988776690',1,'58500000','60000000',0.1,'NV002')
 Insert into DATSP values ('DH00005',8,'0222222222',1,'58500000','60000000',0.1,'NV002')
 Insert into DATSP values ('DH00006',12,'0911111111',1,'58500000','60000000',0.1,'NV001')
-update DATSP set SOLUONG=1,SDT='009900990',TRANGTHAI=1,DONGIA='500000',TONGTIEN='600000',THUE=0.1,MANV='QL001' where MADHANG='DH001'
-delete from DATSP where MADHANG='DH001'
-select * from DATSP where MADHANG='DH001'
 
 Insert into DATSPCT values (3,'12000000','DH00001','SP00002')
 Insert into DATSPCT values (7,'12000000','DH00002','SP00001')
@@ -389,14 +345,8 @@ Insert into DATSPCT values (10,'12000000','DH00003','SP00003')
 Insert into DATSPCT values (12,'12000000','DH00004','SP00001')
 Insert into DATSPCT values (9,'12000000','DH00005','SP00002')
 Insert into DATSPCT values (6,'12000000','DH00006','SP00004')
-update DATSPCT set SoLuong=1,MaDH='DH001',MaSP='IP001' where MaDatCT=1
-delete from DATSPCT where MaDatCT=1
-select * from DATSPCT where MaDatCT=1 
 
-insert into DONGMAY values ('iPhone','Apple A13 Bionic','HD plus','256GB','sản phẩm iPhone','SP001','64px','5000mAh','16GB')
-update DONGMAY set LoaiSanPham='iPhone',CPU='Apple A13 Bionic',MangHinh='HD Pro',BoNho='256BG',MoTa='sản phẩm iPhone',MaSP='SP001',CAMERA='64px',Pin='5000mAh',RAM='16GB'
-delete from DONGMAY where MaDong=1
-select * from DONGMAY where MaDong=1
+
 --doanh thu
 
 CREATE PROCEDURE sp_thongke_doanhthu_tuan
@@ -417,7 +367,6 @@ WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
 GROUP BY NgayXuat;
 
 END;
-EXEC sp_thongke_doanhthu_tuan;
 
 
 CREATE PROCEDURE sp_thongke_doanhthu_thang
@@ -438,7 +387,6 @@ WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
 GROUP BY NgayXuat;
 
 END;
-EXEC sp_thongke_doanhthu_thang;
 
 CREATE PROCEDURE sp_thongke_doanhthu_nam
 AS
@@ -458,7 +406,6 @@ WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
 GROUP BY NgayXuat;
 
 END;
-EXEC sp_thongke_doanhthu_nam;
 
 --thống kê loại sản phẩm
 CREATE PROCEDURE sp_thongke_sanpham
@@ -486,7 +433,7 @@ SELECT
 FROM DATSP;
 
 END;
-EXEC sp_thongke_tongtien_dathang;
+
 --thống kê sản phẩm
 CREATE PROCEDURE sp_thongKeTongSoLuongSanPhamXoa
 AS
@@ -495,7 +442,6 @@ BEGIN
     FROM SANPHAM
     WHERE TrangThai = 1;
 END;
-EXEC sp_thongKeTongSoLuongSanPhamXoa;
 
 --
 CREATE PROCEDURE MaxMaSP
@@ -551,7 +497,6 @@ BEGIN
 END
 GO
 
-execute MaxMadatsp
 
 CREATE PROCEDURE MaxHDDH
 AS
