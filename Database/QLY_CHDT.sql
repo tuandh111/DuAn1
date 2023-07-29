@@ -551,7 +551,7 @@ BEGIN
 END
 GO
 
-execute MaxMadatsp
+execute MaxHDDH
 
 CREATE PROCEDURE MaxHDDH
 AS
