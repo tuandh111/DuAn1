@@ -33,6 +33,10 @@ public class BaoHanhDAO {
         String sql = "SELECT * FROM BaoHanh WHERE MaBH like ?";
         return select(sql,"%"+MaBH+"%");
     }
+    public List<BaoHanhModel> TimKiem(String Ma) {
+        String sql = "SELECT * FROM baohanh WHERE maBH like ?";
+        return select(sql, "%" + Ma + "%");
+    }
     public void update(BaoHanhModel model){
         String sql = "update BaoHanh set MaHD=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? where MaBH=?";
         JdbcHelper.executeUpdate(sql, 

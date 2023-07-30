@@ -1,120 +1,116 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.DuAn1.form;
 
-import com.DuAn1.Dao.DatSPCTDAO;
-import com.DuAn1.Dao.DatSPDAO;
+import com.DuAn1.Dao.BaoHanhDAO;
 import com.DuAn1.Helper.ShareHelper;
-import com.DuAn1.Model.DatSPModel;
-import com.DuAn1.Model.SanPhamModel;
-import com.raven.dialog.Message;
-import com.DuAn1.main.Main;
-import com.raven.model.ModelCard;
-import com.raven.model.ModelStudent;
-import com.raven.swing.icon.GoogleMaterialDesignIcons;
-import com.raven.swing.icon.IconFontSwing;
-import com.raven.swing.noticeboard.ModelNoticeBoard;
-import com.raven.swing.table.EventAction;
-import java.awt.Color;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import com.DuAn1.tabledark.Test;
+import com.DuAn1.Model.BaoHanhModel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author DELL E5470
+ * @author trana
  */
-public class DanhSachDH extends javax.swing.JDialog {
+public class DanhSachBH extends javax.swing.JFrame {
+ DefaultTableModel tblModel;
+    BaoHanhDAO dao = new BaoHanhDAO();
+    public static String maBH="";
+    public static String maSP="";
+    public static String maKH="";
+    public static String soEmei="";
+    public static String ngayBH="";
+    public static String ngayHH="";
+    public static String ghiChu="";
 
-    DefaultTableModel tblModel;
-    DatSPDAO daoSP = new DatSPDAO();
-    public static String name1 = "";
-    public static int soLuong = 0;
-    public static double DonGia = 0;
-    public static double tongTien = 0;
-    public static String SDT = "";
-    public static String ngay = "";
-
-    public static String getNgay() {
-        return ngay;
+    public static String getMaBH() {
+        return maBH;
     }
 
-    public static String getSDT() {
-        return SDT;
+    public static void setMaBH(String maBH) {
+        DanhSachBH.maBH = maBH;
     }
 
-    public static void setSDT(String SDT) {
-        DanhSachDH.SDT = SDT;
+    public static String getMaSP() {
+        return maSP;
     }
 
-    public static void setNgay(String ngay) {
-        DanhSachDH.ngay = ngay;
+    public static void setMaSP(String maSP) {
+        DanhSachBH.maSP = maSP;
     }
 
-    public static int getSoLuong() {
-        return soLuong;
+    public static String getMaKH() {
+        return maKH;
     }
 
-    public static void setSoLuong(int soLuong) {
-        DanhSachDH.soLuong = soLuong;
+    public static void setMaKH(String maKH) {
+        DanhSachBH.maKH = maKH;
     }
 
-    public static double getDonGia() {
-        return DonGia;
+    public static String getSoEmei() {
+        return soEmei;
     }
 
-    public static void setDonGia(double DonGia) {
-        DanhSachDH.DonGia = DonGia;
+    public static void setSoEmei(String soEmei) {
+        DanhSachBH.soEmei = soEmei;
     }
 
-    public static double getTongTien() {
-        return tongTien;
+    public static String getNgayBH() {
+        return ngayBH;
     }
 
-    public static void setTongTien(double tongTien) {
-        DanhSachDH.tongTien = tongTien;
+    public static void setNgayBH(String ngayBH) {
+        DanhSachBH.ngayBH = ngayBH;
     }
 
-    public static String getName1() {
-        return name1;
+    public static String getNgayHH() {
+        return ngayHH;
     }
 
-    public static void setName1(String name1) {
-        DanhSachDH.name1 = name1;
+    public static void setNgayHH(String ngayHH) {
+        DanhSachBH.ngayHH = ngayHH;
     }
 
-    public DanhSachDH(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public static String getGhiChu() {
+        return ghiChu;
+    }
+
+    public static void setGhiChu(String ghiChu) {
+        DanhSachBH.ghiChu = ghiChu;
+    }
+    
+    /**
+     * Creates new form DanhSachBH
+     */
+    public DanhSachBH() {
         initComponents();
-        setLocationRelativeTo(null);
-        tblUser.fixTable(jScrollPane4);
-//        initTableData();
         filltable();
         setIconImage(ShareHelper.APP_ICON);
     }
-
-    void filltable() {
+void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<DatSPModel> list = daoSP.select();
-            for (DatSPModel nv : list) {
-                   String ThoiGianThem = "";
-
-                if (nv.getThoiGianDat() != null) {
-                    String dateString = nv.getThoiGianDat();
-                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
-                }
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), ThoiGianThem, nv.getMaNV()};
+            List<BaoHanhModel> list = dao.select(maBH);
+            for (BaoHanhModel nv : list) {
+                String dateString1 = nv.getNgayBH();
+                Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                String formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                String dateString2 = nv.getNgayHetHan();
+                Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
+                String formattedDate2 = new SimpleDateFormat("dd-MM-yyyy").format(date2);
+               Object[] row = new Object[]{nv.getMaBH(),
+                   nv.getMaHD(), 
+                   nv.getSoEmei(),
+                   formattedDate1,
+                   formattedDate2,
+                   nv.getGhiChu(),
+                   nv.getMaKH()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -122,41 +118,6 @@ public class DanhSachDH extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-
-//    private void initTableData() {
-//        EventAction eventAction = new EventAction() {
-//            @Override
-//            public void delete(ModelStudent student) {
-//
-//                JOptionPane.showMessageDialog(rootPane, "Đặng Hoàng Tuấn");
-//
-//            }
-//
-//            @Override
-//            public void update(ModelStudent student) {
-//                JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn in hóa đơn này không?");
-//            }
-//        };
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile.jpg")), "Tuấn", "Nam", "Java", 200).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile1.jpg")), "Bình", "Nam", "C++", 300).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "An", "Nữ", "C#", 400).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Thành", "Nam", "C#", 600).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Bảo", "Nam", "C#", 800).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Lê", "Nữ", "C#", 400).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Ngọc", "Nữ", "C#", 100).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Anh", "Nữ", "C#", 600).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Vũ", "Nam", "C#", 400).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Đại", "Đại", "C#", 300).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Hoa", "Nữ", "C#", 100).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Trân", "Nữ", "C#", 300).toRowTable(eventAction));
-//        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/com/raven/icon/profile2.jpg")), "Yến", "Nữ", "C#", 700).toRowTable(eventAction));
-//    }
-    private boolean showMessage(String message) {
-        Message obj = new Message(Main.getFrames()[0], true);
-        obj.showMessage(message);
-        return obj.isOk();
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -179,14 +140,12 @@ public class DanhSachDH extends javax.swing.JDialog {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Danh sách đặt hàng ");
+        jLabel1.setText("Danh sách bảo hành ");
 
         txtTimKiem.setToolTipText("");
         txtTimKiem.setHint("Tìm kiếm");
@@ -231,7 +190,7 @@ public class DanhSachDH extends javax.swing.JDialog {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã ĐH", "Số lượng", "Số điện thoại", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Mã NV"
+                "Mã BH", "Mã ", "Số Emei", "Ngày bảo hành", "Ngày hết hạn", "Ghi Chú", "Mã KH"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -264,7 +223,7 @@ public class DanhSachDH extends javax.swing.JDialog {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 529, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,7 +231,7 @@ public class DanhSachDH extends javax.swing.JDialog {
                         .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(18, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,7 +239,7 @@ public class DanhSachDH extends javax.swing.JDialog {
                                 .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 15, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,29 +265,48 @@ public class DanhSachDH extends javax.swing.JDialog {
                 .addGap(35, 35, 35))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 540));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 540, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
 
     private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<DatSPModel> list = daoSP.TimKiem(txtTimKiem.getText());
-            for (DatSPModel nv : list) {
-                String ThoiGianThem = "";
-
-                if (nv.getThoiGianDat() != null) {
-                    String dateString = nv.getThoiGianDat();
-                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+            List<BaoHanhModel> list = dao.TimKiem(txtTimKiem.getText());
+            for (BaoHanhModel nv : list) {
+                String ngayBaoHanh="",ngayHHan="";
+                if (nv.getNgayBH() != null) {
+                    String dateString1 = nv.getNgayBH();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString1);
+                    ngayBaoHanh = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), ThoiGianThem, nv.getMaNV()};
+                if (nv.getNgayHetHan() != null) {
+                    String dateString2 = nv.getNgayHetHan();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString2);
+                    ngayHHan = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                }
+               Object[] row = new Object[]{nv.getMaBH(), nv.getMaHD(), nv.getSoEmei(), ngayBaoHanh, ngayHHan, nv.getGhiChu(),nv.getMaKH()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -337,20 +315,26 @@ public class DanhSachDH extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtTimKiemCaretUpdate
 
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button2ActionPerformed
+
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
-      int chon = tblUser.getSelectedRow();
-        String name = (String) tblUser.getValueAt(chon, 0);
-        String soLuong = (String) tblUser.getValueAt(chon, 1);
-        String SDT = (String) tblUser.getValueAt(chon, 2);
-        String donGia = (String) tblUser.getValueAt(chon, 3);
-        String tongTien = (String) tblUser.getValueAt(chon, 4);
-        String ThoiGian = (String) tblUser.getValueAt(chon, 5);
-        DanhSachDH.setTongTien(Double.parseDouble(tongTien));
-        DanhSachDH.setSoLuong(Integer.parseInt(soLuong));
-        DanhSachDH.setDonGia(Double.parseDouble(donGia));
-        DanhSachDH.setSDT(SDT);
-        DanhSachDH.setName1(name);
-        DanhSachDH.setNgay(ThoiGian);
+        int chon = tblUser.getSelectedRow();
+        String maBH = (String) tblUser.getValueAt(chon, 0);
+        String maSP =(String)tblUser.getValueAt(chon, 1);
+        String soImei = (String)tblUser.getValueAt(chon, 2);
+        String soNgayHB = (String)tblUser.getValueAt(chon, 3);
+        String NgayHH = (String)tblUser.getValueAt(chon, 4);
+        String GhiChu = (String)tblUser.getValueAt(chon, 5);
+        String maKH = (String)tblUser.getValueAt(chon, 6);
+        DanhSachBH.setMaBH(maBH);
+        DanhSachBH.setMaSP(maSP);
+        DanhSachBH.setSoEmei(soImei);
+        DanhSachBH.setNgayBH(NgayHH);
+        DanhSachBH.setNgayHH(NgayHH);
+        DanhSachBH.setGhiChu(GhiChu);
+        DanhSachBH.setMaKH(maKH);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 
@@ -375,30 +359,20 @@ public class DanhSachDH extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DanhSachDH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DanhSachDH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DanhSachDH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DanhSachDH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                DanhSachDH dialog = new DanhSachDH(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new DanhSachBH().setVisible(true);
             }
         });
     }

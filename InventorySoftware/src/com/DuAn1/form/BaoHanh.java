@@ -3744,8 +3744,8 @@ public class BaoHanh extends javax.swing.JPanel {
 
     private void btnXemDSBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDSBHActionPerformed
         // TODO add your handling code here:
-        DanhSachHoaDon dshd = new DanhSachHoaDon(true);
-        dshd.setVisible(true);
+        DanhSachBH dsbh = new DanhSachBH();
+        dsbh.setVisible(true);
     }//GEN-LAST:event_btnXemDSBHActionPerformed
 
     private void txtemeiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtemeiCaretUpdate
