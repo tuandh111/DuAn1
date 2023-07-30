@@ -886,6 +886,11 @@ public class BaoHanh extends javax.swing.JPanel {
 
         button01.setBackground(new java.awt.Color(153, 153, 255));
         button01.setText("làm mới");
+        button01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button01ActionPerformed(evt);
+            }
+        });
 
         button2.setBackground(new java.awt.Color(255, 51, 51));
         button2.setForeground(new java.awt.Color(255, 255, 255));
@@ -3763,7 +3768,7 @@ public class BaoHanh extends javax.swing.JPanel {
     }//GEN-LAST:event_txtemeiCaretUpdate
 
     private void txtNgayHetHanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayHetHanMouseClicked
-        dateChooser.showPopup();        // TODO add your handling code here:
+        dateChooser1.showPopup();        // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayHetHanMouseClicked
 
     private void txtNgayBaoHanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayBaoHanhMouseClicked
@@ -4347,6 +4352,11 @@ public class BaoHanh extends javax.swing.JPanel {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         Delete();
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
+        // TODO add your handling code here:
+        clearForm();
+    }//GEN-LAST:event_button01ActionPerformed
     public void themSPCT() {
         try {
             BaoHanhCTModel model = getFormThemIPhone1();

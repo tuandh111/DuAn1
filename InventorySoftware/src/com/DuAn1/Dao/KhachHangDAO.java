@@ -77,6 +77,7 @@ public class KhachHangDAO {
         String sql = "SELECT * from KHACHHANG where TenKH = ?";
         return select(sql, SDT);
     }
+    
     public void KhoiPhuc(String model) {
         String sql = "update KHACHHANG set TrangThai=1 where MaKH= ?";
         JdbcHelper.executeUpdate(sql, model);
