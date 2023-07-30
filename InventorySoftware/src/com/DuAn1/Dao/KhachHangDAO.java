@@ -77,7 +77,14 @@ public class KhachHangDAO {
         String sql = "SELECT * from KHACHHANG where TenKH = ?";
         return select(sql, SDT);
     }
-
+    public void KhoiPhuc(String model) {
+        String sql = "update KHACHHANG set TrangThai=1 where MaKH= ?";
+        JdbcHelper.executeUpdate(sql, model);
+    }
+public List<KhachHangModel> selectDaXoaTheoMa(String Ma) {
+        String sql = "SELECT * FROM KhachHang WHERE  MaKH like ?";
+        return select(sql, "%" + Ma + "%");
+    }
     private List<KhachHangModel> select(String sql, Object... args) {
         List<KhachHangModel> list = new ArrayList<>();
         try {
