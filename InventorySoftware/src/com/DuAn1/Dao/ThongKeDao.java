@@ -188,7 +188,7 @@ public class ThongKeDao {
         try {
             ResultSet rs = null;
             try {
-                String sql = "exec MaxMaBH";
+                String sql = "{call  MaxMaBH";
                 rs = JdbcHelper.executeQuery(sql);
                 while (rs.next()) {
                     Object[] model = {
