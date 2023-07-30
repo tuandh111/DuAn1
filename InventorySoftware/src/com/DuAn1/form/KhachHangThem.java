@@ -73,7 +73,7 @@ public class KhachHangThem extends javax.swing.JDialog {
 //        }
 //select();
         setIconImage(ShareHelper.APP_ICON);
-        txtSdt.setText(DatHang1.getSoLuong());
+        txtTen.setText(DatHang1.getSoLuong());
         TuDongTangMa();
     }
 
@@ -323,7 +323,7 @@ public class KhachHangThem extends javax.swing.JDialog {
         }
         insert();
         TuDongTangMa();
-        DatHang1.setSoLuong(txtSdt.getText());
+        DatHang1.setSoLuong(txtTen.getText());
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed
     public boolean check() {

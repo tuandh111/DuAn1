@@ -25,6 +25,7 @@ public class InHoaDon extends javax.swing.JDialog {
      * Creates new form InHoaDon
      */
     HoaDonCTDAO HDCTDao = new HoaDonCTDAO();
+    
     public InHoaDon(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -34,26 +35,28 @@ public class InHoaDon extends javax.swing.JDialog {
         bill();
     }
   private void BillHeader() {
+      String name = ShareHelper.USER.getHoTen();
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS dd-MM-yyyy ");
         String formatted = current.format(formatter);
         txtBill.setText("=====================================================================" + "\n"
                 + "========================Tên CTY: CTY TNHH TTA MOBILE=======================" + "\n"
                 + "                                                                        \n"
+                + "Họ và tên nhân viên : "+name+"\n"
                 + "Thời gian xuất: " + formatted + "\n"
                 + "Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
                 + "==============================" + "\n"+""
                         + "Thông tin sản phẩm\n"+""
-                        + "MaHD                            MaSP                           Giá                                           số lượng"
+                        + "MaHD                            MaSP                           Giá                                           Số lượng"
                         + "\n");
     }
   public void bill(){
       
       List<HoaDonCTModel> list = HDCTDao.selectAll(HoaDon.ma);
       String name = "";
-      double gia=1;
+      double gia=0;
       double soluong=0;
-      double tongTien=1;
+      double tongTien=0;
       for (HoaDonCTModel hoaDonCTModel : list) {
           gia+=hoaDonCTModel.getGia();
           soluong+=hoaDonCTModel.getSoLuong();
@@ -133,6 +136,7 @@ public class InHoaDon extends javax.swing.JDialog {
             //        danhSach.setVisible(true);
 
             txtBill.print();
+            dispose();
         } catch (PrinterException ex) {
             Logger.getLogger(InHoaDon.class.getName()).log(Level.SEVERE, null, ex);
         }
