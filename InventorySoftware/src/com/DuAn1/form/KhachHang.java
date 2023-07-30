@@ -22,8 +22,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -197,7 +200,15 @@ public class KhachHang extends javax.swing.JPanel {
         nv.setMaKH(txtma.getText());
         nv.setTenKH(txtTen.getText());
         nv.setSDT(txtSdt.getText());
-        nv.setNgaySinh(txtNgaySinh.getText());
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaySinh.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            nv.setNgaySinh(ngayNhap);
+
+        } catch (Exception e) {
+        }
         nv.setDiaChi(txtDiachi.getText());
         if (cboGioitinh.getSelectedItem().equals("Nam")) {
             nv.setGT(true);
@@ -223,7 +234,14 @@ public class KhachHang extends javax.swing.JPanel {
         txtma.setText(nv.getMaKH());
         txtTen.setText(nv.getTenKH());
         txtSdt.setText(nv.getSDT());
-        txtNgaySinh.setText(nv.getNgaySinh());
+        try {
+            String dateString = nv.getNgaySinh();
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgaySinh.setText(formattedDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
         txtDiachi.setText(nv.getDiaChi());
         cboGioitinh.setSelectedItem(nv.isGT() ? "Nam" : "Nữ");
         if (nv.getLoaiKH().trim().equalsIgnoreCase("VIP1")) {

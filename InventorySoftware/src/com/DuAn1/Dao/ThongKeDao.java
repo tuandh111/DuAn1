@@ -183,45 +183,16 @@ public class ThongKeDao {
         }
         return list;
     }
-
     public List<Object[]> getMaxMaBH() {
         List<Object[]> list = new ArrayList<>();
         try {
             ResultSet rs = null;
             try {
-                String sql = "call MaxMaBH";
+                String sql = "{call MaxMaBH}";
                 rs = JdbcHelper.executeQuery(sql);
                 while (rs.next()) {
                     Object[] model = {
                         rs.getString("MaxProductCode").trim(),};
-
-                    list.add(model);
-
-                }
-            } finally {
-                rs.getStatement().getConnection().close();
-            }
-        } catch (SQLException ex) {
-
-            throw new RuntimeException(ex);
-        }
-        return list;
-    }
-
-    public List<Object[]> Top3SP() {
-        List<Object[]> list = new ArrayList<>();
-        try {
-            ResultSet rs = null;
-            try {
-                String sql = "call TOP_3_SANPHAM";
-                rs = JdbcHelper.executeQuery(sql);
-                while (rs.next()) {
-                    Object[] model = {
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4)
-                    };
 
                     list.add(model);
 

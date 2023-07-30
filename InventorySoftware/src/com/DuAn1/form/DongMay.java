@@ -564,6 +564,12 @@ public class DongMay extends javax.swing.JPanel {
         cboPin.setSelectedItem(null);
         txtCamera.setText("");
         cboCamera.setSelectedItem(null);
+        txtRAM.setEnabled(true);
+        txtBoNho.setEnabled(true);
+        txtCPU.setEnabled(true);
+        txtCamera.setEnabled(true);
+        txtManHinh.setEnabled(true);
+        txtPin.setEnabled(true);
     }
 
     // uptStatus
@@ -1633,6 +1639,7 @@ public class DongMay extends javax.swing.JPanel {
             this.row = tblManHinh.getSelectedRow();
              materialTabbed1.setSelectedIndex(1);
             this.editManHinh();
+            txtManHinh.setEnabled(false);
         }
     }//GEN-LAST:event_tblManHinhMouseClicked
 
@@ -1649,6 +1656,7 @@ public class DongMay extends javax.swing.JPanel {
             this.row = tblRAM.getSelectedRow();
              materialTabbed1.setSelectedIndex(1);
             this.editRam();
+            txtRAM.setEnabled(false);
         }
     }//GEN-LAST:event_tblRAMMouseClicked
 
@@ -1662,6 +1670,7 @@ public class DongMay extends javax.swing.JPanel {
             this.row = tblROM.getSelectedRow();
              materialTabbed1.setSelectedIndex(1);
             this.editRom();
+            txtBoNho.setEnabled(false);
         }
     }//GEN-LAST:event_tblROMMouseClicked
 
@@ -1675,6 +1684,7 @@ public class DongMay extends javax.swing.JPanel {
             this.row = tblCPU.getSelectedRow();
             materialTabbed1.setSelectedIndex(1);
             this.editCPU();
+            txtCPU.setEnabled(false);
         }
     }//GEN-LAST:event_tblCPUMouseClicked
 
@@ -1688,6 +1698,7 @@ public class DongMay extends javax.swing.JPanel {
             this.row = tblCamera.getSelectedRow();
              materialTabbed1.setSelectedIndex(1);
             this.editCamera();
+             txtCamera.setEnabled(false);
         }
     }//GEN-LAST:event_tblCameraMouseClicked
 
@@ -1701,6 +1712,7 @@ public class DongMay extends javax.swing.JPanel {
             this.row = tblPin.getSelectedRow();
              materialTabbed1.setSelectedIndex(1);
             this.editPin();
+            txtPin.setEnabled(false);
         }
     }//GEN-LAST:event_tblPinMouseClicked
 
@@ -2207,6 +2219,7 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnSuaRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaRAMActionPerformed
         // TODO add your handling code here:
+        
         suaRam();
     }//GEN-LAST:event_btnSuaRAMActionPerformed
 
@@ -2242,27 +2255,32 @@ public class DongMay extends javax.swing.JPanel {
 
     private void btnSuaRomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaRomActionPerformed
         // TODO add your handling code here:
+        
         suaRom();
     }//GEN-LAST:event_btnSuaRomActionPerformed
 
     private void btnSuaManHinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaManHinhActionPerformed
         // TODO add your handling code here:
+        
         suaManHinh();
     }//GEN-LAST:event_btnSuaManHinhActionPerformed
 
     private void btnSuaCameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaCameraActionPerformed
         // TODO add your handling code here:
         suaCamera();
+       
     }//GEN-LAST:event_btnSuaCameraActionPerformed
 
     private void btnSuaPinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaPinActionPerformed
         // TODO add your handling code here:
         suaPin();
+        
     }//GEN-LAST:event_btnSuaPinActionPerformed
 
     private void btnSuaCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaCPUActionPerformed
         // TODO add your handling code here:
         suaCPU();
+        txtCPU.setEnabled(false);
     }//GEN-LAST:event_btnSuaCPUActionPerformed
 
 
