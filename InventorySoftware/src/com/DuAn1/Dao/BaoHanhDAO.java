@@ -33,6 +33,17 @@ public class BaoHanhDAO {
         String sql = "SELECT * FROM BaoHanh WHERE MaBH like ?";
         return select(sql,"%"+MaBH+"%");
     }
+    public void update(BaoHanhModel model){
+        String sql = "update BaoHanh set MaHD=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? where MaBH=?";
+        JdbcHelper.executeUpdate(sql, 
+                model.getMaHD(),
+                model.getSoEmei(),
+                model.getNgayBH(),
+                model.getNgayHetHan(),
+                model.getGhiChu(),
+                model.getMaKH(),
+                model.getMaBH());
+    }
     public void delete(BaoHanhModel model) {
         String sql = "DELETE BaoHanh WHERE MaBH = ?";
         JdbcHelper.executeUpdate(sql, model.getMaBH());

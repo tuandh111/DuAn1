@@ -90,10 +90,8 @@
                               <Group type="102" attributes="0">
                                   <Component id="button4" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="btnThem" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="btnThem" min="-2" pref="234" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="button8" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                   <Component id="button5" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane4" min="-2" pref="547" max="-2" attributes="0"/>
@@ -123,7 +121,6 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="button5" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="button8" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="btnThem" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="button4" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
@@ -420,17 +417,6 @@
             <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
           </Properties>
         </Component>
-        <Component class="com.DuAn1.swing0.button0" name="button8">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button8ActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="com.DuAn1.swing0.button0" name="button5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -447,7 +433,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Th&#xea;m "/>
+            <Property name="text" type="java.lang.String" value="Th&#xea;m b&#x1ea3;o h&#xe0;nh"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemActionPerformed"/>
@@ -2036,7 +2022,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="lbIphone3" alignment="0" max="32767" attributes="0"/>
                                   <Component id="lbIphone1" alignment="0" max="32767" attributes="0"/>
