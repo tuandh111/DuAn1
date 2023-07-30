@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Administrator
  */
 public class DanhSachMH extends javax.swing.JFrame {
-
+    
     DefaultTableModel tblModel;
     HoaDonDAO daoSP = new HoaDonDAO();
     public static String name1 = "";
@@ -26,53 +26,80 @@ public class DanhSachMH extends javax.swing.JFrame {
     public static double tongTien = 0;
     public static String Ten = "";
     public static String ngay = "";
-
+    public static String HinhThuc = "";
+    public static double Tienkhach = 0;
+    public static double TienCon = 0;
+    
     public static String getNgay() {
         return ngay;
     }
-
+    
     public static String getTen() {
         return Ten;
     }
-
+    
     public static void setTen(String Ten) {
         DanhSachMH.Ten = Ten;
     }
-
+    
     public static void setNgay(String ngay) {
         DanhSachMH.ngay = ngay;
     }
-
+    
     public static int getSoLuong() {
         return soLuong;
     }
-
+    
     public static void setSoLuong(int soLuong) {
         DanhSachMH.soLuong = soLuong;
     }
-
+    
     public static double getDonGia() {
         return DonGia;
     }
-
+    
     public static void setDonGia(double DonGia) {
         DanhSachMH.DonGia = DonGia;
     }
-
+    
     public static double getTongTien() {
         return tongTien;
     }
-
+    
     public static void setTongTien(double tongTien) {
         DanhSachMH.tongTien = tongTien;
     }
-
+    
     public static String getName1() {
         return name1;
     }
-
+    
     public static void setName1(String name1) {
         DanhSachMH.name1 = name1;
+    }
+    
+    public static double getTienkhach() {
+        return Tienkhach;
+    }
+    
+    public static void setTienkhach(double Tienkhach) {
+        DanhSachMH.Tienkhach = Tienkhach;
+    }
+    
+    public static double getTienCon() {
+        return TienCon;
+    }
+    
+    public static void setTienCon(double TienCon) {
+        DanhSachMH.TienCon = TienCon;
+    }
+    
+    public static String getHinhThuc() {
+        return HinhThuc;
+    }
+    
+    public static void setHinhThuc(String HinhThuc) {
+        DanhSachMH.HinhThuc = HinhThuc;
     }
 
     /**
@@ -82,7 +109,7 @@ public class DanhSachMH extends javax.swing.JFrame {
         initComponents();
         filltable();
     }
-
+    
     void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
@@ -90,13 +117,13 @@ public class DanhSachMH extends javax.swing.JFrame {
             List<HoaDonModel> list = daoSP.select();
             for (HoaDonModel nv : list) {
                 String ThoiGianThem = "";
-
-                if (nv.getNgayXuat()!= null) {
+                
+                if (nv.getNgayXuat() != null) {
                     String dateString = nv.getNgayXuat();
                     Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
                     ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getMaNV(), nv.getTenKH()};
+                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getTenKH(), nv.getHinhThuc(), nv.getTienKhach(), nv.getTienCon()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -166,17 +193,17 @@ public class DanhSachMH extends javax.swing.JFrame {
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã ĐH", "Số lượng", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Mã NV", "Tên Khách Hàng"
+                "Mã ĐH", "Số lượng", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Tên Khách Hàng", "Hình thức TT", "Tiền khách đưa", "Tiền thừa"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, true
+                false, false, false, false, true, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -189,6 +216,10 @@ public class DanhSachMH extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(tblUser);
+        if (tblUser.getColumnModel().getColumnCount() > 0) {
+            tblUser.getColumnModel().getColumn(4).setMinWidth(150);
+            tblUser.getColumnModel().getColumn(4).setMaxWidth(300);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -273,13 +304,13 @@ public class DanhSachMH extends javax.swing.JFrame {
             List<HoaDonModel> list = daoSP.TimKiem(txtTimKiem.getText());
             for (HoaDonModel nv : list) {
                 String ThoiGianThem = "";
-
+                
                 if (nv.getNgayXuat() != null) {
                     String dateString = nv.getNgayXuat();
                     Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
                     ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getMaNV(), nv.getTenKH()};
+                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getTenKH(), nv.getHinhThuc(), nv.getTienKhach(), nv.getTienCon()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -296,16 +327,22 @@ public class DanhSachMH extends javax.swing.JFrame {
         int chon = tblUser.getSelectedRow();
         String name = (String) tblUser.getValueAt(chon, 0);
         String soLuong = (String) tblUser.getValueAt(chon, 1);
-        String Ten = (String) tblUser.getValueAt(chon, 6);
         String donGia = (String) tblUser.getValueAt(chon, 2);
         String tongTien = (String) tblUser.getValueAt(chon, 3);
         String ThoiGian = (String) tblUser.getValueAt(chon, 4);
+        String Ten = (String) tblUser.getValueAt(chon, 5);
+        String HinhThuc = (String) tblUser.getValueAt(chon, 6);
+        String Tienkhach = (String) tblUser.getValueAt(chon, 7);
+        String Tienthua = (String) tblUser.getValueAt(chon, 8);
         DanhSachMH.setTongTien(Double.parseDouble(tongTien));
         DanhSachMH.setSoLuong(Integer.parseInt(soLuong));
         DanhSachMH.setDonGia(Double.parseDouble(donGia));
         DanhSachMH.setTen(Ten);
         DanhSachMH.setName1(name);
         DanhSachMH.setNgay(ThoiGian);
+        DanhSachMH.setHinhThuc(HinhThuc);
+        DanhSachMH.setTienkhach(Double.parseDouble(Tienkhach));
+        DanhSachMH.setTienCon(Double.parseDouble(Tienthua));
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 

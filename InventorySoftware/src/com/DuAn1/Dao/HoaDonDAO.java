@@ -18,7 +18,7 @@ import java.util.List;
 public class HoaDonDAO {
 
     public void insert(HoaDonModel model) {
-        String sql = "Insert into HOADON values (?,?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert into HOADON values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaHD(),
                 model.getSoluong(),
@@ -29,12 +29,15 @@ public class HoaDonDAO {
                 model.getMota(),
                 model.getTenCty(),
                 model.getMaNV(),
-                model.getTenKH()
+                model.getTenKH(),
+                model.getHinhThuc(),
+                model.getTienKhach(),
+                model.getTienCon()
         );
     }
 
     public void update(HoaDonModel model) {
-        String sql = "update HOADON set  SoLuong=?,TrangThai=?,DonGia=?,TongTien=?,NgayXuat=?,MoTa=?,TenCTY = ?,MaNV=?, TenKH=? where MaHD =? ";
+        String sql = "update HOADON set  SoLuong=?,TrangThai=?,DonGia=?,TongTien=?,NgayXuat=?,MoTa=?,TenCTY = ?,MaNV=?, TenKH=?,HinhThucTT=?,TienKhach=?,TienCon=? where MaHD =? ";
         JdbcHelper.executeUpdate(sql,
                 model.getSoluong(),
                 model.isTrangThai(),
@@ -45,6 +48,9 @@ public class HoaDonDAO {
                 model.getTenCty(),
                 model.getMaNV(),
                 model.getTenKH(),
+                model.getHinhThuc(),
+                model.getTienKhach(),
+                model.getTienCon(),
                 model.getMaHD()
         );
     }
@@ -95,6 +101,9 @@ public class HoaDonDAO {
         model.setTenCty(rs.getString(8));
         model.setMaNV(rs.getString(9));
         model.setTenKH(rs.getString(10));
+        model.setHinhThuc(rs.getString(11));
+        model.setTienKhach(rs.getString(12));
+        model.setTienCon(rs.getString(13));
         return model;
     }
 }

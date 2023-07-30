@@ -20,11 +20,14 @@ public class HoaDonModel {
     private String TenCty;
     private String MaNV;
     private String TenKH;
+    private String HinhThuc;
+    private String TienKhach;
+    private String TienCon;
 
     public HoaDonModel() {
     }
 
-    public HoaDonModel(String MaHD, String Soluong, boolean TrangThai, String Dongia, String Tongtien, String NgayXuat, String Mota, String TenCty, String MaNV, String TenKH) {
+    public HoaDonModel(String MaHD, String Soluong, boolean TrangThai, String Dongia, String Tongtien, String NgayXuat, String Mota, String TenCty, String MaNV, String TenKH, String HinhThuc, String TienKhach, String TienCon) {
         this.MaHD = MaHD;
         this.Soluong = Soluong;
         this.TrangThai = TrangThai;
@@ -35,6 +38,9 @@ public class HoaDonModel {
         this.TenCty = TenCty;
         this.MaNV = MaNV;
         this.TenKH = TenKH;
+        this.HinhThuc = HinhThuc;
+        this.TienKhach = TienKhach;
+        this.TienCon = TienCon;
     }
 
     public String getMaHD() {
@@ -115,6 +121,30 @@ public class HoaDonModel {
 
     public void setTenKH(String TenKH) {
         this.TenKH = TenKH;
+    }
+
+    public String getHinhThuc() {
+        return HinhThuc;
+    }
+
+    public void setHinhThuc(String HinhThuc) {
+        this.HinhThuc = HinhThuc;
+    }
+
+    public String getTienKhach() {
+        return TienKhach;
+    }
+
+    public void setTienKhach(String TienKhach) {
+        this.TienKhach = TienKhach;
+    }
+
+    public String getTienCon() {
+        return TienCon;
+    }
+
+    public void setTienCon(String TienCon) {
+        this.TienCon = TienCon;
     }
 
 }

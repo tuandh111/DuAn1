@@ -138,6 +138,9 @@ CREATE TABLE HOADON(
 	TenCTY NVARCHAR(50),
 	MaNV CHAR(10),
 	TenKH NVARCHAR(50),
+	HinhThucTT NVARCHAR(50),
+	TienKhach NVARCHAR(50),
+	TienCon NVARCHAR(50),
 	FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV) ON DELETE NO ACTION ON UPDATE CASCADE
 )
 CREATE TABLE HOADONCT(
@@ -312,14 +315,14 @@ Insert into DIENTHOAI values('SP00008','Bionics','OLEDt','111GB',null,'22Mb','46
 Insert into DIENTHOAI values('SP00009','Bionics','HDe','12GB',null,'22Mb','5453mAh','4GB')
 
 
-Insert into HOADON values ('HD00001',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Trần Thị Ánh')
-Insert into HOADON values ('HD00002',1,1,'10500000','10500000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thị Minh')
-Insert into HOADON values ('HD00003',3,1,'11500000','34500000','2023-07-07',null,'Apple','NV001',N'Lê Thanh Chúc')
-Insert into HOADON values ('HD00004',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thanh Ngọc')
-Insert into HOADON values ('HD00005',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Ngọc Cầm')
-Insert into HOADON values ('HD00006',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Thanh Trí')
-Insert into HOADON values ('HD00007',2,0,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Anh Khoa')
-Insert into HOADON values ('HD00008',3,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Nguyễn Anh Duy')
+Insert into HOADON values ('HD00001',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Trần Thị Ánh',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00002',1,1,'10500000','10500000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thị Minh',N'Tiền Mặt','11000000','500000')
+Insert into HOADON values ('HD00003',3,1,'11500000','34500000','2023-07-07',null,'Apple','NV001',N'Lê Thanh Chúc',N'Tiền Mặt','35000000','500000')
+Insert into HOADON values ('HD00004',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thanh Ngọc',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00005',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Ngọc Cầm',N'Chuyển Khoản','29000000','0')
+Insert into HOADON values ('HD00006',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Thanh Trí',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00007',2,0,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Anh Khoa',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00008',3,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Nguyễn Anh Duy',N'Tiền Mặt','30000000','1000000')
 
 
 Insert into HOADONCT values ('SP00002',3,'HD00001','100000000')
