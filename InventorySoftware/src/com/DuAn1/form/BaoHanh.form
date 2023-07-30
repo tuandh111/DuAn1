@@ -283,6 +283,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="l&#xe0;m m&#x1edb;i"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button01ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="com.DuAn1.swing0.button0" name="button2">
               <Properties>
