@@ -4,17 +4,20 @@
  */
 package com.DuAn1.form;
 
-
 import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.DuAn1.main.Main;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -26,11 +29,12 @@ import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
  * @author DELL E5470
  */
 public class ThongTinNhanVien extends javax.swing.JDialog {
+    ThaoTacDAO daoThaoTac = new ThaoTacDAO();
 
     MaHoa MH = new MaHoa();
     String strHinh = "";
     NhanVienDAO1 dao = new NhanVienDAO1();
-    public static String soLuong = ShareHelper.USER.getHinh();
+    public static String soLuong = "";
 
     public static String getSoLuong() {
         return soLuong;
@@ -39,7 +43,20 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
     public static void setSoLuong(String soLuong) {
         ThongTinNhanVien.soLuong = soLuong;
     }
+    public ThaoTacModel getFormUpdate() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(formatted);
+        cd.setThoiGianXoa(null);
 
+        cd.setThoIGianHoatDong(com.DuAn1.Helper.ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Thay đổi mật khẩu nhân viên");
+        cd.setMaNV(com.DuAn1.Helper.ShareHelper.USER.getMaNV());
+        return cd;
+    }
     public ThongTinNhanVien(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -65,7 +82,8 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
 //            txtHinhAnh.setIcon(new ImageIcon(scaledImage));
 //
 //        }
-setIconImage(ShareHelper.APP_ICON);
+
+        setIconImage(ShareHelper.APP_ICON);
         select();
     }
 
@@ -100,6 +118,8 @@ setIconImage(ShareHelper.APP_ICON);
             dao.update(nv);
             DialogHelper.alert(this, "Cập nhật thành công!");
             ThongTinNhanVien.setSoLuong(nv.getHinh());
+                ThaoTacModel ThaoTacModel = getFormUpdate();
+            daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Cập nhật thất bại!");

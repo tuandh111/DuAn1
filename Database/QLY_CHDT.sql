@@ -333,12 +333,12 @@ Insert into HOADONCT values ('SP00004',5,'HD00008','100000000')
 
 
 
-Insert into BAOHANH values ('BH00001','SP00001','123123','2023-01-20','2023-02-25',null,'KH00001')
-Insert into BAOHANH values ('BH00002','SP00002','112121','2023-01-20','2023-02-25',null,'KH00002')
-Insert into BAOHANH values ('BH00003','SP00003','234123','2023-01-20','2023-02-25',null,'KH00008')
-Insert into BAOHANH values ('BH00004','SP00004','192572','2023-01-20','2023-02-25',null,'KH00006')
-Insert into BAOHANH values ('BH00005','SP00005','987123','2023-01-20','2023-02-25',null,'KH00005')
-Insert into BAOHANH values ('BH00006','SP00006','567232','2023-01-20','2023-02-25',null,'KH00003')
+Insert into BAOHANH values ('BH00001','1','123123','2023-01-20','2023-02-25',null,'KH00001')
+Insert into BAOHANH values ('BH00002','2','112121','2023-01-20','2023-02-25',null,'KH00002')
+Insert into BAOHANH values ('BH00003','3','234123','2023-01-20','2023-02-25',null,'KH00008')
+Insert into BAOHANH values ('BH00004','6','192572','2023-01-20','2023-02-25',null,'KH00006')
+Insert into BAOHANH values ('BH00005','1','987123','2023-01-20','2023-02-25',null,'KH00005')
+Insert into BAOHANH values ('BH00006','3','567232','2023-01-20','2023-02-25',null,'KH00003')
 
 
 insert into BAOHANHCT values('BH00001','SP00001','103')

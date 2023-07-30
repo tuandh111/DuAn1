@@ -324,6 +324,7 @@ public class KhachHangThem extends javax.swing.JDialog {
         insert();
         TuDongTangMa();
         DatHang1.setSoLuong(txtTen.getText());
+        BaoHanh.setSoLuong(txtma.getText());
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed
     public boolean check() {

@@ -251,15 +251,15 @@ public class DanhSachMH1 extends javax.swing.JDialog {
         String HinhThuc = (String) tblUser.getValueAt(chon, 6);
         String Tienkhach = (String) tblUser.getValueAt(chon, 7);
         String Tienthua = (String) tblUser.getValueAt(chon, 8);
-        DanhSachMH.setTongTien(Double.parseDouble(tongTien));
-        DanhSachMH.setSoLuong(Integer.parseInt(soLuong));
-        DanhSachMH.setDonGia(Double.parseDouble(donGia));
-        DanhSachMH.setTen(Ten);
-        DanhSachMH.setName1(name);
-        DanhSachMH.setNgay(ThoiGian);
-        DanhSachMH.setHinhThuc(HinhThuc);
-        DanhSachMH.setTienkhach(Double.parseDouble(Tienkhach));
-        DanhSachMH.setTienCon(Double.parseDouble(Tienthua));
+        DanhSachMH1.setTongTien(Double.parseDouble(tongTien));
+        DanhSachMH1.setSoLuong(Integer.parseInt(soLuong));
+        DanhSachMH1.setDonGia(Double.parseDouble(donGia));
+        DanhSachMH1.setTen(Ten);
+        DanhSachMH1.setName1(name);
+        DanhSachMH1.setNgay(ThoiGian);
+        DanhSachMH1.setHinhThuc(HinhThuc);
+        DanhSachMH1.setTienkhach(Double.parseDouble(Tienkhach));
+        DanhSachMH1.setTienCon(Double.parseDouble(Tienthua));
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 
