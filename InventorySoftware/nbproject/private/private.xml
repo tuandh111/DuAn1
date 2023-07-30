@@ -3,21 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/InHoaDon.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/raven/form/Form_Home.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/component/Card.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/MainAn/MainAn1.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/KhachHangDAO.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHangThem.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/FormAn/Form.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/NhanVien.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/MainAn/MainAn.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachMH1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/SanPhamDAO.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachMH.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonDAO.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
         </group>
     </open-files>
 </project-private>
