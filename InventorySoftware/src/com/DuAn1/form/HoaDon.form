@@ -51,7 +51,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" pref="1046" max="32767" attributes="0"/>
+              <Component id="jPanel1" pref="1047" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -100,7 +100,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtTongtien" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -140,12 +140,16 @@
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <Component id="txtNgayXuat" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Component id="button4" min="-2" pref="158" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="button3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -155,12 +159,6 @@
                                       <Component id="btnInBill" min="-2" pref="108" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btnHuyHD" min="-2" pref="102" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtNgayXuat" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="txtDonGia" min="-2" pref="309" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="txtSoLuong" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -179,7 +177,7 @@
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="txtMa" min="-2" pref="194" max="-2" attributes="0"/>
-                                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                                              <EmptySpace pref="48" max="32767" attributes="0"/>
                                               <Component id="txtKhachhang" min="-2" pref="135" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -188,6 +186,21 @@
                                   </Group>
                               </Group>
                               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="txtDonGia" min="-2" pref="309" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="txtSoLuong" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtTienkhach" pref="269" max="32767" attributes="0"/>
+                                  <Component id="txtConlai" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cboHinhThuc" min="-2" pref="157" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -212,20 +225,27 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtThongBao" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtDonGia" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSoLuong" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txtNgayXuat" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtTongTien" alignment="0" min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTienkhach" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboHinhThuc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="txtConlai" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txtMota" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -411,6 +431,36 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInBillActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="com.DuAn1.Swing.TextField" name="txtConlai">
+              <Properties>
+                <Property name="labelText" type="java.lang.String" value="Ti&#x1ec1;n c&#xf2;n l&#x1ea1;i"/>
+              </Properties>
+              <Events>
+                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtConlaiCaretUpdate"/>
+              </Events>
+            </Component>
+            <Component class="com.DuAn1.Swing.TextField" name="txtTienkhach">
+              <Properties>
+                <Property name="labelText" type="java.lang.String" value="Ti&#x1ec1;n kh&#xe1;ch &#x111;&#x1b0;a"/>
+              </Properties>
+              <Events>
+                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTienkhachCaretUpdate"/>
+              </Events>
+            </Component>
+            <Component class="com.DuAn1.Swing.Combobox" name="cboHinhThuc">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="Ti&#x1ec1;n m&#x1eb7;t"/>
+                    <StringItem index="1" value="Chuy&#x1ec3;n kho&#x1ea3;n"/>
+                  </StringArray>
+                </Property>
+                <Property name="labeText" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c TT"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThucActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

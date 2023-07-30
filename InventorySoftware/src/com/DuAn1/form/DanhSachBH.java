@@ -4,8 +4,9 @@
  */
 package com.DuAn1.form;
 
-import com.DuAn1.Dao.HoaDonDAO;
-import com.DuAn1.Model.HoaDonModel;
+import com.DuAn1.Dao.BaoHanhDAO;
+import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.BaoHanhModel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -14,116 +15,102 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Administrator
+ * @author trana
  */
-public class DanhSachMH extends javax.swing.JFrame {
-    
-    DefaultTableModel tblModel;
-    HoaDonDAO daoSP = new HoaDonDAO();
-    public static String name1 = "";
-    public static int soLuong = 0;
-    public static double DonGia = 0;
-    public static double tongTien = 0;
-    public static String Ten = "";
-    public static String ngay = "";
-    public static String HinhThuc = "";
-    public static double Tienkhach = 0;
-    public static double TienCon = 0;
-    
-    public static String getNgay() {
-        return ngay;
-    }
-    
-    public static String getTen() {
-        return Ten;
-    }
-    
-    public static void setTen(String Ten) {
-        DanhSachMH.Ten = Ten;
-    }
-    
-    public static void setNgay(String ngay) {
-        DanhSachMH.ngay = ngay;
-    }
-    
-    public static int getSoLuong() {
-        return soLuong;
-    }
-    
-    public static void setSoLuong(int soLuong) {
-        DanhSachMH.soLuong = soLuong;
-    }
-    
-    public static double getDonGia() {
-        return DonGia;
-    }
-    
-    public static void setDonGia(double DonGia) {
-        DanhSachMH.DonGia = DonGia;
-    }
-    
-    public static double getTongTien() {
-        return tongTien;
-    }
-    
-    public static void setTongTien(double tongTien) {
-        DanhSachMH.tongTien = tongTien;
-    }
-    
-    public static String getName1() {
-        return name1;
-    }
-    
-    public static void setName1(String name1) {
-        DanhSachMH.name1 = name1;
-    }
-    
-    public static double getTienkhach() {
-        return Tienkhach;
-    }
-    
-    public static void setTienkhach(double Tienkhach) {
-        DanhSachMH.Tienkhach = Tienkhach;
-    }
-    
-    public static double getTienCon() {
-        return TienCon;
-    }
-    
-    public static void setTienCon(double TienCon) {
-        DanhSachMH.TienCon = TienCon;
-    }
-    
-    public static String getHinhThuc() {
-        return HinhThuc;
-    }
-    
-    public static void setHinhThuc(String HinhThuc) {
-        DanhSachMH.HinhThuc = HinhThuc;
+public class DanhSachBH extends javax.swing.JFrame {
+ DefaultTableModel tblModel;
+    BaoHanhDAO dao = new BaoHanhDAO();
+    public static String maBH="";
+    public static String maSP="";
+    public static String maKH="";
+    public static String soEmei="";
+    public static String ngayBH="";
+    public static String ngayHH="";
+    public static String ghiChu="";
+
+    public static String getMaBH() {
+        return maBH;
     }
 
-    /**
-     * Creates new form DanhSachMH
-     */
-    public DanhSachMH() {
-        initComponents();
-        filltable();
+    public static void setMaBH(String maBH) {
+        DanhSachBH.maBH = maBH;
+    }
+
+    public static String getMaSP() {
+        return maSP;
+    }
+
+    public static void setMaSP(String maSP) {
+        DanhSachBH.maSP = maSP;
+    }
+
+    public static String getMaKH() {
+        return maKH;
+    }
+
+    public static void setMaKH(String maKH) {
+        DanhSachBH.maKH = maKH;
+    }
+
+    public static String getSoEmei() {
+        return soEmei;
+    }
+
+    public static void setSoEmei(String soEmei) {
+        DanhSachBH.soEmei = soEmei;
+    }
+
+    public static String getNgayBH() {
+        return ngayBH;
+    }
+
+    public static void setNgayBH(String ngayBH) {
+        DanhSachBH.ngayBH = ngayBH;
+    }
+
+    public static String getNgayHH() {
+        return ngayHH;
+    }
+
+    public static void setNgayHH(String ngayHH) {
+        DanhSachBH.ngayHH = ngayHH;
+    }
+
+    public static String getGhiChu() {
+        return ghiChu;
+    }
+
+    public static void setGhiChu(String ghiChu) {
+        DanhSachBH.ghiChu = ghiChu;
     }
     
-    void filltable() {
+    /**
+     * Creates new form DanhSachBH
+     */
+    public DanhSachBH() {
+        initComponents();
+        filltable();
+        setIconImage(ShareHelper.APP_ICON);
+    }
+void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<HoaDonModel> list = daoSP.select();
-            for (HoaDonModel nv : list) {
-                String ThoiGianThem = "";
-                
-                if (nv.getNgayXuat() != null) {
-                    String dateString = nv.getNgayXuat();
-                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
-                }
-                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getTenKH(), nv.getHinhThuc(), nv.getTienKhach(), nv.getTienCon()};
+            List<BaoHanhModel> list = dao.select(maBH);
+            for (BaoHanhModel nv : list) {
+                String dateString1 = nv.getNgayBH();
+                Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                String formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                String dateString2 = nv.getNgayHetHan();
+                Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
+                String formattedDate2 = new SimpleDateFormat("dd-MM-yyyy").format(date2);
+               Object[] row = new Object[]{nv.getMaBH(),
+                   nv.getMaHD(), 
+                   nv.getSoEmei(),
+                   formattedDate1,
+                   formattedDate2,
+                   nv.getGhiChu(),
+                   nv.getMaKH()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -131,7 +118,6 @@ public class DanhSachMH extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -159,7 +145,7 @@ public class DanhSachMH extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Danh sách mua hàng");
+        jLabel1.setText("Danh sách bảo hành ");
 
         txtTimKiem.setToolTipText("");
         txtTimKiem.setHint("Tìm kiếm");
@@ -167,6 +153,11 @@ public class DanhSachMH extends javax.swing.JFrame {
         txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtTimKiemCaretUpdate(evt);
+            }
+        });
+        txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimKiemActionPerformed(evt);
             }
         });
 
@@ -193,17 +184,17 @@ public class DanhSachMH extends javax.swing.JFrame {
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã ĐH", "Số lượng", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Tên Khách Hàng", "Hình thức TT", "Tiền khách đưa", "Tiền thừa"
+                "Mã BH", "Mã ", "Số Emei", "Ngày bảo hành", "Ngày hết hạn", "Ghi Chú", "Mã KH"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, true, true, true
+                false, false, false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -216,10 +207,6 @@ public class DanhSachMH extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(tblUser);
-        if (tblUser.getColumnModel().getColumnCount() > 0) {
-            tblUser.getColumnModel().getColumn(4).setMinWidth(150);
-            tblUser.getColumnModel().getColumn(4).setMaxWidth(300);
-        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -252,7 +239,7 @@ public class DanhSachMH extends javax.swing.JFrame {
                                 .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 51, Short.MAX_VALUE))))
+                        .addGap(0, 15, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,7 +251,7 @@ public class DanhSachMH extends javax.swing.JFrame {
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -282,16 +269,21 @@ public class DanhSachMH extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+            .addGap(0, 540, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -301,16 +293,20 @@ public class DanhSachMH extends javax.swing.JFrame {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<HoaDonModel> list = daoSP.TimKiem(txtTimKiem.getText());
-            for (HoaDonModel nv : list) {
-                String ThoiGianThem = "";
-                
-                if (nv.getNgayXuat() != null) {
-                    String dateString = nv.getNgayXuat();
-                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+            List<BaoHanhModel> list = dao.TimKiem(txtTimKiem.getText());
+            for (BaoHanhModel nv : list) {
+                String ngayBaoHanh="",ngayHHan="";
+                if (nv.getNgayBH() != null) {
+                    String dateString1 = nv.getNgayBH();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString1);
+                    ngayBaoHanh = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getTenKH(), nv.getHinhThuc(), nv.getTienKhach(), nv.getTienCon()};
+                if (nv.getNgayHetHan() != null) {
+                    String dateString2 = nv.getNgayHetHan();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString2);
+                    ngayHHan = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                }
+               Object[] row = new Object[]{nv.getMaBH(), nv.getMaHD(), nv.getSoEmei(), ngayBaoHanh, ngayHHan, nv.getGhiChu(),nv.getMaKH()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -325,26 +321,26 @@ public class DanhSachMH extends javax.swing.JFrame {
 
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         int chon = tblUser.getSelectedRow();
-        String name = (String) tblUser.getValueAt(chon, 0);
-        String soLuong = (String) tblUser.getValueAt(chon, 1);
-        String donGia = (String) tblUser.getValueAt(chon, 2);
-        String tongTien = (String) tblUser.getValueAt(chon, 3);
-        String ThoiGian = (String) tblUser.getValueAt(chon, 4);
-        String Ten = (String) tblUser.getValueAt(chon, 5);
-        String HinhThuc = (String) tblUser.getValueAt(chon, 6);
-        String Tienkhach = (String) tblUser.getValueAt(chon, 7);
-        String Tienthua = (String) tblUser.getValueAt(chon, 8);
-        DanhSachMH.setTongTien(Double.parseDouble(tongTien));
-        DanhSachMH.setSoLuong(Integer.parseInt(soLuong));
-        DanhSachMH.setDonGia(Double.parseDouble(donGia));
-        DanhSachMH.setTen(Ten);
-        DanhSachMH.setName1(name);
-        DanhSachMH.setNgay(ThoiGian);
-        DanhSachMH.setHinhThuc(HinhThuc);
-        DanhSachMH.setTienkhach(Double.parseDouble(Tienkhach));
-        DanhSachMH.setTienCon(Double.parseDouble(Tienthua));
+        String maBH = (String) tblUser.getValueAt(chon, 0);
+        String maSP =(String)tblUser.getValueAt(chon, 1);
+        String soImei = (String)tblUser.getValueAt(chon, 2);
+        String soNgayHB = (String)tblUser.getValueAt(chon, 3);
+        String NgayHH = (String)tblUser.getValueAt(chon, 4);
+        String GhiChu = (String)tblUser.getValueAt(chon, 5);
+        String maKH = (String)tblUser.getValueAt(chon, 6);
+        DanhSachBH.setMaBH(maBH);
+        DanhSachBH.setMaSP(maSP);
+        DanhSachBH.setSoEmei(soImei);
+        DanhSachBH.setNgayBH(NgayHH);
+        DanhSachBH.setNgayHH(NgayHH);
+        DanhSachBH.setGhiChu(GhiChu);
+        DanhSachBH.setMaKH(maKH);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
+
+    private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTimKiemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,20 +359,20 @@ public class DanhSachMH extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DanhSachMH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DanhSachMH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DanhSachMH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DanhSachMH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DanhSachBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DanhSachMH().setVisible(true);
+                new DanhSachBH().setVisible(true);
             }
         });
     }

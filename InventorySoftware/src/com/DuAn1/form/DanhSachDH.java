@@ -196,6 +196,11 @@ public class DanhSachDH extends javax.swing.JDialog {
                 txtTimKiemCaretUpdate(evt);
             }
         });
+        txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimKiemActionPerformed(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Số lượng bảng ghi:");
@@ -348,6 +353,10 @@ public class DanhSachDH extends javax.swing.JDialog {
         DanhSachDH.setNgay(ThoiGian);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
+
+    private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTimKiemActionPerformed
 
     /**
      * @param args the command line arguments

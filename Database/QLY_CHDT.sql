@@ -138,6 +138,9 @@ CREATE TABLE HOADON(
 	TenCTY NVARCHAR(50),
 	MaNV CHAR(10),
 	TenKH NVARCHAR(50),
+	HinhThucTT NVARCHAR(50),
+	TienKhach NVARCHAR(50),
+	TienCon NVARCHAR(50),
 	FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV) ON DELETE NO ACTION ON UPDATE CASCADE
 )
 CREATE TABLE HOADONCT(
@@ -151,7 +154,7 @@ CREATE TABLE HOADONCT(
 )
 CREATE TABLE BAOHANH(
 	MaBH CHAR(10) PRIMARY KEY,
-	MaHD CHAR(10) ,
+	MaSP CHAR(10) ,
 	SoIMEI CHAR(15),
 	NgayBH DATETIME ,
 	NgayHetHan DATETIME ,
@@ -312,14 +315,14 @@ Insert into DIENTHOAI values('SP00008','Bionics','OLEDt','111GB',null,'22Mb','46
 Insert into DIENTHOAI values('SP00009','Bionics','HDe','12GB',null,'22Mb','5453mAh','4GB')
 
 
-Insert into HOADON values ('HD00001',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Trần Thị Ánh')
-Insert into HOADON values ('HD00002',1,1,'10500000','10500000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thị Minh')
-Insert into HOADON values ('HD00003',3,1,'11500000','34500000','2023-07-07',null,'Apple','NV001',N'Lê Thanh Chúc')
-Insert into HOADON values ('HD00004',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thanh Ngọc')
-Insert into HOADON values ('HD00005',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Ngọc Cầm')
-Insert into HOADON values ('HD00006',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Thanh Trí')
-Insert into HOADON values ('HD00007',2,0,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Anh Khoa')
-Insert into HOADON values ('HD00008',3,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Nguyễn Anh Duy')
+Insert into HOADON values ('HD00001',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Trần Thị Ánh',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00002',1,1,'10500000','10500000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thị Minh',N'Tiền Mặt','11000000','500000')
+Insert into HOADON values ('HD00003',3,1,'11500000','34500000','2023-07-07',null,'Apple','NV001',N'Lê Thanh Chúc',N'Tiền Mặt','35000000','500000')
+Insert into HOADON values ('HD00004',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV001',N'Nguyễn Thanh Ngọc',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00005',2,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Ngọc Cầm',N'Chuyển Khoản','29000000','0')
+Insert into HOADON values ('HD00006',1,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Thanh Trí',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00007',2,0,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Trần Anh Khoa',N'Tiền Mặt','30000000','1000000')
+Insert into HOADON values ('HD00008',3,1,'14500000','29000000','2023-07-07',null,'Apple','NV002',N'Nguyễn Anh Duy',N'Tiền Mặt','30000000','1000000')
 
 
 Insert into HOADONCT values ('SP00002',3,'HD00001','100000000')
@@ -334,12 +337,12 @@ Insert into HOADONCT values ('SP00004',5,'HD00008','100000000')
 
 
 
-Insert into BAOHANH values ('BH00001','HD00001','123123','2023-01-20','2023-02-25',null,'KH00001')
-Insert into BAOHANH values ('BH00002','HD00002','112121','2023-01-20','2023-02-25',null,'KH00002')
-Insert into BAOHANH values ('BH00003','HD00003','234123','2023-01-20','2023-02-25',null,'KH00008')
-Insert into BAOHANH values ('BH00004','HD00004','192572','2023-01-20','2023-02-25',null,'KH00006')
-Insert into BAOHANH values ('BH00005','HD00005','987123','2023-01-20','2023-02-25',null,'KH00005')
-Insert into BAOHANH values ('BH00006','HD00006','567232','2023-01-20','2023-02-25',null,'KH00003')
+Insert into BAOHANH values ('BH00001','SP00001','123123','2023-01-20','2023-02-25',null,'KH00001')
+Insert into BAOHANH values ('BH00002','SP00002','112121','2023-01-20','2023-02-25',null,'KH00002')
+Insert into BAOHANH values ('BH00003','SP00003','234123','2023-01-20','2023-02-25',null,'KH00008')
+Insert into BAOHANH values ('BH00004','SP00004','192572','2023-01-20','2023-02-25',null,'KH00006')
+Insert into BAOHANH values ('BH00005','SP00005','987123','2023-01-20','2023-02-25',null,'KH00005')
+Insert into BAOHANH values ('BH00006','SP00006','567232','2023-01-20','2023-02-25',null,'KH00003')
 
 
 insert into BAOHANHCT values('BH00001','SP00001','103')
