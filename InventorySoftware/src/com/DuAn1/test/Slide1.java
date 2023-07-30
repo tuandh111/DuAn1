@@ -24,14 +24,14 @@ public class Slide1 extends javax.swing.JPanel {
 //thongke();
     }
 
-    public void thongke(){
-         List<Object[]> j = DaoThongKe.Top3SP();
-         
-         String name = (String) j.get(0)[1];
-         if(name!=null)
-         pictureBox1.setImage(new ImageIcon(getClass().getResource("/logos"+name)));
-      
-    }
+//    public void thongke(){
+//         List<Object[]> j = DaoThongKe.Top3SP();
+//         
+//         String name = (String) j.get(0)[1];
+//         if(name!=null)
+//         pictureBox1.setImage(new ImageIcon(getClass().getResource("/logos"+name)));
+//      
+//    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

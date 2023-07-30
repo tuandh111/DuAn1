@@ -54,6 +54,7 @@ public class HoaDon extends javax.swing.JPanel {
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     DefaultTableModel tblModel;
     public static String ma = "";
+    public static String hoten="";
 
     /**
      * Creates new form SanPham1
@@ -4364,6 +4365,7 @@ public class HoaDon extends javax.swing.JPanel {
 
     private void btnInBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInBillActionPerformed
         ma = txtMa.getText();
+        hoten=txtKhachhang.getText();
         InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
         hd.setVisible(true);
 
