@@ -12,11 +12,15 @@ import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.DatSPModel;
+import com.DuAn1.Model.SanPhamModel;
 import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.helper.DialogHelper;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,7 +28,8 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author trana
  */
-public class DaXoa extends javax.swing.JPanel {
+public class DaXoaSP extends javax.swing.JPanel {
+
     DefaultTableModel tblModel;
     DatSPDAO daoSP = new DatSPDAO();
     KhachHangDAO daoKH = new KhachHangDAO();
@@ -32,20 +37,23 @@ public class DaXoa extends javax.swing.JPanel {
     DatSPCTDAO daoDatSPCT = new DatSPCTDAO();
     ThongKeDao daoThongKe = new ThongKeDao();
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
+    SanPhamDAO dao = new SanPhamDAO();
+
     /**
      * Creates new form DaXoa
      */
-    public DaXoa() {
+    public DaXoaSP() {
         initComponents();
         filltable();
     }
-   void filltable() {
+
+    void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<DatSPModel> list = daoSP.selectDaXoa();
-            for (DatSPModel nv : list) {
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), nv.getThoiGianDat(), nv.getMaNV()};
+            List<SanPhamModel> list = dao.selectDaXoa();
+            for (SanPhamModel nv : list) {
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -53,26 +61,28 @@ public class DaXoa extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-     void them() {
-         int chon = tblUser.getSelectedRow();
-         
-         if(chon<0){
-             DialogHelper.alert(this,"Bạn chưa chọn danh sách trong bảng để khôi phục");
-             return;
-         }
-         String MaDH = (String) tblUser.getValueAt(chon, 0);
-        try {
-           
-            daoDatSP.KhoiPhuc(MaDH);
-            filltable();
-            ThaoTacModel ThaoTacModel = getFormThem();
-            daoThaoTac.insert(ThaoTacModel);
-            com.DuAn1.Helper.DialogHelper.alert(this, "Khôi phục thành công");
-        } catch (Exception e) {
-            e.printStackTrace();
-            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi khôi phục dữ liệu");
+
+    void them() {
+        int chon = tblUser.getSelectedRow();
+
+        if (chon < 0) {
+            DialogHelper.alert(this, "Bạn chưa chọn danh sách trong bảng để khôi phục");
+            return;
         }
+        String MaDH = (String) tblUser.getValueAt(chon, 0);
+
+        dao.khoiphuc(MaDH);
+        filltable();
+        ThaoTacModel ThaoTacModel = getFormThem();
+        try {
+            daoThaoTac.insert(ThaoTacModel);
+        } catch (SQLException ex) {
+            Logger.getLogger(DaXoaSP.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        com.DuAn1.Helper.DialogHelper.alert(this, "Khôi phục thành công");
+
     }
+
     public ThaoTacModel getFormThem() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
@@ -83,10 +93,11 @@ public class DaXoa extends javax.swing.JPanel {
         cd.setThoiGianXoa(null);
 
         cd.setThoIGianHoatDong(ShareHelper.ThoiGianHoatDong);
-        cd.setBanThaoTac("Khôi phục Đặt hàng");
+        cd.setBanThaoTac("Khôi phục sản phẩm");
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -118,11 +129,11 @@ public class DaXoa extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã ĐH", "Số lượng", "SĐT", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Mã nhân viên"
+                "Mã", "Tên", "Giá", "Số lượng", "Giảm giá"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -190,26 +201,26 @@ public class DaXoa extends javax.swing.JPanel {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         them();
-    
+
 
     }//GEN-LAST:event_button1ActionPerformed
 
     private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
         // TODO add your handling code here:
-        
-          tblModel = (DefaultTableModel) tblUser.getModel();
+
+        tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<DatSPModel> list = daoSP.selectDaXoaTheoMa(txtTimKiem.getText());
-            for (DatSPModel nv : list) {
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), nv.getThoiGianDat(), nv.getMaNV()};
+            List<SanPhamModel> list = dao.selectDaXoaTheoMa(txtTimKiem.getText());
+            for (SanPhamModel nv : list) {
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
-     
+
     }//GEN-LAST:event_txtTimKiemCaretUpdate
 
 

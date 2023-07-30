@@ -31,6 +31,7 @@ import com.DuAn1.DangNhap.NewSignin;
 import com.DuAn1.Dao.NhanVienDAO1;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.NhanVienModel;
+import com.DuAn1.form.DaXoaSP;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -94,7 +95,7 @@ public class Main extends javax.swing.JFrame {
                     } else if (subMenuIndex == 1) {
                         main.showForm(new DongMay());
                     } else if (subMenuIndex == 2) {
-                        main.showForm(new DaXoa());
+                        main.showForm(new DaXoaSP());
                     }
                 } else if (menuIndex == 3) {
                     if (subMenuIndex == 0) {
