@@ -4,6 +4,9 @@
  */
 package com.DuAn1.form;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author trana
@@ -17,14 +20,19 @@ public class InBill extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         BillHeader();
-   }
-private void BillHeader(){
-    txtBill.setText("=============================="+"\n"
-                +"Tên CTY"+"\n"
-        +"Contac No-xxxxxx"+"\n"
-        +"Adres-enter Adress"+"\n"
-        +"=============================="+"\n");
-}
+    }
+
+    private void BillHeader() {
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        txtBill.setText("==============================" + "\n"
+                + "==============Tên CTY: CTY TNHH TTA MOBILE===========" + "\n"
+                + "Thời gian xuất: " + formatted + "\n"
+                + "==============Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
+                + "==============================" + "\n");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,7 +164,7 @@ private void BillHeader(){
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
         txtBill.setText(
-        txtBill.getText()+txtname.getText()+"-"+txtSoLuong.getText()+"\t\t"+txtGia.getText()+"\n");
+                txtBill.getText() + txtname.getText() + "-" + txtSoLuong.getText() + "\t\t" + txtGia.getText() + "\n");
         txtname.setText("");
         txtSoLuong.setText("");
         txtGia.setText("");
@@ -165,8 +173,8 @@ private void BillHeader(){
     private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
         // TODO add your handling code here:
         try {
-            txtBill.setText(txtBill.getText()+"========================="+"\n"
-            +"TTA Mobile");
+            txtBill.setText(txtBill.getText() + "=========================" + "\n"
+                    + "TTA Mobile");
             txtBill.print();
         } catch (Exception e) {
             e.printStackTrace();

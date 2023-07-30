@@ -31,11 +31,13 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import com.DuAn1.main.Main;
+import java.awt.print.PrinterException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -51,6 +53,7 @@ public class HoaDon extends javax.swing.JPanel {
     HoaDonCTDAO HDCTDao = new HoaDonCTDAO();
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     DefaultTableModel tblModel;
+    public static String ma="";
 
     /**
      * Creates new form SanPham1
@@ -935,7 +938,7 @@ public class HoaDon extends javax.swing.JPanel {
                     .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(txtNgayXuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(57, 57, 57)
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
@@ -4154,8 +4157,11 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_btnHuyHDActionPerformed
 
     private void btnInBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInBillActionPerformed
-        InBill danhSach = new InBill();
-        danhSach.setVisible(true);
+        ma=txtMa.getText();
+        InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
+        hd.setVisible(true);
+        
+      
     }//GEN-LAST:event_btnInBillActionPerformed
     public void themSPCT() {
         try {
