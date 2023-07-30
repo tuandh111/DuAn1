@@ -80,6 +80,29 @@ public class DanhSachMH extends javax.swing.JFrame {
      */
     public DanhSachMH() {
         initComponents();
+        filltable();
+    }
+
+    void filltable() {
+        tblModel = (DefaultTableModel) tblUser.getModel();
+        tblModel.setRowCount(0);
+        try {
+            List<HoaDonModel> list = daoSP.select();
+            for (HoaDonModel nv : list) {
+                String ThoiGianThem = "";
+
+                if (nv.getNgayXuat()!= null) {
+                    String dateString = nv.getNgayXuat();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                }
+                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getMaNV(), nv.getTenKH()};
+                tblModel.addRow(row);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
     }
 
     /**

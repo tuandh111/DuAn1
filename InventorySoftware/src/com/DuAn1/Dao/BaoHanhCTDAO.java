@@ -18,6 +18,7 @@ import java.util.List;
  * @author trana
  */
 public class BaoHanhCTDAO {
+
     public void insert(BaoHanhCTModel model) {
         String sql = "Insert into BAOHANHCT values (?,?,?)";
         com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,
@@ -26,14 +27,22 @@ public class BaoHanhCTDAO {
                 model.getSoLuong()
         );
     }
+
     public void delete(BaoHanhCTModel model) {
         String sql = "DELETE BAOHANHCT WHERE MaBHCT = ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
+
     public List<BaoHanhCTModel> selectAll(String MaBHCT) {
         String sql = "SELECT * FROM BAOHANHCT WHERE MaBH = ?";
-        return select(sql,MaBHCT);
+        return select(sql, MaBHCT);
     }
+
+    public void XoaTatCa(String MaDH) {
+        String sql = "DELETE BAOHANHCT WHERE MaBH = ?";
+        com.DuAn1.Helper.JdbcHelper.executeUpdate(sql, MaDH);
+    }
+
     public List<BaoHanhCTModel> select(String sql, Object... args) {
         List<BaoHanhCTModel> list = new ArrayList<>();
         try {
@@ -52,6 +61,7 @@ public class BaoHanhCTDAO {
         }
         return list;
     }
+
     private BaoHanhCTModel readFromResultSet(ResultSet rs) throws SQLException {
         BaoHanhCTModel model = new BaoHanhCTModel();
         model.setMaBHCT(rs.getInt(1));

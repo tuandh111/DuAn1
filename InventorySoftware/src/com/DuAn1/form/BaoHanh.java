@@ -9,6 +9,7 @@ import com.DuAn1.Dao.BaoHanhDAO;
 import com.DuAn1.Dao.HoaDonDAO;
 import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Model.BaoHanhCTModel;
@@ -16,6 +17,7 @@ import com.DuAn1.Model.BaoHanhModel;
 import com.DuAn1.Model.HoaDonModel;
 import com.DuAn1.Model.KhachHangModel;
 import com.DuAn1.Model.SanPhamModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
@@ -27,6 +29,8 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -51,11 +55,14 @@ public class BaoHanh extends javax.swing.JPanel {
     SanPhamDAO daosp = new SanPhamDAO();
     ThongKeDao daoThongKe = new ThongKeDao();
     KhachHangDAO daoKH = new KhachHangDAO();
+    ThaoTacDAO daoThaoTac = new ThaoTacDAO();
+
     /**
      * Creates new form SanPham1
      */
     public BaoHanh() {
         initComponents();
+        tieude();
 //        loadCboHD();
 //        loadCboKH();
 //        fillTable();
@@ -103,7 +110,8 @@ public class BaoHanh extends javax.swing.JPanel {
         lbISamSung9.setVisible(false);
         LoadSP();
     }
- BaoHanhCTModel getFormThemIPhone1() {
+
+    BaoHanhCTModel getFormThemIPhone1() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
@@ -114,18 +122,18 @@ public class BaoHanh extends javax.swing.JPanel {
     BaoHanhCTModel getFormThemIPhone2() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        
+
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone2.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemIPhone3() {
-       BaoHanhCTModel cd = new BaoHanhCTModel();
+        BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        
+
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone3.getText());
         return cd;
     }
 
@@ -133,7 +141,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone4.getText());
         return cd;
     }
 
@@ -141,7 +149,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone5.getText());
         return cd;
     }
 
@@ -149,7 +157,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone6.getText());
         return cd;
     }
 
@@ -157,30 +165,30 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone7.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemIPhone8() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
-       cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone8.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemIPhone9() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
-       cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaIphone9.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemSony1() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
-//        cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaBH(txtMaBH.getText());
+        cd.setMaHD(txtMaSony1.getText());
         cd.setSoLuong(SoLuong.getSoLuong());
         return cd;
     }
@@ -189,7 +197,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony2.getText());
         return cd;
     }
 
@@ -197,7 +205,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony3.getText());
         return cd;
     }
 
@@ -205,7 +213,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony4.getText());
         return cd;
     }
 
@@ -213,14 +221,14 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony5.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemSony6() {
-       BaoHanhCTModel cd = new BaoHanhCTModel();
+        BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setMaBH(txtMaBH.getText());
+        cd.setMaBH(txtMaSony6.getText());
         cd.setMaHD(txtmaHD.getText());
         return cd;
     }
@@ -229,15 +237,15 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony7.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemSony8() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
-       cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony8.getText());
         return cd;
     }
 
@@ -245,15 +253,15 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSony9.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemSamsung1() {
-       BaoHanhCTModel cd = new BaoHanhCTModel();
+        BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung1.getText());
         return cd;
     }
 
@@ -261,15 +269,15 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung2.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemSamsung3() {
-       BaoHanhCTModel cd = new BaoHanhCTModel();
+        BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung3.getText());
         return cd;
     }
 
@@ -277,15 +285,15 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung4.getText());
         return cd;
     }
 
-   BaoHanhCTModel getFormThemSamsung5() {
+    BaoHanhCTModel getFormThemSamsung5() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung5.getText());
         return cd;
     }
 
@@ -293,7 +301,7 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung6.getText());
         return cd;
     }
 
@@ -302,7 +310,7 @@ public class BaoHanh extends javax.swing.JPanel {
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung7.getText());
         return cd;
     }
 
@@ -310,17 +318,18 @@ public class BaoHanh extends javax.swing.JPanel {
         BaoHanhCTModel cd = new BaoHanhCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung8.getText());
         return cd;
     }
 
     BaoHanhCTModel getFormThemSamsung9() {
         BaoHanhCTModel cd = new BaoHanhCTModel();
-       cd.setSoLuong(SoLuong.getSoLuong());
+        cd.setSoLuong(SoLuong.getSoLuong());
         cd.setMaBH(txtMaBH.getText());
-        cd.setMaHD(txtmaHD.getText());
+        cd.setMaHD(txtMaSamSung9.getText());
         return cd;
     }
+
     public void LoadSP() {
         List<SanPhamModel> list = daosp.select();
         int i = 0;
@@ -476,56 +485,56 @@ public class BaoHanh extends javax.swing.JPanel {
                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony2.setText(sp.getMaSP());
+                    txtMaSony2.setText(sp.getMaSP());
                     LbSony2.setVisible(true);
                 }
                 if (z == 2) {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony3.setText(sp.getMaSP());
+                    txtMaSony3.setText(sp.getMaSP());
                     LbSony3.setVisible(true);
                 }
                 if (z == 3) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony4.setText(sp.getMaSP());
+                    txtMaSony4.setText(sp.getMaSP());
                     LbSony4.setVisible(true);
                 }
                 if (z == 4) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony5.setText(sp.getMaSP());
+                    txtMaSony5.setText(sp.getMaSP());
                     LbSony5.setVisible(true);
                 }
                 if (z == 5) {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony6.setText(sp.getMaSP());
+                    txtMaSony6.setText(sp.getMaSP());
                     LbSony6.setVisible(true);
                 }
                 if (z == 6) {
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony7.setText(sp.getMaSP());
+                    txtMaSony7.setText(sp.getMaSP());
                     LbSony7.setVisible(true);
                 }
                 if (z == 7) {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony8.setText(sp.getMaSP());
+                    txtMaSony8.setText(sp.getMaSP());
                     LbSony8.setVisible(true);
                 }
                 if (z == 8) {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
-                     txtMaSony9.setText(sp.getMaSP());
+                    txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
 
@@ -536,7 +545,7 @@ public class BaoHanh extends javax.swing.JPanel {
 
     void tieude() {
         model = new DefaultTableModel();
-        String[] name = new String[]{"MaBH", "MaHD", "IMEI", "NgayBH", "NgayHH", "GChu", "MaKH"};
+        String[] name = new String[]{"Mã bảo hành", "Mã sản phẩm", "Số Lượng"};
         model.setColumnIdentifiers(name);
         tblBH.setModel(model);
     }
@@ -547,7 +556,7 @@ public class BaoHanh extends javax.swing.JPanel {
         try {
             List<BaoHanhCTModel> list = bhctdao.selectAll(txtMaBH.getText());
             for (BaoHanhCTModel bhct : list) {
-                Object[] row = new Object[]{bhct.getMaBHCT(), bhct.getMaBH(), bhct.getMaHD(), bhct.getSoLuong()};
+                Object[] row = new Object[]{bhct.getMaBH(), bhct.getMaHD(), bhct.getSoLuong()};
                 model.addRow(row);
             }
         } catch (Exception e) {
@@ -607,7 +616,6 @@ public class BaoHanh extends javax.swing.JPanel {
         txtThongBao = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBH = new javaswingdev.swing.table.Table();
-        button4 = new com.DuAn1.swing0.button0();
         button5 = new com.DuAn1.swing0.button0();
         btnThem = new com.DuAn1.swing0.button0();
         materialTabbed1 = new swing.MaterialTabbed();
@@ -882,6 +890,11 @@ public class BaoHanh extends javax.swing.JPanel {
         button2.setBackground(new java.awt.Color(255, 51, 51));
         button2.setForeground(new java.awt.Color(255, 255, 255));
         button2.setText("Hủy bỏ");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         btnXemDSBH.setBackground(new java.awt.Color(153, 153, 255));
         btnXemDSBH.setText("Xem danh sách bảo hành");
@@ -1046,12 +1059,14 @@ public class BaoHanh extends javax.swing.JPanel {
         ));
         jScrollPane4.setViewportView(tblBH);
 
-        button4.setBackground(new java.awt.Color(153, 153, 255));
-        button4.setText("Làm mới");
-
         button5.setBackground(new java.awt.Color(255, 51, 51));
         button5.setForeground(new java.awt.Color(255, 255, 255));
-        button5.setText("Hủy bỏ");
+        button5.setText("Hủy tất cả");
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
 
         btnThem.setBackground(new java.awt.Color(153, 153, 255));
         btnThem.setText("Thêm bảo hành");
@@ -3646,13 +3661,12 @@ public class BaoHanh extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(62, 62, 62)
+                                .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -3674,8 +3688,7 @@ public class BaoHanh extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 1036, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3700,8 +3713,8 @@ public class BaoHanh extends javax.swing.JPanel {
     private void txtMoTaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMoTaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMoTaMouseClicked
-void themBH(){
-    try {
+    void themBH() {
+        try {
             BaoHanhModel model = getFormTao();
             dao.update(model);
             com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
@@ -3709,8 +3722,9 @@ void themBH(){
             e.printStackTrace();
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
-}
-void clearForm() {
+    }
+
+    void clearForm() {
         txtMaBH.setText("");
         txtKhachhang.setText("");
         txtmaHD.setText("");
@@ -3781,6 +3795,7 @@ void clearForm() {
         } catch (Exception e) {
         }
         bh.setGhiChu(txtMoTa.getText());
+        bh.setMaKH(txtKhachhang.getText());
         return bh;
     }
 
@@ -3864,7 +3879,7 @@ void clearForm() {
         double tongGia = 0;
         int tongSoLuong = 0;
         try {
-            List<BaoHanhCTModel> list = bhctdao.selectAll(txtMaBH.getText());  
+            List<BaoHanhCTModel> list = bhctdao.selectAll(txtMaBH.getText());
             for (BaoHanhCTModel bhct : list) {
                 txtmaHD.setText(bhct.getMaHD());
             }
@@ -4271,7 +4286,68 @@ void clearForm() {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
     }//GEN-LAST:event_btnAdd1ActionPerformed
-public void themSPCT() {
+    void DeleteAll() {
+        if (txtMaBH.getText().equals("")) {
+            com.tuandhpc05076.helper.DialogHelper.alert(this, "Bạn có đặt hàng nào");
+            return;
+        }
+        try {
+            bhctdao.XoaTatCa(txtMaBH.getText());
+
+            filltable();
+
+            com.DuAn1.Helper.DialogHelper.alert(this, "Xóa tất cả sản phẩm thành công");
+        } catch (Exception e) {
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi xóa dữ liệu");
+        }
+
+    }
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        DeleteAll();
+    }//GEN-LAST:event_button5ActionPerformed
+    boolean check() {
+        if (txtMaBH.getText().equals("")) {
+            com.tuandhpc05076.helper.DialogHelper.alert(this, "Mã bạn đã để trống");
+            return false;
+        }
+        return true;
+    }
+
+    public void Delete() {
+        if (check() == false) {
+            return;
+        }
+        try {
+            BaoHanhModel model = getFormTao();
+            dao.delete(model);
+            ThaoTacModel ThaoTacModel = getFormDelete();
+            daoThaoTac.insert(ThaoTacModel);
+            clearForm();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Xóa dữ liệu thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi Xóa dữ liệu");
+        }
+    }
+
+    public ThaoTacModel getFormDelete() {
+        ThaoTacModel cd = new ThaoTacModel();
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        cd.setThoiGianThem(null);
+        cd.setThoiGianSua(null);
+        cd.setThoiGianXoa(formatted);
+
+        cd.setThoIGianHoatDong(com.DuAn1.Helper.ShareHelper.ThoiGianHoatDong);
+        cd.setBanThaoTac("Hủy Hóa Đơn");
+        cd.setMaNV(com.DuAn1.Helper.ShareHelper.USER.getMaNV());
+        return cd;
+    }
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        Delete();
+    }//GEN-LAST:event_button2ActionPerformed
+    public void themSPCT() {
         try {
             BaoHanhCTModel model = getFormThemIPhone1();
 
@@ -4317,7 +4393,6 @@ public void themSPCT() {
     private com.DuAn1.swing0.button0 btnXemDSBH;
     private com.DuAn1.swing0.button0 button01;
     private com.DuAn1.swing0.button0 button2;
-    private com.DuAn1.swing0.button0 button4;
     private com.DuAn1.swing0.button0 button5;
     private com.DuAn1.swing0.button0 button7;
     private com.DuAn1.swing0.button0 button9;

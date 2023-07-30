@@ -22,6 +22,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -160,7 +162,15 @@ public class NhanVien extends javax.swing.JPanel {
         NhanVienModel nv = new NhanVienModel();
         nv.setMaNV(txtTaikhoan.getText());
         nv.setHoTen(txtHoten.getText());
-        nv.setNgaySinh(txtNgaysinh.getText());
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaysinh.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            nv.setNgaySinh(ngayNhap);
+
+        } catch (Exception e) {
+        }
         if (cboGioitinh.getSelectedItem().equals("Nam")) {
             nv.setGioiTinh(true);
         } else {
@@ -240,7 +250,14 @@ public class NhanVien extends javax.swing.JPanel {
     void setForm(NhanVienModel nv) {
         txtTaikhoan.setText(nv.getMaNV());
         txtHoten.setText(nv.getHoTen());
-        txtNgaysinh.setText(nv.getNgaySinh());
+        try {
+            String dateString = nv.getNgaySinh();
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgaysinh.setText(formattedDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
         cboGioitinh.setSelectedItem(nv.isGioiTinh() ? "Nam" : "Nữ");
         txtDiachi.setText(nv.getDiaChi());
         txtSdt.setText(nv.getSDT());
