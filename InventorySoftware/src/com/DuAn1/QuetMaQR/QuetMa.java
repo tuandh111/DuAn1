@@ -8,6 +8,7 @@ package com.DuAn1.QuetMaQR;
  *
  * @author DELL E5470
  */
+import com.DuAn1.Helper.ShareHelper;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
@@ -54,6 +55,7 @@ public class QuetMa extends JDialog {
     }
 
     public QuetMa(JTextField txt) {
+        setIconImage(ShareHelper.APP_ICON);
         //super(parent, modal);
         // set the title of the frame
         setLayout(new FlowLayout()); // set the layout of the frame

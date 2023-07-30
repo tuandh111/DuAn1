@@ -979,6 +979,7 @@ public class SanPham extends javax.swing.JPanel {
         });
         txtHinh.add(txtHinhAnh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 140));
 
+        txtMaSP.setEditable(false);
         txtMaSP.setLabelText("Mã sản phẩm");
         txtMaSP.setLineColor(new java.awt.Color(102, 102, 255));
         txtMaSP.setSelectionColor(new java.awt.Color(0, 0, 0));
