@@ -332,54 +332,63 @@ public class BaoHanh extends javax.swing.JPanel {
                     txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone1.setText(sp.getMaSP());
                     lbIphone1.setVisible(true);
                 }
                 if (i == 1) {
                     txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone2.setText(sp.getMaSP());
                     lbIphone2.setVisible(true);
                 }
                 if (i == 2) {
                     txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone3.setText(sp.getMaSP());
                     lbIphone3.setVisible(true);
                 }
                 if (i == 3) {
                     txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone4.setText(sp.getMaSP());
                     lbIphone4.setVisible(true);
                 }
                 if (i == 4) {
                     txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone5.setText(sp.getMaSP());
                     lbIphone5.setVisible(true);
                 }
                 if (i == 5) {
                     txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone6.setText(sp.getMaSP());
                     lbIphone6.setVisible(true);
                 }
                 if (i == 6) {
                     txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone7.setText(sp.getMaSP());
                     lbIphone7.setVisible(true);
                 }
                 if (i == 7) {
                     txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone8.setText(sp.getMaSP());
                     lbIphone8.setVisible(true);
                 }
                 if (i == 8) {
                     txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaIphone9.setText(sp.getMaSP());
                     lbIphone9.setVisible(true);
                 }
                 i++;
@@ -392,54 +401,63 @@ public class BaoHanh extends javax.swing.JPanel {
                     txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung1.setText(sp.getMaSP());
                     lbISamSung1.setVisible(true);
                 }
                 if (j == 1) {
                     txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung2.setText(sp.getMaSP());
                     lbISamSung2.setVisible(true);
                 }
                 if (j == 2) {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung3.setText(sp.getMaSP());
                     lbISamSung3.setVisible(true);
                 }
                 if (j == 3) {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung4.setText(sp.getMaSP());
                     lbISamSung4.setVisible(true);
                 }
                 if (j == 4) {
                     txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung5.setText(sp.getMaSP());
                     lbISamSung5.setVisible(true);
                 }
                 if (j == 5) {
                     txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung6.setText(sp.getMaSP());
                     lbISamSung6.setVisible(true);
                 }
                 if (j == 6) {
                     txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung7.setText(sp.getMaSP());
                     lbISamSung7.setVisible(true);
                 }
                 if (j == 7) {
                     txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung8.setText(sp.getMaSP());
                     lbISamSung8.setVisible(true);
                 }
                 if (j == 8) {
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSamSung9.setText(sp.getMaSP());
                     lbISamSung9.setVisible(true);
                 }
                 j++;
@@ -451,54 +469,63 @@ public class BaoHanh extends javax.swing.JPanel {
                     txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
+                    txtMaSony1.setText(sp.getMaSP());
                     LbSony1.setVisible(true);
                 }
                 if (z == 1) {
                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony2.setText(sp.getMaSP());
                     LbSony2.setVisible(true);
                 }
                 if (z == 2) {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony3.setText(sp.getMaSP());
                     LbSony3.setVisible(true);
                 }
                 if (z == 3) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony4.setText(sp.getMaSP());
                     LbSony4.setVisible(true);
                 }
                 if (z == 4) {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony5.setText(sp.getMaSP());
                     LbSony5.setVisible(true);
                 }
                 if (z == 5) {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony6.setText(sp.getMaSP());
                     LbSony6.setVisible(true);
                 }
                 if (z == 6) {
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony7.setText(sp.getMaSP());
                     LbSony7.setVisible(true);
                 }
                 if (z == 7) {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony8.setText(sp.getMaSP());
                     LbSony8.setVisible(true);
                 }
                 if (z == 8) {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
+                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
 
@@ -581,7 +608,6 @@ public class BaoHanh extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBH = new javaswingdev.swing.table.Table();
         button4 = new com.DuAn1.swing0.button0();
-        button8 = new com.DuAn1.swing0.button0();
         button5 = new com.DuAn1.swing0.button0();
         btnThem = new com.DuAn1.swing0.button0();
         materialTabbed1 = new swing.MaterialTabbed();
@@ -1023,20 +1049,12 @@ public class BaoHanh extends javax.swing.JPanel {
         button4.setBackground(new java.awt.Color(153, 153, 255));
         button4.setText("Làm mới");
 
-        button8.setBackground(new java.awt.Color(153, 153, 255));
-        button8.setText("Sửa");
-        button8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button8ActionPerformed(evt);
-            }
-        });
-
         button5.setBackground(new java.awt.Color(255, 51, 51));
         button5.setForeground(new java.awt.Color(255, 255, 255));
         button5.setText("Hủy bỏ");
 
         btnThem.setBackground(new java.awt.Color(153, 153, 255));
-        btnThem.setText("Thêm ");
+        btnThem.setText("Thêm bảo hành");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemActionPerformed(evt);
@@ -2745,7 +2763,7 @@ public class BaoHanh extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbIphone3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbIphone1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3632,10 +3650,8 @@ public class BaoHanh extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
-                                .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
                                 .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -3658,7 +3674,6 @@ public class BaoHanh extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 1036, Short.MAX_VALUE))
@@ -3682,16 +3697,35 @@ public class BaoHanh extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button8ActionPerformed
-
     private void txtMoTaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMoTaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMoTaMouseClicked
+void themBH(){
+    try {
+            BaoHanhModel model = getFormTao();
+            dao.update(model);
+            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+}
+void clearForm() {
+        txtMaBH.setText("");
+        txtKhachhang.setText("");
+        txtmaHD.setText("");
+        txtemei.setText("");
+//        LocalDateTime current = LocalDateTime.now();
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS");
+//        String formatted = current.format(formatter);
+//        txtNgayXuat.setText(formatted);
+        txtMoTa.setText("");
+    }
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
         // TODO add your handling code here:
+        themBH();
+        clearForm();
     }//GEN-LAST:event_button7ActionPerformed
 
     private void btnXemDSBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDSBHActionPerformed
@@ -3831,108 +3865,20 @@ public class BaoHanh extends javax.swing.JPanel {
         int tongSoLuong = 0;
         try {
             List<BaoHanhCTModel> list = bhctdao.selectAll(txtMaBH.getText());  
-            
+            for (BaoHanhCTModel bhct : list) {
+                txtmaHD.setText(bhct.getMaHD());
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
-    private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
-        // TODO add your handling code here:
+    private void btnAdd19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd19ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-            BaoHanhCTModel model = getFormThemSony1();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_btnAdd1ActionPerformed
-
-    private void txtadd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd3ActionPerformed
-        // TODO add your handling code here:
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSony2();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_txtadd3ActionPerformed
-
-    private void txtadd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd4ActionPerformed
-        // TODO add your handling code here:
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSony3();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_txtadd4ActionPerformed
-
-    private void txtadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd1ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-            BaoHanhCTModel model = getFormThemSony4();
-
-           bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd1ActionPerformed
-
-    private void txtadd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd2ActionPerformed
-        // TODO add your handling code here:
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSony5();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_txtadd2ActionPerformed
-
-    private void txtadd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd5ActionPerformed
-        // TODO add your handling code here:
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-            BaoHanhCTModel model = getFormThemSony6();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_txtadd5ActionPerformed
-
-    private void txtadd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd6ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSony7();
+            BaoHanhCTModel model = getFormThemSamsung9();
 
             bhctdao.insert(model);
             filltable();
@@ -3941,13 +3887,13 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd6ActionPerformed
+    }//GEN-LAST:event_btnAdd19ActionPerformed
 
-    private void txtadd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd7ActionPerformed
+    private void btnAdd18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd18ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemSony8();
+            BaoHanhCTModel model = getFormThemSamsung8();
 
             bhctdao.insert(model);
             filltable();
@@ -3956,13 +3902,13 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd7ActionPerformed
+    }//GEN-LAST:event_btnAdd18ActionPerformed
 
-    private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
+    private void btnAdd17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd17ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemSony9();
+            BaoHanhCTModel model = getFormThemSamsung7();
 
             bhctdao.insert(model);
             filltable();
@@ -3971,13 +3917,13 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtadd8ActionPerformed
+    }//GEN-LAST:event_btnAdd17ActionPerformed
 
-    private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
+    private void btnAdd15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd15ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemIPhone3();
+            BaoHanhCTModel model = getFormThemSamsung5();
 
             bhctdao.insert(model);
             filltable();
@@ -3986,13 +3932,13 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd4ActionPerformed
+    }//GEN-LAST:event_btnAdd15ActionPerformed
 
-    private void btnAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd3ActionPerformed
+    private void btnAdd16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd16ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemIPhone2();
+            BaoHanhCTModel model = getFormThemSamsung6();
 
             bhctdao.insert(model);
             filltable();
@@ -4001,29 +3947,13 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd3ActionPerformed
+    }//GEN-LAST:event_btnAdd16ActionPerformed
 
-    private void btnAdd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd5ActionPerformed
-        // TODO add your handling code here:
+    private void btnAdd13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd13ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemIPhone4();
-
-            bhctdao.insert(model);
-            filltable();
-            DialogHelper.alert(this, "Thêm sản phẩm thành công");
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_btnAdd5ActionPerformed
-
-    private void btnAdd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd7ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemIPhone6();
+            BaoHanhCTModel model = getFormThemSamsung3();
 
             bhctdao.insert(model);
             filltable();
@@ -4032,114 +3962,7 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd7ActionPerformed
-
-    private void btnAdd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd6ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-            BaoHanhCTModel model = getFormThemIPhone5();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd6ActionPerformed
-
-    private void btnAdd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd9ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemIPhone8();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd9ActionPerformed
-
-    private void btnAdd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd8ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemIPhone7();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd8ActionPerformed
-
-    private void btnAdd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd10ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemIPhone9();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd10ActionPerformed
-public void themSPCT() {
-        try {
-            BaoHanhCTModel model = getFormThemIPhone1();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }
-    private void btnAdd20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd20ActionPerformed
-        // TODO add your handling code here:
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        themSPCT();
-    }//GEN-LAST:event_btnAdd20ActionPerformed
-
-    private void btnAdd11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd11ActionPerformed
-        // TODO add your handling code here:
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSamsung1();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-    }//GEN-LAST:event_btnAdd11ActionPerformed
-
-    private void btnAdd12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd12ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSamsung2();
-
-            bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd12ActionPerformed
+    }//GEN-LAST:event_btnAdd13ActionPerformed
 
     private void btnAdd14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd14ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
@@ -4156,11 +3979,11 @@ public void themSPCT() {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd14ActionPerformed
 
-    private void btnAdd13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd13ActionPerformed
+    private void btnAdd12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd12ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemSamsung3();
+            BaoHanhCTModel model = getFormThemSamsung2();
 
             bhctdao.insert(model);
             filltable();
@@ -4169,13 +3992,35 @@ public void themSPCT() {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd13ActionPerformed
+    }//GEN-LAST:event_btnAdd12ActionPerformed
 
-    private void btnAdd16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd16ActionPerformed
+    private void btnAdd11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd11ActionPerformed
+        // TODO add your handling code here:
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemSamsung6();
+            BaoHanhCTModel model = getFormThemSamsung1();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_btnAdd11ActionPerformed
+
+    private void btnAdd20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd20ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        themSPCT();
+    }//GEN-LAST:event_btnAdd20ActionPerformed
+
+    private void btnAdd10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd10ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone9();
 
             bhctdao.insert(model);
             filltable();
@@ -4184,58 +4029,13 @@ public void themSPCT() {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd16ActionPerformed
+    }//GEN-LAST:event_btnAdd10ActionPerformed
 
-    private void btnAdd15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd15ActionPerformed
+    private void btnAdd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd8ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
-             BaoHanhCTModel model = getFormThemSamsung5();
-
-             bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd15ActionPerformed
-
-    private void btnAdd17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd17ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSamsung7();
-
-             bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd17ActionPerformed
-
-    private void btnAdd18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd18ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSamsung8();
-
-             bhctdao.insert(model);
-            filltable();
-        } catch (Exception e) {
-            e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd18ActionPerformed
-
-    private void btnAdd19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd19ActionPerformed
-        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
-        sl.setVisible(true);
-        try {
-             BaoHanhCTModel model = getFormThemSamsung9();
+            BaoHanhCTModel model = getFormThemIPhone7();
 
             bhctdao.insert(model);
             filltable();
@@ -4244,8 +4044,244 @@ public void themSPCT() {
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdd19ActionPerformed
+    }//GEN-LAST:event_btnAdd8ActionPerformed
 
+    private void btnAdd9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd9ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone8();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdd9ActionPerformed
+
+    private void btnAdd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd6ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone5();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdd6ActionPerformed
+
+    private void btnAdd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd7ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone6();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdd7ActionPerformed
+
+    private void btnAdd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd5ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone4();
+
+            bhctdao.insert(model);
+            filltable();
+            DialogHelper.alert(this, "Thêm sản phẩm thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_btnAdd5ActionPerformed
+
+    private void btnAdd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd3ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone2();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdd3ActionPerformed
+
+    private void btnAdd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd4ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemIPhone3();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdd4ActionPerformed
+
+    private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony9();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd8ActionPerformed
+
+    private void txtadd7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd7ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony8();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd7ActionPerformed
+
+    private void txtadd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd6ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony7();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd6ActionPerformed
+
+    private void txtadd5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd5ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony6();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_txtadd5ActionPerformed
+
+    private void txtadd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd2ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony5();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_txtadd2ActionPerformed
+
+    private void txtadd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd1ActionPerformed
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony4();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtadd1ActionPerformed
+
+    private void txtadd4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd4ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony3();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_txtadd4ActionPerformed
+
+    private void txtadd3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd3ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony2();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_txtadd3ActionPerformed
+
+    private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
+        // TODO add your handling code here:
+        SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
+        sl.setVisible(true);
+        try {
+            BaoHanhCTModel model = getFormThemSony1();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }//GEN-LAST:event_btnAdd1ActionPerformed
+public void themSPCT() {
+        try {
+            BaoHanhCTModel model = getFormThemIPhone1();
+
+            bhctdao.insert(model);
+            filltable();
+        } catch (Exception e) {
+            e.printStackTrace();
+            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private swing.PanelShadow LbSony1;
@@ -4284,7 +4320,6 @@ public void themSPCT() {
     private com.DuAn1.swing0.button0 button4;
     private com.DuAn1.swing0.button0 button5;
     private com.DuAn1.swing0.button0 button7;
-    private com.DuAn1.swing0.button0 button8;
     private com.DuAn1.swing0.button0 button9;
     private com.raven.datechooser.DateChooser dateChooser;
     private com.raven.datechooser.DateChooser dateChooser1;
