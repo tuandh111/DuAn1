@@ -65,6 +65,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
 //            txtHinhAnh.setIcon(new ImageIcon(scaledImage));
 //
 //        }
+setIconImage(ShareHelper.APP_ICON);
         select();
     }
 

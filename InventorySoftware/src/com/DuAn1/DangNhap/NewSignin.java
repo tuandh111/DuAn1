@@ -402,6 +402,7 @@ public class NewSignin extends javax.swing.JFrame {
     public static ArrayList<O_DangNhap> list1 = new ArrayList<>();
     O_DangNhap dn = new O_DangNhap();
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        
         try {
             //        String user = txtusername.getText();
 //        String pass = txtmatkhau.getText();

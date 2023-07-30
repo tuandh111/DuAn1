@@ -5,6 +5,7 @@
 package com.DuAn1.Dao;
 
 import com.DuAn1.Helper.JdbcHelper;
+import com.DuAn1.Model.DatSPModel;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.SanPhamModel;
 import java.sql.ResultSet;
@@ -64,11 +65,29 @@ public class SanPhamDAO {
         return select(sql);
     }
 
+    public List<SanPhamModel> selectDaXoa() {
+        String sql = "SELECT * FROM SANPHAM where TrangThai=0";
+        return select(sql);
+    }
+
+    public List<SanPhamModel> selectDaXoaTheoMa(String Ma) {
+        String sql = "SELECT * FROM sanpham WHERE TrangThai =0 and MaSP like ?";
+        return select(sql, "%" + Ma + "%");
+    }
+
+    public void khoiphuc(String model) {
+        String sql = "update sanpham set TrangThai=1 where MaSP like ?";
+        JdbcHelper.executeUpdate(sql, model);
+    }
+
     public List<SanPhamModel> TimKiemTheoTen(String TenSP) {
         String sql = "SELECT * FROM SANPHAM where TenSP like ? and TrangThai=1";
         return select(sql, "%" + TenSP + "%");
     }
-
+ public List<SanPhamModel> TimKiemTheoMa(String TenSP) {
+        String sql = "SELECT * FROM SANPHAM where MaSP like ? and TrangThai=1";
+        return select(sql, "%" + TenSP + "%");
+    }
     public List<SanPhamModel> selectSoLuong() {
         String sql = "SELECT * FROM SANPHAM";
         return select(sql);
@@ -159,7 +178,8 @@ public class SanPhamDAO {
         String sql = "select * from sanpham order by Gia desc";
         return this.select(sql);
     }
-       public List<SanPhamModel> orderBySoLuongTang() {
+
+    public List<SanPhamModel> orderBySoLuongTang() {
         String sql = "select * from sanpham order by SoLuong";
         return this.select(sql);
     }
@@ -168,5 +188,5 @@ public class SanPhamDAO {
         String sql = "select * from sanpham order by SoLuong desc";
         return this.select(sql);
     }
-    
+
 }

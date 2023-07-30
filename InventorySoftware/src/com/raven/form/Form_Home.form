@@ -127,7 +127,7 @@
         <Component class="com.raven.swing.noticeboard.NoticeBoard" name="noticeBoard">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="6" y="273" width="411" height="160"/>
+              <AbsoluteConstraints x="6" y="233" width="411" height="200"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -152,27 +152,6 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="sansserif" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="69" green="69" red="69" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="C&#xe1;c s&#x1ea3;n ph&#x1ea9;m &#x111;ang b&#xe1;n ch&#x1ea1;y"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                <EmptyBorder bottom="1" left="10" right="1" top="1"/>
-              </Border>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="6" y="43" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="opaque" type="boolean" value="true"/>
@@ -186,7 +165,7 @@
         <Component class="slideshow.Slideshow" name="slideshow1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="70" width="420" height="200"/>
+              <AbsoluteConstraints x="0" y="30" width="420" height="200"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -236,7 +215,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4c" green="4c" red="4c" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n &#x111;ang l&#xe0;m vi&#x1ec7;c"/>
+            <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n &#x111;ang ho&#x1ea1;t &#x111;&#x1ed9;ng"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder bottom="1" left="10" right="1" top="1"/>

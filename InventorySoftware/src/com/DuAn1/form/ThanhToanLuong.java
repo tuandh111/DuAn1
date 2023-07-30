@@ -16,8 +16,13 @@ import com.tuandhpc05076.Dao.NhanVienDAO;
 import com.tuandhpc05076.helper.DateHelper;
 import com.tuandhpc05076.helper.DialogHelper;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.geom.Path2D;
 import java.awt.geom.RoundRectangle2D;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,9 +34,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  *
  * @author DELL E5470
@@ -104,6 +114,17 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
         NhanVienDAO1 NVdao = new NhanVienDAO1();
         ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.selectcombobox();
+        for (NhanVienModel nv : listnv) {
+            cboModel.addElement(nv.getMaNV().trim());
+        }
+        cboMaLuong.setModel(cboModel);
+        cboMaLuong.setSelectedIndex(-1);
+
+    }
+       void LoadCBOMaLuongsau() {
+        DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
+        NhanVienDAO1 NVdao = new NhanVienDAO1();
+        ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.select();
         for (NhanVienModel nv : listnv) {
             cboModel.addElement(nv.getMaNV().trim());
         }
@@ -260,6 +281,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         btnTim = new com.DuAn1.Swing.Button();
         txtLoc = new com.DuAn1.Swing.TextField1();
         btnLoc = new com.DuAn1.Swing.Button();
+        button15 = new com.DuAn1.Swing.Button();
 
         dateChooser.setTextRefernce(txtNgayVaoCTY);
 
@@ -462,6 +484,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
+        button15.setBackground(new java.awt.Color(153, 153, 255));
+        button15.setText("In thành file excel");
+        button15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button15ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -520,6 +550,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,8 +590,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                             .addComponent(txtLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -582,6 +617,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         // TODO add your handling code here:
         clearForm();
+        LoadCBOMaLuong();
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void btnTrangThaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangThaiMouseClicked
@@ -611,12 +647,60 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             ThaoTacModel model = getFormThaoTacThem();
             thaotacdao.insert(model);
             DialogHelper.alert(this, "Thêm thành công");
+            LoadCBOMaLuong();
         } catch (Exception e) {
             DialogHelper.alert(this, "Thêm thất bại");
             e.printStackTrace();
         }
     }
+      public void btnInDanhSach() {
+        try {
+            JFileChooser jFileChooser = new JFileChooser();
+            jFileChooser.showSaveDialog(this);
+            File saveFile = jFileChooser.getSelectedFile();
 
+            if (saveFile != null) {
+                saveFile = new File(saveFile.toString() + ".xlsx");
+                Workbook wb = new XSSFWorkbook();
+                Sheet sheet = wb.createSheet("Thanh toán lương");
+
+                Row rowCol = sheet.createRow(0);
+                for (int i = 0; i < tblThanhToanLuong.getColumnCount(); i++) {
+                    org.apache.poi.ss.usermodel.Cell cell = rowCol.createCell(i);
+                    cell.setCellValue(tblThanhToanLuong.getColumnName(i));
+                }
+
+                for (int j = 0; j < tblThanhToanLuong.getRowCount(); j++) {
+                    Row row = sheet.createRow(j + 1);
+                    for (int k = 0; k < tblThanhToanLuong.getColumnCount(); k++) {
+                        org.apache.poi.ss.usermodel.Cell cell = row.createCell(k);
+                        if (tblThanhToanLuong.getValueAt(j, k) != null) {
+                            cell.setCellValue(tblThanhToanLuong.getValueAt(j, k).toString());
+                        }
+                    }
+                }
+                FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
+                wb.write(out);
+                wb.close();
+                out.close();
+                OpenFile(saveFile.toString());
+            } else {
+                JOptionPane.showMessageDialog(null, "Lỗi");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        } catch (IOException io) {
+            System.out.println(io);
+        }
+    }
+
+    public void OpenFile(String file) {
+        try {
+            File path = new File(file);
+            Desktop.getDesktop().open(path);
+        } catch (Exception e) {
+        }
+    }
     boolean check() {
         boolean check = false;
         String name = (String) cboMaLuong.getSelectedItem();
@@ -819,6 +903,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             ThaoTacModel model = getFormThaoTacSua();
             thaotacdao.insert(model);
             DialogHelper.alert(this, "Cập nhật thành công");
+            LoadCBOMaLuong();
         } catch (Exception e) {
             DialogHelper.alert(this, "Cập nhật thất bại");
             e.printStackTrace();
@@ -833,7 +918,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblThanhToanLuong.getSelectedRow();
+            LoadCBOMaLuongsau();
             this.edit();
+            
         }
 
     }//GEN-LAST:event_tblThanhToanLuongMouseClicked
@@ -847,6 +934,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 ThaoTacModel model = getFormThaoTacXoa();
                 thaotacdao.insert(model);
                 DialogHelper.alert(this, "Xóa thành công");
+                LoadCBOMaLuong();
             } catch (Exception e) {
                 DialogHelper.alert(this, "Xóa thất bại");
             }
@@ -975,6 +1063,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTrangThai.setText("Thanh toán");
     }//GEN-LAST:event_cboMaLuongActionPerformed
 
+    private void button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button15ActionPerformed
+        btnInDanhSach();        // TODO add your handling code here:
+    }//GEN-LAST:event_button15ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button btnLoc;
@@ -984,6 +1076,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private com.DuAn1.Swing.Button btnTim;
     private com.DuAn1.swing0.SwitchButton btnTrangThai;
     private com.DuAn1.Swing.Button btnXoa;
+    private com.DuAn1.Swing.Button button15;
     private com.DuAn1.Swing.Combobox cboMaLuong;
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JLabel jLabel1;

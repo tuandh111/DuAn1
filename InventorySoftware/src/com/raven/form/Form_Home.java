@@ -29,6 +29,8 @@ import com.DuAn1.test.Slide1;
 import com.DuAn1.test.Slide2;
 import com.DuAn1.test.Slide3;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -38,6 +40,7 @@ public class Form_Home extends javax.swing.JPanel {
     NhanVienDAO1 dao = new NhanVienDAO1();
     ThongKeDao DaoThongKe = new ThongKeDao();
     DatSPDAO daoDatSP = new DatSPDAO();
+
     public Form_Home() {
         initComponents();
 
@@ -161,14 +164,47 @@ public class Form_Home extends javax.swing.JPanel {
     }
 
     private void initNoticeBoard() {
-        noticeBoard.addDate("04/10/2021");
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "Hidemode", "Now", "Sets the hide mode for the component. If the hide mode has been specified in the This hide mode can be overridden by the component constraint."));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(218, 49, 238), "Tag", "2h ago", "Tags the component with metadata name that can be used by the layout engine. The tag can be used to explain for the layout manager what the components is showing, such as an OK or Cancel button."));
-        noticeBoard.addDate("03/10/2021");
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(32, 171, 43), "Further Reading", "12:30 PM", "There are more information to digest regarding MigLayout. The resources are all available at www.migcomponents.com"));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(50, 93, 215), "Span", "10:30 AM", "Spans the current cell (merges) over a number of cells. Practically this means that this cell and the count number of cells will be treated as one cell and the component can use the space that all these cells have."));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(27, 188, 204), "Skip ", "9:00 AM", "Skips a number of cells in the flow. This is used to jump over a number of cells before the next free cell is looked for. The skipping is done before this component is put in a cell and thus this cells is affected by it. \"count\" defaults to 1 if not specified."));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Push", "7:15 AM", "Makes the row and/or column that the component is residing in grow with \"weight\". This can be used instead of having a \"grow\" keyword in the column/row constraints."));
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        noticeBoard.addDate(formatted);
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "IPhone", "Mới đăng", "Dòng iPhone là dòng điện thoại thông minh cao cấp được sản xuất bởi Apple Inc. Dòng iPhone ra mắt lần đầu tiên vào năm 2007 và đã trở thành một trong những dòng điện thoại thông minh phổ biến nhất thế giới. iPhone được biết đến với thiết kế đẹp, hiệu suất mạnh mẽ và hệ sinh thái ứng dụng phong phú.\n"
+                + "\n"
+                + "Dòng iPhone hiện có nhiều mẫu mã khác nhau, từ iPhone SE giá rẻ đến iPhone 13 Pro Max cao cấp. Mỗi mẫu iPhone đều có những ưu điểm và nhược điểm riêng, phù hợp với nhu cầu của từng người dùng.\n"
+                + "\n"
+                + "Dưới đây là một số điểm nổi bật của dòng iPhone:\n"
+                + "\n"
+                + "Thiết kế đẹp, sang trọng\n"
+                + "Hiệu suất mạnh mẽ\n"
+                + "Hệ sinh thái ứng dụng phong phú\n"
+                + "Camera chất lượng cao\n"
+                + "Thời lượng pin lâu\n"
+                + "Bảo mật tuyệt vời\n"
+                + "Dòng iPhone là một lựa chọn tuyệt vời cho những người dùng đang tìm kiếm một chiếc điện thoại thông minh cao cấp, đa năng và có nhiều tính năng. Nếu bạn đang tìm kiếm một chiếc điện thoại thông minh tốt nhất trên thị trường, thì iPhone là một lựa chọn không thể bỏ qua."));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(218, 49, 238), "Samsung", "Mới đăng", "Sony là một tập đoàn đa quốc gia của Nhật Bản chuyên sản xuất các sản phẩm điện tử, giải trí và công nghệ cao. Sony được thành lập vào năm 1946 và hiện là một trong những tập đoàn lớn nhất thế giới.\n"
+                + "\n"
+                + "Sony có nhiều sản phẩm nổi tiếng, bao gồm:\n"
+                + "\n"
+                + "Điện thoại thông minh Xperia\n"
+                + "Máy ảnh Alpha\n"
+                + "Loa không dây SRS-XB43\n"
+                + "TV BRAVIA XR\n"
+                + "PlayStation 5\n"
+                + "Vaio Laptop\n"
+                + "Walkman\n"
+                + "Sony được biết đến với chất lượng cao, thiết kế đẹp và tính năng tiên tiến. Các sản phẩm của Sony được bán trên toàn thế giới và được nhiều người dùng tin tưởng.\n"
+                + "\n"
+                + "Dưới đây là một số điểm nổi bật của Sony:\n"
+                + "\n"
+                + "Chất lượng cao\n"
+                + "Thiết kế đẹp\n"
+                + "Tính năng tiên tiến\n"
+                + "Giá cả phải chăng\n"
+                + "Đa dạng sản phẩm\n"
+                + "Sony là một thương hiệu đáng tin cậy và được nhiều người dùng trên thế giới tin tưởng. Nếu bạn đang tìm kiếm một sản phẩm điện tử, giải trí hoặc công nghệ cao chất lượng cao, thì Sony là một thương hiệu đáng xem xét"));
+        noticeBoard.addDate(formatted);
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(32, 171, 43), "Samsung", "Mới đăng", "Samsung là một tập đoàn đa quốc gia của Hàn Quốc chuyên sản xuất các sản phẩm điện tử tiêu dùng, điện tử công nghiệp, thiết bị gia dụng và dịch vụ. Samsung được thành lập vào năm 1938 bởi Lee Byung-chul và hiện là một trong những tập đoàn lớn nhất thế giới."));
+
         noticeBoard.scrollToTop();
     }
 
@@ -190,7 +226,6 @@ public class Form_Home extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         noticeBoard = new com.raven.swing.noticeboard.NoticeBoard();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         slideshow1 = new slideshow.Slideshow();
         jPanel2 = new javax.swing.JPanel();
@@ -215,7 +250,7 @@ public class Form_Home extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(noticeBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 273, 411, 160));
+        jPanel1.add(noticeBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 233, 411, 200));
 
         jLabel2.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(76, 76, 76));
@@ -223,21 +258,15 @@ public class Form_Home extends javax.swing.JPanel {
         jLabel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(105, 105, 105));
-        jLabel3.setText("Các sản phẩm đang bán chạy");
-        jLabel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 43, -1, -1));
-
         jLabel4.setOpaque(true);
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 70, 411, 1));
-        jPanel1.add(slideshow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 420, 200));
+        jPanel1.add(slideshow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 420, 200));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(76, 76, 76));
-        jLabel5.setText("Nhân viên đang làm việc");
+        jLabel5.setText("Nhân viên đang hoạt động");
         jLabel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
@@ -345,7 +374,6 @@ public class Form_Home extends javax.swing.JPanel {
     private com.DuAn1.component.Card card4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

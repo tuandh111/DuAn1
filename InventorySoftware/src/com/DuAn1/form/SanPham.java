@@ -626,8 +626,6 @@ public class SanPham extends javax.swing.JPanel {
         cboMangHinh = new com.DuAn1.Swing.Combobox();
         cboPin = new com.DuAn1.Swing.Combobox();
         btnTimKiem = new com.DuAn1.Swing.Button();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btnNext = new com.DuAn1.Swing.Button();
         btnFirst = new com.DuAn1.Swing.Button();
         btnPrev = new com.DuAn1.Swing.Button();
@@ -733,7 +731,12 @@ public class SanPham extends javax.swing.JPanel {
 
         txtSoLuong.setLabelText("Số lượng");
 
-        txtTimKiem.setHint("Tìm kiếm");
+        txtTimKiem.setHint("Tìm kiếm theo tên");
+        txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimKiemCaretUpdate(evt);
+            }
+        });
         txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimKiemActionPerformed(evt);
@@ -920,21 +923,12 @@ public class SanPham extends javax.swing.JPanel {
         );
 
         btnTimKiem.setBackground(new java.awt.Color(153, 153, 255));
-        btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.setText("Tìm kiếm theo Mã");
         btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTimKiemActionPerformed(evt);
             }
         });
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel1.setText("Số lượng bản ghi:");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel2.setText("1 trên 10");
 
         btnNext.setBackground(new java.awt.Color(153, 153, 255));
         btnNext.setText(">|");
@@ -985,6 +979,7 @@ public class SanPham extends javax.swing.JPanel {
         });
         txtHinh.add(txtHinhAnh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 140));
 
+        txtMaSP.setEditable(false);
         txtMaSP.setLabelText("Mã sản phẩm");
         txtMaSP.setLineColor(new java.awt.Color(102, 102, 255));
         txtMaSP.setSelectionColor(new java.awt.Color(0, 0, 0));
@@ -1016,11 +1011,7 @@ public class SanPham extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 877, Short.MAX_VALUE)
                 .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -1080,7 +1071,7 @@ public class SanPham extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(0, 0, Short.MAX_VALUE)))
                     .addGap(9, 9, 9)))
         );
@@ -1112,11 +1103,7 @@ public class SanPham extends javax.swing.JPanel {
                             .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(166, 166, 166)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(152, 152, 152))
+                        .addGap(334, 334, 334))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(130, 130, 130))))
@@ -1434,11 +1421,12 @@ public class SanPham extends javax.swing.JPanel {
     }
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         // TODO add your handling code here:
-
+        String name =JOptionPane.showInputDialog(this,"Nhập Mã cần tìm kiếm");
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<SanPhamModel> list = Dao.TimKiemTheoTen(txtTimKiem.getText());
+            List<SanPhamModel> list = Dao.TimKiemTheoMa(name);
+            if(list.size()==0)DialogHelper.alert(this, "Không tìm thấy");
             for (SanPhamModel nv : list) {
                 Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                 tblModel.addRow(row);
@@ -1486,6 +1474,21 @@ public class SanPham extends javax.swing.JPanel {
         last();        // TODO add your handling code here:
     }//GEN-LAST:event_btnNextActionPerformed
 
+    private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
+        
+        tblModel = (DefaultTableModel) tblUser.getModel();
+        tblModel.setRowCount(0);
+        try {
+            List<SanPhamModel> list = Dao.TimKiemTheoTen(txtTimKiem.getText());
+            for (SanPhamModel nv : list) {
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                tblModel.addRow(row);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTimKiemCaretUpdate
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LoaiSanPham;
@@ -1513,8 +1516,6 @@ public class SanPham extends javax.swing.JPanel {
     private com.DuAn1.Swing.Combobox cboSapXep;
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JFileChooser jFileChooser1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
