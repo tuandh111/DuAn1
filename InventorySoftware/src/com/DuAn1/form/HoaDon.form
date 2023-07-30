@@ -577,39 +577,60 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="LbSony1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="LbSony2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="LbSony3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="cboSapXep3" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Component id="cboHinhThuc1" min="-2" pref="215" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="LbSony4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="LbSony5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="LbSony6" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="LbSony7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="LbSony8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="LbSony9" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="LbSony4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="LbSony5" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="LbSony6" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="LbSony7" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="LbSony8" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="LbSony9" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="LbSony1" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="LbSony2" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="LbSony3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="36" max="32767" attributes="0"/>
+                              <EmptySpace pref="39" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboHinhThuc1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboSapXep3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="LbSony2" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LbSony3" alignment="0" max="32767" attributes="0"/>
@@ -619,15 +640,22 @@
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="LbSony5" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LbSony4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="LbSony6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LbSony6" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="LbSony8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="LbSony7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="LbSony9" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="LbSony8" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="LbSony9" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                                      <Component id="LbSony7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -645,7 +673,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="13" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtMaSony1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtHinhAnhSony1" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
@@ -667,7 +695,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="txtTenSony1" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                                      <EmptySpace pref="22" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1635,7 +1663,7 @@
                                   <Component id="txtMaSony7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtHinhAnhSony7" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="49" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtSoLuongConSony7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtGiaSoNy7" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2058,6 +2086,37 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="com.DuAn1.Swing.Combobox" name="cboSapXep3">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="M&#xe3;"/>
+                            <StringItem index="1" value="Gi&#xe1;"/>
+                            <StringItem index="2" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="-1"/>
+                        <Property name="labeText" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboSapXep3ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="com.DuAn1.Swing.Combobox" name="cboHinhThuc1">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="T&#x103;ng"/>
+                            <StringItem index="1" value="Gi&#x1ea3;m"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="-1"/>
+                        <Property name="labeText" type="java.lang.String" value="H&#xec;nh th&#x1ee9;c"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThuc1ActionPerformed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -2089,51 +2148,66 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lbIphone7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbIphone1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbIphone4" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="lbIphone5" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lbIphone2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lbIphone7" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lbIphone1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbIphone4" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Component id="lbIphone6" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="lbIphone5" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="lbIphone2" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                                      <Component id="lbIphone6" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lbIphone3" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lbIphone3" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                              <Component id="lbIphone8" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="lbIphone8" min="-2" pref="142" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="cboSapXep5" min="-2" pref="221" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="cboHinhThuc4" min="-2" pref="215" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboHinhThuc4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboSapXep5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="lbIphone3" alignment="0" max="32767" attributes="0"/>
                                   <Component id="lbIphone1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbIphone2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbIphone2" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -2148,7 +2222,7 @@
                                           <Component id="lbIphone8" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lbIphone7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="61" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
@@ -2174,10 +2248,6 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="btnAdd4" min="-2" pref="118" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="txtSoLuongConIphone3" min="-2" pref="37" max="-2" attributes="0"/>
@@ -2198,6 +2268,7 @@
                                           </Group>
                                       </Group>
                                       <Component id="txtHinhAnhIphone3" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="btnAdd4" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -2217,7 +2288,7 @@
                                       <Component id="txtGiaIphone3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtGiaIphone12" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="12" max="32767" attributes="0"/>
                                   <Component id="btnAdd4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -2355,7 +2426,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="txtMaIphone2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                   <Component id="txtHinhAnhIphone2" min="-2" pref="79" max="-2" attributes="0"/>
@@ -2369,7 +2440,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAdd3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3485,9 +3556,9 @@
                                       <Component id="txtGiaIphone1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtGiaIphone39" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnAdd20" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnAdd20" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3582,6 +3653,37 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="com.DuAn1.Swing.Combobox" name="cboSapXep5">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="M&#xe3;"/>
+                            <StringItem index="1" value="Gi&#xe1;"/>
+                            <StringItem index="2" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="-1"/>
+                        <Property name="labeText" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboSapXep5ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="com.DuAn1.Swing.Combobox" name="cboHinhThuc4">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="T&#x103;ng"/>
+                            <StringItem index="1" value="Gi&#x1ea3;m"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="-1"/>
+                        <Property name="labeText" type="java.lang.String" value="H&#xec;nh th&#x1ee9;c"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThuc4ActionPerformed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -3615,58 +3717,69 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="lbISamSung7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="lbISamSung8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="lbISamSung9" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Component id="cboSapXep2" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cboHinhThuc2" min="-2" pref="215" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Component id="lbISamSung1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="lbISamSung2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="lbISamSung3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Component id="lbISamSung4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="lbISamSung5" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="lbISamSung6" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbISamSung6" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <EmptySpace min="49" pref="62" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbISamSung1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbISamSung2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbISamSung3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboHinhThuc2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboSapXep2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lbISamSung3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbISamSung1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung2" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbISamSung4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbISamSung5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbISamSung6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung4" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbISamSung7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbISamSung8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbISamSung9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbISamSung9" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3687,42 +3800,35 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                          <Component id="btnAdd11" min="-2" pref="118" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="txtSoLuongConSamSung1" min="-2" pref="37" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="txtGiaSamsung1" min="-2" pref="62" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="txtGiaIphone29" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                                  <Component id="txtMaSamSung1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="txtTenSamSung1" min="-2" pref="104" max="-2" attributes="0"/>
+                                                  <Component id="btnAdd11" min="-2" pref="118" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="txtHinhAnhSamSung1" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="txtSoLuongConSamSung1" min="-2" pref="37" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtGiaSamsung1" min="-2" pref="62" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtGiaIphone29" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                          <Component id="txtMaSamSung1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="txtHinhAnhSamSung1" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="txtTenSamSung1" min="-2" pref="104" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3741,7 +3847,7 @@
                                       <Component id="txtGiaSamsung1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtGiaIphone29" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="13" max="32767" attributes="0"/>
                                   <Component id="btnAdd11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -3850,40 +3956,32 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <Component id="txtTenSamSung2" min="-2" pref="104" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="txtSoLuongConSamSung2" min="-2" pref="37" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtGiaSamsung2" min="-2" pref="62" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtGiaIphone30" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace pref="17" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="btnAdd12" min="-2" pref="118" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtHinhAnhSamSung2" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Component id="txtMaSamSung2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="txtSoLuongConSamSung2" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtGiaSamsung2" min="-2" pref="62" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtGiaIphone30" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="btnAdd12" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtHinhAnhSamSung2" min="-2" pref="118" max="-2" attributes="0"/>
+                                                  <Component id="txtTenSamSung2" min="-2" pref="104" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="15" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4166,37 +4264,31 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <Component id="txtTenSamSung3" min="-2" pref="104" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="txtSoLuongConSamSung3" min="-2" pref="37" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtGiaSamsung3" min="-2" pref="62" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtGiaIphone31" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                          <Component id="txtTenSamSung3" min="-2" pref="104" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="btnAdd13" min="-2" pref="118" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtHinhAnhSamSung3" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="txtSoLuongConSamSung3" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtGiaSamsung3" min="-2" pref="62" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtGiaIphone31" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="txtMaSamSung3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtHinhAnhSamSung3" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="txtMaSamSung3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnAdd13" min="-2" pref="118" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4207,7 +4299,7 @@
                                   <Component id="txtMaSamSung3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtHinhAnhSamSung3" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="txtTenSamSung3" min="-2" pref="26" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -4215,9 +4307,9 @@
                                       <Component id="txtGiaSamsung3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtGiaIphone31" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnAdd13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnAdd13" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4346,7 +4438,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4963,7 +5055,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                                  <EmptySpace pref="20" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5079,6 +5171,37 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="com.DuAn1.Swing.Combobox" name="cboSapXep2">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="M&#xe3;"/>
+                            <StringItem index="1" value="Gi&#xe1;"/>
+                            <StringItem index="2" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="-1"/>
+                        <Property name="labeText" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboSapXep2ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="com.DuAn1.Swing.Combobox" name="cboHinhThuc2">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="T&#x103;ng"/>
+                            <StringItem index="1" value="Gi&#x1ea3;m"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="selectedIndex" type="int" value="-1"/>
+                        <Property name="labeText" type="java.lang.String" value="H&#xec;nh th&#x1ee9;c"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThuc2ActionPerformed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>

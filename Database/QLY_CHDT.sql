@@ -257,10 +257,6 @@ Insert into SANPHAM values ('SP00002','IPHONE 13S',N'Vàng','11500000',N'Iphone'
 Insert into SANPHAM values ('SP00003','Sony F20',N'Đen','10500000',N'Iphone','2022-01-01',N'Nước Nhật',22,1,'null','NV001','KM003')
 Insert into SANPHAM values ('SP00004','IPHONE 14S',N'Trắng','11500000',N'Iphone','2022-01-01',N'Nước Mỹ',17,1,'null','NV002','KM004')
 Insert into SANPHAM values ('SP00005','IPHONE 14S',N'Trắng','10500000',N'Iphone','2022-01-01',N'Nước Mỹ',32,1,'null','NV002','KM005')
-Insert into SANPHAM values ('SP00006','IPHONE 14S',N'Trắng','9500000',N'Iphone','2022-01-01',N'Nước Nhật',18,1,'null','NV002','KM006')
-Insert into SANPHAM values ('SP00007','IPHONE 14S',N'Xanh','22500000',N'Iphone','2022-01-01',N'Nước Nhật',12,1,'null','NV002','KM007')
-Insert into SANPHAM values ('SP00008','IPHONE 14S',N'Trắng','15500000',N'Iphone','2022-01-01',N'Nước Nhật',35,1,'null','NV001','KM001')
-Insert into SANPHAM values ('SP00009','IPHONE 14S',N'Đen','14500000',N'Iphone','2022-01-01',N'Nước Mỹ',27,1,'null','NV001','KM002')
 
 insert into CPU values ('Bionics','iPhone')
 insert into CPU values ('NDragons','iPhone')
