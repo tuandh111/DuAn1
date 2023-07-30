@@ -200,7 +200,7 @@ CREATE TABLE DATSPCT(
 Insert into VAITRO values ('QL',N'Quản lý',null)
 Insert into VAITRO values ('NV',N'Nhân Viên',null)
 
-Insert into NHANVIEN values ('NV001',N'Trần Văn An','2003-01-23',1,N'Cần Thơ','0987123456','antv@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
+Insert into NHANVIEN values ('NV001',N'Đặng Hoàng Tuấn','2003-01-23',1,N'Cần Thơ','0987123456','hoangtuan97531@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
 Insert into NHANVIEN values ('NV002',N'Nguyễn Thanh Bình','1999-11-12',1,N'An Giang','0981234556','binhnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','QL','null',1,1)
 Insert into NHANVIEN values ('NV003',N'Trần Ngọc Thạch','2001-10-10',1,N'Trà Vinh','0987126543','thachnt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',0,1)
 Insert into NHANVIEN values ('NV004',N'Nguyễn Thị Ngân','2001-12-30',0,N'Cần Thơ','0127123456','ngannt@gmail.com','JH/FaL0/1KjSg+VbI+Cg9ikGwG8=','NV','null',1,1)
@@ -367,7 +367,7 @@ Insert into DATSPCT values (6,'12000000','DH00006','SP00004')
 
 
 --doanh thu
-
+go
 CREATE PROCEDURE sp_thongke_doanhthu_tuan
 AS
 BEGIN
@@ -386,8 +386,8 @@ WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
 GROUP BY NgayXuat;
 
 END;
-
-
+go
+-------------------
 CREATE PROCEDURE sp_thongke_doanhthu_thang
 AS
 BEGIN
@@ -406,7 +406,8 @@ WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
 GROUP BY NgayXuat;
 
 END;
-
+go
+-------------
 CREATE PROCEDURE sp_thongke_doanhthu_nam
 AS
 BEGIN
@@ -425,7 +426,7 @@ WHERE NgayXuat BETWEEN @ngaybatdau AND @ngayketthuc
 GROUP BY NgayXuat;
 
 END;
-
+go
 --thống kê loại sản phẩm
 CREATE PROCEDURE sp_thongke_sanpham
 @loaisp NVARCHAR(30)
@@ -440,7 +441,7 @@ WHERE LoaiSP = @loaisp
 GROUP BY LoaiSP;
 
 END;
-
+go
 
 --thống kê tổng tiền đặt hàng
 CREATE PROCEDURE sp_thongke_tongtien_dathang
@@ -452,7 +453,7 @@ SELECT
 FROM DATSP;
 
 END;
-
+go
 --thống kê sản phẩm
 CREATE PROCEDURE sp_thongKeTongSoLuongSanPhamXoa
 AS
@@ -461,7 +462,7 @@ BEGIN
     FROM SANPHAM
     WHERE TrangThai = 1;
 END;
-
+go
 --
 CREATE PROCEDURE MaxMaSP
 AS
@@ -504,6 +505,7 @@ BEGIN
     SELECT MAX(MaBH) AS MaxProductCode
     FROM BAOHANH;
 END
+go
 --
 
 CREATE PROCEDURE MaxMaKH
