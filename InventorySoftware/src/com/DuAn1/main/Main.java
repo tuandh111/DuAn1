@@ -323,7 +323,6 @@ public class Main extends javax.swing.JFrame {
 
     private void picAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_picAncestorAdded
         // TODO add your handling code here:
-
     }//GEN-LAST:event_picAncestorAdded
 
     private void picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_picMouseClicked

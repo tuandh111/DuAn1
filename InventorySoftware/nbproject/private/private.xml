@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/DuAn1/Dao/BaoHanhCTDAO.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachDH.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/DuAn1/Dao/KhachHangDAO.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
-            <file>file:/C:/FPT%20Polytechnic/DuAn1/github/DuAn1/InventorySoftware/src/com/DuAn1/form/BaoHanh.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHangBaoHanh.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThongTinNhanVien.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHangThem.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHang.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachBH1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/BaoHanh.java</file>
         </group>
     </open-files>
 </project-private>

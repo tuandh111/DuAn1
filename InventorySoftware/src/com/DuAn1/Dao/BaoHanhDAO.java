@@ -18,8 +18,9 @@ import java.util.List;
  * @author trana
  */
 public class BaoHanhDAO {
-    public void insert(BaoHanhModel model){
-        String sql ="Insert into BAOHANH values (?,?,?,?,?,?,?) ";
+
+    public void insert(BaoHanhModel model) {
+        String sql = "Insert into BAOHANH values (?,?,?,?,?,?,?) ";
         JdbcHelper.executeUpdate(sql,
                 model.getMaBH(),
                 model.getMaHD(),
@@ -29,17 +30,25 @@ public class BaoHanhDAO {
                 model.getGhiChu(),
                 model.getMaKH());
     }
-    public List<BaoHanhModel> select(String MaBH) {
+
+    public List<BaoHanhModel> select1(String MaBH) {
         String sql = "SELECT * FROM BaoHanh WHERE MaBH like ?";
-        return select(sql,"%"+MaBH+"%");
+        return select(sql, "%" + MaBH + "%");
     }
+
+    public List<BaoHanhModel> selectall() {
+        String sql = "select * from baohanh";
+        return select(sql);
+    }
+
     public List<BaoHanhModel> TimKiem(String Ma) {
         String sql = "SELECT * FROM baohanh WHERE maBH like ?";
         return select(sql, "%" + Ma + "%");
     }
-    public void update(BaoHanhModel model){
+
+    public void update(BaoHanhModel model) {
         String sql = "update BaoHanh set MaSP=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? where MaBH=?";
-        JdbcHelper.executeUpdate(sql, 
+        JdbcHelper.executeUpdate(sql,
                 model.getMaHD(),
                 model.getSoEmei(),
                 model.getNgayBH(),
@@ -48,10 +57,12 @@ public class BaoHanhDAO {
                 model.getMaKH(),
                 model.getMaBH());
     }
+
     public void delete(BaoHanhModel model) {
         String sql = "DELETE BaoHanh WHERE MaBH = ?";
         JdbcHelper.executeUpdate(sql, model.getMaBH());
     }
+
     private List<BaoHanhModel> select(String sql, Object... args) {
         List<BaoHanhModel> list = new ArrayList<>();
         try {
@@ -70,15 +81,16 @@ public class BaoHanhDAO {
         }
         return list;
     }
+
     private BaoHanhModel readFromResultSet(ResultSet rs) throws SQLException {
         BaoHanhModel model = new BaoHanhModel();
-       model.setMaBH(rs.getString(1));
-       model.setMaHD(rs.getString(2));
-       model.setSoEmei(rs.getString(3));
-       model.setNgayBH(rs.getString(4));
-       model.setNgayHetHan(rs.getString(5));
-       model.setGhiChu(rs.getString(6));
-       model.setMaKH(rs.getString(7));
+        model.setMaBH(rs.getString(1));
+        model.setMaHD(rs.getString(2));
+        model.setSoEmei(rs.getString(3));
+        model.setNgayBH(rs.getString(4));
+        model.setNgayHetHan(rs.getString(5));
+        model.setGhiChu(rs.getString(6));
+        model.setMaKH(rs.getString(7));
         return model;
     }
 }

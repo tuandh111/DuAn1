@@ -46,7 +46,8 @@ public class InHoaDon extends javax.swing.JDialog {
                 + "Thời gian xuất: " + formatted + "\n"
                 + "Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
                 + "==============================" + "\n"+""
-                        + "Thông tin sản phẩm\n"+""
+                        + "Họ tên khách hàng: "+HoaDon.hoten
+                        + "\nThông tin sản phẩm\n"+""
                         + "MaHD                            MaSP                           Giá                                           Số lượng"
                         + "\n");
     }
@@ -71,8 +72,8 @@ public class InHoaDon extends javax.swing.JDialog {
                       + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
                       + "                                                                                                                 \n"
                       + "                                                                                                                   \n"
-                      + "                                                                                                             \n"
-                      + "                                     Cảm ơn quý khách đã mua hàng!                      ");
+                      +HoaDon.hoten+ "                                                                                              "+ShareHelper.USER.getHoTen()
+                      + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
   }
     /**
      * This method is called from within the constructor to initialize the form.
