@@ -170,6 +170,7 @@
                 <StringItem index="2" value="Th&#x1b0;&#x1edd;ng"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
             <Property name="labeText" type="java.lang.String" value="Lo&#x1ea1;i kh&#xe1;ch h&#xe0;ng"/>
           </Properties>
         </Component>

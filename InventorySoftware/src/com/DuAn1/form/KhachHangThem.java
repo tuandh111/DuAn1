@@ -152,6 +152,7 @@ public class KhachHangThem extends javax.swing.JDialog {
         jLabel1.setText("Khách hàng");
 
         cbokhach.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "VIP2", "VIP1", "Thường" }));
+        cbokhach.setSelectedIndex(-1);
         cbokhach.setLabeText("Loại khách hàng");
 
         txtNgaySinh.setLabelText("Ngày sinh");
@@ -374,7 +375,7 @@ public class KhachHangThem extends javax.swing.JDialog {
         String[] tbl = name.split("H");
         String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
         String ten = "KH";
-        for (int j = 0; j <= 3 - so.length(); j++) {
+        for (int j = 0; j <= 4 - so.length(); j++) {
             ten += "0";
         }
         ten = ten + so;

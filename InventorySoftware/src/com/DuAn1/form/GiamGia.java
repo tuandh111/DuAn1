@@ -15,9 +15,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -128,8 +133,24 @@ public class GiamGia extends javax.swing.JPanel {
     GiamGiaModel getForm() {
         GiamGiaModel nv = new GiamGiaModel();
         nv.setMaGG(txtMaGG.getText());
-        nv.setNgayBD(txtNgayBD.getText());
-        nv.setNgayKT(txtNgayKT.getText());
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayBD.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            nv.setNgayBD(ngayNhap);
+
+        } catch (Exception e) {
+        }
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayKT.getText());
+
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            nv.setNgayKT(ngayNhap);
+
+        } catch (Exception e) {
+        }
         nv.setPhanTram((float) Double.parseDouble(txtPhantram.getText()));
         nv.setMota(txtMota.getText());
         nv.setTrangThai(true);
@@ -144,8 +165,22 @@ public class GiamGia extends javax.swing.JPanel {
 
     void setForm(GiamGiaModel nv) {
         txtMaGG.setText(nv.getMaGG());
-        txtNgayBD.setText(nv.getNgayBD());
-        txtNgayKT.setText(nv.getNgayKT());
+        try {
+            String dateString = nv.getNgayBD();
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgayBD.setText(formattedDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            String dateString = nv.getNgayKT();
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgayKT.setText(formattedDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
         txtPhantram.setText(String.valueOf(nv.getPhanTram()));
         if (nv.getMota() != null) {
             txtMota.setText(nv.getMota());
@@ -306,10 +341,8 @@ public class GiamGia extends javax.swing.JPanel {
         txtTrangthai = new javax.swing.JLabel();
         button15 = new com.DuAn1.Swing.Button();
 
-        dateChooser1.setDateFormat("yyyy-MM-dd");
         dateChooser1.setTextRefernce(txtNgayKT);
 
-        dateChooser2.setDateFormat("yyyy-MM-dd");
         dateChooser2.setTextRefernce(txtNgayBD);
 
         setMinimumSize(new java.awt.Dimension(1058, 741));
@@ -449,10 +482,15 @@ public class GiamGia extends javax.swing.JPanel {
         jLabel2.setText("Trạng thái:");
 
         btnTrangthai.setSelectedAnimate(false);
+        btnTrangthai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTrangthaiMouseClicked(evt);
+            }
+        });
 
         txtTrangthai.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtTrangthai.setForeground(new java.awt.Color(0, 204, 51));
-        txtTrangthai.setText("Còn khuyến mại");
+        txtTrangthai.setText("Hết khuyến mại");
 
         button15.setBackground(new java.awt.Color(153, 153, 255));
         button15.setText("In thành file excel");
@@ -477,7 +515,7 @@ public class GiamGia extends javax.swing.JPanel {
                                 .addComponent(txtNgayBD, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(5, 5, 5))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 2, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -622,6 +660,15 @@ public class GiamGia extends javax.swing.JPanel {
     private void button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button15ActionPerformed
         btnInDanhSach();        // TODO add your handling code here:
     }//GEN-LAST:event_button15ActionPerformed
+
+    private void btnTrangthaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangthaiMouseClicked
+        // TODO add your handling code here:
+        if(btnTrangthai.isSelected()==false){
+            txtTrangthai.setText("Còn khuyến mại ");
+        }else{
+            txtTrangthai.setText("Hết khuyến mại");
+        }
+    }//GEN-LAST:event_btnTrangthaiMouseClicked
   public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();

@@ -4,7 +4,6 @@
   <NonVisualComponents>
     <Component class="com.raven.datechooser.DateChooser" name="dateChooser1">
       <Properties>
-        <Property name="dateFormat" type="java.lang.String" value="yyyy-MM-dd"/>
         <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
           <ComponentRef name="txtNgayKT"/>
         </Property>
@@ -12,7 +11,6 @@
     </Component>
     <Component class="com.raven.datechooser.DateChooser" name="dateChooser2">
       <Properties>
-        <Property name="dateFormat" type="java.lang.String" value="yyyy-MM-dd"/>
         <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
           <ComponentRef name="txtNgayBD"/>
         </Property>
@@ -80,7 +78,7 @@
                                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -380,6 +378,9 @@
           <Properties>
             <Property name="selectedAnimate" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnTrangthaiMouseClicked"/>
+          </Events>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
             <Property name="useNullLayout" type="boolean" value="true"/>
@@ -393,7 +394,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="cc" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="C&#xf2;n khuy&#x1ebf;n m&#x1ea1;i"/>
+            <Property name="text" type="java.lang.String" value="H&#x1ebf;t khuy&#x1ebf;n m&#x1ea1;i"/>
           </Properties>
         </Component>
         <Component class="com.DuAn1.Swing.Button" name="button15">
