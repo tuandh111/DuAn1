@@ -449,10 +449,15 @@ public class GiamGia extends javax.swing.JPanel {
         jLabel2.setText("Trạng thái:");
 
         btnTrangthai.setSelectedAnimate(false);
+        btnTrangthai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTrangthaiMouseClicked(evt);
+            }
+        });
 
         txtTrangthai.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtTrangthai.setForeground(new java.awt.Color(0, 204, 51));
-        txtTrangthai.setText("Còn khuyến mại");
+        txtTrangthai.setText("Hết khuyến mại");
 
         button15.setBackground(new java.awt.Color(153, 153, 255));
         button15.setText("In thành file excel");
@@ -622,6 +627,15 @@ public class GiamGia extends javax.swing.JPanel {
     private void button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button15ActionPerformed
         btnInDanhSach();        // TODO add your handling code here:
     }//GEN-LAST:event_button15ActionPerformed
+
+    private void btnTrangthaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangthaiMouseClicked
+        // TODO add your handling code here:
+        if(btnTrangthai.isSelected()==false){
+            txtTrangthai.setText("Còn khuyến mại ");
+        }else{
+            txtTrangthai.setText("Hết khuyến mại");
+        }
+    }//GEN-LAST:event_btnTrangthaiMouseClicked
   public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();

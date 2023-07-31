@@ -152,6 +152,7 @@ public class KhachHangThem extends javax.swing.JDialog {
         jLabel1.setText("Khách hàng");
 
         cbokhach.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "VIP2", "VIP1", "Thường" }));
+        cbokhach.setSelectedIndex(-1);
         cbokhach.setLabeText("Loại khách hàng");
 
         txtNgaySinh.setLabelText("Ngày sinh");

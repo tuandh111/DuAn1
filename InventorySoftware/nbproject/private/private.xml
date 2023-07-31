@@ -5,8 +5,11 @@
         <group>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DaXoaKH.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHangBaoHanh.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThongTinNhanVien.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/KhachHangDAO.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHangThem.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHang.java</file>
