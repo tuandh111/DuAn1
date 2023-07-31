@@ -24,10 +24,10 @@ public class MainAn2 extends javax.swing.JPanel {
      */
      public MainAn2() {
         initComponents();
-        chart.setTitle("Doanh thu");
-        chart.addLegend("Doanh thu tuần", Color.decode("#7b4397"), Color.decode("#dc2430"));
-        chart.addLegend("Doanh thu tháng", Color.decode("#e65c00"), Color.decode("#F9D423"));
-        chart.addLegend("Doanh thu năm", Color.decode("#0099F7"), Color.decode("#F11712"));
+        chart.setTitle("Doanh thu tháng");
+        chart.addLegend("IPhone", Color.decode("#7b4397"), Color.decode("#dc2430"));
+        chart.addLegend("Samsung", Color.decode("#e65c00"), Color.decode("#F9D423"));
+        chart.addLegend("Sony", Color.decode("#0099F7"), Color.decode("#F11712"));
         test();
     }
 
@@ -61,12 +61,12 @@ public class MainAn2 extends javax.swing.JPanel {
 
     private void test() {
         chart.clear();
-        chart.addData(new ModelChart("January", new double[]{500, 50, 100}));
-        chart.addData(new ModelChart("February", new double[]{600, 300, 150}));
-        chart.addData(new ModelChart("March", new double[]{200, 50, 900}));
-        chart.addData(new ModelChart("April", new double[]{480, 700, 100}));
-        chart.addData(new ModelChart("May", new double[]{350, 540, 500}));
-        chart.addData(new ModelChart("June", new double[]{450, 800, 100}));
+        chart.addData(new ModelChart("January", new double[]{500000000, 500000000, 1008757743}));
+        chart.addData(new ModelChart("February", new double[]{60000000, 300000000, 150000000}));
+        chart.addData(new ModelChart("March", new double[]{200765435, 509875424, 900975435}));
+        chart.addData(new ModelChart("April", new double[]{480676467, 700964677, 1008765432}));
+        chart.addData(new ModelChart("May", new double[]{350765456, 540987888, 500987654}));
+        chart.addData(new ModelChart("June", new double[]{450767856, 800987777, 100998755}));
         chart.start();
     }
 

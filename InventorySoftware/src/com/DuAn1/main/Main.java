@@ -83,9 +83,9 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
                         main.showForm(new com.DuAn1.MainAn.MainAn());
-                    } else if (subMenuIndex == 1) {
+                    } else if (subMenuIndex == 7) {
                         main.showForm(new com.DuAn1.MainAn.MainAn1());
-                    } else if (subMenuIndex == 2) {
+                    } else if (subMenuIndex == 1) {
                         main.showForm(new com.DuAn1.MainAn.MainAn2());
                     } else if (subMenuIndex == 3) {
                         main.showForm(new LichSu());

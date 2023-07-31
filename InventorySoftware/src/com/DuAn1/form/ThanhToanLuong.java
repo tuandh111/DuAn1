@@ -279,8 +279,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtLuongTangCa = new com.DuAn1.Swing.TextField();
         cboMaLuong = new com.DuAn1.Swing.Combobox();
         btnTim = new com.DuAn1.Swing.Button();
-        txtLoc = new com.DuAn1.Swing.TextField1();
-        btnLoc = new com.DuAn1.Swing.Button();
         button15 = new com.DuAn1.Swing.Button();
 
         dateChooser.setTextRefernce(txtNgayVaoCTY);
@@ -469,21 +467,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
-        txtLoc.setHint("Lọc theo lương");
-        txtLoc.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtLocCaretUpdate(evt);
-            }
-        });
-
-        btnLoc.setBackground(new java.awt.Color(153, 153, 255));
-        btnLoc.setText("Lọc");
-        btnLoc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocActionPerformed(evt);
-            }
-        });
-
         button15.setBackground(new java.awt.Color(153, 153, 255));
         button15.setText("In thành file excel");
         button15.addActionListener(new java.awt.event.ActionListener() {
@@ -541,11 +524,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                         .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(271, 271, 271)
                         .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -586,9 +565,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                             .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1029,30 +1006,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnTimActionPerformed
 
-    private void btnLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocActionPerformed
-        // TODO add your handling code here:
-        model = (DefaultTableModel) tblThanhToanLuong.getModel();
-        model.setRowCount(0);
-        try {
-            List<ThanhToanLuongModel> list = (List<ThanhToanLuongModel>) dao.LocTheoLuongCoBan(txtLoc.getText());
-            for (ThanhToanLuongModel ttl : list) {
-                Object[] row = new Object[]{ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(), ttl.getNgayVaoCTy(),
-                    ttl.getSoGioTangCa(), ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
-                model.addRow(row);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
-        }
-    }//GEN-LAST:event_btnLocActionPerformed
-
-    private void txtLocCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLocCaretUpdate
-        // TODO add your handling code here:
-        if (txtLoc.getText().equals("")) {
-            this.fillTable();
-        }
-    }//GEN-LAST:event_txtLocCaretUpdate
-
     private void lblTongTienAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblTongTienAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTongTienAncestorAdded
@@ -1069,7 +1022,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.DuAn1.Swing.Button btnLoc;
     private com.DuAn1.Swing.Button btnMoi;
     private com.DuAn1.Swing.Button btnSua;
     private com.DuAn1.Swing.Button btnThem;
@@ -1088,7 +1040,6 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private javax.swing.JLabel lblTrangThai;
     private com.raven.swing.table.Table tblThanhToanLuong;
     private com.DuAn1.Swing.TextField txtKhoangTru;
-    private com.DuAn1.Swing.TextField1 txtLoc;
     private com.DuAn1.Swing.TextField txtLuongCoBan;
     private com.DuAn1.Swing.TextField txtLuongTangCa;
     private com.DuAn1.Swing.TextField txtNgayVaoCTY;

@@ -363,8 +363,6 @@ public class Form_Home extends javax.swing.JPanel {
 
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         // TODO add your handling code here:
-        int i = tblUser.getSelectedRow();
-        JOptionPane.showMessageDialog(this, i);
     }//GEN-LAST:event_tblUserMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
