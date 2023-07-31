@@ -79,7 +79,8 @@ public class KhachHang extends javax.swing.JPanel {
         tblModel.setColumnIdentifiers(name);
         tblUser.setModel(tblModel);
     }
-      public void btnInDanhSach() {
+
+    public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();
             jFileChooser.showSaveDialog(this);
@@ -127,18 +128,21 @@ public class KhachHang extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }
+
     void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
             List<KhachHangModel> list = daoKH.select();
             for (KhachHangModel model : list) {
-                System.out.println(model.getMaKH());
+                String dateString = model.getNgaySinh();
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
                 Object[] row = new Object[]{
                     model.getMaKH(),
                     model.getTenKH(),
                     model.getSDT(),
-                    model.getNgaySinh(),
+                    formattedDate,
                     model.getDiaChi(),
                     model.isGT() ? "Nam" : "Nữ",
                     model.getLoaiKH(),

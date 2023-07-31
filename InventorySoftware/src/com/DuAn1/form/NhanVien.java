@@ -107,7 +107,10 @@ public class NhanVien extends javax.swing.JPanel {
             List<NhanVienModel> list = Dao.select();
             System.out.println(list.size());
             for (NhanVienModel nv : list) {
-                Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                 String dateString = nv.getNgaySinh();
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), formattedDate, nv.isGioiTinh() ? "Nam" : "Nữ",
                     nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
                 model.addRow(row);
             }

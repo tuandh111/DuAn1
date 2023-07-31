@@ -82,7 +82,13 @@ public class GiamGia extends javax.swing.JPanel {
             List<GiamGiaModel> list = Dao.select();
             System.out.println(list.size());
             for (GiamGiaModel nv : list) {
-                Object[] row = new Object[]{nv.getMaGG(), nv.getNgayBD(), nv.getNgayKT(), nv.getPhanTram(), nv.getMota(), nv.isTrangThai() ? "Còn Khuyến Mại" : "Hết Khuyến Mại", nv.getMaNV()};
+                 String dateString = nv.getNgayBD();
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                 String dateString1 = nv.getNgayKT();
+                Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                String formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                Object[] row = new Object[]{nv.getMaGG(), formattedDate, formattedDate1, nv.getPhanTram(), nv.getMota(), nv.isTrangThai() ? "Còn Khuyến Mại" : "Hết Khuyến Mại", nv.getMaNV()};
                 model.addRow(row);
             }
         } catch (Exception e) {
