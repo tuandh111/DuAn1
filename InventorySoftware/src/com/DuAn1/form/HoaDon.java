@@ -4380,7 +4380,7 @@ public class HoaDon extends javax.swing.JPanel {
         if (txtTienkhach.getText().equalsIgnoreCase("")) {
             return;
         }
-        txtConlai.setText(String.format("%.0f", Double.parseDouble(txtTongTien.getText()) - Double.parseDouble(txtTienkhach.getText())));        // TODO add your handling code here:
+        txtConlai.setText(String.format("%.0f", Double.parseDouble(txtTienkhach.getText()) - Double.parseDouble(txtTongTien.getText())));        // TODO add your handling code here:
     }//GEN-LAST:event_txtTienkhachCaretUpdate
 
     private void cboHinhThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboHinhThucActionPerformed
