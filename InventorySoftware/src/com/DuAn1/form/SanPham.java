@@ -460,6 +460,11 @@ public class SanPham extends javax.swing.JPanel {
     }
 
     void delete() {
+        int chon = tblUser.getSelectedRow();
+        if (chon < 0) {
+            DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            return;
+        }
         SanPhamModel sp = getFormSP();
         try {
             Dao.delete(sp);
@@ -543,9 +548,15 @@ public class SanPham extends javax.swing.JPanel {
     }
 
     public void Sua() {
+        int chon = tblUser.getSelectedRow();
+        if (chon < 0) {
+            DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            return;
+        }
         if (checkForm() == false) {
             return;
         }
+
         SanPhamModel daoSP = getFormSP();
         DienThoaiModel daoDT = getFormDT();
         try {
@@ -1421,12 +1432,14 @@ public class SanPham extends javax.swing.JPanel {
     }
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         // TODO add your handling code here:
-        String name =JOptionPane.showInputDialog(this,"Nhập Mã cần tìm kiếm");
+        String name = JOptionPane.showInputDialog(this, "Nhập Mã cần tìm kiếm");
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
             List<SanPhamModel> list = Dao.TimKiemTheoMa(name);
-            if(list.size()==0)DialogHelper.alert(this, "Không tìm thấy");
+            if (list.size() == 0) {
+                DialogHelper.alert(this, "Không tìm thấy");
+            }
             for (SanPhamModel nv : list) {
                 Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                 tblModel.addRow(row);
@@ -1475,7 +1488,7 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
-        
+
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
