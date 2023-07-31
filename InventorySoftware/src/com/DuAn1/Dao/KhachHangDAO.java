@@ -68,6 +68,11 @@ public class KhachHangDAO {
         return select(sql);
     }
 
+    public List<KhachHangModel> selectDaXoa() {
+        String sql = "SELECT * from KHACHHANG where TrangThai=0";
+        return select(sql);
+    }
+
     public List<KhachHangModel> selectSDT(String SDT) {
         String sql = "SELECT * from KHACHHANG where SDT = ?";
         return select(sql, SDT);
@@ -77,13 +82,18 @@ public class KhachHangDAO {
         String sql = "SELECT * from KHACHHANG where TenKH = ?";
         return select(sql, SDT);
     }
-    
+
     public void KhoiPhuc(String model) {
         String sql = "update KHACHHANG set TrangThai=1 where MaKH= ?";
         JdbcHelper.executeUpdate(sql, model);
     }
-public List<KhachHangModel> selectDaXoaTheoMa(String Ma) {
+
+    public List<KhachHangModel> selectDaXoaTheoMa(String Ma) {
         String sql = "SELECT * FROM KhachHang WHERE  MaKH like ?";
+        return select(sql, "%" + Ma + "%");
+    }
+       public List<KhachHangModel> selectDaX(String Ma) {
+        String sql = "SELECT * FROM KhachHang WHERE  MaKH like ? and TrangThai=0";
         return select(sql, "%" + Ma + "%");
     }
     private List<KhachHangModel> select(String sql, Object... args) {

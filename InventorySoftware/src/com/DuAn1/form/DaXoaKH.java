@@ -161,7 +161,7 @@ void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<KhachHangModel> list = khdao.select();
+            List<KhachHangModel> list = khdao.selectDaXoa();
             for (KhachHangModel nv : list) {
                 String NgaySinh = "";
 
@@ -194,7 +194,7 @@ void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<KhachHangModel> list = khdao.selectDaXoaTheoMa(txtTimKiem.getText());
+            List<KhachHangModel> list = khdao.selectDaX(txtTimKiem.getText());
             for (KhachHangModel nv : list) {
                 String ngaySinh = "";
                 if (nv.getNgaySinh() != null) {
