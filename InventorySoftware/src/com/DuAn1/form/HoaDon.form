@@ -194,7 +194,11 @@
                                           <Group type="102" attributes="0">
                                               <Component id="txtMa" min="-2" pref="194" max="-2" attributes="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                               <EmptySpace max="32767" attributes="0"/>
+=======
+                                              <EmptySpace pref="50" max="32767" attributes="0"/>
+>>>>>>> parent of 3ffe763 (t)
 =======
                                               <EmptySpace pref="50" max="32767" attributes="0"/>
 >>>>>>> parent of 3ffe763 (t)
@@ -472,11 +476,19 @@
                 </Property>
                 <Property name="selectedIndex" type="int" value="-1"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Property name="labeText" type="java.lang.String" value="H&#xec;nh th&#x1ee9;c"/>
 =======
                 <Property name="labeText" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c TT"/>
 >>>>>>> parent of 3ffe763 (t)
               </Properties>
+=======
+                <Property name="labeText" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c TT"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThucActionPerformed"/>
+              </Events>
+>>>>>>> parent of 3ffe763 (t)
             </Component>
           </SubComponents>
         </Container>
