@@ -359,9 +359,9 @@ public class HoaDon extends javax.swing.JPanel {
                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
-
+                z++;
             }
-            z++;
+
         }
     }
 
@@ -436,8 +436,8 @@ public class HoaDon extends javax.swing.JPanel {
         dt.setDongia(String.valueOf(txtDonGia.getText()));
         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
-             long number =  (long) df.parse(txtTongTien.getText());
-             dt.setTongtien(String.valueOf(number));
+            long number = (long) df.parse(txtTongTien.getText());
+            dt.setTongtien(String.valueOf(number));
         } catch (ParseException ex) {
             Logger.getLogger(ThanhToanLuong.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3921,7 +3921,7 @@ public class HoaDon extends javax.swing.JPanel {
                 tongGia += nv.getGia();
                 tongSoLuong += nv.getSoLuong();
             }
-           txtDonGia.setText(String.format("%.0f", tongGia));
+            txtDonGia.setText(String.format("%.0f", tongGia));
             txtSoLuong.setText(String.valueOf(tongSoLuong));
             double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
             txtTongTien.setText(String.format("%.0f", tongTien));
