@@ -174,7 +174,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setKhoanTru(Double.parseDouble(txtKhoangTru.getText()));
           DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
-            double number =  (double) df.parse(lblTongTien.getText());
+             long number =  (long) df.parse(lblTongTien.getText());
              ttl.setTongTien(number);
         } catch (ParseException ex) {
             Logger.getLogger(ThanhToanLuong.class.getName()).log(Level.SEVERE, null, ex);
@@ -825,7 +825,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + luongTangCa - Double.parseDouble(txtKhoangTru.getText());;
         }
 
-        lblTongTien.setText(String.valueOf(tongTien));
+//        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
         lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtKhoangTruCaretUpdate
