@@ -20,10 +20,8 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import javax.imageio.ImageIO;
@@ -48,8 +46,6 @@ public class ThemKH extends javax.swing.JDialog {
     String strHinh = "";
     NhanVienDAO1 dao = new NhanVienDAO1();
 
-    
-
     /**
      * Creates new form ThemKH
      */
@@ -67,15 +63,7 @@ public class ThemKH extends javax.swing.JDialog {
         nv.setMaKH(txtma.getText());
         nv.setTenKH(txtTen.getText());
         nv.setSDT(txtSdt.getText());
-        try {
-            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaySinh.getText());
-
-            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
-
-            nv.setNgaySinh(ngayNhap);
-
-        } catch (Exception e) {
-        }
+        nv.setNgaySinh(txtNgaySinh.getText());
         nv.setDiaChi(txtDiachi.getText());
         if (cboGioitinh.getSelectedItem().equals("Nam")) {
             nv.setGT(true);
@@ -110,12 +98,6 @@ public class ThemKH extends javax.swing.JDialog {
     }
 
     public boolean check() {
-        String so = "0\\d{9,10}";
-        if(txtSdt.getText().matches(so)){
-            return true;
-        }else{
-             com.tuandhpc05076.helper.DialogHelper.alert(this, "Số điện thoại bạn nhập không đúng định dạng");
-        }
 //        if (Dao.findById(txtTaikhoan.getText()) != null) {
 //            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
 //            return false;
@@ -420,7 +402,7 @@ public class ThemKH extends javax.swing.JDialog {
         }
         insert();
         TuDongTangMa();
-        HoaDon.setSoLuong(txtma.getText());
+        DatHang1.setSoLuong(txtSdt.getText());
         //        BaoHanh.setSoLuong(txtma.getText());
         dispose();
     }//GEN-LAST:event_btnThemActionPerformed
