@@ -157,7 +157,7 @@ public class DanhSachMH1 extends javax.swing.JDialog {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã ĐH", "Số lượng", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Tên Khách Hàng", "Hình thức TT", "Tiền khách đưa", "Tiền thừa"
+                "Mã ĐH", "Số lượng", "Đơn giá", "Tổng tiền", "Thời gian đặt", "Mã Khách Hàng", "Hình thức TT", "Tiền khách đưa", "Tiền thừa"
             }
         ) {
             boolean[] canEdit = new boolean [] {

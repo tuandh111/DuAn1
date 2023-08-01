@@ -56,7 +56,7 @@ public class HoaDon extends javax.swing.JPanel {
     public static String ma = "";
     public static String hoten = "";
     public static String soLuong = "";
-
+    public static String HinhThuc;
     public static String getSoLuong() {
         return soLuong;
     }
@@ -961,7 +961,8 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
-        cboHinhThuc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền mặt", "Chuyển khoản" }));
+        cboHinhThuc.setEditable(true);
+        cboHinhThuc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền Mặt", "Chuyển Khoản" }));
         cboHinhThuc.setSelectedIndex(-1);
         cboHinhThuc.setLabeText("Hình Thức TT");
         cboHinhThuc.addActionListener(new java.awt.event.ActionListener() {
@@ -3824,7 +3825,10 @@ public class HoaDon extends javax.swing.JPanel {
         txtTongTien.setText(String.format("%.1f", DanhSachMH.getTongTien()));
         txtNgayXuat.setText(DanhSachMH.getNgay());
         txtKhachhang.setText(DanhSachMH.getTen());
-        cboHinhThuc.setSelectedItem(DanhSachMH.getHinhThuc());
+//        if(DanhSachMH1.getHinhThuc().trim().equals("Tiền Mặt")){
+//            
+//        }
+        cboHinhThuc.setSelectedItem(DanhSachMH.getHinhThuc().trim());
         txtTienkhach.setText(String.format("%.0f", DanhSachMH.getTienkhach()));
         txtConlai.setText(String.valueOf(DanhSachMH.getTienCon()));
         txtThongBao.setVisible(true);
