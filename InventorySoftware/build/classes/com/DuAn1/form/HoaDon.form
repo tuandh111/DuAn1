@@ -172,15 +172,14 @@
                                   <Component id="btnThanhtoan" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtMota" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
+                                      <Component id="txtMa" min="-2" pref="158" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="txtThongBao" min="-2" pref="134" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="txtThongBao" min="-2" pref="134" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="txtMa" min="-2" pref="194" max="-2" attributes="0"/>
-                                              <EmptySpace pref="50" max="32767" attributes="0"/>
-                                              <Component id="txtKhachhang" min="-2" pref="135" max="-2" attributes="0"/>
+                                              <Component id="button10" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txtKhachhang" min="-2" pref="81" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -220,14 +219,13 @@
                           <Component id="button4" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtKhachhang" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtMa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="button9" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="button10" alignment="0" max="32767" attributes="0"/>
+                          <Component id="button9" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtMa" max="32767" attributes="0"/>
+                          <Component id="txtKhachhang" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Component id="txtThongBao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -272,16 +270,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="H&#xf3;a &#x111;&#x1a1;n"/>
               </Properties>
-            </Component>
-            <Component class="com.DuAn1.Swing.TextField" name="txtKhachhang">
-              <Properties>
-                <Property name="labelText" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
-              </Properties>
-              <Events>
-                <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtKhachhangCaretUpdate"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtKhachhangMousePressed"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKhachhangActionPerformed"/>
-              </Events>
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtMa">
               <Properties>
@@ -469,11 +457,41 @@
                   </StringArray>
                 </Property>
                 <Property name="selectedIndex" type="int" value="-1"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="labeText" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c TT"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThucActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="com.DuAn1.swing0.button0" name="button10">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="33" red="0" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Kh&#xe1;ch h&#xe0;ng &#x111;&#xe3; c&#xf3;"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button10ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="txtKhachhang">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="0" red="99" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
