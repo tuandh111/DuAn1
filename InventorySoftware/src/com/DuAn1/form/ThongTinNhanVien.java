@@ -338,47 +338,47 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_button1ActionPerformed
 
     private void txtHinhAnhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhAnhMouseClicked
-        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            File file = jFileChooser1.getSelectedFile();
-            if (ShareHelper.saveLogo(file)) {
-                // Hiển thị hình lên form
-                Image img = null;
-                try {
-                    img = ImageIO.read(file);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-
-                strHinh = file.getName();
-                txtHinhAnh.setText("");
-
-                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
-                txtHinhAnh.setToolTipText(file.getName());
-                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
-            }
-        }        // TODO add your handling code here:
+//        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+//            File file = jFileChooser1.getSelectedFile();
+//            if (ShareHelper.saveLogo(file)) {
+//                // Hiển thị hình lên form
+//                Image img = null;
+//                try {
+//                    img = ImageIO.read(file);
+//                } catch (IOException ex) {
+//                    ex.printStackTrace();
+//                }
+//
+//                strHinh = file.getName();
+//                txtHinhAnh.setText("");
+//
+//                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
+//                txtHinhAnh.setToolTipText(file.getName());
+//                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
+//            }
+//        }        // TODO add your handling code here:
     }//GEN-LAST:event_txtHinhAnhMouseClicked
 
     private void txtHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtHinhMouseClicked
-        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            File file = jFileChooser1.getSelectedFile();
-            if (ShareHelper.saveLogo(file)) {
-                // Hiển thị hình lên form
-                Image img = null;
-                try {
-                    img = ImageIO.read(file);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-
-                strHinh = file.getName();
-                txtHinhAnh.setText("");
-
-                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
-                txtHinhAnh.setToolTipText(file.getName());
-                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
-            }
-        }        // TODO add your handling code here:
+//        if (jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+//            File file = jFileChooser1.getSelectedFile();
+//            if (ShareHelper.saveLogo(file)) {
+//                // Hiển thị hình lên form
+//                Image img = null;
+//                try {
+//                    img = ImageIO.read(file);
+//                } catch (IOException ex) {
+//                    ex.printStackTrace();
+//                }
+//
+//                strHinh = file.getName();
+//                txtHinhAnh.setText("");
+//
+//                txtHinhAnh.setIcon(ShareHelper.readLogo(file.getName()));
+//                txtHinhAnh.setToolTipText(file.getName());
+//                txtHinhAnh.setIcon(new ImageIcon(img.getScaledInstance(165, 135, 0)));
+//            }
+//        }        // TODO add your handling code here:
     }//GEN-LAST:event_txtHinhMouseClicked
 
     /**

@@ -3855,9 +3855,10 @@ public class HoaDon extends javax.swing.JPanel {
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
         DatHang1.setSoLuong(txtKhachhang.getText());
-        KhachHangThem kh = new KhachHangThem(com.DuAn1.main.Main.getMain(), true);
-        kh.setVisible(true);
-        txtKhachhang.setText(DatHang1.getSoLuong());
+        //không sài lại code bên kia 
+//        KhachHangThem kh = new KhachHangThem(com.DuAn1.main.Main.getMain(), true);
+//        kh.setVisible(true);
+//        txtKhachhang.setText(DatHang1.getSoLuong());
     }//GEN-LAST:event_button9ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
