@@ -730,6 +730,11 @@ public class SanPham extends javax.swing.JPanel {
         cboMau.setLabeText("Màu sắc");
 
         cboKhuyenMai.setLabeText("Chọn khuyến mại");
+        cboKhuyenMai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboKhuyenMaiActionPerformed(evt);
+            }
+        });
 
         cboLoaiSanPham.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Iphone", "Samsung", "Sony" }));
         cboLoaiSanPham.setSelectedIndex(-1);
@@ -1022,12 +1027,11 @@ public class SanPham extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 877, Short.MAX_VALUE)
-                .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(225, Short.MAX_VALUE)
+                .addGap(18, 225, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1501,6 +1505,17 @@ public class SanPham extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_txtTimKiemCaretUpdate
+    GiamGiaDao daoGiamGia = new GiamGiaDao();
+    private void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
+        String name = (String) cboKhuyenMai.getSelectedItem();
+        if (name != null) {
+            GiamGiaModel list = daoGiamGia.findById(name.trim());
+
+            double gia = Double.parseDouble(txtGia.getText());
+            gia = gia - gia * list.getPhanTram() / 100;
+            txtGia.setText(String.valueOf(gia));
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_cboKhuyenMaiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

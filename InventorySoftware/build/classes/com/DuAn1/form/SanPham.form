@@ -308,6 +308,9 @@
           <Properties>
             <Property name="labeText" type="java.lang.String" value="Ch&#x1ecd;n khuy&#x1ebf;n m&#x1ea1;i"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboKhuyenMaiActionPerformed"/>
+          </Events>
         </Component>
         <Component class="com.DuAn1.Swing.Combobox" name="cboLoaiSanPham">
           <Properties>
