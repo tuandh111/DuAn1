@@ -54,7 +54,16 @@ public class HoaDon extends javax.swing.JPanel {
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     DefaultTableModel tblModel;
     public static String ma = "";
-    public static String hoten="";
+    public static String hoten = "";
+    public static String soLuong = "";
+
+    public static String getSoLuong() {
+        return soLuong;
+    }
+
+    public static void setSoLuong(String soLuong) {
+        HoaDon.soLuong = soLuong;
+    }
 
     /**
      * Creates new form SanPham1
@@ -807,7 +816,7 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel28.setText("Hóa đơn");
 
-        txtKhachhang.setLabelText("Họ và tên");
+        txtKhachhang.setLabelText("Mã khách hàng");
         txtKhachhang.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtKhachhangCaretUpdate(evt);
@@ -3854,11 +3863,10 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_txtMotaMouseClicked
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
-        DatHang1.setSoLuong(txtKhachhang.getText());
-        //không sài lại code bên kia 
-//        KhachHangThem kh = new KhachHangThem(com.DuAn1.main.Main.getMain(), true);
-//        kh.setVisible(true);
-//        txtKhachhang.setText(DatHang1.getSoLuong());
+        HoaDon.setSoLuong(txtKhachhang.getText());
+        ThemKH kh = new ThemKH(com.DuAn1.main.Main.getMain(), true);
+        kh.setVisible(true);
+        txtKhachhang.setText(HoaDon.getSoLuong());
     }//GEN-LAST:event_button9ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
@@ -3881,7 +3889,7 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSoLuongCaretUpdate
 
     private void txtKhachhangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhachhangActionPerformed
-        List<KhachHangModel> list = daoKH.selectTen(txtKhachhang.getText());
+        List<KhachHangModel> list = daoKH.selectMa(txtKhachhang.getText());
         txtThongBao.setVisible(true);
         if (list.size() == 0) {
             txtThongBao.setText("Khách hàng chưa tồn tại");
@@ -3936,7 +3944,7 @@ public class HoaDon extends javax.swing.JPanel {
 
     private void txtKhachhangCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhachhangCaretUpdate
 //        if(txtKhachhang.getText().startsWith(""))return;
-        List<KhachHangModel> list = daoKH.selectTen(txtKhachhang.getText().trim());
+        List<KhachHangModel> list = daoKH.selectMa(txtKhachhang.getText().trim());
         txtThongBao.setVisible(true);
 
         if (list.size() == 0) {
@@ -3949,7 +3957,7 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_txtKhachhangCaretUpdate
 
     private void txtKhachhangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtKhachhangMousePressed
-        List<KhachHangModel> list = daoKH.selectTen(txtKhachhang.getText());
+        List<KhachHangModel> list = daoKH.selectMa(txtKhachhang.getText());
         txtThongBao.setVisible(true);
         txtKhachhang.setText(DatHang1.getSoLuong());
         if (list.size() == 0) {
@@ -4364,7 +4372,7 @@ public class HoaDon extends javax.swing.JPanel {
 
     private void btnInBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInBillActionPerformed
         ma = txtMa.getText();
-        hoten=txtKhachhang.getText();
+        hoten = txtKhachhang.getText();
         InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
         hd.setVisible(true);
 

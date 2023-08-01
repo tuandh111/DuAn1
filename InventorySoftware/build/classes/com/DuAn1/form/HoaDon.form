@@ -275,7 +275,7 @@
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtKhachhang">
               <Properties>
-                <Property name="labelText" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n"/>
+                <Property name="labelText" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
                 <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtKhachhangCaretUpdate"/>

@@ -78,8 +78,8 @@ public class KhachHangDAO {
         return select(sql, SDT);
     }
 
-    public List<KhachHangModel> selectTen(String SDT) {
-        String sql = "SELECT * from KHACHHANG where TenKH = ?";
+    public List<KhachHangModel> selectMa(String SDT) {
+        String sql = "select * from KHACHHANG Where MaKH = ?";
         return select(sql, SDT);
     }
 
