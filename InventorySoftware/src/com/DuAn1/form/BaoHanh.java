@@ -3853,7 +3853,9 @@ public class BaoHanh extends javax.swing.JPanel {
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
         // TODO add your handling code here:
-        themBH();
+       if(checkbtnBH()){
+            themBH();
+       }
 
     }//GEN-LAST:event_button7ActionPerformed
 
@@ -3942,6 +3944,7 @@ public class BaoHanh extends javax.swing.JPanel {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
     }
+    
     private void btnTaoBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoBHActionPerformed
         // TODO add your handling code here:
         TuDongTangMa();
@@ -4426,7 +4429,38 @@ public class BaoHanh extends javax.swing.JPanel {
         }
         return true;
     }
-
+boolean checkbtnBH(){
+        if(txtMaBH.getText().equals("")){
+            DialogHelper.alert(this,"Chưa tạo mã bảo hành! Hãy tạo mã");
+            return false;
+        }
+        if(txtSoluong.getText().equals("")){
+             DialogHelper.alert(this,"Hãy nhập số lượng");
+            return false;
+        }
+        
+        if(txtemei.getText().equals("")){
+             DialogHelper.alert(this,"Hãy nhập số Imei");
+            return false;
+        }
+        if(txtKhachhang.getText().equals("")){
+             DialogHelper.alert(this,"Chưa chọn khách hàng! Hãy chọn khách hàng");
+            return false;
+        }
+        if(txtNgayBaoHanh.getText().equals("")){
+             DialogHelper.alert(this,"Hãy chọn ngày bảo hành");
+            return false;
+        }
+         if(txtNgayHetHan.getText().equals("")){
+             DialogHelper.alert(this,"Hãy chọn ngày hết hạn");
+            return false;
+        }
+         if(txtMoTa.getText().equals("")){
+             DialogHelper.alert(this,"Hãy nhập lí do bảo hành");
+            return false;
+        }
+         return true;
+    }
     public void Delete() {
         if (check() == false) {
             return;
