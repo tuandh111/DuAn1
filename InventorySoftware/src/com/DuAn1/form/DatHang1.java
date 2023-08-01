@@ -350,10 +350,11 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtGiaSoNy9.setText(String.format("%.0f", sp.getGia()));
                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
-                }z++;
+                }
+                z++;
 
             }
-            
+
         }
     }
 
@@ -3292,6 +3293,7 @@ public class DatHang1 extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel28.setText("Đặt hàng");
 
+        txtSoDienThoai.setEditable(false);
         txtSoDienThoai.setLabelText("Số điện thoại");
         txtSoDienThoai.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3611,7 +3613,10 @@ public class DatHang1 extends javax.swing.JPanel {
 
         dt.setTongTien(txtTongTien.getText());
         try {
-            Date date = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").parse(txtNgayXuat.getText());
+            LocalDateTime current = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS");
+            String formatted = current.format(formatter);
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(formatted);
 
             String ngayNhap = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(date);
 
@@ -3693,6 +3698,7 @@ public class DatHang1 extends javax.swing.JPanel {
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
         clearForm();
+        txtSoDienThoai.setEditable(true);
         TuDongTangMa();
         Them();
         btnHuyDatHang.setEnabled(true);
@@ -4220,7 +4226,7 @@ public class DatHang1 extends javax.swing.JPanel {
     String so = "0\\d{9,10}";
     private void txtSoDienThoaiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoDienThoaiCaretUpdate
         List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
-   
+
         if (list.size() == 0) {
             if (txtSoDienThoai.getText().matches(so)) {
                 txtThongBao.setVisible(true);
