@@ -49,6 +49,16 @@ public class GiamGiaDao {
         return select(sql);
     }
 
+    public List<GiamGiaModel> orderByTang() {
+        String sql = "select * from GIAMGIA order by MaGiamGia";
+        return this.select(sql);
+    }
+
+    public List<GiamGiaModel> orderByGiam() {
+        String sql = "select * from GIAMGIA order by MaGiamGia desc";
+        return this.select(sql);
+    }
+
     private List<GiamGiaModel> select(String sql, Object... args) {
         List<GiamGiaModel> list = new ArrayList<>();
         try {
@@ -90,8 +100,9 @@ public class GiamGiaDao {
         List<GiamGiaModel> list = select(sql, makh);
         return list.size() > 0 ? list.get(0) : null;
     }
+
     public List<GiamGiaModel> TimKiemTheoTen(String MaGG) {
         String sql = "SELECT * FROM GIAMGIA WHERE MaGiamGia LIKE ?";
-        return select(sql, "%"+MaGG+"%");
+        return select(sql, "%" + MaGG + "%");
     }
 }

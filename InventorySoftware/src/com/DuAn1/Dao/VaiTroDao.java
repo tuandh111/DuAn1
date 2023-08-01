@@ -51,6 +51,16 @@ public class VaiTroDao {
         return list.size() > 0 ? list.get(0) : null;
     }
 
+    public List<VaiTroModel> orderByTang() {
+        String sql = "select * from VAITRO order by MaVaiTro";
+        return this.select(sql);
+    }
+
+    public List<VaiTroModel> orderByGiam() {
+        String sql = "select * from VAITRO order by MaVaiTro desc";
+        return this.select(sql);
+    }
+
     private List<VaiTroModel> select(String sql, Object... args) {
         List<VaiTroModel> list = new ArrayList<>();
         try {
@@ -76,5 +86,10 @@ public class VaiTroDao {
         model.setTenVT(rs.getString("ChucVu"));
         model.setGhichu(rs.getString("GhiChu"));
         return model;
+    }
+
+    public List<VaiTroModel> TimKiemTheoTen(String MaGG) {
+        String sql = "SELECT * FROM VAITRO WHERE MaVaiTro LIKE ?";
+        return select(sql, "%" + MaGG + "%");
     }
 }

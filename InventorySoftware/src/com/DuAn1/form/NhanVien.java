@@ -182,12 +182,8 @@ public class NhanVien extends javax.swing.JPanel {
         nv.setDiaChi(txtDiachi.getText());
         nv.setSDT(txtSdt.getText());
         nv.setEmail(txtEmail.getText());
-        String mk = MH.toSHA(new String(txtMatkhau.getPassword()));
-        nv.setMatKhau(mk);
         if (cboVaitro.getSelectedItem().equals("Quản lý")) {
             nv.setVaiTro("QL");
-        } else if (cboVaitro.getSelectedItem().equals("Nhân Viên")) {
-            nv.setVaiTro("NV");
         } else {
             nv.setVaiTro("NV");
         }
@@ -266,9 +262,9 @@ public class NhanVien extends javax.swing.JPanel {
         txtDiachi.setText(nv.getDiaChi());
         txtSdt.setText(nv.getSDT());
         txtEmail.setText(nv.getEmail());
-        txtMatkhau.setText(nv.getMatKhau());
+        txtMatkhau.setText("******");
         if (nv.getVaiTro().trim().equalsIgnoreCase("QL")) {
-            cboVaitro.setSelectedItem("Quản Lý");
+            cboVaitro.setSelectedItem("Quản lý");
         } else {
             cboVaitro.setSelectedItem("Nhân Viên");
         }
@@ -341,7 +337,7 @@ public class NhanVien extends javax.swing.JPanel {
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanvien.getRowCount() - 1);
         txtTaikhoan.setEditable(!edit);
-        txtMatkhau.setEditable(edit);
+        txtMatkhau.setEditable(!edit);
         btnThem.setEnabled(edit);
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
@@ -883,6 +879,7 @@ public class NhanVien extends javax.swing.JPanel {
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         ClearForm();
         TuDongTangMa();
+        txtMatkhau.setEditable(true);
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed

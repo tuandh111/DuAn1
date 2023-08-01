@@ -82,10 +82,10 @@ public class GiamGia extends javax.swing.JPanel {
             List<GiamGiaModel> list = Dao.select();
             System.out.println(list.size());
             for (GiamGiaModel nv : list) {
-                 String dateString = nv.getNgayBD();
+                String dateString = nv.getNgayBD();
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
                 String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                 String dateString1 = nv.getNgayKT();
+                String dateString1 = nv.getNgayKT();
                 Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
                 String formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
                 Object[] row = new Object[]{nv.getMaGG(), formattedDate, formattedDate1, nv.getPhanTram(), nv.getMota(), nv.isTrangThai() ? "Còn Khuyến Mại" : "Hết Khuyến Mại", nv.getMaNV()};
@@ -332,7 +332,6 @@ public class GiamGia extends javax.swing.JPanel {
         txtNgayKT = new com.DuAn1.Swing.TextField();
         txtMota = new com.DuAn1.Swing.TextField();
         txtMaGG = new com.DuAn1.Swing.TextField();
-        txtTim = new com.DuAn1.Swing.TextField1();
         jPanel2 = new javax.swing.JPanel();
         btnSua = new com.DuAn1.Swing.Button();
         btnThem = new com.DuAn1.Swing.Button();
@@ -346,6 +345,7 @@ public class GiamGia extends javax.swing.JPanel {
         btnTrangthai = new com.DuAn1.swing0.SwitchButton();
         txtTrangthai = new javax.swing.JLabel();
         button15 = new com.DuAn1.Swing.Button();
+        txtTim = new com.DuAn1.Swing.TextField1();
 
         dateChooser1.setTextRefernce(txtNgayKT);
 
@@ -385,13 +385,6 @@ public class GiamGia extends javax.swing.JPanel {
 
         txtMaGG.setLabelText("Mã Giảm Giá");
 
-        txtTim.setHint("Tìm kiếm");
-        txtTim.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtTimCaretUpdate(evt);
-            }
-        });
-
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -427,6 +420,9 @@ public class GiamGia extends javax.swing.JPanel {
             }
         });
 
+        cboLoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mã Tăng", "Mã Giảm" }));
+        cboLoc.setSelectedIndex(-1);
+        cboLoc.setToolTipText("");
         cboLoc.setLabeText("Lọc ");
         cboLoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -506,43 +502,57 @@ public class GiamGia extends javax.swing.JPanel {
             }
         });
 
+        txtTim.setHint("Tìm kiếm");
+        txtTim.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtTimCaretUpdate(evt);
+            }
+        });
+        txtTim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimActionPerformed(evt);
+            }
+        });
+        txtTim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTimKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(65, 65, 65)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtMaGG, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtNgayBD, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(5, 5, 5))
+                        .addComponent(txtMaGG, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNgayBD, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 2, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtPhantram, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtMota, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(82, 82, 82)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(btnTrangthai, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtTrangthai))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(91, 91, 91)
-                                                .addComponent(txtNgayKT, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(btnTim, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(txtPhantram, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMota, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(82, 82, 82)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnTrangthai, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtTrangthai))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(91, 91, 91)
+                                        .addComponent(txtNgayKT, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(95, 95, 95)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
@@ -584,9 +594,11 @@ public class GiamGia extends javax.swing.JPanel {
                                 .addComponent(txtTrangthai)
                                 .addGap(11, 11, 11)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnTim, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -609,7 +621,45 @@ public class GiamGia extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLocActionPerformed
-        // TODO add your handling code here:
+        if (cboLoc.getSelectedItem().equals("Mã Tăng")) {
+            model = (DefaultTableModel) tblGiamgia.getModel();
+            model.setRowCount(0);
+            try {
+                List<GiamGiaModel> list = Dao.orderByTang();
+                for (GiamGiaModel nv : list) {
+                    String dateString = nv.getNgayBD();
+                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                    String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                    String dateString1 = nv.getNgayKT();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                    String formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                    Object[] row = new Object[]{nv.getMaGG(), formattedDate, formattedDate1, nv.getPhanTram(), nv.getMota(), nv.isTrangThai() ? "Còn Khuyến Mại" : "Hết Khuyến Mại", nv.getMaNV()};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+
+        } else {
+
+            model = (DefaultTableModel) tblGiamgia.getModel();
+            model.setRowCount(0);
+            try {
+                List<GiamGiaModel> list = Dao.orderByGiam();
+                for (GiamGiaModel nv : list) {
+                    String dateString = nv.getNgayBD();
+                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                    String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                    String dateString1 = nv.getNgayKT();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                    String formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                    Object[] row = new Object[]{nv.getMaGG(), formattedDate, formattedDate1, nv.getPhanTram(), nv.getMota(), nv.isTrangThai() ? "Còn Khuyến Mại" : "Hết Khuyến Mại", nv.getMaNV()};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
     }//GEN-LAST:event_cboLocActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
@@ -657,25 +707,46 @@ public class GiamGia extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayBDActionPerformed
 
-    private void txtTimCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimCaretUpdate
-        if (txtTim.getText().equals("")) {
-            this.filltable();
-        }
-    }//GEN-LAST:event_txtTimCaretUpdate
-
     private void button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button15ActionPerformed
         btnInDanhSach();        // TODO add your handling code here:
     }//GEN-LAST:event_button15ActionPerformed
 
     private void btnTrangthaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrangthaiMouseClicked
         // TODO add your handling code here:
-        if(btnTrangthai.isSelected()==false){
+        if (btnTrangthai.isSelected() == false) {
             txtTrangthai.setText("Còn khuyến mại ");
-        }else{
+        } else {
             txtTrangthai.setText("Hết khuyến mại");
         }
     }//GEN-LAST:event_btnTrangthaiMouseClicked
-  public void btnInDanhSach() {
+
+    private void txtTimCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimCaretUpdate
+        if (txtTim.getText().equals("")) {
+            this.filltable();
+        } else {
+            model = (DefaultTableModel) tblNhanvien.getModel();
+            model.setRowCount(0);
+            try {
+                List<NhanVienModel> list = Dao.TimKiemTheoTen(txtTim.getText());
+                for (NhanVienModel nv : list) {
+                    Object[] row = new Object[]{nv.getMaNV(), nv.getHoTen(), nv.getNgaySinh(), nv.isGioiTinh() ? "Nam" : "Nữ",
+                        nv.getDiaChi(), nv.getSDT(), nv.getVaiTro(), nv.getHinh(), nv.isTrangThai() ? "Đang hoạt động" : "Không hoạt động"};
+                    model.addRow(row);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
+    }//GEN-LAST:event_txtTimCaretUpdate
+
+    private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimActionPerformed
+
+    }//GEN-LAST:event_txtTimActionPerformed
+
+    private void txtTimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyPressed
+
+    }//GEN-LAST:event_txtTimKeyPressed
+    public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();
             jFileChooser.showSaveDialog(this);
@@ -694,7 +765,7 @@ public class GiamGia extends javax.swing.JPanel {
 
                 for (int j = 0; j < tblGiamgia.getRowCount(); j++) {
                     Row row = sheet.createRow(j + 1);
-                    for (int k = 0; k <tblGiamgia.getColumnCount(); k++) {
+                    for (int k = 0; k < tblGiamgia.getColumnCount(); k++) {
                         org.apache.poi.ss.usermodel.Cell cell = row.createCell(k);
                         if (tblGiamgia.getValueAt(j, k) != null) {
                             cell.setCellValue(tblGiamgia.getValueAt(j, k).toString());

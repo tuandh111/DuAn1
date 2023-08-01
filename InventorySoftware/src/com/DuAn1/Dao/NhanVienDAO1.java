@@ -118,7 +118,7 @@ public class NhanVienDAO1 {
     }
 
     public void update(NhanVienModel model) {
-        String sql = "UPDATE NHANVIEN SET HoTen  = ?, NgaySinh=?, GioiTinh=?,DiaChi=? ,SDT=?, Email =?, MatKhau=?, MaVaiTro=?, Hinh=?, TrangThai=?, TRANGTHAIXOA=? WHERE MaNV=?";
+        String sql = "UPDATE NHANVIEN SET HoTen  = ?, NgaySinh=?, GioiTinh=?,DiaChi=? ,SDT=?, Email =?, MaVaiTro=?, Hinh=?, TrangThai=?, TRANGTHAIXOA=? WHERE MaNV=?";
         JdbcHelper.executeUpdate(sql,
                 model.getHoTen(),
                 model.getNgaySinh(),
@@ -126,7 +126,6 @@ public class NhanVienDAO1 {
                 model.getDiaChi(),
                 model.getSDT(),
                 model.getEmail(),
-                model.getMatKhau(),
                 model.getVaiTro(),
                 model.getHinh(),
                 model.isTrangThai(),
