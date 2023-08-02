@@ -545,9 +545,9 @@ public class BaoHanh extends javax.swing.JPanel {
                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
-
+                z++;
             }
-            z++;
+
         }
     }
 
@@ -2907,7 +2907,7 @@ public class BaoHanh extends javax.swing.JPanel {
         txtSoLuongConSamSung1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSoLuongConSamSung1.setText("10");
 
-        btnAdd11.setText("Thêm ");
+        btnAdd11.setText("Thêm");
         btnAdd11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdd11ActionPerformed(evt);
@@ -3691,38 +3691,39 @@ public class BaoHanh extends javax.swing.JPanel {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(lbISamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbISamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbISamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(lbISamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lbISamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(lbISamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addComponent(lbISamSung1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbISamSung2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbISamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addComponent(lbISamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addComponent(lbISamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lbISamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(cboSapXep3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(cboHinhThuc3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(33, 33, 33))
+                                .addComponent(lbISamSung7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(lbISamSung8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(lbISamSung4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lbISamSung5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbISamSung6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbISamSung9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(cboSapXep3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(cboHinhThuc3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3854,9 +3855,9 @@ public class BaoHanh extends javax.swing.JPanel {
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
         // TODO add your handling code here:
-       if(checkbtnBH()){
+        if (checkbtnBH()) {
             themBH();
-       }
+        }
 
     }//GEN-LAST:event_button7ActionPerformed
 
@@ -3904,11 +3905,13 @@ public class BaoHanh extends javax.swing.JPanel {
 
             String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
 
-            bh.setNgayBH(ngayNhap);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
+        bh.setNgayBH(formatted);
         try {
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayHetHan.getText());
 
@@ -3945,7 +3948,7 @@ public class BaoHanh extends javax.swing.JPanel {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
     }
-    
+
     private void btnTaoBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoBHActionPerformed
         // TODO add your handling code here:
         TuDongTangMa();
@@ -4430,38 +4433,40 @@ public class BaoHanh extends javax.swing.JPanel {
         }
         return true;
     }
-boolean checkbtnBH(){
-        if(txtMaBH.getText().equals("")){
-            DialogHelper.alert(this,"Chưa tạo mã bảo hành! Hãy tạo mã");
+
+    boolean checkbtnBH() {
+        if (txtMaBH.getText().equals("")) {
+            DialogHelper.alert(this, "Chưa tạo mã bảo hành! Hãy tạo mã");
             return false;
         }
-        if(txtSoluong.getText().equals("")){
-             DialogHelper.alert(this,"Hãy nhập số lượng");
+        if (txtSoluong.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập số lượng");
             return false;
         }
-        
-        if(txtemei.getText().equals("")){
-             DialogHelper.alert(this,"Hãy nhập số Imei");
+
+        if (txtemei.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập số Imei");
             return false;
         }
-        if(txtKhachhang.getText().equals("")){
-             DialogHelper.alert(this,"Chưa chọn khách hàng! Hãy chọn khách hàng");
+        if (txtKhachhang.getText().equals("")) {
+            DialogHelper.alert(this, "Chưa chọn khách hàng! Hãy chọn khách hàng");
             return false;
         }
-        if(txtNgayBaoHanh.getText().equals("")){
-             DialogHelper.alert(this,"Hãy chọn ngày bảo hành");
+        if (txtNgayBaoHanh.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy chọn ngày bảo hành");
             return false;
         }
-         if(txtNgayHetHan.getText().equals("")){
-             DialogHelper.alert(this,"Hãy chọn ngày hết hạn");
+        if (txtNgayHetHan.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy chọn ngày hết hạn");
             return false;
         }
-         if(txtMoTa.getText().equals("")){
-             DialogHelper.alert(this,"Hãy nhập lí do bảo hành");
+        if (txtMoTa.getText().equals("")) {
+            DialogHelper.alert(this, "Hãy nhập lí do bảo hành");
             return false;
         }
-         return true;
+        return true;
     }
+
     public void Delete() {
         if (check() == false) {
             return;

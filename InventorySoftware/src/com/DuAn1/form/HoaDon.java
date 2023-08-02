@@ -58,13 +58,22 @@ public class HoaDon extends javax.swing.JPanel {
     public static String soLuong = "";
     public static String HinhThuc;
     public static String Makh = "";
-
+    public static String Phantram ="";
+    
     public static String getSoLuong() {
         return soLuong;
     }
 
     public static void setSoLuong(String soLuong) {
         HoaDon.soLuong = soLuong;
+    }
+
+    public static String getPhantram() {
+        return Phantram;
+    }
+
+    public static void setPhantram(String Phantram) {
+        HoaDon.Phantram = Phantram;
     }
 
     public static String getMakh() {
@@ -995,6 +1004,7 @@ public class HoaDon extends javax.swing.JPanel {
 
         txtGiamGiaTheoLoai.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtGiamGiaTheoLoai.setForeground(new java.awt.Color(255, 51, 51));
+        txtGiamGiaTheoLoai.setText("0");
 
         jLabel2.setText("Giảm giá LKH:");
 
@@ -3917,7 +3927,8 @@ public class HoaDon extends javax.swing.JPanel {
         ThemKH kh = new ThemKH(com.DuAn1.main.Main.getMain(), true);
         kh.setVisible(true);
         txtKhachhang.setText(HoaDon.getSoLuong());
-        List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong());
+        System.out.println(HoaDon.getSoLuong());
+        List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong().trim());
         System.out.println(listKH.size());
         for (KhachHangModel khachHangModel : listKH) {
             if (khachHangModel.getLoaiKH().trim().equalsIgnoreCase("VIP1")) {
@@ -3967,7 +3978,8 @@ public class HoaDon extends javax.swing.JPanel {
             double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
             txtTongTien.setText(String.format("%.0f", tongTien));
             DecimalFormat df = new DecimalFormat("#,##0.##");
-            txtTongTien.setText(String.format("%.0f", tongTien));
+             tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
+            txtTongTien.setText(String.format("%.0f",tongTien));
             txtTienkhach.setText(txtTienkhach.getText());
             txtConlai.setText(txtTongTien.getText());
             ThaoTacModel ThaoTacModel = getFormUpdate();
@@ -4398,6 +4410,7 @@ public class HoaDon extends javax.swing.JPanel {
     }//GEN-LAST:event_btnHuyHDActionPerformed
 
     private void btnInBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInBillActionPerformed
+        HoaDon.setPhantram(txtGiamGiaTheoLoai.getText());
         ma = txtMa.getText();
         hoten = txtKhachhang.getText();
         InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);

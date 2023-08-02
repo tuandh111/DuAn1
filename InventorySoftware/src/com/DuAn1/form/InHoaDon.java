@@ -46,7 +46,7 @@ public class InHoaDon extends javax.swing.JDialog {
                 + "Thời gian xuất: " + formatted + "\n"
                 + "Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
                 + "==============================" + "\n"+""
-                        + "Họ tên khách hàng: "+HoaDon.hoten
+                        + "Mã khách hàng: "+HoaDon.hoten
                         + "\nThông tin sản phẩm\n"+""
                         + "MaHD                            MaSP                           Giá                                           Số lượng"
                         + "\n");
@@ -72,7 +72,7 @@ public class InHoaDon extends javax.swing.JDialog {
                       + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
                       + "                                                                                                                 \n"
                       + "                                                                                                                   \n"
-                      +HoaDon.hoten+ "                                                                                              "+ShareHelper.USER.getHoTen()
+                      +"                                                                                                           "+ShareHelper.USER.getHoTen()
                       + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
   }
     /**
