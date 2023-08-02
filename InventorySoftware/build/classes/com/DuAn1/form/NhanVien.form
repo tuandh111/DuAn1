@@ -334,7 +334,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="cc" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x110;ang ho&#x1ea1;t &#x111;&#x1ed9;ng"/>
+        <Property name="text" type="java.lang.String" value="Ng&#x1b0;ng ho&#x1ea1;t &#x111;&#x1ed9;ng"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnTaianh">
@@ -396,7 +396,7 @@
     </Component>
     <Component class="com.DuAn1.Swing.TextField1" name="txtTim">
       <Properties>
-        <Property name="hint" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
+        <Property name="hint" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m M&#xe3;"/>
       </Properties>
       <Events>
         <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtTimCaretUpdate"/>

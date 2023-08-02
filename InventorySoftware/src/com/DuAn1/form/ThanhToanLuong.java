@@ -822,7 +822,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + luongTangCa;
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien + luongTangCa - Double.parseDouble(txtKhoangTru.getText());;
+            tongTien = tongTien-Double.parseDouble(txtKhoangTru.getText());;
         }
 
 //        lblTongTien.setText(String.valueOf(tongTien));

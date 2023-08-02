@@ -7,6 +7,7 @@ package com.DuAn1.form;
 import com.DuAn1.Dao.GiamGiaDao;
 import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Dao.ThongKeDao;
+import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.GiamGiaModel;
 import com.DuAn1.Model.ThaoTacModel;
@@ -97,6 +98,20 @@ public class GiamGia extends javax.swing.JPanel {
     }
 
     void insert() {
+        if(txtPhantram.getText().equals("")){
+            DialogHelper.alert(this,"Bạn chưa nhập phần trăm giảm giá");
+            return;
+        }
+        try {
+            Double phanTram = Double.parseDouble(txtPhantram.getText());
+            if (phanTram < 0 || phanTram > 100) {
+                DialogHelper.alert(this, "Phần trăm nhập chỉ có thể từ 0 đến 100");
+                return;
+            }
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Phần trăm không phải là số");
+            return;
+        }
         GiamGiaModel nv = getForm();
         try {
             Dao.insert(nv);
@@ -480,6 +495,11 @@ public class GiamGia extends javax.swing.JPanel {
         });
 
         txtPhantram.setLabelText("Phần trăm giảm giá");
+        txtPhantram.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPhantramFocusLost(evt);
+            }
+        });
 
         jLabel2.setText("Trạng thái:");
 
@@ -744,6 +764,20 @@ public class GiamGia extends javax.swing.JPanel {
     private void txtTimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyPressed
 
     }//GEN-LAST:event_txtTimKeyPressed
+
+    private void txtPhantramFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhantramFocusLost
+        // TODO add your handling code here:
+        try {
+            Double phanTram = Double.parseDouble(txtPhantram.getText());
+            if (phanTram < 0 || phanTram > 100) {
+                DialogHelper.alert(this, "Phần trăm nhập chỉ có thể từ 0 đến 100");
+                txtPhantram.setText("");
+            }
+        } catch (Exception e) {
+            DialogHelper.alert(this, "Phần trăm không phải là số");
+            txtPhantram.setText("");
+        }
+    }//GEN-LAST:event_txtPhantramFocusLost
     public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();

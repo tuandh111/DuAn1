@@ -45,11 +45,15 @@ import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -59,6 +63,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -114,6 +119,7 @@ public class SanPham extends javax.swing.JPanel {
         LoadCombobox();
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
         TuDongTangMa();
+      
     }
 
     void TuDongTangMa() {
@@ -260,7 +266,8 @@ public class SanPham extends javax.swing.JPanel {
         return dt;
     }
 
-    void setFormSP(SanPhamModel sp) {
+    void setFormSP(SanPhamModel sp
+    ) {
         txtMaSP.setText(sp.getMaSP());
         txtTenSP.setText(sp.getTenSP());
         cboMau.setSelectedItem(sp.getMau());
@@ -290,7 +297,8 @@ public class SanPham extends javax.swing.JPanel {
 
     }
 
-    void setFormDT(DienThoaiModel dt) {
+    void setFormDT(DienThoaiModel dt
+    ) {
         cboCPU.setSelectedItem(dt.getCPU().trim());
         cboMangHinh.setSelectedItem(dt.getMangHinh().trim());
         cboBoNho.setSelectedItem(dt.getBoNho().trim());
@@ -309,7 +317,8 @@ public class SanPham extends javax.swing.JPanel {
 //        this.setFormSP(nv);
 //        this.updateStatus();
 //    }
-    void updateStatus(boolean insertable) {
+    void updateStatus(boolean insertable
+    ) {
         txtMaSP.setEditable(insertable);
         btnThem.setEnabled(insertable);
         btnSua.setEnabled(!insertable);
@@ -362,10 +371,10 @@ public class SanPham extends javax.swing.JPanel {
             DialogHelper.alert(this, "Bạn chưa chọn loại sản phẩm");
             return false;
         }
-        if (cboKhuyenMai.getSelectedItem() == null) {
-            DialogHelper.alert(this, "Chọn khuyến mại");
-            return false;
-        }
+//        if (cboKhuyenMai.getSelectedItem() == null) {
+//            DialogHelper.alert(this, "Chọn khuyến mại");
+//            return false;
+//        }
         if (cboCPU.getSelectedItem() == null) {
             DialogHelper.alert(this, "Bạn chưa chọn CPU");
             return false;
@@ -388,6 +397,10 @@ public class SanPham extends javax.swing.JPanel {
         }
         if (cboMangHinh.getSelectedItem() == null) {
             DialogHelper.alert(this, "Bạn chưa chọn Màng hình");
+            return false;
+        }
+        if(Kiem){
+            DialogHelper.alert(this, "Bạn chưa chọn khuyến mại phù hợp");
             return false;
         }
         return true;
@@ -673,7 +686,7 @@ public class SanPham extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Mã", "Tên sản phẩm", "Giá", "Số lượng", "Giảm giá"
+                "Mã", "Tên sản phẩm", "Giá", "Số lượng", "Giảm giá             "
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -694,6 +707,11 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tblUser);
+        if (tblUser.getColumnModel().getColumnCount() > 0) {
+            tblUser.getColumnModel().getColumn(4).setMinWidth(100);
+            tblUser.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblUser.getColumnModel().getColumn(4).setMaxWidth(100);
+        }
 
         txtNgayNhap.setLabelText("Ngày nhập");
         txtNgayNhap.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -720,6 +738,29 @@ public class SanPham extends javax.swing.JPanel {
         });
 
         txtGia.setLabelText("Giá");
+        txtGia.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txtGiaCaretUpdate(evt);
+            }
+        });
+        txtGia.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtGiaFocusLost(evt);
+            }
+        });
+        txtGia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtGiaMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                txtGiaMouseReleased(evt);
+            }
+        });
+        txtGia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtGiaActionPerformed(evt);
+            }
+        });
 
         txtNoiNhap.setLabelText("Nơi nhập");
 
@@ -899,7 +940,7 @@ public class SanPham extends javax.swing.JPanel {
 
         cboCamera.setLabeText("Camera");
 
-        cboMangHinh.setLabeText("Màng hình");
+        cboMangHinh.setLabeText("Màn hình");
 
         cboPin.setLabeText("Pin");
 
@@ -1508,14 +1549,50 @@ public class SanPham extends javax.swing.JPanel {
     GiamGiaDao daoGiamGia = new GiamGiaDao();
     private void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
         String name = (String) cboKhuyenMai.getSelectedItem();
+            LocalDateTime current = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+            String formatted = current.format(formatter);
         if (name != null) {
             GiamGiaModel list = daoGiamGia.findById(name.trim());
-
+            if(list.getNgayKT().compareTo(formatted)<0){
+                DialogHelper.alert(this,"Khuyến mại này đã hết hạn");
+                Kiem=true;
+                cboKhuyenMai.setSelectedItem(-1);
+                return;
+            }if(txtGia.getText().equals("")){
+                DialogHelper.alert(this,"Bạn chưa nhập giá");
+                return;
+            }
             double gia = Double.parseDouble(txtGia.getText());
-            gia = gia - gia * list.getPhanTram() / 100;
-            txtGia.setText(String.valueOf(gia));
+            gia = Double.parseDouble(GiaDau) - Double.parseDouble(GiaDau) * list.getPhanTram() / 100;
+//            DecimalFormat df = new DecimalFormat("#,##0.##");
+            txtGia.setText(String.format("%.0f",gia));
+            Kiem=false;
         }        // TODO add your handling code here:
     }//GEN-LAST:event_cboKhuyenMaiActionPerformed
+
+    private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
+GiaDau= txtGia.getText();         // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaFocusLost
+
+    private void txtGiaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtGiaMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaMouseReleased
+    String GiaDau ="";
+    Boolean Kiem=false;
+    private void txtGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtGiaCaretUpdate
+      // TODO add your handling code here:
+      
+      
+    }//GEN-LAST:event_txtGiaCaretUpdate
+
+    private void txtGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGiaActionPerformed
+       // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaActionPerformed
+
+    private void txtGiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtGiaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
