@@ -187,6 +187,10 @@ public class KhachHang extends javax.swing.JPanel {
     }
 
     void delete() {
+        if(tblUser.getSelectedRow()<0){
+            DialogHelper.alert(this,"Bạn chưa chọn khách hàng để có thể xóa");
+            return ;
+        }
         KhachHangModel nv = getForm();
         try {
             daoKH.delete(nv);
@@ -270,6 +274,7 @@ public class KhachHang extends javax.swing.JPanel {
     }
 
     void ClearForm() {
+        btnThem.setEnabled(true);
         txtma.setText("");
         txtTen.setText("");
         txtNgaySinh.setText("");
@@ -719,6 +724,7 @@ public class KhachHang extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTimActionPerformed
 
     private void tblUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMousePressed
+        btnThem.setEnabled(false);
         if (evt.getClickCount() == 1) {
             this.row = tblUser.getSelectedRow();
             this.edit();
