@@ -17,8 +17,12 @@ import com.DuAn1.MaHoa.MaHoa;
 import com.tuandhpc05076.Main.Main;
 import com.DuAn1.Model.NhanVienModel;
 import com.DuAn1.Model.ThaoTacModel;
+import com.DuAn1.Swing.PasswordField;
+import com.DuAn1.Swing.TextField;
+import com.DuAn1.component.CardRegister;
 import com.tuandhpc05076.Object.O_DangNhap;
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -50,6 +54,10 @@ import javax.swing.JOptionPane;
 import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -61,6 +69,18 @@ public class NewSignin extends javax.swing.JFrame {
     MaHoa MH = new MaHoa();
     NhanVienDAO1 dao = new NhanVienDAO1();
     ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
+    NhanVienDAO1 daonv = new NhanVienDAO1();
+    MaHoa mahoa = new MaHoa();
+    public static String ma = "";
+    public static String Email = "";
+
+    public static String getEmail() {
+        return Email;
+    }
+
+    public static void setEmail(String Email) {
+        NewSignin.Email = Email;
+    }
 
     public NewSignin() {
         initComponents();
@@ -402,7 +422,7 @@ public class NewSignin extends javax.swing.JFrame {
     public static ArrayList<O_DangNhap> list1 = new ArrayList<>();
     O_DangNhap dn = new O_DangNhap();
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        
+
         try {
             //        String user = txtusername.getText();
 //        String pass = txtmatkhau.getText();
@@ -422,9 +442,6 @@ public class NewSignin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    NhanVienDAO1 daonv = new NhanVienDAO1();
-    MaHoa mahoa = new MaHoa();
-    String ma = "";
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
         List<NhanVienModel> list = daonv.select();
@@ -434,6 +451,7 @@ public class NewSignin extends javax.swing.JFrame {
                 kiem = false;
             }
         }
+        NewSignin.setEmail(txtEmail.getText());
         if (kiem == false) {
             try {
                 Properties p = new Properties();
@@ -482,25 +500,27 @@ public class NewSignin extends javax.swing.JFrame {
                 Transport.send(msg);
                 String a = JOptionPane.showInputDialog(this, "Nhập mã");
                 if (a.equals(String.valueOf(number))) {
-                    NhanVienModel nv = getForm1();
-                    daonv.quenMK(nv);
-                    DialogHelper.alert(this, "Xác nhận mã thành công");
-                }else{
+
+                    XacNhaThayDoiMatKhau xacNhan = new XacNhaThayDoiMatKhau(this, true);
+                    xacNhan.setVisible(true);
+//                    NhanVienModel nv = getForm1();
+//                    daonv.quenMK(nv);
+//                    DialogHelper.alert(this, "Xác nhận mã thành công");
+                } else {
                     DialogHelper.alert(this, "Xác nhận mật khẩu không thành công");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else{
-            DialogHelper.alert(this,"Email bạn nhập không tồn tại");
+        } else {
+            DialogHelper.alert(this, "Email bạn nhập không tồn tại");
         }
 
     }//GEN-LAST:event_jButton8ActionPerformed
 
-
     NhanVienModel getForm1() {
         NhanVienModel nv = new NhanVienModel();
-        String name= mahoa.toSHA(ma);
+        String name = mahoa.toSHA(ma);
         nv.setMatKhau(name);
         nv.setEmail(txtEmail.getText());
         return nv;

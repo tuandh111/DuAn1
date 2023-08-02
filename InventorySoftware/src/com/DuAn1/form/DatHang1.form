@@ -51,7 +51,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" pref="1056" max="32767" attributes="0"/>
+              <Component id="jPanel1" pref="1053" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -4817,10 +4817,7 @@
                                           <Component id="txtSoLuong" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="txtThongBao" min="-2" pref="134" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="txtThongBao" min="-2" pref="134" max="-2" attributes="0"/>
                                                   <Component id="txtSoDienThoai" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>

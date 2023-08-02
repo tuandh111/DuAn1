@@ -14,8 +14,10 @@ import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.DatSPModel;
 import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.helper.DialogHelper;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -45,7 +47,10 @@ public class DaXoa extends javax.swing.JPanel {
         try {
             List<DatSPModel> list = daoSP.selectDaXoa();
             for (DatSPModel nv : list) {
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), nv.getThoiGianDat(), nv.getMaNV()};
+                 String dateString = nv.getThoiGianDat();
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(),formattedDate, nv.getMaNV()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {

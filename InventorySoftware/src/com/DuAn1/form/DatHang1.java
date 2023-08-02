@@ -3921,16 +3921,25 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony1();
-
+//            SanPhamModel daoSP1 = getFormSPSony1();
+            
             daoDatSPCT.insert(model);
             filltable();
+//            daoSP.updateSL(daoSP1);
+//            txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
 
     }//GEN-LAST:event_btnAdd1ActionPerformed
-
+    SanPhamModel getFormSPSony1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony1.getText());
+        return cd;
+    }
     private void txtDonGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtDonGiaCaretUpdate
         // TODO add your handling code here
     }//GEN-LAST:event_txtDonGiaCaretUpdate

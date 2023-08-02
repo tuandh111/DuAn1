@@ -119,7 +119,7 @@ public class SanPham extends javax.swing.JPanel {
         LoadCombobox();
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
         TuDongTangMa();
-      
+
     }
 
     void TuDongTangMa() {
@@ -271,7 +271,8 @@ public class SanPham extends javax.swing.JPanel {
         txtMaSP.setText(sp.getMaSP());
         txtTenSP.setText(sp.getTenSP());
         cboMau.setSelectedItem(sp.getMau());
-        txtGia.setText(String.format("%.1f", sp.getGia()));
+        cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim());
+        txtGia.setText(String.format("%.0f", sp.getGia()));
         cboLoaiSanPham.setSelectedItem(sp.getLoaiSP());
 
         try {
@@ -293,7 +294,7 @@ public class SanPham extends javax.swing.JPanel {
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh.getWidth(), txtHinhAnh.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh.setIcon(new ImageIcon(scaledImage));
         }
-        cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim());
+        
 
     }
 
@@ -399,7 +400,7 @@ public class SanPham extends javax.swing.JPanel {
             DialogHelper.alert(this, "Bạn chưa chọn Màng hình");
             return false;
         }
-        if(Kiem){
+        if (Kiem) {
             DialogHelper.alert(this, "Bạn chưa chọn khuyến mại phù hợp");
             return false;
         }
@@ -1549,45 +1550,55 @@ public class SanPham extends javax.swing.JPanel {
     GiamGiaDao daoGiamGia = new GiamGiaDao();
     private void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
         String name = (String) cboKhuyenMai.getSelectedItem();
-            LocalDateTime current = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-            String formatted = current.format(formatter);
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        String formatted = current.format(formatter);
         if (name != null) {
             GiamGiaModel list = daoGiamGia.findById(name.trim());
-            if(list.getNgayKT().compareTo(formatted)<0){
-                DialogHelper.alert(this,"Khuyến mại này đã hết hạn");
-                Kiem=true;
-                cboKhuyenMai.setSelectedItem(-1);
-                return;
-            }if(txtGia.getText().equals("")){
-                DialogHelper.alert(this,"Bạn chưa nhập giá");
+            if (list.getNgayKT().compareTo(formatted) < 0) {
+                DialogHelper.alert(this, "Khuyến mại này đã hết hạn");
+                Kiem = true;
                 return;
             }
+              if (list.getNgayBD().compareTo(formatted) > 0) {
+                DialogHelper.alert(this, "Khuyến mại này chưa bắt đầu");
+                Kiem = true;
+                return;
+            }
+            if (txtGia.getText().equals("")) {
+//                DialogHelper.alert(this, "Bạn chưa nhập giá");
+                return;
+            }
+
             double gia = Double.parseDouble(txtGia.getText());
+            if(GiaDau.equals("")){
+                gia = Double.parseDouble(txtGia.getText()) - Double.parseDouble(txtGia.getText()) * list.getPhanTram() / 100;
+            }else
             gia = Double.parseDouble(GiaDau) - Double.parseDouble(GiaDau) * list.getPhanTram() / 100;
+
 //            DecimalFormat df = new DecimalFormat("#,##0.##");
-            txtGia.setText(String.format("%.0f",gia));
-            Kiem=false;
+            txtGia.setText(String.format("%.0f", gia));
+            Kiem = false;
         }        // TODO add your handling code here:
     }//GEN-LAST:event_cboKhuyenMaiActionPerformed
 
     private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
-GiaDau= txtGia.getText();         // TODO add your handling code here:
+        GiaDau = txtGia.getText();         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaFocusLost
 
     private void txtGiaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtGiaMouseReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaMouseReleased
-    String GiaDau ="";
-    Boolean Kiem=false;
+    String GiaDau = "";
+    Boolean Kiem = false;
     private void txtGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtGiaCaretUpdate
-      // TODO add your handling code here:
-      
-      
+        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_txtGiaCaretUpdate
 
     private void txtGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGiaActionPerformed
-       // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaActionPerformed
 
     private void txtGiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtGiaMouseClicked

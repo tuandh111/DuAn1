@@ -54,7 +54,13 @@ public class SanPhamDAO {
                 model.getMaSP()
         );
     }
-
+   public void updateSL(SanPhamModel model) {
+        String sql = "Update SANPHAM set SoLuong=? where MaSP=?";
+        JdbcHelper.executeUpdate(sql,
+                model.getSoLuong(),
+                model.getMaSP()
+        );
+    }
     public void delete(SanPhamModel model) {
         String sql = "Update SANPHAM set TrangThai=0 where MaSP=?";
         JdbcHelper.executeUpdate(sql, model.getMaSP());
