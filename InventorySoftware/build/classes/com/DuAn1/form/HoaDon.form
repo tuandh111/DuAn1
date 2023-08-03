@@ -122,7 +122,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtTongtien" min="-2" pref="600" max="-2" attributes="0"/>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -149,12 +149,26 @@
                               <Component id="button4" min="-2" pref="158" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="34" max="32767" attributes="0"/>
                               <Component id="button3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
+                              <Component id="txtDonGia" min="-2" pref="309" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="txtSoLuong" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="txtConlai" pref="269" max="32767" attributes="0"/>
+                                          <Component id="txtTienkhach" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cboHinhThuc" max="32767" attributes="0"/>
+                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="btnMoiHD" min="-2" pref="108" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -179,7 +193,15 @@
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="txtMa" min="-2" pref="194" max="-2" attributes="0"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                              <EmptySpace max="32767" attributes="0"/>
+=======
                                               <EmptySpace pref="50" max="32767" attributes="0"/>
+>>>>>>> parent of 3ffe763 (t)
+=======
+                                              <EmptySpace pref="50" max="32767" attributes="0"/>
+>>>>>>> parent of 3ffe763 (t)
                                               <Component id="txtKhachhang" min="-2" pref="135" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -188,21 +210,6 @@
                                   </Group>
                               </Group>
                               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="txtDonGia" min="-2" pref="309" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="txtSoLuong" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtTienkhach" pref="269" max="32767" attributes="0"/>
-                                  <Component id="txtConlai" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cboHinhThuc" min="-2" pref="157" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -247,7 +254,7 @@
                           <Component id="txtTienkhach" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cboHinhThuc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="txtConlai" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txtMota" min="-2" max="-2" attributes="0"/>
@@ -461,7 +468,6 @@
             </Component>
             <Component class="com.DuAn1.Swing.Combobox" name="cboHinhThuc">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
                     <StringItem index="0" value="Ti&#x1ec1;n M&#x1eb7;t"/>
@@ -469,11 +475,20 @@
                   </StringArray>
                 </Property>
                 <Property name="selectedIndex" type="int" value="-1"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <Property name="labeText" type="java.lang.String" value="H&#xec;nh th&#x1ee9;c"/>
+=======
+                <Property name="labeText" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c TT"/>
+>>>>>>> parent of 3ffe763 (t)
+              </Properties>
+=======
                 <Property name="labeText" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c TT"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboHinhThucActionPerformed"/>
               </Events>
+>>>>>>> parent of 3ffe763 (t)
             </Component>
           </SubComponents>
         </Container>
