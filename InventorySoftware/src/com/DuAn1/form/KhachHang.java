@@ -241,7 +241,7 @@ public class KhachHang extends javax.swing.JPanel {
     void setForm(KhachHangModel nv) {
         txtma.setText(nv.getMaKH());
         txtTen.setText(nv.getTenKH());
-        txtSdt.setText(nv.getSDT());
+        txtSdt.setText(nv.getSDT().trim());
         try {
             String dateString = nv.getNgaySinh();
             Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);

@@ -27,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
  * @author trana
  */
 public class DaXoa extends javax.swing.JPanel {
+
     DefaultTableModel tblModel;
     DatSPDAO daoSP = new DatSPDAO();
     KhachHangDAO daoKH = new KhachHangDAO();
@@ -34,6 +35,7 @@ public class DaXoa extends javax.swing.JPanel {
     DatSPCTDAO daoDatSPCT = new DatSPCTDAO();
     ThongKeDao daoThongKe = new ThongKeDao();
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
+
     /**
      * Creates new form DaXoa
      */
@@ -41,16 +43,20 @@ public class DaXoa extends javax.swing.JPanel {
         initComponents();
         filltable();
     }
-   void filltable() {
+
+    void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
             List<DatSPModel> list = daoSP.selectDaXoa();
             for (DatSPModel nv : list) {
-                 String dateString = nv.getThoiGianDat();
-                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
-                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(),formattedDate, nv.getMaNV()};
+                String formattedDate = "";
+                if (nv.getThoiGianDat()!=null) {
+                  String   dateString = nv.getThoiGianDat();
+                    Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                    formattedDate = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date);
+                }
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), formattedDate, nv.getMaNV()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -58,16 +64,17 @@ public class DaXoa extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
-     void them() {
-         int chon = tblUser.getSelectedRow();
-         
-         if(chon<0){
-             DialogHelper.alert(this,"Bạn chưa chọn danh sách trong bảng để khôi phục");
-             return;
-         }
-         String MaDH = (String) tblUser.getValueAt(chon, 0);
+
+    void them() {
+        int chon = tblUser.getSelectedRow();
+
+        if (chon < 0) {
+            DialogHelper.alert(this, "Bạn chưa chọn danh sách trong bảng để khôi phục");
+            return;
+        }
+        String MaDH = (String) tblUser.getValueAt(chon, 0);
         try {
-           
+
             daoDatSP.KhoiPhuc(MaDH);
             filltable();
             ThaoTacModel ThaoTacModel = getFormThem();
@@ -78,6 +85,7 @@ public class DaXoa extends javax.swing.JPanel {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi khôi phục dữ liệu");
         }
     }
+
     public ThaoTacModel getFormThem() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
@@ -92,6 +100,7 @@ public class DaXoa extends javax.swing.JPanel {
         cd.setMaNV(ShareHelper.USER.getMaNV());
         return cd;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -195,14 +204,14 @@ public class DaXoa extends javax.swing.JPanel {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         them();
-    
+
 
     }//GEN-LAST:event_button1ActionPerformed
 
     private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
         // TODO add your handling code here:
-        
-          tblModel = (DefaultTableModel) tblUser.getModel();
+
+        tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
             List<DatSPModel> list = daoSP.selectDaXoaTheoMa(txtTimKiem.getText());
@@ -214,7 +223,7 @@ public class DaXoa extends javax.swing.JPanel {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
-     
+
     }//GEN-LAST:event_txtTimKiemCaretUpdate
 
 

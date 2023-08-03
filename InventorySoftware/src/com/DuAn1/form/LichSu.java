@@ -55,22 +55,22 @@ public class LichSu extends javax.swing.JPanel {
                 if (nv.getThoiGianThem() != null) {
                     String dateString = nv.getThoiGianThem();
                     Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                 }
                 if (nv.getThoiGianSua() != null) {
                     String ThoiGianSua0 = nv.getThoiGianSua();
                     Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                    ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                 }
                 if (nv.getThoiGianXoa() != null) {
                     String ThoiGianXoa1 = nv.getThoiGianXoa();
                     Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                    ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                 }
                 if (nv.getThoIGianHoatDong() != null) {
                     String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                     Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                    ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                 }
                 Object[] row = {
                     nv.getID(),
@@ -226,22 +226,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -268,22 +268,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -310,22 +310,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -352,22 +352,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -411,22 +411,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -460,22 +460,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSSdd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat(" HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -510,22 +510,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -559,22 +559,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSSdd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -614,22 +614,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -656,22 +656,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -698,22 +698,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSSdd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS d-MM-yyyy ").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -740,22 +740,22 @@ public class LichSu extends javax.swing.JPanel {
                         if (nv.getThoiGianThem() != null) {
                             String dateString = nv.getThoiGianThem();
                             Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                            ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                            ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                         }
                         if (nv.getThoiGianSua() != null) {
                             String ThoiGianSua0 = nv.getThoiGianSua();
                             Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                            ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                            ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                         }
                         if (nv.getThoiGianXoa() != null) {
                             String ThoiGianXoa1 = nv.getThoiGianXoa();
                             Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                            ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                            ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                         }
                         if (nv.getThoIGianHoatDong() != null) {
                             String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                             Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                            ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                            ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                         }
                         Object[] row = {
                             nv.getID(),
@@ -794,22 +794,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSSdd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -838,22 +838,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -882,22 +882,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -926,22 +926,22 @@ public class LichSu extends javax.swing.JPanel {
                     if (nv.getThoiGianThem() != null) {
                         String dateString = nv.getThoiGianThem();
                         Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                        ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                     }
                     if (nv.getThoiGianSua() != null) {
                         String ThoiGianSua0 = nv.getThoiGianSua();
                         Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                        ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                        ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                     }
                     if (nv.getThoiGianXoa() != null) {
                         String ThoiGianXoa1 = nv.getThoiGianXoa();
                         Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                        ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                        ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                     }
                     if (nv.getThoIGianHoatDong() != null) {
                         String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                         Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                        ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                        ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                     }
                     Object[] row = {
                         nv.getID(),
@@ -984,22 +984,22 @@ public class LichSu extends javax.swing.JPanel {
                 if (nv.getThoiGianThem() != null) {
                     String dateString = nv.getThoiGianThem();
                     Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    ThoiGianThem = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date0);
                 }
                 if (nv.getThoiGianSua() != null) {
                     String ThoiGianSua0 = nv.getThoiGianSua();
                     Date date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianSua0);
-                    ThoiGianSua = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date1);
+                    ThoiGianSua = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date1);
                 }
                 if (nv.getThoiGianXoa() != null) {
                     String ThoiGianXoa1 = nv.getThoiGianXoa();
                     Date date2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianXoa1);
-                    ThoiGianXoa = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date2);
+                    ThoiGianXoa = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date2);
                 }
                 if (nv.getThoIGianHoatDong() != null) {
                     String ThoiGianHoatDong1 = nv.getThoIGianHoatDong();
                     Date date3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(ThoiGianHoatDong1);
-                    ThoiGianHoatDong = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date3);
+                    ThoiGianHoatDong = new SimpleDateFormat("HH:mm:ss.SSS dd-MM-yyyy").format(date3);
                 }
                 Object[] row = {
                     nv.getID(),

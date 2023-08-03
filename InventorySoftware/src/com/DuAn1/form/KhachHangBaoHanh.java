@@ -6,6 +6,7 @@ package com.DuAn1.form;
 
 import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Helper.DialogHelper;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.KhachHangModel;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -36,6 +37,8 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
         initComponents();
         tieude();
         filltable();
+        setLocationRelativeTo(null);
+        setIconImage(ShareHelper.APP_ICON);
     }
 
     void tieude() {

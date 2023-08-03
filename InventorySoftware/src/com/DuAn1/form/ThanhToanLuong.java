@@ -42,6 +42,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 /**
  *
  * @author DELL E5470
@@ -121,7 +122,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         cboMaLuong.setSelectedIndex(-1);
 
     }
-       void LoadCBOMaLuongsau() {
+
+    void LoadCBOMaLuongsau() {
         DefaultComboBoxModel cboModel = new DefaultComboBoxModel();
         NhanVienDAO1 NVdao = new NhanVienDAO1();
         ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.select();
@@ -147,7 +149,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(),
                     formattedDate,
                     ttl.getSoGioTangCa(),
-                    ttl.getLuongTangCa(), ttl.getKhoanTru(), ttl.getTongTien(), ttl.isTrangThai()};
+                    ttl.getLuongTangCa(), ttl.getKhoanTru(), String.format("%.0f", ttl.getTongTien()), ttl.isTrangThai()};
                 model.addRow(rows);
             }
         } catch (Exception e) {
@@ -172,14 +174,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
         ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
         ttl.setKhoanTru(Double.parseDouble(txtKhoangTru.getText()));
-          DecimalFormat df = new DecimalFormat("#,##0.##");
-        try {
-             long number =  (long) df.parse(lblTongTien.getText());
-             ttl.setTongTien(number);
-        } catch (ParseException ex) {
-            Logger.getLogger(ThanhToanLuong.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        double number = Double.parseDouble(lblTongTien.getText());
+        ttl.setTongTien(number);
+
         ttl.setTrangThai(true);
         if (btnTrangThai.isSelected()) {
             ttl.setTrangThai(true);
@@ -205,7 +203,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
         txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
         txtKhoangTru.setText(String.valueOf(ttl.getKhoanTru()));
-        lblTongTien.setText(String.valueOf(ttl.getTongTien()));
+        lblTongTien.setText(String.format("%.0f",ttl.getTongTien()));
         if (ttl.isTrangThai() == true) {
             btnTrangThai.setSelectedAnimate(true);
             lblTrangThai.setText("Đã thanh toán");
@@ -226,6 +224,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTongTien.setText("0");
         btnTrangThai.setSelectedAnimate(false);
         lblTrangThai.setText("Chưa thanh toán");
+        lblTongTien.setText("0");
         lblTrangThai.setForeground(Color.red);
     }
 
@@ -280,6 +279,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         cboMaLuong = new com.DuAn1.Swing.Combobox();
         btnTim = new com.DuAn1.Swing.Button();
         button15 = new com.DuAn1.Swing.Button();
+        lblTongTien1 = new javax.swing.JLabel();
 
         dateChooser.setTextRefernce(txtNgayVaoCTY);
 
@@ -475,6 +475,19 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
+        lblTongTien1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTongTien1.setForeground(new java.awt.Color(255, 0, 51));
+        lblTongTien1.setText("Đồng");
+        lblTongTien1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                lblTongTien1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -509,7 +522,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(lblTongTien))
+                                        .addComponent(lblTongTien)
+                                        .addGap(91, 91, 91)
+                                        .addComponent(lblTongTien1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(txtNgayVaoCTY, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(61, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -575,7 +590,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                         .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(lblTongTien))
+                            .addComponent(lblTongTien)
+                            .addComponent(lblTongTien1))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -630,7 +646,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-      public void btnInDanhSach() {
+
+    public void btnInDanhSach() {
         try {
             JFileChooser jFileChooser = new JFileChooser();
             jFileChooser.showSaveDialog(this);
@@ -678,6 +695,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }
+
     boolean check() {
         boolean check = false;
         String name = (String) cboMaLuong.getSelectedItem();
@@ -700,12 +718,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             return false;
         }
         try {
-            Float.parseFloat(txtSoNgayLamViec.getText());
+            float i = Float.parseFloat(txtSoNgayLamViec.getText());
+            if (i > 31 || i < 0) {
+                DialogHelper.alert(this, "Số ngày làm việc không được nhỏ hơn 0 và lớn hơn 31");
+                return false;
+            }
         } catch (Exception e) {
-            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
-            return false;
-        }
-        if (Float.parseFloat(txtSoNgayLamViec.getText()) < 0) {
             DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
             return false;
         }
@@ -718,7 +736,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             return false;
         }
         try {
-            Double.parseDouble(txtLuongCoBan.getText());
+            double Luong = Double.parseDouble(txtLuongCoBan.getText());
+            if (Luong < 1000) {
+                DialogHelper.alert(this, "Lương của bạn nhập không được nhỏ hơn 1 nghìn");
+            }
         } catch (Exception e) {
             DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
             return false;
@@ -780,7 +801,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtSoNgayLamViecCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoNgayLamViecCaretUpdate
         // TODO add your handling code here:
-      
+
         double tongTien = 1;
         double luongTangCa = 1;
         luongTangCa = Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
@@ -799,7 +820,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
 //        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(df.format(tongTien));
+        lblTongTien.setText(String.format("%.0f", tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
     private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
@@ -822,12 +843,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + luongTangCa;
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien-Double.parseDouble(txtKhoangTru.getText());;
+            tongTien = tongTien - Double.parseDouble(txtKhoangTru.getText());;
         }
 
 //        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(df.format(tongTien));
+        lblTongTien.setText(String.format("%.0f", tongTien));
     }//GEN-LAST:event_txtKhoangTruCaretUpdate
 
     private void txtKhoangTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTruActionPerformed
@@ -870,7 +891,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(df.format(tongTien));
+        lblTongTien.setText(String.format("%.0f", tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
     void sua() {
         ThanhToanLuongModel ttl = getForm();
@@ -897,7 +918,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             this.row = tblThanhToanLuong.getSelectedRow();
             LoadCBOMaLuongsau();
             this.edit();
-            
+
         }
 
     }//GEN-LAST:event_tblThanhToanLuongMouseClicked
@@ -912,6 +933,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 thaotacdao.insert(model);
                 DialogHelper.alert(this, "Xóa thành công");
                 LoadCBOMaLuong();
+                clearForm();
             } catch (Exception e) {
                 DialogHelper.alert(this, "Xóa thất bại");
             }
@@ -948,7 +970,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(df.format(tongTien));
+        lblTongTien.setText(String.format("%.0f", tongTien));
     }//GEN-LAST:event_txtLuongCoBanCaretUpdate
 
     private void txtLuongTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongTangCaCaretUpdate
@@ -975,7 +997,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(df.format(tongTien));
+        lblTongTien.setText(String.format("%.0f", tongTien));
     }//GEN-LAST:event_txtLuongTangCaCaretUpdate
 
     private void txtLuongCoBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLuongCoBanActionPerformed
@@ -1020,6 +1042,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         btnInDanhSach();        // TODO add your handling code here:
     }//GEN-LAST:event_button15ActionPerformed
 
+    private void lblTongTien1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblTongTien1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTongTien1AncestorAdded
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button btnMoi;
@@ -1037,6 +1063,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTongTien;
+    private javax.swing.JLabel lblTongTien1;
     private javax.swing.JLabel lblTrangThai;
     private com.raven.swing.table.Table tblThanhToanLuong;
     private com.DuAn1.Swing.TextField txtKhoangTru;

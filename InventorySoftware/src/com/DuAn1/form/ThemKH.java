@@ -58,7 +58,6 @@ public class ThemKH extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         setIconImage(ShareHelper.APP_ICON);
-        txtSdt.setText(DatHang1.getSoLuong());
         TuDongTangMa();
     }
 
@@ -111,11 +110,7 @@ public class ThemKH extends javax.swing.JDialog {
 
     public boolean check() {
         String so = "0\\d{9,10}";
-        if(txtSdt.getText().matches(so)){
-            return true;
-        }else{
-             com.tuandhpc05076.helper.DialogHelper.alert(this, "Số điện thoại bạn nhập không đúng định dạng");
-        }
+
 //        if (Dao.findById(txtTaikhoan.getText()) != null) {
 //            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
 //            return false;
@@ -152,7 +147,10 @@ public class ThemKH extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Mô tả không được để trống!");
             return false;
         }
-
+        if(!txtSdt.getText().matches(so)){
+            com.tuandhpc05076.helper.DialogHelper.alert(this, "Số điện thoại bạn nhập không đúng định dạng");
+        }     
+        
         return true;
     }
 
@@ -176,6 +174,7 @@ public class ThemKH extends javax.swing.JDialog {
             ThaoTacModel model = getFormThem();
             ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Thêm Mới thành công!");
+              
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Thêm mới thất bại!");
             e.printStackTrace();
@@ -419,7 +418,7 @@ public class ThemKH extends javax.swing.JDialog {
             return;
         }
         insert();
-        TuDongTangMa();
+      
         HoaDon.setSoLuong(txtma.getText());
         //        BaoHanh.setSoLuong(txtma.getText());
         dispose();

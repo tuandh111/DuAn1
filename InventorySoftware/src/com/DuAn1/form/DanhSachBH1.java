@@ -5,6 +5,7 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.BaoHanhDAO;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.BaoHanhModel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -92,7 +93,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         filltable();
-
+        setIconImage(ShareHelper.APP_ICON);
     }
 
     void filltable() {

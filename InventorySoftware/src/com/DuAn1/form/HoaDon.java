@@ -59,6 +59,7 @@ public class HoaDon extends javax.swing.JPanel {
     public static String HinhThuc;
     public static String Makh = "";
     public static String Phantram ="";
+    public static String MaKH="";
     
     public static String getSoLuong() {
         return soLuong;
@@ -433,6 +434,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtTienkhach.setText("0");
         txtMota.setText("");
         txtKhachhang.setText("");
+        txtGiamGiaTheoLoai.setText("0");
         txtThongBao.setVisible(false);
     }
 
@@ -1038,15 +1040,14 @@ public class HoaDon extends javax.swing.JPanel {
                                     .addComponent(txtConlai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                                        .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(txtTongtienLayout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtGiamGiaTheoLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5))))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel5)))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(txtTongtienLayout.createSequentialGroup()
                                 .addComponent(btnMoiHD, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
@@ -1102,23 +1103,20 @@ public class HoaDon extends javax.swing.JPanel {
                     .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel1))
+                .addGap(26, 26, 26)
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(txtTienkhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtTienkhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(txtTongtienLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtConlai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtGiamGiaTheoLoai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txtTongtienLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtGiamGiaTheoLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtMota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3884,9 +3882,10 @@ public class HoaDon extends javax.swing.JPanel {
 //        if(DanhSachMH1.getHinhThuc().trim().equals("Tiền Mặt")){
 //            
 //        }
+        
         cboHinhThuc.setSelectedItem(DanhSachMH.getHinhThuc().trim());
         txtTienkhach.setText(String.format("%.0f", DanhSachMH.getTienkhach()));
-        txtConlai.setText(String.valueOf(DanhSachMH.getTienCon()));
+        txtConlai.setText(String.format("%.0f",DanhSachMH.getTienCon()));
         txtThongBao.setVisible(true);
         btnXoasp.setEnabled(true);
         btnThem.setEnabled(true);
@@ -3928,6 +3927,7 @@ public class HoaDon extends javax.swing.JPanel {
         kh.setVisible(true);
         txtKhachhang.setText(HoaDon.getSoLuong());
         System.out.println(HoaDon.getSoLuong());
+        daoKH.select();
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong().trim());
         System.out.println(listKH.size());
         for (KhachHangModel khachHangModel : listKH) {
@@ -3976,7 +3976,6 @@ public class HoaDon extends javax.swing.JPanel {
             txtDonGia.setText(String.format("%.0f", tongGia));
             txtSoLuong.setText(String.valueOf(tongSoLuong));
             double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
-            txtTongTien.setText(String.format("%.0f", tongTien));
             DecimalFormat df = new DecimalFormat("#,##0.##");
              tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
             txtTongTien.setText(String.format("%.0f",tongTien));
@@ -4408,10 +4407,20 @@ public class HoaDon extends javax.swing.JPanel {
     private void btnHuyHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyHDActionPerformed
         Delete();
     }//GEN-LAST:event_btnHuyHDActionPerformed
+public static String GiamGia="";
+
+    public static String getGiamGia() {
+        return GiamGia;
+    }
+
+    public static void setGiamGia(String GiamGia) {
+        HoaDon.GiamGia = GiamGia;
+    }
 
     private void btnInBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInBillActionPerformed
         HoaDon.setPhantram(txtGiamGiaTheoLoai.getText());
         ma = txtMa.getText();
+        HoaDon.setGiamGia(txtGiamGiaTheoLoai.getText());
         hoten = txtKhachhang.getText();
         InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
         hd.setVisible(true);

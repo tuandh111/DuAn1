@@ -53,7 +53,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         cd.setThoiGianXoa(null);
 
         cd.setThoIGianHoatDong(com.DuAn1.Helper.ShareHelper.ThoiGianHoatDong);
-        cd.setBanThaoTac("Thay đổi mật khẩu nhân viên");
+        cd.setBanThaoTac("Thay đổi cá nhân nhân viên");
         cd.setMaNV(com.DuAn1.Helper.ShareHelper.USER.getMaNV());
         return cd;
     }

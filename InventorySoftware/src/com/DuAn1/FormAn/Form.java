@@ -32,6 +32,14 @@ public class Form extends javax.swing.JPanel {
         chart.addData(new ModelChart("Tháng 3", new double[]{300, 400, 85, 189}));
         chart.addData(new ModelChart("Tháng 4", new double[]{100, 290, 980, 189}));
         chart.addData(new ModelChart("Tháng 5", new double[]{500, 200, 180, 189}));
+        chart.addData(new ModelChart("Tháng 6", new double[]{500, 200, 80, 89}));
+        chart.addData(new ModelChart("Tháng 7", new double[]{600, 750, 90, 150}));
+        chart.addData(new ModelChart("Tháng 8", new double[]{300, 480, 851, 119}));
+//        chart.addData(new ModelChart("Tháng 9", new double[]{520, 220, 980, 189}));
+//        chart.addData(new ModelChart("Tháng 10", new double[]{520, 220, 180, 189}));
+//        chart.addData(new ModelChart("Tháng 11", new double[]{590, 240, 80, 89}));
+//        chart.addData(new ModelChart("Tháng 12", new double[]{123, 750, 90, 150}));
+
         chart.start();
 //        lineChart.addLegend("ND1", new Color(12, 84, 175), new Color(0, 108, 247));
 //        lineChart.addLegend("ND2", new Color(54, 4, 143), new Color(104, 49, 200));

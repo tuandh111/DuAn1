@@ -36,10 +36,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="btnTaianh" min="-2" pref="101" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtHinh1" min="-2" pref="167" max="-2" attributes="0"/>
@@ -174,7 +170,6 @@
                       <Component id="txtHinh1" min="-2" pref="197" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnTaianh" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cboVaitro" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cboGioitinh" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -335,11 +330,6 @@
           <Color blue="33" green="cc" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ng&#x1b0;ng ho&#x1ea1;t &#x111;&#x1ed9;ng"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnTaianh">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="T&#x1ea3;i h&#xec;nh &#x1ea3;nh"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">

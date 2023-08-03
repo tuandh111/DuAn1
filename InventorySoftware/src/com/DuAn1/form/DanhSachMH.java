@@ -29,6 +29,15 @@ public class DanhSachMH extends javax.swing.JDialog {
     public static String HinhThuc = "";
     public static double Tienkhach = 0;
     public static double TienCon = 0;
+    public static String MaKH="";
+
+    public static String getMaKH() {
+        return MaKH;
+    }
+
+    public static void setMaKH(String MaKH) {
+        DanhSachMH.MaKH = MaKH;
+    }
     
     public static String getNgay() {
         return ngay;

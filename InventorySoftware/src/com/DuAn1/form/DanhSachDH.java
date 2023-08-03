@@ -348,7 +348,7 @@ public class DanhSachDH extends javax.swing.JDialog {
         DanhSachDH.setTongTien(Double.parseDouble(tongTien));
         DanhSachDH.setSoLuong(Integer.parseInt(soLuong));
         DanhSachDH.setDonGia(Double.parseDouble(donGia));
-        DanhSachDH.setSDT(SDT);
+        DanhSachDH.setSDT(SDT.trim());
         DanhSachDH.setName1(name);
         DanhSachDH.setNgay(ThoiGian);
         this.dispose();        // TODO add your handling code here:
