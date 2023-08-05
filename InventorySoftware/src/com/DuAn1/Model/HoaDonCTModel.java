@@ -15,16 +15,25 @@ public class HoaDonCTModel {
     private double SoLuong;
     private String MaHD;
     private double gia;
-
+    private double ThanhTien;
     public HoaDonCTModel() {
     }
 
-    public HoaDonCTModel(String MaHDCT, String MaSP, double SoLuong, String MaHD, double gia) {
+    public HoaDonCTModel(String MaHDCT, String MaSP, double SoLuong, String MaHD, double gia,double ThanhTien) {
         this.MaHDCT = MaHDCT;
         this.MaSP = MaSP;
         this.SoLuong = SoLuong;
         this.MaHD = MaHD;
         this.gia = gia;
+        this.ThanhTien = ThanhTien;
+    }
+
+    public double getThanhTien() {
+        return ThanhTien;
+    }
+
+    public void setThanhTien(double ThanhTien) {
+        this.ThanhTien = ThanhTien;
     }
 
     public String getMaHDCT() {

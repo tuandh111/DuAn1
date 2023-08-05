@@ -58,8 +58,8 @@ public class HoaDon extends javax.swing.JPanel {
     public static String soLuong = "";
     public static String HinhThuc;
     public static String Makh = "";
-    public static String Phantram ="";
-    public static String MaKH="";
+    public static String Phantram = "";
+    public static String MaKH = "";
     
     public static String getSoLuong() {
         return soLuong;
@@ -481,10 +481,11 @@ public class HoaDon extends javax.swing.JPanel {
     void filltable() {
         tblModel = (DefaultTableModel) tblHoadon.getModel();
         tblModel.setRowCount(0);
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
             List<HoaDonCTModel> list = HDCTDao.selectAll(txtMa.getText());
             for (HoaDonCTModel nv : list) {
-                Object[] row = new Object[]{nv.getMaSP(), nv.getSoLuong(), nv.getMaHD(), String.format("%.0f", nv.getGia())};
+                Object[] row = new Object[]{nv.getMaSP(), nv.getSoLuong(), nv.getMaHD(), df.format(nv.getGia()) + " VND", df.format(nv.getThanhTien()) + " VND"};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -921,6 +922,7 @@ public class HoaDon extends javax.swing.JPanel {
         });
 
         txtDonGia.setEditable(false);
+        txtDonGia.setText("0");
         txtDonGia.setLabelText("Tổng đơn giá");
         txtDonGia.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -929,6 +931,7 @@ public class HoaDon extends javax.swing.JPanel {
         });
 
         txtSoLuong.setEditable(false);
+        txtSoLuong.setText("0");
         txtSoLuong.setLabelText("Tổng số lượng");
         txtSoLuong.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -1107,16 +1110,13 @@ public class HoaDon extends javax.swing.JPanel {
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTienkhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(txtTongtienLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtConlai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txtTongtienLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtGiamGiaTheoLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))))
+                    .addComponent(txtConlai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtGiamGiaTheoLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtMota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1131,13 +1131,13 @@ public class HoaDon extends javax.swing.JPanel {
 
         tblHoadon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Mã sản phẩm", "Số lượng", "Mã hóa đơn", "Tổng tiền"
+                "Mã sản phẩm", "Số lượng", "Mã hóa đơn", "Giá", "Thành tiền"
             }
         ));
         jScrollPane4.setViewportView(tblHoadon);
@@ -3820,18 +3820,21 @@ public class HoaDon extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
                                 .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(112, 112, 112)
-                                .addComponent(btnXoasp, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(91, 91, 91)
+                                .addComponent(btnXoasp, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(materialTabbed1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(txtTongtien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -3882,10 +3885,10 @@ public class HoaDon extends javax.swing.JPanel {
 //        if(DanhSachMH1.getHinhThuc().trim().equals("Tiền Mặt")){
 //            
 //        }
-        
+
         cboHinhThuc.setSelectedItem(DanhSachMH.getHinhThuc().trim());
         txtTienkhach.setText(String.format("%.0f", DanhSachMH.getTienkhach()));
-        txtConlai.setText(String.format("%.0f",DanhSachMH.getTienCon()));
+        txtConlai.setText(String.format("%.0f", DanhSachMH.getTienCon()));
         txtThongBao.setVisible(true);
         btnXoasp.setEnabled(true);
         btnThem.setEnabled(true);
@@ -3926,8 +3929,9 @@ public class HoaDon extends javax.swing.JPanel {
         ThemKH kh = new ThemKH(com.DuAn1.main.Main.getMain(), true);
         kh.setVisible(true);
         txtKhachhang.setText(HoaDon.getSoLuong());
-        System.out.println(HoaDon.getSoLuong());
         daoKH.select();
+        String gia = txtDonGia.getText();
+         gia = gia.replace(",", "");
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong().trim());
         System.out.println(listKH.size());
         for (KhachHangModel khachHangModel : listKH) {
@@ -3939,6 +3943,8 @@ public class HoaDon extends javax.swing.JPanel {
                 txtGiamGiaTheoLoai.setText("0");
             }
         }
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtTongTien.setText(df.format(Double.parseDouble(gia) - Double.parseDouble(gia) * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100));
     }//GEN-LAST:event_button9ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
@@ -3967,18 +3973,20 @@ public class HoaDon extends javax.swing.JPanel {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         double tongGia = 0;
         int tongSoLuong = 0;
+        double TongTien = 0;
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
             List<HoaDonCTModel> list = HDCTDao.selectAll(txtMa.getText());
             for (HoaDonCTModel nv : list) {
                 tongGia += nv.getGia();
                 tongSoLuong += nv.getSoLuong();
+                TongTien += nv.getThanhTien();
             }
-            txtDonGia.setText(String.format("%.0f", tongGia));
+            txtDonGia.setText(df.format(TongTien));
             txtSoLuong.setText(String.valueOf(tongSoLuong));
-            double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
-            DecimalFormat df = new DecimalFormat("#,##0.##");
-             tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
-            txtTongTien.setText(String.format("%.0f",tongTien));
+//            double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
+//             tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
+            txtTongTien.setText(df.format(TongTien));
             txtTienkhach.setText(txtTienkhach.getText());
             txtConlai.setText(txtTongTien.getText());
             ThaoTacModel ThaoTacModel = getFormUpdate();
@@ -4407,7 +4415,7 @@ public class HoaDon extends javax.swing.JPanel {
     private void btnHuyHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyHDActionPerformed
         Delete();
     }//GEN-LAST:event_btnHuyHDActionPerformed
-public static String GiamGia="";
+    public static String GiamGia = "";
 
     public static String getGiamGia() {
         return GiamGia;
@@ -4422,6 +4430,7 @@ public static String GiamGia="";
         ma = txtMa.getText();
         HoaDon.setGiamGia(txtGiamGiaTheoLoai.getText());
         hoten = txtKhachhang.getText();
+        
         InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
         hd.setVisible(true);
 
@@ -4436,7 +4445,10 @@ public static String GiamGia="";
         if (txtTienkhach.getText().equalsIgnoreCase("")) {
             return;
         }
-        txtConlai.setText(String.format("%.0f", Double.parseDouble(txtTienkhach.getText()) - Double.parseDouble(txtTongTien.getText())));        // TODO add your handling code here:
+         String gia = txtDonGia.getText();
+         gia = gia.replace(",", "");
+          DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtConlai.setText(df.format( Double.parseDouble(txtTienkhach.getText()) - Double.parseDouble(gia)));        // TODO add your handling code here:
     }//GEN-LAST:event_txtTienkhachCaretUpdate
 
     private void cboHinhThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboHinhThucActionPerformed
@@ -4637,9 +4649,10 @@ public static String GiamGia="";
         HoaDon.setMakh(txtKhachhang.getText());
         KHDC kh = new KHDC(com.DuAn1.main.Main.getMain(), true);
         kh.setVisible(true);
+        String gia = txtDonGia.getText();
+         gia = gia.replace(",", "");
         txtKhachhang.setText(KHDC.getMaKH());
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(KHDC.getMaKH());
-        System.out.println(listKH);
         for (KhachHangModel khachHangModel : listKH) {
             if (khachHangModel.getLoaiKH().trim().equalsIgnoreCase("VIP1")) {
                 txtGiamGiaTheoLoai.setText("5");
@@ -4649,6 +4662,8 @@ public static String GiamGia="";
                 txtGiamGiaTheoLoai.setText("0");
             }
         }
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtTongTien.setText(df.format(Double.parseDouble(gia) - Double.parseDouble(gia) * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100));
     }//GEN-LAST:event_button10ActionPerformed
     public void themSPCT() {
         try {
@@ -4668,6 +4683,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone1.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone1.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone1.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4677,6 +4693,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone2.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone2.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone2.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4686,6 +4703,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone3.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone3.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone3.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4695,6 +4713,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone4.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone4.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone4.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4704,6 +4723,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone5.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone5.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone5.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4713,6 +4733,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone6.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone6.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone6.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4722,6 +4743,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone7.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone7.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone7.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4731,6 +4753,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone8.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone8.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone8.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4740,6 +4763,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaIphone9.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone9.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4749,6 +4773,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSoNy1.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony1.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy1.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4758,69 +4783,77 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony2.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy2.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony3() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony3.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy3.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony4() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony4.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy4.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony5() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony5.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy5.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony6() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony6.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy6.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony7() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony7.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy7.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony8() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony8.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy8.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony9() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy9.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony9.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4830,6 +4863,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung1.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung1.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung1.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4839,6 +4873,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung2.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung2.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung2.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4848,6 +4883,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung3.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung3.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung3.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4857,6 +4893,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung4.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung4.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung4.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4866,6 +4903,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung5.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung5.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung5.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4875,6 +4913,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung6.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung6.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung6.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4884,6 +4923,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung7.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung7.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung7.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4893,6 +4933,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung8.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung8.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung8.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4902,6 +4943,7 @@ public static String GiamGia="";
         cd.setGia(Double.parseDouble(txtGiaSamsung9.getText()));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung9.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 

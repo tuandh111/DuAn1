@@ -5,8 +5,10 @@
 package com.DuAn1.form;
 
 import com.DuAn1.Dao.HoaDonCTDAO;
+import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.HoaDonCTModel;
+import com.DuAn1.Model.KhachHangModel;
 import java.awt.print.PrinterException;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
@@ -25,7 +27,7 @@ public class InHoaDon extends javax.swing.JDialog {
      * Creates new form InHoaDon
      */
     HoaDonCTDAO HDCTDao = new HoaDonCTDAO();
-    
+    KhachHangDAO daoKH= new KhachHangDAO();
     public InHoaDon(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -37,35 +39,38 @@ public class InHoaDon extends javax.swing.JDialog {
   private void BillHeader() {
       String name = ShareHelper.USER.getHoTen();
         LocalDateTime current = LocalDateTime.now();
+        
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS dd-MM-yyyy ");
         String formatted = current.format(formatter);
         txtBill.setText("=====================================================================" + "\n"
                 + "========================Tên CTY: CTY TNHH TTA MOBILE=======================" + "\n"
-                + "                                                                        \n"
+                + "                                                       HOÁ ĐƠN ĐIỆN TỬ                                      \n"
                 + "Họ và tên nhân viên : "+name+"\n"
                 + "Thời gian xuất: " + formatted + "\n"
                 + "Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
                 + "==============================" + "\n"+""
                         + "Mã khách hàng: "+HoaDon.hoten
                         + "\nThông tin sản phẩm\n"+""
-                        + "MaHD                            MaSP                           Giá                                           Số lượng"
+                        + "MaHD                      MaSP                     Giá                 Số lượng          Thành tiền"
                         + "\n");
     }
   public void bill(){
-      
+      KhachHangModel kh = daoKH.findById(HoaDon.hoten);
       List<HoaDonCTModel> list = HDCTDao.selectAll(HoaDon.ma);
       String name = "";
       double gia=0;
       double soluong=0;
       double tongTien=0;
+       DecimalFormat df = new DecimalFormat("#,##0.##");
+              
       for (HoaDonCTModel hoaDonCTModel : list) {
           gia+=hoaDonCTModel.getGia();
           soluong+=hoaDonCTModel.getSoLuong();
-         name=name+hoaDonCTModel.getMaHD()+"           "+hoaDonCTModel.getMaSP()+"                  "+String.format("%.2f",hoaDonCTModel.getGia())+"                                  "+hoaDonCTModel.getSoLuong()+"\n";
+         name=name+hoaDonCTModel.getMaHD()+"         "+hoaDonCTModel.getMaSP()+"          "+df.format(hoaDonCTModel.getGia())+" VND"+"          "+hoaDonCTModel.getSoLuong()+"             "+df.format(hoaDonCTModel.getThanhTien())+" VND"+"\n";
+         tongTien+=hoaDonCTModel.getThanhTien();
       }
-      tongTien=gia*soluong;
+      
       tongTien=tongTien-Double.parseDouble(HoaDon.getGiamGia())/100;
-       DecimalFormat df = new DecimalFormat("#,##0.##");
       txtBill.setText(txtBill.getText()+name);
       txtBill.setText(txtBill.getText()+"\n"+
               "Phần trăm giảm giá: "+HoaDon.getGiamGia()
@@ -74,7 +79,7 @@ public class InHoaDon extends javax.swing.JDialog {
                       + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
                       + "                                                                                                                 \n"
                       + "                                                                                                                   \n"
-                      +"                                                                                                           "+ShareHelper.USER.getHoTen()
+                      +kh.getTenKH()+"                                                                                                "+ShareHelper.USER.getHoTen()
                       + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
   }
     /**

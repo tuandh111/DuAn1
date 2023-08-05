@@ -59,7 +59,6 @@ public class KHDC extends javax.swing.JDialog {
                 String dateString = model.getNgaySinh();
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
                 String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                System.out.println(model.getMaKH());
                 Object[] row = new Object[]{
                     model.getMaKH(),
                     model.getTenKH(),
