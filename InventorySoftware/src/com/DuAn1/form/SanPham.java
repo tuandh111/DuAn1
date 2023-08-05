@@ -70,10 +70,14 @@ import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -95,7 +99,9 @@ public class SanPham extends javax.swing.JPanel {
     private WebcamPanel panel;
     int row = -1;
 
+    ;
     public SanPham() {
+
         initComponents();
 //        dateChooser.addEventDateChooser(new EventDateChooser() {
 //            @Override
@@ -119,7 +125,17 @@ public class SanPham extends javax.swing.JPanel {
         LoadCombobox();
         LoaiSanPham.setBorder(new TitledBorder("Loại sản phẩm"));
         TuDongTangMa();
-
+        txtGia.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (!txtGia.getText().equals("")) {
+                    double gia = Double.parseDouble(txtGia.getText().replace(",", ""));
+                    DecimalFormat df = new DecimalFormat("###,###,###");
+                    df.setMaximumFractionDigits(0);
+                    txtGia.setText(df.format(gia));
+                }
+            }
+        });
     }
 
     void TuDongTangMa() {
@@ -218,9 +234,9 @@ public class SanPham extends javax.swing.JPanel {
         try {
             List<SanPhamModel> list = Dao.select();
             for (SanPhamModel nv : list) {
-                 DecimalFormat df = new DecimalFormat("#,##0.##");
-            
-                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia())+" VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -233,7 +249,9 @@ public class SanPham extends javax.swing.JPanel {
         cd.setMaSP(txtMaSP.getText());
         cd.setTenSP(txtTenSP.getText());
         cd.setMau((String) cboMau.getSelectedItem());
-        cd.setGia(Double.parseDouble(txtGia.getText()));
+        String Gia = txtGia.getText();
+        Gia = Gia.replace(",", "");
+        cd.setGia(Double.parseDouble(Gia));
         cd.setLoaiSP((String) cboLoaiSanPham.getSelectedItem());
 
         try {
@@ -274,7 +292,8 @@ public class SanPham extends javax.swing.JPanel {
         txtTenSP.setText(sp.getTenSP());
         cboMau.setSelectedItem(sp.getMau());
         cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim());
-        txtGia.setText(String.format("%.0f", sp.getGia()));
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtGia.setText(df.format(sp.getGia()));
         cboLoaiSanPham.setSelectedItem(sp.getLoaiSP());
 
         try {
@@ -296,7 +315,6 @@ public class SanPham extends javax.swing.JPanel {
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh.getWidth(), txtHinhAnh.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh.setIcon(new ImageIcon(scaledImage));
         }
-        
 
     }
 
@@ -359,8 +377,8 @@ public class SanPham extends javax.swing.JPanel {
                 return false;
             }
         } catch (Exception e) {
-            DialogHelper.alert(this, "Giá không phải lá số");
-            return false;
+//            DialogHelper.alert(this, "Giá không phải lá số");
+//            return false;
         }
         if (txtNoiNhap.getText().equals("")) {
             DialogHelper.alert(this, "Bạn chưa nhập nơi nhập");
@@ -740,13 +758,26 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
 
+        txtGia.setToolTipText("");
         txtGia.setLabelText("Giá");
         txtGia.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtGiaCaretUpdate(evt);
             }
         });
+        txtGia.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                txtGiaAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         txtGia.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtGiaFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtGiaFocusLost(evt);
             }
@@ -757,6 +788,14 @@ public class SanPham extends javax.swing.JPanel {
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 txtGiaMouseReleased(evt);
+            }
+        });
+        txtGia.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                txtGiaCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtGiaInputMethodTextChanged(evt);
             }
         });
         txtGia.addActionListener(new java.awt.event.ActionListener() {
@@ -1381,10 +1420,10 @@ public class SanPham extends javax.swing.JPanel {
         } else {
             // create and display a new form
 
-            QuetMa n1 = new QuetMa(txtTenSP);
+            QuetMa n1 = new QuetMa(txtTenSP, txtGia, cboLoaiSanPham, txtNoiNhap);
 //            n1.setVisible(true);
 //            txtTenSP.setText(QuetMa.getSoLuong());
-            switchButton1.setSelectedAnimate(false);
+            switchButton1.setSelectedAnimate(true);
         }
 
         // TODO add your handling code here:
@@ -1562,7 +1601,7 @@ public class SanPham extends javax.swing.JPanel {
                 Kiem = true;
                 return;
             }
-              if (list.getNgayBD().compareTo(formatted) > 0) {
+            if (list.getNgayBD().compareTo(formatted) > 0) {
                 DialogHelper.alert(this, "Khuyến mại này chưa bắt đầu");
                 Kiem = true;
                 return;
@@ -1571,21 +1610,26 @@ public class SanPham extends javax.swing.JPanel {
 //                DialogHelper.alert(this, "Bạn chưa nhập giá");
                 return;
             }
-
-            double gia = Double.parseDouble(txtGia.getText());
-            if(GiaDau.equals("")){
-                gia = Double.parseDouble(txtGia.getText()) - Double.parseDouble(txtGia.getText()) * list.getPhanTram() / 100;
-            }else
-            gia = Double.parseDouble(GiaDau) - Double.parseDouble(GiaDau) * list.getPhanTram() / 100;
+            String Gia0 = txtGia.getText();
+            Gia0 = Gia0.replace(",", "");
+            double gia = Double.parseDouble(Gia0);
+            DecimalFormat df = new DecimalFormat("#,##0.##");
+            if (GiaDau.equals("")) {
+                gia = Double.parseDouble(Gia0) - Double.parseDouble(Gia0) * list.getPhanTram() / 100;
+            } else {
+                gia = Double.parseDouble(GiaDau) - Double.parseDouble(GiaDau) * list.getPhanTram() / 100;
+            }
 
 //            DecimalFormat df = new DecimalFormat("#,##0.##");
-            txtGia.setText(String.format("%.0f", gia));
+            txtGia.setText(df.format(gia));
             Kiem = false;
         }        // TODO add your handling code here:
     }//GEN-LAST:event_cboKhuyenMaiActionPerformed
 
     private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
-        GiaDau = txtGia.getText();         // TODO add your handling code here:
+        String Gia=txtGia.getText();
+        Gia=Gia.replace(",", "");
+        GiaDau = Gia;         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaFocusLost
 
     private void txtGiaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtGiaMouseReleased
@@ -1596,7 +1640,6 @@ public class SanPham extends javax.swing.JPanel {
     private void txtGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtGiaCaretUpdate
         // TODO add your handling code here:
 
-
     }//GEN-LAST:event_txtGiaCaretUpdate
 
     private void txtGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGiaActionPerformed
@@ -1606,6 +1649,22 @@ public class SanPham extends javax.swing.JPanel {
     private void txtGiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtGiaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaMouseClicked
+
+    private void txtGiaCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtGiaCaretPositionChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaCaretPositionChanged
+
+    private void txtGiaInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtGiaInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaInputMethodTextChanged
+
+    private void txtGiaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_txtGiaAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaAncestorAdded
+
+    private void txtGiaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGiaFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1652,4 +1711,5 @@ public class SanPham extends javax.swing.JPanel {
     private com.DuAn1.Swing.TextField txtTenSP;
     private com.DuAn1.Swing.TextField1 txtTimKiem;
     // End of variables declaration//GEN-END:variables
+
 }

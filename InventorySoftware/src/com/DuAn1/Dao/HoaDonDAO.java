@@ -56,10 +56,22 @@ public class HoaDonDAO {
     }
 
     public List<HoaDonModel> select() {
-        String sql = "SELECT * FROM HOADON WHERE TrangThai =1";
+        String sql = "SELECT * FROM HOADON WHERE TrangThai =1 ORDER BY NgayXuat DESC";
         return select(sql);
     }
-
+      public List<HoaDonModel> selectHomNay() {
+        String sql = "SELECT * FROM HOADON WHERE DAY(NgayXuat) = Day(GETDATE()) ORDER BY NgayXuat DESC";
+        return select(sql);
+    }
+           public List<HoaDonModel> selectTuanNay() {
+        String sql = "SELECT * FROM hoadon where  MONTH(ngayxuat) = MONTH(GETDATE()) \n" +
+"AND DAY(Ngayxuat) >= DAY(GETDATE()) - 7 AND DAY(Ngayxuat) <= DAY(GETDATE()) ORDER BY ngayxuat DESC";
+        return select(sql);
+    }
+   public List<HoaDonModel> selectThangNay() {
+        String sql = "SELECT * FROM hoadon where MONTH(Ngayxuat) = MONTH(GETDATE()) ORDER BY ngayxuat DESC";
+        return select(sql);
+    }
     public void delete(HoaDonModel model) {
         String sql = "update HoaDon set TrangThai=0 where MaHD= ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());

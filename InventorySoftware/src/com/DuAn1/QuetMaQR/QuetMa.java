@@ -29,6 +29,8 @@ import com.DuAn1.form.SoLuong;
 import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -54,7 +56,7 @@ public class QuetMa extends JDialog {
         QuetMa.Ten = soLuong;
     }
 
-    public QuetMa(JTextField txt) {
+    public QuetMa(JTextField txt,JTextField txtGia,JComboBox cbo,JTextField txtNoiNhap) {
         setIconImage(ShareHelper.APP_ICON);
         //super(parent, modal);
         // set the title of the frame
@@ -92,7 +94,24 @@ public class QuetMa extends JDialog {
                             tenSP = qrText;
 
                             txt.setText(qrText);
-
+                            if(qrText.startsWith("I")){
+                                txtGia.setText("29,999,999");
+                                txtNoiNhap.setText("Mỹ");
+                                cbo.setSelectedItem("Iphone");
+                            }else if(qrText.startsWith("Sa")){
+                                txtGia.setText("25,999,999");
+                                txtNoiNhap.setText("Hàn Quốc");
+                                cbo.setSelectedItem("Samsung");
+                                
+                            }else if(qrText.startsWith("So")){
+                                txtGia.setText("19,999,999");
+                                txtNoiNhap.setText("Nhật Bản");
+                                cbo.setSelectedItem("Samsung");
+                            }else{
+                                txtGia.setText("14,999,999");
+                                txtNoiNhap.setText("Chưa xác định");
+                                cbo.setSelectedItem(null);
+                            }
                             QuetMa.setSoLuong(qrText);
                             int j;
                             if (txt != null) {
