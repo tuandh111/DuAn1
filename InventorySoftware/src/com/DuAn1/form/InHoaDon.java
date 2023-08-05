@@ -44,7 +44,7 @@ public class InHoaDon extends javax.swing.JDialog {
         String formatted = current.format(formatter);
         txtBill.setText("=====================================================================" + "\n"
                 + "========================Tên CTY: CTY TNHH TTA MOBILE=======================" + "\n"
-                + "                                                       HOÁ ĐƠN ĐIỆN TỬ                                      \n"
+                + "                                                      HOÁ ĐƠN ĐIỆN TỬ                                      \n"
                 + "Họ và tên nhân viên : "+name+"\n"
                 + "Thời gian xuất: " + formatted + "\n"
                 + "Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
@@ -79,7 +79,7 @@ public class InHoaDon extends javax.swing.JDialog {
                       + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
                       + "                                                                                                                 \n"
                       + "                                                                                                                   \n"
-                      +kh.getTenKH()+"                                                                                                "+ShareHelper.USER.getHoTen()
+                      +kh.getTenKH()+"                                                                                        "+ShareHelper.USER.getHoTen()
                       + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
   }
     /**

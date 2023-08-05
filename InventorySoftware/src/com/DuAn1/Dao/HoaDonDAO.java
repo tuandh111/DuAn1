@@ -94,16 +94,16 @@ public class HoaDonDAO {
         model.setMaHD(rs.getString(1));
         model.setSoluong(rs.getString(2));
         model.setTrangThai(rs.getBoolean(3));
-        model.setDongia(rs.getString(4));
-        model.setTongtien(rs.getString(5));
+        model.setDongia(rs.getDouble(4));
+        model.setTongtien(rs.getDouble(5));
         model.setNgayXuat(rs.getString(6));
         model.setMota(rs.getString(7));
         model.setTenCty(rs.getString(8));
         model.setMaNV(rs.getString(9));
         model.setTenKH(rs.getString(10));
         model.setHinhThuc(rs.getString(11));
-        model.setTienKhach(rs.getString(12));
-        model.setTienCon(rs.getString(13));
+        model.setTienKhach(rs.getDouble(12));
+        model.setTienCon(rs.getDouble(13));
         return model;
     }
 }

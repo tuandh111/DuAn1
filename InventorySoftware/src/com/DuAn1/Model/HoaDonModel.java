@@ -13,21 +13,21 @@ public class HoaDonModel {
     private String MaHD;
     private String Soluong;
     private boolean TrangThai;
-    private String Dongia;
-    private String Tongtien;
+    private double Dongia;
+    private double Tongtien;
     private String NgayXuat;
     private String Mota;
     private String TenCty;
     private String MaNV;
     private String TenKH;
     private String HinhThuc;
-    private String TienKhach;
-    private String TienCon;
+    private double TienKhach;
+    private double TienCon;
 
     public HoaDonModel() {
     }
 
-    public HoaDonModel(String MaHD, String Soluong, boolean TrangThai, String Dongia, String Tongtien, String NgayXuat, String Mota, String TenCty, String MaNV, String TenKH, String HinhThuc, String TienKhach, String TienCon) {
+    public HoaDonModel(String MaHD, String Soluong, boolean TrangThai, double Dongia, double Tongtien, String NgayXuat, String Mota, String TenCty, String MaNV, String TenKH, String HinhThuc, double TienKhach, double TienCon) {
         this.MaHD = MaHD;
         this.Soluong = Soluong;
         this.TrangThai = TrangThai;
@@ -67,19 +67,19 @@ public class HoaDonModel {
         this.TrangThai = TrangThai;
     }
 
-    public String getDongia() {
+    public double getDongia() {
         return Dongia;
     }
 
-    public void setDongia(String Dongia) {
+    public void setDongia(double Dongia) {
         this.Dongia = Dongia;
     }
 
-    public String getTongtien() {
+    public double getTongtien() {
         return Tongtien;
     }
 
-    public void setTongtien(String Tongtien) {
+    public void setTongtien(double Tongtien) {
         this.Tongtien = Tongtien;
     }
 
@@ -131,20 +131,21 @@ public class HoaDonModel {
         this.HinhThuc = HinhThuc;
     }
 
-    public String getTienKhach() {
+    public double getTienKhach() {
         return TienKhach;
     }
 
-    public void setTienKhach(String TienKhach) {
+    public void setTienKhach(double TienKhach) {
         this.TienKhach = TienKhach;
     }
 
-    public String getTienCon() {
+    public double getTienCon() {
         return TienCon;
     }
 
-    public void setTienCon(String TienCon) {
+    public void setTienCon(double TienCon) {
         this.TienCon = TienCon;
     }
+
 
 }

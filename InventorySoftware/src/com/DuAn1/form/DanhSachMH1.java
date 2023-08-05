@@ -9,18 +9,19 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import com.DuAn1.Dao.HoaDonDAO;
 import com.DuAn1.Model.HoaDonModel;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author DELL E5470
  */
 public class DanhSachMH1 extends javax.swing.JDialog {
 
-      
     DefaultTableModel tblModel;
     HoaDonDAO daoSP = new HoaDonDAO();
     public static String name1 = "";
@@ -32,98 +33,102 @@ public class DanhSachMH1 extends javax.swing.JDialog {
     public static String HinhThuc = "";
     public static double Tienkhach = 0;
     public static double TienCon = 0;
-    
+
     public static String getNgay() {
         return ngay;
     }
-    
+
     public static String getTen() {
         return Ten;
     }
-    
+
     public static void setTen(String Ten) {
         DanhSachMH.Ten = Ten;
     }
-    
+
     public static void setNgay(String ngay) {
         DanhSachMH.ngay = ngay;
     }
-    
+
     public static int getSoLuong() {
         return soLuong;
     }
-    
+
     public static void setSoLuong(int soLuong) {
         DanhSachMH.soLuong = soLuong;
     }
-    
+
     public static double getDonGia() {
         return DonGia;
     }
-    
+
     public static void setDonGia(double DonGia) {
         DanhSachMH.DonGia = DonGia;
     }
-    
+
     public static double getTongTien() {
         return tongTien;
     }
-    
+
     public static void setTongTien(double tongTien) {
         DanhSachMH.tongTien = tongTien;
     }
-    
+
     public static String getName1() {
         return name1;
     }
-    
+
     public static void setName1(String name1) {
         DanhSachMH.name1 = name1;
     }
-    
+
     public static double getTienkhach() {
         return Tienkhach;
     }
-    
+
     public static void setTienkhach(double Tienkhach) {
         DanhSachMH.Tienkhach = Tienkhach;
     }
-    
+
     public static double getTienCon() {
         return TienCon;
     }
-    
+
     public static void setTienCon(double TienCon) {
         DanhSachMH.TienCon = TienCon;
     }
-    
+
     public static String getHinhThuc() {
         return HinhThuc;
     }
-    
+
     public static void setHinhThuc(String HinhThuc) {
         DanhSachMH.HinhThuc = HinhThuc;
     }
+
     public DanhSachMH1(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         filltable();
     }
-   void filltable() {
+
+    void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+
         try {
             List<HoaDonModel> list = daoSP.select();
             for (HoaDonModel nv : list) {
                 String ThoiGianThem = "";
-                
+
                 if (nv.getNgayXuat() != null) {
                     String dateString = nv.getNgayXuat();
                     Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
                     ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), nv.getDongia(), nv.getTongtien(), ThoiGianThem, nv.getTenKH(), nv.getHinhThuc(), nv.getTienKhach(), nv.getTienCon()};
+                Object[] row = new Object[]{nv.getMaHD(), nv.getSoluong(), df.format(nv.getDongia()), df.format(nv.getTongtien()), ThoiGianThem, nv.getTenKH(), nv.getHinhThuc(), df.format(nv.getTienKhach()), df.format(nv.getTienCon())};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -131,6 +136,7 @@ public class DanhSachMH1 extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -244,22 +250,26 @@ public class DanhSachMH1 extends javax.swing.JDialog {
         int chon = tblUser.getSelectedRow();
         String name = (String) tblUser.getValueAt(chon, 0);
         String soLuong = (String) tblUser.getValueAt(chon, 1);
-        String donGia = (String) tblUser.getValueAt(chon, 2);
-        String tongTien = (String) tblUser.getValueAt(chon, 3);
+        String gia = (String) tblUser.getValueAt(chon, 2);
+        gia = gia.replace(",", "");
+        String TongTien = (String) tblUser.getValueAt(chon, 3);
+        TongTien = TongTien.replace(",", "");
         String ThoiGian = (String) tblUser.getValueAt(chon, 4);
         String Ten = (String) tblUser.getValueAt(chon, 5);
         String HinhThuc = (String) tblUser.getValueAt(chon, 6);
-        String Tienkhach = (String) tblUser.getValueAt(chon, 7);
-        String Tienthua = (String) tblUser.getValueAt(chon, 8);
-        DanhSachMH1.setTongTien(Double.parseDouble(tongTien));
+        String TienKhachDua = (String) tblUser.getValueAt(chon, 7);
+        TienKhachDua = TienKhachDua.replace(",", "");
+        String TienThua = (String) tblUser.getValueAt(chon, 8);
+        TienThua = TienThua.replace(",", "");
+        DanhSachMH1.setTongTien(Double.parseDouble(TongTien));
         DanhSachMH1.setSoLuong(Integer.parseInt(soLuong));
-        DanhSachMH1.setDonGia(Double.parseDouble(donGia));
+        DanhSachMH1.setDonGia(Double.parseDouble(gia));
         DanhSachMH1.setTen(Ten);
         DanhSachMH1.setName1(name);
         DanhSachMH1.setNgay(ThoiGian);
         DanhSachMH1.setHinhThuc(HinhThuc);
-        DanhSachMH1.setTienkhach(Double.parseDouble(Tienkhach));
-        DanhSachMH1.setTienCon(Double.parseDouble(Tienthua));
+        DanhSachMH1.setTienkhach(Double.parseDouble(TienKhachDua));
+        DanhSachMH1.setTienCon(Double.parseDouble(TienThua));
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 

@@ -60,7 +60,7 @@ public class HoaDon extends javax.swing.JPanel {
     public static String Makh = "";
     public static String Phantram = "";
     public static String MaKH = "";
-    
+
     public static String getSoLuong() {
         return soLuong;
     }
@@ -444,11 +444,13 @@ public class HoaDon extends javax.swing.JPanel {
         dt.setSoluong(String.valueOf(txtSoLuong.getText()));
         dt.setTenKH(txtKhachhang.getText());
         dt.setTrangThai(true);
-        dt.setDongia(String.valueOf(txtDonGia.getText()));
+        String gia = txtDonGia.getText();
+        gia = gia.replace(",", "");
+        dt.setDongia(Double.parseDouble(gia));
         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
-            long number = (long) df.parse(txtTongTien.getText());
-            dt.setTongtien(String.valueOf(number));
+            String number = String.valueOf(df.parse(txtTongTien.getText()));
+            dt.setTongtien(Double.parseDouble(number));
         } catch (ParseException ex) {
             Logger.getLogger(ThanhToanLuong.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -470,8 +472,12 @@ public class HoaDon extends javax.swing.JPanel {
                 dt.setHinhThuc("Chuyển Khoản");
             }
         }
-        dt.setTienKhach(String.valueOf(txtTienkhach.getText()));
-        dt.setTienCon(String.valueOf(txtConlai.getText()));
+        String tienKhach = txtTienkhach.getText();
+        tienKhach = tienKhach.replace(",", "");
+        dt.setTienKhach(Double.parseDouble(tienKhach));
+        String tienConlai = txtConlai.getText();
+        tienConlai = tienConlai.replace(",", "");
+        dt.setTienCon(Double.parseDouble(tienConlai));
         dt.setMota(txtMota.getText());
 //        dt.setNgayXuat(formatted);
         dt.setMaNV(ShareHelper.USER.getMaNV());
@@ -3875,11 +3881,12 @@ public class HoaDon extends javax.swing.JPanel {
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         DanhSachMH1 danhSach = new DanhSachMH1(com.DuAn1.main.Main.getMain(), true);
         danhSach.setVisible(true);
+         DecimalFormat df = new DecimalFormat("#,##0.##");
         txtMa.setText(DanhSachMH.getName1());
         txtSoLuong.setText(String.valueOf(DanhSachMH.getSoLuong()));
-        txtDonGia.setText(String.format("%.0f", DanhSachMH.getDonGia()));
+        txtDonGia.setText(df.format( DanhSachMH.getDonGia()));
 //          DecimalFormat df = new DecimalFormat("#,##0.##");
-        txtTongTien.setText(String.format("%.0f", DanhSachMH.getTongTien()));
+        txtTongTien.setText(df.format( DanhSachMH.getTongTien()));
         txtNgayXuat.setText(DanhSachMH.getNgay());
         txtKhachhang.setText(DanhSachMH.getTen());
 //        if(DanhSachMH1.getHinhThuc().trim().equals("Tiền Mặt")){
@@ -3887,8 +3894,8 @@ public class HoaDon extends javax.swing.JPanel {
 //        }
 
         cboHinhThuc.setSelectedItem(DanhSachMH.getHinhThuc().trim());
-        txtTienkhach.setText(String.format("%.0f", DanhSachMH.getTienkhach()));
-        txtConlai.setText(String.format("%.0f", DanhSachMH.getTienCon()));
+        txtTienkhach.setText(df.format( DanhSachMH.getTienkhach()));
+        txtConlai.setText(df.format( DanhSachMH.getTienCon()));
         txtThongBao.setVisible(true);
         btnXoasp.setEnabled(true);
         btnThem.setEnabled(true);
@@ -3931,7 +3938,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtKhachhang.setText(HoaDon.getSoLuong());
         daoKH.select();
         String gia = txtDonGia.getText();
-         gia = gia.replace(",", "");
+        gia = gia.replace(",", "");
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong().trim());
         System.out.println(listKH.size());
         for (KhachHangModel khachHangModel : listKH) {
@@ -4430,7 +4437,7 @@ public class HoaDon extends javax.swing.JPanel {
         ma = txtMa.getText();
         HoaDon.setGiamGia(txtGiamGiaTheoLoai.getText());
         hoten = txtKhachhang.getText();
-        
+
         InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
         hd.setVisible(true);
 
@@ -4445,10 +4452,10 @@ public class HoaDon extends javax.swing.JPanel {
         if (txtTienkhach.getText().equalsIgnoreCase("")) {
             return;
         }
-         String gia = txtDonGia.getText();
-         gia = gia.replace(",", "");
-          DecimalFormat df = new DecimalFormat("#,##0.##");
-        txtConlai.setText(df.format( Double.parseDouble(txtTienkhach.getText()) - Double.parseDouble(gia)));        // TODO add your handling code here:
+        String gia = txtDonGia.getText();
+        gia = gia.replace(",", "");
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtConlai.setText(df.format(Double.parseDouble(txtTienkhach.getText()) - Double.parseDouble(gia)));        // TODO add your handling code here:
     }//GEN-LAST:event_txtTienkhachCaretUpdate
 
     private void cboHinhThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboHinhThucActionPerformed
@@ -4650,7 +4657,7 @@ public class HoaDon extends javax.swing.JPanel {
         KHDC kh = new KHDC(com.DuAn1.main.Main.getMain(), true);
         kh.setVisible(true);
         String gia = txtDonGia.getText();
-         gia = gia.replace(",", "");
+        gia = gia.replace(",", "");
         txtKhachhang.setText(KHDC.getMaKH());
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(KHDC.getMaKH());
         for (KhachHangModel khachHangModel : listKH) {
