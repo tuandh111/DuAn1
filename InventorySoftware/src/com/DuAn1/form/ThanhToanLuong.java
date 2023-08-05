@@ -17,6 +17,8 @@ import com.tuandhpc05076.helper.DateHelper;
 import com.tuandhpc05076.helper.DialogHelper;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Path2D;
 import java.awt.geom.RoundRectangle2D;
 import java.io.File;
@@ -63,7 +65,39 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         fillTable();
         LoadCBOMaLuong();
-
+        txtLuongCoBan.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (!txtLuongCoBan.getText().equals("")) {
+                    double gia = Double.parseDouble(txtLuongCoBan.getText().replace(",", ""));
+                    DecimalFormat df = new DecimalFormat("###,###,###");
+                    df.setMaximumFractionDigits(0);
+                    txtLuongCoBan.setText(df.format(gia));
+                }
+            }
+        });
+        txtLuongTangCa.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (!txtLuongTangCa.getText().equals("")) {
+                    double gia = Double.parseDouble(txtLuongTangCa.getText().replace(",", ""));
+                    DecimalFormat df = new DecimalFormat("###,###,###");
+                    df.setMaximumFractionDigits(0);
+                    txtLuongTangCa.setText(df.format(gia));
+                }
+            }
+        });
+        txtKhoangTru.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (!txtKhoangTru.getText().equals("")) {
+                    double gia = Double.parseDouble(txtKhoangTru.getText().replace(",", ""));
+                    DecimalFormat df = new DecimalFormat("###,###,###");
+                    df.setMaximumFractionDigits(0);
+                    txtKhoangTru.setText(df.format(gia));
+                }
+            }
+        });
     }
 
     public ThaoTacModel getFormThaoTacThem() {
@@ -139,6 +173,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         model = (DefaultTableModel) tblThanhToanLuong.getModel();
         model.setRowCount(0);
+         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
             List<ThanhToanLuongModel> list = dao.select();
             System.out.println(list.size());
@@ -146,10 +181,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 String dateString = ttl.getNgayVaoCTy();
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
                 String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), ttl.getLuongCoBan(),
+                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(),df.format( ttl.getLuongCoBan())+" VND",
                     formattedDate,
                     ttl.getSoGioTangCa(),
-                    ttl.getLuongTangCa(), ttl.getKhoanTru(), String.format("%.0f", ttl.getTongTien()), ttl.isTrangThai()};
+                    ttl.getLuongTangCa(),df.format( ttl.getKhoanTru())+" VND", df.format( ttl.getTongTien())+" VND", ttl.isTrangThai()};
                 model.addRow(rows);
             }
         } catch (Exception e) {
@@ -161,7 +196,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ThanhToanLuongModel ttl = new ThanhToanLuongModel();
         ttl.setMaLuong((String) cboMaLuong.getSelectedItem());
         ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
-        ttl.setLuongCoBan(Double.parseDouble(txtLuongCoBan.getText()));
+        String LuongCoBan = txtLuongCoBan.getText();
+        LuongCoBan=LuongCoBan.replace(",","");
+        ttl.setLuongCoBan(Double.parseDouble(LuongCoBan));
         try {
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayVaoCTY.getText());
 
@@ -171,11 +208,17 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         } catch (Exception e) {
         }
+        String LuongTangCa = txtLuongTangCa.getText();
+        String KhoanTru= txtKhoangTru.getText();
+        String TongTien = lblTongTien.getText();
+        KhoanTru= KhoanTru.replace(",", "");
+        TongTien=TongTien.replace(",","");
+        LuongTangCa =LuongTangCa.replace(",","");
         ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
-        ttl.setLuongTangCa(Double.parseDouble(txtLuongTangCa.getText()));
-        ttl.setKhoanTru(Double.parseDouble(txtKhoangTru.getText()));
+        ttl.setLuongTangCa(Double.parseDouble(LuongTangCa));
+        ttl.setKhoanTru(Double.parseDouble(KhoanTru));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        double number = Double.parseDouble(lblTongTien.getText());
+        double number = Double.parseDouble(TongTien);
         ttl.setTongTien(number);
 
         ttl.setTrangThai(true);
@@ -188,10 +231,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     }
 
     void setForm(ThanhToanLuongModel ttl) {
-
+         DecimalFormat df = new DecimalFormat("#,##0.##");
         cboMaLuong.setSelectedItem(ttl.getMaLuong().trim());
         txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
-        txtLuongCoBan.setText(String.valueOf(ttl.getLuongCoBan()));
+        txtLuongCoBan.setText(df.format(ttl.getLuongCoBan()));
         try {
             String dateString = ttl.getNgayVaoCTy();
             Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
@@ -201,9 +244,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             Logger.getLogger(ThanhToanLuong.class.getName()).log(Level.SEVERE, null, ex);
         }
         txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
-        txtLuongTangCa.setText(String.valueOf(ttl.getLuongTangCa()));
-        txtKhoangTru.setText(String.valueOf(ttl.getKhoanTru()));
-        lblTongTien.setText(String.format("%.0f",ttl.getTongTien()));
+        txtLuongTangCa.setText(df.format(ttl.getLuongTangCa()));
+        txtKhoangTru.setText(df.format(ttl.getKhoanTru()));
+        lblTongTien.setText(df.format( ttl.getTongTien()));
         if (ttl.isTrangThai() == true) {
             btnTrangThai.setSelectedAnimate(true);
             lblTrangThai.setText("Đã thanh toán");
@@ -724,8 +767,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 return false;
             }
         } catch (Exception e) {
-            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
-            return false;
+//            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
+//            return false;
         }
         if (txtNgayVaoCTY.getText().equals("")) {
             DialogHelper.alert(this, "Hãy nhập ngày vào CTY!");
@@ -741,8 +784,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 DialogHelper.alert(this, "Lương của bạn nhập không được nhỏ hơn 1 nghìn");
             }
         } catch (Exception e) {
-            DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
-            return false;
+//            DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
+//            return false;
         }
         if (Double.parseDouble(txtLuongCoBan.getText()) < 0) {
             DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
@@ -783,8 +826,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         try {
             Double.parseDouble(txtKhoangTru.getText());
         } catch (Exception e) {
-            DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
-            return false;
+//            DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
+//            return false;
         }
         if (Double.parseDouble(txtKhoangTru.getText()) < 0) {
             DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
@@ -804,30 +847,35 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         double tongTien = 1;
         double luongTangCa = 1;
-        luongTangCa = Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
         if (txtLuongCoBan.getText().equals("")) {
             return;
         }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien + luongTangCa;
+        String LuongCoBan = txtLuongCoBan.getText();
+        String LuongTangCa = txtLuongTangCa.getText();
+        String KhoanTru = txtKhoangTru.getText();
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
+        tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if (Double.parseDouble(LuongTangCa) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
-        if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien + luongTangCa - Double.parseDouble(txtKhoangTru.getText());;
+        if (Double.parseDouble(KhoanTru) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
         }
 //        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(String.format("%.0f", tongTien));
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtSoNgayLamViecCaretUpdate
 
     private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
         // TODO add your handling code here:
         double tongTien = 1;
         double luongTangCa = 1;
-        luongTangCa = Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
         if (txtKhoangTru.getText().equals("")) {
             return;
         }
@@ -838,17 +886,22 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             return;
         }
 
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien + luongTangCa;
+        String LuongCoBan = txtLuongCoBan.getText();
+        String LuongTangCa = txtLuongTangCa.getText();
+        String KhoanTru = txtKhoangTru.getText();
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
+        tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if (Double.parseDouble(LuongTangCa) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
-        if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien - Double.parseDouble(txtKhoangTru.getText());;
+        if (Double.parseDouble(KhoanTru) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
         }
-
 //        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(String.format("%.0f", tongTien));
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtKhoangTruCaretUpdate
 
     private void txtKhoangTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKhoangTruActionPerformed
@@ -880,18 +933,21 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtSoHTangCa.getText().equals("")) {
             return;
         }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
-
+        String LuongCoBan = txtLuongCoBan.getText();
+        String LuongTangCa = txtLuongTangCa.getText();
+        String KhoanTru = txtKhoangTru.getText();
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
+        tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if (Double.parseDouble(LuongTangCa) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(txtKhoangTru.getText());
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
         }
-
-        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(String.format("%.0f", tongTien));
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtSoHTangCaCaretUpdate
     void sua() {
         ThanhToanLuongModel ttl = getForm();
@@ -948,7 +1004,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         // TODO add your handling code here:
         double tongTien = 0;
         double luongTangCa = 1;
-        luongTangCa = Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());
+
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
         }
@@ -961,16 +1017,22 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtKhoangTru.getText().equals("")) {
             return;
         }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien + luongTangCa;
+        String LuongCoBan = txtLuongCoBan.getText();
+        String LuongTangCa = txtLuongTangCa.getText();
+        String KhoanTru = txtKhoangTru.getText();
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
+        tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if (Double.parseDouble(LuongTangCa) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien + luongTangCa - Double.parseDouble(txtKhoangTru.getText());
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);
         }
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(String.format("%.0f", tongTien));
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtLuongCoBanCaretUpdate
 
     private void txtLuongTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtLuongTangCaCaretUpdate
@@ -988,16 +1050,22 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (txtSoHTangCa.getText().equals("")) {
             return;
         }
-        tongTien = Double.parseDouble(txtLuongCoBan.getText()) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
-        if (Double.parseDouble(txtLuongTangCa.getText()) != 0) {
-            tongTien = tongTien + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText());;
+        String LuongCoBan = txtLuongCoBan.getText();
+        String LuongTangCa = txtLuongTangCa.getText();
+        String KhoanTru = txtKhoangTru.getText();
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
+        tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
+        if (Double.parseDouble(LuongTangCa) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
-        if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
-            tongTien = tongTien + Double.parseDouble(txtLuongTangCa.getText()) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(txtKhoangTru.getText());;
+        if (Double.parseDouble(KhoanTru) != 0) {
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
         }
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
-        lblTongTien.setText(String.format("%.0f", tongTien));
+        lblTongTien.setText(df.format(tongTien));
     }//GEN-LAST:event_txtLuongTangCaCaretUpdate
 
     private void txtLuongCoBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLuongCoBanActionPerformed
@@ -1036,6 +1104,19 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         // TODO add your handling code here:
         btnTrangThai.setSelectedAnimate(true);
         lblTrangThai.setText("Thanh toán");
+        NhanVienDAO1 NVdao = new NhanVienDAO1();
+        ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.selectcombobox();
+        for (NhanVienModel nv : listnv) {
+            if (cboMaLuong.getSelectedItem() != null) {
+                if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("QL")) {
+                    txtLuongCoBan.setText("10,000,000");
+                } if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
+                    txtLuongCoBan.setText("6,000,000");
+                } else {
+                    txtLuongCoBan.setText("3,000,000");
+                }
+            }
+        }
     }//GEN-LAST:event_cboMaLuongActionPerformed
 
     private void button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button15ActionPerformed
