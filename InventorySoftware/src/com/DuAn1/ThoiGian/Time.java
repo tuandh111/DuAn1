@@ -18,7 +18,7 @@ public class Time extends Thread {
 
     @Override
     public void run() {
-        SimpleDateFormat SDF = new SimpleDateFormat("hh:mm:ss aa");
+        SimpleDateFormat SDF = new SimpleDateFormat("hh:mm:ss aa dd/MM/yyyy");
         while (true) {
             Date now = new Date();
             String gio = SDF.format(now);

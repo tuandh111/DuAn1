@@ -261,16 +261,13 @@ public class Main extends javax.swing.JFrame {
         lbUserName.setText("User Name");
 
         txtThoiGian.setBackground(new java.awt.Color(255, 0, 51));
-        txtThoiGian.setForeground(new java.awt.Color(0, 0, 0));
         txtThoiGian.setText("jLabel1");
 
         txtThoiGian1.setBackground(new java.awt.Color(255, 0, 51));
-        txtThoiGian1.setForeground(new java.awt.Color(0, 0, 0));
         txtThoiGian1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/edit.png"))); // NOI18N
         txtThoiGian1.setText("Giới thiệu");
 
         txtThoiGian2.setBackground(new java.awt.Color(255, 0, 51));
-        txtThoiGian2.setForeground(new java.awt.Color(0, 0, 0));
         txtThoiGian2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconGmail-removebg-preview (1).png"))); // NOI18N
         txtThoiGian2.setText("Hướng dẫn sử dụng");
 
@@ -281,9 +278,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titleBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
+                .addGap(27, 27, 27)
                 .addComponent(txtThoiGian)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 449, Short.MAX_VALUE)
                 .addComponent(txtThoiGian2)
                 .addGap(126, 126, 126)
                 .addComponent(txtThoiGian1)

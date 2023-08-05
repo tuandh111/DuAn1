@@ -722,9 +722,9 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(txtSoLuongConSony1)
                     .addComponent(txtGiaSoNy1)
                     .addComponent(txtGiaIphone20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LbSony1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(LbSony1Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
@@ -810,9 +810,9 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(txtSoLuongConSony2)
                     .addComponent(txtGiaSoNy2)
                     .addComponent(txtGiaIphone21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtadd3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(LbSony2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(LbSony2Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
@@ -865,32 +865,39 @@ public class DatHang1 extends javax.swing.JPanel {
         LbSony3.setLayout(LbSony3Layout);
         LbSony3Layout.setHorizontalGroup(
             LbSony3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony3Layout.createSequentialGroup()
-                .addComponent(txtSoLuongConSony3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtGiaSoNy3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtGiaIphone22)
-                .addGap(26, 26, 26))
-            .addComponent(txtMaSony3, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony3Layout.createSequentialGroup()
-                .addComponent(txtHinhAnhSony3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony3Layout.createSequentialGroup()
-                .addComponent(txtadd4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(LbSony3Layout.createSequentialGroup()
+                .addGroup(LbSony3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LbSony3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony3Layout.createSequentialGroup()
+                            .addComponent(txtSoLuongConSony3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtGiaSoNy3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtGiaIphone22)
+                            .addGap(26, 26, 26))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LbSony3Layout.createSequentialGroup()
+                            .addComponent(txtHinhAnhSony3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18))
+                        .addGroup(LbSony3Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(txtMaSony3)
+                            .addGap(111, 111, 111)))
+                    .addGroup(LbSony3Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(txtadd4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LbSony3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(LbSony3Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(txtTenSony3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(18, Short.MAX_VALUE)))
+                    .addContainerGap(26, Short.MAX_VALUE)))
         );
         LbSony3Layout.setVerticalGroup(
             LbSony3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LbSony3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(txtMaSony3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtHinhAnhSony3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(LbSony3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1471,7 +1478,7 @@ public class DatHang1 extends javax.swing.JPanel {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(LbSony7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1489,7 +1496,7 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(LbSony2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(LbSony3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LbSony3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1580,9 +1587,6 @@ public class DatHang1 extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(lbIphone3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btnAdd4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(lbIphone3Layout.createSequentialGroup()
                             .addComponent(txtSoLuongConIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1597,7 +1601,8 @@ public class DatHang1 extends javax.swing.JPanel {
                                     .addComponent(txtTenIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(txtMaIphone3))
                             .addGap(8, 8, 8)))
-                    .addComponent(txtHinhAnhIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtHinhAnhIphone3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         lbIphone3Layout.setVerticalGroup(
             lbIphone3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1613,9 +1618,9 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addComponent(txtSoLuongConIphone3)
                     .addComponent(txtGiaIphone3)
                     .addComponent(txtGiaIphone12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdd4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbIphone2.setBackground(new java.awt.Color(246, 88, 88));
@@ -3296,7 +3301,6 @@ public class DatHang1 extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel28.setText("Đặt hàng");
 
-        txtSoDienThoai.setEditable(false);
         txtSoDienThoai.setLabelText("Số điện thoại");
         txtSoDienThoai.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3322,6 +3326,7 @@ public class DatHang1 extends javax.swing.JPanel {
         });
 
         txtDonGia.setEditable(false);
+        txtDonGia.setText("0");
         txtDonGia.setLabelText("Tổng đơn giá");
         txtDonGia.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3338,6 +3343,7 @@ public class DatHang1 extends javax.swing.JPanel {
         });
 
         txtSoLuong.setEditable(false);
+        txtSoLuong.setText("0");
         txtSoLuong.setLabelText("Tổng số lượng");
         txtSoLuong.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3383,8 +3389,11 @@ public class DatHang1 extends javax.swing.JPanel {
 
         txtTongTien.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtTongTien.setForeground(new java.awt.Color(255, 51, 51));
+        txtTongTien.setText("0");
 
-        jLabel4.setText("Đồng");
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setText("VND");
 
         button9.setBackground(new java.awt.Color(153, 153, 255));
         button9.setText("+");
@@ -3456,14 +3465,14 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(txtGiamGiaTheoLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)))
-                        .addGap(43, 43, 43))))
+                                .addComponent(jLabel5))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(txtTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel4)))
+                        .addGap(122, 122, 122))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3511,15 +3520,23 @@ public class DatHang1 extends javax.swing.JPanel {
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Mã ĐH", "Mã SP", "Số lượng", "Giá"
+                "Mã ĐH", "Mã SP", "Số lượng", "Giá", "Thành tiền"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(tblUser);
 
         btnXoaTatCa.setBackground(new java.awt.Color(255, 51, 51));
@@ -3584,7 +3601,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -3617,14 +3634,14 @@ public class DatHang1 extends javax.swing.JPanel {
     void clearForm() {
         txtMaDatHang.setText("");
         txtSoDienThoai.setText("");
-        txtDonGia.setText("");
-        txtSoLuong.setText("");
+        txtDonGia.setText("0");
+        txtSoLuong.setText("0");
 //        LocalDateTime current = LocalDateTime.now();
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss.SSS");
 //        String formatted = current.format(formatter);
 //        txtNgayXuat.setText(f);
-        txtGiamGiaTheoLoai.setText("");
-        txtTongTien.setText("");
+        txtGiamGiaTheoLoai.setText("0");
+        txtTongTien.setText("0");
     }
 
     DatSPModel getFormTao() {
@@ -3633,9 +3650,17 @@ public class DatHang1 extends javax.swing.JPanel {
         dt.setSoLuong(String.valueOf(txtSoLuong.getText()));
         dt.setSDT(txtSoDienThoai.getText());
         dt.setTrangThai(true);
-        dt.setDonGia(String.valueOf(txtDonGia.getText()));
 
-        dt.setTongTien(txtTongTien.getText());
+        String gia = txtDonGia.getText();
+        gia = gia.replace(",", "");
+//        String donGia =String.valueOf( Double.parseDouble(gia ));
+
+        dt.setDonGia(Double.parseDouble(gia));
+
+        String tien = txtTongTien.getText();
+        tien = tien.replace(",", "");
+
+        dt.setTongTien(Double.parseDouble(tien));
         try {
             Date date = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").parse(txtNgayXuat.getText());
 
@@ -3658,7 +3683,8 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             List<DatSPCTModel> list = daoDatSPCT.select(txtMaDatHang.getText());
             for (DatSPCTModel nv : list) {
-                Object[] row = new Object[]{nv.getMaDH(), nv.getMaSP(), nv.getSoLuong(), String.format("%.0f", nv.getGia())};
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                Object[] row = new Object[]{nv.getMaDH(), nv.getMaSP(), nv.getSoLuong(), df.format(nv.getGia()) + " VND", df.format(nv.getThanhTien()) + " VND"};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -3921,7 +3947,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony1();
 //            SanPhamModel daoSP1 = getFormSPSony1();
-            
+
             daoDatSPCT.insert(model);
             filltable();
 //            daoSP.updateSL(daoSP1);
@@ -3940,6 +3966,7 @@ public class DatHang1 extends javax.swing.JPanel {
         return cd;
     }
     private void txtDonGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtDonGiaCaretUpdate
+
         // TODO add your handling code here
     }//GEN-LAST:event_txtDonGiaCaretUpdate
 
@@ -4272,6 +4299,8 @@ public class DatHang1 extends javax.swing.JPanel {
         } else if (list.size() > 0) {
             if (txtSoDienThoai.getText().matches(so)) {
                 txtThongBao.setVisible(true);
+                String gia = txtDonGia.getText();
+                gia = gia.replace(",", "");
                 for (KhachHangModel khachHangModel : list) {
                     if (khachHangModel.getLoaiKH().trim().equalsIgnoreCase("VIP1")) {
                         txtGiamGiaTheoLoai.setText("5");
@@ -4282,6 +4311,8 @@ public class DatHang1 extends javax.swing.JPanel {
                     }
                 }
                 txtThongBao.setText("OK");
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                txtTongTien.setText(df.format(Double.parseDouble(gia) - Double.parseDouble(gia) * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100));
             } else {
                 txtThongBao.setVisible(false);
             }
@@ -4332,6 +4363,8 @@ public class DatHang1 extends javax.swing.JPanel {
         List<KhachHangModel> listTimKiem = daoKH.selectSDT(txtSoDienThoai.getText());
         double tongGia = 0;
         int tongSoLuong = 0;
+        double TongTien = 0;
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         if (txtMaDatHang.getText().equals("")) {
             DialogHelper.alert(this, "Bạn chưa tạo đặt hàng nào");
             return;
@@ -4341,20 +4374,52 @@ public class DatHang1 extends javax.swing.JPanel {
             for (DatSPCTModel nv : list) {
                 tongGia += nv.getGia();
                 tongSoLuong += nv.getSoLuong();
+                TongTien += nv.getThanhTien();
             }
-            txtDonGia.setText(String.format("%.0f", tongGia));
+
+            txtDonGia.setText(df.format(TongTien));
             txtSoLuong.setText(String.valueOf(tongSoLuong));
-            double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
-            tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
-            DecimalFormat df = new DecimalFormat("#,##0.##");
-            txtTongTien.setText(df.format(tongTien));
+//            double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
+//            tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
+
+            txtTongTien.setText(df.format(TongTien));
             ThaoTacModel ThaoTacModel = getFormUpdate();
             daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }        // TODO add your handling code here:
+        List<KhachHangModel> list = daoKH.selectSDT(txtSoDienThoai.getText());
 
+        if (list.size() == 0) {
+            if (txtSoDienThoai.getText().matches(so)) {
+                txtThongBao.setVisible(true);
+                txtThongBao.setText("Khách hàng chưa tồn tại");
+
+            } else {
+                txtThongBao.setVisible(false);
+            }
+
+        } else if (list.size() > 0) {
+            if (txtSoDienThoai.getText().matches(so)) {
+                txtThongBao.setVisible(true);
+                String gia = txtDonGia.getText();
+                gia = gia.replace(",", "");
+                for (KhachHangModel khachHangModel : list) {
+                    if (khachHangModel.getLoaiKH().trim().equalsIgnoreCase("VIP1")) {
+                        txtGiamGiaTheoLoai.setText("5");
+                    } else if (khachHangModel.getLoaiKH().trim().equalsIgnoreCase("VIP2")) {
+                        txtGiamGiaTheoLoai.setText("10");
+                    } else {
+                        txtGiamGiaTheoLoai.setText("0");
+                    }
+                }
+                txtThongBao.setText("OK");
+                txtTongTien.setText(df.format(Double.parseDouble(gia) - Double.parseDouble(gia) * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100));
+            } else {
+                txtThongBao.setVisible(false);
+            }
+        }
     }//GEN-LAST:event_btnThemDatHangActionPerformed
     public ThaoTacModel getFormUpdate() {
         ThaoTacModel cd = new ThaoTacModel();
@@ -4601,6 +4666,8 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone1.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone1.getText());
+        System.out.println("Gia" + txtGiaIphone1.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone1.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4610,6 +4677,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone2.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone2.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone2.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4619,6 +4687,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone3.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone3.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone3.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4628,6 +4697,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone4.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone4.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone4.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4637,6 +4707,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone5.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone5.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone5.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4646,6 +4717,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone6.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone6.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone6.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4655,6 +4727,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone7.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone7.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone7.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4664,6 +4737,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone8.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone8.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone8.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4673,6 +4747,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaIphone9.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone9.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4682,6 +4757,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSoNy1.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony1.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy1.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4691,69 +4767,77 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony2.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy2.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony3() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony3.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy3.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony4() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony4.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy4.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony5() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony5.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy5.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony6() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony6.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy6.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony7() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony7.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy7.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony8() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony8.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy8.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony9() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy9.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony9.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4763,6 +4847,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung1.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung1.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung1.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4772,6 +4857,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung2.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung2.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung2.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4781,6 +4867,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung3.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung3.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung3.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4790,6 +4877,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung4.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung4.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung4.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4799,6 +4887,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung5.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung5.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung5.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4808,6 +4897,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung6.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung6.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung6.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4817,6 +4907,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung7.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung7.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung7.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4826,6 +4917,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung8.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung8.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung8.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4835,6 +4927,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setGia(Double.parseDouble(txtGiaSamsung9.getText()));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung9.getText());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
 

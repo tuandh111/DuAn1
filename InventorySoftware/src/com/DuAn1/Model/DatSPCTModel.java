@@ -14,17 +14,26 @@ public class DatSPCTModel {
     private String MaDH;
     private double gia;
     private int SoLuong;
-
-    public DatSPCTModel(int ID, String MaSP, String MaDH, double gia, int SoLuong) {
+    private double ThanhTien;
+    public DatSPCTModel(int ID, String MaSP, String MaDH, double gia, int SoLuong,double ThanhTien) {
         this.ID = ID;
         this.MaSP = MaSP;
         this.MaDH = MaDH;
         this.gia = gia;
         this.SoLuong = SoLuong;
+        this.ThanhTien= ThanhTien;
     }
 
 
     public DatSPCTModel() {
+    }
+
+    public double getThanhTien() {
+        return ThanhTien;
+    }
+
+    public void setThanhTien(double ThanhTien) {
+        this.ThanhTien = ThanhTien;
     }
 
     public int getID() {

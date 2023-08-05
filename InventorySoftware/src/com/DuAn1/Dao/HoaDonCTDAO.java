@@ -18,12 +18,13 @@ import java.util.List;
 public class HoaDonCTDAO {
 
     public void insert(HoaDonCTModel model) {
-        String sql = "Insert into HOADONCT values (?,?,?,?)";
+        String sql = "Insert into HOADONCT values (?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaSP(),
                 model.getSoLuong(),
                 model.getMaHD(),
-                model.getGia()
+                model.getGia(),
+                model.getThanhTien()
         );
     }
 
@@ -68,6 +69,7 @@ public class HoaDonCTDAO {
         model.setSoLuong(rs.getFloat(3));
         model.setMaHD(rs.getString(4));
         model.setGia(rs.getDouble(5));
+        model.setThanhTien(rs.getDouble(6));
         return model;
     }
 }

@@ -22,6 +22,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import com.DuAn1.tabledark.Test;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -107,14 +108,14 @@ public class DanhSachDH extends javax.swing.JDialog {
         try {
             List<DatSPModel> list = daoSP.select();
             for (DatSPModel nv : list) {
-                   String ThoiGianThem = "";
-
+                String ThoiGianThem = "";
+                DecimalFormat df = new DecimalFormat("#,##0.##");
                 if (nv.getThoiGianDat() != null) {
                     String dateString = nv.getThoiGianDat();
                     Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
                     ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
                 }
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), ThoiGianThem, nv.getMaNV()};
+                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), df.format(nv.getDonGia()), df.format(nv.getTongTien()), ThoiGianThem, nv.getMaNV()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -169,15 +170,10 @@ public class DanhSachDH extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        button1 = new com.DuAn1.Swing.Button();
-        button6 = new com.DuAn1.Swing.Button();
-        button5 = new com.DuAn1.Swing.Button();
-        button4 = new com.DuAn1.Swing.Button();
         button2 = new com.DuAn1.Swing.Button();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
+        cboThoiGian = new com.DuAn1.Swing.Combobox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -201,20 +197,6 @@ public class DanhSachDH extends javax.swing.JDialog {
                 txtTimKiemActionPerformed(evt);
             }
         });
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Số lượng bảng ghi:");
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("1 to 10");
-
-        button1.setText("|<");
-
-        button6.setText("<<");
-
-        button5.setText(">>");
-
-        button4.setText(">|");
 
         button2.setText("Tìm kiếm");
         button2.addActionListener(new java.awt.event.ActionListener() {
@@ -249,38 +231,34 @@ public class DanhSachDH extends javax.swing.JDialog {
         });
         jScrollPane4.setViewportView(tblUser);
 
+        cboThoiGian.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hôm nay", "Tuấn này", "Tháng này" }));
+        cboThoiGian.setSelectedIndex(-1);
+        cboThoiGian.setLabeText("Thời gian");
+        cboThoiGian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboThoiGianActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(401, 401, 401)
+                .addGap(501, 501, 501)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 529, Short.MAX_VALUE)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(18, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,20 +268,11 @@ public class DanhSachDH extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                .addGap(83, 83, 83))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 540));
@@ -311,41 +280,22 @@ public class DanhSachDH extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
-
-    private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
-        tblModel = (DefaultTableModel) tblUser.getModel();
-        tblModel.setRowCount(0);
-        try {
-            List<DatSPModel> list = daoSP.TimKiem(txtTimKiem.getText());
-            for (DatSPModel nv : list) {
-                String ThoiGianThem = "";
-
-                if (nv.getThoiGianDat() != null) {
-                    String dateString = nv.getThoiGianDat();
-                    Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
-                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
-                }
-                Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), nv.getDonGia(), nv.getTongTien(), ThoiGianThem, nv.getMaNV()};
-                tblModel.addRow(row);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
-        }
-    }//GEN-LAST:event_txtTimKiemCaretUpdate
-
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
-      int chon = tblUser.getSelectedRow();
+        int chon = tblUser.getSelectedRow();
         String name = (String) tblUser.getValueAt(chon, 0);
         String soLuong = (String) tblUser.getValueAt(chon, 1);
         String SDT = (String) tblUser.getValueAt(chon, 2);
-        String donGia = (String) tblUser.getValueAt(chon, 3);
-        String tongTien = (String) tblUser.getValueAt(chon, 4);
+
+        String gia = (String) tblUser.getValueAt(chon, 3);
+        gia = gia.replace(",", "");
+        String donGia = String.valueOf(Double.parseDouble(gia));
+
+        String tien = (String) tblUser.getValueAt(chon, 4);
+        tien = tien.replace(",", "");
+        String tongtien = String.valueOf(Double.parseDouble(tien));
+
         String ThoiGian = (String) tblUser.getValueAt(chon, 5);
-        DanhSachDH.setTongTien(Double.parseDouble(tongTien));
+        DanhSachDH.setTongTien(Double.parseDouble(tongtien));
         DanhSachDH.setSoLuong(Integer.parseInt(soLuong));
         DanhSachDH.setDonGia(Double.parseDouble(donGia));
         DanhSachDH.setSDT(SDT.trim());
@@ -354,9 +304,85 @@ public class DanhSachDH extends javax.swing.JDialog {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button2ActionPerformed
+
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTimKiemActionPerformed
+
+    private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
+
+    }//GEN-LAST:event_txtTimKiemCaretUpdate
+
+    private void cboThoiGianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThoiGianActionPerformed
+        // TODO add your handling code here:
+        if (cboThoiGian.getSelectedItem().equals("Hôm nay")) {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<DatSPModel> list = daoSP.selectHomNay();
+
+                for (DatSPModel nv : list) {
+                    String ThoiGianThem = "";
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+                    if (nv.getThoiGianDat() != null) {
+                        String dateString = nv.getThoiGianDat();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), df.format(nv.getDonGia()), df.format(nv.getTongTien()), ThoiGianThem, nv.getMaNV()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }else if(cboThoiGian.getSelectedItem().equals("Tuần này")){
+              tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<DatSPModel> list = daoSP.selectTuanNay();
+
+                for (DatSPModel nv : list) {
+                    String ThoiGianThem = "";
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+                    if (nv.getThoiGianDat() != null) {
+                        String dateString = nv.getThoiGianDat();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), df.format(nv.getDonGia()), df.format(nv.getTongTien()), ThoiGianThem, nv.getMaNV()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }else if(cboThoiGian.getSelectedItem().equals("Tháng này")){
+              tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<DatSPModel> list = daoSP.selectThangNay();
+
+                for (DatSPModel nv : list) {
+                    String ThoiGianThem = "";
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+                    if (nv.getThoiGianDat() != null) {
+                        String dateString = nv.getThoiGianDat();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), df.format(nv.getDonGia()), df.format(nv.getTongTien()), ThoiGianThem, nv.getMaNV()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
+    }//GEN-LAST:event_cboThoiGianActionPerformed
 
     /**
      * @param args the command line arguments
@@ -404,14 +430,9 @@ public class DanhSachDH extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.DuAn1.Swing.Button button1;
     private com.DuAn1.Swing.Button button2;
-    private com.DuAn1.Swing.Button button4;
-    private com.DuAn1.Swing.Button button5;
-    private com.DuAn1.Swing.Button button6;
+    private com.DuAn1.Swing.Combobox cboThoiGian;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javaswingdev.swing.table.Table tblUser;

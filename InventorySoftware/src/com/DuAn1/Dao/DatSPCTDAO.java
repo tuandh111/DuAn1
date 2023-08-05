@@ -18,12 +18,13 @@ import java.util.List;
 public class DatSPCTDAO {
 
     public void insert(DatSPCTModel model) {
-        String sql = "Insert into DATSPCT values (?,?,?,?)";
+        String sql = "Insert into DATSPCT values (?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getSoLuong(),
                 model.getGia(),
                 model.getMaDH(),
-                model.getMaSP()
+                model.getMaSP(),
+                model.getThanhTien()
         );
     }
 
@@ -70,6 +71,7 @@ public class DatSPCTDAO {
         model.setGia(rs.getDouble(3));
         model.setMaDH(rs.getString(4));
         model.setMaSP(rs.getString(5));
+        model.setThanhTien(rs.getDouble(6));
         return model;
     }
 }

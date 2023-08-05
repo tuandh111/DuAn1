@@ -16,6 +16,7 @@ import com.DuAn1.Model.SanPhamModel;
 import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.helper.DialogHelper;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -53,7 +54,8 @@ public class DaXoaSP extends javax.swing.JPanel {
         try {
             List<SanPhamModel> list = dao.selectDaXoa();
             for (SanPhamModel nv : list) {
-                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia()};
+                 DecimalFormat df = new DecimalFormat("#,##0.##");
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format( nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {

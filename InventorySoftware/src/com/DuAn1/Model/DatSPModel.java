@@ -14,12 +14,12 @@ public class DatSPModel {
     private String SoLuong;
     private String SDT;
     private boolean TrangThai;
-    private String DonGia;
-    private String TongTien;
+    private double DonGia;
+    private double TongTien;
     private String ThoiGianDat;
     private String MaNV;
 
-    public DatSPModel(String MaDH, String SoLuong, String SDT, boolean TrangThai, String DonGia, String TongTien, String ThoiGianDat, String MaNV) {
+    public DatSPModel(String MaDH, String SoLuong, String SDT, boolean TrangThai, double DonGia, double TongTien, String ThoiGianDat, String MaNV) {
         this.MaDH = MaDH;
         this.SoLuong = SoLuong;
         this.SDT = SDT;
@@ -65,19 +65,19 @@ public class DatSPModel {
         this.TrangThai = TrangThai;
     }
 
-    public String getDonGia() {
+    public double getDonGia() {
         return DonGia;
     }
 
-    public void setDonGia(String DonGia) {
+    public void setDonGia(double DonGia) {
         this.DonGia = DonGia;
     }
 
-    public String getTongTien() {
+    public double getTongTien() {
         return TongTien;
     }
 
-    public void setTongTien(String TongTien) {
+    public void setTongTien(double TongTien) {
         this.TongTien = TongTien;
     }
 

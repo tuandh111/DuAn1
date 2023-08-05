@@ -48,10 +48,22 @@ public class DatSPDAO {
     }
 
     public List<DatSPModel> select() {
-        String sql = "SELECT * FROM DATSP WHERE TrangThai =1";
+        String sql = "SELECT * FROM DATSP WHERE TrangThai =1 ORDER BY ThoiGianDat DESC";
         return select(sql);
     }
-
+    public List<DatSPModel> selectHomNay() {
+        String sql = "SELECT * FROM DATSP WHERE DAY(ThoiGianDat) = Day(GETDATE()) ORDER BY ThoiGianDat DESC";
+        return select(sql);
+    }
+     public List<DatSPModel> selectTuanNay() {
+        String sql = "SELECT * FROM datsp where  MONTH(ThoiGiandat) = MONTH(GETDATE()) \n" +
+"AND DAY(ThoiGiandat) >= DAY(GETDATE()) - 7 AND DAY(ThoiGiandat) <= DAY(GETDATE()) ORDER BY ThoiGianDat DESC";
+        return select(sql);
+    }
+   public List<DatSPModel> selectThangNay() {
+        String sql = "SELECT * FROM datsp where MONTH(ThoiGiandat) = MONTH(GETDATE()) ORDER BY ThoiGianDat DESC";
+        return select(sql);
+    }
     public List<DatSPModel> TimKiem(String Ma) {
         String sql = "SELECT * FROM DATSP WHERE TrangThai =1 and MaDH like ?";
         return select(sql, "%" + Ma + "%");
@@ -102,8 +114,8 @@ public class DatSPDAO {
         model.setSoLuong(rs.getString(2));
         model.setSDT(rs.getString(3));
         model.setTrangThai(rs.getBoolean(4));
-        model.setDonGia(rs.getString(5));
-        model.setTongTien(rs.getString(6));
+        model.setDonGia(rs.getDouble(5));
+        model.setTongTien(rs.getDouble(6));
         model.setThoiGianDat(rs.getString(7));
         model.setMaNV(rs.getString(8));
         return model;
