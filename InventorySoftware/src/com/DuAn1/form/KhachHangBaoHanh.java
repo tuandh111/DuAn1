@@ -4,11 +4,16 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Dao.HoaDonDAO;
 import com.DuAn1.Dao.KhachHangDAO;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.HoaDonModel;
 import com.DuAn1.Model.KhachHangModel;
+import java.util.Arrays;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,14 +36,15 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
 
  
     KhachHangDAO daoKH = new KhachHangDAO();
-
+    HoaDonDAO daoHD = new HoaDonDAO();
     public KhachHangBaoHanh(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         tieude();
-        filltable();
+ 
         setLocationRelativeTo(null);
         setIconImage(ShareHelper.APP_ICON);
+        loadCombobox();
     }
 
     void tieude() {
@@ -47,12 +53,23 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
         tblModel.setColumnIdentifiers(name);
         tblUser.setModel(tblModel);
     }
+    ThongKeDao DaoThongKe = new ThongKeDao();
+    public void loadCombobox(){
+        List<Object[]> j = DaoThongKe.getlayKHDaMua();
+        DefaultComboBoxModel tbl = new DefaultComboBoxModel();
+//        List<HoaDonModel> list = daoHD.selectMaMua();
+        for (Object[] objects : j) {
+            tbl.addElement(Arrays.toString(objects).replace("[", "").replace("]",""));
+        }
+        cboHinhThuc.setModel(tbl);
+        cboHinhThuc.setSelectedIndex(-1);
+    }
 
     void filltable() {
         tblModel = (DefaultTableModel) tblUser.getModel();
         tblModel.setRowCount(0);
         try {
-            List<KhachHangModel> list = daoKH.select();
+            List<KhachHangModel> list = daoKH.selectMa((String) cboHinhThuc.getSelectedItem());
             for (KhachHangModel model : list) {
                 System.out.println(model.getMaKH());
                 Object[] row = new Object[]{
@@ -83,6 +100,7 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
         tblUser = new javaswingdev.swing.table.Table();
         txtTim = new com.DuAn1.Swing.TextField1();
         button2 = new com.DuAn1.Swing.Button();
+        cboHinhThuc = new com.DuAn1.Swing.Combobox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -133,31 +151,42 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
             }
         });
 
+        cboHinhThuc.setSelectedIndex(-1);
+        cboHinhThuc.setLabeText("Mã khách hàng đã mua");
+        cboHinhThuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboHinhThucActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboHinhThuc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -213,6 +242,10 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
 
+    private void cboHinhThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboHinhThucActionPerformed
+       filltable();        // TODO add your handling code here:
+    }//GEN-LAST:event_cboHinhThucActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +290,7 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button button2;
+    private com.DuAn1.Swing.Combobox cboHinhThuc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javaswingdev.swing.table.Table tblUser;

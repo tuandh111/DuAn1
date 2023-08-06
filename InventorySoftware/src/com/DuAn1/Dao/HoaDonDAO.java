@@ -54,7 +54,6 @@ public class HoaDonDAO {
                 model.getMaHD()
         );
     }
-
     public List<HoaDonModel> select() {
         String sql = "SELECT * FROM HOADON WHERE TrangThai =1 ORDER BY NgayXuat DESC";
         return select(sql);

@@ -537,3 +537,11 @@ BEGIN
     FROM HOADON;
 END
 GO
+CREATE PROCEDURE layKHDaMua
+AS
+BEGIN
+select TenKH from Hoadon 
+GROUP BY TenKH
+END
+GO
+execute layKHDaMua
