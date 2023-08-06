@@ -3944,12 +3944,12 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony1();
-//            SanPhamModel daoSP1 = getFormSPSony1();
+            SanPhamModel daoSP1 = getFormSPSony1();
 
             daoDatSPCT.insert(model);
             filltable();
-//            daoSP.updateSL(daoSP1);
-//            txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
+            daoSP.updateSL(daoSP1);
+            txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3959,8 +3959,8 @@ public class DatHang1 extends javax.swing.JPanel {
     SanPhamModel getFormSPSony1() {
         SanPhamModel cd = new SanPhamModel();
         int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
-        cd.setSoLuong(i);
-        cd.setMaSP(txtMaSony1.getText());
+            cd.setSoLuong(i);
+            cd.setMaSP(txtMaSony1.getText());
         return cd;
     }
     private void txtDonGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtDonGiaCaretUpdate

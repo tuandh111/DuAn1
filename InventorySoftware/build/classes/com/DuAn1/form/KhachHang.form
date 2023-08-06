@@ -225,6 +225,7 @@
         </Component>
         <Component class="com.DuAn1.Swing.TextField" name="txtma">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="labelText" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng "/>
           </Properties>
           <Events>

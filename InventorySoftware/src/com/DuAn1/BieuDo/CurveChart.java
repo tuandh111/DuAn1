@@ -158,7 +158,6 @@ public class CurveChart extends javax.swing.JPanel {
 
         jLabel1.setText("jLabel1");
 
-        blankPlotChart.setBackground(new java.awt.Color(0, 0, 0));
         blankPlotChart.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

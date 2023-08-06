@@ -173,7 +173,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
         model = (DefaultTableModel) tblThanhToanLuong.getModel();
         model.setRowCount(0);
-         DecimalFormat df = new DecimalFormat("#,##0.##");
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
             List<ThanhToanLuongModel> list = dao.select();
             System.out.println(list.size());
@@ -181,10 +181,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 String dateString = ttl.getNgayVaoCTy();
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
                 String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(),df.format( ttl.getLuongCoBan())+" VND",
+                Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
                     formattedDate,
                     ttl.getSoGioTangCa(),
-                    ttl.getLuongTangCa(),df.format( ttl.getKhoanTru())+" VND", df.format( ttl.getTongTien())+" VND", ttl.isTrangThai()};
+                    ttl.getLuongTangCa(), df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai()};
                 model.addRow(rows);
             }
         } catch (Exception e) {
@@ -197,7 +197,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setMaLuong((String) cboMaLuong.getSelectedItem());
         ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
         String LuongCoBan = txtLuongCoBan.getText();
-        LuongCoBan=LuongCoBan.replace(",","");
+        LuongCoBan = LuongCoBan.replace(",", "");
         ttl.setLuongCoBan(Double.parseDouble(LuongCoBan));
         try {
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayVaoCTY.getText());
@@ -209,11 +209,11 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         } catch (Exception e) {
         }
         String LuongTangCa = txtLuongTangCa.getText();
-        String KhoanTru= txtKhoangTru.getText();
+        String KhoanTru = txtKhoangTru.getText();
         String TongTien = lblTongTien.getText();
-        KhoanTru= KhoanTru.replace(",", "");
-        TongTien=TongTien.replace(",","");
-        LuongTangCa =LuongTangCa.replace(",","");
+        KhoanTru = KhoanTru.replace(",", "");
+        TongTien = TongTien.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
         ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
         ttl.setLuongTangCa(Double.parseDouble(LuongTangCa));
         ttl.setKhoanTru(Double.parseDouble(KhoanTru));
@@ -231,7 +231,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     }
 
     void setForm(ThanhToanLuongModel ttl) {
-         DecimalFormat df = new DecimalFormat("#,##0.##");
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         cboMaLuong.setSelectedItem(ttl.getMaLuong().trim());
         txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
         txtLuongCoBan.setText(df.format(ttl.getLuongCoBan()));
@@ -246,7 +246,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         txtSoHTangCa.setText(String.valueOf(ttl.getSoGioTangCa()));
         txtLuongTangCa.setText(df.format(ttl.getLuongTangCa()));
         txtKhoangTru.setText(df.format(ttl.getKhoanTru()));
-        lblTongTien.setText(df.format( ttl.getTongTien()));
+        lblTongTien.setText(df.format(ttl.getTongTien()));
         if (ttl.isTrangThai() == true) {
             btnTrangThai.setSelectedAnimate(true);
             lblTrangThai.setText("Đã thanh toán");
@@ -752,6 +752,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             DialogHelper.alert(this, "Nhân viên đã thanh toán lương rồi");
             return false;
         }
+        String LuongCoBan = txtLuongCoBan.getText();
+        LuongCoBan = LuongCoBan.replace(",", "");
+        String LuongTangCa = txtLuongTangCa.getText();
+        LuongTangCa = LuongTangCa.replace(",", "");
+        String KhoanTru = txtKhoangTru.getText();
+        KhoanTru = KhoanTru.replace(",", "");
         if (cboMaLuong.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn mã lương!");
             return false;
@@ -767,41 +773,41 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 return false;
             }
         } catch (Exception e) {
-//            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
-//            return false;
+            DialogHelper.alert(this, "Số ngày làm việc không hợp lệ!");
+            return false;
         }
         if (txtNgayVaoCTY.getText().equals("")) {
             DialogHelper.alert(this, "Hãy nhập ngày vào CTY!");
             return false;
         }
-        if (txtLuongCoBan.getText().equals("")) {
+        if (LuongCoBan.equals("")) {
             DialogHelper.alert(this, "Hãy nhập lương cơ bản");
             return false;
         }
         try {
-            double Luong = Double.parseDouble(txtLuongCoBan.getText());
+            double Luong = Double.parseDouble(LuongCoBan);
             if (Luong < 1000) {
                 DialogHelper.alert(this, "Lương của bạn nhập không được nhỏ hơn 1 nghìn");
             }
         } catch (Exception e) {
-//            DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
-//            return false;
-        }
-        if (Double.parseDouble(txtLuongCoBan.getText()) < 0) {
             DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
             return false;
         }
-        if (txtLuongTangCa.getText().equals("")) {
+        if (Double.parseDouble(LuongCoBan) < 0) {
+            DialogHelper.alert(this, "Số lương cơ bản không hợp lệ!");
+            return false;
+        }
+        if (LuongTangCa.equals("")) {
             DialogHelper.alert(this, "Hãy nhập lương tăng ca!");
             return false;
         }
         try {
-            Double.parseDouble(txtLuongTangCa.getText());
+            Double.parseDouble(LuongTangCa);
         } catch (Exception e) {
             DialogHelper.alert(this, "Số lương tăng ca không hợp lệ!");
             return false;
         }
-        if (Double.parseDouble(txtLuongTangCa.getText()) < 0) {
+        if (Double.parseDouble(LuongTangCa) < 0) {
             DialogHelper.alert(this, "Số lương tăng ca không hợp lệ!");
             return false;
         }
@@ -824,12 +830,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             return false;
         }
         try {
-            Double.parseDouble(txtKhoangTru.getText());
+            Double.parseDouble(KhoanTru);
         } catch (Exception e) {
-//            DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
-//            return false;
+            DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
+            return false;
         }
-        if (Double.parseDouble(txtKhoangTru.getText()) < 0) {
+        if (Double.parseDouble(KhoanTru) < 0) {
             DialogHelper.alert(this, "Số khoảng trừ không hợp lệ!");
             return false;
         }
@@ -1110,11 +1116,13 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             if (cboMaLuong.getSelectedItem() != null) {
                 if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("QL")) {
                     txtLuongCoBan.setText("10,000,000");
-                } if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
-                    txtLuongCoBan.setText("6,000,000");
-                } else {
-                    txtLuongCoBan.setText("3,000,000");
                 }
+                if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
+                    txtLuongCoBan.setText("6,000,000");
+                } 
+//                else {
+//                    txtLuongCoBan.setText("3,000,000");
+//                }
             }
         }
     }//GEN-LAST:event_cboMaLuongActionPerformed

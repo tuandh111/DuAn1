@@ -4,6 +4,7 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import java.awt.Image;
 import javax.swing.JOptionPane;
@@ -111,13 +112,17 @@ public static int soLuong=0;
 
     private void button01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button01ActionPerformed
         // TODO add your handling code here:
+        if((int)SpnSoLuong.getValue()<0){
+            DialogHelper.alert(this,"Số lượng không được nhỏ hơn 0");
+            return;
+        }
        SoLuong.setSoLuong((int) SpnSoLuong.getValue());
 
            dispose();
           
     }//GEN-LAST:event_button01ActionPerformed
 
-    /**
+    /**s
      * @param args the command line arguments
      */
     public static void main(String args[]) {

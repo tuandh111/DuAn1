@@ -58,7 +58,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="18" pref="225" max="32767" attributes="0"/>
+                  <EmptySpace min="18" pref="231" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="button15" min="-2" pref="175" max="-2" attributes="0"/>
@@ -106,15 +106,20 @@
                               <EmptySpace pref="3" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="txtSoLuong" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <Component id="cboKhuyenMai" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                              <Component id="cboKhuyenMai" min="-2" pref="216" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
+                                  <Component id="txtSoLuong" alignment="1" min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="cboLoaiSanPham" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Component id="txtMoTa" min="-2" pref="200" max="-2" attributes="0"/>
@@ -593,7 +598,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cboPin" pref="180" max="32767" attributes="0"/>
+                          <Component id="cboPin" max="32767" attributes="0"/>
                           <Component id="cboCPU" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>

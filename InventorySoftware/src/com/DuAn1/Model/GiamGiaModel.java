@@ -86,5 +86,9 @@ public class GiamGiaModel {
     public void setMaNV(String MaNV) {
         this.MaNV = MaNV;
     }
+      @Override
+    public String toString() {
+        return this.MaGG + " (" + this.PhanTram + ")";
+    }
 
 }

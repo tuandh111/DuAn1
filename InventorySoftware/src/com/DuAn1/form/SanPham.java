@@ -156,7 +156,15 @@ public class SanPham extends javax.swing.JPanel {
         GiamGiaDao daoGiamGia = new GiamGiaDao();
         ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
         for (GiamGiaModel gg : listGiamGia) {
-            comboboxmodel.addElement(gg.getMaGG().trim());
+              String dateString = gg.getNgayBD();
+                Date date = null;
+            try {
+                date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            } catch (ParseException ex) {
+                Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            comboboxmodel.addElement(gg.getMaGG().trim()+" ("+gg.getPhanTram()+" %) "+" ("+formattedDate+") ");
         }
         cboKhuyenMai.setModel(comboboxmodel);
         cboKhuyenMai.setSelectedIndex(-1);
@@ -269,7 +277,9 @@ public class SanPham extends javax.swing.JPanel {
         cd.setTrangThai(true);
         cd.setHinh(txtHinhAnh.getToolTipText());
         cd.setMaNV(ShareHelper.USER.getMaNV());
-        cd.setMaGiamGia((String) cboKhuyenMai.getSelectedItem());
+        String KhuyenMai = (String) cboKhuyenMai.getSelectedItem();
+        KhuyenMai = KhuyenMai.substring(0,5);
+        cd.setMaGiamGia(KhuyenMai);
         return cd;
     }
 
@@ -286,12 +296,27 @@ public class SanPham extends javax.swing.JPanel {
         return dt;
     }
 
-    void setFormSP(SanPhamModel sp
-    ) {
+    void setFormSP(SanPhamModel sp) {
         txtMaSP.setText(sp.getMaSP());
         txtTenSP.setText(sp.getTenSP());
         cboMau.setSelectedItem(sp.getMau());
-        cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim());
+        
+              GiamGiaDao daoGiamGia = new GiamGiaDao();
+        ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
+        for (GiamGiaModel gg : listGiamGia) {
+              String dateString = gg.getNgayBD();
+                Date date = null;
+            try {
+                date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+            } catch (ParseException ex) {
+                Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                if(gg.getMaGG().trim().equalsIgnoreCase(sp.getMaGiamGia().trim())){
+             cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim()+" ("+gg.getPhanTram()+" %) "+" ("+formattedDate+") ");break;}
+        }
+        
+//        cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().toString());
         DecimalFormat df = new DecimalFormat("#,##0.##");
         txtGia.setText(df.format(sp.getGia()));
         cboLoaiSanPham.setSelectedItem(sp.getLoaiSP());
@@ -993,7 +1018,7 @@ public class SanPham extends javax.swing.JPanel {
             .addGroup(LoaiSanPhamLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(LoaiSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cboPin, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addComponent(cboPin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cboCPU, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(LoaiSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1110,7 +1135,7 @@ public class SanPham extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 225, Short.MAX_VALUE)
+                .addGap(18, 231, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(button15, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1148,13 +1173,16 @@ public class SanPham extends javax.swing.JPanel {
                             .addComponent(jScrollPane1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cboKhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(10, 10, 10)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                            .addGap(2, 2, 2)
+                                            .addComponent(cboKhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtSoLuong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(cboLoaiSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtMoTa, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1590,7 +1618,10 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTimKiemCaretUpdate
     GiamGiaDao daoGiamGia = new GiamGiaDao();
     private void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
-        String name = (String) cboKhuyenMai.getSelectedItem();
+        if(cboKhuyenMai.getSelectedItem()!=null){
+        String cbo = (String) cboKhuyenMai.getSelectedItem();
+        cbo= cbo.substring(0,5);
+        String name =  cbo;
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         String formatted = current.format(formatter);
@@ -1623,12 +1654,19 @@ public class SanPham extends javax.swing.JPanel {
 //            DecimalFormat df = new DecimalFormat("#,##0.##");
             txtGia.setText(df.format(gia));
             Kiem = false;
-        }        // TODO add your handling code here:
+        } 
+        }// TODO add your handling code here:
     }//GEN-LAST:event_cboKhuyenMaiActionPerformed
 
     private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
-        String Gia=txtGia.getText();
-        Gia=Gia.replace(",", "");
+        String Gia = txtGia.getText();
+        Gia = Gia.replace(",", "");
+        if(!Gia.equals("")){
+        try {
+            Double.parseDouble(Gia);
+        } catch (Exception e) {
+            DialogHelper.alert(panel, "Giá không phải là số");
+        }}
         GiaDau = Gia;         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaFocusLost
 

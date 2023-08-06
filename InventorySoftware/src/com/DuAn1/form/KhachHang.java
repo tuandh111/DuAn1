@@ -476,6 +476,7 @@ public class KhachHang extends javax.swing.JPanel {
             }
         });
 
+        txtma.setEditable(false);
         txtma.setLabelText("Mã khách hàng ");
         txtma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

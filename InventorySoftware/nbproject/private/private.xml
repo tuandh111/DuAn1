@@ -4,16 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Model/HoaDonModel.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KHDC.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachDH.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/KhachHangDAO.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Model/HoaDonCTModel.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonDAO.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonCTDAO.java</file>
-            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachMH1.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThanhToanLuong.java</file>
+            <file>file:/D:/DuAn1/GItHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/NhanVienDAO1.java</file>
         </group>
     </open-files>
 </project-private>
