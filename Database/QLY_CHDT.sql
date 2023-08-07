@@ -163,6 +163,9 @@ CREATE TABLE BAOHANH(
 	MaKH CHAR(10),
 --	FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH) ON DELETE NO ACTION ON UPDATE CASCADE,
 )
+alter table BAOHANH ADD MaSPCu nvarchar(10)
+alter table BAOHANH ADD MaHDCu nvarchar(10)
+
 create table BAOHANHCT(
 MaBHCT int identity(1,1) primary key,
 MaBH char(10) not  null,

@@ -154,53 +154,51 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="txtMaSPcu" min="-2" pref="219" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtMaHDCu" min="-2" pref="219" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="button7" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnXemDSBH" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnTaoBH" pref="142" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtMoTa" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtMaBH" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="txtNgayBaoHanh" alignment="1" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtemei" min="-2" pref="219" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="txtKhachhang" min="-2" pref="135" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="button9" min="-2" pref="62" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtNgayBaoHanh" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="txtemei" min="-2" pref="219" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtNgayHetHan" pref="196" max="32767" attributes="0"/>
-                                          <Component id="txtSoluong" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                                      <Component id="txtMaBH" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtKhachhang" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="button9" min="-2" pref="62" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtNgayHetHan" pref="196" max="32767" attributes="0"/>
+                                      <Component id="txtSoluong" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="txtMaSPcu" min="-2" pref="219" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="txtMaHDCu" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="button7" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnXemDSBH" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnTaoBH" pref="142" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="txtMoTa" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -224,14 +222,12 @@
                           <Component id="txtMaHDCu" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="txtKhachhang" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtemei" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="button9" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtKhachhang" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtemei" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="button9" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtNgayHetHan" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNgayBaoHanh" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -355,12 +351,13 @@
             <Component class="com.DuAn1.Swing.TextField" name="txtSoluong">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
+                <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng m&#x1edb;i"/>
               </Properties>
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtKhachhang">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="enabled" type="boolean" value="false"/>
                 <Property name="labelText" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
@@ -383,7 +380,8 @@
             <Component class="com.DuAn1.Swing.TextField" name="txtemei">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="labelText" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng c&#x169;"/>
               </Properties>
               <Events>
                 <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="txtemeiCaretUpdate"/>

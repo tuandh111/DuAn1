@@ -28,7 +28,25 @@ public class DanhSachBH1 extends javax.swing.JDialog {
     public static String ngayBH = "";
     public static String ngayHH = "";
     public static String ghiChu = "";
+       public static String MaSPCu = "";
+    public static String MaHDCu = "";
 
+    public static String getMaSPCu() {
+        return MaSPCu;
+    }
+
+    public static void setMaSPCu(String MaSPCu) {
+        DanhSachBH1.MaSPCu = MaSPCu;
+    }
+
+    public static String getMaHDCu() {
+        return MaHDCu;
+    }
+
+    public static void setMaHDCu(String MaHDCu) {
+        DanhSachBH1.MaHDCu = MaHDCu;
+    }
+    
     public static String getMaBH() {
         return maBH;
     }
@@ -149,17 +167,17 @@ public class DanhSachBH1 extends javax.swing.JDialog {
 
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã BH", "Số lượng", "Số Emei", "Ngày bảo hành", "Ngày hết hạn", "Ghi Chú", "Mã KH"
+                "Mã BH", "Số lượng", "Số Emei", "Ngày bảo hành", "Ngày hết hạn", "Ghi Chú", "Mã KH", "Mã sản phẩm cũ", "Mã Hóa đơn cũ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -247,6 +265,8 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         String NgayHH = (String) tblUser.getValueAt(chon, 4);
         String GhiChu = (String) tblUser.getValueAt(chon, 5);
         String maKH = (String) tblUser.getValueAt(chon, 6);
+           String MaSPCu = (String) tblUser.getValueAt(chon, 7);
+        String MaHDCu = (String) tblUser.getValueAt(chon, 8);
         DanhSachBH1.setMaBH(maBH);
         DanhSachBH1.setMaSP(maSP);
         DanhSachBH1.setSoEmei(soImei);
@@ -254,6 +274,8 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         DanhSachBH1.setNgayHH(NgayHH);
         DanhSachBH1.setGhiChu(GhiChu);
         DanhSachBH1.setMaKH(maKH);
+        DanhSachBH1.setMaSPCu(MaSPCu);
+        DanhSachBH1.setMaHDCu(MaHDCu);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 

@@ -9,12 +9,13 @@ package com.DuAn1.Model;
  * @author trana
  */
 public class BaoHanhModel {
-    private String maBH,maHD,soEmei,ghiChu,maKH,ngayBH,ngayHetHan;
-
+    private String maBH,maHD,soEmei,ghiChu,maKH,ngayBH,ngayHetHan,MaSPCu,MaHDCu;
     public BaoHanhModel() {
     }
 
-    public BaoHanhModel(String maBH, String maHD, String soEmei, String ghiChu, String maKH, String ngayBH, String ngayHetHan) {
+
+
+    public BaoHanhModel(String maBH, String maHD, String soEmei, String ghiChu, String maKH, String ngayBH, String ngayHetHan, String MaSPCu, String MaHDCu) {
         this.maBH = maBH;
         this.maHD = maHD;
         this.soEmei = soEmei;
@@ -22,8 +23,24 @@ public class BaoHanhModel {
         this.maKH = maKH;
         this.ngayBH = ngayBH;
         this.ngayHetHan = ngayHetHan;
+        this.MaSPCu = MaSPCu;
+        this.MaHDCu = MaHDCu;
+    }
+    public String getMaSPCu() {
+        return MaSPCu;
     }
 
+    public void setMaSPCu(String MaSPCu) {
+        this.MaSPCu = MaSPCu;
+    }
+
+    public String getMaHDCu() {
+        return MaHDCu;
+    }
+
+    public void setMaHDCu(String MaHDCu) {
+        this.MaHDCu = MaHDCu;
+    }
     public String getMaBH() {
         return maBH;
     }

@@ -20,7 +20,7 @@ import java.util.List;
 public class BaoHanhDAO {
 
     public void insert(BaoHanhModel model) {
-        String sql = "Insert into BAOHANH values (?,?,?,?,?,?,?) ";
+        String sql = "Insert into BAOHANH values (?,?,?,?,?,?,?,?,?) ";
         JdbcHelper.executeUpdate(sql,
                 model.getMaBH(),
                 model.getMaHD(),
@@ -28,7 +28,10 @@ public class BaoHanhDAO {
                 model.getNgayBH(),
                 model.getNgayHetHan(),
                 model.getGhiChu(),
-                model.getMaKH());
+                model.getMaKH(),
+                model.getMaSPCu(),
+                model.getMaHDCu()
+        );
     }
 
     public List<BaoHanhModel> select1(String MaBH) {
@@ -47,7 +50,7 @@ public class BaoHanhDAO {
     }
 
     public void update(BaoHanhModel model) {
-        String sql = "update BaoHanh set MaSP=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? where MaBH=?";
+        String sql = "update BaoHanh set MaSP=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? , MaSPCu=? , MaHDCu =?where MaBH=?";
         JdbcHelper.executeUpdate(sql,
                 model.getMaHD(),
                 model.getSoEmei(),
@@ -55,7 +58,9 @@ public class BaoHanhDAO {
                 model.getNgayHetHan(),
                 model.getGhiChu(),
                 model.getMaKH(),
-                model.getMaBH());
+                model.getMaBH(), 
+                model.getMaSPCu(),
+                model.getMaHDCu());
     }
 
     public void delete(BaoHanhModel model) {
@@ -91,6 +96,8 @@ public class BaoHanhDAO {
         model.setNgayHetHan(rs.getString(5));
         model.setGhiChu(rs.getString(6));
         model.setMaKH(rs.getString(7));
+        model.setMaSPCu(rs.getString(8));
+         model.setMaHDCu(rs.getString(9));
         return model;
     }
 }

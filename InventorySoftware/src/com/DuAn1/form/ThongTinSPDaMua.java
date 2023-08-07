@@ -23,6 +23,16 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
     HoaDonCTDAO bhctdao = new HoaDonCTDAO();
    public static String MaHDChiTietBaoHanh;
    public static String MaSPChiTietBaoHanh;
+   public static String SoLuong;
+
+    public static String getSoLuong() {
+        return SoLuong;
+    }
+
+    public static void setSoLuong(String SoLuong) {
+        ThongTinSPDaMua.SoLuong = SoLuong;
+    }
+   
 
     public static String getMaHDChiTietBaoHanh() {
         return MaHDChiTietBaoHanh;
@@ -206,8 +216,11 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         // TODO add your handling code here:
         int chon = tblBH.getSelectedRow();
         String masp =String.valueOf(tblBH.getValueAt(chon, 0));
+        String SoLuong =String.valueOf(tblBH.getValueAt(chon, 1));
         String mahd =String.valueOf(tblBH.getValueAt(chon, 2));
         ThongTinSPDaMua.setMaSPChiTietBaoHanh(masp);
+        SoLuong=SoLuong.replace(".0", "");
+        ThongTinSPDaMua.setSoLuong(SoLuong);
         ThongTinSPDaMua.setMaHDChiTietBaoHanh(mahd);
         dispose();
     }//GEN-LAST:event_button3ActionPerformed
