@@ -104,6 +104,8 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         tblUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -151,7 +153,6 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
             }
         });
 
-        cboHinhThuc.setSelectedIndex(-1);
         cboHinhThuc.setLabeText("Mã khách hàng đã mua");
         cboHinhThuc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

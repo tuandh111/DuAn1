@@ -18,8 +18,28 @@ import javax.swing.table.DefaultTableModel;
  * @author Administrator
  */
 public class ThongTinSPDaMua extends javax.swing.JDialog {
-DefaultTableModel model;
+
+    DefaultTableModel model;
     HoaDonCTDAO bhctdao = new HoaDonCTDAO();
+   public static String MaHDChiTietBaoHanh;
+   public static String MaSPChiTietBaoHanh;
+
+    public static String getMaHDChiTietBaoHanh() {
+        return MaHDChiTietBaoHanh;
+    }
+
+    public static void setMaHDChiTietBaoHanh(String MaHDChiTietBaoHanh) {
+        ThongTinSPDaMua.MaHDChiTietBaoHanh = MaHDChiTietBaoHanh;
+    }
+
+    public static String getMaSPChiTietBaoHanh() {
+        return MaSPChiTietBaoHanh;
+    }
+
+    public static void setMaSPChiTietBaoHanh(String MaSPChiTietBaoHanh) {
+        ThongTinSPDaMua.MaSPChiTietBaoHanh = MaSPChiTietBaoHanh;
+    }
+   
     public ThongTinSPDaMua(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -27,14 +47,14 @@ DefaultTableModel model;
         setIconImage(ShareHelper.APP_ICON);
         filltable();
     }
-
-   void filltable() {
+    
+    void filltable() {
         model = (DefaultTableModel) tblBH.getModel();
         model.setRowCount(0);
         try {
             List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH());
             for (HoaDonCTModel bhct : list) {
-                Object[] row = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(),bhct.getThanhTien()};
+                Object[] row = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), bhct.getThanhTien()};
                 model.addRow(row);
             }
         } catch (Exception e) {
@@ -42,6 +62,7 @@ DefaultTableModel model;
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -49,8 +70,12 @@ DefaultTableModel model;
         jPanel1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBH = new javaswingdev.swing.table.Table();
+        button2 = new com.DuAn1.Swing.Button();
+        button3 = new com.DuAn1.Swing.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tblBH.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,11 +103,30 @@ DefaultTableModel model;
         });
         jScrollPane4.setViewportView(tblBH);
 
+        button2.setText("Tách sản phẩm");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
+
+        button3.setText("Áp dụng bảo hành");
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(213, 213, 213)
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(350, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -91,7 +135,12 @@ DefaultTableModel model;
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(392, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(89, 89, 89)
@@ -116,15 +165,70 @@ DefaultTableModel model;
     private void tblBHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBHMouseClicked
         int chon = tblBH.getSelectedRow();
         String maBH = (String) tblBH.getValueAt(chon, 0);
+//        JOptionPane.shơ
 //        KhachHangBaoHanh.setMaKH(maBH);
-dispose();
+//dispose();
 
         //        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblBHMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        // TODO add your handling code here:
+        
+        int row = tblBH.getSelectedRow();
+        String SoLuong0 = String.valueOf(tblBH.getValueAt(row, 1));
+        SoLuong0 = SoLuong0.replace(".0", "");
+        System.out.println("1" + SoLuong0);
+        int SoLuong = Integer.parseInt(SoLuong0.trim());
+        HoaDonCTModel model1 = getForm();
+        String MaSP = String.valueOf(tblBH.getValueAt(row, 0));
+        String MaHD = String.valueOf(tblBH.getValueAt(row, 2));
+        bhctdao.update(model1);
+        for (int i = 0; i < SoLuong - 1; i++) {
+            
+            bhctdao.insert(model1);
+        }
+        model = (DefaultTableModel) tblBH.getModel();
+        model.setRowCount(0);
+        try {
+            List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH());
+            for (HoaDonCTModel bhct : list) {
+                Object[] row1 = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), bhct.getThanhTien()};
+                model.addRow(row1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        // TODO add your handling code here:
+        int chon = tblBH.getSelectedRow();
+        String masp =String.valueOf(tblBH.getValueAt(chon, 0));
+        String mahd =String.valueOf(tblBH.getValueAt(chon, 2));
+        ThongTinSPDaMua.setMaSPChiTietBaoHanh(masp);
+        ThongTinSPDaMua.setMaHDChiTietBaoHanh(mahd);
+        dispose();
+    }//GEN-LAST:event_button3ActionPerformed
+    HoaDonCTModel getForm() {
+        HoaDonCTModel hd = new HoaDonCTModel();
+        int chon = tblBH.getSelectedRow();
+        String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
+        String MaHD = String.valueOf(tblBH.getValueAt(chon, 2));
+        String Gia = String.valueOf(tblBH.getValueAt(chon, 3));
+        String ThanTien = (String) tblBH.getValueAt(chon, 4);
+        hd.setMaSP(MaSP.trim());
+        hd.setSoLuong(1);
+        hd.setMaHD(MaHD.trim());
+        hd.setGia(Double.parseDouble(Gia));
+        if (ThanTien != null) {
+            hd.setThanhTien(Double.parseDouble(ThanTien));
+        }
+        
+        return hd;
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -165,6 +269,8 @@ dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.DuAn1.Swing.Button button2;
+    private com.DuAn1.Swing.Button button3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javaswingdev.swing.table.Table tblBH;

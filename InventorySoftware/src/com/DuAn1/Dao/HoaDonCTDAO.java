@@ -28,6 +28,16 @@ public class HoaDonCTDAO {
         );
     }
 
+    public void update(HoaDonCTModel model) {
+        String sql = "update HOADONCT set MaSP =? ,soLuong =? ,Gia=?, ThanhTien =? where MaHD =? ";
+        JdbcHelper.executeUpdate(sql,
+                model.getMaSP(),
+                model.getSoLuong(),           
+                model.getGia(),
+                model.getThanhTien(),
+                model.getMaHD()
+        );
+    }
     public List<HoaDonCTModel> selectAll(String MaHDCT) {
         String sql = "SELECT * FROM HOADONCT WHERE MaHD = ?";
         return select(sql, MaHDCT);
@@ -46,7 +56,10 @@ public class HoaDonCTDAO {
         String sql = "DELETE HOADONCT WHERE MaHDCT = ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
-
+   public void deleteBaoHanh(String mahd , String MaSP) {
+        String sql = "DELETE HOADONCT WHERE MaHDCT = ? and MaSP= ?";
+        JdbcHelper.executeUpdate(sql, mahd,MaSP);
+    }
     public void XoaTatCa(String MaDH) {
         String sql = "DELETE HOADONCT WHERE MaHD = ?";
         JdbcHelper.executeUpdate(sql, MaDH);
