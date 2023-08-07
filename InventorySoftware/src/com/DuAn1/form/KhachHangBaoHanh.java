@@ -206,8 +206,9 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
     private void tblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseClicked
         int chon = tblUser.getSelectedRow();
         String maBH = (String) tblUser.getValueAt(chon, 0);
-
         KhachHangBaoHanh.setMaKH(maBH);
+        ThongTinSPDaMua ThongTinKH = new ThongTinSPDaMua(com.DuAn1.main.Main.getMain(), true);
+        ThongTinKH.setVisible(true);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 

@@ -33,6 +33,15 @@ public class HoaDonCTDAO {
         return select(sql, MaHDCT);
     }
 
+    public List<HoaDonCTModel> selectKhDaMuaSp(String MaHDCT) {
+        String sql = "SELECT MaHDCT,MaSP,Hoadonct.SoLuong,Hoadonct.MaHD,gia,ThanhTien\n"
+                + "FROM HOADON\n"
+                + "INNER JOIN HOADONCT\n"
+                + "ON HOADON.mahd = HOADONCT.MaHd\n"
+                + "WHERE TenKH = ?";
+        return select(sql, MaHDCT);
+    }
+
     public void delete(HoaDonCTModel model) {
         String sql = "DELETE HOADONCT WHERE MaHDCT = ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());

@@ -270,7 +270,7 @@ public class DanhSachMH1 extends javax.swing.JDialog {
         String gia = (String) tblUser.getValueAt(chon, 2);
         gia = gia.replace(",", "");
         String TongTien = (String) tblUser.getValueAt(chon, 3);
-        TongTien = TongTien.replace(",", "");
+        TongTien = TongTien.replace(".", "");
         String ThoiGian = (String) tblUser.getValueAt(chon, 4);
         String Ten = (String) tblUser.getValueAt(chon, 5);
         String HinhThuc = (String) tblUser.getValueAt(chon, 6);
