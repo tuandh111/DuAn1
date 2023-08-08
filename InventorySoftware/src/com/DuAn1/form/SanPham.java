@@ -156,15 +156,15 @@ public class SanPham extends javax.swing.JPanel {
         GiamGiaDao daoGiamGia = new GiamGiaDao();
         ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
         for (GiamGiaModel gg : listGiamGia) {
-              String dateString = gg.getNgayBD();
-                Date date = null;
+            String dateString = gg.getNgayBD();
+            Date date = null;
             try {
                 date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
             } catch (ParseException ex) {
                 Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
             }
-                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-            comboboxmodel.addElement(gg.getMaGG().trim()+" ("+gg.getPhanTram()+" %) "+" ("+formattedDate+") ");
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            comboboxmodel.addElement(gg.getMaGG().trim() + " (" + gg.getPhanTram() + " %) " + " (" + formattedDate + ") ");
         }
         cboKhuyenMai.setModel(comboboxmodel);
         cboKhuyenMai.setSelectedIndex(-1);
@@ -278,7 +278,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setHinh(txtHinhAnh.getToolTipText());
         cd.setMaNV(ShareHelper.USER.getMaNV());
         String KhuyenMai = (String) cboKhuyenMai.getSelectedItem();
-        KhuyenMai = KhuyenMai.substring(0,5);
+        KhuyenMai = KhuyenMai.substring(0, 5);
         cd.setMaGiamGia(KhuyenMai);
         return cd;
     }
@@ -300,22 +300,24 @@ public class SanPham extends javax.swing.JPanel {
         txtMaSP.setText(sp.getMaSP());
         txtTenSP.setText(sp.getTenSP());
         cboMau.setSelectedItem(sp.getMau());
-        
-              GiamGiaDao daoGiamGia = new GiamGiaDao();
+
+        GiamGiaDao daoGiamGia = new GiamGiaDao();
         ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
         for (GiamGiaModel gg : listGiamGia) {
-              String dateString = gg.getNgayBD();
-                Date date = null;
+            String dateString = gg.getNgayBD();
+            Date date = null;
             try {
                 date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
             } catch (ParseException ex) {
                 Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
             }
-                String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                if(gg.getMaGG().trim().equalsIgnoreCase(sp.getMaGiamGia().trim())){
-             cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim()+" ("+gg.getPhanTram()+" %) "+" ("+formattedDate+") ");break;}
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            if (gg.getMaGG().trim().equalsIgnoreCase(sp.getMaGiamGia().trim())) {
+                cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().trim() + " (" + gg.getPhanTram() + " %) " + " (" + formattedDate + ") ");
+                break;
+            }
         }
-        
+
 //        cboKhuyenMai.setSelectedItem(sp.getMaGiamGia().toString());
         DecimalFormat df = new DecimalFormat("#,##0.##");
         txtGia.setText(df.format(sp.getGia()));
@@ -443,6 +445,10 @@ public class SanPham extends javax.swing.JPanel {
         }
         if (cboMangHinh.getSelectedItem() == null) {
             DialogHelper.alert(this, "Bạn chưa chọn Màng hình");
+            return false;
+        }
+        if (cboKhuyenMai.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Bạn chưa chọn khuyến mại");
             return false;
         }
         if (Kiem) {
@@ -1315,34 +1321,36 @@ public class SanPham extends javax.swing.JPanel {
             try {
                 List<SanPhamModel> list = Dao.orderByMaTang();
                 for (SanPhamModel nv : list) {
-                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             }
-
         } else if (cboSapXep.getSelectedItem().equals("Giá")) {
-
             tblModel = (DefaultTableModel) tblUser.getModel();
             tblModel.setRowCount(0);
             try {
                 List<SanPhamModel> list = Dao.orderByGiaTang();
                 for (SanPhamModel nv : list) {
-                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             }
         } else {
-
             tblModel = (DefaultTableModel) tblUser.getModel();
             tblModel.setRowCount(0);
             try {
                 List<SanPhamModel> list = Dao.orderBySoLuongTang();
                 for (SanPhamModel nv : list) {
-                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
@@ -1363,7 +1371,9 @@ public class SanPham extends javax.swing.JPanel {
             try {
                 List<SanPhamModel> list = Dao.orderByMaGiam();
                 for (SanPhamModel nv : list) {
-                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
@@ -1377,7 +1387,9 @@ public class SanPham extends javax.swing.JPanel {
             try {
                 List<SanPhamModel> list = Dao.orderByGiaGiam();
                 for (SanPhamModel nv : list) {
-                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
@@ -1390,7 +1402,9 @@ public class SanPham extends javax.swing.JPanel {
             try {
                 List<SanPhamModel> list = Dao.orderBySoLuongGiam();
                 for (SanPhamModel nv : list) {
-                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+
+                    Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                     tblModel.addRow(row);
                 }
             } catch (Exception e) {
@@ -1618,55 +1632,56 @@ public class SanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_txtTimKiemCaretUpdate
     GiamGiaDao daoGiamGia = new GiamGiaDao();
     private void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
-        if(cboKhuyenMai.getSelectedItem()!=null){
-        String cbo = (String) cboKhuyenMai.getSelectedItem();
-        cbo= cbo.substring(0,5);
-        String name =  cbo;
-        LocalDateTime current = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-        String formatted = current.format(formatter);
-        if (name != null) {
-            GiamGiaModel list = daoGiamGia.findById(name.trim());
-            if (list.getNgayKT().compareTo(formatted) < 0) {
-                DialogHelper.alert(this, "Khuyến mại này đã hết hạn");
-                Kiem = true;
-                return;
-            }
-            if (list.getNgayBD().compareTo(formatted) > 0) {
-                DialogHelper.alert(this, "Khuyến mại này chưa bắt đầu");
-                Kiem = true;
-                return;
-            }
-            if (txtGia.getText().equals("")) {
+        if (cboKhuyenMai.getSelectedItem() != null) {
+            String cbo = (String) cboKhuyenMai.getSelectedItem();
+            cbo = cbo.substring(0, 5);
+            String name = cbo;
+            LocalDateTime current = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+            String formatted = current.format(formatter);
+            if (name != null) {
+                GiamGiaModel list = daoGiamGia.findById(name.trim());
+                if (list.getNgayKT().compareTo(formatted) < 0) {
+                    DialogHelper.alert(this, "Khuyến mại này đã hết hạn");
+                    Kiem = true;
+                    return;
+                }
+                if (list.getNgayBD().compareTo(formatted) > 0) {
+                    DialogHelper.alert(this, "Khuyến mại này chưa bắt đầu");
+                    Kiem = true;
+                    return;
+                }
+                if (txtGia.getText().equals("")) {
 //                DialogHelper.alert(this, "Bạn chưa nhập giá");
-                return;
-            }
-            String Gia0 = txtGia.getText();
-            Gia0 = Gia0.replace(".", "");
-            double gia = Double.parseDouble(Gia0);
-            DecimalFormat df = new DecimalFormat("#,##0.##");
-            if (GiaDau.equals("")) {
-                gia = Double.parseDouble(Gia0) - Double.parseDouble(Gia0) * list.getPhanTram() / 100;
-            } else {
-                gia = Double.parseDouble(GiaDau) - Double.parseDouble(GiaDau) * list.getPhanTram() / 100;
-            }
+                    return;
+                }
+                String Gia0 = txtGia.getText();
+                Gia0 = Gia0.replace(".", "");
+                double gia = Double.parseDouble(Gia0);
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                if (GiaDau.equals("")) {
+                    gia = Double.parseDouble(Gia0) - Double.parseDouble(Gia0) * list.getPhanTram() / 100;
+                } else {
+                    gia = Double.parseDouble(GiaDau) - Double.parseDouble(GiaDau) * list.getPhanTram() / 100;
+                }
 
 //            DecimalFormat df = new DecimalFormat("#,##0.##");
-            txtGia.setText(df.format(gia));
-            Kiem = false;
-        } 
+                txtGia.setText(df.format(gia));
+                Kiem = false;
+            }
         }// TODO add your handling code here:
     }//GEN-LAST:event_cboKhuyenMaiActionPerformed
 
     private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
         String Gia = txtGia.getText();
         Gia = Gia.replace(".", "");
-        if(!Gia.equals("")){
-        try {
-            Double.parseDouble(Gia);
-        } catch (Exception e) {
-            DialogHelper.alert(panel, "Giá không phải là số");
-        }}
+        if (!Gia.equals("")) {
+            try {
+                Double.parseDouble(Gia);
+            } catch (Exception e) {
+                DialogHelper.alert(panel, "Giá không phải là số");
+            }
+        }
         GiaDau = Gia;         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaFocusLost
 

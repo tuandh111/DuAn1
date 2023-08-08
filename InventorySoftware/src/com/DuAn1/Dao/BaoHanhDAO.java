@@ -40,12 +40,12 @@ public class BaoHanhDAO {
     }
 
     public List<BaoHanhModel> selectall() {
-        String sql = "select * from baohanh";
+        String sql = "select * from baohanh ORDER BY ngayBH DESC";
         return select(sql);
     }
 
     public List<BaoHanhModel> TimKiem(String Ma) {
-        String sql = "SELECT * FROM baohanh WHERE maBH like ?";
+        String sql = "SELECT * FROM baohanh WHERE maBH like ? ORDER BY ngayBH DESC";
         return select(sql, "%" + Ma + "%");
     }
 
@@ -58,9 +58,9 @@ public class BaoHanhDAO {
                 model.getNgayHetHan(),
                 model.getGhiChu(),
                 model.getMaKH(),
-                model.getMaBH(), 
+                
                 model.getMaSPCu(),
-                model.getMaHDCu());
+                model.getMaHDCu(),model.getMaBH() );
     }
 
     public void delete(BaoHanhModel model) {
@@ -68,6 +68,22 @@ public class BaoHanhDAO {
         JdbcHelper.executeUpdate(sql, model.getMaBH());
     }
 
+        public List<BaoHanhModel> selectHomNay() {
+        String sql = "SELECT * FROM baohanh WHERE DAY(NgayBH) = Day(GETDATE()) ORDER BY NgayBH DESC";
+        return select(sql);
+    }
+
+    public List<BaoHanhModel> selectTuanNay() {
+        String sql = "SELECT * FROM baohanh where  MONTH(ngayBH) = MONTH(GETDATE()) \n"
+                + "AND DAY(NgayBH) >= DAY(GETDATE()) - 7 AND DAY(NgayBH) <= DAY(GETDATE()) ORDER BY ngayBH DESC";
+        return select(sql);
+    }
+
+    public List<BaoHanhModel> selectThangNay() {
+        String sql = "SELECT * FROM BaoHanh where MONTH(Ngaybh) = MONTH(GETDATE()) ORDER BY ngayBH DESC";
+        return select(sql);
+    }
+    
     private List<BaoHanhModel> select(String sql, Object... args) {
         List<BaoHanhModel> list = new ArrayList<>();
         try {

@@ -133,6 +133,23 @@ public class NhanVienDAO1 {
                 model.getMaNV()
         );
     }
+      public void update1(NhanVienModel model) {
+        String sql = "UPDATE NHANVIEN SET MatKhau=? , HoTen  = ?, NgaySinh=?, GioiTinh=?,DiaChi=? ,SDT=?, Email =?, MaVaiTro=?, Hinh=?, TrangThai=?, TRANGTHAIXOA=? WHERE MaNV=?";
+        JdbcHelper.executeUpdate(sql,
+                model.getMatKhau(),
+                model.getHoTen(),
+                model.getNgaySinh(),
+                model.isGioiTinh(),
+                model.getDiaChi(),
+                model.getSDT(),
+                model.getEmail(),
+                model.getVaiTro(),
+                model.getHinh(),
+                model.isTrangThai(),
+                model.isTrangThaiXoa(),
+                model.getMaNV()
+        );
+    }
     public void quenMK(NhanVienModel model){
          String sql = "UPDATE NHANVIEN SET MatKhau=? WHERE Email=?";
         JdbcHelper.executeUpdate(sql,

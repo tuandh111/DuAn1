@@ -115,7 +115,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         NhanVienModel nv = getForm();
 
         try {
-            dao.update(nv);
+            dao.update1(nv);
             DialogHelper.alert(this, "Cập nhật thành công!");
             ThongTinNhanVien.setSoLuong(nv.getHinh());
                 ThaoTacModel ThaoTacModel = getFormUpdate();
@@ -130,8 +130,20 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         if (txtMatKhau.getText().equals("")) {
             DialogHelper.alert(this, "Mật khẩu của bạn đã để trống");
             return false;
-        } else if (!txtNhapLaiMatKhau.getText().equals(txtMatKhau.getText())) {
-            DialogHelper.alert(this, "Nhập lại mật khẩu không hợp lệ");
+        }
+         String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
+        if(!mk.equals(ShareHelper.USER.getMatKhau().trim())){
+            DialogHelper.alert(this,"Mật khẩu hiện tại sai");
+            
+            return false;
+        }
+        
+        if (txtNhapLaiMatKhau.getText().equals("")) {
+            DialogHelper.alert(this, "Mật khẩu mới để trống");
+            return false;
+        }
+        if(!txtNhapLaiMatKhau.getText().equals(txtNhapLaiMatKhauMoi.getText())){
+            DialogHelper.alert(this, "Nhập lại mật khẩu không chính xác");
             return false;
         }
         return true;
@@ -151,7 +163,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         cd.setDiaChi(txtDiaChi.getText());
         cd.setSDT(txtSoDienThoai.getText());
         cd.setEmail(txtEmail.getText());
-        String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
+        String mk = MH.toSHA(new String(txtNhapLaiMatKhauMoi.getPassword()));
         cd.setMatKhau(mk);
         cd.setVaiTro(txtVaiTro.getText());
         cd.setHinh(txtHinhAnh.getToolTipText());
@@ -184,6 +196,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         textImage1 = new com.DuAn1.Swing.TextImage();
         txtHinh = new swing.PanelShadow();
         txtHinhAnh = new javax.swing.JLabel();
+        txtNhapLaiMatKhauMoi = new com.DuAn1.Swing.PasswordField();
 
         dateChooser.setTextRefernce(txtNgaySinh);
 
@@ -200,12 +213,13 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
 
         txtHoTen.setLabelText("Họ và tên");
 
-        txtMatKhau.setLabelText("Mật khẩu");
+        txtMatKhau.setLabelText("Mật khẩu hiện tại");
         txtMatKhau.setShowAndHide(true);
 
-        txtNhapLaiMatKhau.setLabelText("Nhập lại mật khẩu");
+        txtNhapLaiMatKhau.setLabelText("Mật khẩu mới");
         txtNhapLaiMatKhau.setShowAndHide(true);
 
+        txtVaiTro.setEnabled(false);
         txtVaiTro.setLabelText("Vai trò");
 
         buttonGroup1.add(rdoNam);
@@ -247,6 +261,9 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         });
         txtHinh.add(txtHinhAnh, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 140));
 
+        txtNhapLaiMatKhauMoi.setLabelText("Xác nhận mật khẩu mới");
+        txtNhapLaiMatKhauMoi.setShowAndHide(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -267,15 +284,19 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
                                 .addComponent(rdoNam)
                                 .addGap(88, 88, 88)
                                 .addComponent(rdoNu))
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSoDienThoai, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                        .addComponent(txtHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSoDienThoai, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                                .addComponent(txtHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(103, 103, 103))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,8 +304,10 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
                         .addGap(306, 306, 306)
                         .addComponent(textImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(470, 470, 470)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(358, 358, 358)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNhapLaiMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -314,12 +337,14 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNhapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNhapLaiMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -441,6 +466,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
     private com.DuAn1.Swing.PasswordField txtMatKhau;
     private com.DuAn1.Swing.TextField txtNgaySinh;
     private com.DuAn1.Swing.PasswordField txtNhapLaiMatKhau;
+    private com.DuAn1.Swing.PasswordField txtNhapLaiMatKhauMoi;
     private com.DuAn1.Swing.TextField txtSoDienThoai;
     private com.DuAn1.Swing.TextField txtVaiTro;
     // End of variables declaration//GEN-END:variables

@@ -54,6 +54,8 @@ public class NhanVien extends javax.swing.JPanel {
     MaHoa MH = new MaHoa();
     DefaultTableModel model;
     NhanVienDAO1 Dao = new NhanVienDAO1();
+      VaiTroDao Daovt = new VaiTroDao();
+   
     int row = -1;
     String so = "0\\d{9,10}";
 
@@ -184,11 +186,18 @@ public class NhanVien extends javax.swing.JPanel {
         nv.setDiaChi(txtDiachi.getText());
         nv.setSDT(txtSdt.getText());
         nv.setEmail(txtEmail.getText());
-        if (cboVaitro.getSelectedItem().equals("Quản lý")) {
-            nv.setVaiTro("QL");
-        } else {
-            nv.setVaiTro("NV");
-        }
+            List<VaiTroModel> list = Daovt.select();
+            for (VaiTroModel vt : list) {
+                if(cboVaitro.getSelectedItem().equals(vt.getTenVT().trim())){
+                    nv.setVaiTro(vt.getMaVT());
+                    break;
+                }
+            }
+//        if (cboVaitro.getSelectedItem().equals("Quản lý")) {
+//            nv.setVaiTro("QL");
+//        } else {
+//            nv.setVaiTro("NV");
+//        }
         nv.setHinh(txtHinhAnh1.getToolTipText());
         nv.setTrangThai(true);
         if (btnTrangthai.isSelected()) {
@@ -265,11 +274,18 @@ public class NhanVien extends javax.swing.JPanel {
         txtSdt.setText(nv.getSDT().trim());
         txtEmail.setText(nv.getEmail());
         txtMatkhau.setText("******");
-        if (nv.getVaiTro().trim().equalsIgnoreCase("QL")) {
-            cboVaitro.setSelectedItem("Quản lý");
-        } else {
-            cboVaitro.setSelectedItem("Nhân Viên");
-        }
+            List<VaiTroModel> list = Daovt.select();
+            for (VaiTroModel vt : list) {
+                if(nv.getVaiTro().trim().equalsIgnoreCase(vt.getMaVT().trim())){
+                    cboVaitro.setSelectedItem(vt.getTenVT());
+                    break;
+                }
+            }
+//        if (nv.getVaiTro().trim().equalsIgnoreCase("QL")) {
+//            cboVaitro.setSelectedItem("Quản lý");
+//        } else {
+//            cboVaitro.setSelectedItem("Nhân Viên");
+//        }
         if (nv.getHinh() != null) {
             txtHinhAnh1.setToolTipText(nv.getHinh());
             txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));

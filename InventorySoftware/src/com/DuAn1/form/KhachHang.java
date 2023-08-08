@@ -409,7 +409,14 @@ public class KhachHang extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Địa chỉ không được để trống");
             return false;
         }
-
+         if(cbokhach.getSelectedItem()==null){
+             DialogHelper.alert(this,"Loại khách hàng bạn chưa chọn");
+             return false;
+        }
+              if(cboGioitinh.getSelectedItem()==null){
+             DialogHelper.alert(this,"Giới tính bạn chưa chọn");
+             return false;
+        }
         return true;
     }
 

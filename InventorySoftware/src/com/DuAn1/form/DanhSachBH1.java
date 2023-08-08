@@ -28,7 +28,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
     public static String ngayBH = "";
     public static String ngayHH = "";
     public static String ghiChu = "";
-       public static String MaSPCu = "";
+    public static String MaSPCu = "";
     public static String MaHDCu = "";
 
     public static String getMaSPCu() {
@@ -46,7 +46,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
     public static void setMaHDCu(String MaHDCu) {
         DanhSachBH1.MaHDCu = MaHDCu;
     }
-    
+
     public static String getMaBH() {
         return maBH;
     }
@@ -121,17 +121,17 @@ public class DanhSachBH1 extends javax.swing.JDialog {
             List<BaoHanhModel> list = dao.selectall();
             System.out.println(list.size());
             for (BaoHanhModel nv : list) {
-                String formattedDate1 ="";
-                 String formattedDate2="";
-                if(nv.getNgayBH()!=null){
-                String dateString1 = nv.getNgayBH();
-                Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
-               formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                String formattedDate1 = "";
+                String formattedDate2 = "";
+                if (nv.getNgayBH() != null) {
+                    String dateString1 = nv.getNgayBH();
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                    formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
                 }
-                if(nv.getNgayHetHan()!=null){
-                String dateString2 = nv.getNgayHetHan();
-                Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
-                formattedDate2= new SimpleDateFormat("dd-MM-yyyy").format(date2);
+                if (nv.getNgayHetHan() != null) {
+                    String dateString2 = nv.getNgayHetHan();
+                    Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
+                    formattedDate2 = new SimpleDateFormat("dd-MM-yyyy").format(date2);
                 }
                 Object[] row = new Object[]{nv.getMaBH(),
                     nv.getMaHD(),
@@ -139,7 +139,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
                     formattedDate1,
                     formattedDate2,
                     nv.getGhiChu(),
-                    nv.getMaKH(),nv.getMaSPCu(),nv.getMaHDCu()};
+                    nv.getMaKH(), nv.getMaSPCu(), nv.getMaHDCu()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -162,6 +162,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         tblUser = new javaswingdev.swing.table.Table();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
         button2 = new com.DuAn1.Swing.Button();
+        cboThoiGian = new com.DuAn1.Swing.Combobox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -212,17 +213,28 @@ public class DanhSachBH1 extends javax.swing.JDialog {
             }
         });
 
+        cboThoiGian.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hôm nay", "Tuần này", "Tháng này" }));
+        cboThoiGian.setSelectedIndex(-1);
+        cboThoiGian.setLabeText("Thời gian");
+        cboThoiGian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboThoiGianActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(283, 283, 283)
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(7, Short.MAX_VALUE)))
@@ -230,9 +242,11 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                .addGap(62, 62, 62))
+                .addGap(54, 54, 54)
+                .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(69, 69, 69)
@@ -265,12 +279,12 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         String NgayHH = (String) tblUser.getValueAt(chon, 4);
         String GhiChu = (String) tblUser.getValueAt(chon, 5);
         String maKH = (String) tblUser.getValueAt(chon, 6);
-           String MaSPCu = (String) tblUser.getValueAt(chon, 7);
+        String MaSPCu = (String) tblUser.getValueAt(chon, 7);
         String MaHDCu = (String) tblUser.getValueAt(chon, 8);
         DanhSachBH1.setMaBH(maBH);
         DanhSachBH1.setMaSP(maSP);
         DanhSachBH1.setSoEmei(soImei);
-        DanhSachBH1.setNgayBH(NgayHH);
+        DanhSachBH1.setNgayBH(soNgayHB);
         DanhSachBH1.setNgayHH(NgayHH);
         DanhSachBH1.setGhiChu(GhiChu);
         DanhSachBH1.setMaKH(maKH);
@@ -312,6 +326,106 @@ public class DanhSachBH1 extends javax.swing.JDialog {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void cboThoiGianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThoiGianActionPerformed
+        // TODO add your handling code here:
+        if (cboThoiGian.getSelectedItem().equals("Hôm nay")) {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<BaoHanhModel> list = dao.selectHomNay();
+                System.out.println(list.size());
+                for (BaoHanhModel nv : list) {
+                    String formattedDate1 = "";
+                    String formattedDate2 = "";
+                    if (nv.getNgayBH() != null) {
+                        String dateString1 = nv.getNgayBH();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                        formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                    }
+                    if (nv.getNgayHetHan() != null) {
+                        String dateString2 = nv.getNgayHetHan();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
+                        formattedDate2 = new SimpleDateFormat("dd-MM-yyyy").format(date2);
+                    }
+                    Object[] row = new Object[]{nv.getMaBH(),
+                        nv.getMaHD(),
+                        nv.getSoEmei(),
+                        formattedDate1,
+                        formattedDate2,
+                        nv.getGhiChu(),
+                        nv.getMaKH(), nv.getMaSPCu(), nv.getMaHDCu()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        } else if (cboThoiGian.getSelectedItem().equals("Tuần này")) {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<BaoHanhModel> list = dao.selectTuanNay();
+                for (BaoHanhModel nv : list) {
+                    String formattedDate1 = "";
+                    String formattedDate2 = "";
+                    if (nv.getNgayBH() != null) {
+                        String dateString1 = nv.getNgayBH();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                        formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                    }
+                    if (nv.getNgayHetHan() != null) {
+                        String dateString2 = nv.getNgayHetHan();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
+                        formattedDate2 = new SimpleDateFormat("dd-MM-yyyy").format(date2);
+                    }
+                    Object[] row = new Object[]{nv.getMaBH(),
+                        nv.getMaHD(),
+                        nv.getSoEmei(),
+                        formattedDate1,
+                        formattedDate2,
+                        nv.getGhiChu(),
+                        nv.getMaKH(), nv.getMaSPCu(), nv.getMaHDCu()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        } else if (cboThoiGian.getSelectedItem().equals("Tháng này")) {
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<BaoHanhModel> list = dao.selectThangNay();
+                System.out.println(list.size());
+                for (BaoHanhModel nv : list) {
+                    String formattedDate1 = "";
+                    String formattedDate2 = "";
+                    if (nv.getNgayBH() != null) {
+                        String dateString1 = nv.getNgayBH();
+                        Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString1);
+                        formattedDate1 = new SimpleDateFormat("dd-MM-yyyy").format(date1);
+                    }
+                    if (nv.getNgayHetHan() != null) {
+                        String dateString2 = nv.getNgayHetHan();
+                        Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString2);
+                        formattedDate2 = new SimpleDateFormat("dd-MM-yyyy").format(date2);
+                    }
+                    Object[] row = new Object[]{nv.getMaBH(),
+                        nv.getMaHD(),
+                        nv.getSoEmei(),
+                        formattedDate1,
+                        formattedDate2,
+                        nv.getGhiChu(),
+                        nv.getMaKH(), nv.getMaSPCu(), nv.getMaHDCu()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
+        }
+    }//GEN-LAST:event_cboThoiGianActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,6 +471,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button button2;
+    private com.DuAn1.Swing.Combobox cboThoiGian;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javaswingdev.swing.table.Table tblUser;

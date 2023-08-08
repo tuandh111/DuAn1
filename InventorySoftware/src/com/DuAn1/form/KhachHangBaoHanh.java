@@ -129,6 +129,9 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblUserMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblUserMouseEntered(evt);
+            }
         });
         jScrollPane4.setViewportView(tblUser);
 
@@ -247,6 +250,10 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
     private void cboHinhThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboHinhThucActionPerformed
        filltable();        // TODO add your handling code here:
     }//GEN-LAST:event_cboHinhThucActionPerformed
+
+    private void tblUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUserMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblUserMouseEntered
 
     /**
      * @param args the command line arguments
