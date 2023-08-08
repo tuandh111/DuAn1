@@ -2,13 +2,6 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Component class="com.raven.datechooser.DateChooser" name="dateChooser">
-      <Properties>
-        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="txtNgayBaoHanh"/>
-        </Property>
-      </Properties>
-    </Component>
     <Container class="swing.ImageAvatar" name="imageAvatar68">
       <Properties>
         <Property name="borderSize" type="int" value="5"/>
@@ -331,6 +324,7 @@
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtNgayBaoHanh">
               <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
                 <Property name="labelText" type="java.lang.String" value="Ng&#xe0;y b&#x1ea3;o h&#xe0;nh"/>
               </Properties>
               <Events>
@@ -351,6 +345,7 @@
             <Component class="com.DuAn1.Swing.TextField" name="txtSoluong">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="enabled" type="boolean" value="false"/>
                 <Property name="labelText" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng m&#x1edb;i"/>
               </Properties>
             </Component>
@@ -2069,9 +2064,9 @@
                                           <Component id="lbIphone1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lbIphone4" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="lbIphone5" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="lbIphone2" alignment="0" max="32767" attributes="0"/>
@@ -2087,17 +2082,15 @@
                                                   </Group>
                                               </Group>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                              <Component id="lbIphone8" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lbIphone8" min="-2" pref="149" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace pref="33" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

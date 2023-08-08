@@ -9,6 +9,7 @@ import com.DuAn1.Dao.HoaDonCTDAO;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.BaoHanhCTModel;
 import com.DuAn1.Model.HoaDonCTModel;
+import java.text.DecimalFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -21,9 +22,9 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
 
     DefaultTableModel model;
     HoaDonCTDAO bhctdao = new HoaDonCTDAO();
-   public static String MaHDChiTietBaoHanh;
-   public static String MaSPChiTietBaoHanh;
-   public static String SoLuong;
+    public static String MaHDChiTietBaoHanh;
+    public static String MaSPChiTietBaoHanh;
+    public static String SoLuong;
 
     public static String getSoLuong() {
         return SoLuong;
@@ -32,7 +33,6 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
     public static void setSoLuong(String SoLuong) {
         ThongTinSPDaMua.SoLuong = SoLuong;
     }
-   
 
     public static String getMaHDChiTietBaoHanh() {
         return MaHDChiTietBaoHanh;
@@ -49,7 +49,7 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
     public static void setMaSPChiTietBaoHanh(String MaSPChiTietBaoHanh) {
         ThongTinSPDaMua.MaSPChiTietBaoHanh = MaSPChiTietBaoHanh;
     }
-   
+
     public ThongTinSPDaMua(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -57,14 +57,15 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         setIconImage(ShareHelper.APP_ICON);
         filltable();
     }
-    
+
     void filltable() {
         model = (DefaultTableModel) tblBH.getModel();
         model.setRowCount(0);
         try {
             List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH());
             for (HoaDonCTModel bhct : list) {
-                Object[] row = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), bhct.getThanhTien()};
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                Object[] row = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), df.format(bhct.getGia()), df.format(bhct.getThanhTien())};
                 model.addRow(row);
             }
         } catch (Exception e) {
@@ -132,11 +133,11 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
+                .addGap(241, 241, 241)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(84, 84, 84)
                 .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -184,18 +185,18 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
-        
+
         int row = tblBH.getSelectedRow();
         String SoLuong0 = String.valueOf(tblBH.getValueAt(row, 1));
         SoLuong0 = SoLuong0.replace(".0", "");
-        System.out.println("1" + SoLuong0);
         int SoLuong = Integer.parseInt(SoLuong0.trim());
         HoaDonCTModel model1 = getForm();
         String MaSP = String.valueOf(tblBH.getValueAt(row, 0));
         String MaHD = String.valueOf(tblBH.getValueAt(row, 2));
         bhctdao.update(model1);
+        HoaDonCTModel hoadonThem = getForm();
         for (int i = 0; i < SoLuong - 1; i++) {
-            
+
             bhctdao.insert(model1);
         }
         model = (DefaultTableModel) tblBH.getModel();
@@ -203,7 +204,8 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         try {
             List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH());
             for (HoaDonCTModel bhct : list) {
-                Object[] row1 = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), bhct.getThanhTien()};
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                Object[] row1 = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), df.format(bhct.getGia()), df.format(bhct.getThanhTien())};
                 model.addRow(row1);
             }
         } catch (Exception e) {
@@ -215,11 +217,11 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
         int chon = tblBH.getSelectedRow();
-        String masp =String.valueOf(tblBH.getValueAt(chon, 0));
-        String SoLuong =String.valueOf(tblBH.getValueAt(chon, 1));
-        String mahd =String.valueOf(tblBH.getValueAt(chon, 2));
+        String masp = String.valueOf(tblBH.getValueAt(chon, 0));
+        String SoLuong = String.valueOf(tblBH.getValueAt(chon, 1));
+        String mahd = String.valueOf(tblBH.getValueAt(chon, 2));
         ThongTinSPDaMua.setMaSPChiTietBaoHanh(masp);
-        SoLuong=SoLuong.replace(".0", "");
+        SoLuong = SoLuong.replace(".0", "");
         ThongTinSPDaMua.setSoLuong(SoLuong);
         ThongTinSPDaMua.setMaHDChiTietBaoHanh(mahd);
         dispose();
@@ -228,17 +230,19 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         HoaDonCTModel hd = new HoaDonCTModel();
         int chon = tblBH.getSelectedRow();
         String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
+        double SoLuong = (double) tblBH.getValueAt(chon, 1);
         String MaHD = String.valueOf(tblBH.getValueAt(chon, 2));
         String Gia = String.valueOf(tblBH.getValueAt(chon, 3));
         String ThanTien = (String) tblBH.getValueAt(chon, 4);
         hd.setMaSP(MaSP.trim());
+
         hd.setSoLuong(1);
         hd.setMaHD(MaHD.trim());
-        hd.setGia(Double.parseDouble(Gia));
+        hd.setGia(Double.parseDouble(Gia.replace(".", "")));
         if (ThanTien != null) {
-            hd.setThanhTien(Double.parseDouble(ThanTien));
+            hd.setThanhTien(Double.parseDouble(ThanTien.replace(".", "")) / SoLuong);
         }
-        
+
         return hd;
     }
 

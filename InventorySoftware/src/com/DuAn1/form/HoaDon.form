@@ -282,7 +282,6 @@
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtMa">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="labelText" type="java.lang.String" value="M&#xe3; h&#xf3;a &#x111;&#x1a1;n"/>
               </Properties>
               <Events>
@@ -1910,7 +1909,7 @@
                         </Container>
                         <Component class="com.DuAn1.swing0.button0" name="txtadd7">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Th&#xea;m "/>
+                            <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtadd7ActionPerformed"/>
@@ -2209,30 +2208,28 @@
                                           <Component id="lbIphone1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lbIphone4" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lbIphone8" pref="149" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="lbIphone5" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="lbIphone2" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="lbIphone5" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="lbIphone2" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                                  <Component id="lbIphone6" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                                      <Component id="lbIphone6" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="lbIphone3" max="32767" attributes="0"/>
-                                                  </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="lbIphone3" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                              <Component id="lbIphone8" min="-2" pref="142" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                               <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -2243,7 +2240,7 @@
                                       <Component id="cboHinhThuc4" min="-2" pref="215" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3206,7 +3203,7 @@
                         </Component>
                         <Component class="com.DuAn1.swing0.button0" name="btnAdd9">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Th&#xea;m "/>
+                            <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdd9ActionPerformed"/>

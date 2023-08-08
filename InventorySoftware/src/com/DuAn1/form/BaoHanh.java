@@ -79,16 +79,19 @@ public class BaoHanh extends javax.swing.JPanel {
 //panelShadow6.setVisible(false); ẩn jpanel
 //panelShadow6.setBackground(Color.pink);
         setOpaque(false);
-        dateChooser.addEventDateChooser(new EventDateChooser() {
-            @Override
-            public void dateSelected(SelectedAction action, SelectedDate date) {
-                System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());
-                if (action.getAction() == SelectedAction.DAY_SELECTED) {
-                    dateChooser.hidePopup();
-                }
-            }
-        });
-
+//        dateChooser.addEventDateChooser(new EventDateChooser() {
+//            @Override
+//            public void dateSelected(SelectedAction action, SelectedDate date) {
+//                System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());
+//                if (action.getAction() == SelectedAction.DAY_SELECTED) {
+//                    dateChooser.hidePopup();
+//                }
+//            }
+//        });
+      LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formatted = current.format(formatter);
+        txtNgayBaoHanh.setText(formatted);
         LbSony1.setVisible(false);
         LbSony2.setVisible(false);
         LbSony3.setVisible(false);
@@ -602,7 +605,6 @@ public class BaoHanh extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dateChooser = new com.raven.datechooser.DateChooser();
         imageAvatar68 = new swing.ImageAvatar();
         dateChooser1 = new com.raven.datechooser.DateChooser();
         jPanel1 = new javax.swing.JPanel();
@@ -858,8 +860,6 @@ public class BaoHanh extends javax.swing.JPanel {
         cboSapXep3 = new com.DuAn1.Swing.Combobox();
         cboHinhThuc3 = new com.DuAn1.Swing.Combobox();
 
-        dateChooser.setTextRefernce(txtNgayBaoHanh);
-
         imageAvatar68.setBorderSize(5);
         imageAvatar68.setBorderSpace(0);
         imageAvatar68.setGradientColor1(new java.awt.Color(255, 255, 255));
@@ -933,6 +933,7 @@ public class BaoHanh extends javax.swing.JPanel {
             }
         });
 
+        txtNgayBaoHanh.setEnabled(false);
         txtNgayBaoHanh.setLabelText("Ngày bảo hành");
         txtNgayBaoHanh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -949,6 +950,7 @@ public class BaoHanh extends javax.swing.JPanel {
         });
 
         txtSoluong.setEditable(false);
+        txtSoluong.setEnabled(false);
         txtSoluong.setLabelText("Số lượng mới");
 
         txtKhachhang.setEditable(false);
@@ -2881,9 +2883,9 @@ public class BaoHanh extends javax.swing.JPanel {
                             .addComponent(lbIphone7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lbIphone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbIphone4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lbIphone5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lbIphone2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2894,13 +2896,11 @@ public class BaoHanh extends javax.swing.JPanel {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lbIphone3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(lbIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lbIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lbIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)))))
-                .addContainerGap(13, Short.MAX_VALUE))
+                                .addComponent(lbIphone9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3955,7 +3955,7 @@ public class BaoHanh extends javax.swing.JPanel {
 
     private void txtNgayBaoHanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNgayBaoHanhMouseClicked
         // TODO add your handling code here:
-        dateChooser.showPopup();
+//        dateChooser.showPopup();
     }//GEN-LAST:event_txtNgayBaoHanhMouseClicked
     BaoHanhModel getFormTao() {
         BaoHanhModel bh = new BaoHanhModel();
@@ -3985,6 +3985,8 @@ public class BaoHanh extends javax.swing.JPanel {
         }
         bh.setGhiChu(txtMoTa.getText());
         bh.setMaKH(txtKhachhang.getText());
+        bh.setMaSPCu(txtMaSPcu.getText());
+        bh.setMaHDCu(txtMaHDCu.getText());
         return bh;
     }
 
@@ -4534,6 +4536,10 @@ public class BaoHanh extends javax.swing.JPanel {
             DialogHelper.alert(this, "Hãy nhập lí do bảo hành");
             return false;
         }
+        if(txtNgayBaoHanh.getText().compareTo(txtNgayHetHan.getText())>0){
+            DialogHelper.alert(this,"Ngày hết hạn không được nhỏ hơn ngày bảo hành");
+            return false;
+        }
         return true;
     }
 
@@ -4829,7 +4835,6 @@ public class BaoHanh extends javax.swing.JPanel {
     private com.DuAn1.Swing.Combobox cboSapXep1;
     private com.DuAn1.Swing.Combobox cboSapXep2;
     private com.DuAn1.Swing.Combobox cboSapXep3;
-    private com.raven.datechooser.DateChooser dateChooser;
     private com.raven.datechooser.DateChooser dateChooser1;
     private swing.ImageAvatar imageAvatar68;
     private javax.swing.JLabel jLabel28;

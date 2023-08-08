@@ -75,17 +75,24 @@
                                   <Component id="rdoNu" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="txtEmail" min="-2" pref="230" max="-2" attributes="0"/>
-                              <Component id="txtVaiTro" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtDiaChi" min="-2" pref="231" max="-2" attributes="0"/>
-                              <Component id="txtSoDienThoai" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="txtVaiTro" min="-2" pref="230" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtDiaChi" min="-2" pref="231" max="-2" attributes="0"/>
+                                      <Component id="txtSoDienThoai" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="126" max="32767" attributes="0"/>
+                                  <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="126" max="32767" attributes="0"/>
-                          <Component id="txtHinh" min="-2" pref="202" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -97,8 +104,11 @@
                           <Component id="textImage1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="470" max="-2" attributes="0"/>
-                          <Component id="button1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="358" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="txtNhapLaiMatKhauMoi" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="button1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -136,14 +146,16 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtNhapLaiMatKhau" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVaiTro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNhapLaiMatKhauMoi" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="68" max="32767" attributes="0"/>
                           <Component id="button1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="txtHinh" min="-2" pref="176" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <Component id="txtVaiTro" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -170,18 +182,19 @@
         </Component>
         <Component class="com.DuAn1.Swing.PasswordField" name="txtMatKhau">
           <Properties>
-            <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u"/>
+            <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u hi&#x1ec7;n t&#x1ea1;i"/>
             <Property name="showAndHide" type="boolean" value="true"/>
           </Properties>
         </Component>
         <Component class="com.DuAn1.Swing.PasswordField" name="txtNhapLaiMatKhau">
           <Properties>
-            <Property name="labelText" type="java.lang.String" value="Nh&#x1ead;p l&#x1ea1;i m&#x1ead;t kh&#x1ea9;u"/>
+            <Property name="labelText" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u m&#x1edb;i"/>
             <Property name="showAndHide" type="boolean" value="true"/>
           </Properties>
         </Component>
         <Component class="com.DuAn1.Swing.TextField" name="txtVaiTro">
           <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="labelText" type="java.lang.String" value="Vai tr&#xf2;"/>
           </Properties>
         </Component>
@@ -266,6 +279,12 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="com.DuAn1.Swing.PasswordField" name="txtNhapLaiMatKhauMoi">
+          <Properties>
+            <Property name="labelText" type="java.lang.String" value="X&#xe1;c nh&#x1ead;n m&#x1ead;t kh&#x1ea9;u m&#x1edb;i"/>
+            <Property name="showAndHide" type="boolean" value="true"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
