@@ -3985,6 +3985,8 @@ public class BaoHanh extends javax.swing.JPanel {
         }
         bh.setGhiChu(txtMoTa.getText());
         bh.setMaKH(txtKhachhang.getText());
+        bh.setMaSPCu(txtMaSPcu.getText());
+        bh.setMaHDCu(txtMaHDCu.getText());
         return bh;
     }
 

@@ -129,7 +129,7 @@ public class SanPham extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtGia.getText().equals("")) {
-                    double gia = Double.parseDouble(txtGia.getText().replace(",", ""));
+                    double gia = Double.parseDouble(txtGia.getText().replace(".", ""));
                     DecimalFormat df = new DecimalFormat("###,###,###");
                     df.setMaximumFractionDigits(0);
                     txtGia.setText(df.format(gia));
@@ -258,7 +258,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setTenSP(txtTenSP.getText());
         cd.setMau((String) cboMau.getSelectedItem());
         String Gia = txtGia.getText();
-        Gia = Gia.replace(",", "");
+        Gia = Gia.replace(".", "");
         cd.setGia(Double.parseDouble(Gia));
         cd.setLoaiSP((String) cboLoaiSanPham.getSelectedItem());
 
@@ -1642,7 +1642,7 @@ public class SanPham extends javax.swing.JPanel {
                 return;
             }
             String Gia0 = txtGia.getText();
-            Gia0 = Gia0.replace(",", "");
+            Gia0 = Gia0.replace(".", "");
             double gia = Double.parseDouble(Gia0);
             DecimalFormat df = new DecimalFormat("#,##0.##");
             if (GiaDau.equals("")) {
@@ -1660,7 +1660,7 @@ public class SanPham extends javax.swing.JPanel {
 
     private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
         String Gia = txtGia.getText();
-        Gia = Gia.replace(",", "");
+        Gia = Gia.replace(".", "");
         if(!Gia.equals("")){
         try {
             Double.parseDouble(Gia);

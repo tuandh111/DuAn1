@@ -5,10 +5,19 @@
         <group>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/BaoHanh.java</file>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHangBaoHanh.java</file>
-            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/raven/form/Form_Home.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Model/BaoHanhModel.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachDH.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/ThanhToanLuong.java</file>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/InHoaDon.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/QuetMaQR/QuetMa.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/raven/form/Form_Home.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonCTDAO.java</file>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/ThongTinSPDaMua.java</file>
             <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachMH1.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
+            <file>file:/D:/Duan1/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachBH1.java</file>
         </group>
     </open-files>
 </project-private>

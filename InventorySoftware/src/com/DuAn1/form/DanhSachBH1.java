@@ -139,7 +139,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
                     formattedDate1,
                     formattedDate2,
                     nv.getGhiChu(),
-                    nv.getMaKH()};
+                    nv.getMaKH(),nv.getMaSPCu(),nv.getMaHDCu()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -173,7 +173,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã BH", "Số lượng", "Số Emei", "Ngày bảo hành", "Ngày hết hạn", "Ghi Chú", "Mã KH", "Mã sản phẩm cũ", "Mã Hóa đơn cũ"
+                "Mã BH", "Số lượng mới", "Số lượng cũ", "Ngày bảo hành", "Ngày hết hạn", "Ghi Chú", "Mã KH", "Mã sản phẩm cũ", "Mã Hóa đơn cũ"
             }
         ) {
             boolean[] canEdit = new boolean [] {

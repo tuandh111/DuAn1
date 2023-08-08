@@ -132,11 +132,11 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
+                .addGap(241, 241, 241)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(84, 84, 84)
                 .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -188,7 +188,6 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         int row = tblBH.getSelectedRow();
         String SoLuong0 = String.valueOf(tblBH.getValueAt(row, 1));
         SoLuong0 = SoLuong0.replace(".0", "");
-        System.out.println("1" + SoLuong0);
         int SoLuong = Integer.parseInt(SoLuong0.trim());
         HoaDonCTModel model1 = getForm();
         String MaSP = String.valueOf(tblBH.getValueAt(row, 0));
@@ -228,6 +227,7 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         HoaDonCTModel hd = new HoaDonCTModel();
         int chon = tblBH.getSelectedRow();
         String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
+        double SoLuong = (double) tblBH.getValueAt(chon,1);
         String MaHD = String.valueOf(tblBH.getValueAt(chon, 2));
         String Gia = String.valueOf(tblBH.getValueAt(chon, 3));
         String ThanTien = (String) tblBH.getValueAt(chon, 4);
@@ -236,7 +236,7 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         hd.setMaHD(MaHD.trim());
         hd.setGia(Double.parseDouble(Gia));
         if (ThanTien != null) {
-            hd.setThanhTien(Double.parseDouble(ThanTien));
+            hd.setThanhTien(Double.parseDouble(ThanTien)/SoLuong);
         }
         
         return hd;

@@ -138,7 +138,7 @@ public class HoaDon extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtTienkhach.getText().equals("")) {
-                    double gia = Double.parseDouble(txtTienkhach.getText().replace(",", ""));
+                    double gia = Double.parseDouble(txtTienkhach.getText().replace(".", ""));
                     DecimalFormat df = new DecimalFormat("###,###,###");
                     df.setMaximumFractionDigits(0);
                     txtTienkhach.setText(df.format(gia));
@@ -458,7 +458,7 @@ public class HoaDon extends javax.swing.JPanel {
         dt.setTenKH(txtKhachhang.getText());
         dt.setTrangThai(true);
         String gia = txtDonGia.getText();
-        gia = gia.replace(",", "");
+        gia = gia.replace(".", "");
         dt.setDongia(Double.parseDouble(gia));
         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
@@ -486,10 +486,10 @@ public class HoaDon extends javax.swing.JPanel {
             }
         }
         String tienKhach = txtTienkhach.getText();
-        tienKhach = tienKhach.replace(",", "");
+        tienKhach = tienKhach.replace(".", "");
         dt.setTienKhach(Double.parseDouble(tienKhach));
         String tienConlai = txtConlai.getText();
-        tienConlai = tienConlai.replace(",", "");
+        tienConlai = tienConlai.replace(".", "");
         dt.setTienCon(Double.parseDouble(tienConlai));
         dt.setMota(txtMota.getText());
 //        dt.setNgayXuat(formatted);
@@ -868,7 +868,6 @@ public class HoaDon extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel28.setText("Hóa đơn");
 
-        txtMa.setEditable(false);
         txtMa.setLabelText("Mã hóa đơn");
         txtMa.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -3943,7 +3942,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtKhachhang.setText(HoaDon.getSoLuong());
         daoKH.select();
         String gia = txtDonGia.getText();
-        gia = gia.replace(",", "");
+        gia = gia.replace(".", "");
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong().trim());
         System.out.println(listKH.size());
         for (KhachHangModel khachHangModel : listKH) {
@@ -4460,8 +4459,8 @@ public class HoaDon extends javax.swing.JPanel {
         }
         String gia = txtTongTien.getText();
         String TienKhach = txtTienkhach.getText();
-        gia = gia.replace(",", "");
-        TienKhach= TienKhach.replace(",", "");
+        gia = gia.replace(".", "");
+        TienKhach= TienKhach.replace(".", "");
         DecimalFormat df = new DecimalFormat("#,##0.##");
         txtConlai.setText(df.format(Double.parseDouble(TienKhach) - Double.parseDouble(gia)));        // TODO add your handling code here:
     }//GEN-LAST:event_txtTienkhachCaretUpdate

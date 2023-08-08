@@ -50,7 +50,7 @@ public class BaoHanhDAO {
     }
 
     public void update(BaoHanhModel model) {
-        String sql = "update BaoHanh set MaSP=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? , MaSPCu=? , MaHDCu =?where MaBH=?";
+        String sql = "update BaoHanh set MaSP=?,SoIMEI=?,NgayBH=?,NgayHetHan=?,GhiChu=?,MaKH=? , MaSPCu=? , MaHDCu =? where MaBH=?";
         JdbcHelper.executeUpdate(sql,
                 model.getMaHD(),
                 model.getSoEmei(),
