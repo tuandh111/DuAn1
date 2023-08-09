@@ -150,12 +150,12 @@ public class Form_Home extends javax.swing.JPanel {
         int tongSoLuong = Arrays.stream(i.get(0))
                 .mapToInt(obj -> (int) obj)
                 .sum();
-        List<Object[]> j = DaoThongKe.DoanhThuThang();
-        String name = (String) j.get(3)[1];
-        for (Object[] row : j) {
-            String name1 = (String) row[1];
-            tong += Double.parseDouble(name);
-        }
+//        List<Object[]> j = DaoThongKe.DoanhThuThang();
+//        String name = (String) j.get(3)[1];
+//        for (Object[] row : j) {
+//            String name1 = (String) row[1];
+//            tong += Double.parseDouble(name);
+//        }
         List<NhanVienModel> list = dao.select();
         List<DatSPModel> sp = daoDatSP.select();
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));

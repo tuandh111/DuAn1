@@ -69,7 +69,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtLuongCoBan.getText().equals("")) {
-                    double gia = Double.parseDouble(txtLuongCoBan.getText().replace(".", ""));
+                    double gia = Double.parseDouble(txtLuongCoBan.getText().replace(",", ""));
                     DecimalFormat df = new DecimalFormat("###,###,###");
                     df.setMaximumFractionDigits(0);
                     txtLuongCoBan.setText(df.format(gia));
@@ -80,7 +80,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtLuongTangCa.getText().equals("")) {
-                    double gia = Double.parseDouble(txtLuongTangCa.getText().replace(".", ""));
+                    double gia = Double.parseDouble(txtLuongTangCa.getText().replace(",", ""));
                     DecimalFormat df = new DecimalFormat("###,###,###");
                     df.setMaximumFractionDigits(0);
                     txtLuongTangCa.setText(df.format(gia));
@@ -91,7 +91,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtKhoangTru.getText().equals("")) {
-                    double gia = Double.parseDouble(txtKhoangTru.getText().replace(".", ""));
+                    double gia = Double.parseDouble(txtKhoangTru.getText().replace(",", ""));
                     DecimalFormat df = new DecimalFormat("###,###,###");
                     df.setMaximumFractionDigits(0);
                     txtKhoangTru.setText(df.format(gia));
@@ -197,7 +197,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         ttl.setMaLuong((String) cboMaLuong.getSelectedItem());
         ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
         String LuongCoBan = txtLuongCoBan.getText();
-        LuongCoBan = LuongCoBan.replace(".", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         ttl.setLuongCoBan(Double.parseDouble(LuongCoBan));
         try {
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgayVaoCTY.getText());
@@ -211,9 +211,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         String LuongTangCa = txtLuongTangCa.getText();
         String KhoanTru = txtKhoangTru.getText();
         String TongTien = lblTongTien.getText();
-        KhoanTru = KhoanTru.replace(".", "");
-        TongTien = TongTien.replace(".", "");
-        LuongTangCa = LuongTangCa.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
+        TongTien = TongTien.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
         ttl.setSoGioTangCa(Float.parseFloat(txtSoHTangCa.getText()));
         ttl.setLuongTangCa(Double.parseDouble(LuongTangCa));
         ttl.setKhoanTru(Double.parseDouble(KhoanTru));
@@ -753,11 +753,11 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             return false;
         }
         String LuongCoBan = txtLuongCoBan.getText();
-        LuongCoBan = LuongCoBan.replace(".", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         String LuongTangCa = txtLuongTangCa.getText();
-        LuongTangCa = LuongTangCa.replace(".", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
         String KhoanTru = txtKhoangTru.getText();
-        KhoanTru = KhoanTru.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
         if (cboMaLuong.getSelectedItem() == null) {
             DialogHelper.alert(this, "Hãy chọn mã lương!");
             return false;
@@ -863,9 +863,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         String LuongCoBan = txtLuongCoBan.getText();
         String LuongTangCa = txtLuongTangCa.getText();
         String KhoanTru = txtKhoangTru.getText();
-        KhoanTru = KhoanTru.replace(".", "");
-        LuongTangCa = LuongTangCa.replace(".", "");
-        LuongCoBan = LuongCoBan.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
@@ -895,9 +895,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         String LuongCoBan = txtLuongCoBan.getText();
         String LuongTangCa = txtLuongTangCa.getText();
         String KhoanTru = txtKhoangTru.getText();
-        KhoanTru = KhoanTru.replace(".", "");
-        LuongTangCa = LuongTangCa.replace(".", "");
-        LuongCoBan = LuongCoBan.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
@@ -942,9 +942,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         String LuongCoBan = txtLuongCoBan.getText();
         String LuongTangCa = txtLuongTangCa.getText();
         String KhoanTru = txtKhoangTru.getText();
-        KhoanTru = KhoanTru.replace(".", "");
-        LuongTangCa = LuongTangCa.replace(".", "");
-        LuongCoBan = LuongCoBan.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
@@ -1026,9 +1026,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         String LuongCoBan = txtLuongCoBan.getText();
         String LuongTangCa = txtLuongTangCa.getText();
         String KhoanTru = txtKhoangTru.getText();
-        KhoanTru = KhoanTru.replace(".", "");
-        LuongTangCa = LuongTangCa.replace(".", "");
-        LuongCoBan = LuongCoBan.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
@@ -1059,9 +1059,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         String LuongCoBan = txtLuongCoBan.getText();
         String LuongTangCa = txtLuongTangCa.getText();
         String KhoanTru = txtKhoangTru.getText();
-        KhoanTru = KhoanTru.replace(".", "");
-        LuongTangCa = LuongTangCa.replace(".", "");
-        LuongCoBan = LuongCoBan.replace(".", "");
+        KhoanTru = KhoanTru.replace(",", "");
+        LuongTangCa = LuongTangCa.replace(",", "");
+        LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
