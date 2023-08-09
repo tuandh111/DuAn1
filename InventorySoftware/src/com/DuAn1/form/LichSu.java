@@ -118,7 +118,15 @@ public class LichSu extends javax.swing.JPanel {
             new String [] {
                 "STT", "Thời gian thêm", "Thời gian sửa", "Thời gian xóa", "Thời gian hoạt động", "Bảng thao tác", "Nhân viên thực hiện"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblUser);
 
         txtTimKiemTheoMa.setHint("Tìm kiếm theo mã");

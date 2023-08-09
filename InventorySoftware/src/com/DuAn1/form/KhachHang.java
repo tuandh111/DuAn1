@@ -545,7 +545,15 @@ public class KhachHang extends javax.swing.JPanel {
             new String [] {
                 "Mã", "Họ tên", "Số điện thoại", "Ngày sinh", "Địa chỉ"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tblUserMousePressed(evt);

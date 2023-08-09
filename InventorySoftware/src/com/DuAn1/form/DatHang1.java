@@ -3528,7 +3528,7 @@ public class DatHang1 extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, false, true, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3608,7 +3608,7 @@ public class DatHang1 extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -3650,13 +3650,13 @@ public class DatHang1 extends javax.swing.JPanel {
         dt.setTrangThai(true);
 
         String gia = txtDonGia.getText();
-        gia = gia.replace(".", "");
+        gia = gia.replace(",", "");
 //        String donGia =String.valueOf( Double.parseDouble(gia ));
 
         dt.setDonGia(Double.parseDouble(gia));
 
         String tien = txtTongTien.getText();
-        tien = tien.replace(".", "");
+        tien = tien.replace(",", "");
 
         dt.setTongTien(Double.parseDouble(tien));
         try {
@@ -4298,7 +4298,7 @@ public class DatHang1 extends javax.swing.JPanel {
             if (txtSoDienThoai.getText().matches(so)) {
                 txtThongBao.setVisible(true);
                 String gia = txtDonGia.getText();
-                gia = gia.replace(".", "");
+                gia = gia.replace(",", "");
                 for (KhachHangModel khachHangModel : list) {
                     if (khachHangModel.getLoaiKH().trim().equalsIgnoreCase("VIP1")) {
                         txtGiamGiaTheoLoai.setText("5");

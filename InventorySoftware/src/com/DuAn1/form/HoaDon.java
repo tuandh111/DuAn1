@@ -138,7 +138,7 @@ public class HoaDon extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtTienkhach.getText().equals("")) {
-                    double gia = Double.parseDouble(txtTienkhach.getText().replace(".", ""));
+                    double gia = Double.parseDouble(txtTienkhach.getText().replace(",", ""));
                     DecimalFormat df = new DecimalFormat("###,###,###");
                     df.setMaximumFractionDigits(0);
                     txtTienkhach.setText(df.format(gia));
@@ -458,7 +458,7 @@ public class HoaDon extends javax.swing.JPanel {
         dt.setTenKH(txtKhachhang.getText());
         dt.setTrangThai(true);
         String gia = txtDonGia.getText();
-        gia = gia.replace(".", "");
+        gia = gia.replace(",", "");
         dt.setDongia(Double.parseDouble(gia));
         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
@@ -486,10 +486,10 @@ public class HoaDon extends javax.swing.JPanel {
             }
         }
         String tienKhach = txtTienkhach.getText();
-        tienKhach = tienKhach.replace(".", "");
+        tienKhach = tienKhach.replace(",", "");
         dt.setTienKhach(Double.parseDouble(tienKhach));
         String tienConlai = txtConlai.getText();
-        tienConlai = tienConlai.replace(".", "");
+        tienConlai = tienConlai.replace(",", "");
         dt.setTienCon(Double.parseDouble(tienConlai));
         dt.setMota(txtMota.getText());
 //        dt.setNgayXuat(formatted);
@@ -1156,7 +1156,15 @@ public class HoaDon extends javax.swing.JPanel {
             new String [] {
                 "Mã sản phẩm", "Số lượng", "Mã hóa đơn", "Giá", "Thành tiền"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(tblHoadon);
 
         btnXoasp.setBackground(new java.awt.Color(255, 51, 51));
@@ -2909,9 +2917,8 @@ public class HoaDon extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbIphone8, javax.swing.GroupLayout.PREFERRED_SIZE, 149, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lbIphone5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbIphone2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lbIphone5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbIphone2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -3869,7 +3876,7 @@ public class HoaDon extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1047, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -3940,7 +3947,7 @@ public class HoaDon extends javax.swing.JPanel {
         txtKhachhang.setText(HoaDon.getSoLuong());
         daoKH.select();
         String gia = txtDonGia.getText();
-        gia = gia.replace(".", "");
+        gia = gia.replace(",", "");
         List<KhachHangModel> listKH = daoKH.TimKiemTheoMa(HoaDon.getSoLuong().trim());
         System.out.println(listKH.size());
         for (KhachHangModel khachHangModel : listKH) {
@@ -4457,8 +4464,8 @@ public class HoaDon extends javax.swing.JPanel {
         }
         String gia = txtTongTien.getText();
         String TienKhach = txtTienkhach.getText();
-        gia = gia.replace(".", "");
-        TienKhach= TienKhach.replace(".", "");
+        gia = gia.replace(",", "");
+        TienKhach= TienKhach.replace(",", "");
         DecimalFormat df = new DecimalFormat("#,##0.##");
         txtConlai.setText(df.format(Double.parseDouble(TienKhach) - Double.parseDouble(gia)));        // TODO add your handling code here:
     }//GEN-LAST:event_txtTienkhachCaretUpdate

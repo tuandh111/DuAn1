@@ -742,7 +742,7 @@ public class SanPham extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1674,7 +1674,7 @@ public class SanPham extends javax.swing.JPanel {
 
     private void txtGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGiaFocusLost
         String Gia = txtGia.getText();
-        Gia = Gia.replace(".", "");
+        Gia = Gia.replace(",", "");
         if (!Gia.equals("")) {
             try {
                 Double.parseDouble(Gia);

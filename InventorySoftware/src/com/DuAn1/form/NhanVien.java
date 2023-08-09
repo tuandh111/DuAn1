@@ -517,7 +517,15 @@ public class NhanVien extends javax.swing.JPanel {
             new String [] {
                 "sdfsdf", "sdfds", "Title 3sdfsdf", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblNhanvien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblNhanvienMouseClicked(evt);
