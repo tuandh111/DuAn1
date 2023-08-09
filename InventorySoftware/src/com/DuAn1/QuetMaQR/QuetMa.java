@@ -95,20 +95,21 @@ public class QuetMa extends JDialog {
 
                             txt.setText(qrText);
                             if(qrText.startsWith("I")){
-                                txtGia.setText("29.999.999");
+                                txtGia.setText("29,999,999");
                                 txtNoiNhap.setText("Mỹ");
                                 cbo.setSelectedItem("Iphone");
+                                
                             }else if(qrText.startsWith("Sa")){
-                                txtGia.setText("25.999.999");
+                                txtGia.setText("25,999,999");
                                 txtNoiNhap.setText("Hàn Quốc");
                                 cbo.setSelectedItem("Samsung");
                                 
                             }else if(qrText.startsWith("So")){
-                                txtGia.setText("19.999.999");
+                                txtGia.setText("19,999,999");
                                 txtNoiNhap.setText("Nhật Bản");
                                 cbo.setSelectedItem("Samsung");
                             }else{
-                                txtGia.setText("14.999.999");
+                                txtGia.setText("00,000,000");
                                 txtNoiNhap.setText("Chưa xác định");
                                 cbo.setSelectedItem(null);
                             }
@@ -116,7 +117,9 @@ public class QuetMa extends JDialog {
                             int j;
                             if (txt != null) {
                                 j = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chấp nhận sản phẩm này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+                                
                                 if (j == 0) {
+                                    Thread.currentThread().interrupt();
                                     setVisible(false);
                                     webcam.close();
                                 }

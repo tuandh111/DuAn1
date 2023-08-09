@@ -1623,7 +1623,8 @@ public class SanPham extends javax.swing.JPanel {
         try {
             List<SanPhamModel> list = Dao.TimKiemTheoTen(txtTimKiem.getText());
             for (SanPhamModel nv : list) {
-                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), String.format("%.0f", nv.getGia()), nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
