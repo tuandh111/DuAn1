@@ -182,20 +182,21 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
 
         //        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblBHMouseClicked
-
+int SoLuong1=0;
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
 
         int row = tblBH.getSelectedRow();
         String SoLuong0 = String.valueOf(tblBH.getValueAt(row, 1));
         SoLuong0 = SoLuong0.replace(".0", "");
-        int SoLuong = Integer.parseInt(SoLuong0.trim());
+         SoLuong1 = Integer.parseInt(SoLuong0.trim());
         HoaDonCTModel model1 = getForm();
         String MaSP = String.valueOf(tblBH.getValueAt(row, 0));
         String MaHD = String.valueOf(tblBH.getValueAt(row, 2));
-        bhctdao.update(model1);
-        HoaDonCTModel hoadonThem = getForm();
-        for (int i = 0; i < SoLuong - 1; i++) {
+        HoaDonCTModel hoadonThem = getForm1();
+        bhctdao.update(hoadonThem);
+        
+        for (int i = 0; i < SoLuong1 ; i++) {
 
             bhctdao.insert(model1);
         }
@@ -211,7 +212,7 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
-        }
+        }SoLuong1=0;
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
@@ -238,14 +239,34 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
 
         hd.setSoLuong(1);
         hd.setMaHD(MaHD.trim());
-        hd.setGia(Double.parseDouble(Gia.replace(".", "")));
+        hd.setGia(Double.parseDouble(Gia.replace(",", "")));
         if (ThanTien != null) {
-            hd.setThanhTien(Double.parseDouble(ThanTien.replace(".", "")) / SoLuong);
+            hd.setThanhTien(Double.parseDouble(ThanTien.replace(",", "")) / SoLuong1);
         }
 
         return hd;
     }
-
+   HoaDonCTModel getForm1() {
+        HoaDonCTModel hd = new HoaDonCTModel();
+        int chon = tblBH.getSelectedRow();
+        String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
+        double SoLuong = (double) tblBH.getValueAt(chon, 1);
+        String MaHD = String.valueOf(tblBH.getValueAt(chon, 2));
+        String Gia = String.valueOf(tblBH.getValueAt(chon, 3));
+        String ThanTien = (String) tblBH.getValueAt(chon, 4);
+        hd.setMaSP(MaSP.trim());
+       String sl= JOptionPane.showInputDialog("nhap so luong");
+//       sl=String.valueOf(SoLuong1-Integer.parseInt(sl));
+        hd.setSoLuong(Integer.parseInt(sl));
+     
+        hd.setMaHD(MaHD.trim());
+        hd.setGia(Double.parseDouble(Gia.replace(",", "")));
+        if (ThanTien != null) {
+            hd.setThanhTien(Double.parseDouble(ThanTien.replace(",", "")) /SoLuong* Integer.parseInt(sl));
+        }
+           SoLuong1=SoLuong1-Integer.parseInt(sl);
+        return hd;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
