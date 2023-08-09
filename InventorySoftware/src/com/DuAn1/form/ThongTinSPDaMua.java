@@ -62,7 +62,8 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         model = (DefaultTableModel) tblBH.getModel();
         model.setRowCount(0);
         try {
-            List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH());
+            List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH().trim());
+            System.out.println(list.size());
             for (HoaDonCTModel bhct : list) {
                 DecimalFormat df = new DecimalFormat("#,##0.##");
                 Object[] row = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), df.format(bhct.getGia()), df.format(bhct.getThanhTien())};
