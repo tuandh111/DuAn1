@@ -113,10 +113,10 @@ public class DatHang1 extends javax.swing.JPanel {
         btnDatHang.setEnabled(false);
         btnXoaSP.setEnabled(false);
         btnThemDatHang.setEnabled(false);
-        btnXoaTatCa.setEnabled(false);
     }
 
     public void LoadSP(Object nv) {
+         DecimalFormat df = new DecimalFormat("#,##0.##");
         List<SanPhamModel> list = (List<SanPhamModel>) nv;
         int i = 0;
         int j = 0;
@@ -127,7 +127,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone1.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone1.setText(df.format( sp.getGia()));
                     txtMaIphone1.setText(sp.getMaSP());
                     lbIphone1.setVisible(true);
                 }
@@ -135,7 +135,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone2.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone2.setText(df.format( sp.getGia()));
                     txtMaIphone2.setText(sp.getMaSP());
                     lbIphone2.setVisible(true);
                 }
@@ -143,7 +143,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone3.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone3.setText(df.format( sp.getGia()));
                     txtMaIphone3.setText(sp.getMaSP());
                     lbIphone3.setVisible(true);
                 }
@@ -151,7 +151,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone4.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone4.setText(df.format( sp.getGia()));
                     txtMaIphone4.setText(sp.getMaSP());
                     lbIphone4.setVisible(true);
                 }
@@ -159,7 +159,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone5.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone5.setText(df.format( sp.getGia()));
                     txtMaIphone5.setText(sp.getMaSP());
                     lbIphone5.setVisible(true);
                 }
@@ -167,7 +167,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone6.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone6.setText(df.format( sp.getGia()));
                     txtMaIphone6.setText(sp.getMaSP());
                     lbIphone6.setVisible(true);
                 }
@@ -175,7 +175,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone7.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone7.setText(df.format( sp.getGia()));
                     txtMaIphone7.setText(sp.getMaSP());
                     lbIphone7.setVisible(true);
                 }
@@ -183,7 +183,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone8.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone8.setText(df.format( sp.getGia()));
                     txtMaIphone8.setText(sp.getMaSP());
                     lbIphone8.setVisible(true);
                 }
@@ -191,7 +191,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone9.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone9.setText(df.format( sp.getGia()));
                     txtMaIphone9.setText(sp.getMaSP());
                     lbIphone9.setVisible(true);
                 }
@@ -205,7 +205,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung1.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung1.setText(df.format( sp.getGia()));
                     txtMaSamSung1.setText(sp.getMaSP());
                     lbISamSung1.setVisible(true);
                 }
@@ -213,7 +213,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung2.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung2.setText(df.format( sp.getGia()));
                     txtMaSamSung2.setText(sp.getMaSP());
                     lbISamSung2.setVisible(true);
                 }
@@ -221,7 +221,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung3.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung3.setText(df.format( sp.getGia()));
                     txtMaSamSung3.setText(sp.getMaSP());
                     lbISamSung3.setVisible(true);
                 }
@@ -229,7 +229,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung4.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung4.setText(df.format( sp.getGia()));
                     txtMaSamSung4.setText(sp.getMaSP());
                     lbISamSung4.setVisible(true);
                 }
@@ -237,7 +237,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung5.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung5.setText(df.format( sp.getGia()));
                     txtMaSamSung5.setText(sp.getMaSP());
                     lbISamSung5.setVisible(true);
                 }
@@ -245,7 +245,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung6.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung6.setText(df.format( sp.getGia()));
                     txtMaSamSung6.setText(sp.getMaSP());
                     lbISamSung6.setVisible(true);
                 }
@@ -253,7 +253,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung7.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung7.setText(df.format( sp.getGia()));
                     txtMaSamSung7.setText(sp.getMaSP());
                     lbISamSung7.setVisible(true);
                 }
@@ -261,7 +261,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung8.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung8.setText(df.format( sp.getGia()));
                     txtMaSamSung8.setText(sp.getMaSP());
                     lbISamSung8.setVisible(true);
                 }
@@ -269,7 +269,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung9.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung9.setText(df.format( sp.getGia()));
                     txtMaSamSung9.setText(sp.getMaSP());
                     lbISamSung9.setVisible(true);
                 }
@@ -283,7 +283,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy1.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy1.setText(df.format( sp.getGia()));
                     txtMaSony1.setText(sp.getMaSP());
                     LbSony1.setVisible(true);
                 }
@@ -291,7 +291,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy2.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy2.setText(df.format( sp.getGia()));
                     txtMaSony2.setText(sp.getMaSP());
                     LbSony2.setVisible(true);
                 }
@@ -299,7 +299,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy3.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy3.setText(df.format( sp.getGia()));
                     txtMaSony3.setText(sp.getMaSP());
                     LbSony3.setVisible(true);
                 }
@@ -307,7 +307,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy4.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy4.setText(df.format( sp.getGia()));
                     txtMaSony4.setText(sp.getMaSP());
                     LbSony4.setVisible(true);
                 }
@@ -315,7 +315,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy5.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy5.setText(df.format( sp.getGia()));
                     txtMaSony5.setText(sp.getMaSP());
                     LbSony5.setVisible(true);
                 }
@@ -323,7 +323,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy6.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy6.setText(df.format( sp.getGia()));
                     txtMaSony6.setText(sp.getMaSP());
                     LbSony6.setVisible(true);
                 }
@@ -331,7 +331,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy7.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy7.setText(df.format( sp.getGia()));
                     txtMaSony7.setText(sp.getMaSP());
                     LbSony7.setVisible(true);
                 }
@@ -339,7 +339,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy8.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy8.setText(df.format( sp.getGia()));
                     txtMaSony8.setText(sp.getMaSP());
                     LbSony8.setVisible(true);
                 }
@@ -347,7 +347,7 @@ public class DatHang1 extends javax.swing.JPanel {
                     txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy9.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy9.setText(df.format( sp.getGia()));
                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
@@ -623,7 +623,6 @@ public class DatHang1 extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
-        btnXoaTatCa = new com.DuAn1.swing0.button0();
         btnXoaSP = new com.DuAn1.swing0.button0();
         btnThemDatHang = new com.DuAn1.swing0.button0();
 
@@ -3537,15 +3536,6 @@ public class DatHang1 extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(tblUser);
 
-        btnXoaTatCa.setBackground(new java.awt.Color(255, 51, 51));
-        btnXoaTatCa.setForeground(new java.awt.Color(255, 255, 255));
-        btnXoaTatCa.setText("Xóa tất cả");
-        btnXoaTatCa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXoaTatCaActionPerformed(evt);
-            }
-        });
-
         btnXoaSP.setBackground(new java.awt.Color(255, 51, 51));
         btnXoaSP.setForeground(new java.awt.Color(255, 255, 255));
         btnXoaSP.setText("Xóa sản phẩm");
@@ -3573,11 +3563,9 @@ public class DatHang1 extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(btnXoaTatCa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnThemDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(63, 63, 63)
-                            .addComponent(btnXoaSP, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnXoaSP, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3594,7 +3582,6 @@ public class DatHang1 extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnXoaSP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnXoaTatCa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnThemDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -3753,7 +3740,6 @@ public class DatHang1 extends javax.swing.JPanel {
         btnDatHang.setEnabled(true);
         btnXoaSP.setEnabled(true);
         btnThemDatHang.setEnabled(true);
-        btnXoaTatCa.setEnabled(true);
 
     }//GEN-LAST:event_button3ActionPerformed
     void them() {
@@ -3810,17 +3796,13 @@ public class DatHang1 extends javax.swing.JPanel {
         dateChooser.showPopup();        // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayXuatMouseClicked
 
-    private void btnXoaTatCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaTatCaActionPerformed
-        deleteAll();        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXoaTatCaActionPerformed
-
     private void txtadd8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtadd8ActionPerformed
         SoLuong sl = new SoLuong(com.DuAn1.main.Main.getMain(), true);
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony9();
             SanPhamModel daoSP1 = getFormSPSony9();
-            int i = Integer.parseInt(txtSoLuongConSony9.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony9.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3842,7 +3824,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony8();
             SanPhamModel daoSP1 = getFormSPSony8();
-            int i = Integer.parseInt(txtSoLuongConSony8.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony8.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3864,7 +3846,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony7();
             SanPhamModel daoSP1 = getFormSPSony7();
-            int i = Integer.parseInt(txtSoLuongConSony7.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony7.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3887,7 +3869,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony6();
             SanPhamModel daoSP1 = getFormSPSony6();
-            int i = Integer.parseInt(txtSoLuongConSony6.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony6.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3910,7 +3892,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony5();
             SanPhamModel daoSP1 = getFormSPSony5();
-            int i = Integer.parseInt(txtSoLuongConSony5.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony5.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3932,7 +3914,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony4();
             SanPhamModel daoSP1 = getFormSPSony4();
-            int i = Integer.parseInt(txtSoLuongConSony4.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony4.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3955,7 +3937,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony3();
             SanPhamModel daoSP1 = getFormSPSony3();
-            int i = Integer.parseInt(txtSoLuongConSony3.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony3.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -3978,7 +3960,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony2();
             SanPhamModel daoSP1 = getFormSPSony2();
-            int i = Integer.parseInt(txtSoLuongConSony2.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony2.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -4002,7 +3984,7 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony1();
             SanPhamModel daoSP1 = getFormSPSony1();
-            int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
+            int i = Integer.parseInt(txtSoLuongConSony1.getText().replace(",","")) - SoLuong.getSoLuong();
             if (i >= 0) {
                 daoSP.updateSL(daoSP1);
                 daoDatSPCT.insert(model);
@@ -4755,7 +4737,6 @@ public class DatHang1 extends javax.swing.JPanel {
         btnDatHang.setEnabled(true);
         btnXoaSP.setEnabled(true);
         btnThemDatHang.setEnabled(true);
-        btnXoaTatCa.setEnabled(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_button10ActionPerformed
 
@@ -5075,271 +5056,271 @@ public class DatHang1 extends javax.swing.JPanel {
     DatSPCTModel getFormThemIPhone1() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone1.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone1.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone1.getText());
         System.out.println("Gia" + txtGiaIphone1.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone1.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone1.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone2() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone2.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone2.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone2.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone2.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone3() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone3.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone3.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone3.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone3.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone4() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone4.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone4.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone4.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone4.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone5() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone5.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone5.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone5.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone5.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone6() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone6.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone6.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone6.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone6.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone7() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone7.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone7.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone7.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone7.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone8() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone8.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone8.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone8.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone8.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemIPhone9() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone9.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone9.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaIphone9.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone9.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone9.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony1() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy1.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy1.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony1.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy1.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy1.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony2() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony2.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy2.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy2.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony3() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony3.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy3.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy3.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony4() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony4.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy4.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy4.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony5() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony5.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy5.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy5.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony6() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText().replace("", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony6.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy6.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy6.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony7() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony7.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy7.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy7.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony8() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony8.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy8.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy8.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSony9() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy9.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy9.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSony9.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy9.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy9.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung1() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung1.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung1.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung1.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung1.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung1.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung2() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung2.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung2.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung2.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung2.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung3() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung3.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung3.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung3.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung3.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung4() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung4.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung4.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung4.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung4.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung5() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung5.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung5.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung5.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung5.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung6() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung6.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung6.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung6.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung6.getText().replace(",","")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung7() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung7.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung7.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung7.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung7.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung8() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung8.getText().replace(",","")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung8.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung8.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung8.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     DatSPCTModel getFormThemSamsung9() {
         DatSPCTModel cd = new DatSPCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung9.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung9.getText().replace(",", "")));
         cd.setMaDH(txtMaDatHang.getText());
         cd.setMaSP(txtMaSamSung9.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -5378,7 +5359,6 @@ public class DatHang1 extends javax.swing.JPanel {
     private com.DuAn1.swing0.button0 btnLamMoi;
     private com.DuAn1.swing0.button0 btnThemDatHang;
     private com.DuAn1.swing0.button0 btnXoaSP;
-    private com.DuAn1.swing0.button0 btnXoaTatCa;
     private com.DuAn1.swing0.button0 button10;
     private com.DuAn1.swing0.button0 button3;
     private com.DuAn1.swing0.button0 button9;

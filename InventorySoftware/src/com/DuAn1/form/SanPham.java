@@ -538,6 +538,7 @@ public class SanPham extends javax.swing.JPanel {
             filltable();
             clear();
             DialogHelper.alert(this, "Xóa thành công");
+            TuDongTangMa();
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }

@@ -76,9 +76,9 @@ public class HoaDonCTDAO {
         String sql = "DELETE HOADONCT WHERE MaSP = ? and MaHD= ?";
         JdbcHelper.executeUpdate(sql, mahd, MaSP);
     }
-    public void XoaTatCa(String MaDH) {
-        String sql = "DELETE HOADONCT WHERE MaHD = ?";
-        JdbcHelper.executeUpdate(sql, MaDH);
+    public void XoaTatCa(String MaDH,String MaSP) {
+        String sql = "DELETE HOADONCT WHERE MaHD = ? and MaSP= ?";
+        JdbcHelper.executeUpdate(sql, MaDH,MaSP);
     }
 
     public List<HoaDonCTModel> select(String sql, Object... args) {
