@@ -6,10 +6,12 @@ package com.DuAn1.form;
 
 import com.DuAn1.Dao.BaoHanhCTDAO;
 import com.DuAn1.Dao.HoaDonCTDAO;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.BaoHanhCTModel;
 import com.DuAn1.Model.HoaDonCTModel;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +24,7 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
 
     DefaultTableModel model;
     HoaDonCTDAO bhctdao = new HoaDonCTDAO();
+    ThongKeDao ThongKeDao = new ThongKeDao();
     public static String MaHDChiTietBaoHanh;
     public static String MaSPChiTietBaoHanh;
     public static String SoLuong;
@@ -83,6 +86,7 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
         tblBH = new javaswingdev.swing.table.Table();
         button2 = new com.DuAn1.Swing.Button();
         button3 = new com.DuAn1.Swing.Button();
+        button4 = new com.DuAn1.Swing.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -128,16 +132,25 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
             }
         });
 
+        button4.setText("Gop san pham");
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(241, 241, 241)
+                .addContainerGap(98, Short.MAX_VALUE)
+                .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(91, 91, 91)
                 .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addGap(186, 186, 186))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -150,7 +163,8 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
                 .addContainerGap(392, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,21 +196,21 @@ public class ThongTinSPDaMua extends javax.swing.JDialog {
 
         //        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblBHMouseClicked
-int SoLuong1=0;
+    int SoLuong1 = 0;
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
 
         int row = tblBH.getSelectedRow();
         String SoLuong0 = String.valueOf(tblBH.getValueAt(row, 1));
         SoLuong0 = SoLuong0.replace(".0", "");
-         SoLuong1 = Integer.parseInt(SoLuong0.trim());
+        SoLuong1 = Integer.parseInt(SoLuong0.trim());
         HoaDonCTModel model1 = getForm();
         String MaSP = String.valueOf(tblBH.getValueAt(row, 0));
         String MaHD = String.valueOf(tblBH.getValueAt(row, 2));
         HoaDonCTModel hoadonThem = getForm1();
         bhctdao.update(hoadonThem);
-        
-        for (int i = 0; i < SoLuong1 ; i++) {
+
+        for (int i = 0; i < SoLuong1; i++) {
 
             bhctdao.insert(model1);
         }
@@ -212,7 +226,8 @@ int SoLuong1=0;
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
-        }SoLuong1=0;
+        }
+        SoLuong1 = 0;
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
@@ -227,6 +242,30 @@ int SoLuong1=0;
         ThongTinSPDaMua.setMaHDChiTietBaoHanh(mahd);
         dispose();
     }//GEN-LAST:event_button3ActionPerformed
+
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        // TODO add your handling code here:
+        HoaDonCTModel hoadonThem = getForm2();
+          int chon = tblBH.getSelectedRow();
+         String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
+        String MaHD = String.valueOf(tblBH.getValueAt(chon, 2));
+        bhctdao.deleteBaoHanh1(MaSP, MaHD);
+        bhctdao.insert(hoadonThem);
+         model.setRowCount(0);
+        try {
+            List<HoaDonCTModel> list = bhctdao.selectKhDaMuaSp(KhachHangBaoHanh.getMaKH());
+            for (HoaDonCTModel bhct : list) {
+               
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                Object[] row1 = new Object[]{bhct.getMaSP(), bhct.getSoLuong(), bhct.getMaHD(), df.format(bhct.getGia()), df.format(bhct.getThanhTien())};
+                model.addRow(row1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
+        SoLuong1 = 0;
+    }//GEN-LAST:event_button4ActionPerformed
     HoaDonCTModel getForm() {
         HoaDonCTModel hd = new HoaDonCTModel();
         int chon = tblBH.getSelectedRow();
@@ -246,7 +285,8 @@ int SoLuong1=0;
 
         return hd;
     }
-   HoaDonCTModel getForm1() {
+
+    HoaDonCTModel getForm1() {
         HoaDonCTModel hd = new HoaDonCTModel();
         int chon = tblBH.getSelectedRow();
         String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
@@ -255,18 +295,43 @@ int SoLuong1=0;
         String Gia = String.valueOf(tblBH.getValueAt(chon, 3));
         String ThanTien = (String) tblBH.getValueAt(chon, 4);
         hd.setMaSP(MaSP.trim());
-       String sl= JOptionPane.showInputDialog("nhap so luong");
+        String sl = JOptionPane.showInputDialog("nhap so luong");
 //       sl=String.valueOf(SoLuong1-Integer.parseInt(sl));
         hd.setSoLuong(Integer.parseInt(sl));
-     
+
         hd.setMaHD(MaHD.trim());
         hd.setGia(Double.parseDouble(Gia.replace(",", "")));
         if (ThanTien != null) {
-            hd.setThanhTien(Double.parseDouble(ThanTien.replace(",", "")) /SoLuong* Integer.parseInt(sl));
+            hd.setThanhTien(Double.parseDouble(ThanTien.replace(",", "")) / SoLuong * Integer.parseInt(sl));
         }
-           SoLuong1=SoLuong1-Integer.parseInt(sl);
+        SoLuong1 = SoLuong1 - Integer.parseInt(sl);
         return hd;
     }
+
+    HoaDonCTModel getForm2() {
+        HoaDonCTModel hd = new HoaDonCTModel();
+        int chon = tblBH.getSelectedRow();
+        String MaSP = String.valueOf(tblBH.getValueAt(chon, 0));
+        String MaHD = String.valueOf(tblBH.getValueAt(chon, 2));
+
+        List<Object[]> i = ThongKeDao.getSoLuongDaMua(MaSP.trim(), MaHD.trim());
+        int tongSoLuong = Arrays.stream(i.get(0))
+                .mapToInt(obj -> (int) obj)
+                .sum();
+        String Gia = String.valueOf(tblBH.getValueAt(chon, 3));
+        String ThanTien = (String) tblBH.getValueAt(chon, 4);
+        hd.setMaSP(MaSP.trim());
+
+        hd.setSoLuong(tongSoLuong);
+        hd.setMaHD(MaHD.trim());
+        hd.setGia(Double.parseDouble(Gia.replace(",", "")));
+        if (ThanTien != null) {
+            hd.setThanhTien(Double.parseDouble(Gia.replace(",", "").trim()) *tongSoLuong);
+        }
+
+        return hd;
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -309,6 +374,7 @@ int SoLuong1=0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button button2;
     private com.DuAn1.Swing.Button button3;
+    private com.DuAn1.Swing.Button button4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javaswingdev.swing.table.Table tblBH;
