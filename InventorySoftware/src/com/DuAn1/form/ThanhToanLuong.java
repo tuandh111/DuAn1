@@ -1031,7 +1031,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);
@@ -1115,10 +1115,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         for (NhanVienModel nv : listnv) {
             if (cboMaLuong.getSelectedItem() != null) {
                 if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("QL")) {
-                    txtLuongCoBan.setText("10.000.000");
+                    txtLuongCoBan.setText("10,000,000");
                 }
                 if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
-                    txtLuongCoBan.setText("6.000.000");
+                    txtLuongCoBan.setText("6,000,000");
                 } 
 //                else {
 //                    txtLuongCoBan.setText("3,000,000");

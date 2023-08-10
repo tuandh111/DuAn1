@@ -4,6 +4,7 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Dao.DatSPCTDAO;
 import com.DuAn1.Dao.HoaDonCTDAO;
 import com.DuAn1.Dao.HoaDonDAO;
 import com.DuAn1.Dao.KhachHangDAO;
@@ -55,6 +56,7 @@ public class HoaDon extends javax.swing.JPanel {
     HoaDonCTDAO HDCTDao = new HoaDonCTDAO();
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     DefaultTableModel tblModel;
+        DatSPCTDAO daoDatSPCT = new DatSPCTDAO();
     public static String ma = "";
     public static String hoten = "";
     public static String soLuong = "";
@@ -387,7 +389,237 @@ public class HoaDon extends javax.swing.JPanel {
 
         }
     }
+    SanPhamModel getFormSPSony1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony1.getText());
+        return cd;
+    }
 
+    SanPhamModel getFormSPSony2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone9.getText());
+        return cd;
+    }
+       SanPhamModel getFormCapNhatLaiSL() {
+        SanPhamModel cd = new SanPhamModel();
+        List<SanPhamModel> listSP = daoSP.select();
+        int chon = tblHoadon.getSelectedRow();
+        String maSP = (String) tblHoadon.getValueAt(chon, 0);
+        String SoLuongSPBang = String.valueOf(tblHoadon.getValueAt(chon, 1));
+        for (SanPhamModel sanPhamModel : listSP) {
+            if (sanPhamModel.getMaSP().trim().equals(maSP.trim())) {
+                int i = sanPhamModel.getSoLuong() + Integer.parseInt(SoLuongSPBang);
+                cd.setSoLuong(i);
+                cd.setMaSP(maSP);
+            }
+        }
+
+        return cd;
+    }
     void Them() {
         try {
             if (Double.parseDouble(txtTienkhach.getText()) < 0) {

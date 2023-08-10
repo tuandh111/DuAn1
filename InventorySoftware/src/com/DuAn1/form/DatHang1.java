@@ -2117,21 +2117,21 @@ public class DatHang1 extends javax.swing.JPanel {
             lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lbIphone7Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtGiaIphone17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtMaIphone7)
-                        .addComponent(txtTenIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMaIphone7)
+                    .addComponent(txtTenIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbIphone7Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAdd8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHinhAnhIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(lbIphone7Layout.createSequentialGroup()
                         .addComponent(txtSoLuongConIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtGiaIphone7, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtGiaIphone7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtGiaIphone17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(13, 13, 13))
             .addGroup(lbIphone7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(lbIphone7Layout.createSequentialGroup()
@@ -3608,7 +3608,7 @@ public class DatHang1 extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1052, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -3819,9 +3819,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony9();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony9();
+            int i = Integer.parseInt(txtSoLuongConSony9.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony9.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3834,9 +3841,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony8();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony8();
+            int i = Integer.parseInt(txtSoLuongConSony8.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony8.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3849,9 +3863,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony7();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony7();
+            int i = Integer.parseInt(txtSoLuongConSony7.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony7.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3865,9 +3886,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony6();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony6();
+            int i = Integer.parseInt(txtSoLuongConSony6.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony6.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3881,9 +3909,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony5();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony5();
+            int i = Integer.parseInt(txtSoLuongConSony5.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony5.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3896,9 +3931,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony4();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony4();
+            int i = Integer.parseInt(txtSoLuongConSony4.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony4.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            };
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3912,9 +3954,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony3();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony3();
+            int i = Integer.parseInt(txtSoLuongConSony3.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony3.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3928,9 +3977,17 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSony2();
+            SanPhamModel daoSP1 = getFormSPSony2();
+            int i = Integer.parseInt(txtSoLuongConSony2.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony2.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
 
-            daoDatSPCT.insert(model);
-            filltable();
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3945,22 +4002,252 @@ public class DatHang1 extends javax.swing.JPanel {
         try {
             DatSPCTModel model = getFormThemSony1();
             SanPhamModel daoSP1 = getFormSPSony1();
+            int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
 
-            daoDatSPCT.insert(model);
-            filltable();
-            daoSP.updateSL(daoSP1);
-            txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
         }
 
     }//GEN-LAST:event_btnAdd1ActionPerformed
+    SanPhamModel getFormCapNhatLaiSL() {
+        SanPhamModel cd = new SanPhamModel();
+        List<SanPhamModel> listSP = daoSP.select();
+        int chon = tblUser.getSelectedRow();
+        String maSP = (String) tblUser.getValueAt(chon, 1);
+        String SoLuongSPBang = String.valueOf(tblUser.getValueAt(chon, 2));
+        for (SanPhamModel sanPhamModel : listSP) {
+            if (sanPhamModel.getMaSP().trim().equals(maSP.trim())) {
+                int i = sanPhamModel.getSoLuong() + Integer.parseInt(SoLuongSPBang);
+                cd.setSoLuong(i);
+                cd.setMaSP(maSP);
+            }
+        }
+
+        return cd;
+    }
+
     SanPhamModel getFormSPSony1() {
         SanPhamModel cd = new SanPhamModel();
         int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
-            cd.setSoLuong(i);
-            cd.setMaSP(txtMaSony1.getText());
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone9.getText());
         return cd;
     }
     private void txtDonGiaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtDonGiaCaretUpdate
@@ -3978,9 +4265,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone2();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone2();
+            int i = Integer.parseInt(txtSoLuongConIphone2.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone2.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            };
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -3993,9 +4287,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone3();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone3();
+            int i = Integer.parseInt(txtSoLuongConIphone3.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone3.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4009,10 +4310,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone4();
-
-            daoDatSPCT.insert(model);
-            filltable();
-            DialogHelper.alert(this, "Thêm sản phẩm thành công");
+            SanPhamModel daoSP1 = getFormSPSIphone4();
+            int i = Integer.parseInt(txtSoLuongConIphone4.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone4.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4025,9 +4332,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone5();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone5();
+            int i = Integer.parseInt(txtSoLuongConIphone5.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone5.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4040,9 +4354,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone6();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone6();
+            int i = Integer.parseInt(txtSoLuongConIphone6.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone6.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4055,9 +4376,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone7();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone7();
+            int i = Integer.parseInt(txtSoLuongConIphone7.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone7.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4070,9 +4398,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone8();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone8();
+            int i = Integer.parseInt(txtSoLuongConIphone8.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone8.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4085,9 +4420,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemIPhone9();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone9();
+            int i = Integer.parseInt(txtSoLuongConIphone9.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone9.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4101,9 +4443,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung1();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung1();
+            int i = Integer.parseInt(txtSoLuongConSamSung1.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung1.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4116,9 +4465,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung2();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung2();
+            int i = Integer.parseInt(txtSoLuongConSamSung2.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung2.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4131,9 +4487,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung3();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung3();
+            int i = Integer.parseInt(txtSoLuongConSamSung3.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung3.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4146,9 +4509,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung4();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung4();
+            int i = Integer.parseInt(txtSoLuongConSamSung4.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung4.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4161,9 +4531,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung5();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung5();
+            int i = Integer.parseInt(txtSoLuongConSamSung5.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung5.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4176,9 +4553,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung6();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung6();
+            int i = Integer.parseInt(txtSoLuongConSamSung6.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung6.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4191,9 +4575,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung7();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung7();
+            int i = Integer.parseInt(txtSoLuongConSamSung7.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung7.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4206,9 +4597,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung8();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung8();
+            int i = Integer.parseInt(txtSoLuongConSamSung8.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung8.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4221,9 +4619,16 @@ public class DatHang1 extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             DatSPCTModel model = getFormThemSamsung9();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung9();
+            int i = Integer.parseInt(txtSoLuongConSamSung9.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConSamSung9.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4254,11 +4659,14 @@ public class DatHang1 extends javax.swing.JPanel {
             return;
         }
         String maSP = (String) tblUser.getValueAt(chon, 1);
+        SanPhamModel daoSP1 = getFormCapNhatLaiSL();
+        daoSP.updateSL(daoSP1);
         try {
             daoDatSPCT.Xoa(txtMaDatHang.getText(), maSP);
 
             filltable();
             com.DuAn1.Helper.DialogHelper.alert(this, "Xóa sản phẩm thành công");
+            this.LoadSP(daoSP.select());
         } catch (Exception e) {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
@@ -4334,12 +4742,11 @@ public class DatHang1 extends javax.swing.JPanel {
     private void button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button10ActionPerformed
         DanhSachDH danhSach = new DanhSachDH(com.DuAn1.main.Main.getMain(), true);
         danhSach.setVisible(true);
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         txtMaDatHang.setText(DanhSachDH.getName1());
         txtSoLuong.setText(String.valueOf(DanhSachDH.getSoLuong()));
-        txtDonGia.setText(String.format("%.0f", DanhSachDH.getDonGia()));
-//          DecimalFormat df = new DecimalFormat("#,##0.##");
-        txtTongTien.setText(String.format("%.1f", DanhSachDH.getTongTien()));
-        DecimalFormat df = new DecimalFormat("#,##0.##");
+        txtDonGia.setText(df.format(DanhSachDH.getDonGia()));
+        txtTongTien.setText(df.format(DanhSachDH.getTongTien()));
         txtTongTien.setText(df.format(DanhSachDH.getTongTien()));
         txtNgayXuat.setText(DanhSachDH.getNgay());
         txtSoDienThoai.setText(DanhSachDH.getSDT());
@@ -4649,9 +5056,16 @@ public class DatHang1 extends javax.swing.JPanel {
     public void themSPCT() {
         try {
             DatSPCTModel model = getFormThemIPhone1();
-
-            daoDatSPCT.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone1();
+            int i = Integer.parseInt(txtSoLuongConIphone1.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                daoDatSPCT.insert(model);
+                filltable();
+                txtSoLuongConIphone1.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4928,6 +5342,7 @@ public class DatHang1 extends javax.swing.JPanel {
         cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText()) * SoLuong.getSoLuong());
         return cd;
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private swing.PanelShadow LbSony1;
