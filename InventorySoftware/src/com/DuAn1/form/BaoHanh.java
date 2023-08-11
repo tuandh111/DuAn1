@@ -887,6 +887,7 @@ public class BaoHanh extends javax.swing.JPanel {
             }
         });
 
+        txtMaBH.setEnabled(false);
         txtMaBH.setLabelText("Mã bào hành");
         txtMaBH.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -1105,7 +1106,7 @@ public class BaoHanh extends javax.swing.JPanel {
                     .addComponent(txtKhachhang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtemei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                .addGap(70, 70, 70)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNgayHetHan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNgayBaoHanh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3927,6 +3928,7 @@ public class BaoHanh extends javax.swing.JPanel {
 //        String formatted = current.format(formatter);
 //        txtNgayXuat.setText(formatted);
         txtMoTa.setText("");
+        txtNgayHetHan.setEnabled(true);
     }
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
@@ -3946,7 +3948,7 @@ public class BaoHanh extends javax.swing.JPanel {
         txtemei.setText(DanhSachBH1.getSoEmei().trim());
         txtNgayBaoHanh.setText(DanhSachBH1.getNgayBH());
         txtNgayHetHan.setText(DanhSachBH1.getNgayHH());
-
+        txtNgayHetHan.setEnabled(false);
         if (DanhSachBH1.getGhiChu() != null) {
             txtMoTa.setText(DanhSachBH1.getGhiChu());
         }
@@ -4960,6 +4962,13 @@ public class BaoHanh extends javax.swing.JPanel {
         }
         if (txtNgayHetHan.getText().equals("")) {
             DialogHelper.alert(this, "Hãy chọn ngày hết hạn");
+            return false;
+        }
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formatted = current.format(formatter);
+        if(txtNgayHetHan.getText().compareTo(formatted)<0){
+            DialogHelper.alert(this,"Ngày bào hành da het han");
             return false;
         }
         if (txtMoTa.getText().equals("")) {

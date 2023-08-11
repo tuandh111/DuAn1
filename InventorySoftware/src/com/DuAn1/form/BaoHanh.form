@@ -217,7 +217,7 @@
                           <Component id="txtemei" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="button9" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtNgayHetHan" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNgayBaoHanh" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -255,6 +255,7 @@
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtMaBH">
               <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
                 <Property name="labelText" type="java.lang.String" value="M&#xe3; b&#xe0;o h&#xe0;nh"/>
               </Properties>
               <Events>
