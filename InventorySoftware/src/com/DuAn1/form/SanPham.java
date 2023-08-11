@@ -295,6 +295,7 @@ public class SanPham extends javax.swing.JPanel {
         dt.setRam((String) cboRam.getSelectedItem());
         return dt;
     }
+    int kiemSL = 0;
 
     void setFormSP(SanPhamModel sp) {
         txtMaSP.setText(sp.getMaSP());
@@ -332,6 +333,12 @@ public class SanPham extends javax.swing.JPanel {
             Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
         }
         txtNoiNhap.setText(sp.getNoiNhap());
+        if (sp.getSoLuong() == 0) {
+            DialogHelper.alert(this, "So luong san pham nay da het");
+            kiemSL = 1;
+        } else {
+            kiemSL = 0;
+        }
         txtSoLuong.setValue(sp.getSoLuong());
         if (sp.getHinh() != null) {
             txtHinhAnh.setToolTipText(sp.getHinh());
@@ -617,6 +624,10 @@ public class SanPham extends javax.swing.JPanel {
         int chon = tblUser.getSelectedRow();
         if (chon < 0) {
             DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            return;
+        }
+        if (kiemSL == 1) {
+            DialogHelper.alert(this, "Hay xoa san pham hoac cap nhat lai so luong san pham nay");
             return;
         }
         if (checkForm() == false) {
