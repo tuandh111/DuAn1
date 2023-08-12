@@ -91,7 +91,7 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel_SoftZyd.setVisible(true);
         try {
 
-            UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
+//            UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
 
         } catch (Exception ex) {
             System.err.println(ex);

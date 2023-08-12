@@ -212,7 +212,7 @@ public class KhachHangThem extends javax.swing.JDialog {
                 txtHinhAnh2MouseClicked(evt);
             }
         });
-        txtHinh2.add(txtHinhAnh2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 180));
+        txtHinh2.add(txtHinhAnh2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 180));
 
         cboGioitinh.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nam", "Nữ" }));
         cboGioitinh.setSelectedIndex(-1);
@@ -233,7 +233,7 @@ public class KhachHangThem extends javax.swing.JDialog {
                         .addGap(447, 447, 447)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(375, 375, 375)
@@ -260,8 +260,8 @@ public class KhachHangThem extends javax.swing.JDialog {
                                         .addGap(18, 18, 18)
                                         .addComponent(txtSdt, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtHinh2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                                .addComponent(txtHinh2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,7 +297,7 @@ public class KhachHangThem extends javax.swing.JDialog {
                 .addGap(304, 304, 304))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

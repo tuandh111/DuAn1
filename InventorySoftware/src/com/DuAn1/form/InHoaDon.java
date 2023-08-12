@@ -66,7 +66,7 @@ public class InHoaDon extends javax.swing.JDialog {
       for (HoaDonCTModel hoaDonCTModel : list) {
           gia+=hoaDonCTModel.getGia();
           soluong+=hoaDonCTModel.getSoLuong();
-         name=name+hoaDonCTModel.getMaHD()+"         "+hoaDonCTModel.getMaSP()+"          "+df.format(hoaDonCTModel.getGia())+" VND"+"          "+hoaDonCTModel.getSoLuong()+"             "+df.format(hoaDonCTModel.getThanhTien())+" VND"+"\n";
+         name=name+hoaDonCTModel.getMaHD()+"         "+hoaDonCTModel.getMaSP()+"          "+df.format(hoaDonCTModel.getGia())+" VND"+"     "+hoaDonCTModel.getSoLuong()+" Chiec"+"           "+df.format(hoaDonCTModel.getThanhTien())+" VND"+"\n";
          tongTien+=hoaDonCTModel.getThanhTien();
       }
       
@@ -79,7 +79,7 @@ public class InHoaDon extends javax.swing.JDialog {
                       + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
                       + "                                                                                                                 \n"
                       + "                                                                                                                   \n"
-                      +kh.getTenKH()+"                                                                                        "+ShareHelper.USER.getHoTen()
+                      +kh.getTenKH()+"                                                                                     "+ShareHelper.USER.getHoTen()
                       + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
   }
     /**
