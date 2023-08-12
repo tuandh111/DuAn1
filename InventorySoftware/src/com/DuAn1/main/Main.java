@@ -79,11 +79,10 @@ public class Main extends javax.swing.JFrame {
         menu.addEvent(new EventMenuSelected() {
             @Override
             public void menuSelected(int menuIndex, int subMenuIndex) {
-                System.out.println("Menu Index : " + menuIndex + " SubMenu Index " + subMenuIndex);
                 if (menuIndex == 0) {
                     main.showForm(new Form_Home());
                 } else if (menuIndex == 1) {
-                    if (ShareHelper.USER.getVaiTro().equals("QL")) {
+                    if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
                         if (subMenuIndex == 0) {
                             main.showForm(new com.DuAn1.MainAn.MainAn());
                         } else if (subMenuIndex == 7) {
@@ -109,13 +108,13 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new SanPham());
                     } else if (subMenuIndex == 1) {
-                        if (ShareHelper.USER.getVaiTro().equals("QL")) {
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
                             main.showForm(new DongMay());
                         } else {
                             DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban khong phai la quan li nên khong co quyen xem dong may");
                         }
                     } else if (subMenuIndex == 2) {
-                        if (ShareHelper.USER.getVaiTro().equals("QL")) {
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
                             main.showForm(new DaXoaSP());
                         } else {
                             DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban khong phai la quan li nên khong co quyen xem da xoa");
@@ -125,7 +124,7 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) {
                         main.showForm(new DatHang1());
                     } else if (subMenuIndex == 1) {
-                        if (ShareHelper.USER.getVaiTro().equals("QL")) {
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
                             main.showForm(new DaXoa());
                         } else {
                             DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban khong phai la quan li nên khong co quyen xem da xoa");
@@ -141,24 +140,36 @@ public class Main extends javax.swing.JFrame {
                     main.showForm(new GiamGia());
                 } else if (menuIndex == 6) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new NhanVien());
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
+                            main.showForm(new NhanVien());
+                        } else {
+                            DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban la nhan vien khong co quyen xem nhan vien");
+                        }
                     } else if (subMenuIndex == 1) {
-                        main.showForm(new VaiTro());
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
+                            main.showForm(new VaiTro());
+                        } else {
+                            DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban la nhan vien khong co quyen xem vai tro");
+                        }
                     } else if (subMenuIndex == 2) {
-                        main.showForm(new DaXoa());
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
+                            main.showForm(new DaXoa());
+                        } else {
+                            DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban khong phai la quan li nên khong co quyen xem da xoa");
+                        }
                     }
                 } else if (menuIndex == 7) {
                     if (subMenuIndex == 0) {
                         main.showForm(new KhachHang());
                     } else if (subMenuIndex == 1) {
-                        if (ShareHelper.USER.getVaiTro().equals("QL")) {
+                        if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
                             main.showForm(new DaXoaKH());
                         } else {
                             DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban khong phai la quan li nên khong co quyen xem da xoa");
                         }
                     }
                 } else if (menuIndex == 8) {
-                    if (ShareHelper.USER.getVaiTro().equals("QL")) {
+                    if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
                         main.showForm(new ThanhToanLuong());
                     } else {
                         DialogHelper.alert(com.DuAn1.main.Main.getMain(), "Ban khong phai la quan li nên khong co quyen thanh toan luong");

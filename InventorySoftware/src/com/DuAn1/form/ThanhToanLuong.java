@@ -341,7 +341,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã lương", "Số ngày làm ", "Lương cơ bản", "Ngày vào CTY", "Số giờ tăng ca ", "Lương tăng ca ", "Khoảng trừ", "Tổng tiền ", "Trạng thái "
+                "Mã lương", "Số ngày làm ", "Lương cơ bản", "Ngày thanh toan", "Số giờ tăng ca ", "Lương tăng ca ", "Khoảng trừ", "Tổng tiền ", "Trạng thái "
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -462,7 +462,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
-        txtNgayVaoCTY.setLabelText("Ngày vào CTY");
+        txtNgayVaoCTY.setLabelText("Ngay thanh toan");
         txtNgayVaoCTY.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtNgayVaoCTYMouseClicked(evt);
@@ -964,6 +964,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             thaotacdao.insert(model);
             DialogHelper.alert(this, "Cập nhật thành công");
             LoadCBOMaLuong();
+            clearForm();
         } catch (Exception e) {
             DialogHelper.alert(this, "Cập nhật thất bại");
             e.printStackTrace();
@@ -1119,7 +1120,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 }
                 if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
                     txtLuongCoBan.setText("6,000,000");
-                } 
+                }
 //                else {
 //                    txtLuongCoBan.setText("3,000,000");
 //                }
