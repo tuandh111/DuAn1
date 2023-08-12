@@ -46,6 +46,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
         tblThanhToanLuong = new com.raven.swing.table.Table();
         jLabel1 = new javax.swing.JLabel();
         txtLuong = new javax.swing.JLabel();
+        cboVaitro1 = new com.DuAn1.Swing.Combobox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -68,7 +69,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã lương", "Số ngày làm ", "Lương cơ bản", "Ngày thanh toan", "Số giờ tăng ca ", "Lương tăng ca ", "Khoảng trừ", "Tổng tiền ", "Trạng thái "
+                "Mã nhan vien", "Số ngày làm ", "Lương cơ bản", "Ngày thanh toan", "Số giờ tăng ca ", "Lương tăng ca ", "Khoảng trừ", "Tổng tiền ", "Trạng thái "
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -96,17 +97,26 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
         txtLuong.setForeground(new java.awt.Color(255, 51, 51));
         txtLuong.setText("0");
 
+        cboVaitro1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2021", "2022", "2023" }));
+        cboVaitro1.setSelectedIndex(-1);
+        cboVaitro1.setLabeText("Chon nam");
+        cboVaitro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboVaitro1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addComponent(cboVaitro1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
                         .addComponent(cboVaitro, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -121,7 +131,9 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cboVaitro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboVaitro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboVaitro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(104, 104, 104)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
@@ -154,13 +166,18 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
     DefaultTableModel model;
     private void cboVaitroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboVaitroActionPerformed
         // TODO add your handling code here:
+        if(cboVaitro1.getSelectedItem()==null){
+            DialogHelper.alert(this,"Ban chua chon nam");
+            return;
+        }
         String LayThang = (String) cboVaitro.getSelectedItem();
         String so = LayThang.replace("Tháng", "");
+        String layNam = (String) cboVaitro1.getSelectedItem();
         model = (DefaultTableModel) tblThanhToanLuong.getModel();
         model.setRowCount(0);
         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
-            List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()), ShareHelper.USER.getMaNV().trim());
+            List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()),Integer.parseInt(layNam), ShareHelper.USER.getMaNV().trim());
             if (list.size() > 0) {
                 for (ThanhToanLuongModel ttl : list) {
                     String dateString = ttl.getNgayVaoCTy();
@@ -176,6 +193,8 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                 if (Luong != null) {
                     txtLuong.setText(Luong);
                 }
+            }else{
+                DialogHelper.alert(this, "Chua co luong trong thang nay");
             }
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -195,6 +214,10 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
         //            this.edit();
         //        }
     }//GEN-LAST:event_tblThanhToanLuongMousePressed
+
+    private void cboVaitro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboVaitro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboVaitro1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,6 +263,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Combobox cboVaitro;
+    private com.DuAn1.Swing.Combobox cboVaitro1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

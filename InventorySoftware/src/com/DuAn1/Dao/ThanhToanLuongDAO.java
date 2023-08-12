@@ -93,10 +93,10 @@ public class ThanhToanLuongDAO {
         return select(sql, "%" + maLuong + "%");
     }
 
-    public List<ThanhToanLuongModel> XemThanhToanLuongCaNhan(int thang, String MaNV) {
+    public List<ThanhToanLuongModel> XemThanhToanLuongCaNhan(int thang,int nam, String MaNV) {
         String sql = "SELECT * from LUONG\n"
-                + "WHERE MONTH(NgayVaoCTY) = ? and MaLuong=?";
-        return select(sql, thang,  MaNV );
+                + "WHERE MONTH(NgayVaoCTY) = ? and Year(NgayVaoCTY) = ? and MaLuong=?";
+        return select(sql, thang,nam,  MaNV );
     }
 
     private ThanhToanLuongModel readFromResultSet(ResultSet rs) throws SQLException {
