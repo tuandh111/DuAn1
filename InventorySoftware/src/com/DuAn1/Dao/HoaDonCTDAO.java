@@ -32,12 +32,23 @@ public class HoaDonCTDAO {
         String sql = "update HOADONCT set MaSP =? ,soLuong =? ,Gia=?, ThanhTien =? where MaHD =? ";
         JdbcHelper.executeUpdate(sql,
                 model.getMaSP(),
-                model.getSoLuong(),           
+                model.getSoLuong(),
                 model.getGia(),
                 model.getThanhTien(),
                 model.getMaHD()
         );
     }
+
+    public void updateGopSP(HoaDonCTModel model) {
+        String sql = "update HOADONCT set soLuong =? , ThanhTien =? where MaHD =? and MaSP =? ";
+        JdbcHelper.executeUpdate(sql,
+                model.getSoLuong(),
+                model.getThanhTien(),
+                model.getMaHD(),
+                model.getMaSP()
+        );
+    }
+
     public List<HoaDonCTModel> selectAll(String MaHDCT) {
         String sql = "SELECT * FROM HOADONCT WHERE MaHD = ?";
         return select(sql, MaHDCT);
@@ -56,13 +67,18 @@ public class HoaDonCTDAO {
         String sql = "DELETE HOADONCT WHERE MaHDCT = ?";
         JdbcHelper.executeUpdate(sql, model.getMaHD());
     }
-   public void deleteBaoHanh(String mahd , String MaSP) {
+
+    public void deleteBaoHanh(String mahd, String MaSP) {
         String sql = "DELETE HOADONCT WHERE MaHDCT = ? and MaSP= ?";
-        JdbcHelper.executeUpdate(sql, mahd,MaSP);
+        JdbcHelper.executeUpdate(sql, mahd, MaSP);
     }
-    public void XoaTatCa(String MaDH) {
-        String sql = "DELETE HOADONCT WHERE MaHD = ?";
-        JdbcHelper.executeUpdate(sql, MaDH);
+    public void deleteBaoHanh1(String mahd, String MaSP) {
+        String sql = "DELETE HOADONCT WHERE MaSP = ? and MaHD= ?";
+        JdbcHelper.executeUpdate(sql, mahd, MaSP);
+    }
+    public void XoaTatCa(String MaDH,String MaSP) {
+        String sql = "DELETE HOADONCT WHERE MaHD = ? and MaSP= ?";
+        JdbcHelper.executeUpdate(sql, MaDH,MaSP);
     }
 
     public List<HoaDonCTModel> select(String sql, Object... args) {

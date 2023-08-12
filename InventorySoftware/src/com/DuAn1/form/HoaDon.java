@@ -4,6 +4,7 @@
  */
 package com.DuAn1.form;
 
+import com.DuAn1.Dao.DatSPCTDAO;
 import com.DuAn1.Dao.HoaDonCTDAO;
 import com.DuAn1.Dao.HoaDonDAO;
 import com.DuAn1.Dao.KhachHangDAO;
@@ -55,6 +56,7 @@ public class HoaDon extends javax.swing.JPanel {
     HoaDonCTDAO HDCTDao = new HoaDonCTDAO();
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
     DefaultTableModel tblModel;
+    DatSPCTDAO daoDatSPCT = new DatSPCTDAO();
     public static String ma = "";
     public static String hoten = "";
     public static String soLuong = "";
@@ -134,7 +136,7 @@ public class HoaDon extends javax.swing.JPanel {
         lbISamSung9.setVisible(false);
         LoadSP(daoSP.select());
         txtThongBao.setVisible(false);
-          txtTienkhach.addKeyListener(new KeyAdapter() {
+        txtTienkhach.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (!txtTienkhach.getText().equals("")) {
@@ -148,6 +150,7 @@ public class HoaDon extends javax.swing.JPanel {
     }
 
     public void LoadSP(Object nv) {
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         List<SanPhamModel> list = (List<SanPhamModel>) nv;
         int i = 0;
         int j = 0;
@@ -158,7 +161,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone1.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone1.setText(df.format(sp.getGia()));
                     txtMaIphone1.setText(sp.getMaSP());
                     lbIphone1.setVisible(true);
                 }
@@ -166,7 +169,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone2.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone2.setText(df.format(sp.getGia()));
                     txtMaIphone2.setText(sp.getMaSP());
                     lbIphone2.setVisible(true);
                 }
@@ -174,7 +177,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone3.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone3.setText(df.format(sp.getGia()));
                     txtMaIphone3.setText(sp.getMaSP());
                     lbIphone3.setVisible(true);
                 }
@@ -182,7 +185,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone4.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone4.setText(df.format(sp.getGia()));
                     txtMaIphone4.setText(sp.getMaSP());
                     lbIphone4.setVisible(true);
                 }
@@ -190,7 +193,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone5.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone5.setText(df.format(sp.getGia()));
                     txtMaIphone5.setText(sp.getMaSP());
                     lbIphone5.setVisible(true);
                 }
@@ -198,7 +201,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone6.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone6.setText(df.format(sp.getGia()));
                     txtMaIphone6.setText(sp.getMaSP());
                     lbIphone6.setVisible(true);
                 }
@@ -206,7 +209,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone7.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone7.setText(df.format(sp.getGia()));
                     txtMaIphone7.setText(sp.getMaSP());
                     lbIphone7.setVisible(true);
                 }
@@ -214,7 +217,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone8.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone8.setText(df.format(sp.getGia()));
                     txtMaIphone8.setText(sp.getMaSP());
                     lbIphone8.setVisible(true);
                 }
@@ -222,7 +225,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaIphone9.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaIphone9.setText(df.format(sp.getGia()));
                     txtMaIphone9.setText(sp.getMaSP());
                     lbIphone9.setVisible(true);
                 }
@@ -236,7 +239,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung1.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung1.setText(df.format(sp.getGia()));
                     txtMaSamSung1.setText(sp.getMaSP());
                     lbISamSung1.setVisible(true);
                 }
@@ -244,7 +247,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung2.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung2.setText(df.format(sp.getGia()));
                     txtMaSamSung2.setText(sp.getMaSP());
                     lbISamSung2.setVisible(true);
                 }
@@ -252,7 +255,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung3.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung3.setText(df.format(sp.getGia()));
                     txtMaSamSung3.setText(sp.getMaSP());
                     lbISamSung3.setVisible(true);
                 }
@@ -260,7 +263,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung4.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung4.setText(df.format(sp.getGia()));
                     txtMaSamSung4.setText(sp.getMaSP());
                     lbISamSung4.setVisible(true);
                 }
@@ -268,7 +271,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung5.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung5.setText(df.format(sp.getGia()));
                     txtMaSamSung5.setText(sp.getMaSP());
                     lbISamSung5.setVisible(true);
                 }
@@ -276,7 +279,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung6.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung6.setText(df.format(sp.getGia()));
                     txtMaSamSung6.setText(sp.getMaSP());
                     lbISamSung6.setVisible(true);
                 }
@@ -284,7 +287,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung7.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung7.setText(df.format(sp.getGia()));
                     txtMaSamSung7.setText(sp.getMaSP());
                     lbISamSung7.setVisible(true);
                 }
@@ -292,7 +295,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung8.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung8.setText(df.format(sp.getGia()));
                     txtMaSamSung8.setText(sp.getMaSP());
                     lbISamSung8.setVisible(true);
                 }
@@ -300,7 +303,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSamsung9.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSamsung9.setText(df.format(sp.getGia()));
                     txtMaSamSung9.setText(sp.getMaSP());
                     lbISamSung9.setVisible(true);
                 }
@@ -314,7 +317,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy1.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy1.setText(df.format(sp.getGia()));
                     txtMaSony1.setText(sp.getMaSP());
                     LbSony1.setVisible(true);
                 }
@@ -322,7 +325,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy2.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy2.setText(df.format(sp.getGia()));
                     txtMaSony2.setText(sp.getMaSP());
                     LbSony2.setVisible(true);
                 }
@@ -330,7 +333,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy3.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy3.setText(df.format(sp.getGia()));
                     txtMaSony3.setText(sp.getMaSP());
                     LbSony3.setVisible(true);
                 }
@@ -338,7 +341,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy4.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy4.setText(df.format(sp.getGia()));
                     txtMaSony4.setText(sp.getMaSP());
                     LbSony4.setVisible(true);
                 }
@@ -346,7 +349,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy5.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy5.setText(df.format(sp.getGia()));
                     txtMaSony5.setText(sp.getMaSP());
                     LbSony5.setVisible(true);
                 }
@@ -354,7 +357,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy6.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy6.setText(df.format(sp.getGia()));
                     txtMaSony6.setText(sp.getMaSP());
                     LbSony6.setVisible(true);
                 }
@@ -362,7 +365,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy7.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy7.setText(df.format(sp.getGia()));
                     txtMaSony7.setText(sp.getMaSP());
                     LbSony7.setVisible(true);
                 }
@@ -370,7 +373,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy8.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy8.setText(df.format(sp.getGia()));
                     txtMaSony8.setText(sp.getMaSP());
                     LbSony8.setVisible(true);
                 }
@@ -378,7 +381,7 @@ public class HoaDon extends javax.swing.JPanel {
                     txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
-                    txtGiaSoNy9.setText(String.format("%.0f", sp.getGia()));
+                    txtGiaSoNy9.setText(df.format(sp.getGia()));
                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
@@ -386,6 +389,239 @@ public class HoaDon extends javax.swing.JPanel {
             }
 
         }
+    }
+
+    SanPhamModel getFormSPSony1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSony9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSony9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSony9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSamsung9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConSamSung9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaSamSung9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone1() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone1.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone1.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone2() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone2.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone2.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone3() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone3.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone3.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone4() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone4.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone4.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone5() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone5.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone5.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone6() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone6.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone6.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone7() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone7.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone7.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone8() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone8.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone8.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormSPSIphone9() {
+        SanPhamModel cd = new SanPhamModel();
+        int i = Integer.parseInt(txtSoLuongConIphone9.getText()) - SoLuong.getSoLuong();
+        cd.setSoLuong(i);
+        cd.setMaSP(txtMaIphone9.getText());
+        return cd;
+    }
+
+    SanPhamModel getFormCapNhatLaiSL() {
+        SanPhamModel cd = new SanPhamModel();
+        List<SanPhamModel> listSP = daoSP.select();
+        int chon = tblHoadon.getSelectedRow();
+        String maSP = (String) tblHoadon.getValueAt(chon, 0);
+        String SoLuongSPBang = String.valueOf(tblHoadon.getValueAt(chon, 1));
+        for (SanPhamModel sanPhamModel : listSP) {
+            if (sanPhamModel.getMaSP().trim().equals(maSP.trim())) {
+                int i = sanPhamModel.getSoLuong() + Integer.parseInt(SoLuongSPBang.replace(".0", ""));
+                cd.setSoLuong(i);
+                cd.setMaSP(maSP);
+            }
+        }
+
+        return cd;
     }
 
     void Them() {
@@ -409,9 +645,19 @@ public class HoaDon extends javax.swing.JPanel {
         try {
             HoaDonModel model = getFormTao();
             HDDao.update(model);
-            com.DuAn1.Helper.DialogHelper.alert(this, "Thêm dữ liệu thành công");
+            com.DuAn1.Helper.DialogHelper.alert(this, "Thanh toan thanh cong");
             ThaoTacModel ThaoTacModel = getFormThem();
             daoThaoTac.insert(ThaoTacModel);
+            int chon = JOptionPane.showConfirmDialog(this, "In hoa don", "Xac nhan hoa don", JOptionPane.YES_NO_OPTION);
+            if (chon == 0) {
+                HoaDon.setPhantram(txtGiamGiaTheoLoai.getText());
+                ma = txtMa.getText();
+                HoaDon.setGiamGia(txtGiamGiaTheoLoai.getText());
+                hoten = txtKhachhang.getText();
+
+                InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
+                hd.setVisible(true);
+            }
             clearForm();
         } catch (Exception e) {
             e.printStackTrace();
@@ -605,7 +851,6 @@ public class HoaDon extends javax.swing.JPanel {
         txtTongTien = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtThongBao = new javax.swing.JLabel();
-        btnInBill = new com.DuAn1.swing0.button0();
         txtConlai = new com.DuAn1.Swing.TextField();
         txtTienkhach = new com.DuAn1.Swing.TextField();
         button10 = new com.DuAn1.swing0.button0();
@@ -968,14 +1213,6 @@ public class HoaDon extends javax.swing.JPanel {
         txtThongBao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtThongBao.setForeground(new java.awt.Color(255, 0, 0));
 
-        btnInBill.setBackground(new java.awt.Color(153, 153, 255));
-        btnInBill.setText("In hóa đơn");
-        btnInBill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInBillActionPerformed(evt);
-            }
-        });
-
         txtConlai.setEditable(false);
         txtConlai.setText("0");
         txtConlai.setLabelText("Tiền còn lại");
@@ -1056,8 +1293,6 @@ public class HoaDon extends javax.swing.JPanel {
                         .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(txtTongtienLayout.createSequentialGroup()
                                 .addComponent(btnMoiHD, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addComponent(btnInBill, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnHuyHD, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(txtTongtienLayout.createSequentialGroup()
@@ -1139,8 +1374,7 @@ public class HoaDon extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(txtTongtienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMoiHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHuyHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHuyHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnThanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(578, 578, 578))
@@ -3295,14 +3529,12 @@ public class HoaDon extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(lbISamSung3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtHinhAnhSamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMaSamSung3))
+                .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAdd13, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtHinhAnhSamSung3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtMaSamSung3)))
                 .addGap(0, 18, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lbISamSung3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAdd13, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         lbISamSung3Layout.setVerticalGroup(
             lbISamSung3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3318,9 +3550,9 @@ public class HoaDon extends javax.swing.JPanel {
                     .addComponent(txtSoLuongConSamSung3)
                     .addComponent(txtGiaSamsung3)
                     .addComponent(txtGiaIphone31))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdd13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbISamSung6.setBackground(new java.awt.Color(246, 88, 88));
@@ -3890,12 +4122,12 @@ public class HoaDon extends javax.swing.JPanel {
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         DanhSachMH1 danhSach = new DanhSachMH1(com.DuAn1.main.Main.getMain(), true);
         danhSach.setVisible(true);
-         DecimalFormat df = new DecimalFormat("#,##0.##");
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         txtMa.setText(DanhSachMH.getName1());
         txtSoLuong.setText(String.valueOf(DanhSachMH.getSoLuong()));
-        txtDonGia.setText(df.format( DanhSachMH.getDonGia()));
+        txtDonGia.setText(df.format(DanhSachMH.getDonGia()));
 //          DecimalFormat df = new DecimalFormat("#,##0.##");
-        txtTongTien.setText(df.format( DanhSachMH.getTongTien()));
+        txtTongTien.setText(df.format(DanhSachMH.getTongTien()));
         txtNgayXuat.setText(DanhSachMH.getNgay());
         txtKhachhang.setText(DanhSachMH.getTen());
 //        if(DanhSachMH1.getHinhThuc().trim().equals("Tiền Mặt")){
@@ -3903,8 +4135,8 @@ public class HoaDon extends javax.swing.JPanel {
 //        }
 
         cboHinhThuc.setSelectedItem(DanhSachMH.getHinhThuc().trim());
-        txtTienkhach.setText(df.format( DanhSachMH.getTienkhach()));
-        txtConlai.setText(df.format( DanhSachMH.getTienCon()));
+        txtTienkhach.setText(df.format(DanhSachMH.getTienkhach()));
+        txtConlai.setText(df.format(DanhSachMH.getTienCon()));
         txtThongBao.setVisible(true);
         btnXoasp.setEnabled(true);
         btnThem.setEnabled(true);
@@ -3916,17 +4148,24 @@ public class HoaDon extends javax.swing.JPanel {
         Them();
 
     }//GEN-LAST:event_btnThanhtoanActionPerformed
+
     void deleteAll() {
         if (txtMa.getText().equals("")) {
-            com.tuandhpc05076.helper.DialogHelper.alert(this, "Bạn có đặt hàng nào");
+            com.tuandhpc05076.helper.DialogHelper.alert(this, "Bạn có hoa don nào");
             return;
         }
+        int chon = tblHoadon.getSelectedRow();
+        if (chon < 0) {
+            DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            return;
+        }
+        String maSP = (String) tblHoadon.getValueAt(chon, 0);
+        SanPhamModel daoSP1 = getFormCapNhatLaiSL();
+        daoSP.updateSL(daoSP1);
         try {
-            HDCTDao.XoaTatCa(txtMa.getText());
-
+            HDCTDao.XoaTatCa(txtMa.getText().trim(), maSP.trim());
             filltable();
-
-            com.DuAn1.Helper.DialogHelper.alert(this, "Xóa tất cả sản phẩm thành công");
+            this.LoadSP(daoSP.select());
         } catch (Exception e) {
             com.DuAn1.Helper.DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
@@ -4002,7 +4241,7 @@ public class HoaDon extends javax.swing.JPanel {
             txtSoLuong.setText(String.valueOf(tongSoLuong));
 //            double tongTien = Double.parseDouble(txtDonGia.getText()) * Double.parseDouble(txtSoLuong.getText());
 //             tongTien = tongTien - (tongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100);
-            TongTien=TongTien-TongTien*Double.parseDouble(txtGiamGiaTheoLoai.getText())/100;
+            TongTien = TongTien - TongTien * Double.parseDouble(txtGiamGiaTheoLoai.getText()) / 100;
             txtTongTien.setText(df.format(TongTien));
             txtTienkhach.setText(txtTienkhach.getText());
             txtConlai.setText(txtTongTien.getText());
@@ -4037,9 +4276,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony1();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony1();
+            int i = Integer.parseInt(txtSoLuongConSony1.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4052,9 +4298,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony2();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony2();
+            int i = Integer.parseInt(txtSoLuongConSony2.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony2.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4067,9 +4320,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony3();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony3();
+            int i = Integer.parseInt(txtSoLuongConSony3.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony3.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4081,9 +4341,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony4();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony4();
+            int i = Integer.parseInt(txtSoLuongConSony4.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony4.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            };
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4097,9 +4364,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony5();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony5();
+            int i = Integer.parseInt(txtSoLuongConSony5.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony5.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4112,9 +4386,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony6();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony6();
+            int i = Integer.parseInt(txtSoLuongConSony6.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony6.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4126,9 +4407,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony7();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony7();
+            int i = Integer.parseInt(txtSoLuongConSony7.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony7.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4141,9 +4429,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony8();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony8();
+            int i = Integer.parseInt(txtSoLuongConSony8.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony8.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4156,9 +4451,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSony9();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSony9();
+            int i = Integer.parseInt(txtSoLuongConSony9.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSony9.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4171,9 +4473,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone3();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone3();
+            int i = Integer.parseInt(txtSoLuongConIphone3.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone3.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4186,9 +4495,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone2();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone2();
+            int i = Integer.parseInt(txtSoLuongConIphone2.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone2.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4202,10 +4518,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone4();
-
-            HDCTDao.insert(model);
-            filltable();
-            DialogHelper.alert(this, "Thêm sản phẩm thành công");
+            SanPhamModel daoSP1 = getFormSPSIphone4();
+            int i = Integer.parseInt(txtSoLuongConIphone4.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone4.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4217,9 +4539,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone6();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone6();
+            int i = Integer.parseInt(txtSoLuongConIphone6.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone6.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4232,9 +4561,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone5();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone5();
+            int i = Integer.parseInt(txtSoLuongConIphone5.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone5.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4247,9 +4583,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone8();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone8();
+            int i = Integer.parseInt(txtSoLuongConIphone8.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone8.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4262,9 +4605,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone7();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone7();
+            int i = Integer.parseInt(txtSoLuongConIphone7.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone7.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4277,9 +4627,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemIPhone9();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone9();
+            int i = Integer.parseInt(txtSoLuongConIphone9.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone9.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4300,9 +4657,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung1();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung1();
+            int i = Integer.parseInt(txtSoLuongConSamSung1.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung1.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4314,9 +4678,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung2();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung2();
+            int i = Integer.parseInt(txtSoLuongConSamSung2.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung2.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4329,9 +4700,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung4();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung4();
+            int i = Integer.parseInt(txtSoLuongConSamSung4.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung4.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4344,9 +4722,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung3();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung3();
+            int i = Integer.parseInt(txtSoLuongConSamSung3.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung3.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4359,9 +4744,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung6();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung6();
+            int i = Integer.parseInt(txtSoLuongConSamSung6.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung6.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4374,9 +4766,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung5();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung5();
+            int i = Integer.parseInt(txtSoLuongConSamSung5.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung5.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4389,9 +4788,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung7();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung7();
+            int i = Integer.parseInt(txtSoLuongConSamSung7.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung7.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4404,9 +4810,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung8();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung8();
+            int i = Integer.parseInt(txtSoLuongConSamSung8.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung8.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4419,9 +4832,16 @@ public class HoaDon extends javax.swing.JPanel {
         sl.setVisible(true);
         try {
             HoaDonCTModel model = getFormThemSamsung9();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSamsung9();
+            int i = Integer.parseInt(txtSoLuongConSamSung9.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConSamSung9.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4442,18 +4862,6 @@ public class HoaDon extends javax.swing.JPanel {
         HoaDon.GiamGia = GiamGia;
     }
 
-    private void btnInBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInBillActionPerformed
-        HoaDon.setPhantram(txtGiamGiaTheoLoai.getText());
-        ma = txtMa.getText();
-        HoaDon.setGiamGia(txtGiamGiaTheoLoai.getText());
-        hoten = txtKhachhang.getText();
-
-        InHoaDon hd = new InHoaDon(com.DuAn1.main.Main.getMain(), true);
-        hd.setVisible(true);
-
-
-    }//GEN-LAST:event_btnInBillActionPerformed
-
     private void txtConlaiCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtConlaiCaretUpdate
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConlaiCaretUpdate
@@ -4465,7 +4873,7 @@ public class HoaDon extends javax.swing.JPanel {
         String gia = txtTongTien.getText();
         String TienKhach = txtTienkhach.getText();
         gia = gia.replace(",", "");
-        TienKhach= TienKhach.replace(",", "");
+        TienKhach = TienKhach.replace(",", "");
         DecimalFormat df = new DecimalFormat("#,##0.##");
         txtConlai.setText(df.format(Double.parseDouble(TienKhach) - Double.parseDouble(gia)));        // TODO add your handling code here:
     }//GEN-LAST:event_txtTienkhachCaretUpdate
@@ -4687,9 +5095,16 @@ public class HoaDon extends javax.swing.JPanel {
     public void themSPCT() {
         try {
             HoaDonCTModel model = getFormThemIPhone1();
-
-            HDCTDao.insert(model);
-            filltable();
+            SanPhamModel daoSP1 = getFormSPSIphone1();
+            int i = Integer.parseInt(txtSoLuongConIphone1.getText()) - SoLuong.getSoLuong();
+            if (i >= 0) {
+                daoSP.updateSL(daoSP1);
+                HDCTDao.insert(model);
+                filltable();
+                txtSoLuongConIphone1.setText(String.valueOf(daoSP1.getSoLuong()));
+            } else {
+                DialogHelper.alert(this, "Không du san pham de ban");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Lỗi thêm dữ liệu");
@@ -4699,270 +5114,270 @@ public class HoaDon extends javax.swing.JPanel {
     HoaDonCTModel getFormThemIPhone1() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone1.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone1.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone1.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone1.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone1.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone2() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone2.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone2.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone2.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone2.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone3() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone3.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone3.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone3.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone3.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone4() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone4.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone4.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone4.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone4.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone5() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone5.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone5.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone5.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone5.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone6() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone6.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone6.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone6.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone6.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone7() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone7.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone7.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone7.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone7.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone8() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone8.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone8.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone8.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone8.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemIPhone9() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaIphone9.getText()));
+        cd.setGia(Double.parseDouble(txtGiaIphone9.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaIphone9.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaIphone9.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaIphone9.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony1() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy1.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy1.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony1.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy1.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy1.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony2() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy2.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony2.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy2.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy2.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony3() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy3.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony3.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy3.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy3.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony4() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy4.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony4.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy4.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy4.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony5() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy5.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony5.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy5.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy5.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony6() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy6.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony6.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy6.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy6.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony7() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy7.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony7.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy7.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy7.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony8() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy8.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony8.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy8.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy8.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSony9() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSoNy9.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSoNy9.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSony9.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSoNy9.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSoNy9.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung1() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung1.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung1.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung1.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung1.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung1.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung2() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung2.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung2.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung2.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung2.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung2.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung3() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung3.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung3.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung3.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung3.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung3.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung4() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung4.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung4.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung4.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung4.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung4.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung5() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung5.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung5.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung5.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung5.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung5.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung6() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung6.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung6.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung6.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung6.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung6.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung7() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung7.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung7.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung7.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung7.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung7.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung8() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung8.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung8.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung8.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung8.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung8.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
     HoaDonCTModel getFormThemSamsung9() {
         HoaDonCTModel cd = new HoaDonCTModel();
         cd.setSoLuong(SoLuong.getSoLuong());
-        cd.setGia(Double.parseDouble(txtGiaSamsung9.getText()));
+        cd.setGia(Double.parseDouble(txtGiaSamsung9.getText().replace(",", "")));
         cd.setMaHD(txtMa.getText());
         cd.setMaSP(txtMaSamSung9.getText());
-        cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText()) * SoLuong.getSoLuong());
+        cd.setThanhTien(Double.parseDouble(txtGiaSamsung9.getText().replace(",", "")) * SoLuong.getSoLuong());
         return cd;
     }
 
@@ -4996,7 +5411,6 @@ public class HoaDon extends javax.swing.JPanel {
     private com.DuAn1.swing0.button0 btnAdd8;
     private com.DuAn1.swing0.button0 btnAdd9;
     private com.DuAn1.swing0.button0 btnHuyHD;
-    private com.DuAn1.swing0.button0 btnInBill;
     private com.DuAn1.swing0.button0 btnMoiHD;
     private com.DuAn1.swing0.button0 btnThanhtoan;
     private com.DuAn1.swing0.button0 btnThem;

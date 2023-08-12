@@ -287,11 +287,11 @@ public class DanhSachDH extends javax.swing.JDialog {
         String SDT = (String) tblUser.getValueAt(chon, 2);
 
         String gia = (String) tblUser.getValueAt(chon, 3);
-        gia = gia.replace(".", "");
+        gia = gia.replace(",", "");
         String donGia = String.valueOf(Double.parseDouble(gia));
 
         String tien = (String) tblUser.getValueAt(chon, 4);
-        tien = tien.replace(".", "");
+        tien = tien.replace(",", "");
         String tongtien = String.valueOf(Double.parseDouble(tien));
 
         String ThoiGian = (String) tblUser.getValueAt(chon, 5);

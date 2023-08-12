@@ -4,6 +4,7 @@
  */
 package com.DuAn1.MainAn;
 
+import com.DuAn1.Dao.ThongKeDao;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,9 @@ import java.util.List;
 import raven.chart.ModelChart;
 import com.DuAn1.test.DatabaseConnection;
 import com.DuAn1.test.ModelData;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -22,13 +26,23 @@ public class MainAn2 extends javax.swing.JPanel {
     /**
      * Creates new form MainAn2
      */
-     public MainAn2() {
+    public MainAn2() {
         initComponents();
         chart.setTitle("Doanh thu năm");
-        chart.addLegend("IPhone", Color.decode("#7b4397"), Color.decode("#dc2430"));
-        chart.addLegend("Samsung", Color.decode("#e65c00"), Color.decode("#F9D423"));
-        chart.addLegend("Sony", Color.decode("#0099F7"), Color.decode("#F11712"));
+        chart.addLegend("Doanh thu", Color.decode("#7b4397"), Color.decode("#dc2430"));
+//        chart.addLegend("Samsung", Color.decode("#e65c00"), Color.decode("#F9D423"));
+//        chart.addLegend("Sony", Color.decode("#0099F7"), Color.decode("#F11712"));
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+        String formatted = current.format(formatter);
+        int nam = Integer.parseInt(formatted);
+        DefaultComboBoxModel df = new DefaultComboBoxModel();
+        for (int i = 0; i <= nam - 2021; i++) {
+            df.addElement(2021 + i);
+        }
+        cboNhanVien.setModel(df);
         test();
+
     }
 
     private void setData() {
@@ -58,49 +72,256 @@ public class MainAn2 extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
+    ThongKeDao daoThongKe = new ThongKeDao();
 
     private void test() {
+        double Thang1 = 0;
+        double Thang2 = 0;
+        double Thang3 = 0;
+        double Thang4 = 0;
+        double Thang5 = 0;
+        double Thang6 = 0;
+        double Thang7 = 0;
+        double Thang8 = 0;
+        double Thang9 = 0;
+        double Thang10 = 0;
+        double Thang11 = 0;
+        double Thang12 = 0;
+        List<Object[]> daoThongKe1 = daoThongKe.getThongKeDoanhThuTungNamTrongTungThang(2021);
+        for (Object[] objects : daoThongKe1) {
+            if (objects[1].equals(1)) {
+                Thang1 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(2)) {
+                Thang2 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(3)) {
+                Thang3 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(4)) {
+                Thang4 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(5)) {
+                Thang5 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(6)) {
+                Thang6 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(7)) {
+                Thang7 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(8)) {
+                Thang8 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(9)) {
+                Thang9 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(10)) {
+                Thang10 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(11)) {
+                Thang11 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(12)) {
+                Thang12 = Double.parseDouble(objects[2].toString());
+            }
+        }
+
         chart.clear();
-        chart.addData(new ModelChart("Tháng 1", new double[]{500000000, 500000000, 1008757743}));
-        chart.addData(new ModelChart("Tháng 2", new double[]{600000080, 300000000, 150000000}));
-        chart.addData(new ModelChart("Tháng 3", new double[]{200765435, 509875424, 900975435}));
-        chart.addData(new ModelChart("Tháng 4", new double[]{480676467, 700964677, 1008765432}));
-        chart.addData(new ModelChart("Tháng 5", new double[]{350765456, 540987888, 500987654}));
-        chart.addData(new ModelChart("Tháng 6", new double[]{450767856, 800987777, 100998755}));
-         chart.addData(new ModelChart("Tháng 7", new double[]{60004500, 300045000, 150004400}));
-        chart.addData(new ModelChart("Tháng 8", new double[]{200765435, 509875424, 900975435}));
-        chart.addData(new ModelChart("Tháng 9", new double[]{480673567, 700964677, 100875432}));
-        chart.addData(new ModelChart("Tháng 10", new double[]{350765456, 540987888, 50087654}));
-         chart.addData(new ModelChart("Tháng 11", new double[]{60000000, 300004540, 15000000}));
-        chart.addData(new ModelChart("Tháng 12", new double[]{200765435, 509875423, 902975435}));
+        chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
+        chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
+        chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
+        chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
+        chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
+        chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
+        chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
+        chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
+        chart.addData(new ModelChart("Tháng 9", new double[]{Thang9}));
+        chart.addData(new ModelChart("Tháng 10", new double[]{Thang10}));
+        chart.addData(new ModelChart("Tháng 11", new double[]{Thang11}));
+        chart.addData(new ModelChart("Tháng 12", new double[]{Thang12}));
         chart.start();
     }
-        private void test1() {
+
+    private void test1() {
+        double Thang1 = 0;
+        double Thang2 = 0;
+        double Thang3 = 0;
+        double Thang4 = 0;
+        double Thang5 = 0;
+        double Thang6 = 0;
+        double Thang7 = 0;
+        double Thang8 = 0;
+        double Thang9 = 0;
+        double Thang10 = 0;
+        double Thang11 = 0;
+        double Thang12 = 0;
+        List<Object[]> daoThongKe1 = daoThongKe.getThongKeDoanhThuTungNamTrongTungThang(2022);
+        for (Object[] objects : daoThongKe1) {
+            if (objects[1].equals(1)) {
+                Thang1 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(2)) {
+                Thang2 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(3)) {
+                Thang3 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(4)) {
+                Thang4 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(5)) {
+                Thang5 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(6)) {
+                Thang6 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(7)) {
+                Thang7 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(8)) {
+                Thang8 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(9)) {
+                Thang9 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(10)) {
+                Thang10 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(11)) {
+                Thang11 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(12)) {
+                Thang12 = Double.parseDouble(objects[2].toString());
+            }
+        }
+
         chart.clear();
-        chart.addData(new ModelChart("Tháng 1", new double[]{50000500, 500500000, 100857743}));
-        chart.addData(new ModelChart("Tháng 2", new double[]{600005460, 300005000, 15000000}));
-        chart.addData(new ModelChart("Tháng 3", new double[]{200576535, 509857424, 900975435}));
-        chart.addData(new ModelChart("Tháng 4", new double[]{486576467, 700964677, 100865432}));
-        chart.addData(new ModelChart("Tháng 5", new double[]{355076546, 540987888, 500987654}));
-        chart.addData(new ModelChart("Tháng 6", new double[]{450576756, 800987777, 100998755}));
-         chart.addData(new ModelChart("Tháng 7", new double[]{60050500, 300045000, 15000400}));
-        chart.addData(new ModelChart("Tháng 8", new double[]{20075435, 509875424, 900975435}));
-        chart.addData(new ModelChart("Tháng 9", new double[]{48073567, 700964677, 100875432}));
-        chart.addData(new ModelChart("Tháng 10", new double[]{357565456, 540987888, 500857654}));
-         chart.addData(new ModelChart("Tháng 11", new double[]{60000050, 300004540, 15000000}));
-        chart.addData(new ModelChart("Tháng 12", new double[]{200754355, 509875235, 90975435}));
+        chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
+        chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
+        chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
+        chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
+        chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
+        chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
+        chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
+        chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
+        chart.addData(new ModelChart("Tháng 9", new double[]{Thang9}));
+        chart.addData(new ModelChart("Tháng 10", new double[]{Thang10}));
+        chart.addData(new ModelChart("Tháng 11", new double[]{Thang11}));
+        chart.addData(new ModelChart("Tháng 12", new double[]{Thang12}));
         chart.start();
     }
-            private void test2() {
+
+    private void test2() {
+        double Thang1 = 0;
+        double Thang2 = 0;
+        double Thang3 = 0;
+        double Thang4 = 0;
+        double Thang5 = 0;
+        double Thang6 = 0;
+        double Thang7 = 0;
+        double Thang8 = 0;
+        double Thang9 = 0;
+        double Thang10 = 0;
+        double Thang11 = 0;
+        double Thang12 = 0;
+        List<Object[]> daoThongKe1 = daoThongKe.getThongKeDoanhThuTungNamTrongTungThang((int) cboNhanVien.getSelectedItem());
+        for (Object[] objects : daoThongKe1) {
+            if (objects[1].equals(1)) {
+                Thang1 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(2)) {
+                Thang2 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(3)) {
+                Thang3 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(4)) {
+                Thang4 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(5)) {
+                Thang5 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(6)) {
+                Thang6 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(7)) {
+                Thang7 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(8)) {
+                Thang8 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(9)) {
+                Thang9 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(10)) {
+                Thang10 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(11)) {
+                Thang11 = Double.parseDouble(objects[2].toString());
+            }
+            if (objects[1].equals(12)) {
+                Thang12 = Double.parseDouble(objects[2].toString());
+            }
+        }
+
         chart.clear();
-        chart.addData(new ModelChart("Tháng 1", new double[]{500000000, 500000000, 1008757743}));
-        chart.addData(new ModelChart("Tháng 2", new double[]{600000043, 300000000, 150000000}));
-        chart.addData(new ModelChart("Tháng 3", new double[]{200765435, 509875424, 900975435}));
-        chart.addData(new ModelChart("Tháng 4", new double[]{480676467, 700964677, 1008765432}));
-        chart.addData(new ModelChart("Tháng 5", new double[]{350765456, 540987888, 500987654}));
-        chart.addData(new ModelChart("Tháng 6", new double[]{450767856, 800987777, 100998755}));
-         chart.addData(new ModelChart("Tháng 7", new double[]{60004500, 300045000, 150004400}));
-        chart.addData(new ModelChart("Tháng 8", new double[]{20095435, 50875424, 9097535}));
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM");
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy");
+        String formatted = current.format(formatter);
+        String formatted1 = current.format(formatter1);
+        if (Integer.parseInt(formatted1) > (int) cboNhanVien.getSelectedItem()) {
+            chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
+            chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
+            chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
+            chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
+            chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
+            chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
+            chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
+            chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
+            chart.addData(new ModelChart("Tháng 9", new double[]{Thang9}));
+            chart.addData(new ModelChart("Tháng 10", new double[]{Thang10}));
+            chart.addData(new ModelChart("Tháng 11", new double[]{Thang11}));
+            chart.addData(new ModelChart("Tháng 12", new double[]{Thang12}));
+        } else {
+            if (Integer.parseInt(formatted) > 0) {
+                chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
+            }
+            if (Integer.parseInt(formatted) > 1) {
+                chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
+            }
+            if (Integer.parseInt(formatted) > 2) {
+                chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
+            }
+            if (Integer.parseInt(formatted) > 3) {
+                chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
+            }
+            if (Integer.parseInt(formatted) > 4) {
+                chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
+            }
+            if (Integer.parseInt(formatted) > 5) {
+                chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
+            }
+            if (Integer.parseInt(formatted) > 6) {
+                chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
+            }
+            if (Integer.parseInt(formatted) > 7) {
+                chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
+            }
+            if (Integer.parseInt(formatted) > 8) {
+                chart.addData(new ModelChart("Tháng 9", new double[]{Thang9}));
+            }
+            if (Integer.parseInt(formatted) > 9) {
+                chart.addData(new ModelChart("Tháng 10", new double[]{Thang10}));
+            }
+            if (Integer.parseInt(formatted) > 10) {
+                chart.addData(new ModelChart("Tháng 11", new double[]{Thang11}));
+            }
+            if (Integer.parseInt(formatted) > 11) {
+                chart.addData(new ModelChart("Tháng 12", new double[]{Thang12}));
+            }
+        }
         chart.start();
     }
 
@@ -164,13 +385,13 @@ public class MainAn2 extends javax.swing.JPanel {
     private void cboNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboNhanVienActionPerformed
         // TODO add your handling code here:
 
-      if(cboNhanVien.getSelectedItem().equals("2021")){
-      test();
-      }else if(cboNhanVien.getSelectedItem().equals("2022")){
-          test1();
-      }else{
-          test2();
-      }
+        if (cboNhanVien.getSelectedItem().equals(2021)) {
+            test();
+        } else if (cboNhanVien.getSelectedItem().equals(2022)) {
+            test1();
+        } else {
+            test2();
+        }
     }//GEN-LAST:event_cboNhanVienActionPerformed
 
 

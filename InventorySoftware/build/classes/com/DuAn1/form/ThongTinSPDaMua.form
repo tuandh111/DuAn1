@@ -44,11 +44,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
+                  <Component id="button4" min="-2" pref="176" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                   <Component id="button2" min="-2" pref="176" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                   <Component id="button3" min="-2" pref="176" max="-2" attributes="0"/>
-                  <EmptySpace pref="318" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -66,6 +68,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="button2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="button3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="button4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
@@ -151,6 +154,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="com.DuAn1.Swing.Button" name="button4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gop san pham"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button4ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

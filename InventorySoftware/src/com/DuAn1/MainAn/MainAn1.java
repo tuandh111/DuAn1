@@ -5,6 +5,7 @@
 package com.DuAn1.MainAn;
 
 import com.DuAn1.BieuDo.ModelChart;
+import com.DuAn1.Dao.ThongKeDao;
 import java.awt.Color;
 
 /**
@@ -13,9 +14,6 @@ import java.awt.Color;
  */
 public class MainAn1 extends javax.swing.JPanel {
 
-    /**
-     * Creates new form MainAn1
-     */
     public MainAn1() {
         initComponents();
             

@@ -183,6 +183,7 @@ public class ThongKeDao {
         }
         return list;
     }
+
     public List<Object[]> getMaxMaBH() {
         List<Object[]> list = new ArrayList<>();
         try {
@@ -206,7 +207,8 @@ public class ThongKeDao {
         }
         return list;
     }
-        public List<Object[]> getlayKHDaMua() {
+
+    public List<Object[]> getlayKHDaMua() {
         List<Object[]> list = new ArrayList<>();
         try {
             ResultSet rs = null;
@@ -229,4 +231,76 @@ public class ThongKeDao {
         }
         return list;
     }
+
+    public List<Object[]> getSoLuongDaMua(String MaSP, String MaHD) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call get_total_quantity(?,?)}";
+                rs = JdbcHelper.executeQuery(sql, MaSP, MaHD);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getInt("total_quantity"),};
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
+    
+        public List<Object[]> getThongKeTungLoaiSP() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call CountProductQuantityByMonthAndType}";
+                rs = JdbcHelper.executeQuery(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getInt(1),rs.getString(2),rs.getInt(3)};
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
+  public List<Object[]> getThongKeDoanhThuTungNamTrongTungThang(int nam) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "{call dbo.ThongKeDoanhThu(?)}";
+                rs = JdbcHelper.executeQuery(sql, nam);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getInt(1),rs.getInt(2),rs.getString(3)};
+
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
+
 }

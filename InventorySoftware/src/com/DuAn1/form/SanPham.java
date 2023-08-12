@@ -244,7 +244,7 @@ public class SanPham extends javax.swing.JPanel {
             for (SanPhamModel nv : list) {
                 DecimalFormat df = new DecimalFormat("#,##0.##");
 
-                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong(), nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
+                Object[] row = new Object[]{nv.getMaSP(), nv.getTenSP(), df.format(nv.getGia()) + " VND", nv.getSoLuong()+" Chiec", nv.getMaGiamGia(), nv.isTrangThai() ? "Hoạt động" : "Không hoạt động", nv.getNgayNhap(), nv.getNoiNhap(), nv.getHinh()};
                 tblModel.addRow(row);
             }
         } catch (Exception e) {
@@ -295,6 +295,7 @@ public class SanPham extends javax.swing.JPanel {
         dt.setRam((String) cboRam.getSelectedItem());
         return dt;
     }
+    int kiemSL = 0;
 
     void setFormSP(SanPhamModel sp) {
         txtMaSP.setText(sp.getMaSP());
@@ -332,6 +333,12 @@ public class SanPham extends javax.swing.JPanel {
             Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
         }
         txtNoiNhap.setText(sp.getNoiNhap());
+        if (sp.getSoLuong() == 0) {
+            DialogHelper.alert(this, "So luong san pham nay da het");
+            kiemSL = 1;
+        } else {
+            kiemSL = 0;
+        }
         txtSoLuong.setValue(sp.getSoLuong());
         if (sp.getHinh() != null) {
             txtHinhAnh.setToolTipText(sp.getHinh());
@@ -538,6 +545,7 @@ public class SanPham extends javax.swing.JPanel {
             filltable();
             clear();
             DialogHelper.alert(this, "Xóa thành công");
+            TuDongTangMa();
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi xóa dữ liệu");
         }
@@ -616,6 +624,10 @@ public class SanPham extends javax.swing.JPanel {
         int chon = tblUser.getSelectedRow();
         if (chon < 0) {
             DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            return;
+        }
+        if (kiemSL == 1) {
+            DialogHelper.alert(this, "Hay xoa san pham hoac cap nhat lai so luong san pham nay");
             return;
         }
         if (checkForm() == false) {

@@ -156,8 +156,6 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="btnMoiHD" min="-2" pref="108" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Component id="btnInBill" min="-2" pref="108" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btnHuyHD" min="-2" pref="102" max="-2" attributes="0"/>
                                   </Group>
@@ -262,7 +260,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnMoiHD" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnHuyHD" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnInBill" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnThanhtoan" min="-2" max="-2" attributes="0"/>
@@ -426,17 +423,6 @@
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
               </Properties>
-            </Component>
-            <Component class="com.DuAn1.swing0.button0" name="btnInBill">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="99" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="In h&#xf3;a &#x111;&#x1a1;n"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInBillActionPerformed"/>
-              </Events>
             </Component>
             <Component class="com.DuAn1.Swing.TextField" name="txtConlai">
               <Properties>
@@ -4326,16 +4312,14 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtHinhAnhSamSung3" min="-2" pref="118" max="-2" attributes="0"/>
-                                      <Component id="txtMaSamSung3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="btnAdd13" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtHinhAnhSamSung3" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <Component id="txtMaSamSung3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnAdd13" min="-2" pref="118" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4354,9 +4338,9 @@
                                       <Component id="txtGiaSamsung3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtGiaIphone31" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnAdd13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnAdd13" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

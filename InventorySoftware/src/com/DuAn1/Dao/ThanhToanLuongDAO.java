@@ -57,7 +57,6 @@ public class ThanhToanLuongDAO {
         return select(sql);
     }
 
-  
     public ThanhToanLuongModel findById(String maLuong) {
         String sql = "SELECT * FROM LUONG WHERE MaLuong like ?";
         List<ThanhToanLuongModel> list = select(sql, maLuong);
@@ -92,6 +91,12 @@ public class ThanhToanLuongDAO {
     public List<ThanhToanLuongModel> LocTheoLuongCoBan(String maLuong) {
         String sql = "select* from LUONG where LuongCoBan like ?";
         return select(sql, "%" + maLuong + "%");
+    }
+
+    public List<ThanhToanLuongModel> XemThanhToanLuongCaNhan(int thang,int nam, String MaNV) {
+        String sql = "SELECT * from LUONG\n"
+                + "WHERE MONTH(NgayVaoCTY) = ? and Year(NgayVaoCTY) = ? and MaLuong=?";
+        return select(sql, thang,nam,  MaNV );
     }
 
     private ThanhToanLuongModel readFromResultSet(ResultSet rs) throws SQLException {

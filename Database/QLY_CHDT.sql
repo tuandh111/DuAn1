@@ -414,6 +414,8 @@ GROUP BY NgayXuat;
 
 END;
 go
+exec sp_thongke_doanhthu_thang
+go
 -------------
 CREATE PROCEDURE sp_thongke_doanhthu_nam
 AS
@@ -548,3 +550,55 @@ GROUP BY TenKH
 END
 GO
 execute layKHDaMua
+go
+CREATE PROCEDURE get_total_quantity
+(
+    @MaSP VARCHAR(20),
+    @MaHD VARCHAR(20)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT SUM(soluong) AS total_quantity
+    FROM HOADONCT
+    WHERE MaSP = @MaSP
+    AND MaHD = @MaHD;
+END
+EXEC get_total_quantity @MaSP = 'SP00001', @MaHD = 'HD00003';
+go
+CREATE PROCEDURE CountProductQuantityByMonthAndType
+AS
+BEGIN
+
+SELECT month(NgayNhap) AS month, LoaiSP, sum(SoLuong) AS product_quantity
+FROM SANPHAM
+GROUP BY month(NgayNhap), LoaiSP
+ORDER BY month(NgayNhap), LoaiSP;
+
+END;
+go
+CREATE PROCEDURE dbo.ThongKeDoanhThu
+@Nam INT
+AS
+BEGIN
+;WITH ThongKe AS (
+    SELECT
+        YEAR(NgayXuat) AS Nam,
+        MONTH(NgayXuat) AS Thang,
+        SUM(TongTien) AS DoanhThu
+    FROM HOADON
+    WHERE YEAR(NgayXuat) = @Nam
+    GROUP BY
+        YEAR(NgayXuat),
+        MONTH(NgayXuat)
+)
+SELECT
+    Nam,
+    Thang,
+    DoanhThu
+FROM ThongKe
+ORDER BY
+    Nam,
+    Thang;
+END;

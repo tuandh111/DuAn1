@@ -205,7 +205,7 @@ public class DanhSachMH1 extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Danh sách mua hàng");
 
-        cboThoiGian.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hôm nay", "Tuấn này", "Tháng này" }));
+        cboThoiGian.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hôm nay", "Tuan này", "Tháng này" }));
         cboThoiGian.setSelectedIndex(-1);
         cboThoiGian.setLabeText("Thời gian");
         cboThoiGian.addActionListener(new java.awt.event.ActionListener() {
@@ -339,7 +339,7 @@ DecimalFormat df = new DecimalFormat("#,##0.##");
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             }
-        }else if(cboThoiGian.getSelectedItem().equals("Tuần này")){
+        }else if(cboThoiGian.getSelectedItem().equals("Tuan này")){
             tblModel = (DefaultTableModel) tblUser.getModel();
             tblModel.setRowCount(0);
             try {

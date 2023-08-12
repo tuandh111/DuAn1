@@ -38,9 +38,9 @@ public class BaoHanhCTDAO {
         return select(sql, MaBHCT);
     }
 
-    public void XoaTatCa(String MaDH) {
-        String sql = "DELETE BAOHANHCT WHERE MaBH = ?";
-        com.DuAn1.Helper.JdbcHelper.executeUpdate(sql, MaDH);
+    public void XoaTatCa(String MaDH,String MaSP) {
+        String sql = "DELETE BAOHANHCT WHERE MaBH = ? and MaSP=?";
+        com.DuAn1.Helper.JdbcHelper.executeUpdate(sql, MaDH,MaSP);
     }
 
     public List<BaoHanhCTModel> select(String sql, Object... args) {

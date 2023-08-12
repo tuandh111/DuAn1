@@ -341,7 +341,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã lương", "Số ngày làm ", "Lương cơ bản", "Ngày vào CTY", "Số giờ tăng ca ", "Lương tăng ca ", "Khoảng trừ", "Tổng tiền ", "Trạng thái "
+                "Mã lương", "Số ngày làm ", "Lương cơ bản", "Ngày thanh toan", "Số giờ tăng ca ", "Lương tăng ca ", "Khoảng trừ", "Tổng tiền ", "Trạng thái "
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -462,7 +462,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
-        txtNgayVaoCTY.setLabelText("Ngày vào CTY");
+        txtNgayVaoCTY.setLabelText("Ngay thanh toan");
         txtNgayVaoCTY.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtNgayVaoCTYMouseClicked(evt);
@@ -964,6 +964,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             thaotacdao.insert(model);
             DialogHelper.alert(this, "Cập nhật thành công");
             LoadCBOMaLuong();
+            clearForm();
         } catch (Exception e) {
             DialogHelper.alert(this, "Cập nhật thất bại");
             e.printStackTrace();
@@ -1031,7 +1032,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());
         }
         if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);
@@ -1115,11 +1116,11 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         for (NhanVienModel nv : listnv) {
             if (cboMaLuong.getSelectedItem() != null) {
                 if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("QL")) {
-                    txtLuongCoBan.setText("10.000.000");
+                    txtLuongCoBan.setText("10,000,000");
                 }
                 if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
-                    txtLuongCoBan.setText("6.000.000");
-                } 
+                    txtLuongCoBan.setText("6,000,000");
+                }
 //                else {
 //                    txtLuongCoBan.setText("3,000,000");
 //                }

@@ -23,6 +23,8 @@ import com.DuAn1.component.CardRegister;
 import com.tuandhpc05076.Object.O_DangNhap;
 import java.awt.Color;
 import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -89,7 +91,7 @@ public class NewSignin extends javax.swing.JFrame {
         jLabel_SoftZyd.setVisible(true);
         try {
 
-            UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
+//            UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
 
         } catch (Exception ex) {
             System.err.println(ex);
