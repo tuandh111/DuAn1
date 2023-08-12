@@ -45,7 +45,7 @@ public class GiamGiaDao {
     }
 
     public List<GiamGiaModel> select() {
-        String sql = "SELECT * FROM GIAMGIA";
+        String sql = "SELECT * FROM GIAMGIA ";
         return select(sql);
     }
 

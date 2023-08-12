@@ -414,6 +414,8 @@ GROUP BY NgayXuat;
 
 END;
 go
+exec sp_thongke_doanhthu_thang
+go
 -------------
 CREATE PROCEDURE sp_thongke_doanhthu_nam
 AS

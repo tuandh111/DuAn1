@@ -15,6 +15,7 @@ import com.DuAn1.test.DatabaseConnection;
 import com.DuAn1.test.ModelData;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -31,6 +32,16 @@ public class MainAn2 extends javax.swing.JPanel {
         chart.addLegend("Doanh thu", Color.decode("#7b4397"), Color.decode("#dc2430"));
 //        chart.addLegend("Samsung", Color.decode("#e65c00"), Color.decode("#F9D423"));
 //        chart.addLegend("Sony", Color.decode("#0099F7"), Color.decode("#F11712"));
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+        String formatted = current.format(formatter);
+        int nam = Integer.parseInt(formatted);
+        DefaultComboBoxModel df = new DefaultComboBoxModel();
+        for (int i = 0; i <= nam - 2021; i++) {
+            df.addElement(2021 + i);
+        }
+        cboNhanVien.setModel(df);
+        test();
 
     }
 
@@ -214,7 +225,7 @@ public class MainAn2 extends javax.swing.JPanel {
         double Thang10 = 0;
         double Thang11 = 0;
         double Thang12 = 0;
-        List<Object[]> daoThongKe1 = daoThongKe.getThongKeDoanhThuTungNamTrongTungThang(2023);
+        List<Object[]> daoThongKe1 = daoThongKe.getThongKeDoanhThuTungNamTrongTungThang((int) cboNhanVien.getSelectedItem());
         for (Object[] objects : daoThongKe1) {
             if (objects[1].equals(1)) {
                 Thang1 = Double.parseDouble(objects[2].toString());
@@ -255,29 +266,61 @@ public class MainAn2 extends javax.swing.JPanel {
         }
 
         chart.clear();
-        chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
-        chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
-        chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
-        chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
-        chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
-        chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
-        chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
-        chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM");
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy");
         String formatted = current.format(formatter);
-       
-        if (Integer.parseInt(formatted)>8) {
+        String formatted1 = current.format(formatter1);
+        if (Integer.parseInt(formatted1) > (int) cboNhanVien.getSelectedItem()) {
+            chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
+            chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
+            chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
+            chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
+            chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
+            chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
+            chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
+            chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
             chart.addData(new ModelChart("Tháng 9", new double[]{Thang9}));
-        }
-        if (Integer.parseInt(formatted)>9) {
             chart.addData(new ModelChart("Tháng 10", new double[]{Thang10}));
-        }
-        if (Integer.parseInt(formatted)>10) {
             chart.addData(new ModelChart("Tháng 11", new double[]{Thang11}));
-        }
-        if (Integer.parseInt(formatted)>11) {
             chart.addData(new ModelChart("Tháng 12", new double[]{Thang12}));
+        } else {
+            if (Integer.parseInt(formatted) > 0) {
+                chart.addData(new ModelChart("Tháng 1", new double[]{Thang1}));
+            }
+            if (Integer.parseInt(formatted) > 1) {
+                chart.addData(new ModelChart("Tháng 2", new double[]{Thang2}));
+            }
+            if (Integer.parseInt(formatted) > 2) {
+                chart.addData(new ModelChart("Tháng 3", new double[]{Thang3}));
+            }
+            if (Integer.parseInt(formatted) > 3) {
+                chart.addData(new ModelChart("Tháng 4", new double[]{Thang4}));
+            }
+            if (Integer.parseInt(formatted) > 4) {
+                chart.addData(new ModelChart("Tháng 5", new double[]{Thang5}));
+            }
+            if (Integer.parseInt(formatted) > 5) {
+                chart.addData(new ModelChart("Tháng 6", new double[]{Thang6}));
+            }
+            if (Integer.parseInt(formatted) > 6) {
+                chart.addData(new ModelChart("Tháng 7", new double[]{Thang7}));
+            }
+            if (Integer.parseInt(formatted) > 7) {
+                chart.addData(new ModelChart("Tháng 8", new double[]{Thang8}));
+            }
+            if (Integer.parseInt(formatted) > 8) {
+                chart.addData(new ModelChart("Tháng 9", new double[]{Thang9}));
+            }
+            if (Integer.parseInt(formatted) > 9) {
+                chart.addData(new ModelChart("Tháng 10", new double[]{Thang10}));
+            }
+            if (Integer.parseInt(formatted) > 10) {
+                chart.addData(new ModelChart("Tháng 11", new double[]{Thang11}));
+            }
+            if (Integer.parseInt(formatted) > 11) {
+                chart.addData(new ModelChart("Tháng 12", new double[]{Thang12}));
+            }
         }
         chart.start();
     }
@@ -342,9 +385,9 @@ public class MainAn2 extends javax.swing.JPanel {
     private void cboNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboNhanVienActionPerformed
         // TODO add your handling code here:
 
-        if (cboNhanVien.getSelectedItem().equals("2021")) {
+        if (cboNhanVien.getSelectedItem().equals(2021)) {
             test();
-        } else if (cboNhanVien.getSelectedItem().equals("2022")) {
+        } else if (cboNhanVien.getSelectedItem().equals(2022)) {
             test1();
         } else {
             test2();

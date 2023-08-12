@@ -11,7 +11,9 @@ import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.HoaDonModel;
 import com.DuAn1.Model.KhachHangModel;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -71,12 +73,19 @@ public class KhachHangBaoHanh extends javax.swing.JDialog {
         try {
             List<KhachHangModel> list = daoKH.selectMa((String) cboHinhThuc.getSelectedItem());
             for (KhachHangModel model : list) {
-                System.out.println(model.getMaKH());
+                   String ThoiGianThem = "";
+
+                if (model.getNgaySinh()!= null) {
+                    String dateString = model.getNgaySinh();
+                    Date date0 = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                    ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy").format(date0);
+                }
                 Object[] row = new Object[]{
+                    
                     model.getMaKH(),
                     model.getTenKH(),
                     model.getSDT(),
-                    model.getNgaySinh(),
+                    ThoiGianThem,
                     model.getDiaChi(),
                     model.isGT() ? "Nam" : "Nữ",
                     model.getLoaiKH(),

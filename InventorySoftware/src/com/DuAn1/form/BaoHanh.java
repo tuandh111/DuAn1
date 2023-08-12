@@ -4333,7 +4333,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung9.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4355,7 +4355,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung8.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4377,7 +4377,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung7.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4399,7 +4399,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung5.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4421,7 +4421,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung6.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4443,7 +4443,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung3.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4465,7 +4465,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSamSung4.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4487,7 +4487,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone2.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4510,7 +4510,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone1.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4538,7 +4538,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone9.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4560,7 +4560,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone7.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4582,7 +4582,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone8.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4604,7 +4604,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone5.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4626,7 +4626,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone6.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4649,7 +4649,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone4.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4671,7 +4671,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone2.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4693,7 +4693,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone3.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4715,7 +4715,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony9.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4737,7 +4737,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony8.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4759,7 +4759,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony7.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4782,7 +4782,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony6.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4804,7 +4804,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony5.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4825,7 +4825,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony4.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4848,7 +4848,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony3.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4870,7 +4870,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony2.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -4892,7 +4892,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConSony1.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -5230,7 +5230,7 @@ public class BaoHanh extends javax.swing.JPanel {
                 filltable();
                 txtSoLuongConIphone1.setText(String.valueOf(daoSP1.getSoLuong()));
             } else {
-                DialogHelper.alert(this, "Không du san pham de ban");
+                DialogHelper.alert(this, "Không du san pham de bao hanh");
             }
         } catch (Exception e) {
             e.printStackTrace();

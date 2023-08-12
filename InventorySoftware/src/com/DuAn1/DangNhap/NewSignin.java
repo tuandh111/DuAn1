@@ -23,6 +23,8 @@ import com.DuAn1.component.CardRegister;
 import com.tuandhpc05076.Object.O_DangNhap;
 import java.awt.Color;
 import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.sql.SQLException;
 import java.time.LocalDateTime;

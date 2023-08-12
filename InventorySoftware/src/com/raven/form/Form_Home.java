@@ -146,10 +146,22 @@ public class Form_Home extends javax.swing.JPanel {
 
     private void initCardData() {
         double tong = 0;
+        double Thang1 = 0;
         List<Object[]> i = daoSoLuong.getSoLuongSP();
         int tongSoLuong = Arrays.stream(i.get(0))
                 .mapToInt(obj -> (int) obj)
                 .sum();
+        List<Object[]> daoThongKe1 = DaoThongKe.getThongKeDoanhThuTungNamTrongTungThang(2023);
+        LocalDateTime current = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM");
+        String formatted = current.format(formatter);
+        for (Object[] objects : daoThongKe1) {
+            if (objects[1].equals(Integer.parseInt(formatted))) {
+                Thang1 = Double.parseDouble(objects[2].toString());
+                break;
+            } 
+        }
+
 //        List<Object[]> j = DaoThongKe.DoanhThuThang();
 //        String name = (String) j.get(3)[1];
 //        for (Object[] row : j) {
@@ -161,7 +173,7 @@ public class Form_Home extends javax.swing.JPanel {
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card1.setData(new ModelCard("Số lượng sản phẩm", tongSoLuong, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card2.setData(new ModelCard("Doanh thu tháng", tong, 60, icon2));
+        card2.setData(new ModelCard("Doanh thu tháng", Thang1, 60, icon2));
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card3.setData(new ModelCard("Nhân viên", list.size(), 80, icon3));
         Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
