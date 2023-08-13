@@ -54,13 +54,15 @@ public class SanPhamDAO {
                 model.getMaSP()
         );
     }
-   public void updateSL(SanPhamModel model) {
+
+    public void updateSL(SanPhamModel model) {
         String sql = "Update SANPHAM set SoLuong=? where MaSP=?";
         JdbcHelper.executeUpdate(sql,
                 model.getSoLuong(),
                 model.getMaSP()
         );
     }
+
     public void delete(SanPhamModel model) {
         String sql = "Update SANPHAM set TrangThai=0 where MaSP=?";
         JdbcHelper.executeUpdate(sql, model.getMaSP());
@@ -68,6 +70,13 @@ public class SanPhamDAO {
 
     public List<SanPhamModel> select() {
         String sql = "SELECT * FROM SANPHAM where TrangThai=1";
+        return select(sql);
+    }
+
+    public List<SanPhamModel> selectTop3() {
+        String sql = "SELECT top 3*\n"
+                + "FROM SANPHAM where TrangThai=1\n"
+                + "ORDER BY MaSP DESC";
         return select(sql);
     }
 
@@ -90,10 +99,12 @@ public class SanPhamDAO {
         String sql = "SELECT * FROM SANPHAM where TenSP like ? and TrangThai=1";
         return select(sql, "%" + TenSP + "%");
     }
- public List<SanPhamModel> TimKiemTheoMa(String TenSP) {
+
+    public List<SanPhamModel> TimKiemTheoMa(String TenSP) {
         String sql = "SELECT * FROM SANPHAM where MaSP like ? and TrangThai=1";
         return select(sql, "%" + TenSP + "%");
     }
+
     public List<SanPhamModel> selectSoLuong() {
         String sql = "SELECT * FROM SANPHAM";
         return select(sql);

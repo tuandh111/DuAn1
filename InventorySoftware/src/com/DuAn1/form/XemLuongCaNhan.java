@@ -8,11 +8,16 @@ import com.DuAn1.Dao.ThanhToanLuongDAO;
 import com.DuAn1.Dao.ThaoTacDAO;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.ThanhToanLuongModel;
+import com.DuAn1.Model.ThaoTacModel;
 import com.tuandhpc05076.helper.DialogHelper;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -166,8 +171,9 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
     DefaultTableModel model;
     private void cboVaitroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboVaitroActionPerformed
         // TODO add your handling code here:
-        if(cboVaitro1.getSelectedItem()==null){
-            DialogHelper.alert(this,"Ban chua chon nam");
+        txtLuong.setText("0");
+        if (cboVaitro1.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Ban chua chon nam");
             return;
         }
         String LayThang = (String) cboVaitro.getSelectedItem();
@@ -177,7 +183,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
         model.setRowCount(0);
         DecimalFormat df = new DecimalFormat("#,##0.##");
         try {
-            List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()),Integer.parseInt(layNam), ShareHelper.USER.getMaNV().trim());
+            List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()), Integer.parseInt(layNam), ShareHelper.USER.getMaNV().trim());
             if (list.size() > 0) {
                 for (ThanhToanLuongModel ttl : list) {
                     String dateString = ttl.getNgayVaoCTy();
@@ -185,16 +191,16 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                     String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
                     Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
                         formattedDate,
-                        ttl.getSoGioTangCa(),
-                        df.format(ttl.getLuongTangCa()), df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai()};
+                        ttl.getSoGioTangCa() + " Gio",
+                        df.format(ttl.getLuongTangCa()) + " VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
                     model.addRow(rows);
                 }
                 String Luong = (String) tblThanhToanLuong.getValueAt(0, 7);
                 if (Luong != null) {
                     txtLuong.setText(Luong);
                 }
-            }else{
-                DialogHelper.alert(this, "Chua co luong trong thang nay");
+            } else {
+                com.DuAn1.Helper.DialogHelper.alert(this, "Chua co luong trong thang nay");
             }
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
@@ -202,9 +208,68 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
 
 
     }//GEN-LAST:event_cboVaitroActionPerformed
+    void sua() {
+        ThanhToanLuongModel ttl = getForm();
 
+        dao.updateKhieuNay(ttl);
+
+    }
+
+    ThanhToanLuongModel getForm() {
+        String MaLuong = (String) tblThanhToanLuong.getValueAt(0, 0);
+        String Ngay = (String) tblThanhToanLuong.getValueAt(0, 3);
+        ThanhToanLuongModel ttl = new ThanhToanLuongModel();
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(Ngay.trim());
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+            ttl.setNgayVaoCTy(ngayNhap);
+        } catch (ParseException ex) {
+            Logger.getLogger(XemLuongCaNhan.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ttl.setMaLuong(MaLuong.trim());
+        return ttl;
+    }
     private void tblThanhToanLuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMouseClicked
         // TODO add your handling code here:
+        int chon = JOptionPane.showConfirmDialog(this, "Ban co muon khuyeu nai", "Khieu nai", JOptionPane.YES_NO_OPTION);
+        if (chon == 0) {
+            sua();
+            txtLuong.setText("0");
+            if (cboVaitro1.getSelectedItem() == null) {
+                DialogHelper.alert(this, "Ban chua chon nam");
+                return;
+            }
+            String LayThang = (String) cboVaitro.getSelectedItem();
+            String so = LayThang.replace("Tháng", "");
+            String layNam = (String) cboVaitro1.getSelectedItem();
+            model = (DefaultTableModel) tblThanhToanLuong.getModel();
+            model.setRowCount(0);
+            DecimalFormat df = new DecimalFormat("#,##0.##");
+            try {
+                List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()), Integer.parseInt(layNam), ShareHelper.USER.getMaNV().trim());
+                if (list.size() > 0) {
+                    for (ThanhToanLuongModel ttl : list) {
+                        String dateString = ttl.getNgayVaoCTy();
+                        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                        String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                        Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
+                            formattedDate,
+                            ttl.getSoGioTangCa() + " Gio",
+                            df.format(ttl.getLuongTangCa()) + " VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
+                        model.addRow(rows);
+                    }
+                    String Luong = (String) tblThanhToanLuong.getValueAt(0, 7);
+                    if (Luong != null) {
+                        txtLuong.setText(Luong);
+                    }
+                } else {
+                    com.DuAn1.Helper.DialogHelper.alert(this, "Chua co luong trong thang nay");
+                }
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            }
+
+        }
     }//GEN-LAST:event_tblThanhToanLuongMouseClicked
 
     private void tblThanhToanLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMousePressed

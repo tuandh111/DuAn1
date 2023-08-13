@@ -5,8 +5,10 @@
  */
 package com.DuAn1.test;
 
+import com.DuAn1.Dao.SanPhamDAO;
 import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.SanPhamModel;
 import java.awt.Image;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -18,10 +20,22 @@ import javax.swing.JOptionPane;
  */
 public class Slide1 extends javax.swing.JPanel {
     ThongKeDao DaoThongKe = new ThongKeDao();
+    SanPhamDAO daoSP = new SanPhamDAO();
     public Slide1() {
         initComponents();
 //        pictureBox1.setImage(new ImageIcon(getClass().getResource("")));
 //thongke();
+
+        List<SanPhamModel> list= daoSP.selectTop3();
+        int i=0;
+        for (SanPhamModel sanPhamModel : list) {
+            if(i==0){
+                pictureBox1.setImage(ShareHelper.readLogo(sanPhamModel.getHinh().trim()));
+                txtTenSP.setText(sanPhamModel.getTenSP());
+                break;
+            }
+            i++;
+        }
     }
 
 //    public void thongke(){
@@ -38,10 +52,7 @@ public class Slide1 extends javax.swing.JPanel {
 
         pictureBox1 = new swing.PictureBox_1();
         panelTransparent1 = new swing.PanelTransparent();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        txtTenSP = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         pictureBox1.setImage(new javax.swing.ImageIcon(getClass().getResource("/Images/Iphone.jpg"))); // NOI18N
@@ -49,21 +60,9 @@ public class Slide1 extends javax.swing.JPanel {
         panelTransparent1.setBackground(new java.awt.Color(255, 255, 255));
         panelTransparent1.setAlpha(0.5F);
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(7, 70, 100));
-        jLabel1.setText("Iphone 14");
-
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(4, 55, 111));
-        jLabel2.setText("Sản phẩm bán chạy nhất");
-
-        jLabel3.setFont(new java.awt.Font("sansserif", 2, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(4, 55, 111));
-        jLabel3.setText("Cấu hình mạnh");
-
-        jLabel4.setFont(new java.awt.Font("sansserif", 2, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(4, 55, 111));
-        jLabel4.setText("Nhận nhiều ưu đãi khi mua hàng");
+        txtTenSP.setFont(new java.awt.Font("sansserif", 1, 40)); // NOI18N
+        txtTenSP.setForeground(new java.awt.Color(255, 0, 0));
+        txtTenSP.setText("Iphone 14");
 
         javax.swing.GroupLayout panelTransparent1Layout = new javax.swing.GroupLayout(panelTransparent1);
         panelTransparent1.setLayout(panelTransparent1Layout);
@@ -71,25 +70,15 @@ public class Slide1 extends javax.swing.JPanel {
             panelTransparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTransparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelTransparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(txtTenSP, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         panelTransparent1Layout.setVerticalGroup(
             panelTransparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTransparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addComponent(txtTenSP)
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         jButton1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
@@ -149,11 +138,8 @@ public class Slide1 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private swing.PanelTransparent panelTransparent1;
     private swing.PictureBox_1 pictureBox1;
+    private javax.swing.JLabel txtTenSP;
     // End of variables declaration//GEN-END:variables
 }

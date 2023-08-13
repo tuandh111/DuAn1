@@ -6,9 +6,6 @@ package com.DuAn1.form;
 
 import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
-import java.awt.Image;
-import javax.swing.JOptionPane;
-import sun.security.jgss.spnego.SpNegoContext;
 
 /**
  *

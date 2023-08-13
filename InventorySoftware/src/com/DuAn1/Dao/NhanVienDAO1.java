@@ -167,11 +167,9 @@ public class NhanVienDAO1 {
                 model.getMaNV()
         );
     }
-  public List<NhanVienModel> selectcombobox() {
-        String sql = "SELECT *\n"
-                + "FROM NhanVien\n"
-                + "WHERE Nhanvien.Manv NOT IN (SELECT luong.MaLuong FROM luong);";
-        return select(sql);
+  public List<NhanVienModel> selectcombobox(int Thang,int Nam) {
+        String sql = "SELECT *FROM NhanVien WHERE Nhanvien.Manv NOT IN (SELECT luong.MaLuong FROM luong where MONTH(NgayVaoCTY) =? and YEAR(NgayVaoCTY)=?) ";
+        return select(sql,Thang,Nam);
     }
 
     public List<NhanVienModel> select() {
