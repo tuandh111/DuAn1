@@ -54,8 +54,8 @@ public class NhanVien extends javax.swing.JPanel {
     MaHoa MH = new MaHoa();
     DefaultTableModel model;
     NhanVienDAO1 Dao = new NhanVienDAO1();
-      VaiTroDao Daovt = new VaiTroDao();
-   
+    VaiTroDao Daovt = new VaiTroDao();
+
     int row = -1;
     String so = "0\\d{9,10}";
 
@@ -182,17 +182,19 @@ public class NhanVien extends javax.swing.JPanel {
         } else {
             nv.setGioiTinh(false);
         }
-        nv.setMatKhau(txtMatkhau.getText());
+        String mk = MH.toSHA(new String(txtMatkhau.getPassword()));
+        String matKhau = new String(mk);
+        nv.setMatKhau(matKhau);
         nv.setDiaChi(txtDiachi.getText());
         nv.setSDT(txtSdt.getText());
         nv.setEmail(txtEmail.getText());
-            List<VaiTroModel> list = Daovt.select();
-            for (VaiTroModel vt : list) {
-                if(cboVaitro.getSelectedItem().equals(vt.getTenVT().trim())){
-                    nv.setVaiTro(vt.getMaVT());
-                    break;
-                }
+        List<VaiTroModel> list = Daovt.select();
+        for (VaiTroModel vt : list) {
+            if (cboVaitro.getSelectedItem().equals(vt.getTenVT().trim())) {
+                nv.setVaiTro(vt.getMaVT());
+                break;
             }
+        }
 //        if (cboVaitro.getSelectedItem().equals("Quản lý")) {
 //            nv.setVaiTro("QL");
 //        } else {
@@ -274,13 +276,13 @@ public class NhanVien extends javax.swing.JPanel {
         txtSdt.setText(nv.getSDT().trim());
         txtEmail.setText(nv.getEmail());
         txtMatkhau.setText("******");
-            List<VaiTroModel> list = Daovt.select();
-            for (VaiTroModel vt : list) {
-                if(nv.getVaiTro().trim().equalsIgnoreCase(vt.getMaVT().trim())){
-                    cboVaitro.setSelectedItem(vt.getTenVT());
-                    break;
-                }
+        List<VaiTroModel> list = Daovt.select();
+        for (VaiTroModel vt : list) {
+            if (nv.getVaiTro().trim().equalsIgnoreCase(vt.getMaVT().trim())) {
+                cboVaitro.setSelectedItem(vt.getTenVT());
+                break;
             }
+        }
 //        if (nv.getVaiTro().trim().equalsIgnoreCase("QL")) {
 //            cboVaitro.setSelectedItem("Quản lý");
 //        } else {
@@ -306,7 +308,7 @@ public class NhanVien extends javax.swing.JPanel {
     }
 
     void ClearForm() {
-       btnThem.setEnabled(true);
+        btnThem.setEnabled(true);
         txtTaikhoan.setText("");
         txtHoten.setText("");
         txtNgaysinh.setText("");
@@ -436,8 +438,8 @@ public class NhanVien extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Số điện thoại không được để trống");
             return false;
         }
-        if(!txtSdt.getText().matches(so)){
-            DialogHelper.alert(this,"Số điện thoại của bạn không đúng định dạng");
+        if (!txtSdt.getText().matches(so)) {
+            DialogHelper.alert(this, "Số điện thoại của bạn không đúng định dạng");
             return false;
         }
         if (txtDiachi.getText().equals("")) {
@@ -452,11 +454,11 @@ public class NhanVien extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Email không đúng định dạng!");
             return false;
         }
-        if(cboGioitinh.getSelectedItem()==null){
-            DialogHelper.alert(this,"Giới tính của bạn không được để trống");
+        if (cboGioitinh.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Giới tính của bạn không được để trống");
             return false;
         }
-        if(cboVaitro.getSelectedItem()==null){
+        if (cboVaitro.getSelectedItem() == null) {
             DialogHelper.alert(this, "Vai trò của bạn đang để trống");
             return false;
         }

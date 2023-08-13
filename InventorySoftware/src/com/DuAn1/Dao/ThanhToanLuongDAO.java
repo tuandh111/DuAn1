@@ -33,33 +33,39 @@ public class ThanhToanLuongDAO {
     }
 
     public void update(ThanhToanLuongModel model) {
-        String sql = "Update LUONG set SoNgayLam = ?,LuongCoBan=?,NGAYVAOCTY=?,SOGIOTANGCA =?,LUONGTANGCA =?,KHOANGTRU=?,TONGTIEN=?,TRANGTHAI=? where MALUONG=?";
+        String sql = "Update LUONG set SoNgayLam = ?,LuongCoBan=?,SOGIOTANGCA =?,LUONGTANGCA =?,KHOANGTRU=?,TONGTIEN=?,TRANGTHAI=? where MALUONG=? and NGAYVAOCTY=?";
         com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,
                 model.getSoNgayLam(),
                 model.getLuongCoBan(),
-                model.getNgayVaoCTy(),
                 model.getSoGioTangCa(),
                 model.getLuongTangCa(),
                 model.getKhoanTru(),
                 model.getTongTien(),
                 model.isTrangThai(),
-                model.getMaLuong()
+                model.getMaLuong(),
+                model.getNgayVaoCTy()
         );
     }
-
+  public void updateKhieuNay(ThanhToanLuongModel model) {
+        String sql = "Update LUONG set TRANGTHAI= 0 where MALUONG=? and NGAYVAOCTY=?";
+        com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,
+                model.getMaLuong(),
+                model.getNgayVaoCTy()
+        );
+    }
     public void delete(String maLuong) {
         String sql = "DELETE FROM LUONG WHERE MaLuong=?";
         JdbcHelper.executeUpdate(sql, maLuong);
     }
 
-    public List<ThanhToanLuongModel> select() {
-        String sql = "SELECT * FROM LUONG";
-        return select(sql);
+    public List<ThanhToanLuongModel> select1(int Thang, int Nam) {
+        String sql = "select * from Luong where MONTH(NgayVaoCTY)= ? and YEAR(NgayVaoCTY)= ?";
+        return select(sql, Thang, Nam);
     }
 
-    public ThanhToanLuongModel findById(String maLuong) {
-        String sql = "SELECT * FROM LUONG WHERE MaLuong like ?";
-        List<ThanhToanLuongModel> list = select(sql, maLuong);
+    public ThanhToanLuongModel findById(String maLuong,String NgayVaoCTY) {
+        String sql = "SELECT * FROM LUONG WHERE MaLuong like ? and NgayVaoCTY =?";
+        List<ThanhToanLuongModel> list = select(sql,"%" +maLuong+"%",NgayVaoCTY);
         return list.size() > 0 ? list.get(0) : null;
     }
 
@@ -93,23 +99,23 @@ public class ThanhToanLuongDAO {
         return select(sql, "%" + maLuong + "%");
     }
 
-    public List<ThanhToanLuongModel> XemThanhToanLuongCaNhan(int thang,int nam, String MaNV) {
+    public List<ThanhToanLuongModel> XemThanhToanLuongCaNhan(int thang, int nam, String MaNV) {
         String sql = "SELECT * from LUONG\n"
                 + "WHERE MONTH(NgayVaoCTY) = ? and Year(NgayVaoCTY) = ? and MaLuong=?";
-        return select(sql, thang,nam,  MaNV );
+        return select(sql, thang, nam, MaNV);
     }
 
     private ThanhToanLuongModel readFromResultSet(ResultSet rs) throws SQLException {
         ThanhToanLuongModel model = new ThanhToanLuongModel();
-        model.setMaLuong(rs.getString(1));
-        model.setSoNgayLam(rs.getFloat(2));
-        model.setLuongCoBan(rs.getDouble(3));
-        model.setNgayVaoCTy(rs.getString(4));
-        model.setSoGioTangCa(rs.getFloat(5));
-        model.setLuongTangCa(rs.getDouble(6));
-        model.setKhoanTru(rs.getDouble(7));
-        model.setTongTien(rs.getDouble(8));
-        model.setTrangThai(rs.getBoolean(9));
+        model.setMaLuong(rs.getString("MaLuong"));
+        model.setSoNgayLam(rs.getFloat("SoNgayLam"));
+        model.setLuongCoBan(rs.getDouble("LuongCoBan"));
+        model.setNgayVaoCTy(rs.getString("NgayVaoCTy"));
+        model.setSoGioTangCa(rs.getFloat("SoGioTangCa"));
+        model.setLuongTangCa(rs.getDouble("LuongTangCa"));
+        model.setKhoanTru(rs.getDouble("KhoangTru"));
+        model.setTongTien(rs.getDouble("TongTien"));
+        model.setTrangThai(rs.getBoolean("TrangThai"));
 
         return model;
     }
