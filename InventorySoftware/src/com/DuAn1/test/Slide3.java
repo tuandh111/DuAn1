@@ -5,6 +5,12 @@
  */
 package com.DuAn1.test;
 
+import com.DuAn1.Dao.SanPhamDAO;
+import com.DuAn1.Helper.ShareHelper;
+import com.DuAn1.Model.SanPhamModel;
+import java.util.List;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author RAVEN
@@ -14,8 +20,24 @@ public class Slide3 extends javax.swing.JPanel {
     /**
      * Creates new form Slide1
      */
+    SanPhamDAO daoSP = new SanPhamDAO();
+
     public Slide3() {
         initComponents();
+
+        List<SanPhamModel> list = daoSP.selectTop3();
+        int i = 0;
+        for (SanPhamModel sanPhamModel : list) {
+            if (i == 2) {
+                if (sanPhamModel.getHinh() != null) {
+                    pictureBox1.setImage(ShareHelper.readLogo(sanPhamModel.getHinh().trim()));
+                    txtTenSP.setText(sanPhamModel.getTenSP());
+                    break;
+                }
+
+            }
+            i++;
+        }
     }
 
     /**
@@ -28,8 +50,15 @@ public class Slide3 extends javax.swing.JPanel {
     private void initComponents() {
 
         pictureBox1 = new swing.PictureBox_1();
+        txtTenSP = new javax.swing.JLabel();
 
         pictureBox1.setImage(new javax.swing.ImageIcon(getClass().getResource("/Images/Xiaomi.jpg"))); // NOI18N
+
+        txtTenSP.setFont(new java.awt.Font("sansserif", 1, 40)); // NOI18N
+        txtTenSP.setForeground(new java.awt.Color(255, 0, 0));
+        txtTenSP.setText("Iphone 14");
+        pictureBox1.add(txtTenSP);
+        txtTenSP.setBounds(0, 0, 350, 52);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -48,5 +77,6 @@ public class Slide3 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private swing.PictureBox_1 pictureBox1;
+    private javax.swing.JLabel txtTenSP;
     // End of variables declaration//GEN-END:variables
 }

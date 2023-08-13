@@ -106,7 +106,7 @@ public class VaiTro extends javax.swing.JPanel {
             ThaoTacDao.insert(model);
             JOptionPane.showMessageDialog(this, "Xóa thành công!");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại!");
+            JOptionPane.showMessageDialog(this, "Xóa vai tro that bai");
         }
     }
 

@@ -150,7 +150,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         NhanVienDAO1 NVdao = new NhanVienDAO1();
         ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.selectcombobox();
         for (NhanVienModel nv : listnv) {
-            cboModel.addElement(nv.getMaNV().trim());
+            cboModel.addElement(nv.getMaNV().trim()+" ("+nv.getHoTen()+")");
         }
         cboMaLuong.setModel(cboModel);
         cboMaLuong.setSelectedIndex(-1);
@@ -162,7 +162,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         NhanVienDAO1 NVdao = new NhanVienDAO1();
         ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.select();
         for (NhanVienModel nv : listnv) {
-            cboModel.addElement(nv.getMaNV().trim());
+             cboModel.addElement(nv.getMaNV().trim()+" ("+nv.getHoTen()+")");
         }
         cboMaLuong.setModel(cboModel);
         cboMaLuong.setSelectedIndex(-1);
@@ -194,7 +194,9 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     ThanhToanLuongModel getForm() {
         ThanhToanLuongModel ttl = new ThanhToanLuongModel();
-        ttl.setMaLuong((String) cboMaLuong.getSelectedItem());
+        String MaLuong = (String) cboMaLuong.getSelectedItem();
+        MaLuong=MaLuong.substring(0, 5);
+        ttl.setMaLuong(MaLuong);
         ttl.setSoNgayLam(Float.parseFloat(txtSoNgayLamViec.getText()));
         String LuongCoBan = txtLuongCoBan.getText();
         LuongCoBan = LuongCoBan.replace(",", "");
@@ -229,10 +231,17 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         return ttl;
     }
-
+NhanVienDAO1 Dao = new NhanVienDAO1();
     void setForm(ThanhToanLuongModel ttl) {
         DecimalFormat df = new DecimalFormat("#,##0.##");
         cboMaLuong.setSelectedItem(ttl.getMaLuong().trim());
+         List<NhanVienModel> list = Dao.select();
+         for (NhanVienModel nv : list) {
+            if(nv.getMaNV().trim().equalsIgnoreCase(ttl.getMaLuong().trim())){
+                 cboMaLuong.setSelectedItem(nv.getMaNV().trim()+" ("+nv.getHoTen()+")");
+                 break;
+            }
+        }
         txtSoNgayLamViec.setText(String.valueOf(ttl.getSoNgayLam()));
         txtLuongCoBan.setText(df.format(ttl.getLuongCoBan()));
         try {
@@ -949,7 +958,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
-        if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
+        if (Double.parseDouble(KhoanTru) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
         }
         DecimalFormat df = new DecimalFormat("#,##0.##");
@@ -1034,7 +1043,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (Double.parseDouble(LuongTangCa) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());
         }
-        if (Double.parseDouble(txtKhoangTru.getText()) != 0) {
+        if (Double.parseDouble(KhoanTru) != 0) {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);
         }
         lblTongTien.setText(String.valueOf(tongTien));
@@ -1113,12 +1122,15 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTrangThai.setText("Thanh toán");
         NhanVienDAO1 NVdao = new NhanVienDAO1();
         ArrayList<NhanVienModel> listnv = (ArrayList<NhanVienModel>) NVdao.selectcombobox();
+        String MaLuong = (String) cboMaLuong.getSelectedItem();
+        if(MaLuong!=null)
+        MaLuong=MaLuong.substring(0, 5);
         for (NhanVienModel nv : listnv) {
             if (cboMaLuong.getSelectedItem() != null) {
-                if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("QL")) {
+                if (MaLuong.trim().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("QL")) {
                     txtLuongCoBan.setText("10,000,000");
                 }
-                if (cboMaLuong.getSelectedItem().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
+                if (MaLuong.trim().equals(nv.getMaNV().trim()) && nv.getVaiTro().trim().equals("NV")) {
                     txtLuongCoBan.setText("6,000,000");
                 }
 //                else {

@@ -185,8 +185,8 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                     String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
                     Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
                         formattedDate,
-                        ttl.getSoGioTangCa(),
-                        df.format(ttl.getLuongTangCa()), df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai()};
+                        ttl.getSoGioTangCa()+" Gio",
+                        df.format(ttl.getLuongTangCa())+" VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai()? "Ðã thanh toan":"Ðang cho cap nhat"};
                     model.addRow(rows);
                 }
                 String Luong = (String) tblThanhToanLuong.getValueAt(0, 7);
@@ -194,7 +194,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                     txtLuong.setText(Luong);
                 }
             }else{
-                DialogHelper.alert(this, "Chua co luong trong thang nay");
+                com.DuAn1.Helper.DialogHelper.alert(this, "Chua co luong trong thang nay");
             }
         } catch (Exception e) {
             DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
