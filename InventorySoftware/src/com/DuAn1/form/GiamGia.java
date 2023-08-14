@@ -34,7 +34,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- *
+ *String date1 = "1-1-2002";
+String date2 = "2-1-2023";
+
+Date date1Obj = Date.parse(date1);
+Date date2Obj = Date.parse(date2);
  * @author DELL E5470
  */
 public class GiamGia extends javax.swing.JPanel {
