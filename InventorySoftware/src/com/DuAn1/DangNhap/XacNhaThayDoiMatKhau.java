@@ -6,6 +6,7 @@ package com.DuAn1.DangNhap;
 
 import static com.DuAn1.DangNhap.NewSignin.ma;
 import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
 import javax.swing.JOptionPane;
@@ -23,6 +24,7 @@ public class XacNhaThayDoiMatKhau extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(ShareHelper.APP_ICON);
     }
 
     /**

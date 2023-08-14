@@ -67,7 +67,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Tran Van Vu Chi Thanh
  */
 public class NewSignin extends javax.swing.JFrame {
-
+    
     MaHoa MH = new MaHoa();
     NhanVienDAO1 dao = new NhanVienDAO1();
     ThaoTacDAO ThaoTacDao = new ThaoTacDAO();
@@ -75,15 +75,15 @@ public class NewSignin extends javax.swing.JFrame {
     MaHoa mahoa = new MaHoa();
     public static String ma = "";
     public static String Email = "";
-
+    
     public static String getEmail() {
         return Email;
     }
-
+    
     public static void setEmail(String Email) {
         NewSignin.Email = Email;
     }
-
+    
     public NewSignin() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -92,13 +92,12 @@ public class NewSignin extends javax.swing.JFrame {
         try {
 
 //            UIManager.setLookAndFeel("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel");
-
         } catch (Exception ex) {
             System.err.println(ex);
         }
-
+        
     }
-
+    
     public void dangNhap() throws SQLException {
         if (checkText() == false) {
             return;
@@ -109,21 +108,21 @@ public class NewSignin extends javax.swing.JFrame {
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
         if (taikhoan == null) {
-            JOptionPane.showMessageDialog(this, "Sai tên đăng nhập!");
+            DialogHelper.alert(this, "Sai tên đăng nhập!");
         } else if (!matKhau.equals(taikhoan.getMatKhau().trim())) {
-            JOptionPane.showMessageDialog(this, "Sai mật khẩu!");
+            DialogHelper.alert(this, "Sai mật khẩu!");
         } else {
             ShareHelper.USER = taikhoan;
             ThaoTacModel model = getForm();
             ThaoTacDao.insert(model);
-            JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
+            DialogHelper.alert(this, "Đăng nhập thành công!");
             com.DuAn1.main.Main main = new com.DuAn1.main.Main();
             main.setVisible(true);
             this.dispose();
         }
-
+        
     }
-
+    
     public ThaoTacModel getForm() {
         ThaoTacModel cd = new ThaoTacModel();
         cd.setThoiGianThem(null);
@@ -138,7 +137,7 @@ public class NewSignin extends javax.swing.JFrame {
         cd.setMaNV(txtusername.getText());
         return cd;
     }
-
+    
     public boolean checkText() {
         if (txtusername.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Không được bỏ trống tên đăng nhập");
@@ -150,7 +149,7 @@ public class NewSignin extends javax.swing.JFrame {
             txtusername.requestFocus();
             return false;
         }
-
+        
         if (new String(txtmatkhau.getPassword()).equals("")) {
             JOptionPane.showMessageDialog(this, "Chưa nhập password");
             txtmatkhau.requestFocus();
@@ -158,7 +157,7 @@ public class NewSignin extends javax.swing.JFrame {
         }
         return true;
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -424,7 +423,7 @@ public class NewSignin extends javax.swing.JFrame {
     public static ArrayList<O_DangNhap> list1 = new ArrayList<>();
     O_DangNhap dn = new O_DangNhap();
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
+        
         try {
             //        String user = txtusername.getText();
 //        String pass = txtmatkhau.getText();
@@ -445,7 +444,7 @@ public class NewSignin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-
+        
         List<NhanVienModel> list = daonv.select();
         boolean kiem = true;
         for (NhanVienModel nv : list) {
@@ -463,7 +462,7 @@ public class NewSignin extends javax.swing.JFrame {
                 p.put("mail.smtp.port", 587);
                 String accountName = "hoangtuan97531@gmail.com";
                 String accountPassword = "sjwomehzrjwnafpd";
-
+                
                 Session s = Session.getInstance(p,
                         new Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
@@ -500,14 +499,15 @@ public class NewSignin extends javax.swing.JFrame {
 //                }
                 ma = String.valueOf(number);
                 Transport.send(msg);
-                String a = JOptionPane.showInputDialog(this, "Nhập mã");
+                String a = DialogHelper.prompt(this, "Nhập mã");
                 if (a.equals(String.valueOf(number))) {
-
+                    
                     XacNhaThayDoiMatKhau xacNhan = new XacNhaThayDoiMatKhau(this, true);
                     xacNhan.setVisible(true);
 //                    NhanVienModel nv = getForm1();
 //                    daonv.quenMK(nv);
 //                    DialogHelper.alert(this, "Xác nhận mã thành công");
+                    txtEmail.setText("");
                 } else {
                     DialogHelper.alert(this, "Xác nhận mật khẩu không thành công");
                 }
@@ -519,7 +519,7 @@ public class NewSignin extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton8ActionPerformed
-
+    
     NhanVienModel getForm1() {
         NhanVienModel nv = new NhanVienModel();
         String name = mahoa.toSHA(ma);

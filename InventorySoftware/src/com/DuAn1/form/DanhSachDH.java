@@ -170,7 +170,6 @@ public class DanhSachDH extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
-        button2 = new com.DuAn1.Swing.Button();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
         cboThoiGian = new com.DuAn1.Swing.Combobox();
@@ -185,7 +184,7 @@ public class DanhSachDH extends javax.swing.JDialog {
         jLabel1.setText("Danh sách đặt hàng ");
 
         txtTimKiem.setToolTipText("");
-        txtTimKiem.setHint("Tìm kiếm");
+        txtTimKiem.setHint("Tìm kiếm mã");
         txtTimKiem.setName(""); // NOI18N
         txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
@@ -195,13 +194,6 @@ public class DanhSachDH extends javax.swing.JDialog {
         txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimKiemActionPerformed(evt);
-            }
-        });
-
-        button2.setText("Tìm kiếm");
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
             }
         });
 
@@ -250,14 +242,12 @@ public class DanhSachDH extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)
-                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(0, 15, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -268,7 +258,6 @@ public class DanhSachDH extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
@@ -304,16 +293,31 @@ public class DanhSachDH extends javax.swing.JDialog {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_tblUserMouseClicked
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
-
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTimKiemActionPerformed
 
     private void txtTimKiemCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtTimKiemCaretUpdate
+            tblModel = (DefaultTableModel) tblUser.getModel();
+            tblModel.setRowCount(0);
+            try {
+                List<DatSPModel> list = daoSP.TimKiem(txtTimKiem.getText());
 
+                for (DatSPModel nv : list) {
+                    String ThoiGianThem = "";
+                    DecimalFormat df = new DecimalFormat("#,##0.##");
+                    if (nv.getThoiGianDat() != null) {
+                        String dateString = nv.getThoiGianDat();
+                        Date date0 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(dateString);
+                        ThoiGianThem = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(date0);
+                    }
+                    Object[] row = new Object[]{nv.getMaDH(), nv.getSoLuong(), nv.getSDT(), df.format(nv.getDonGia()), df.format(nv.getTongTien()), ThoiGianThem, nv.getMaNV()};
+                    tblModel.addRow(row);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            }
     }//GEN-LAST:event_txtTimKiemCaretUpdate
 
     private void cboThoiGianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThoiGianActionPerformed
@@ -430,7 +434,6 @@ public class DanhSachDH extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.DuAn1.Swing.Button button2;
     private com.DuAn1.Swing.Combobox cboThoiGian;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

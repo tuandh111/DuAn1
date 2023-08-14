@@ -173,7 +173,11 @@ public class Form_Home extends javax.swing.JPanel {
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card1.setData(new ModelCard("Số lượng sản phẩm", tongSoLuong, 20, icon1));
         Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
+           if (ShareHelper.USER.getVaiTro().trim().equals("QL")) {
         card2.setData(new ModelCard("Doanh thu tháng", Thang1, 60, icon2));
+           }else{
+               card2.setData(new ModelCard("Doanh thu tháng",0, 60, icon2));
+           }
         Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
         card3.setData(new ModelCard("Nhân viên", list.size(), 80, icon3));
         Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
