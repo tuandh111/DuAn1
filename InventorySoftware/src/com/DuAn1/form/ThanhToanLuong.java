@@ -268,11 +268,12 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         } else {
             btnTrangThai.setSelectedAnimate(false);
             lblTrangThai.setText("Chưa thanh toán");
+            int chon = JOptionPane.showConfirmDialog(this, "Ban co muon xem li do", "Li do", JOptionPane.YES_NO_OPTION);
+            if (chon == 0) {
+                com.DuAn1.Helper.DialogHelper.alert(this, ttl.getLiDo());
+            }
         }
-        int chon = JOptionPane.showConfirmDialog(this, "Ban co muon xem li do", "Li do", JOptionPane.YES_NO_OPTION);
-        if (chon == 0) {
-            com.DuAn1.Helper.DialogHelper.alert(this, ttl.getLiDo());
-        }
+
     }
 
     void clearForm() {
@@ -1175,7 +1176,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         if (Thang.equals("1") || Thang.equals("3") || Thang.equals("7") || Thang.equals("8") || Thang.equals("10") || Thang.equals("12")) {
             txtNgayVaoCTY.setText("31-" + Thang + "-" + Nam);
         } else if (Thang.equals("2")) {
-            
+
             if (isLeapYear) {
                 txtNgayVaoCTY.setText("29-" + Thang + "-" + Nam);
             } else {
