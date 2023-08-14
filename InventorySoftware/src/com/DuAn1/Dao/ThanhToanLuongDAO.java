@@ -19,7 +19,7 @@ import java.util.List;
 public class ThanhToanLuongDAO {
 
     public void insert(ThanhToanLuongModel model) {
-        String sql = "Insert into LUONG values (?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert into LUONG values (?,?,?,?,?,?,?,?,?,?)";
         JdbcHelper.executeUpdate(sql,
                 model.getMaLuong(),
                 model.getSoNgayLam(),
@@ -29,7 +29,9 @@ public class ThanhToanLuongDAO {
                 model.getLuongTangCa(),
                 model.getKhoanTru(),
                 model.getTongTien(),
-                model.isTrangThai());
+                model.isTrangThai(),
+                model.getLiDo()
+                );
     }
 
     public void update(ThanhToanLuongModel model) {
@@ -47,15 +49,16 @@ public class ThanhToanLuongDAO {
         );
     }
   public void updateKhieuNay(ThanhToanLuongModel model) {
-        String sql = "Update LUONG set TRANGTHAI= 0 where MALUONG=? and NGAYVAOCTY=?";
+        String sql = "Update LUONG set TRANGTHAI= 0 , Lido=? where MALUONG=? and NGAYVAOCTY=?";
         com.DuAn1.Helper.JdbcHelper.executeUpdate(sql,
+                model.getLiDo(),
                 model.getMaLuong(),
                 model.getNgayVaoCTy()
         );
     }
-    public void delete(String maLuong) {
-        String sql = "DELETE FROM LUONG WHERE MaLuong=?";
-        JdbcHelper.executeUpdate(sql, maLuong);
+    public void delete(String maLuong,String Ngay) {
+        String sql = "DELETE FROM LUONG WHERE MaLuong=? and NGAYVAOCTY= ?";
+        JdbcHelper.executeUpdate(sql, maLuong,Ngay);
     }
 
     public List<ThanhToanLuongModel> select1(int Thang, int Nam) {
@@ -116,7 +119,7 @@ public class ThanhToanLuongDAO {
         model.setKhoanTru(rs.getDouble("KhoangTru"));
         model.setTongTien(rs.getDouble("TongTien"));
         model.setTrangThai(rs.getBoolean("TrangThai"));
-
+        model.setLiDo(rs.getString("Lido"));
         return model;
     }
 

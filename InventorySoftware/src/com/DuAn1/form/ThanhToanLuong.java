@@ -233,6 +233,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         } else {
             ttl.setTrangThai(false);
         }
+        ttl.setLiDo(null);
         return ttl;
     }
     NhanVienDAO1 Dao = new NhanVienDAO1();
@@ -268,6 +269,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             btnTrangThai.setSelectedAnimate(false);
             lblTrangThai.setText("Chưa thanh toán");
         }
+        int chon = JOptionPane.showConfirmDialog(this, "Ban co muon xem li do", "Li do", JOptionPane.YES_NO_OPTION);
+        if (chon == 0) {
+            com.DuAn1.Helper.DialogHelper.alert(this, ttl.getLiDo());
+        }
     }
 
     void clearForm() {
@@ -287,7 +292,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     void edit() {
         String maluong = (String) tblThanhToanLuong.getValueAt(this.row, 0);
         String Ngay = (String) tblThanhToanLuong.getValueAt(this.row, 3);
-        
+
         String Ngay1 = Ngay;
         Date date;
         try {
@@ -540,7 +545,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
-        cboNam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2021", "2022", "2023" }));
+        cboNam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2020", "2021", "2022", "2023", "2024" }));
         cboNam.setSelectedIndex(-1);
         cboNam.setLabeText("Nam");
         cboNam.addActionListener(new java.awt.event.ActionListener() {
@@ -899,7 +904,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
         if (Double.parseDouble(KhoanTru) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
+            tongTien = tongTien - Double.parseDouble(KhoanTru);;
         }
 //        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
@@ -908,8 +913,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtKhoangTruCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtKhoangTruCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 1;
-        double luongTangCa = 1;
+        double tongTien = 0;
+        double luongTangCa = 0;
         if (txtKhoangTru.getText().equals("")) {
             return;
         }
@@ -928,10 +933,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         LuongCoBan = LuongCoBan.replace(",", "");
         tongTien = Double.parseDouble(LuongCoBan) / 26 * Double.parseDouble(txtSoNgayLamViec.getText());
         if (Double.parseDouble(LuongTangCa) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
+            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());
         }
         if (Double.parseDouble(KhoanTru) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
+            tongTien = tongTien - Double.parseDouble(KhoanTru);
         }
 //        lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
@@ -953,7 +958,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
 
     private void txtSoHTangCaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtSoHTangCaCaretUpdate
         // TODO add your handling code here:
-        double tongTien = 1;
+        double tongTien = 0;
 
         if (txtSoNgayLamViec.getText().equals("")) {
             return;
@@ -978,7 +983,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
         if (Double.parseDouble(KhoanTru) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
+            tongTien = tongTien - Double.parseDouble(KhoanTru);;
         }
         DecimalFormat df = new DecimalFormat("#,##0.##");
         lblTongTien.setText(df.format(tongTien));
@@ -1015,9 +1020,13 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     }//GEN-LAST:event_tblThanhToanLuongMouseClicked
     void xoa() {
         String maluong = (String) cboMaLuong.getSelectedItem();
-        if (DialogHelper.confirm(this, "Bạn muốn xoá nội dung này?")) {
+        maluong = maluong.substring(0, 5);
+        if (com.DuAn1.Helper.DialogHelper.confirm(this, "Bạn muốn xoá nội dung này?")) {
             try {
-                dao.delete(maluong);
+                String Ngay = txtNgayVaoCTY.getText();
+                Date date = new SimpleDateFormat("dd-MM-yyyy").parse(Ngay);
+                String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+                dao.delete(maluong.trim(), ngayNhap.trim());
                 this.fillTable();
                 this.clearForm();
                 ThaoTacModel model = getFormThaoTacXoa();
@@ -1063,7 +1072,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());
         }
         if (Double.parseDouble(KhoanTru) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);
+            tongTien = tongTien - Double.parseDouble(KhoanTru);
         }
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
@@ -1096,7 +1105,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText());;
         }
         if (Double.parseDouble(KhoanTru) != 0) {
-            tongTien = tongTien + Double.parseDouble(LuongTangCa) * Double.parseDouble(txtSoHTangCa.getText()) - Double.parseDouble(KhoanTru);;
+            tongTien = tongTien - Double.parseDouble(KhoanTru);;
         }
         lblTongTien.setText(String.valueOf(tongTien));
         DecimalFormat df = new DecimalFormat("#,##0.##");
@@ -1158,8 +1167,23 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         }
         String Thang = (String) cboThang.getSelectedItem();
         String Nam = (String) cboNam.getSelectedItem();
+
+        int year = Integer.parseInt(Nam);
+        boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+
         LoadCBOMaLuong();
-        txtNgayVaoCTY.setText("31-" + Thang + "-" + Nam);
+        if (Thang.equals("1") || Thang.equals("3") || Thang.equals("7") || Thang.equals("8") || Thang.equals("10") || Thang.equals("12")) {
+            txtNgayVaoCTY.setText("31-" + Thang + "-" + Nam);
+        } else if (Thang.equals("2")) {
+            
+            if (isLeapYear) {
+                txtNgayVaoCTY.setText("29-" + Thang + "-" + Nam);
+            } else {
+                txtNgayVaoCTY.setText("28-" + Thang + "-" + Nam);
+            }
+        } else {
+            txtNgayVaoCTY.setText("30-" + Thang + "-" + Nam);
+        }
         fillTable();
     }//GEN-LAST:event_cboThangActionPerformed
 
