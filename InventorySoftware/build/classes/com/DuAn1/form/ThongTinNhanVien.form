@@ -91,8 +91,8 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="button2" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtVaiTro" min="-2" pref="230" max="-2" attributes="0"/>
+                                      <Component id="button2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -107,9 +107,9 @@
                           <Component id="textImage1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="358" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="txtNhapLaiMatKhauMoi" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="txtNhapLaiMatKhauMoi" min="-2" pref="220" max="-2" attributes="0"/>
                               <Component id="button1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -152,6 +152,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtNhapLaiMatKhau" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtNhapLaiMatKhauMoi" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtVaiTro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="68" max="32767" attributes="0"/>
                           <Component id="button1" min="-2" max="-2" attributes="0"/>
@@ -159,8 +160,6 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="txtHinh" min="-2" pref="176" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Component id="txtVaiTro" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -172,6 +171,7 @@
         <Component class="com.DuAn1.Swing.TextField" name="txtMaNV">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="labelText" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
           </Properties>
         </Component>

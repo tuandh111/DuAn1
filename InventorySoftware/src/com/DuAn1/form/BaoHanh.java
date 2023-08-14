@@ -344,6 +344,7 @@ public class BaoHanh extends javax.swing.JPanel {
     }
 
     public void LoadSP(Object nv) {
+        DecimalFormat df = new DecimalFormat("#,##0.##");
         List<SanPhamModel> list = (List<SanPhamModel>) nv;
         int i = 0;
         int j = 0;
@@ -351,65 +352,74 @@ public class BaoHanh extends javax.swing.JPanel {
         for (SanPhamModel sp : list) {
             if (sp.getLoaiSP().equalsIgnoreCase("Iphone")) {
                 if (i == 0) {
-                    txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone1.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone1.setText(df.format(sp.getGia()));
                     txtMaIphone1.setText(sp.getMaSP());
                     lbIphone1.setVisible(true);
                 }
                 if (i == 1) {
-                    txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenIphone3.setText(sp.getTenSP());
+                    txtHinhAnhIphone2.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
+                    txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone2.setText(df.format(sp.getGia()));
                     txtMaIphone2.setText(sp.getMaSP());
                     lbIphone2.setVisible(true);
                 }
                 if (i == 2) {
-                    txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenIphone2.setText(sp.getTenSP());
+                    txtHinhAnhIphone3.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
+                    txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone3.setText(df.format(sp.getGia()));
                     txtMaIphone3.setText(sp.getMaSP());
                     lbIphone3.setVisible(true);
                 }
                 if (i == 3) {
-                    txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone4.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone4.setText(df.format(sp.getGia()));
                     txtMaIphone4.setText(sp.getMaSP());
                     lbIphone4.setVisible(true);
                 }
                 if (i == 4) {
-                    txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone5.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone5.setText(df.format(sp.getGia()));
                     txtMaIphone5.setText(sp.getMaSP());
                     lbIphone5.setVisible(true);
                 }
                 if (i == 5) {
-                    txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone6.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone6.setText(df.format(sp.getGia()));
                     txtMaIphone6.setText(sp.getMaSP());
                     lbIphone6.setVisible(true);
                 }
                 if (i == 6) {
-                    txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone7.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone7.setText(df.format(sp.getGia()));
                     txtMaIphone7.setText(sp.getMaSP());
                     lbIphone7.setVisible(true);
                 }
                 if (i == 7) {
-                    txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone8.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone8.setText(df.format(sp.getGia()));
                     txtMaIphone8.setText(sp.getMaSP());
                     lbIphone8.setVisible(true);
                 }
                 if (i == 8) {
-                    txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhIphone9.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaIphone9.setText(df.format(sp.getGia()));
                     txtMaIphone9.setText(sp.getMaSP());
                     lbIphone9.setVisible(true);
                 }
@@ -420,137 +430,157 @@ public class BaoHanh extends javax.swing.JPanel {
         for (SanPhamModel sp : list) {
             if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
                 if (j == 0) {
-                    txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung1.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung1.setText(df.format(sp.getGia()));
                     txtMaSamSung1.setText(sp.getMaSP());
                     lbISamSung1.setVisible(true);
                 }
                 if (j == 1) {
-                    txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung2.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung2.setText(df.format(sp.getGia()));
                     txtMaSamSung2.setText(sp.getMaSP());
                     lbISamSung2.setVisible(true);
                 }
                 if (j == 2) {
-                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
-                    txtTenSamSung4.setText(sp.getTenSP());
+                    txtHinhAnhSamSung3.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
+                    txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung3.setText(df.format(sp.getGia()));
                     txtMaSamSung3.setText(sp.getMaSP());
                     lbISamSung3.setVisible(true);
                 }
                 if (j == 3) {
-                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung4.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung4.setText(df.format(sp.getGia()));
                     txtMaSamSung4.setText(sp.getMaSP());
                     lbISamSung4.setVisible(true);
                 }
                 if (j == 4) {
-                    txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung5.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung5.setText(df.format(sp.getGia()));
                     txtMaSamSung5.setText(sp.getMaSP());
                     lbISamSung5.setVisible(true);
                 }
                 if (j == 5) {
-                    txtHinhAnhSamSung6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung6.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung6.setText(sp.getTenSP());
                     txtSoLuongConSamSung6.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung6.setText(df.format(sp.getGia()));
                     txtMaSamSung6.setText(sp.getMaSP());
                     lbISamSung6.setVisible(true);
                 }
                 if (j == 6) {
-                    txtHinhAnhSamSung7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung7.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung7.setText(sp.getTenSP());
                     txtSoLuongConSamSung7.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung7.setText(df.format(sp.getGia()));
                     txtMaSamSung7.setText(sp.getMaSP());
                     lbISamSung7.setVisible(true);
                 }
                 if (j == 7) {
-                    txtHinhAnhSamSung8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung8.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung8.setText(sp.getTenSP());
                     txtSoLuongConSamSung8.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung8.setText(df.format(sp.getGia()));
                     txtMaSamSung8.setText(sp.getMaSP());
                     lbISamSung8.setVisible(true);
                 }
                 if (j == 8) {
-                    txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSamSung9.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSamsung9.setText(df.format(sp.getGia()));
                     txtMaSamSung9.setText(sp.getMaSP());
                     lbISamSung9.setVisible(true);
                 }
                 j++;
             }
         }
+
         for (SanPhamModel sp : list) {
             if (sp.getLoaiSP().trim().equalsIgnoreCase("Sony")) {
                 if (z == 0) {
-                    txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony1.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy1.setText(df.format(sp.getGia()));
                     txtMaSony1.setText(sp.getMaSP());
                     LbSony1.setVisible(true);
                 }
                 if (z == 1) {
-                    txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony2.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy2.setText(df.format(sp.getGia()));
                     txtMaSony2.setText(sp.getMaSP());
                     LbSony2.setVisible(true);
                 }
                 if (z == 2) {
-                    txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony3.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy3.setText(df.format(sp.getGia()));
                     txtMaSony3.setText(sp.getMaSP());
                     LbSony3.setVisible(true);
                 }
                 if (z == 3) {
-                    txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony4.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy4.setText(df.format(sp.getGia()));
                     txtMaSony4.setText(sp.getMaSP());
                     LbSony4.setVisible(true);
                 }
                 if (z == 4) {
-                    txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony5.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy5.setText(df.format(sp.getGia()));
                     txtMaSony5.setText(sp.getMaSP());
                     LbSony5.setVisible(true);
                 }
                 if (z == 5) {
-                    txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony6.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy6.setText(df.format(sp.getGia()));
                     txtMaSony6.setText(sp.getMaSP());
                     LbSony6.setVisible(true);
                 }
                 if (z == 6) {
-                    txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony7.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy7.setText(df.format(sp.getGia()));
                     txtMaSony7.setText(sp.getMaSP());
                     LbSony7.setVisible(true);
                 }
                 if (z == 7) {
-                    txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony8.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy8.setText(df.format(sp.getGia()));
                     txtMaSony8.setText(sp.getMaSP());
                     LbSony8.setVisible(true);
                 }
                 if (z == 8) {
-                    txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    txtHinhAnhSony9.setImage(com.DuAn1.Helper.ShareHelper.readLogo(sp.getHinh()));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
+                    txtGiaSoNy9.setText(df.format(sp.getGia()));
                     txtMaSony9.setText(sp.getMaSP());
                     LbSony9.setVisible(true);
                 }
                 z++;
+
             }
 
         }
@@ -4963,8 +4993,8 @@ public class BaoHanh extends javax.swing.JPanel {
         LocalDateTime current = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String formatted = current.format(formatter);
-        if(txtNgayHetHan.getText().compareTo(formatted)<0){
-            DialogHelper.alert(this,"Ngày bào hành da het han");
+        if (txtNgayHetHan.getText().compareTo(formatted) < 0) {
+            DialogHelper.alert(this, "Ngày bào hành da het han");
             return false;
         }
         if (txtMoTa.getText().equals("")) {

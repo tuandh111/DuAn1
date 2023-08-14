@@ -430,6 +430,19 @@ public class NhanVien extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Ngày sinh không được để trống");
             return false;
         }
+        Date today = new Date();
+        Date date;
+        try {
+            date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaysinh.getText());
+            int age = (int) ((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+            if (age < 16) {
+                DialogHelper.alert(this, "Tuoi khong duoc nho hon 16");
+                return false;
+            }
+
+        } catch (ParseException ex) {
+            Logger.getLogger(ThongTinNhanVien.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (!txtHoten.getText().matches("^[\\p{L}\\s]{0,50}$")) {
             JOptionPane.showMessageDialog(this, "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự");
             return false;

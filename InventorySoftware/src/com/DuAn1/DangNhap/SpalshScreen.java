@@ -110,7 +110,7 @@ public class SpalshScreen extends javax.swing.JFrame {
         screen.setVisible(true);
         try {
             for (int row = 0; row <= 100; row++) {
-                Thread.sleep(10);
+                Thread.sleep(25);
                 screen.loadingnumber.setText(Integer.toString(row) + "%");
                 screen.loadingprogress.setValue(row);
                 int value = screen.loadingprogress.getValue();
