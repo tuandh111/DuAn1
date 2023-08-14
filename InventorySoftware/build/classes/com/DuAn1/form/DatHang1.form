@@ -173,9 +173,9 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="LbSony4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LbSony5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="LbSony6" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -186,9 +186,9 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="LbSony1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="LbSony2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="LbSony3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -242,7 +242,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="13" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtMaSony1" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtHinhAnhSony1" min="-2" pref="118" max="-2" attributes="0"/>
@@ -398,7 +398,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtMaSony2" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtHinhAnhSony2" min="-2" pref="118" max="-2" attributes="0"/>
@@ -420,7 +420,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="txtTenSony2" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                                      <EmptySpace pref="26" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -577,7 +577,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="txtTenSony3" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                                      <EmptySpace pref="26" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -885,7 +885,7 @@
                                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                                  <EmptySpace pref="24" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -899,7 +899,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="txtTenSony5" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                                      <EmptySpace pref="29" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1056,7 +1056,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="txtTenSony6" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                                      <EmptySpace pref="29" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>

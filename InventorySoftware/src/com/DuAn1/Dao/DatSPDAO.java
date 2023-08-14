@@ -65,7 +65,7 @@ public class DatSPDAO {
         return select(sql);
     }
     public List<DatSPModel> TimKiem(String Ma) {
-        String sql = "SELECT * FROM DATSP WHERE TrangThai =1 and MaDH like ?";
+        String sql = "SELECT * FROM DATSP WHERE TrangThai =1 and MaDH like ? ORDER BY ThoiGianDat DESC";
         return select(sql, "%" + Ma + "%");
     }
 

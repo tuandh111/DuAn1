@@ -5,7 +5,10 @@
         <group>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SoLuong.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
-            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/NhanVienDAO1.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachMH1.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DanhSachBH1.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Model/ThanhToanLuongModel.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/DangNhap/NewSignin.java</file>
         </group>
     </open-files>
 </project-private>

@@ -82,7 +82,7 @@ public class HoaDonDAO {
     }
 
     public List<HoaDonModel> TimKiem(String Ma) {
-        String sql = "SELECT * FROM HOADON WHERE TrangThai =1 and MaHD like ?";
+        String sql = "SELECT * FROM HOADON WHERE TrangThai =1 and MaHD like ? ORDER BY ngayxuat DESC";
         return select(sql, "%" + Ma + "%");
     }
 

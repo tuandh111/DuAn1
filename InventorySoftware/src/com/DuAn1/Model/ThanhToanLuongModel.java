@@ -20,11 +20,11 @@ public class ThanhToanLuongModel {
     private double khoanTru;
     private double tongTien;
     private boolean trangThai;
-
+    private String LiDo;
     public ThanhToanLuongModel() {
     }
 
-    public ThanhToanLuongModel(String maLuong, float soNgayLam, double luongCoBan, String ngayVaoCTy, float soGioTangCa, double luongTangCa, double khoanTru, double tongTien, boolean trangThai) {
+    public ThanhToanLuongModel(String maLuong, float soNgayLam, double luongCoBan, String ngayVaoCTy, float soGioTangCa, double luongTangCa, double khoanTru, double tongTien, boolean trangThai,String LiDo) {
         this.maLuong = maLuong;
         this.soNgayLam = soNgayLam;
         this.luongCoBan = luongCoBan;
@@ -34,12 +34,21 @@ public class ThanhToanLuongModel {
         this.khoanTru = khoanTru;
         this.tongTien = tongTien;
         this.trangThai = trangThai;
+        this.LiDo= LiDo;
     }
 
+    public String getLiDo() {
+        return LiDo;
+    }
+
+    public void setLiDo(String LiDo) {
+        this.LiDo = LiDo;
+    }
+    
     public String getMaLuong() {
         return maLuong;
     }
-
+    
     public void setMaLuong(String maLuong) {
         this.maLuong = maLuong;
     }

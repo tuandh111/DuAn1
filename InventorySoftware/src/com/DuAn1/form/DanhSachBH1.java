@@ -161,7 +161,6 @@ public class DanhSachBH1 extends javax.swing.JDialog {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
-        button2 = new com.DuAn1.Swing.Button();
         cboThoiGian = new com.DuAn1.Swing.Combobox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -206,13 +205,6 @@ public class DanhSachBH1 extends javax.swing.JDialog {
             }
         });
 
-        button2.setText("Tìm kiếm");
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
-            }
-        });
-
         cboThoiGian.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hôm nay", "Tuần này", "Tháng này" }));
         cboThoiGian.setSelectedIndex(-1);
         cboThoiGian.setLabeText("Thời gian");
@@ -234,10 +226,8 @@ public class DanhSachBH1 extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(283, 283, 283)
-                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(7, Short.MAX_VALUE)))
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,9 +240,7 @@ public class DanhSachBH1 extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(69, 69, 69)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(418, Short.MAX_VALUE)))
         );
 
@@ -322,10 +310,6 @@ public class DanhSachBH1 extends javax.swing.JDialog {
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTimKiemActionPerformed
-
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
 
     private void cboThoiGianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThoiGianActionPerformed
         // TODO add your handling code here:
@@ -470,7 +454,6 @@ public class DanhSachBH1 extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.DuAn1.Swing.Button button2;
     private com.DuAn1.Swing.Combobox cboThoiGian;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane4;

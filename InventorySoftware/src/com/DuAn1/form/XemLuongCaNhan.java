@@ -189,7 +189,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                     String dateString = ttl.getNgayVaoCTy();
                     Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
                     String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                    Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
+                    Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam()+ " Ngày", df.format(ttl.getLuongCoBan()) + " VND",
                         formattedDate,
                         ttl.getSoGioTangCa() + " Gio",
                         df.format(ttl.getLuongTangCa()) + " VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
@@ -216,6 +216,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
     }
 
     ThanhToanLuongModel getForm() {
+     
         String MaLuong = (String) tblThanhToanLuong.getValueAt(0, 0);
         String Ngay = (String) tblThanhToanLuong.getValueAt(0, 3);
         ThanhToanLuongModel ttl = new ThanhToanLuongModel();
@@ -227,6 +228,14 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
             Logger.getLogger(XemLuongCaNhan.class.getName()).log(Level.SEVERE, null, ex);
         }
         ttl.setMaLuong(MaLuong.trim());
+           int chon = JOptionPane.showConfirmDialog(this,"Ban co muon nhap li do","Li do",JOptionPane.YES_NO_OPTION);
+           if(chon==0){
+                String Lido = com.DuAn1.Helper.DialogHelper.prompt(this,"Nhap li do");
+                ttl.setLiDo(Lido);
+           }else{
+               ttl.setLiDo(null);
+           }
+       
         return ttl;
     }
     private void tblThanhToanLuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMouseClicked

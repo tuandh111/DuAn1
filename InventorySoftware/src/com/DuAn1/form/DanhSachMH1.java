@@ -152,7 +152,6 @@ public class DanhSachMH1 extends javax.swing.JDialog {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblUser = new javaswingdev.swing.table.Table();
         txtTimKiem = new com.DuAn1.Swing.TextField1();
-        button2 = new com.DuAn1.Swing.Button();
         jLabel1 = new javax.swing.JLabel();
         cboThoiGian = new com.DuAn1.Swing.Combobox();
 
@@ -187,18 +186,11 @@ public class DanhSachMH1 extends javax.swing.JDialog {
         jScrollPane4.setViewportView(tblUser);
 
         txtTimKiem.setToolTipText("");
-        txtTimKiem.setHint("Tìm kiếm");
+        txtTimKiem.setHint("Tìm kiếm theo mã");
         txtTimKiem.setName(""); // NOI18N
         txtTimKiem.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 txtTimKiemCaretUpdate(evt);
-            }
-        });
-
-        button2.setText("Tìm kiếm");
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
             }
         });
 
@@ -224,14 +216,12 @@ public class DanhSachMH1 extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(77, 77, 77)
-                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(0, 12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -242,7 +232,6 @@ public class DanhSachMH1 extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboThoiGian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
@@ -311,10 +300,6 @@ public class DanhSachMH1 extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
     }//GEN-LAST:event_txtTimKiemCaretUpdate
-
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
 DecimalFormat df = new DecimalFormat("#,##0.##");
     private void cboThoiGianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThoiGianActionPerformed
         // TODO add your handling code here:
@@ -427,7 +412,6 @@ DecimalFormat df = new DecimalFormat("#,##0.##");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.DuAn1.Swing.Button button2;
     private com.DuAn1.Swing.Combobox cboThoiGian;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
