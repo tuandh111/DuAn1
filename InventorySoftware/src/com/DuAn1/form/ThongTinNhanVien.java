@@ -16,9 +16,13 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -29,6 +33,7 @@ import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
  * @author DELL E5470
  */
 public class ThongTinNhanVien extends javax.swing.JDialog {
+
     ThaoTacDAO daoThaoTac = new ThaoTacDAO();
 
     MaHoa MH = new MaHoa();
@@ -43,6 +48,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
     public static void setSoLuong(String soLuong) {
         ThongTinNhanVien.soLuong = soLuong;
     }
+
     public ThaoTacModel getFormUpdate() {
         ThaoTacModel cd = new ThaoTacModel();
         LocalDateTime current = LocalDateTime.now();
@@ -57,6 +63,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         cd.setMaNV(com.DuAn1.Helper.ShareHelper.USER.getMaNV());
         return cd;
     }
+
     public ThongTinNhanVien(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -89,11 +96,17 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
 
     public void select() {
         NhanVienModel nv = dao.findById(txtMaNV.getText());
-        txtHoTen.setText(nv.getHoTen());
+        txtHoTen.setText(nv.getHoTen().trim());
         txtDiaChi.setText(nv.getDiaChi());
-        txtSoDienThoai.setText(nv.getSDT());
-        txtNgaySinh.setText(nv.getNgaySinh());
-        txtEmail.setText(nv.getEmail());
+        txtSoDienThoai.setText(nv.getSDT().trim());
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(nv.getNgaySinh());
+            String ngayNhap = new SimpleDateFormat("dd-MM-yyyy").format(date);
+            txtNgaySinh.setText(ngayNhap);
+        } catch (Exception e) {
+        }
+
+        txtEmail.setText(nv.getEmail().trim());
         txtVaiTro.setText(nv.getVaiTro());
         if (nv.isGioiTinh()) {
             rdoNam.setSelected(true);
@@ -118,43 +131,111 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
             dao.update1(nv);
             DialogHelper.alert(this, "Cập nhật thành công!");
             ThongTinNhanVien.setSoLuong(nv.getHinh());
-                ThaoTacModel ThaoTacModel = getFormUpdate();
+            ThaoTacModel ThaoTacModel = getFormUpdate();
             daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {
             e.printStackTrace();
             DialogHelper.alert(this, "Cập nhật thất bại!");
         }
     }
+    String so = "0\\d{9,10}";
 
-    public boolean CheckForm() {
+    public boolean check() {
+//        if (Dao.findById(txtTaikhoan.getText()) != null) {
+//            DialogHelper.alert(this, "Mã Nhân Viên đã tồn tại!");
+//            return false;
+//        }
+        Date today = new Date();
         if (txtMatKhau.getText().equals("")) {
-            DialogHelper.alert(this, "Mật khẩu của bạn đã để trống");
+            DialogHelper.alert(this, "Mật khẩu không được để trống");
             return false;
         }
-         String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
-        if(!mk.equals(ShareHelper.USER.getMatKhau().trim())){
-            DialogHelper.alert(this,"Mật khẩu hiện tại sai");
-            
+        // Get the date from the JTextField.
+        Date date;
+        try {
+            date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaySinh.getText());
+            int age = (int) ((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+            if (age < 16) {
+                DialogHelper.alert(this, "Tuoi khong duoc nho hon 16");
+                return false;
+            }
+
+        } catch (ParseException ex) {
+            Logger.getLogger(ThongTinNhanVien.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // Calculate the age.
+        String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
+        if (!mk.equals(ShareHelper.USER.getMatKhau().trim())) {
+            DialogHelper.alert(this, "Mật khẩu hiện tại sai");
             return false;
         }
-        
-        if (txtNhapLaiMatKhau.getText().equals("")) {
-            DialogHelper.alert(this, "Mật khẩu mới để trống");
+        if (txtHoTen.getText().equals("")) {
+            DialogHelper.alert(this, "Họ và tên không được để trống");
             return false;
         }
-        if(!txtNhapLaiMatKhau.getText().equals(txtNhapLaiMatKhauMoi.getText())){
-            DialogHelper.alert(this, "Nhập lại mật khẩu không chính xác");
+        if (txtNgaySinh.getText().equals("")) {
+            DialogHelper.alert(this, "Ngày sinh không được để trống");
             return false;
+        }
+        if (!txtHoTen.getText().matches("^[\\p{L}\\s]{0,50}$")) {
+            DialogHelper.alert(this, "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự");
+            return false;
+        }
+        if (txtSoDienThoai.getText().equals("")) {
+            DialogHelper.alert(this, "Số điện thoại không được để trống");
+            return false;
+        }
+        if (!txtSoDienThoai.getText().matches(so)) {
+            DialogHelper.alert(this, "Số điện thoại của bạn không đúng định dạng");
+            return false;
+        }
+        if (txtDiaChi.getText().equals("")) {
+            DialogHelper.alert(this, "Địa chỉ không được để trống");
+            return false;
+        }
+        if (txtEmail.getText().equals("")) {
+            DialogHelper.alert(this, "Email không được để trống!");
+            return false;
+        }
+        if (!txtEmail.getText().matches("\\w+@\\w+(\\.\\w+){1,2}")) {
+            DialogHelper.alert(this, "Email không đúng định dạng!");
+            return false;
+        }
+        if (buttonGroup1.getSelection() == null) {
+            DialogHelper.alert(this, "Giới tính của bạn không được để trống");
+            return false;
+        }
+        if (!txtNhapLaiMatKhau.getText().equals("")) {
+            {
+                if (txtNhapLaiMatKhau.getText().equals("")) {
+                    DialogHelper.alert(this, "Mật khẩu mới để trống");
+                    return false;
+                }
+                if (!txtNhapLaiMatKhau.getText().equals(txtNhapLaiMatKhauMoi.getText())) {
+                    DialogHelper.alert(this, "Nhập lại mật khẩu không chính xác");
+                    return false;
+                }
+            }
+
         }
         return true;
+
     }
 
     NhanVienModel getForm() {
         NhanVienModel cd = new NhanVienModel();
 
         cd.setHoTen(txtHoTen.getText());
+        Date date;
+        try {
+            date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaySinh.getText());
+            String ngayNhap = new SimpleDateFormat("yyyy-MM-dd").format(date);
+            cd.setNgaySinh(ngayNhap);
+        } catch (ParseException ex) {
+            Logger.getLogger(ThongTinNhanVien.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        cd.setNgaySinh(txtNgaySinh.getText());
         if (rdoNam.isSelected()) {
             cd.setGioiTinh(true);
         } else {
@@ -163,8 +244,13 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         cd.setDiaChi(txtDiaChi.getText());
         cd.setSDT(txtSoDienThoai.getText());
         cd.setEmail(txtEmail.getText());
-        String mk = MH.toSHA(new String(txtNhapLaiMatKhauMoi.getPassword()));
-        cd.setMatKhau(mk);
+        if (!txtNhapLaiMatKhau.getText().equals("")) {
+            String mk = MH.toSHA(new String(txtNhapLaiMatKhauMoi.getPassword()));
+            cd.setMatKhau(mk);
+        } else {
+            String mk = MH.toSHA(new String(txtMatKhau.getPassword()));
+            cd.setMatKhau(mk);
+        }
         cd.setVaiTro(txtVaiTro.getText());
         cd.setHinh(txtHinhAnh.getToolTipText());
         cd.setMaNV(txtMaNV.getText());
@@ -208,6 +294,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txtMaNV.setEditable(false);
+        txtMaNV.setEnabled(false);
         txtMaNV.setLabelText("Mã nhân viên");
 
         txtNgaySinh.setLabelText("Ngày sinh");
@@ -305,8 +392,8 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(103, 103, 103))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,9 +401,9 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
                         .addGap(306, 306, 306)
                         .addComponent(textImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(358, 358, 358)
+                        .addGap(368, 368, 368)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtNhapLaiMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNhapLaiMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -349,14 +436,13 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNhapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNhapLaiMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNhapLaiMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtHinh, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
-                        .addComponent(txtVaiTro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -367,7 +453,7 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
-        if (CheckForm() == false) {
+        if (check() == false) {
             return;
         }
         updateNV();
