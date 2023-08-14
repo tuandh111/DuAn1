@@ -130,6 +130,10 @@ public class GiamGia extends javax.swing.JPanel {
     }
 
     void update() {
+        if(txtNgayBD.getText().compareTo(txtNgayKT.getText())>0){
+            DialogHelper.alert(this,"Ngay ket thuc khong duoc nho hon ngay bat dau");
+            return;
+        }
         GiamGiaModel nv = getForm();
         try {
             Dao.update(nv);
