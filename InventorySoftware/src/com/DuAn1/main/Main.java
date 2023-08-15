@@ -58,13 +58,14 @@ public class Main extends javax.swing.JFrame {
         time.start();
         titleBar1.initJFram(this);
         init();
+
         lbUserName.setText(ShareHelper.USER.getMaNV());
         lbRole.setText(ShareHelper.USER.getVaiTro());
         NhanVienDAO1 dao = new NhanVienDAO1();
         NhanVienModel nv = dao.findById(lbUserName.getText());
         if (nv != null) {
-            pic.setToolTipText(nv.getHinh());
-            pic.setIcon(ShareHelper.readLogo(nv.getHinh()));
+            pic.setToolTipText(nv.getHinh().replace(ShareHelper.USER.getMaNV().trim(),""));
+            pic.setIcon(ShareHelper.readLogo(nv.getHinh().replace(ShareHelper.USER.getMaNV().trim(),"")));
         }
         main.repaint();
     }

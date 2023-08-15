@@ -200,7 +200,7 @@ public class NhanVien extends javax.swing.JPanel {
 //        } else {
 //            nv.setVaiTro("NV");
 //        }
-        nv.setHinh(txtHinhAnh1.getToolTipText());
+        nv.setHinh(txtHinhAnh1.getToolTipText() + nv.getMaNV().trim());
         nv.setTrangThai(true);
         if (btnTrangthai.isSelected()) {
             nv.setTrangThai(true);
@@ -289,10 +289,12 @@ public class NhanVien extends javax.swing.JPanel {
 //            cboVaitro.setSelectedItem("Nhân Viên");
 //        }
         if (nv.getHinh() != null) {
-            txtHinhAnh1.setToolTipText(nv.getHinh());
-            txtHinhAnh1.setIcon(ShareHelper.readLogo(nv.getHinh()));
-            txtHinhAnh1.setToolTipText(nv.getHinh());
-            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+            String TenHinh = nv.getHinh().trim();
+            TenHinh = TenHinh.replace(nv.getMaNV().trim(), "");
+            txtHinhAnh1.setToolTipText(TenHinh);
+            txtHinhAnh1.setIcon(ShareHelper.readLogo(TenHinh));
+            txtHinhAnh1.setToolTipText(TenHinh);
+            ImageIcon originalIcon = ShareHelper.readLogo(TenHinh);
             Image originalImage = originalIcon.getImage();
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh1.getWidth(), txtHinhAnh1.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh1.setIcon(new ImageIcon(scaledImage));

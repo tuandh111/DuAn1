@@ -154,7 +154,7 @@ public class SanPham extends javax.swing.JPanel {
     void LoadCombobox() {
         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         GiamGiaDao daoGiamGia = new GiamGiaDao();
-        ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
+        ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select1();
         for (GiamGiaModel gg : listGiamGia) {
             String dateString = gg.getNgayBD();
             Date date = null;
@@ -275,7 +275,7 @@ public class SanPham extends javax.swing.JPanel {
         cd.setNoiNhap(txtNoiNhap.getText());
         cd.setSoLuong((int) txtSoLuong.getValue());
         cd.setTrangThai(true);
-        cd.setHinh(txtHinhAnh.getToolTipText());
+        cd.setHinh(txtHinhAnh.getToolTipText()+txtMaSP.getText().trim());
         cd.setMaNV(ShareHelper.USER.getMaNV());
         String KhuyenMai = (String) cboKhuyenMai.getSelectedItem();
         KhuyenMai = KhuyenMai.substring(0, 5);
@@ -341,10 +341,12 @@ public class SanPham extends javax.swing.JPanel {
         }
         txtSoLuong.setValue(sp.getSoLuong());
         if (sp.getHinh() != null) {
-            txtHinhAnh.setToolTipText(sp.getHinh());
-            txtHinhAnh.setIcon(ShareHelper.readLogo(sp.getHinh()));
-            txtHinhAnh.setToolTipText(sp.getHinh());
-            ImageIcon originalIcon = ShareHelper.readLogo(sp.getHinh());
+            String TenHinh = sp.getHinh().trim();
+            TenHinh=TenHinh.replace(sp.getMaSP().trim(),"");
+            txtHinhAnh.setToolTipText(TenHinh);
+            txtHinhAnh.setIcon(ShareHelper.readLogo(TenHinh));
+            txtHinhAnh.setToolTipText(TenHinh);
+            ImageIcon originalIcon = ShareHelper.readLogo(TenHinh);
             Image originalImage = originalIcon.getImage();
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh.getWidth(), txtHinhAnh.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh.setIcon(new ImageIcon(scaledImage));
@@ -623,11 +625,11 @@ public class SanPham extends javax.swing.JPanel {
     public void Sua() {
         int chon = tblUser.getSelectedRow();
         if (chon < 0) {
-            DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể xóa");
+            DialogHelper.alert(this, "Bạn cần chọn sản phẩm để có thể sua");
             return;
         }
-        if (kiemSL == 1) {
-            DialogHelper.alert(this, "Hay xoa san pham hoac cap nhat lai so luong san pham nay");
+        if ((int) txtSoLuong.getValue()<=0) {
+            DialogHelper.alert(this, "So luong khong duoc nho hon 0");
             return;
         }
         if (checkForm() == false) {

@@ -114,9 +114,10 @@ public class ThongTinNhanVien extends javax.swing.JDialog {
             rdoNu.setSelected(true);
         }
         if (nv.getHinh() != null) {
-
-            txtHinhAnh.setToolTipText(nv.getHinh());
-            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+             String TenHinh = nv.getHinh().trim();
+            TenHinh=TenHinh.replace(nv.getMaNV().trim(),"");
+            txtHinhAnh.setToolTipText(TenHinh);
+            ImageIcon originalIcon = ShareHelper.readLogo(TenHinh);
             Image originalImage = originalIcon.getImage();
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh.getWidth(), txtHinhAnh.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh.setIcon(new ImageIcon(scaledImage));

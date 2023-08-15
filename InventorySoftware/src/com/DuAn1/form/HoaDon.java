@@ -158,7 +158,9 @@ public class HoaDon extends javax.swing.JPanel {
         for (SanPhamModel sp : list) {
             if (sp.getLoaiSP().equalsIgnoreCase("Iphone")) {
                 if (i == 0) {
-                    txtHinhAnhIphone1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone1.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone1.setText(sp.getTenSP());
                     txtSoLuongConIphone1.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone1.setText(df.format(sp.getGia()));
@@ -166,7 +168,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone1.setVisible(true);
                 }
                 if (i == 1) {
-                    txtHinhAnhIphone2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone2.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone2.setText(sp.getTenSP());
                     txtSoLuongConIphone2.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone2.setText(df.format(sp.getGia()));
@@ -174,7 +178,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone2.setVisible(true);
                 }
                 if (i == 2) {
-                    txtHinhAnhIphone3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone3.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone3.setText(sp.getTenSP());
                     txtSoLuongConIphone3.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone3.setText(df.format(sp.getGia()));
@@ -182,7 +188,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone3.setVisible(true);
                 }
                 if (i == 3) {
-                    txtHinhAnhIphone4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone4.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone4.setText(sp.getTenSP());
                     txtSoLuongConIphone4.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone4.setText(df.format(sp.getGia()));
@@ -190,7 +198,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone4.setVisible(true);
                 }
                 if (i == 4) {
-                    txtHinhAnhIphone5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone5.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone5.setText(sp.getTenSP());
                     txtSoLuongConIphone5.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone5.setText(df.format(sp.getGia()));
@@ -198,7 +208,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone5.setVisible(true);
                 }
                 if (i == 5) {
-                    txtHinhAnhIphone6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone6.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone6.setText(sp.getTenSP());
                     txtSoLuongConIphone6.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone6.setText(df.format(sp.getGia()));
@@ -206,7 +218,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone6.setVisible(true);
                 }
                 if (i == 6) {
-                    txtHinhAnhIphone7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone7.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone7.setText(sp.getTenSP());
                     txtSoLuongConIphone7.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone7.setText(df.format(sp.getGia()));
@@ -214,7 +228,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone7.setVisible(true);
                 }
                 if (i == 7) {
-                    txtHinhAnhIphone8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone8.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone8.setText(sp.getTenSP());
                     txtSoLuongConIphone8.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone8.setText(df.format(sp.getGia()));
@@ -222,7 +238,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbIphone8.setVisible(true);
                 }
                 if (i == 8) {
-                    txtHinhAnhIphone9.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhIphone9.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenIphone9.setText(sp.getTenSP());
                     txtSoLuongConIphone9.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaIphone9.setText(df.format(sp.getGia()));
@@ -236,7 +254,9 @@ public class HoaDon extends javax.swing.JPanel {
         for (SanPhamModel sp : list) {
             if (sp.getLoaiSP().trim().equalsIgnoreCase("SamSung")) {
                 if (j == 0) {
-                    txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSamSung1.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSamSung1.setText(sp.getTenSP());
                     txtSoLuongConSamSung1.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSamsung1.setText(df.format(sp.getGia()));
@@ -244,7 +264,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbISamSung1.setVisible(true);
                 }
                 if (j == 1) {
-                    txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSamSung2.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSamSung2.setText(sp.getTenSP());
                     txtSoLuongConSamSung2.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSamsung2.setText(df.format(sp.getGia()));
@@ -252,7 +274,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbISamSung2.setVisible(true);
                 }
                 if (j == 2) {
-                    txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSamSung3.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSamSung3.setText(sp.getTenSP());
                     txtSoLuongConSamSung3.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSamsung3.setText(df.format(sp.getGia()));
@@ -260,7 +284,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbISamSung3.setVisible(true);
                 }
                 if (j == 3) {
-                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSamSung4.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSamSung4.setText(sp.getTenSP());
                     txtSoLuongConSamSung4.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSamsung4.setText(df.format(sp.getGia()));
@@ -268,7 +294,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbISamSung4.setVisible(true);
                 }
                 if (j == 4) {
-                    txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSamSung5.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSamSung5.setText(sp.getTenSP());
                     txtSoLuongConSamSung5.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSamsung5.setText(df.format(sp.getGia()));
@@ -300,7 +328,9 @@ public class HoaDon extends javax.swing.JPanel {
                     lbISamSung8.setVisible(true);
                 }
                 if (j == 8) {
-                    txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSamSung9.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSamSung9.setText(sp.getTenSP());
                     txtSoLuongConSamSung9.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSamsung9.setText(df.format(sp.getGia()));
@@ -314,7 +344,9 @@ public class HoaDon extends javax.swing.JPanel {
         for (SanPhamModel sp : list) {
             if (sp.getLoaiSP().trim().equalsIgnoreCase("Sony")) {
                 if (z == 0) {
-                    txtHinhAnhSony1.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony1.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony1.setText(sp.getTenSP());
                     txtSoLuongConSony1.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy1.setText(df.format(sp.getGia()));
@@ -322,7 +354,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony1.setVisible(true);
                 }
                 if (z == 1) {
-                    txtHinhAnhSony2.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony2.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony2.setText(sp.getTenSP());
                     txtSoLuongConSony2.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy2.setText(df.format(sp.getGia()));
@@ -330,7 +364,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony2.setVisible(true);
                 }
                 if (z == 2) {
-                    txtHinhAnhSony3.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony3.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony3.setText(sp.getTenSP());
                     txtSoLuongConSony3.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy3.setText(df.format(sp.getGia()));
@@ -338,7 +374,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony3.setVisible(true);
                 }
                 if (z == 3) {
-                    txtHinhAnhSony4.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony4.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony4.setText(sp.getTenSP());
                     txtSoLuongConSony4.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy4.setText(df.format(sp.getGia()));
@@ -346,7 +384,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony4.setVisible(true);
                 }
                 if (z == 4) {
-                    txtHinhAnhSony5.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony5.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony5.setText(sp.getTenSP());
                     txtSoLuongConSony5.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy5.setText(df.format(sp.getGia()));
@@ -354,7 +394,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony5.setVisible(true);
                 }
                 if (z == 5) {
-                    txtHinhAnhSony6.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony6.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony6.setText(sp.getTenSP());
                     txtSoLuongConSony6.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy6.setText(df.format(sp.getGia()));
@@ -362,7 +404,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony6.setVisible(true);
                 }
                 if (z == 6) {
-                    txtHinhAnhSony7.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony7.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony7.setText(sp.getTenSP());
                     txtSoLuongConSony7.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy7.setText(df.format(sp.getGia()));
@@ -370,7 +414,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony7.setVisible(true);
                 }
                 if (z == 7) {
-                    txtHinhAnhSony8.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony8.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony8.setText(sp.getTenSP());
                     txtSoLuongConSony8.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy8.setText(df.format(sp.getGia()));
@@ -378,7 +424,9 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony8.setVisible(true);
                 }
                 if (z == 8) {
-                    txtHinhAnhSony9.setImage(ShareHelper.readLogo(sp.getHinh()));
+                    String TenHinh = sp.getHinh().trim();
+                    TenHinh = TenHinh.replace(sp.getMaSP().trim(), "");
+                    txtHinhAnhSony9.setImage(ShareHelper.readLogo(TenHinh));
                     txtTenSony9.setText(sp.getTenSP());
                     txtSoLuongConSony9.setText(String.valueOf(sp.getSoLuong()));
                     txtGiaSoNy9.setText(df.format(sp.getGia()));
@@ -386,6 +434,7 @@ public class HoaDon extends javax.swing.JPanel {
                     LbSony9.setVisible(true);
                 }
                 z++;
+
             }
 
         }

@@ -48,7 +48,10 @@ public class GiamGiaDao {
         String sql = "SELECT * FROM GIAMGIA ";
         return select(sql);
     }
-
+    public List<GiamGiaModel> select1() {
+        String sql = "SELECT * FROM GIAMGIA where TrangThai =1";
+        return select(sql);
+    }
     public List<GiamGiaModel> orderByTang() {
         String sql = "select * from GIAMGIA order by MaGiamGia";
         return this.select(sql);

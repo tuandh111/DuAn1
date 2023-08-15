@@ -187,9 +187,9 @@ public class KhachHang extends javax.swing.JPanel {
     }
 
     void delete() {
-        if(tblUser.getSelectedRow()<0){
-            DialogHelper.alert(this,"Bạn chưa chọn khách hàng để có thể xóa");
-            return ;
+        if (tblUser.getSelectedRow() < 0) {
+            DialogHelper.alert(this, "Bạn chưa chọn khách hàng để có thể xóa");
+            return;
         }
         KhachHangModel nv = getForm();
         try {
@@ -233,7 +233,7 @@ public class KhachHang extends javax.swing.JPanel {
         nv.setTrangThai(true);
         nv.setMoTa(txtMota.getText());
         nv.setMaNV(ShareHelper.USER.getMaNV());
-        nv.setHinh(txtHinhAnh2.getToolTipText());
+        nv.setHinh(txtHinhAnh2.getToolTipText() + nv.getMaKH());
 
         return nv;
     }
@@ -263,10 +263,12 @@ public class KhachHang extends javax.swing.JPanel {
             txtMota.setText(nv.getMoTa());
         }
         if (nv.getHinh() != null) {
-            txtHinhAnh2.setToolTipText(nv.getHinh());
-            txtHinhAnh2.setIcon(ShareHelper.readLogo(nv.getHinh()));
-            txtHinhAnh2.setToolTipText(nv.getHinh());
-            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+            String TenHinh = nv.getHinh().trim();
+            TenHinh = TenHinh.replace(nv.getMaKH().trim(), "");
+            txtHinhAnh2.setToolTipText(TenHinh);
+            txtHinhAnh2.setIcon(ShareHelper.readLogo(TenHinh));
+            txtHinhAnh2.setToolTipText(TenHinh);
+            ImageIcon originalIcon = ShareHelper.readLogo(TenHinh);
             Image originalImage = originalIcon.getImage();
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh2.getWidth(), txtHinhAnh2.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh2.setIcon(new ImageIcon(scaledImage));
@@ -397,6 +399,19 @@ public class KhachHang extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Ngày sinh không được để trống");
             return false;
         }
+        Date date;
+        Date today = new Date();
+        try {
+            date = new SimpleDateFormat("dd-MM-yyyy").parse(txtNgaySinh.getText());
+            int age = (int) ((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+            if (age < 18) {
+                DialogHelper.alert(this, "Tuoi khong duoc nho hon 18");
+                return false;
+            }
+
+        } catch (ParseException ex) {
+            Logger.getLogger(ThongTinNhanVien.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (txtSdt.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Số điện thoại không được để trống");
             return false;
@@ -409,13 +424,13 @@ public class KhachHang extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Địa chỉ không được để trống");
             return false;
         }
-         if(cbokhach.getSelectedItem()==null){
-             DialogHelper.alert(this,"Loại khách hàng bạn chưa chọn");
-             return false;
+        if (cbokhach.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Loại khách hàng bạn chưa chọn");
+            return false;
         }
-              if(cboGioitinh.getSelectedItem()==null){
-             DialogHelper.alert(this,"Giới tính bạn chưa chọn");
-             return false;
+        if (cboGioitinh.getSelectedItem() == null) {
+            DialogHelper.alert(this, "Giới tính bạn chưa chọn");
+            return false;
         }
         return true;
     }
