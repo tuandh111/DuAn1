@@ -1740,12 +1740,12 @@
                                       <Component id="cboHinhThuc" min="-2" pref="215" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="lbIphone4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lbIphone1" alignment="0" max="32767" attributes="0"/>
                                           <Component id="lbIphone7" max="32767" attributes="0"/>
-                                          <Component id="lbIphone1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lbIphone4" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                       <Component id="lbIphone8" min="-2" pref="142" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="lbIphone9" min="-2" max="-2" attributes="0"/>
@@ -2123,7 +2123,7 @@
                                                   <Component id="txtSoLuongConIphone4" min="-2" pref="37" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="txtGiaIphone4" min="-2" pref="62" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="txtGiaIphone13" min="-2" pref="22" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
@@ -2753,7 +2753,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="btnAdd8" min="-2" pref="118" max="-2" attributes="0"/>
                                       <Component id="txtHinhAnhIphone7" min="-2" pref="118" max="-2" attributes="0"/>
@@ -2771,7 +2771,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="txtGiaIphone16" min="-2" pref="22" max="-2" attributes="0"/>
-                                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                                      <EmptySpace pref="70" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>

@@ -154,7 +154,7 @@ public class SanPham extends javax.swing.JPanel {
     void LoadCombobox() {
         DefaultComboBoxModel comboboxmodel = new DefaultComboBoxModel();
         GiamGiaDao daoGiamGia = new GiamGiaDao();
-        ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select();
+        ArrayList<GiamGiaModel> listGiamGia = (ArrayList<GiamGiaModel>) daoGiamGia.select1();
         for (GiamGiaModel gg : listGiamGia) {
             String dateString = gg.getNgayBD();
             Date date = null;
@@ -629,7 +629,7 @@ public class SanPham extends javax.swing.JPanel {
             return;
         }
         if ((int) txtSoLuong.getValue()<=0) {
-            DialogHelper.alert(this, "Hay xoa san pham hoac cap nhat lai so luong san pham nay");
+            DialogHelper.alert(this, "So luong khong duoc nho hon 0");
             return;
         }
         if (checkForm() == false) {

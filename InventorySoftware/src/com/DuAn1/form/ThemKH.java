@@ -91,7 +91,7 @@ public class ThemKH extends javax.swing.JDialog {
         nv.setTrangThai(true);
         nv.setMoTa(txtMota.getText());
         nv.setMaNV(ShareHelper.USER.getMaNV());
-        nv.setHinh(txtHinhAnh2.getToolTipText());
+        nv.setHinh(txtHinhAnh2.getToolTipText().trim()+nv.getMaKH().trim());
 
         return nv;
     }
