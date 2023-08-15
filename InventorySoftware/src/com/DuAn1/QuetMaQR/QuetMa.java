@@ -95,20 +95,20 @@ public class QuetMa extends JDialog {
 
                             txt.setText(qrText);
                             if(qrText.startsWith("I")){
-                                txtGia.setText("29.999.999");
+                                txtGia.setText("29,999,999");
                                 txtNoiNhap.setText("Mỹ");
                                 cbo.setSelectedItem("Iphone");
                             }else if(qrText.startsWith("Sa")){
-                                txtGia.setText("25.999.999");
+                                txtGia.setText("25,999,999");
                                 txtNoiNhap.setText("Hàn Quốc");
                                 cbo.setSelectedItem("Samsung");
                                 
                             }else if(qrText.startsWith("So")){
-                                txtGia.setText("19.999.999");
+                                txtGia.setText("19,999,999");
                                 txtNoiNhap.setText("Nhật Bản");
                                 cbo.setSelectedItem("Samsung");
                             }else{
-                                txtGia.setText("14.999.999");
+                                txtGia.setText("14,999,999");
                                 txtNoiNhap.setText("Chưa xác định");
                                 cbo.setSelectedItem(null);
                             }

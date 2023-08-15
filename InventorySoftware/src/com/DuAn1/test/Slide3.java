@@ -30,7 +30,7 @@ public class Slide3 extends javax.swing.JPanel {
         for (SanPhamModel sanPhamModel : list) {
             if (i == 2) {
                 if (sanPhamModel.getHinh() != null) {
-                    pictureBox1.setImage(ShareHelper.readLogo(sanPhamModel.getHinh().trim()));
+                    pictureBox1.setImage(ShareHelper.readLogo(sanPhamModel.getHinh().trim().replace(sanPhamModel.getMaSP().trim(),"")));
                     txtTenSP.setText(sanPhamModel.getTenSP());
                     break;
                 }

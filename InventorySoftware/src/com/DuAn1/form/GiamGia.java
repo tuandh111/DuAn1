@@ -34,11 +34,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- *String date1 = "1-1-2002";
-String date2 = "2-1-2023";
-
-Date date1Obj = Date.parse(date1);
-Date date2Obj = Date.parse(date2);
+ * String date1 = "1-1-2002"; String date2 = "2-1-2023";
+ *
+ * Date date1Obj = Date.parse(date1); Date date2Obj = Date.parse(date2);
+ *
  * @author DELL E5470
  */
 public class GiamGia extends javax.swing.JPanel {
@@ -102,8 +101,8 @@ public class GiamGia extends javax.swing.JPanel {
     }
 
     void insert() {
-        if(txtPhantram.getText().equals("")){
-            DialogHelper.alert(this,"Bạn chưa nhập phần trăm giảm giá");
+        if (txtPhantram.getText().equals("")) {
+            DialogHelper.alert(this, "Bạn chưa nhập phần trăm giảm giá");
             return;
         }
         try {
@@ -116,10 +115,19 @@ public class GiamGia extends javax.swing.JPanel {
             DialogHelper.alert(this, "Phần trăm không phải là số");
             return;
         }
-        if(txtNgayBD.getText().compareTo(txtNgayKT.getText())>0){
-            DialogHelper.alert(this,"Ngày kết thúc không được nhỏ hơn ngày bắt đầu");
-            return;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            // Tạo 2 ngày từ chuỗi
+            Date date1 = sdf.parse(txtNgayBD.getText());
+            Date date2 = sdf.parse(txtNgayKT.getText());
+            if (date1.compareTo(date2) > 0) {
+                DialogHelper.alert(this, "Ngày ket thuc khong duoc nho hon ngay bat dau");
+                return;
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(GiamGia.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         GiamGiaModel nv = getForm();
         try {
             Dao.insert(nv);
@@ -134,9 +142,17 @@ public class GiamGia extends javax.swing.JPanel {
     }
 
     void update() {
-        if(txtNgayBD.getText().compareTo(txtNgayKT.getText())>0){
-            DialogHelper.alert(this,"Ngay ket thuc khong duoc nho hon ngay bat dau");
-            return;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            // Tạo 2 ngày từ chuỗi
+            Date date1 = sdf.parse(txtNgayBD.getText());
+            Date date2 = sdf.parse(txtNgayKT.getText());
+            if (date1.compareTo(date2) > 0) {
+                DialogHelper.alert(this, "Ngày ket thuc khong duoc nho hon ngay bat dau");
+                return;
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(GiamGia.class.getName()).log(Level.SEVERE, null, ex);
         }
         GiamGiaModel nv = getForm();
         try {

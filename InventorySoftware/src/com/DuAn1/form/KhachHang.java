@@ -233,7 +233,7 @@ public class KhachHang extends javax.swing.JPanel {
         nv.setTrangThai(true);
         nv.setMoTa(txtMota.getText());
         nv.setMaNV(ShareHelper.USER.getMaNV());
-        nv.setHinh(txtHinhAnh2.getToolTipText());
+        nv.setHinh(txtHinhAnh2.getToolTipText()+nv.getMaKH());
 
         return nv;
     }
@@ -263,10 +263,12 @@ public class KhachHang extends javax.swing.JPanel {
             txtMota.setText(nv.getMoTa());
         }
         if (nv.getHinh() != null) {
-            txtHinhAnh2.setToolTipText(nv.getHinh());
-            txtHinhAnh2.setIcon(ShareHelper.readLogo(nv.getHinh()));
-            txtHinhAnh2.setToolTipText(nv.getHinh());
-            ImageIcon originalIcon = ShareHelper.readLogo(nv.getHinh());
+             String TenHinh = nv.getHinh().trim();
+            TenHinh=TenHinh.replace(nv.getMaKH().trim(),"");
+            txtHinhAnh2.setToolTipText(TenHinh);
+            txtHinhAnh2.setIcon(ShareHelper.readLogo(TenHinh));
+            txtHinhAnh2.setToolTipText(TenHinh);
+            ImageIcon originalIcon = ShareHelper.readLogo(TenHinh);
             Image originalImage = originalIcon.getImage();
             Image scaledImage = originalImage.getScaledInstance(txtHinhAnh2.getWidth(), txtHinhAnh2.getHeight(), Image.SCALE_SMOOTH);
             txtHinhAnh2.setIcon(new ImageIcon(scaledImage));
