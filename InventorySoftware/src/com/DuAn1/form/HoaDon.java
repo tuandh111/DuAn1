@@ -806,6 +806,20 @@ public class HoaDon extends javax.swing.JPanel {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
         }
+        HoaDonDAO dao= new HoaDonDAO();
+        try {
+            List<HoaDonModel> list = dao.select();
+            for (HoaDonModel nv : list) {
+              if(txtMa.getText().trim().equals(nv.getMaHD().trim())){
+                  txtMota.setText(nv.getMota());
+                  cboHinhThuc.setSelectedItem(nv.getHinhThuc().trim());
+                  break;
+              }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+        }
     }
 
     boolean check() {
@@ -1307,7 +1321,7 @@ public class HoaDon extends javax.swing.JPanel {
 
         jLabel2.setText("Giảm giá LKH:");
 
-        cboHinhThuc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền mặt", "Chuyển khoản" }));
+        cboHinhThuc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền Mặt", "Chuyển Khoản" }));
         cboHinhThuc.setSelectedIndex(-1);
         cboHinhThuc.setLabeText("Hình thức");
         cboHinhThuc.addActionListener(new java.awt.event.ActionListener() {

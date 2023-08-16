@@ -7,6 +7,7 @@ package com.DuAn1.form;
 import com.DuAn1.Dao.DienThoaiDao;
 import com.DuAn1.Dao.DongMayDAO;
 import com.DuAn1.Dao.ThaoTacDAO;
+import com.DuAn1.Helper.DialogHelper;
 import com.DuAn1.Helper.ShareHelper;
 import com.DuAn1.Model.BoNhoModel;
 import com.DuAn1.Model.CPUModel;
@@ -16,7 +17,6 @@ import com.DuAn1.Model.MangHinhModel;
 import com.DuAn1.Model.PinModel;
 import com.DuAn1.Model.RamModel;
 import com.DuAn1.Model.ThaoTacModel;
-import com.tuandhpc05076.helper.DialogHelper;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -1627,7 +1627,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblManHinh.getSelectedRow();
-             materialTabbed1.setSelectedIndex(1);
+             materialTabbed1.setSelectedIndex(0);
             this.editManHinh();
             txtManHinh.setEnabled(false);
         }
@@ -1644,7 +1644,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblRAM.getSelectedRow();
-             materialTabbed1.setSelectedIndex(1);
+             materialTabbed1.setSelectedIndex(0);
             this.editRam();
             txtRAM.setEnabled(false);
         }
@@ -1658,7 +1658,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblROM.getSelectedRow();
-             materialTabbed1.setSelectedIndex(1);
+             materialTabbed1.setSelectedIndex(0);
             this.editRom();
             txtBoNho.setEnabled(false);
         }
@@ -1672,7 +1672,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblCPU.getSelectedRow();
-            materialTabbed1.setSelectedIndex(1);
+            materialTabbed1.setSelectedIndex(0);
             this.editCPU();
             txtCPU.setEnabled(false);
         }
@@ -1686,7 +1686,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblCamera.getSelectedRow();
-             materialTabbed1.setSelectedIndex(1);
+             materialTabbed1.setSelectedIndex(0);
             this.editCamera();
              txtCamera.setEnabled(false);
         }
@@ -1700,7 +1700,7 @@ public class DongMay extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
             this.row = tblPin.getSelectedRow();
-             materialTabbed1.setSelectedIndex(1);
+             materialTabbed1.setSelectedIndex(0);
             this.editPin();
             txtPin.setEnabled(false);
         }
