@@ -13,6 +13,8 @@ import com.tuandhpc05076.helper.DialogHelper;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -189,7 +191,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
                     String dateString = ttl.getNgayVaoCTy();
                     Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
                     String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                    Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam()+ " Ngày", df.format(ttl.getLuongCoBan()) + " VND",
+                    Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam() + " Ngày", df.format(ttl.getLuongCoBan()) + " VND",
                         formattedDate,
                         ttl.getSoGioTangCa() + " Gio",
                         df.format(ttl.getLuongTangCa()) + " VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
@@ -216,7 +218,7 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
     }
 
     ThanhToanLuongModel getForm() {
-     
+
         String MaLuong = (String) tblThanhToanLuong.getValueAt(0, 0);
         String Ngay = (String) tblThanhToanLuong.getValueAt(0, 3);
         ThanhToanLuongModel ttl = new ThanhToanLuongModel();
@@ -228,18 +230,28 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
             Logger.getLogger(XemLuongCaNhan.class.getName()).log(Level.SEVERE, null, ex);
         }
         ttl.setMaLuong(MaLuong.trim());
-           int chon = JOptionPane.showConfirmDialog(this,"Ban co muon nhap li do","Li do",JOptionPane.YES_NO_OPTION);
-           if(chon==0){
-                String Lido = com.DuAn1.Helper.DialogHelper.prompt(this,"Nhap li do");
-                ttl.setLiDo(Lido);
-           }else{
-               ttl.setLiDo(null);
-           }
-       
+
+        int chon = JOptionPane.showConfirmDialog(this, "Ban co muon nhap li do", "Li do", JOptionPane.YES_NO_OPTION);
+        if (chon == 0) {
+            String Lido = com.DuAn1.Helper.DialogHelper.prompt(this, "Nhap li do");
+            ttl.setLiDo(Lido);
+        } else {
+            ttl.setLiDo(null);
+        }
+
         return ttl;
     }
     private void tblThanhToanLuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMouseClicked
         // TODO add your handling code here:
+        LocalDateTime NgayHienTai = LocalDateTime.now();
+
+        int Row = tblThanhToanLuong.getSelectedRow();
+        String NgayThangToan = (String) tblThanhToanLuong.getValueAt(Row, 3);
+        LocalDateTime NgayThanhToanformat = LocalDateTime.parse(NgayThangToan);
+         if (NgayHienTai.isAfter(NgayThanhToanformat.plusDays(5))) {
+            System.out.println("The date you entered is greater than 5 days from the current date.");
+            return;
+        }
         int chon = JOptionPane.showConfirmDialog(this, "Ban co muon khuyeu nai", "Khieu nai", JOptionPane.YES_NO_OPTION);
         if (chon == 0) {
             sua();
