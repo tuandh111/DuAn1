@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,7 +28,8 @@ public class InHoaDon extends javax.swing.JDialog {
      * Creates new form InHoaDon
      */
     HoaDonCTDAO HDCTDao = new HoaDonCTDAO();
-    KhachHangDAO daoKH= new KhachHangDAO();
+    KhachHangDAO daoKH = new KhachHangDAO();
+
     public InHoaDon(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -36,52 +38,76 @@ public class InHoaDon extends javax.swing.JDialog {
         BillHeader();
         bill();
     }
-  private void BillHeader() {
-      String name = ShareHelper.USER.getHoTen();
+
+    private void BillHeader() {
+        String name = ShareHelper.USER.getHoTen();
         LocalDateTime current = LocalDateTime.now();
-        
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS dd-MM-yyyy ");
         String formatted = current.format(formatter);
         txtBill.setText("=====================================================================" + "\n"
                 + "========================Tên CTY: CTY TNHH TTA MOBILE=======================" + "\n"
                 + "                                                      HOÁ ĐƠN ĐIỆN TỬ                                      \n"
-                + "Họ và tên nhân viên : "+name+"\n"
+                + "Họ và tên nhân viên : " + name + "\n"
                 + "Thời gian xuất: " + formatted + "\n"
                 + "Địa chỉ: Toà nhà FPT Polytechnic, Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ" + "\n"
-                + "==============================" + "\n"+""
-                        + "Mã khách hàng: "+HoaDon.hoten
-                        + "\nThông tin sản phẩm\n"+""
-                        + "MaHD                      MaSP                     Giá                 Số lượng          Thành tiền"
-                        + "\n");
+                + "==============================" + "\n" + ""
+                + "Mã khách hàng: " + HoaDon.hoten
+                + "\nThông tin sản phẩm\n" + ""
+                + "MaHD                      MaSP                     Giá                 Số lượng          Thành tiền"
+                + "\n");
     }
-  public void bill(){
-      KhachHangModel kh = daoKH.findById(HoaDon.hoten);
-      List<HoaDonCTModel> list = HDCTDao.selectAll(HoaDon.ma);
-      String name = "";
-      double gia=0;
-      double soluong=0;
-      double tongTien=0;
-       DecimalFormat df = new DecimalFormat("#,##0.##");
-              
-      for (HoaDonCTModel hoaDonCTModel : list) {
-          gia+=hoaDonCTModel.getGia();
-          soluong+=hoaDonCTModel.getSoLuong();
-         name=name+hoaDonCTModel.getMaHD()+"         "+hoaDonCTModel.getMaSP()+"          "+df.format(hoaDonCTModel.getGia())+" VND"+"     "+hoaDonCTModel.getSoLuong()+" Chiec"+"           "+df.format(hoaDonCTModel.getThanhTien())+" VND"+"\n";
-         tongTien+=hoaDonCTModel.getThanhTien();
-      }
-      
-      tongTien=tongTien-Double.parseDouble(HoaDon.getGiamGia())/100;
-      txtBill.setText(txtBill.getText()+name);
-      txtBill.setText(txtBill.getText()+"\n"+
-              "Phần trăm giảm giá: "+HoaDon.getGiamGia()
-              + " %\nTổng tiền là:     " +df.format(tongTien)+ "   Đồng"+"\n"
-                      + "Người mua                                                                                                        Người bán\n"
-                      + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
-                      + "                                                                                                                 \n"
-                      + "                                                                                                                   \n"
-                      +kh.getTenKH()+"                                                                                     "+ShareHelper.USER.getHoTen()
-                      + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
-  }
+
+    public void bill() {
+        KhachHangModel kh = daoKH.findById(HoaDon.hoten);
+        List<HoaDonCTModel> list = HDCTDao.selectAll(HoaDon.ma);
+        String name = "";
+        double gia = 0;
+        double soluong = 0;
+        double tongTien = 0;
+        DecimalFormat df = new DecimalFormat("#,##0.##");
+
+        for (HoaDonCTModel hoaDonCTModel : list) {
+            gia += hoaDonCTModel.getGia();
+            soluong += hoaDonCTModel.getSoLuong();
+            name = name + hoaDonCTModel.getMaHD() + "         " + hoaDonCTModel.getMaSP() + "          " + df.format(hoaDonCTModel.getGia()) + " VND" + "     " + hoaDonCTModel.getSoLuong() + " Chiec" + "           " + df.format(hoaDonCTModel.getThanhTien()) + " VND" + "\n";
+            tongTien += hoaDonCTModel.getThanhTien();
+        }
+
+//        DefaultTableModel tableModel = new DefaultTableModel();
+//        tableModel.addColumn("Mã hóa đơn");
+//        tableModel.addColumn("Mã sản phẩm");
+//        tableModel.addColumn("Giá");
+//        tableModel.addColumn("Số lượng");
+//        tableModel.addColumn("Thành tiền");
+//
+//        for (HoaDonCTModel hoaDonCTModel : list) {
+//            tableModel.addRow(new Object[]{
+//                hoaDonCTModel.getMaHD(),
+//                hoaDonCTModel.getMaSP(),
+//                hoaDonCTModel.getGia(),
+//                hoaDonCTModel.getSoLuong(),
+//                hoaDonCTModel.getThanhTien()
+//            });
+//        }
+//
+//       
+//        txtBill.setEditable(false);
+//        txtBill.append(tableModel.toString());
+
+        tongTien = tongTien - Double.parseDouble(HoaDon.getGiamGia()) / 100;
+        txtBill.setText(txtBill.getText() + name);
+        txtBill.setText(txtBill.getText() + "\n"
+                + "Phần trăm giảm giá: " + HoaDon.getGiamGia()
+                + " %\nTổng tiền là:     " + df.format(tongTien) + "   Đồng" + "\n"
+                + "Người mua                                                                                                        Người bán\n"
+                + "Ghi rõ họ tên                                                                                                  Ghi rõ họ tên\n"
+                + "                                                                                                                 \n"
+                + "                                                                                                                   \n"
+                + kh.getTenKH() + "                                                                                     " + ShareHelper.USER.getHoTen()
+                + "\n                                     Cảm ơn quý khách đã mua hàng!                      ");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -154,7 +180,7 @@ public class InHoaDon extends javax.swing.JDialog {
         } catch (PrinterException ex) {
             Logger.getLogger(InHoaDon.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
     }//GEN-LAST:event_btnInBillActionPerformed
 
     /**

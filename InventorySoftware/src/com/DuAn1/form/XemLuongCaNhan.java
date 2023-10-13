@@ -13,7 +13,9 @@ import com.tuandhpc05076.helper.DialogHelper;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
@@ -243,54 +245,82 @@ public class XemLuongCaNhan extends javax.swing.JDialog {
     }
     private void tblThanhToanLuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMouseClicked
         // TODO add your handling code here:
-        LocalDateTime NgayHienTai = LocalDateTime.now();
 
-        int Row = tblThanhToanLuong.getSelectedRow();
-        String NgayThangToan = (String) tblThanhToanLuong.getValueAt(Row, 3);
-        LocalDateTime NgayThanhToanformat = LocalDateTime.parse(NgayThangToan);
-         if (NgayHienTai.isAfter(NgayThanhToanformat.plusDays(5))) {
-            System.out.println("The date you entered is greater than 5 days from the current date.");
+        LocalDate currentDate = LocalDate.now();
+        int row = tblThanhToanLuong.getSelectedRow();
+        String NgayThanhToan = (String) tblThanhToanLuong.getValueAt(row, 3);
+
+        // Get the date that was entered by the user
+        String userDateString = NgayThanhToan.trim();
+        String ngayNhap = null;
+        try {
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(userDateString);
+
+           ngayNhap  = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+        } catch (Exception e) {
+        }
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate userDate = LocalDate.parse(ngayNhap, formatter);
+        if(!userDate.isAfter(currentDate)){
+            com.DuAn1.Helper.DialogHelper.alert(this,"Chi co the khieu nai trong vong 5 ngay");
             return;
         }
-        int chon = JOptionPane.showConfirmDialog(this, "Ban co muon khuyeu nai", "Khieu nai", JOptionPane.YES_NO_OPTION);
-        if (chon == 0) {
-            sua();
-            txtLuong.setText("0");
-            if (cboVaitro1.getSelectedItem() == null) {
-                DialogHelper.alert(this, "Ban chua chon nam");
-                return;
-            }
-            String LayThang = (String) cboVaitro.getSelectedItem();
-            String so = LayThang.replace("Tháng", "");
-            String layNam = (String) cboVaitro1.getSelectedItem();
-            model = (DefaultTableModel) tblThanhToanLuong.getModel();
-            model.setRowCount(0);
-            DecimalFormat df = new DecimalFormat("#,##0.##");
-            try {
-                List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()), Integer.parseInt(layNam), ShareHelper.USER.getMaNV().trim());
-                if (list.size() > 0) {
-                    for (ThanhToanLuongModel ttl : list) {
-                        String dateString = ttl.getNgayVaoCTy();
-                        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
-                        String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                        Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
-                            formattedDate,
-                            ttl.getSoGioTangCa() + " Gio",
-                            df.format(ttl.getLuongTangCa()) + " VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
-                        model.addRow(rows);
-                    }
-                    String Luong = (String) tblThanhToanLuong.getValueAt(0, 7);
-                    if (Luong != null) {
-                        txtLuong.setText(Luong);
-                    }
-                } else {
-                    com.DuAn1.Helper.DialogHelper.alert(this, "Chua co luong trong thang nay");
+        // Check if the user date is greater than 5 days from the current date
+//        if (userDate.isAfter(currentDate.plusDays(5))) {
+//            System.out.println("ok");
+//        } else {
+//            System.out.println("không được rồi");
+//        }
+        Period period = Period.between(currentDate, userDate);
+        if (period.getDays() <= 5) {
+            System.out.println("ok");
+            int chon = JOptionPane.showConfirmDialog(this, "Ban co muon khuyeu nai", "Khieu nai", JOptionPane.YES_NO_OPTION);
+            if (chon == 0) {
+                sua();
+                txtLuong.setText("0");
+                if (cboVaitro1.getSelectedItem() == null) {
+                    DialogHelper.alert(this, "Ban chua chon nam");
+                    return;
                 }
-            } catch (Exception e) {
-                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
-            }
+                String LayThang = (String) cboVaitro.getSelectedItem();
+                String so = LayThang.replace("Tháng", "");
+                String layNam = (String) cboVaitro1.getSelectedItem();
+                model = (DefaultTableModel) tblThanhToanLuong.getModel();
+                model.setRowCount(0);
+                DecimalFormat df = new DecimalFormat("#,##0.##");
+                try {
+                    List<ThanhToanLuongModel> list = dao.XemThanhToanLuongCaNhan(Integer.parseInt(so.trim()), Integer.parseInt(layNam), ShareHelper.USER.getMaNV().trim());
+                    if (list.size() > 0) {
+                        for (ThanhToanLuongModel ttl : list) {
+                            String dateString = ttl.getNgayVaoCTy();
+                            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                            Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
+                                formattedDate,
+                                ttl.getSoGioTangCa() + " Gio",
+                                df.format(ttl.getLuongTangCa()) + " VND", df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
+                            model.addRow(rows);
+                        }
+                        String Luong = (String) tblThanhToanLuong.getValueAt(0, 7);
+                        if (Luong != null) {
+                            txtLuong.setText(Luong);
+                        }
+                    } else {
+                        com.DuAn1.Helper.DialogHelper.alert(this, "Chua co luong trong thang nay");
+                    }
+                } catch (Exception e) {
+                    DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                }
 
+            }
+        } else {
+            DialogHelper.alert(this,"Chi co the khieu nai trong vong 5 ngay");
+            return;
         }
+
+
     }//GEN-LAST:event_tblThanhToanLuongMouseClicked
 
     private void tblThanhToanLuongMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThanhToanLuongMousePressed

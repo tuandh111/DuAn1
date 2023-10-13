@@ -353,6 +353,8 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         lblTongTien1 = new javax.swing.JLabel();
         cboNam = new com.DuAn1.Swing.Combobox();
         cboThang = new com.DuAn1.Swing.Combobox();
+        cboTrangThai = new com.DuAn1.Swing.Combobox();
+        jLabel3 = new javax.swing.JLabel();
 
         dateChooser.setTextRefernce(txtNgayVaoCTY);
 
@@ -564,6 +566,17 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             }
         });
 
+        cboTrangThai.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ðã thanh toán", "Chua thanh toán" }));
+        cboTrangThai.setSelectedIndex(-1);
+        cboTrangThai.setLabeText("");
+        cboTrangThai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboTrangThaiActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Trạng thái:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -580,6 +593,10 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                         .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(cboTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -651,11 +668,14 @@ public class ThanhToanLuong extends javax.swing.JPanel {
                             .addComponent(btnTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTrangThai))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1166,6 +1186,7 @@ public class ThanhToanLuong extends javax.swing.JPanel {
             DialogHelper.alert(this, "Vui long chon nam!");
             return;
         }
+        cboTrangThai.setSelectedItem(null);
         String Thang = (String) cboThang.getSelectedItem();
         String Nam = (String) cboNam.getSelectedItem();
 
@@ -1188,6 +1209,57 @@ public class ThanhToanLuong extends javax.swing.JPanel {
         fillTable();
     }//GEN-LAST:event_cboThangActionPerformed
 
+    private void cboTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTrangThaiActionPerformed
+        // TODO add your handling code here:
+        if(cboTrangThai.getSelectedItem()==null)return;
+        
+        if (cboTrangThai.getSelectedItem().equals("Ðã thanh toán")) {
+            model = (DefaultTableModel) tblThanhToanLuong.getModel();
+            model.setRowCount(0);
+            DecimalFormat df = new DecimalFormat("#,##0.##");
+            String nam = (String) cboNam.getSelectedItem();
+            String Thang = (String) cboThang.getSelectedItem();
+            try {
+                List<ThanhToanLuongModel> list = dao.selectDaThanhToan(Integer.parseInt(Thang), Integer.parseInt(nam));
+                System.out.println(list.size());
+                for (ThanhToanLuongModel ttl : list) {
+                    String dateString = ttl.getNgayVaoCTy();
+                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                    String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                    Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
+                        formattedDate,
+                        ttl.getSoGioTangCa(),
+                        ttl.getLuongTangCa(), df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
+                    model.addRow(rows);
+                }
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            }
+        } else {
+            model = (DefaultTableModel) tblThanhToanLuong.getModel();
+            model.setRowCount(0);
+            DecimalFormat df = new DecimalFormat("#,##0.##");
+            String nam = (String) cboNam.getSelectedItem();
+            String Thang = (String) cboThang.getSelectedItem();
+            try {
+                List<ThanhToanLuongModel> list = dao.selectChuaThanhToan(Integer.parseInt(Thang), Integer.parseInt(nam));
+                System.out.println(list.size());
+                for (ThanhToanLuongModel ttl : list) {
+                    String dateString = ttl.getNgayVaoCTy();
+                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+                    String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                    Object[] rows = {ttl.getMaLuong(), ttl.getSoNgayLam(), df.format(ttl.getLuongCoBan()) + " VND",
+                        formattedDate,
+                        ttl.getSoGioTangCa(),
+                        ttl.getLuongTangCa(), df.format(ttl.getKhoanTru()) + " VND", df.format(ttl.getTongTien()) + " VND", ttl.isTrangThai() ? "Ðã thanh toan" : "Ðang cho cap nhat"};
+                    model.addRow(rows);
+                }
+            } catch (Exception e) {
+                DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+            }
+        }
+    }//GEN-LAST:event_cboTrangThaiActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.DuAn1.Swing.Button btnMoi;
@@ -1199,9 +1271,11 @@ public class ThanhToanLuong extends javax.swing.JPanel {
     private com.DuAn1.Swing.Combobox cboMaLuong;
     private com.DuAn1.Swing.Combobox cboNam;
     private com.DuAn1.Swing.Combobox cboThang;
+    private com.DuAn1.Swing.Combobox cboTrangThai;
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

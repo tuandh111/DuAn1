@@ -65,7 +65,14 @@ public class ThanhToanLuongDAO {
         String sql = "select * from Luong where MONTH(NgayVaoCTY)= ? and YEAR(NgayVaoCTY)= ?";
         return select(sql, Thang, Nam);
     }
-
+   public List<ThanhToanLuongModel> selectChuaThanhToan(int Thang, int Nam) {
+        String sql = "select * from Luong where MONTH(NgayVaoCTY)= ? and YEAR(NgayVaoCTY)= ? and TrangThai =0";
+        return select(sql, Thang, Nam);
+    }
+      public List<ThanhToanLuongModel> selectDaThanhToan(int Thang, int Nam) {
+        String sql = "select * from Luong where MONTH(NgayVaoCTY)= ? and YEAR(NgayVaoCTY)= ? and TrangThai =1";
+        return select(sql, Thang, Nam);
+    }
     public ThanhToanLuongModel findById(String maLuong,String NgayVaoCTY) {
         String sql = "SELECT * FROM LUONG WHERE MaLuong like ? and NgayVaoCTY =?";
         List<ThanhToanLuongModel> list = select(sql,"%" +maLuong+"%",NgayVaoCTY);
