@@ -804,7 +804,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            
         }
         HoaDonDAO dao= new HoaDonDAO();
         try {
@@ -818,7 +818,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            
         }
     }
 
@@ -4311,7 +4311,7 @@ public class HoaDon extends javax.swing.JPanel {
             ThaoTacModel ThaoTacModel = getFormUpdate();
             daoThaoTac.insert(ThaoTacModel);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+            
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnThemActionPerformed
@@ -4351,7 +4351,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
     }//GEN-LAST:event_btnAdd1ActionPerformed
 
@@ -4373,7 +4373,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
     }//GEN-LAST:event_txtadd3ActionPerformed
 
@@ -4395,7 +4395,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
     }//GEN-LAST:event_txtadd4ActionPerformed
 
@@ -4416,7 +4416,7 @@ public class HoaDon extends javax.swing.JPanel {
             };
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtadd1ActionPerformed
@@ -4439,7 +4439,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
     }//GEN-LAST:event_txtadd2ActionPerformed
 
@@ -4461,7 +4461,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
     }//GEN-LAST:event_txtadd5ActionPerformed
 
@@ -4482,7 +4482,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtadd6ActionPerformed
@@ -4504,7 +4504,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtadd7ActionPerformed
@@ -4526,7 +4526,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtadd8ActionPerformed
@@ -4548,7 +4548,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd4ActionPerformed
@@ -4570,7 +4570,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd3ActionPerformed
@@ -4593,7 +4593,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
     }//GEN-LAST:event_btnAdd5ActionPerformed
 
@@ -4614,7 +4614,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd7ActionPerformed
@@ -4636,7 +4636,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd6ActionPerformed
@@ -4658,7 +4658,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+          
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd9ActionPerformed
@@ -4680,7 +4680,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd8ActionPerformed
@@ -4702,7 +4702,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd10ActionPerformed
@@ -4732,7 +4732,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
     }//GEN-LAST:event_btnAdd11ActionPerformed
 
@@ -4753,7 +4753,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd12ActionPerformed
@@ -4775,7 +4775,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd14ActionPerformed
@@ -4797,7 +4797,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd13ActionPerformed
@@ -4819,7 +4819,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd16ActionPerformed
@@ -4841,7 +4841,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd15ActionPerformed
@@ -4863,7 +4863,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd17ActionPerformed
@@ -4885,7 +4885,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd18ActionPerformed
@@ -4907,7 +4907,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdd19ActionPerformed
@@ -4960,20 +4960,20 @@ public class HoaDon extends javax.swing.JPanel {
                 try {
                     LoadSP(Dao.orderByMaTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
 
             } else if (cboSapXep3.getSelectedItem().equals("Giá")) {
                 try {
                     LoadSP(Dao.orderByGiaTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             } else {
                 try {
                     LoadSP(Dao.orderBySoLuongTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             }
         } else {
@@ -4981,20 +4981,20 @@ public class HoaDon extends javax.swing.JPanel {
                 try {
                     LoadSP(Dao.orderByMaGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
 
             } else if (cboSapXep3.getSelectedItem().equals("Giá")) {
                 try {
                     LoadSP(Dao.orderByGiaGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             } else {
                 try {
                     LoadSP(Dao.orderBySoLuongGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             }
         }        // TODO add your handling code here:
@@ -5016,7 +5016,7 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByMaTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
 
             } else if (cboSapXep2.getSelectedItem().equals("Giá")) {
@@ -5024,14 +5024,14 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByGiaTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             } else {
                 try {
 
                     LoadSP(Dao.orderBySoLuongTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             }
         } else {
@@ -5044,7 +5044,7 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByMaGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
 
             } else if (cboSapXep2.getSelectedItem().equals("Giá")) {
@@ -5052,14 +5052,14 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByGiaGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             } else {
                 try {
 
                     LoadSP(Dao.orderBySoLuongGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             }
         }        // TO
@@ -5082,7 +5082,7 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByMaTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
 
             } else if (cboSapXep5.getSelectedItem().equals("Giá")) {
@@ -5090,14 +5090,14 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByGiaTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             } else {
                 try {
 
                     LoadSP(Dao.orderBySoLuongTang());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             }
         } else {
@@ -5110,7 +5110,7 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByMaGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
 
             } else if (cboSapXep5.getSelectedItem().equals("Giá")) {
@@ -5118,14 +5118,14 @@ public class HoaDon extends javax.swing.JPanel {
 
                     LoadSP(Dao.orderByGiaGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             } else {
                 try {
 
                     LoadSP(Dao.orderBySoLuongGiam());
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
+                    
                 }
             }
         }        // TO
@@ -5170,7 +5170,7 @@ public class HoaDon extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            DialogHelper.alert(this, "Lỗi thêm dữ liệu");
+           
         }
     }
 
