@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-18">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="dist/InventorySoftware.jar"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout-RELEASE130.jar"/>
+	<classpathentry kind="lib" path="dist/lib/activation.jar"/>
+	<classpathentry kind="lib" path="dist/lib/annotations-13.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/base64-5.0.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/bridj-0.7.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-2.3.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-codec-1.11-sources.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="dist/lib/comos-3.324.jar"/>
+	<classpathentry kind="lib" path="dist/lib/connector-framework-1.5.2.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/connector-framework-internal-1.5.2.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/core-3.4.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/dsfdsf-3.45.jar"/>
+	<classpathentry kind="lib" path="dist/lib/filters-2.0.235.jar"/>
+	<classpathentry kind="lib" path="dist/lib/gradient-icon-font.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javacv.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javase-3.4.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jcommander-1.78.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jna-5.5.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jna-platform-5.5.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/json-20210307.jar"/>
+	<classpathentry kind="lib" path="dist/lib/kotlin-stdlib-1.4.10.jar"/>
+	<classpathentry kind="lib" path="dist/lib/kotlin-stdlib-common-1.4.20.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mavenproject1-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="dist/lib/miglayout-core-5.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/miglayout-swing-5.2_1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/miglayout-swing-5.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mssql-jdbc-9.2.1.jre8.jar"/>
+	<classpathentry kind="lib" path="dist/lib/okhttp-4.9.3.jar"/>
+	<classpathentry kind="lib" path="dist/lib/okio-2.10.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/sdfd-3.17.jar"/>
+	<classpathentry kind="lib" path="dist/lib/sdfsdf-5.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/slf4j-simple-1.7.22.jar"/>
+	<classpathentry kind="lib" path="dist/lib/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/swingx-1.6.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/table-2.3.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/timingframework-1.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/webcam-capture-0.3.12.jar"/>
+	<classpathentry kind="lib" path="dist/lib/zczxc-3.17.jar"/>
+	<classpathentry kind="lib" path="lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="lib/AbsoluteLayout-RELEASE130.jar"/>
+	<classpathentry kind="lib" path="lib/activation.jar"/>
+	<classpathentry kind="lib" path="lib/annotations-13.0.jar"/>
+	<classpathentry kind="lib" path="lib/base64-5.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/bridj-0.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-2.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/comos-3.324.jar"/>
+	<classpathentry kind="lib" path="lib/connector-framework-1.5.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/connector-framework-internal-1.5.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/core-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/dsfdsf-3.45.jar"/>
+	<classpathentry kind="lib" path="lib/filters-2.0.235.jar"/>
+	<classpathentry kind="lib" path="lib/gradient-icon-font.jar"/>
+	<classpathentry kind="lib" path="lib/javacv.jar"/>
+	<classpathentry kind="lib" path="lib/javase-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/jcommander-1.78.jar"/>
+	<classpathentry kind="lib" path="lib/jna-5.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jna-platform-5.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/json-20210307.jar"/>
+	<classpathentry kind="lib" path="lib/kotlin-stdlib-1.4.10.jar"/>
+	<classpathentry kind="lib" path="lib/kotlin-stdlib-common-1.4.20.jar"/>
+	<classpathentry kind="lib" path="lib/mavenproject1-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/miglayout-core-5.2.jar"/>
+	<classpathentry kind="lib" path="lib/miglayout-swing-5.2_1.jar"/>
+	<classpathentry kind="lib" path="lib/miglayout-swing-5.2.jar"/>
+	<classpathentry kind="lib" path="lib/mssql-jdbc-9.2.1.jre8.jar"/>
+	<classpathentry kind="lib" path="lib/okhttp-4.9.3.jar"/>
+	<classpathentry kind="lib" path="lib/okio-2.10.0.jar"/>
+	<classpathentry kind="lib" path="lib/sdfd-3.17.jar"/>
+	<classpathentry kind="lib" path="lib/sdfsdf-5.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.22.jar"/>
+	<classpathentry kind="lib" path="lib/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/swingx-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/table-2.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/timingframework-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/webcam-capture-0.3.12.jar"/>
+	<classpathentry kind="lib" path="lib/zczxc-3.17.jar"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
