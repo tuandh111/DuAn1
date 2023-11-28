@@ -6,12 +6,15 @@
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/NhanVien.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/BaoHanhDAO.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Helper/JdbcHelper.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThemKH.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/XemLuongCaNhan.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThongTinNhanVien.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/GiamGiaDao.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/InHoaDon.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHang.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/BaoHanhCTDAO.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/VaiTroDao.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/GiamGia.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/ThanhToanLuongDAO.java</file>
             <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KHDC.java</file>
