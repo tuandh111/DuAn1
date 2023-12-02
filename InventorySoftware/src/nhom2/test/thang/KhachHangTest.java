@@ -16,7 +16,7 @@ public class KhachHangTest {
 	@Test
 	public void testMa() {
 		List<KhachHangModel> list = dao.selectMa("KH00001");
-		if (list != null) {
+		if (list !=  null) {
 			kq = "Thành Công";
 		} else {
 			kq = "Thất Bại";
