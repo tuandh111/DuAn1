@@ -2,6 +2,27 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/NhanVien.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/SanPham.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/BaoHanhDAO.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Helper/JdbcHelper.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/HoaDonCTDAO.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThongTinNhanVien.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/GiamGiaDao.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/InHoaDon.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/KhachHang.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/BaoHanhCTDAO.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/VaiTroDao.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/GiamGia.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/Dao/ThanhToanLuongDAO.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/ThanhToanLuong.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/HoaDon.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/test/Slide2.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/BaoHanh.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/form/DatHang1.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/main/Main.java</file>
+            <file>file:/D:/GitHub/DuAn1/InventorySoftware/src/com/DuAn1/DangNhap/NewSignin.java</file>
+        </group>
     </open-files>
 </project-private>
