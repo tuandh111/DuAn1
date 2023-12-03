@@ -14,8 +14,8 @@ import com.DuAn1.Model.HoaDonModel;
 public class HoaDonCTTest {
 	private HoaDonCTDAO hoaDonCTDAO = new HoaDonCTDAO();
 
-	// @Test
-	public void testInsertHoaDonCT() {
+	@Test
+	public void testInsertHoaDonCTThanhCong() {
 		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
 		String kq = "";
 		String kqmd = "Thành công";
@@ -34,7 +34,119 @@ public class HoaDonCTTest {
 	}
 
 	@Test
-	public void testUpdateHoaDonCT() {
+	public void testInsertHoaDonCTNotMaSP() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Mã sản phẩm chưa nhập";
+		hoaDonCTModel.setMaSP(null);
+		hoaDonCTModel.setSoLuong(2);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getMaSP() == null) {
+				kq = "Mã sản phẩm chưa nhập";
+			} else {
+				hoaDonCTDAO.insert(hoaDonCTModel);
+				kq = "Thêm dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	@Test
+	public void testInsertHoaDonCTNotSoLuong() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Số lượng không được nhỏ hơn 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(-1);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getSoLuong() < 0) {
+				kq = "Số lượng không được nhỏ hơn 0";
+			} else {
+				hoaDonCTDAO.insert(hoaDonCTModel);
+				kq = "Thêm dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	public void testInsertHoaDonCTNotMaHD() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Mã hóa đơn không được để trống";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(10);
+		hoaDonCTModel.setMaHD(null);
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getMaHD() == null) {
+				kq = "Mã hóa đơn không được để trống";
+			} else {
+				hoaDonCTDAO.insert(hoaDonCTModel);
+				kq = "Thêm dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	public void testInsertHoaDonCTNotGia() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Giá không được nhỏ hơn 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(10);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(-1);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getGia() < 0) {
+				kq = "Giá không được nhỏ hơn 0";
+			} else {
+				hoaDonCTDAO.insert(hoaDonCTModel);
+				kq = "Thêm dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	public void testInsertHoaDonCTNotThanhTien() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Thành tiền không được nhỏ hơn 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(10);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(-29000000);
+		try {
+			if (hoaDonCTModel.getThanhTien() < 0) {
+				kq = "Thành tiền không được nhỏ hơn 0";
+			} else {
+				hoaDonCTDAO.insert(hoaDonCTModel);
+				kq = "Thêm dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	@Test
+	public void testUpdateAllHoaDonCTThanhCong() {
 		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
 		String kq = "";
 		String kqmd = "Thành công";
@@ -52,9 +164,120 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kq, kqmd);
 	}
+	@Test
+	public void testUpdateHoaDonCTNotMaSP() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Mã sản phẩm chưa nhập";
+		hoaDonCTModel.setMaSP(null);
+		hoaDonCTModel.setSoLuong(2);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getMaSP() == null) {
+				kq = "Mã sản phẩm chưa nhập";
+			} else {
+				hoaDonCTDAO.update(hoaDonCTModel);
+				kq = "Cập nhật dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
 
 	@Test
-	public void testUpdateGopSP() {
+	public void testUpdateHoaDonCTNotSoLuong() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Số lượng không được nhỏ hơn 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(-1);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getSoLuong() < 0) {
+				kq = "Số lượng không được nhỏ hơn 0";
+			} else {
+				hoaDonCTDAO.update(hoaDonCTModel);
+				kq = "Cập nhật dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	public void testUpdateHoaDonCTNotMaHD() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Mã hóa đơn không được để trống";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(10);
+		hoaDonCTModel.setMaHD(null);
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getMaHD() == null) {
+				kq = "Mã hóa đơn không được để trống";
+			} else {
+				hoaDonCTDAO.update(hoaDonCTModel);
+				kq = "Cập nhật dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	public void testUpdateHoaDonCTNotGia() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Giá không được nhỏ hơn 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(10);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(-1);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getGia() < 0) {
+				kq = "Giá không được nhỏ hơn 0";
+			} else {
+				hoaDonCTDAO.update(hoaDonCTModel);
+				kq = "Cập nhật dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	public void testUpdateHoaDonCTNotThanhTien() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Thành tiền không được nhỏ hơn 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(10);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(-29000000);
+		try {
+			if (hoaDonCTModel.getThanhTien() < 0) {
+				kq = "Thành tiền không được nhỏ hơn 0";
+			} else {
+				hoaDonCTDAO.update(hoaDonCTModel);
+				kq = "Cập nhật dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
+
+	@Test
+	public void testUpdateGopSPThanhCong() {
 		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
 		String kq = "";
 		String kqmd = "Thành công";
@@ -73,8 +296,7 @@ public class HoaDonCTTest {
 
 	@Test
 	public void testSelectMaHoaDon() {
-		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
-
+		//Để Test Case passed thì cần phải có hóa đơn trong ngày hôm nay
 		List<HoaDonCTModel> list = hoaDonCTDAO.selectAll("HD00006");
 		String kq = "";
 		if (list.isEmpty()) {
@@ -98,7 +320,8 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kq, "Thành công");
 	}
-	//Test case này có vấn đề
+
+	// Test case này có vấn đề tại vì là code sai không có sử dụng mà vẫn để
 	@Test
 	public void testDeleteHoaDonCT() {
 		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
@@ -113,12 +336,13 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kqmd, kq);
 	}
-	//Test case này có vấn đề
+
+	// Test case này có vấn đề tại vì là code sai không có sử dụng mà vẫn để
 	@Test
 	public void testDeleteIDMaSPHoaDonCT() {
 		String kq = "";
 		String kqmd = "Thành công";
-		String MaHD ="HD00006";
+		String MaHD = "HD00006";
 		String MaSP = "SP00001";
 		try {
 			hoaDonCTDAO.deleteBaoHanh(MaHD, MaSP);
@@ -129,11 +353,12 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kqmd, kq);
 	}
+
 	@Test
 	public void testDeleteIDMaSP1HoaDonCT() {
 		String kq = "";
 		String kqmd = "Thành công";
-		String MaHD ="HD00006";
+		String MaHD = "HD00006";
 		String MaSP = "SP00001";
 		try {
 			hoaDonCTDAO.deleteBaoHanh1(MaHD, MaSP);
@@ -144,11 +369,12 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kq, kqmd);
 	}
+
 	@Test
 	public void testDeleteAllHoaDonCT() {
 		String kq = "";
 		String kqmd = "Thành công";
-		String MaHD ="HD00006";
+		String MaHD = "HD00006";
 		String MaSP = "SP00001";
 		try {
 			hoaDonCTDAO.XoaTatCa(MaHD, MaSP);
@@ -159,5 +385,5 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kq, kqmd);
 	}
-	
+
 }

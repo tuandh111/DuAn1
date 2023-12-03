@@ -41,7 +41,7 @@ public class HoaDonTest {
 		} catch (Exception e) {
 			kq = "Mã đã tồn tại trong danh sách";
 		}
-		Assert.assertNotNull(hoaDonDAO.TimKiem(kqmd));
+		Assert.assertNotNull(hoaDonDAO.TimKiem(hoaDonModel.getMaHD()));
 		Assert.assertEquals(kqmd, kq);
 	}
 	@Test
@@ -440,6 +440,7 @@ public class HoaDonTest {
 		hoaDonModel.setTienCon(10000000);
 		try {
 			hoaDonDAO.update(hoaDonModel);
+			
 			kq = "Thành công";
 		} catch (Exception e) {
 			kq = "Thất bại";
