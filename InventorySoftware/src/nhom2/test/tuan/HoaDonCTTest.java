@@ -111,7 +111,7 @@ public class HoaDonCTTest {
 		} catch (Exception e) {
 			kq = "Thất bại";
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 	}
 	//Test case này có vấn đề
 	@Test
@@ -127,7 +127,7 @@ public class HoaDonCTTest {
 			kq = "Thất bại";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 	}
 	@Test
 	public void testDeleteIDMaSP1HoaDonCT() {
