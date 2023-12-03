@@ -5,6 +5,7 @@
     <classes>
       <class name="nhom2.test.cong.SanPhamThemTest">
         <methods>
+          <include name="testThemSanPhamThieuDuLieu"/>
           <include name="testThemSanPham"/>
         </methods>
       </class> <!-- nhom2.test.cong.SanPhamThemTest -->

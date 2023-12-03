@@ -97,48 +97,63 @@ public class SanPhamThemTest {
 	@DataProvider
 	public Object[][] dataAdd(){
 		return new Object[][] {
-			new Object[]{"SP00016",null,"NV001",3000000.0,
+			// không nhập tên
+			new Object[]{"SP00019",null,"NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// giá số âm
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",-1,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// không nhập nơi nhập
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					null,"Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// Không có màu
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc",null,"samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// không hình
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen",null,"10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// không có ngày nhập
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg",null,100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// số lượng nhỏ hơn 0
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",-1,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// Không có loại
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,null,"KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			// Không có khuyến mại
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung",null,true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			//Không CPU
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					null,"94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
+			//Không Ram
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits",null,"11GB","4757Mh","27px","HDt","Điện thoại"},
+			// không bộ nhớ trong
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB",null,"4757Mh","27px","HDt","Điện thoại"},
+			// không pin
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB",null,"27px","HDt","Điện thoại"},
+			// không camera
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh",null,"HDt","Điện thoại"},
+			// không màn hình
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px",null,"Điện thoại"},
