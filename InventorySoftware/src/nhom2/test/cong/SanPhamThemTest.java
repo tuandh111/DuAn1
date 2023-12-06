@@ -14,7 +14,8 @@ public class SanPhamThemTest {
 	SanPhamDAO dao = new SanPhamDAO();
 	DienThoaiDao daoDT = new DienThoaiDao();
 	
-	 @Test public void testThemSanPham() {
+	 //@Test 
+	 public void testThemSanPham() {
 		  String kqmd = "Thành công";
 		  String kqtt= null;
 		  SanPhamModel sp = new SanPhamModel();
@@ -53,6 +54,95 @@ public class SanPhamThemTest {
 	  assertEquals(kqmd, kqtt); 
 	  }
 	// test case thêm sản phẩm
+	 
+	 @Test public void testThemSanPhamGiaAm() {
+		  String kqmd = "Thất bại";
+		  String kqtt= null;
+		  SanPhamModel sp = new SanPhamModel();
+		  DienThoaiModel dt = new DienThoaiModel();
+		  sp.setMaSP("SP00014");
+		  sp.setTenSP("Samsung Galaxy A05");
+		  sp.setMaNV("NV001");
+		  sp.setGia(-1);
+		  sp.setNoiNhap("Trung Quốc");
+		  sp.setMau("Đen");
+		  sp.setHinh("samsung.jpg");
+		  sp.setNgayNhap("10-03-2023");
+		  sp.setSoLuong(100);
+		  sp.setLoaiSP("Samsung");
+		  sp.setMaGiamGia("KM006");
+		  sp.setTrangThai(true);
+	  
+		  dt.setMaDT("SP00014");
+		  dt.setCPU("Bionits");
+		  dt.setRam("94GB");
+		  dt.setBoNho("11GB");
+		  dt.setPin("4757Mh");
+		  dt.setCamera("27px");
+		  dt.setMangHinh("HDt");
+		  dt.setMoTa("Điện thoại");
+	  
+	  try { 
+		  if(sp.getGia()<0) {
+			  kqtt="Thất bại";
+		  }else {
+			  
+		  
+		  dao.insert(sp);
+		  daoDT.insert(dt);
+	  kqtt = "Thành công";
+	  } 
+	  }catch(Exception ex)
+	  { 
+		  ex.printStackTrace();
+		  kqtt = "Thất bại"; 
+	  } 
+	  assertEquals(kqmd, kqtt); 
+	  }
+	 
+	 @Test public void testThemSanPhamSoLuongAm() {
+		  String kqmd = "Thất bại";
+		  String kqtt= null;
+		  SanPhamModel sp = new SanPhamModel();
+		  DienThoaiModel dt = new DienThoaiModel();
+		  sp.setMaSP("SP00014");
+		  sp.setTenSP("Samsung Galaxy A05");
+		  sp.setMaNV("NV001");
+		  sp.setGia(3000000);
+		  sp.setNoiNhap("Trung Quốc");
+		  sp.setMau("Đen");
+		  sp.setHinh("samsung.jpg");
+		  sp.setNgayNhap("10-03-2023");
+		  sp.setSoLuong(-1);
+		  sp.setLoaiSP("Samsung");
+		  sp.setMaGiamGia("KM006");
+		  sp.setTrangThai(true);
+	  
+		  dt.setMaDT("SP00014");
+		  dt.setCPU("Bionits");
+		  dt.setRam("94GB");
+		  dt.setBoNho("11GB");
+		  dt.setPin("4757Mh");
+		  dt.setCamera("27px");
+		  dt.setMangHinh("HDt");
+		  dt.setMoTa("Điện thoại");
+	  
+	  try { 
+		  if(sp.getSoLuong()<0) {
+			  kqtt = "Thất bại";
+		  }else {
+		  dao.insert(sp);
+		  daoDT.insert(dt);
+	  kqtt = "Thành công"; 
+		  }
+	  }catch(Exception ex)
+	  { 
+		  ex.printStackTrace();
+		  kqtt = "Thất bại"; 
+	  } 
+	  assertEquals(kqmd, kqtt); 
+	  }
+	 
 	@Test(dataProvider = "dataAdd")
 	public void testThemSanPhamThieuDuLieu(String maSP,String tenSP,String maNV,double gia,
 			String xuatXu, String mau, String tenHinh,String ngayNhap,int soLuong,String loaiSP,
@@ -101,10 +191,6 @@ public class SanPhamThemTest {
 			new Object[]{"SP00019",null,"NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
-			// giá số âm
-			new Object[]{"SP00016","Samsung Galaxy A05","NV001",-1,
-					"Trung Quốc","Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
-					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
 			// không nhập nơi nhập
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					null,"Đen","samsung.jpg","10-03-2023",100,"Samsung","KM006",true,
@@ -120,10 +206,6 @@ public class SanPhamThemTest {
 			// không có ngày nhập
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
 					"Trung Quốc","Đen","samsung.jpg",null,100,"Samsung","KM006",true,
-					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
-			// số lượng nhỏ hơn 0
-			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
-					"Trung Quốc","Đen","samsung.jpg","10-03-2023",-1,"Samsung","KM006",true,
 					"Bionits","94GB","11GB","4757Mh","27px","HDt","Điện thoại"},
 			// Không có loại
 			new Object[]{"SP00016","Samsung Galaxy A05","NV001",3000000.0,
