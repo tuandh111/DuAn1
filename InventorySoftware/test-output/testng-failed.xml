@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="nhom2.test.cong.SanPhamThemTest">
+      <class name="nhom2.test.ap.ApLoginTest">
         <methods>
-          <include name="testThemSanPhamThieuDuLieu"/>
-          <include name="testThemSanPham"/>
+          <include name="closeBrowser"/>
+          <include name="login"/>
+          <include name="setupBrowser"/>
         </methods>
-      </class> <!-- nhom2.test.cong.SanPhamThemTest -->
+      </class> <!-- nhom2.test.ap.ApLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
