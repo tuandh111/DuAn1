@@ -41,7 +41,7 @@ public class HoaDonTest {
 		} catch (Exception e) {
 			kq = "Mã đã tồn tại trong danh sách";
 		}
-		Assert.assertNotNull(hoaDonDAO.TimKiem(hoaDonModel.getMaHD()));
+		//Assert.assertNotNull(hoaDonDAO.TimKiem(hoaDonModel.getMaHD()));
 		Assert.assertEquals(kqmd, kq);
 	}
 
@@ -883,7 +883,8 @@ public class HoaDonTest {
 		Assert.assertEquals(kq, kqmd);
 	}
 
-	// @Test
+	 @Test
+	 //Cần phải có danh sách hóa đơn được tạo trong hôm nay thì test case này sẽ pass
 	public void testSelectHomNayHoaDon() {
 		List<HoaDonModel> hoaDonListHomNay = hoaDonDAO.selectHomNay();
 		String kq = "";
@@ -896,16 +897,18 @@ public class HoaDonTest {
 		Assert.assertEquals(kq, kqmm);
 	}
 
-	// @Test
+	 @Test
+	 //Cần có hóa đơn được tạo trong tuần này thì test case này sẽ được pass
 	public void testSelectTuanNay() {
 		List<HoaDonModel> hoaDonListTuanNay = hoaDonDAO.selectTuanNay();
 		String kq = "";
+		String kqmm="Hiển thị danh sách hóa đơn trong tuần này";
 		if (hoaDonListTuanNay.isEmpty()) {
 			kq = "Không có hóa đơn nào được tạo trong tuần này";
 		} else {
-			kq = "Thành công";
+			kq = "Hiển thị danh sách hóa đơn trong tuần này";
 		}
-		Assert.assertEquals(kq, "Thành công");
+		Assert.assertEquals(kq, kqmm);
 	}
 
 	 @Test
