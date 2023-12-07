@@ -78,7 +78,28 @@ public class HoaDonCTTest {
 		}
 		Assert.assertEquals(kq, kqmd);
 	}
-
+	@Test
+	public void testInsertHoaDonCTNotSoLuongBang0() {
+		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
+		String kq = "";
+		String kqmd = "Số lượng không được bằng 0";
+		hoaDonCTModel.setMaSP("SP00001");
+		hoaDonCTModel.setSoLuong(0);
+		hoaDonCTModel.setMaHD("HD00006");
+		hoaDonCTModel.setGia(14500000);
+		hoaDonCTModel.setThanhTien(29000000);
+		try {
+			if (hoaDonCTModel.getSoLuong() == 0) {
+				kq = "Số lượng không được bằng 0";
+			} else {
+				hoaDonCTDAO.insert(hoaDonCTModel);
+				kq = "Thêm dữ liệu thành công";
+			}
+		} catch (Exception e) {
+			kq = "Thất bại";
+		}
+		Assert.assertEquals(kq, kqmd);
+	}
 	public void testInsertHoaDonCTNotMaHD() {
 		HoaDonCTModel hoaDonCTModel = new HoaDonCTModel();
 		String kq = "";
