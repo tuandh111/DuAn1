@@ -1,38 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-<<<<<<< Updated upstream
-  <suite started-at="2023-12-03T15:23:37 ICT" name="Default suite" finished-at="2023-12-03T15:23:37 ICT" duration-ms="90">
+  <suite started-at="2023-12-07T13:52:18 ICT" name="Default suite" finished-at="2023-12-07T13:52:19 ICT" duration-ms="979">
     <groups>
     </groups>
-    <test started-at="2023-12-03T15:23:37 ICT" name="Default test" finished-at="2023-12-03T15:23:37 ICT" duration-ms="90">
-      <class name="nhom2.test.thang.ThemKhachHang">
-        <test-method signature="testThemKHThatBai(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.thang.ThemKhachHang@4567f35d]" started-at="2023-12-03T15:23:37 ICT" name="testThemKHThatBai" data-provider="info" finished-at="2023-12-03T15:23:37 ICT" duration-ms="33" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "java.util.List.contains(Object)" because the return value of "java.util.Map.get(Object)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.List.contains(Object)" because the return value of "java.util.Map.get(Object)" is null
-at org.testng.internal.reflect.ReflectionRecipes.isInstanceOf(ReflectionRecipes.java:76)
-at org.testng.internal.reflect.ReflectionRecipes.exactMatch(ReflectionRecipes.java:256)
-at org.testng.internal.reflect.ReflectionRecipes.exactMatch(ReflectionRecipes.java:241)
-at org.testng.internal.reflect.DirectMethodMatcher.match(DirectMethodMatcher.java:33)
-at org.testng.internal.reflect.AbstractNodeMethodMatcher.hasConformance(AbstractNodeMethodMatcher.java:25)
-at org.testng.internal.reflect.AbstractMethodMatcher.conforms(AbstractMethodMatcher.java:25)
-at org.testng.internal.reflect.DataProviderMethodMatcher.hasConformance(DataProviderMethodMatcher.java:20)
-at org.testng.internal.reflect.AbstractMethodMatcher.conforms(AbstractMethodMatcher.java:25)
-at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:34)
-at org.testng.internal.Parameters.injectParameters(Parameters.java:914)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
-=======
-  <suite started-at="2023-12-06T14:39:16 ICT" name="Default suite" finished-at="2023-12-06T14:39:17 ICT" duration-ms="678">
-    <groups>
-    </groups>
-    <test started-at="2023-12-06T14:39:16 ICT" name="Default test" finished-at="2023-12-06T14:39:17 ICT" duration-ms="678">
+    <test started-at="2023-12-07T13:52:18 ICT" name="Default test" finished-at="2023-12-07T13:52:19 ICT" duration-ms="979">
       <class name="nhom2.test.len.DatHangTest">
-        <test-method signature="testDH1()[pri:0, instance:nhom2.test.len.DatHangTest@dbf57b3]" started-at="2023-12-06T14:39:16 ICT" name="testDH1" finished-at="2023-12-06T14:39:17 ICT" duration-ms="630" status="FAIL">
+        <test-method signature="testDH103()[pri:0, instance:nhom2.test.len.DatHangTest@384ad17b]" started-at="2023-12-07T13:52:18 ICT" name="testDH103" finished-at="2023-12-07T13:52:19 ICT" duration-ms="806" status="FAIL">
           <exception class="org.junit.ComparisonFailure">
             <message>
               <![CDATA[expected:<Th[êm dữ liệu thành công]> but was:<Th[ất bại]>]]>
@@ -41,23 +16,18 @@ at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
               <![CDATA[org.junit.ComparisonFailure: expected:<Th[êm dữ liệu thành công]> but was:<Th[ất bại]>
 at org.junit.Assert.assertEquals(Assert.java:117)
 at org.junit.Assert.assertEquals(Assert.java:146)
-at nhom2.test.len.DatHangTest.testDH1(DatHangTest.java:33)
+at nhom2.test.len.DatHangTest.testDH103(DatHangTest.java:46)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
->>>>>>> Stashed changes
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-<<<<<<< Updated upstream
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-=======
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
->>>>>>> Stashed changes
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
@@ -75,19 +45,53 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-<<<<<<< Updated upstream
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThemKHThatBai -->
-      </class> <!-- nhom2.test.thang.ThemKhachHang -->
-=======
           </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDH1 -->
+        </test-method> <!-- testDH103 -->
+        <test-method signature="testDH99()[pri:0, instance:nhom2.test.len.DatHangTest@384ad17b]" started-at="2023-12-07T13:52:19 ICT" name="testDH99" finished-at="2023-12-07T13:52:19 ICT" duration-ms="119" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<Th[êm dữ liệu thành công]> but was:<Th[ất bại]>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<Th[êm dữ liệu thành công]> but was:<Th[ất bại]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DatHangTest.testDH99(DatHangTest.java:30)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDH99 -->
       </class> <!-- nhom2.test.len.DatHangTest -->
->>>>>>> Stashed changes
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

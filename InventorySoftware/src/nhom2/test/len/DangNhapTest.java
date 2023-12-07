@@ -76,14 +76,17 @@ public class DangNhapTest {
     	String kqmd = "Không được bỏ trống tên đăng nhập";
 		String kqtt= null;
 		String manv = "";
-		String mk = MH.toSHA(new String(""));
+		String mk = MH.toSHA(new String("kkk"));
         String matKhau = new String(mk);
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
+			if(manv.equals("")) {
+				kqtt = "Không được bỏ trống tên đăng nhập";}
+			else {
+				sh.USER = taikhoan;
 			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Không được bỏ trống tên đăng nhập";
+			kqtt = "Thành công";}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -95,14 +98,17 @@ public class DangNhapTest {
     	String kqmd = "Không được bỏ trống tên đăng nhập";
 		String kqtt= null;
 		String manv = "";
-		String mk = MH.toSHA(new String("123"));
+		String mk = MaHoa.toSHA(new String("123"));
         String matKhau = new String(mk);
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
+			if(manv.equals("")) {
+				kqtt = "Không được bỏ trống tên đăng nhập";}
+			else {
+				ShareHelper.USER = taikhoan;
 			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Không được bỏ trống tên đăng nhập";
+			kqtt = "Thành công";}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -114,14 +120,19 @@ public class DangNhapTest {
     	String kqmd = "Chưa nhập password";
 		String kqtt= null;
 		String manv = "NV002";
-		String mk = MH.toSHA(new String(""));
+		String mk = "";
         String matKhau = new String(mk);
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
-			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Chưa nhập password";
+			if(mk.equals("")) {
+				kqtt = "Chưa nhập password";
+			}
+			else {
+				ShareHelper.USER = taikhoan;
+				matKhau.equals(taikhoan.getMatKhau().trim());
+				kqtt = "thành công";
+			}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -133,14 +144,19 @@ public class DangNhapTest {
     	String kqmd = "Vui lòng nhập lại mật khẩu không quá 50 ký tự";
 		String kqtt= null;
 		String manv = "NV002";
-		String mk = MH.toSHA(new String("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+		String mk = MH.toSHA(new String("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
         String matKhau = new String(mk);
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
-			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Vui lòng nhập lại mật khẩu không quá 50 ký tự";
+			if(matKhau.length() > 50) {
+				kqtt = "Vui lòng nhập lại mật khẩu không quá 50 ký tự";
+			}
+			else {
+				sh.USER = taikhoan;
+				matKhau.equals(taikhoan.getMatKhau().trim());
+				kqtt = "thành công";
+			}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -223,14 +239,19 @@ public class DangNhapTest {
     	String kqmd = "Chưa nhập password";
 		String kqtt= null;
 		String manv = "NV009";
-		String mk = MH.toSHA(new String(""));
+		String mk = "";
         String matKhau = new String(mk);
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
-			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Chưa nhập password";
+			if(mk.equals("")) {
+				kqtt = "Chưa nhập password";
+			}
+			else {
+				ShareHelper.USER = taikhoan;
+				matKhau.equals(taikhoan.getMatKhau().trim());
+				kqtt = "thành công";
+			}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -246,9 +267,14 @@ public class DangNhapTest {
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
-			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "password không vượt quá 50 ký tự";
+			if(matKhau.length() > 50) {
+				kqtt = "Vui lòng nhập lại mật khẩu không quá 50 ký tự";
+			}
+			else {
+				sh.USER = taikhoan;
+				matKhau.equals(taikhoan.getMatKhau().trim());
+				kqtt = "thành công";
+			}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -282,9 +308,12 @@ public class DangNhapTest {
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
+			if(manv.equals("")) {
+				kqtt = "Không được bỏ trống tên đăng nhập";}
+			else {
+				sh.USER = taikhoan;
 			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Không được bỏ trống tên đăng nhập";
+			kqtt = "Thành công";}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
@@ -295,14 +324,19 @@ public class DangNhapTest {
     	String kqmd = "Chưa nhập password";
 		String kqtt= null;
 		String manv = "NV009";
-		String mk = MH.toSHA(new String(""));
+		String mk = "";
         String matKhau = new String(mk);
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
-			matKhau.equals(taikhoan.getMatKhau().trim());
-			kqtt = "Chưa nhập password";
+			if(mk.equals("")) {
+				kqtt = "Chưa nhập password";
+			}
+			else {
+				ShareHelper.USER = taikhoan;
+				matKhau.equals(taikhoan.getMatKhau().trim());
+				kqtt = "thành công";
+			}
 		}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}

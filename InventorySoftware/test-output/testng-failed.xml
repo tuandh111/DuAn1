@@ -3,19 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< Updated upstream
-      <class name="nhom2.test.thang.ThemKhachHang">
-        <methods>
-          <include name="testThemKHThatBai"/>
-        </methods>
-      </class> <!-- nhom2.test.thang.ThemKhachHang -->
-=======
       <class name="nhom2.test.len.DatHangTest">
         <methods>
-          <include name="testDH1"/>
+          <include name="testDH103"/>
+          <include name="testDH99"/>
         </methods>
       </class> <!-- nhom2.test.len.DatHangTest -->
->>>>>>> Stashed changes
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -29,4 +29,20 @@ public class DatHangTest {
         }
 		assertEquals(kqmd, kqtt);
 	}
+	@Test
+	public void testDH103() {
+		String kqmd = "Thêm dữ liệu thành công";
+		String kqtt= null;
+		DatSPModel model = new DatSPModel();
+		DatSPDAO dao = new DatSPDAO();
+		model.setSoLuong("1000");
+		model.setSDT("01287674336");
+		try {
+            dao.insert(model);
+            kqtt = "Thêm dữ liệu thành công";
+        } catch (Exception e) {
+        	kqtt = "Thất bại";
+        }
+		assertEquals(kqmd, kqtt);
+	}
 }
