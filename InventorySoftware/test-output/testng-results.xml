@@ -1,157 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-06T16:24:42 ICT" name="Default suite" finished-at="2023-12-06T16:25:44 ICT" duration-ms="61828">
+  <suite started-at="2023-12-07T14:44:56 ICT" name="Default suite" finished-at="2023-12-07T14:44:57 ICT" duration-ms="998">
     <groups>
     </groups>
-    <test started-at="2023-12-06T16:24:42 ICT" name="Default test" finished-at="2023-12-06T16:25:44 ICT" duration-ms="61828">
-      <class name="nhom2.test.ap.ApLoginTest">
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:24:42 ICT" name="setupBrowser" finished-at="2023-12-06T16:24:49 ICT" duration-ms="7355" status="PASS">
+    <test started-at="2023-12-07T14:44:56 ICT" name="Default test" finished-at="2023-12-07T14:44:57 ICT" duration-ms="998">
+      <class name="nhom2.test.cong.SanPhamXoa">
+        <test-method signature="xoaSanPham()[pri:0, instance:nhom2.test.cong.SanPhamXoa@689604d9]" started-at="2023-12-07T14:44:56 ICT" name="xoaSanPham" finished-at="2023-12-07T14:44:57 ICT" duration-ms="922" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:24:49 ICT" name="login" data-provider="dataLogin" finished-at="2023-12-06T16:24:50 ICT" duration-ms="680" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ceo]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:24:50 ICT" name="closeBrowser" finished-at="2023-12-06T16:24:53 ICT" duration-ms="3487" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:24:53 ICT" name="setupBrowser" finished-at="2023-12-06T16:25:02 ICT" duration-ms="8597" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:02 ICT" name="login" data-provider="dataLogin" finished-at="2023-12-06T16:25:03 ICT" duration-ms="1259" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ceo]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:03 ICT" name="closeBrowser" finished-at="2023-12-06T16:25:07 ICT" duration-ms="3832" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:07 ICT" name="setupBrowser" finished-at="2023-12-06T16:25:11 ICT" duration-ms="3682" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:11 ICT" name="login" data-provider="dataLogin" finished-at="2023-12-06T16:25:12 ICT" duration-ms="1309" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kk]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:12 ICT" name="closeBrowser" finished-at="2023-12-06T16:25:15 ICT" duration-ms="3280" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:15 ICT" name="setupBrowser" finished-at="2023-12-06T16:25:19 ICT" duration-ms="3312" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:19 ICT" name="login" data-provider="dataLogin" finished-at="2023-12-06T16:25:19 ICT" duration-ms="654" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:19 ICT" name="closeBrowser" finished-at="2023-12-06T16:25:23 ICT" duration-ms="3386" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:23 ICT" name="setupBrowser" finished-at="2023-12-06T16:25:28 ICT" duration-ms="5742" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:28 ICT" name="login" data-provider="dataLogin" finished-at="2023-12-06T16:25:32 ICT" duration-ms="3504" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ceo]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:32 ICT" name="closeBrowser" finished-at="2023-12-06T16:25:35 ICT" duration-ms="3396" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:35 ICT" name="setupBrowser" finished-at="2023-12-06T16:25:39 ICT" duration-ms="3396" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:39 ICT" name="login" data-provider="dataLogin" finished-at="2023-12-06T16:25:40 ICT" duration-ms="1379" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[kk]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ceo]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:nhom2.test.ap.ApLoginTest@73a1e9a9]" started-at="2023-12-06T16:25:40 ICT" name="closeBrowser" finished-at="2023-12-06T16:25:44 ICT" duration-ms="3489" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- nhom2.test.ap.ApLoginTest -->
+        </test-method> <!-- xoaSanPham -->
+      </class> <!-- nhom2.test.cong.SanPhamXoa -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
