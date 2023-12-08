@@ -317,8 +317,7 @@ public class HoaDonCTTest {
 
 	@Test
 	public void testSelectMaHoaDon() {
-		//Để Test Case passed thì cần phải có hóa đơn trong ngày hôm nay
-		List<HoaDonCTModel> list = hoaDonCTDAO.selectAll("HD00006");
+		List<HoaDonCTModel> list = hoaDonCTDAO.selectAll("HD00005");
 		String kq = "";
 		if (list.isEmpty()) {
 			kq = "Không có hóa đơn nào được tạo trong ngày hôm nay";
