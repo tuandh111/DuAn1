@@ -369,7 +369,6 @@ public class HoaDonCTTest {
 			kq = "Thành công";
 		} catch (Exception e) {
 			kq = "Thất bại";
-			// TODO: handle exception
 		}
 		Assert.assertEquals(kqmd, kq);
 	}

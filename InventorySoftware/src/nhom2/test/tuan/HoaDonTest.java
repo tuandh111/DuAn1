@@ -59,7 +59,7 @@ public class HoaDonTest {
 		} catch (Exception e) {
 			kq = "Mã đã tồn tại trong danh sách";
 		}
-		//Assert.assertNotNull(hoaDonDAO.TimKiem(hoaDonModel.getMaHD()));
+		Assert.assertNotNull(hoaDonDAO.TimKiem(hoaDonModel.getMaHD()));
 		Assert.assertEquals(kqmd, kq);
 	}
 
