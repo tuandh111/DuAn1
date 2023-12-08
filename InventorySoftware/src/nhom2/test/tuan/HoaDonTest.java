@@ -6,28 +6,46 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 import com.DuAn1.Dao.HoaDonDAO;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Model.HoaDonModel;
 import com.DuAn1.form.HoaDon;
 
 public class HoaDonTest {
 	HoaDonDAO hoaDonDAO = new HoaDonDAO();
-
+	ThongKeDao daoThongKe = new ThongKeDao();
+    String TuDongTangMa() {
+        List<Object[]> i = daoThongKe.getMaxHDDH();
+        String name = (String) i.get(0)[0];
+        String[] tbl = name.split("D");
+        String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+        String ten = "HD";
+        for (int j = 0; j <= 4 - so.length(); j++) {
+            ten += "0";
+        }
+        ten = ten + so;
+        return ten;
+    }
 	@Test
 	public void testInSertHoaDonThanhCong() {
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		String formattedDate = sdf.format(date);
 		HoaDonModel hoaDonModel = new HoaDonModel();
 		String kq = "";
 		String kqmd = "Thêm dữ liệu thành công";
-		hoaDonModel.setMaHD("HD00104");
+		hoaDonModel.setMaHD(TuDongTangMa());
 		hoaDonModel.setSoluong("10");
 		hoaDonModel.setTrangThai(true);
 		hoaDonModel.setDongia(100000);
 		hoaDonModel.setTongtien(10000000);
-		hoaDonModel.setNgayXuat("2023/02/02");
+		hoaDonModel.setNgayXuat(formattedDate);
 		hoaDonModel.setMota("Mô tả");
 		hoaDonModel.setTenCty("CTY TTA MOBILE");
 		hoaDonModel.setMaNV("NV001");
