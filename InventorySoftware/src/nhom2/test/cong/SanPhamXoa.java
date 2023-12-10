@@ -16,7 +16,7 @@ public class SanPhamXoa {
 	public void xoaSanPham() {
 		String kqtt = "";
 		String kqmd = "Thành công";
-		String MaSP = "SP00007";
+		String MaSP = "SP00015";
 		SanPhamModel sp = dao.findById(MaSP);
 		try {
 			dao.delete(sp);
@@ -25,6 +25,13 @@ public class SanPhamXoa {
 			kqtt = "Thất bại";
 			// TODO: handle exception
 		}
+		SanPhamModel spcheck = dao.findById(MaSP);
+		if(spcheck.isTrangThai()) {
+			kqtt = "Thất bại";
+		}else {
+			kqtt = "Thành công";
+		}
+		
 		Assert.assertEquals(kqmd,kqtt);
 	}
 }

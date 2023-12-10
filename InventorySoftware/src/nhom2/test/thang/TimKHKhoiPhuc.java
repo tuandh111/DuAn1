@@ -12,42 +12,47 @@ public class TimKHKhoiPhuc {
 	KhachHangModel model = new KhachHangModel();
 	KhachHangDAO dao = new KhachHangDAO();
 
-	String kq = "";
-	String kqmd = "Thành công";
+	
 
 	@Test
 	public void timMaDung() {
+		String kq = "";
+		String kqmd = "Đã tìm thấy";
 		List<KhachHangModel> list = dao.selectDaXoaTheoMa("KH00987");
-		if (list != null) {
-			kq = "Thành công";
+		if (!list.isEmpty()) {
+			kq = "Đã tìm thấy";
 		} else {
-			kq = "Thất Bại";
+			kq = "Không tìm thấy";
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
 	@Test
 	public void timMaTrong() {
-		List<KhachHangModel> list = dao.selectDaXoaTheoMa("");
-		if (list != null) {
-			kq = "Thành công";
+		String kq = "";
+		String kqmd = "Không tìm thấy";
+		List<KhachHangModel> list = dao.selectDaXoaTheoMa(null);
+		if (list.isEmpty()) {
+			kq = "Không tìm thấy";
 		} else {
-			kq = "Thất Bại";
+			kq = "Đã tìm thấy";
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
 	@Test
 	public void timMaSai() {
+		String kq = "";
+		String kqmd = "Không tìm thấy";
 		List<KhachHangModel> list = dao.selectDaXoaTheoMa("Địch Lệ Nhiệt Ba");
-		if (list != null) {
-			kq = "Thất Bại";
+		if (list.isEmpty()) {
+			kq = "Không tìm thấy";
 		} else {
-			kq = "Thành công";
+			kq = "Đã tìm thấy";
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 }

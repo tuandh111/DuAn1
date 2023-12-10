@@ -8,10 +8,9 @@ import org.junit.Test;
 import com.DuAn1.Dao.KhachHangDAO;
 import com.DuAn1.Model.KhachHangModel;
 
-public class XoaKH {
+public class khoiPhucKH {
 	KhachHangModel model = new KhachHangModel();
 	KhachHangDAO dao = new KhachHangDAO();
-
 
 	@Test
 	public void testDelete() {
@@ -19,14 +18,14 @@ public class XoaKH {
 		String maKH = null;
 		model.setMaKH(maKH);
 		String kq = "";
-		String kqmd = "Bạn chưa chọn khách hàng để xóa";
+		String kqmd = "Bạn chưa chọn khách hàng để khôi phục";
 		try {
 			dao.delete(model);
-			List<KhachHangModel> list = dao.selectMa(maKH);
+			List<KhachHangModel> list = dao.selectDaXoaTheoMa(maKH);
 			if (list.isEmpty()) {
-				kq = "Bạn chưa chọn khách hàng để xóa";
+				kq = "Bạn chưa chọn khách hàng để khôi phục";
 			} else {
-				kq = "Xóa thành công";
+				kq = "Khôi phục thành công";
 			}
 			Assert.assertEquals(kqmd, kq);
 

@@ -46,7 +46,7 @@ public class SuaKH {
 		model.setNgaySinh("2000-1-1");
 		model.setDiaChi("Cần Thơ");
 		model.setGT(true);
-		model.setLoaiKH("");
+		model.setLoaiKH(null);
 		model.setTrangThai(true);
 		model.setMoTa("hi");
 		model.setMaNV("NV001");
@@ -54,16 +54,16 @@ public class SuaKH {
 		model.setMaKH("KH00088");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Loại khách hàng bạn chưa chọn";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Loại khách hàng bạn chưa chọn";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -72,7 +72,7 @@ public class SuaKH {
 
 		model.setTenKH("Trịnh Trần Hoàng Tuấn");
 		model.setSDT("0929898988");
-		model.setNgaySinh("");
+		model.setNgaySinh(null);
 		model.setDiaChi("Cần Thơ");
 		model.setGT(true);
 		model.setLoaiKH("VIP");
@@ -83,16 +83,16 @@ public class SuaKH {
 		model.setMaKH("KH00088");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Tuổi không được nhỏ hơn 18";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Tuổi không được nhỏ hơn 18";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -113,16 +113,16 @@ public class SuaKH {
 		model.setMaKH("KH00088");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Giới tính bạn chưa chọn";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Giới tính bạn chưa chọn";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -132,7 +132,7 @@ public class SuaKH {
 		model.setTenKH("Trịnh Trần Hoàng Tuấn");
 		model.setSDT("0912898986");
 		model.setNgaySinh("2000-1-1");
-		model.setDiaChi("");
+		model.setDiaChi(null);
 		model.setGT(true);
 		model.setLoaiKH("VIP1");
 		model.setTrangThai(true);
@@ -141,23 +141,23 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Địa chỉ không được để trống";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Địa chỉ không được để trống";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
 	@Test
 	public void chuaTenKH() {
 		model.setMaKH("KH00088");
-		model.setTenKH("");
+		model.setTenKH(null);
 		model.setSDT("0989894485");
 		model.setNgaySinh("2000-1-1");
 		model.setDiaChi("Cần Thơ");
@@ -169,16 +169,16 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Họ và tên không được để trống";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Họ và tên không được để trống";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -192,21 +192,21 @@ public class SuaKH {
 		model.setGT(true);
 		model.setLoaiKH("VIP1");
 		model.setTrangThai(true);
-		model.setMoTa("");
+		model.setMoTa(null);
 		model.setMaNV("NV001");
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Thêm thành công";
 		try {
 			dao.update(model);
-			kq = "Thành công";
+			kq = "Thêm thành công";
 
 		} catch (Exception e) {
 			kq = "Thất bại";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -214,7 +214,7 @@ public class SuaKH {
 	public void chuaNhapSDT() {
 		model.setMaKH("KH00088");
 		model.setTenKH("Trịnh Trần Hoàng Tuấn");
-		model.setSDT("");
+		model.setSDT(null);
 		model.setNgaySinh("2000-1-1");
 		model.setDiaChi("Cần Thơ");
 		model.setGT(true);
@@ -225,16 +225,16 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Số điện thoại không được để trống";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Số điện thoại không được để trống";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -250,19 +250,19 @@ public class SuaKH {
 		model.setTrangThai(true);
 		model.setMoTa("hi");
 		model.setMaNV("NV001");
-		model.setHinh("");
+		model.setHinh(null);
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Bạn chưa chọn hình ảnh";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Bạn chưa chọn hình ảnh";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -281,16 +281,16 @@ public class SuaKH {
 		model.setHinh("avatar.docx");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Hình ảnh không đúng định dạng";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Hình ảnh không đúng định dạng";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -299,28 +299,28 @@ public class SuaKH {
 		Boolean gt = Boolean.parseBoolean(null);
 		Boolean tt = Boolean.parseBoolean(null);
 		model.setMaKH("KH00088");
-		model.setTenKH("");
-		model.setSDT("");
-		model.setNgaySinh("");
-		model.setDiaChi("");
+		model.setTenKH(null);
+		model.setSDT(null);
+		model.setNgaySinh(null);
+		model.setDiaChi(null);
 		model.setGT(gt);
-		model.setLoaiKH("");
+		model.setLoaiKH(null);
 		model.setTrangThai(tt);
-		model.setMoTa("");
-		model.setMaNV("");
-		model.setHinh("");
+		model.setMoTa(null);
+		model.setMaNV(null);
+		model.setHinh(null);
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Bạn chưa chọn hình ảnh";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Bạn chưa chọn hình ảnh";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -339,16 +339,16 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Tuổi không được nhỏ hơn 18";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Tuổi không được nhỏ hơn 18";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
@@ -367,23 +367,23 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Họ tên không chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Họ tên không chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 
 	@Test
 	public void NhapSDTKHSai() {
 		model.setMaKH("KH00088");
-		model.setTenKH("!@#$%^&*<3");
+		model.setTenKH("kk");
 		model.setSDT("1900");
 		model.setNgaySinh("2003-12-1");
 		model.setDiaChi("Cần Thơ");
@@ -395,16 +395,16 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Thành công";
+		String kqmd = "Số điện thoại của bạn không đúng định dạng";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Thất bại";
+			kq = "Số điện thoại của bạn không đúng định dạng";
 			// TODO: handle exception
 		}
-		Assert.assertEquals(kq, kqmd);
+		Assert.assertEquals(kqmd, kq);
 
 	}
 }
