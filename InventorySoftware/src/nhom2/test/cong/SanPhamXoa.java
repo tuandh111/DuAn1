@@ -16,7 +16,7 @@ public class SanPhamXoa {
 	public void xoaSanPham() {
 		String kqtt = "";
 		String kqmd = "Thành công";
-		String MaSP = "SP00015";
+		String MaSP = "SP00014";
 		SanPhamModel sp = dao.findById(MaSP);
 		try {
 			dao.delete(sp);
