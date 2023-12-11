@@ -100,9 +100,13 @@ public class SanPhamThemTest {
 		  dt.setMoTa("Điện thoại");
 	  
 	  try { 
-		  dao.insert(sp);
-		  daoDT.insert(dt);
-	  kqtt = "Thêm dữ liệu thành công";
+		  if(sp.getGia()<0) {
+			  kqtt="Thêm dữ liệu thất bại";
+		  }else {
+			  dao.insert(sp);
+			  daoDT.insert(dt);
+		  kqtt = "Thêm dữ liệu thành công";
+		  }
 	  }catch(Exception ex)
 	  { 
 		  ex.printStackTrace();
@@ -140,9 +144,13 @@ public class SanPhamThemTest {
 		  dt.setMoTa("Điện thoại");
 	  
 	  try { 
-		  dao.insert(sp);
-		  daoDT.insert(dt);
-	  kqtt = "Thêm dữ liệu thành công"; 
+		  if(sp.getSoLuong()<0) {
+			  kqtt="Thêm dữ liệu thất bại";
+		  }else {
+			  dao.insert(sp);
+			  daoDT.insert(dt);
+		  kqtt = "Thêm dữ liệu thành công";
+		  } 
 	  }catch(Exception ex)
 	  { 
 		  ex.printStackTrace();
