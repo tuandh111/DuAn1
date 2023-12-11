@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="nhom2.test.cong.SanPhamXoa">
+      <class name="nhom2.test.len.DatHangTest">
         <methods>
-          <include name="xoaSanPham"/>
+          <include name="testDH103"/>
+          <include name="testDH99"/>
         </methods>
-      </class> <!-- nhom2.test.cong.SanPhamXoa -->
+      </class> <!-- nhom2.test.len.DatHangTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

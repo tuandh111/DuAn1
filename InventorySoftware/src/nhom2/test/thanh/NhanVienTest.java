@@ -29,16 +29,16 @@ public class NhanVienTest {
 
 	@Test
 	public void ThemNhanVienThanhCong() {
-		String kqmd = "Thêm Nhân Viên Thành Công";
+		String kqmd = "Thêm Mới Thành Công!";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV("NV013");
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("0912345678");
+		nv.setSDT("0999911111");
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
 		nv.setVaiTro("NV");
@@ -48,7 +48,7 @@ public class NhanVienTest {
 
 		try {
 			dao.insert(nv);
-			kqtt = "Thêm Nhân Viên Thành Công";
+			kqtt = "Thêm Mới thành công!";
 		} catch (Exception ex) {
 			kqtt = "Thêm Nhân Viên Thất Bại";
 		}

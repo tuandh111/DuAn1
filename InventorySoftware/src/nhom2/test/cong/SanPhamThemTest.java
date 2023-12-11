@@ -20,7 +20,7 @@ public class SanPhamThemTest {
 		  String kqtt= null;
 		  SanPhamModel sp = new SanPhamModel();
 		  DienThoaiModel dt = new DienThoaiModel();
-		  sp.setMaSP("SP00014");
+		  sp.setMaSP("SP00015");
 		  sp.setTenSP("Samsung Galaxy A05");
 		  sp.setMaNV("NV001");
 		  sp.setGia(3000000);
@@ -33,7 +33,7 @@ public class SanPhamThemTest {
 		  sp.setMaGiamGia("KM006");
 		  sp.setTrangThai(true);
 	  
-		  dt.setMaDT("SP00014");
+		  dt.setMaDT("SP00015");
 		  dt.setCPU("Bionits");
 		  dt.setRam("94GB");
 		  dt.setBoNho("11GB");
@@ -45,7 +45,14 @@ public class SanPhamThemTest {
 	  try { 
 		  dao.insert(sp);
 		  daoDT.insert(dt);
-	  kqtt = "Thêm dữ liệu thành công"; 
+	  kqtt = "Thêm dữ liệu thành công";
+	  SanPhamModel spThem = new SanPhamModel();
+	  spThem = dao.findById("SP00014");
+	  if(spThem!=null) {
+		  kqtt = "Thêm dữ liệu thành công";
+	  }else {
+		  kqtt = "Thêm dữ liệu thất bại";
+	  }
 	  }catch(Exception ex)
 	  { 
 		  ex.printStackTrace();
