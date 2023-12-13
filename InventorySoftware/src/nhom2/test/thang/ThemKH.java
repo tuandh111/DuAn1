@@ -46,11 +46,15 @@ public class ThemKH {
 		String kqmd = "Thành công";
 		try {
 			dao.insert(model);
-			kq = "Thành công";
+			if (dao.findById(ma) != null) {
+				kq = "Thành công";
+			}else {
+				kq = "Thất bại";
+			}
 
 		} catch (Exception e) {
-			kq = "Thất bại";
-			// TODO: handle exception
+			
+			e.printStackTrace();
 		}
 		Assert.assertEquals(kqmd, kq);
 
