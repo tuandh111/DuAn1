@@ -10,33 +10,33 @@ public class SuaKH {
 	KhachHangModel model = new KhachHangModel();
 	KhachHangDAO dao = new KhachHangDAO();
 
-//	@Test
-//	public void suaOK() {
-//		model.setMaKH("KH00088");
-//		model.setTenKH("Trịnh Trần Hoàng Tuấn");
-//		model.setSDT("0989898789");
-//		model.setNgaySinh("2000-1-1");
-//		model.setDiaChi("DakLak");
-//		model.setGT(true);
-//		model.setLoaiKH("VIP1");
-//		model.setTrangThai(true);
-//		model.setMoTa("hi");
-//		model.setMaNV("NV001");
-//		model.setHinh("avatar.jpg");
-//
-//		String kq = "";
-//		String kqmd = "Thành công";
-//		try {
-//			dao.update(model);
-//			kq = "Thành công";
-//
-//		} catch (Exception e) {
-//			kq = "Thất bại";
-//			e.printStackTrace();
-//		}
-//		Assert.assertEquals(kq, kqmd);
-//
-//	}
+	@Test
+	public void suaOK() {
+		model.setMaKH("KH00088");
+		model.setTenKH("hiha");
+		model.setSDT("0989898000");
+		model.setNgaySinh("1111-1-1");
+		model.setDiaChi("DakLak");
+		model.setGT(true);
+		model.setLoaiKH("VIP1");
+		model.setTrangThai(true);
+		model.setMoTa("hi");
+		model.setMaNV("NV001");
+		model.setHinh("avatar.jpg");
+
+		String kq = "";
+		String kqmd = "Thành công";
+		try {
+			dao.update(model);
+			kq = "Thành công";
+
+		} catch (Exception e) {
+			kq = "Thất bại";
+			e.printStackTrace();
+		}
+		Assert.assertEquals(kqmd, kq);
+
+	}
 
 	@Test
 	public void chuaChonLoaiKH() {
@@ -367,13 +367,13 @@ public class SuaKH {
 		model.setHinh("avatar.jpg");
 
 		String kq = "";
-		String kqmd = "Họ tên không chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
+		String kqmd = "Họ tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 		try {
 			dao.update(model);
 			kq = "Thành công";
 
 		} catch (Exception e) {
-			kq = "Họ tên không chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
+			kq = "Họ tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 			// TODO: handle exception
 		}
 		Assert.assertEquals(kqmd, kq);
@@ -384,7 +384,7 @@ public class SuaKH {
 	public void NhapSDTKHSai() {
 		model.setMaKH("KH00088");
 		model.setTenKH("kk");
-		model.setSDT("1900");
+		model.setSDT("@#$%^");
 		model.setNgaySinh("2003-12-1");
 		model.setDiaChi("Cần Thơ");
 		model.setGT(true);
@@ -402,6 +402,35 @@ public class SuaKH {
 
 		} catch (Exception e) {
 			kq = "Số điện thoại của bạn không đúng định dạng";
+			// TODO: handle exception
+		}
+		Assert.assertEquals(kqmd, kq);
+
+	}
+	
+	@Test
+	public void NhapDCKHSai() {
+		
+		model.setMaKH("KH00088");
+		model.setTenKH("conan");
+		model.setSDT("0456891230");
+		model.setNgaySinh("2000-12-1");
+		model.setDiaChi("@#$%^&*");
+		model.setGT(true);
+		model.setLoaiKH("VIP");
+		model.setTrangThai(true);
+		model.setMoTa("hi");
+		model.setMaNV("NV001");
+		model.setHinh("avatar.jpg");
+
+		String kq = "";
+		String kqmd = "Địa chỉ chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
+		try {
+			dao.insert(model);
+			kq = "Thành công";
+
+		} catch (Exception e) {
+			kq = "Địa chỉ chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 			// TODO: handle exception
 		}
 		Assert.assertEquals(kqmd, kq);
