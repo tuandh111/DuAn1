@@ -2,6 +2,8 @@ package nhom2.test.thanh;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -9,47 +11,64 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.DuAn1.Dao.NhanVienDAO1;
+import com.DuAn1.Dao.ThongKeDao;
 import com.DuAn1.Model.NhanVienModel;
 
 public class CapNhatNV {
 
 	NhanVienDAO1 dao = new NhanVienDAO1();
 
+	ThongKeDao DaoThongKe = new ThongKeDao();
+
+	String TuDongTangMa() {
+		List<Object[]> i = DaoThongKe.getSoLuongNV();
+		String name = (String) i.get(0)[0];
+		String[] tbl = name.split("V");
+		String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+		String ten = "NV";
+		for (int j = 0; j <= 2 - so.length(); j++) {
+			ten += "0";
+		}
+		ten = ten + so;
+		return ten;
+	}
+
 	@Test
 	public void CNNhanVienThanhCong() {
-		String kqmd = "Cập nhật Nhân Viên Thành Công";
+		System.out.println("Mã cuối là: " + TuDongTangMa());
+		String kqmd = "Cập nhật thành công!";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
-		nv.setHoTen("Trần Ngọc Bích");
+		nv.setMaNV(TuDongTangMa());
+		nv.setHoTen("Trần Văn An");
 		nv.setNgaySinh("10-10-2000");
-		nv.setGioiTinh(false);
+		nv.setGioiTinh(true);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("0912345678");
-		nv.setEmail("bichtn@gmail.com");
+		nv.setSDT("0987987123");
+		nv.setEmail("antv123123@gmail.com");
 		nv.setMatKhau("123456");
-		nv.setVaiTro("NV");
+		nv.setVaiTro("Nhân Viên");
 		nv.setHinh("nhanvien.jpg");
 		nv.setTrangThai(true);
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Cập nhật Nhân Viên Thất Bại";
+			kqtt = "Cập nhật mới thất bại!";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiKhongChonNgay() {
-		String kqmd = "Ngày sinh của nhân viên chưa được chọn";
+		String kqmd = "Ngày sinh không được để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("null");
 		nv.setGioiTinh(false);
@@ -63,21 +82,77 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Ngày sinh của nhân viên chưa được chọn";
+			kqtt = "Ngày sinh không được để trống";
+		}
+		assertEquals(kqmd, kqtt);
+	}
+
+	@Test
+	public void CNNVKhiEmailBoTrong() {
+		String kqmd = "Email không được để trống!";
+		String kqtt = "";
+		NhanVienModel nv = new NhanVienModel();
+
+		nv.setMaNV(TuDongTangMa());
+		nv.setHoTen("Trần Ngọc Bích");
+		nv.setNgaySinh("10-10-2000");
+		nv.setGioiTinh(false);
+		nv.setDiaChi("Cần Thơ");
+		nv.setSDT("0912345678");
+		nv.setEmail(null);
+		nv.setMatKhau("123456");
+		nv.setVaiTro("NV");
+		nv.setHinh("nhanvien.jpg");
+		nv.setTrangThai(true);
+		nv.setTrangThaiXoa(false);
+
+		try {
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
+		} catch (Exception ex) {
+			kqtt = "Email không được để trống!";
+		}
+		assertEquals(kqmd, kqtt);
+	}
+
+	@Test
+	public void CNNVKhiKhongChonAnh() {
+		String kqmd = "Bạn chưa chọn hình ảnh";
+		String kqtt = "";
+		NhanVienModel nv = new NhanVienModel();
+
+		nv.setMaNV(TuDongTangMa());
+		nv.setHoTen("Trần Ngọc Bích");
+		nv.setNgaySinh("10-10-2000");
+		nv.setGioiTinh(false);
+		nv.setDiaChi("Cần Thơ");
+		nv.setSDT("0912345678");
+		nv.setEmail("bichtn@gmail.com");
+		nv.setMatKhau("123456");
+		nv.setVaiTro("NV");
+		nv.setHinh("");
+		nv.setTrangThai(true);
+		nv.setTrangThaiXoa(false);
+
+		try {
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
+		} catch (Exception ex) {
+			kqtt = "Bạn chưa chọn hình ảnh";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiMatKhauBoTrong() {
-		String kqmd = "Mật khẩu của nhân viên không được bỏ trống";
+		String kqmd = "Mật khẩu không được để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("null");
 		nv.setGioiTinh(false);
@@ -91,21 +166,21 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Mật khẩu của nhân viên không được bỏ trống";
+			kqtt = "Mật khẩu không được để trống";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiChuaChonGioiTinh() {
-		String kqmd = "Giới tính của nhân viên chưa được chọn";
+		String kqmd = "Giới tính của bạn không được để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 		Boolean gt = Boolean.parseBoolean(null);
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(gt);
@@ -119,52 +194,25 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Giới tính của nhân viên chưa được chọn";
+			kqtt = "Giới tính của bạn không được để trống";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
-//	@Test
-//	public void ThemNVKhiChuaChonGioiTinh() {
-//		String kqmd = "Giới tính của nhân viên chưa được chọn";
-//		String kqtt = "";
-//		NhanVienModel nv = new NhanVienModel();
-//
-//		nv.setMaNV("NV011");
-//		nv.setHoTen("Trần Ngọc Bích");
-//		nv.setNgaySinh("10-10-2000");
-//		nv.setGioiTinh();
-//		nv.setDiaChi("Cần Thơ");
-//		nv.setSDT("0912345678");
-//		nv.setEmail("bichtn@gmail.com");
-//		nv.setMatKhau("123456");
-//		nv.setVaiTro("NV");
-//		nv.setHinh("nhanvien.jpg");
-//		nv.setTrangThai(true);
-//		nv.setTrangThaiXoa(false);
-//
-//		try {
-//			dao.update(nv);
-//			kqtt = "Thêm Nhân Viên Thành Công";
-//		} catch (Exception ex) {
-//			kqtt = "Giới tính của nhân viên chưa được chọn";
-//		}
-//		assertEquals(kqmd, kqtt);
-//	}
 	@Test
 	public void CNNVKhiDiaChiBoTrong() {
-		String kqmd = "Địa chỉ của nhân viên không được bỏ trống";
+		String kqmd = "Địa chỉ không được để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
-		nv.setDiaChi("");
+		nv.setDiaChi(null);
 		nv.setSDT("0912345678");
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
@@ -174,22 +222,22 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Địa chỉ của nhân viên không được bỏ trống";
+			kqtt = "Địa chỉ không được để trống";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiHoTenBoTrong() {
-		String kqmd = "Họ tên của nhân viên không được bỏ trống";
+		String kqmd = "Họ và tên không được để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
-		nv.setHoTen("");
+		nv.setMaNV(TuDongTangMa());
+		nv.setHoTen(null);
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
@@ -202,26 +250,26 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Họ tên của nhân viên không được bỏ trống";
+			kqtt = "Họ và tên không được để trống";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiSDTBoTrong() {
-		String kqmd = "Số điện thoại của nhân viên không được bỏ trống";
+		String kqmd = "Số điện thoại không được để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("");
+		nv.setSDT(null);
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
 		nv.setVaiTro("NV");
@@ -230,21 +278,21 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Số điện thoại của nhân viên không được bỏ trống";
+			kqtt = "Số điện thoại không được để trống";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiKhongChonVaiTro() {
-		String kqmd = "Vai trò của nhân viên chưa được chọn";
+		String kqmd = "Vai trò của bạn đang để trống";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
@@ -258,23 +306,23 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Vai trò của nhân viên chưa được chọn";
+			kqtt = "Vai trò của bạn đang để trống";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
-	public void CNNVKhiNVChuaDu18T() {
-		String kqmd = "Tuổi của nhân viên không thích hợp";
+	public void CNNVKhiNVChuaDu16T() {
+		String kqmd = "Tuoi khong duoc nho hon 16";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
-		nv.setNgaySinh("10-10-2010");
+		nv.setNgaySinh("10-10-2023");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("");
 		nv.setSDT("0912345678");
@@ -286,26 +334,26 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Tuổi của nhân viên không thích hợp";
+			kqtt = "Tuoi khong duoc nho hon 16";
 		}
 		assertEquals(kqmd, kqtt);
 	}
 
 	@Test
 	public void CNNVKhiSDTCoChu() {
-		String kqmd = "Số điện thoại của nhân viên có chứa chữ";
+		String kqmd = "Số điện thoại của bạn không đúng định dạng";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("0912345678thanh");
+		nv.setSDT("0912345678@!#@#");
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
 		nv.setVaiTro("NV");
@@ -314,10 +362,10 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Số điện thoại của nhân viên có chứa chữ";
+			kqtt = "Số điện thoại của bạn không đúng định dạng";
 		}
 		assertEquals(kqmd, kqtt);
 	}
@@ -328,7 +376,7 @@ public class CapNhatNV {
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
@@ -342,8 +390,8 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
 			kqtt = "Địa chỉ của nhân viên không hợp lệ";
 		}
@@ -356,7 +404,7 @@ public class CapNhatNV {
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("null");
 		nv.setGioiTinh(false);
@@ -370,8 +418,8 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
 			kqtt = "Mật khẩu của nhân viên không hợp lệ";
 		}
@@ -380,12 +428,12 @@ public class CapNhatNV {
 
 	@Test
 	public void CNNVKhiHoTenCoKiTuDacBiet() {
-		String kqmd = "Họ tên của nhân viên không hợp lệ";
+		String kqmd = "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
-		nv.setHoTen("Trần Văn An @#12");
+		nv.setMaNV(TuDongTangMa());
+		nv.setHoTen("Trần Văn An @#12@@@");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
@@ -398,10 +446,10 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Họ tên của nhân viên không hợp lệ";
+			kqtt = "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 		}
 		assertEquals(kqmd, kqtt);
 	}
@@ -412,7 +460,7 @@ public class CapNhatNV {
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
@@ -426,8 +474,8 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
 			kqtt = "Số điện thoại của nhân viên quá dài";
 		}
@@ -436,11 +484,11 @@ public class CapNhatNV {
 
 	@Test
 	public void CNNVKhiEmailSaiDinhDang() {
-		String kqmd = "Email của nhân viên thiếu @";
+		String kqmd = "Email không đúng định dạng!";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
@@ -454,10 +502,10 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
-			kqtt = "Email của nhân viên thiếu @";
+			kqtt = "Email không đúng định dạng!";
 		}
 		assertEquals(kqmd, kqtt);
 	}
@@ -468,7 +516,7 @@ public class CapNhatNV {
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("null");
 		nv.setGioiTinh(false);
@@ -482,8 +530,8 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
 			kqtt = "Mật khẩu của nhân viên quá ngắn";
 		}
@@ -496,7 +544,7 @@ public class CapNhatNV {
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV(TuDongTangMa());
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("null");
 		nv.setGioiTinh(false);
@@ -510,8 +558,8 @@ public class CapNhatNV {
 		nv.setTrangThaiXoa(false);
 
 		try {
-			dao.update(nv);
-			kqtt = "Cập nhật Nhân Viên Thành Công";
+			dao.update1(nv);
+			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
 			kqtt = "Mật khẩu của nhân viên quá dài";
 		}
@@ -525,9 +573,9 @@ public class CapNhatNV {
 		nv.setMaNV("NV011");
 		try {
 			dao.delete(nv);
-			kqtt = "Xóa Nhân Viên Thất Bại";
+			kqtt = "Xóa thất bại!";
 		} catch (Exception ex) {
-			kqtt = "Xóa Nhân Viên Thành Công";
+			kqtt = "Xóa thành công!";
 		}
 		assertEquals(kqmd, kqtt);
 		assertFalse(nv.isTrangThai());
