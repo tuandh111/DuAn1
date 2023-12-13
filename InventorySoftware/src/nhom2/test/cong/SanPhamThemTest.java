@@ -61,7 +61,12 @@ public class SanPhamThemTest {
 	  try { 
 		  dao.insert(sp);
 		  daoDT.insert(dt);
-	  kqtt = "Thêm dữ liệu thành công"; 
+	  SanPhamModel spThem = dao.findById(masp);
+	  if(spThem!=null) {
+		  kqtt = "Thêm dữ liệu thành công"; 
+	  }else {
+		  kqtt = "Thêm dữ liệu thất bại"; 
+	  }
 	  }catch(Exception ex)
 	  { 
 		  ex.printStackTrace();
@@ -100,9 +105,14 @@ public class SanPhamThemTest {
 		  dt.setMoTa("Điện thoại");
 	  
 	  try { 
-		  dao.insert(sp);
-		  daoDT.insert(dt);
-	  kqtt = "Thêm dữ liệu thành công";
+			  dao.insert(sp);
+			  daoDT.insert(dt);
+			  SanPhamModel spThem = dao.findById(masp);
+			  if(spThem!=null) {
+				  kqtt = "Thêm dữ liệu thành công"; 
+			  }else {
+				  kqtt = "Thêm dữ liệu thất bại"; 
+			  }
 	  }catch(Exception ex)
 	  { 
 		  ex.printStackTrace();
@@ -140,9 +150,14 @@ public class SanPhamThemTest {
 		  dt.setMoTa("Điện thoại");
 	  
 	  try { 
-		  dao.insert(sp);
-		  daoDT.insert(dt);
-	  kqtt = "Thêm dữ liệu thành công"; 
+			  dao.insert(sp);
+			  daoDT.insert(dt);
+			  SanPhamModel spThem = dao.findById(masp);
+			  if(spThem!=null) {
+				  kqtt = "Thêm dữ liệu thành công"; 
+			  }else {
+				  kqtt = "Thêm dữ liệu thất bại"; 
+			  }
 	  }catch(Exception ex)
 	  { 
 		  ex.printStackTrace();

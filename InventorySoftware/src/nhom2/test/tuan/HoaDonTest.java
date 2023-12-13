@@ -3,10 +3,12 @@ package nhom2.test.tuan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +22,21 @@ import com.DuAn1.form.HoaDon;
 public class HoaDonTest {
 	HoaDonDAO hoaDonDAO = new HoaDonDAO();
 	ThongKeDao daoThongKe = new ThongKeDao();
+	@Test
+	public void testGetMaxHDDH_EmptyList() {
+	    List<Object[]> i = daoThongKe.getMaxHDDH();
+        String name = (String) i.get(0)[0];
+        String[] tbl = name.split("D");
+        String so = String.valueOf(Integer.parseInt(tbl[1]) + 1);
+        String ten = "HD";
+        for (int j = 0; j <= 4 - so.length(); j++) {
+            ten += "0";
+        }
+        ten = ten + so;
+        Assert.assertEquals("HD00119", ten.trim());
+		
+	}
+	
     String TuDongTangMa() {
         List<Object[]> i = daoThongKe.getMaxHDDH();
         String name = (String) i.get(0)[0];
@@ -959,7 +976,6 @@ public class HoaDonTest {
 		Assert.assertEquals(kq, kbmm);
 		assertFalse(hoaDonModel.isTrangThai());
 	}
-
 	@Test
 	public void testTimKiem() {
 		String maTimKiem = "HD00021";
