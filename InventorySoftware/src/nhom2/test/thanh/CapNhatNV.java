@@ -115,6 +115,10 @@ public class CapNhatNV {
 		} catch (Exception ex) {
 			kqtt = "Email không được để trống!";
 		}
+		String regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]+$";
+		if (nv.getEmail() == null || !nv.getEmail().matches(regex)) {
+			kqtt = "Email không được để trống!";
+		}
 		assertEquals(kqmd, kqtt);
 	}
 
@@ -141,6 +145,10 @@ public class CapNhatNV {
 			dao.update1(nv);
 			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
+			kqtt = "Bạn chưa chọn hình ảnh";
+		}
+		String regex = "^.+\\.(jpg|png|jpeg)$";
+		if (nv.getHinh() == null || !nv.getHinh().matches(regex)) {
 			kqtt = "Bạn chưa chọn hình ảnh";
 		}
 		assertEquals(kqmd, kqtt);
@@ -227,6 +235,10 @@ public class CapNhatNV {
 		} catch (Exception ex) {
 			kqtt = "Địa chỉ không được để trống";
 		}
+		String regex = "^\\S+$";
+		if (nv.getDiaChi() == null || !nv.getDiaChi().matches(regex)) {
+			kqtt = "Địa chỉ không được để trống";
+		}
 		assertEquals(kqmd, kqtt);
 	}
 
@@ -255,6 +267,10 @@ public class CapNhatNV {
 		} catch (Exception ex) {
 			kqtt = "Họ và tên không được để trống";
 		}
+		String regex = "^[a-zA-Z ]{1,50}$";
+		if (nv.getHoTen() == null || !nv.getHoTen().matches(regex)) {
+			kqtt = "Họ và tên không được để trống";
+		}
 		assertEquals(kqmd, kqtt);
 	}
 
@@ -281,6 +297,10 @@ public class CapNhatNV {
 			dao.update1(nv);
 			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
+			kqtt = "Số điện thoại không được để trống";
+		}
+		String regex = "^[0-9]{1,10}$";
+		if (nv.getSDT() == null || !nv.getSDT().matches(regex)) {
 			kqtt = "Số điện thoại không được để trống";
 		}
 		assertEquals(kqmd, kqtt);
@@ -353,18 +373,21 @@ public class CapNhatNV {
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("0912345678@!#@#");
+		nv.setSDT("0912345678thanh");
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
 		nv.setVaiTro("NV");
 		nv.setHinh("nhanvien.jpg");
 		nv.setTrangThai(true);
 		nv.setTrangThaiXoa(false);
-
 		try {
 			dao.update1(nv);
 			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
+			kqtt = "Số điện thoại của bạn không đúng định dạng";
+		}
+		String regex = "^[0-9]{10}$";
+		if (!nv.getSDT().matches(regex)) {
 			kqtt = "Số điện thoại của bạn không đúng định dạng";
 		}
 		assertEquals(kqmd, kqtt);
@@ -393,6 +416,10 @@ public class CapNhatNV {
 			dao.update1(nv);
 			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
+			kqtt = "Địa chỉ của nhân viên không hợp lệ";
+		}
+		String regex = "^[a-zA-Z0-9 ._-]+$";
+		if (!nv.getDiaChi().matches(regex)) {
 			kqtt = "Địa chỉ của nhân viên không hợp lệ";
 		}
 		assertEquals(kqmd, kqtt);
@@ -451,6 +478,10 @@ public class CapNhatNV {
 		} catch (Exception ex) {
 			kqtt = "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
 		}
+		String regex = "^[a-zA-Z ]{1,50}$";
+		if (!nv.getHoTen().matches(regex)) {
+			kqtt = "Họ và tên chỉ được chứa alphabet, khoảng trắng và không vượt quá 50 ký tự";
+		}
 		assertEquals(kqmd, kqtt);
 	}
 
@@ -465,18 +496,21 @@ public class CapNhatNV {
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("0912345678thanh");
+		nv.setSDT("091234567811111");
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
 		nv.setVaiTro("NV");
 		nv.setHinh("nhanvien.jpg");
 		nv.setTrangThai(true);
 		nv.setTrangThaiXoa(false);
-
 		try {
 			dao.update1(nv);
 			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
+			kqtt = "Số điện thoại của nhân viên quá dài";
+		}
+		String regex = "^[0-9]{10}$";
+		if (!nv.getSDT().matches(regex)) {
 			kqtt = "Số điện thoại của nhân viên quá dài";
 		}
 		assertEquals(kqmd, kqtt);
@@ -505,6 +539,10 @@ public class CapNhatNV {
 			dao.update1(nv);
 			kqtt = "Cập nhật thành công!";
 		} catch (Exception ex) {
+			kqtt = "Email không đúng định dạng!";
+		}
+		String regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]+$";
+		if (!nv.getEmail().matches(regex)) {
 			kqtt = "Email không đúng định dạng!";
 		}
 		assertEquals(kqmd, kqtt);

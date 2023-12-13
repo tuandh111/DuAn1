@@ -13,6 +13,7 @@ import com.DuAn1.Model.NhanVienModel;
 
 public class NhanVienTest {
 	NhanVienDAO1 dao = new NhanVienDAO1();
+	String so = "0\\d{9,10}";
 
 	@Test
 	public void testMa() {
