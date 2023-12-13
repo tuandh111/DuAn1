@@ -12,6 +12,8 @@ import com.DuAn1.MaHoa.MaHoa;
 import com.DuAn1.Model.NhanVienModel;
 
 public class DangNhapTest {
+	
+	
 	MaHoa MH = new MaHoa();
     NhanVienDAO1 dao = new NhanVienDAO1();
     MaHoa mahoa = new MaHoa();
@@ -103,6 +105,7 @@ public class DangNhapTest {
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
+
 if(manv.equals("")) {
 				kqtt = "Không được bỏ trống tên đăng nhập";}
 			else {
@@ -259,7 +262,7 @@ sh.USER = taikhoan;
 	}
     @Test
     public void testDN18() {
-    	String kqmd = "password không vượt quá 50 ký tự";
+    	String kqmd = "Vui lòng nhập lại mật khẩu không quá 50 ký tự";
 		String kqtt= null;
 		String manv = "NV009";
 		String mk = MH.toSHA(new String("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));

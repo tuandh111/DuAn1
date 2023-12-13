@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="0" failed="3" skipped="1">
+<testng-results ignored="0" total="17" passed="10" failed="7" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-11T15:47:22 ICT" name="Default suite" finished-at="2023-12-11T15:47:23 ICT" duration-ms="1091">
+  <suite started-at="2023-12-13T06:27:10 ICT" name="Default suite" finished-at="2023-12-13T06:27:11 ICT" duration-ms="1117">
     <groups>
     </groups>
-    <test started-at="2023-12-11T15:47:22 ICT" name="Default test" finished-at="2023-12-11T15:47:23 ICT" duration-ms="1091">
-      <class name="nhom2.test.cong.SanPhamThemTest">
-        <test-method signature="testThemSanPham()[pri:0, instance:nhom2.test.cong.SanPhamThemTest@4c583ecf]" started-at="2023-12-11T15:47:22 ICT" name="testThemSanPham" finished-at="2023-12-11T15:47:23 ICT" duration-ms="845" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+    <test started-at="2023-12-13T06:27:10 ICT" name="Default test" finished-at="2023-12-13T06:27:11 ICT" duration-ms="1117">
+      <class name="nhom2.test.len.DangNhapTest">
+        <test-method signature="testDN10()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN10" finished-at="2023-12-13T06:27:10 ICT" duration-ms="413" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
             <message>
-              <![CDATA[Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null]]>
+              <![CDATA[expected:<[Vui lòng nhập lại mật khẩu không quá 50 ký tự]> but was:<[thành công]>]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null
-at com.DuAn1.Dao.ThongKeDao.getSoLuongSP(ThongKeDao.java:34)
-at nhom2.test.cong.SanPhamThemTest.TuDongTangMa(SanPhamThemTest.java:21)
-at nhom2.test.cong.SanPhamThemTest.testThemSanPham(SanPhamThemTest.java:38)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+              <![CDATA[org.junit.ComparisonFailure: expected:<[Vui lòng nhập lại mật khẩu không quá 50 ký tự]> but was:<[thành công]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN10(DangNhapTest.java:165)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
@@ -27,7 +27,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
@@ -45,22 +45,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemSanPham -->
-        <test-method signature="testThemSanPhamGiaAm()[pri:0, instance:nhom2.test.cong.SanPhamThemTest@4c583ecf]" started-at="2023-12-11T15:47:23 ICT" name="testThemSanPhamGiaAm" finished-at="2023-12-11T15:47:23 ICT" duration-ms="53" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        </test-method> <!-- testDN10 -->
+        <test-method signature="testDN11()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN11" finished-at="2023-12-13T06:27:10 ICT" duration-ms="26" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
             <message>
-              <![CDATA[Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null]]>
+              <![CDATA[expected:<[Mật khẩu không được chứa kí tự đặc biệt]> but was:<[Thất bại]>]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null
-at com.DuAn1.Dao.ThongKeDao.getSoLuongSP(ThongKeDao.java:34)
-at nhom2.test.cong.SanPhamThemTest.TuDongTangMa(SanPhamThemTest.java:21)
-at nhom2.test.cong.SanPhamThemTest.testThemSanPhamGiaAm(SanPhamThemTest.java:84)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+              <![CDATA[org.junit.ComparisonFailure: expected:<[Mật khẩu không được chứa kí tự đặc biệt]> but was:<[Thất bại]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN11(DangNhapTest.java:183)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
@@ -69,7 +69,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
@@ -87,22 +87,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemSanPhamGiaAm -->
-        <test-method signature="testThemSanPhamSoLuongAm()[pri:0, instance:nhom2.test.cong.SanPhamThemTest@4c583ecf]" started-at="2023-12-11T15:47:23 ICT" name="testThemSanPhamSoLuongAm" finished-at="2023-12-11T15:47:23 ICT" duration-ms="45" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        </test-method> <!-- testDN11 -->
+        <test-method signature="testDN12()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN12" finished-at="2023-12-13T06:27:10 ICT" duration-ms="29" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
             <message>
-              <![CDATA[Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null]]>
+              <![CDATA[expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null
-at com.DuAn1.Dao.ThongKeDao.getSoLuongSP(ThongKeDao.java:34)
-at nhom2.test.cong.SanPhamThemTest.TuDongTangMa(SanPhamThemTest.java:21)
-at nhom2.test.cong.SanPhamThemTest.testThemSanPhamSoLuongAm(SanPhamThemTest.java:128)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+              <![CDATA[org.junit.ComparisonFailure: expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN12(DangNhapTest.java:201)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
@@ -111,7 +111,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
@@ -129,28 +129,43 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemSanPhamSoLuongAm -->
-        <test-method signature="testThemSanPhamThieuDuLieu(java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:nhom2.test.cong.SanPhamThemTest@4c583ecf]" started-at="2023-12-11T15:47:23 ICT" name="testThemSanPhamThieuDuLieu" data-provider="dataAdd" finished-at="2023-12-11T15:47:23 ICT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.RuntimeException">
+        </test-method> <!-- testDN12 -->
+        <test-method signature="testDN15()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN15" finished-at="2023-12-13T06:27:10 ICT" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN15 -->
+        <test-method signature="testDN16()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN16" finished-at="2023-12-13T06:27:10 ICT" duration-ms="26" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN16 -->
+        <test-method signature="testDN17()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN17" finished-at="2023-12-13T06:27:10 ICT" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN17 -->
+        <test-method signature="testDN18()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN18" finished-at="2023-12-13T06:27:10 ICT" duration-ms="24" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
             <message>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null]]>
+              <![CDATA[expected:<[Vui lòng nhập lại mật khẩu không quá 50 ký tự]> but was:<[thành công]>]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null
-at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
-at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:798)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
+              <![CDATA[org.junit.ComparisonFailure: expected:<[Vui lòng nhập lại mật khẩu không quá 50 ký tự]> but was:<[thành công]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN18(DangNhapTest.java:283)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
@@ -166,23 +181,167 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getStatement()" because "rs" is null
-at com.DuAn1.Dao.ThongKeDao.getSoLuongSP(ThongKeDao.java:34)
-at nhom2.test.cong.SanPhamThemTest.TuDongTangMa(SanPhamThemTest.java:21)
-at nhom2.test.cong.SanPhamThemTest.dataAdd(SanPhamThemTest.java:212)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
-at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
-... 25 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+          </exception> <!-- org.junit.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThemSanPhamThieuDuLieu -->
-      </class> <!-- nhom2.test.cong.SanPhamThemTest -->
+        </test-method> <!-- testDN18 -->
+        <test-method signature="testDN20()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN20" finished-at="2023-12-13T06:27:10 ICT" duration-ms="21" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN20(DangNhapTest.java:301)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN20 -->
+        <test-method signature="testDN21()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN21" finished-at="2023-12-13T06:27:10 ICT" duration-ms="25" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN21 -->
+        <test-method signature="testDN22()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN22" finished-at="2023-12-13T06:27:10 ICT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN22 -->
+        <test-method signature="testDN23()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN23" finished-at="2023-12-13T06:27:10 ICT" duration-ms="92" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN23(DangNhapTest.java:363)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN23 -->
+        <test-method signature="testDN4()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:10 ICT" name="testDN4" finished-at="2023-12-13T06:27:11 ICT" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN4 -->
+        <test-method signature="testDN5()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:11 ICT" name="testDN5" finished-at="2023-12-13T06:27:11 ICT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN5 -->
+        <test-method signature="testDN6()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:11 ICT" name="testDN6" finished-at="2023-12-13T06:27:11 ICT" duration-ms="22" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<T[ài khoản không được chứa kí tự đặc biệt]> but was:<T[hất bại]>
+at org.junit.Assert.assertEquals(Assert.java:117)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at nhom2.test.len.DangNhapTest.testDN6(DangNhapTest.java:74)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN6 -->
+        <test-method signature="testDN7()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:11 ICT" name="testDN7" finished-at="2023-12-13T06:27:11 ICT" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN7 -->
+        <test-method signature="testDN8()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:11 ICT" name="testDN8" finished-at="2023-12-13T06:27:11 ICT" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN8 -->
+        <test-method signature="testDN9()[pri:0, instance:nhom2.test.len.DangNhapTest@4e08711f]" started-at="2023-12-13T06:27:11 ICT" name="testDN9" finished-at="2023-12-13T06:27:11 ICT" duration-ms="80" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDN9 -->
+      </class> <!-- nhom2.test.len.DangNhapTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

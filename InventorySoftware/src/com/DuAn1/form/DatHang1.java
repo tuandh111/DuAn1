@@ -3769,7 +3769,7 @@ public class DatHang1 extends javax.swing.JPanel {
         return cd;
     }
 
-    void TuDongTangMa() {
+   public void TuDongTangMa() {
         List<Object[]> i = daoThongKe.getMaxMaDatSP();
         String name = (String) i.get(0)[0];
         String[] tbl = name.split("H");

@@ -3,14 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="nhom2.test.cong.SanPhamThemTest">
+      <class name="nhom2.test.len.DangNhapTest">
         <methods>
-          <include name="testThemSanPhamGiaAm"/>
-          <include name="testThemSanPhamThieuDuLieu"/>
-          <include name="testThemSanPham"/>
-          <include name="testThemSanPhamSoLuongAm"/>
+          <include name="testDN6"/>
+          <include name="testDN11"/>
+          <include name="testDN12"/>
+          <include name="testDN23"/>
+          <include name="testDN10"/>
+          <include name="testDN20"/>
+          <include name="testDN18"/>
         </methods>
-      </class> <!-- nhom2.test.cong.SanPhamThemTest -->
+      </class> <!-- nhom2.test.len.DangNhapTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
