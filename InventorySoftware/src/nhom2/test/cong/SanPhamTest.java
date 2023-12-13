@@ -76,12 +76,12 @@ public class SanPhamTest {
 	public void testHienThongTinDaXoaTheoMa() {
 		String kqmd = "Thành công";
 		String kqtt= "";
-		String maSP = "SP00012";
+		String maSP = "SP00014";
 		List<SanPhamModel> model = dao.selectDaXoaTheoMa(maSP);
 		if(!model.isEmpty()) {
 		kqtt = "Thành công";	
 		for(SanPhamModel sp : model) {
-			assertEquals("SP00012", maSP);
+			assertEquals(sp.getMaSP().trim(), maSP);
 			assertFalse(sp.isTrangThai());
 		}
 		}else {

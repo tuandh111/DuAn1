@@ -29,16 +29,16 @@ public class NhanVienTest {
 
 	@Test
 	public void ThemNhanVienThanhCong() {
-		String kqmd = "Thêm Nhân Viên Thành Công";
+		String kqmd = "Thêm Mới Thành Công!";
 		String kqtt = "";
 		NhanVienModel nv = new NhanVienModel();
 
-		nv.setMaNV("NV011");
+		nv.setMaNV("NV013");
 		nv.setHoTen("Trần Ngọc Bích");
 		nv.setNgaySinh("10-10-2000");
 		nv.setGioiTinh(false);
 		nv.setDiaChi("Cần Thơ");
-		nv.setSDT("0912345678");
+		nv.setSDT("0999911111");
 		nv.setEmail("bichtn@gmail.com");
 		nv.setMatKhau("123456");
 		nv.setVaiTro("NV");
@@ -48,7 +48,7 @@ public class NhanVienTest {
 
 		try {
 			dao.insert(nv);
-			kqtt = "Thêm Nhân Viên Thành Công";
+			kqtt = "Thêm Mới thành công!";
 		} catch (Exception ex) {
 			kqtt = "Thêm Nhân Viên Thất Bại";
 		}
@@ -111,33 +111,34 @@ public class NhanVienTest {
 		assertEquals(kqmd, kqtt);
 	}
 
-//	@Test
-//	public void ThemNVKhiChuaChonGioiTinh() {
-//		String kqmd = "Giới tính của nhân viên chưa được chọn";
-//		String kqtt = "";
-//		NhanVienModel nv = new NhanVienModel();
-//
-//		nv.setMaNV("NV011");
-//		nv.setHoTen("Trần Ngọc Bích");
-//		nv.setNgaySinh("10-10-2000");
-//		nv.setGioiTinh();
-//		nv.setDiaChi("Cần Thơ");
-//		nv.setSDT("0912345678");
-//		nv.setEmail("bichtn@gmail.com");
-//		nv.setMatKhau("123456");
-//		nv.setVaiTro("NV");
-//		nv.setHinh("nhanvien.jpg");
-//		nv.setTrangThai(true);
-//		nv.setTrangThaiXoa(false);
-//
-//		try {
-//			dao.update(nv);
-//			kqtt = "Thêm Nhân Viên Thành Công";
-//		} catch (Exception ex) {
-//			kqtt = "Giới tính của nhân viên chưa được chọn";
-//		}
-//		assertEquals(kqmd, kqtt);
-//	}
+	@Test
+	public void ThemNVKhiChuaChonGioiTinh() {
+		String kqmd = "Giới tính của nhân viên chưa được chọn";
+		String kqtt = "";
+		NhanVienModel nv = new NhanVienModel();
+		Boolean gt = Boolean.parseBoolean(null);
+		nv.setMaNV("NV011");
+		nv.setHoTen("Trần Ngọc Bích");
+		nv.setNgaySinh("10-10-2000");
+		nv.setGioiTinh(gt);
+		nv.setDiaChi("Cần Thơ");
+		nv.setSDT("0912345678");
+		nv.setEmail("bichtn@gmail.com");
+		nv.setMatKhau("123456");
+		nv.setVaiTro("NV");
+		nv.setHinh("nhanvien.jpg");
+		nv.setTrangThai(true);
+		nv.setTrangThaiXoa(false);
+
+		try {
+			dao.update(nv);
+			kqtt = "Thêm Nhân Viên Thành Công";
+		} catch (Exception ex) {
+			kqtt = "Giới tính của nhân viên chưa được chọn";
+		}
+		assertEquals(kqmd, kqtt);
+	}
+
 	@Test
 	public void ThemNVKhiDiaChiBoTrong() {
 		String kqmd = "Địa chỉ của nhân viên không được bỏ trống";
@@ -302,6 +303,90 @@ public class NhanVienTest {
 			kqtt = "Thêm Nhân Viên Thành Công";
 		} catch (Exception ex) {
 			kqtt = "Số điện thoại của nhân viên có chứa chữ";
+		}
+		assertEquals(kqmd, kqtt);
+	}
+
+	@Test
+	public void ThemNVKhiDiaChiCokiTuDacBiet() {
+		String kqmd = "Địa chỉ của nhân viên không hợp lệ";
+		String kqtt = "";
+		NhanVienModel nv = new NhanVienModel();
+
+		nv.setMaNV("NV011");
+		nv.setHoTen("Trần Ngọc Bích");
+		nv.setNgaySinh("10-10-2000");
+		nv.setGioiTinh(false);
+		nv.setDiaChi("Canther@1#!@#");
+		nv.setSDT("0912345678");
+		nv.setEmail("bichtn@gmail.com");
+		nv.setMatKhau("123456");
+		nv.setVaiTro("NV");
+		nv.setHinh("nhanvien.jpg");
+		nv.setTrangThai(true);
+		nv.setTrangThaiXoa(false);
+
+		try {
+			dao.insert(nv);
+			kqtt = "Thêm Nhân Viên Thành Công";
+		} catch (Exception ex) {
+			kqtt = "Địa chỉ của nhân viên không hợp lệ";
+		}
+		assertEquals(kqmd, kqtt);
+	}
+
+	@Test
+	public void ThemNVKhiMatKhauCoKiTuDacBiet() {
+		String kqmd = "Mật khẩu của nhân viên không hợp lệ";
+		String kqtt = "";
+		NhanVienModel nv = new NhanVienModel();
+
+		nv.setMaNV("NV011");
+		nv.setHoTen("Trần Ngọc Bích");
+		nv.setNgaySinh("null");
+		nv.setGioiTinh(false);
+		nv.setDiaChi("Cần Thơ");
+		nv.setSDT("0912345678");
+		nv.setEmail("bichtn@gmail.com");
+		nv.setMatKhau("@!#!@!1111");
+		nv.setVaiTro("NV");
+		nv.setHinh("nhanvien.jpg");
+		nv.setTrangThai(true);
+		nv.setTrangThaiXoa(false);
+
+		try {
+			dao.insert(nv);
+			kqtt = "Thêm Nhân Viên Thành Công";
+		} catch (Exception ex) {
+			kqtt = "Mật khẩu của nhân viên không hợp lệ";
+		}
+		assertEquals(kqmd, kqtt);
+	}
+
+	@Test
+	public void ThemNVKhiHoTenCoKiTuDacBiet() {
+		String kqmd = "Họ tên của nhân viên không hợp lệ";
+		String kqtt = "";
+		NhanVienModel nv = new NhanVienModel();
+
+		nv.setMaNV("NV011");
+		nv.setHoTen("Trần Văn An @#12");
+		nv.setNgaySinh("10-10-2000");
+		nv.setGioiTinh(false);
+		nv.setDiaChi("Cần Thơ");
+		nv.setSDT("0912345678");
+		nv.setEmail("bichtn@gmail.com");
+		nv.setMatKhau("123456");
+		nv.setVaiTro("NV");
+		nv.setHinh("nhanvien.jpg");
+		nv.setTrangThai(true);
+		nv.setTrangThaiXoa(false);
+
+		try {
+			dao.insert(nv);
+			kqtt = "Thêm Nhân Viên Thành Công";
+		} catch (Exception ex) {
+			kqtt = "Họ tên của nhân viên không hợp lệ";
 		}
 		assertEquals(kqmd, kqtt);
 	}

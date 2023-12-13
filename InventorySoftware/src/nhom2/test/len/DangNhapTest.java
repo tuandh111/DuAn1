@@ -105,7 +105,8 @@ public class DangNhapTest {
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			if(manv.equals("")) {
+
+if(manv.equals("")) {
 				kqtt = "Không được bỏ trống tên đăng nhập";}
 			else {
 				ShareHelper.USER = taikhoan;
@@ -210,7 +211,7 @@ public class DangNhapTest {
         NhanVienModel taikhoan = null;
         taikhoan = dao.findById(manv);
 		try {
-			sh.USER = taikhoan;
+sh.USER = taikhoan;
 			matKhau.equals(taikhoan.getMatKhau().trim());
 			kqtt = "Đăng nhập thành công";
 		}catch(Exception ex) {
@@ -316,7 +317,7 @@ public class DangNhapTest {
 				sh.USER = taikhoan;
 			matKhau.equals(taikhoan.getMatKhau().trim());
 			kqtt = "Thành công";}
-		}catch(Exception ex) {
+}catch(Exception ex) {
 			kqtt = "Thất bại";
 		}
 		assertEquals(kqmd, kqtt);
